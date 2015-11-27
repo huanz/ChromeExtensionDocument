@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>教程：迁移至清单文件版本 2 - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="tut_migration_to_manifest_v2.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Tutorial: Migrate to Manifest V2-->教程：迁移至清单文件版本 2</h1>
+
+<p>
+<!--@Manifest version 1 was deprecated in Chrome 18,
+and support will be phased out according to the
+<a href="manifestVersion#manifest-v1-support-schedule">manifest version 1 support schedule</a>.
+The changes from version 1 to version 2
+fall under two broad categories:
+API changes and Security changes. -->
+清单文件版本 1 在 Chrome 18 中弃用，对它的支持将根据<a href="manifestVersion.html#manifest-v1-support-schedule">清单文件版本 1 支持计划</a>逐渐减少。从版本 1 到版本 2 的更改分为两大类：API 更改和安全性更改。
+</p>
+
+<p>
+<!--@This document provides checklists for migrating your Chrome extensions
+from manifest version 1 to version 2,
+followed by more detailed summaries of what these changes mean and why they were made.-->
+该文档提供了将您的 Chrome 扩展程序从清单文件版本 1 迁移到版本 2 所需要做的事情清单，并提供有关这些改变会带来什么以及为什么作出这些改变的更多详细摘要。
+</p>
+
+<h2 id="api-checklist"><!--@API changes checklist-->API 更改清单</h2>
+
+<ul>
+  <li><!--@Are you using the-->您使用 <code>browser_actions</code> <!--@property
+    or the-->属性或 <code>chrome.browserActions</code> API<!--@?--> 吗？</li>
+    <ul>
+      <li><!--@Replace <code>browser_actions</code>
+        with the singular <code>browser_action</code> property.-->
+        请用单数形式的 <code>browser_action</code>
+        属性替换 <code>browser_actions</code>。
+      </li>
+      <li><!--@Replace <code>chrome.browserActions</code> with
+        <code>chrome.browserAction</code>.-->
+        请用 <code>chrome.browserAction</code> 替换
+        <code>chrome.browserActions</code>。
+      </li>
+      <li><!--@Replace the <code>icons</code> property with <code>default_icon</code>.-->请用 <code>default_icon</code> 替换 <code>icons</code> 属性。</li>
+      <li><!--@Replace the <code>name</code> property with <code>default_title</code>.-->请用 <code>default_title</code> 替换 <code>name</code> 属性。</li>
+      <li><!--@Replace the <code>popup</code> property with
+        <code>default_popup</code> (and it now must be a string).-->
+        请用 <code>default_popup</code> 替换 <code>popup</code>
+        属性（并且现在它必须为字符串）。
+      </li>
+    </ul>
+  <li><!--@Are you using the <code>page_actions</code> property
+    or the <code>chrome.pageActions</code> API?-->
+    您使用 <code>page_actions</code> 属性或者 <code>chrome.pageActions</code> API吗？
+  </li>
+    <ul>
+      <li><!--@Replace <code>page_actions</code> with <code>page_action</code>.-->请用 <code>page_action</code> 替换 <code>page_actions</code> 。</li>
+      <li><!--@Replace <code>chrome.pageActions</code> with <code>chrome.pageAction</code>.-->请用 <code>chrome.pageAction</code> 替换 <code>chrome.pageActions</code>。</li>
+      <li><!--@Replace the <code>icons</code> property with <code>default_icon</code>.-->请用 <code>default_icon</code> 替换 <code>icons</code> 属性。</li>
+      <li><!--@Replace the <code>name</code> property with <code>default_title</code>.-->请用 <code>default_title</code> 替换 <code>name</code> 属性。</li>
+      <li><!--@Replace the <code>popup</code> property with
+        <code>default_popup </code>(and it now must be a string).-->
+        请用 <code>default_popup</code> 替换 <code>popup</code> 属性（并且现在它必须为字符串）。
+      </li>
+    </ul>
+  <li><!--@Are you using the-->您使用 <code>chrome.self</code> <!--@property?-->属性吗？</li>
+    <ul>
+      <li><!--@Replace with-->请替换为 <code>chrome.extension</code><!--@.-->。</li>
+    </ul>
+  <li><!--@Are you using the-->您使用 <code>Port.tab</code> <!--@property?-->属性吗？</li>
+    <ul>
+      <li><!--@Replace with-->请替换为 <code>Port.sender</code><!--@.--></li>
+    </ul>
+  <li><!--@Are you using the-->您使用 <code>chrome.extension.getTabContentses()</code>
+    <!--@or the-->或 <code>chrome.extension.getExtensionTabs()</code> <!--@APIs?-->API 吗？</li>
+    <ul>
+      <li><!--@Replace with-->请替换为 <code>chrome.extension.getViews( { "type" : "tab" } )</code><!--@.--></li>
+    </ul>
+  <li><!--@Does your extension use a background page?-->您的扩展程序使用后台网页吗？</li>
+    <ul>
+      <li><!--@Replace the <code>background_page</code> property
+        with a <code>background</code> property.-->
+        请将 <code>background_page</code> 属性替换为 <code>background</code> 属性。
+      </li>
+      <li><!--@Add a <code>scripts</code> or <code>page</code>
+        property that contains the code for the page.-->
+        请添加 <code>scripts</code> 或 <code>page</code> 属性，包含页面的代码。
+      </li>
+      <li><!--@Add a <code>persistent</code> property and set it
+        to <code>false</code> to convert your background page
+        to an <a href="event_pages">event page</a>-->
+        添加 <code>persistent</code> 属性，并将它设置为 <code>false</code>，将您的后台网页转换为<a href="event_pages.html">事件页面</a>。
+      </li>
+    </ul>
+</ul>
+
+<h2 id="security-checklist"><!--@Security changes checklist-->安全性更改清单</h2>
+
+<ul>
+  <li><!--@Are you using inline script blocks in HTML pages?-->您在 HTML 页面中使用内嵌脚本块吗？</li>
+    <ul>
+      <li><!--@Remove JS code contained within &lt;script> tags
+        and place it within an external JS file.-->
+        移除 &lt;script&gt; 标签内的 JavaScript
+        代码并将它放在外部的 JS 文件中。
+      </li>
+    </ul>
+  <li><!--@Are you using inline event handlers (like onclick, etc)?-->您使用内嵌事件处理器吗（例如 onclick 等）？</li>
+    <ul>
+      <li><!--@Remove them from the HTML code,
+        move them into an external JS file and
+        use <code>addEventListener()</code> instead.-->
+        将它们从 HTML 代码中移除，移动至外部的 JS 文件，并改用
+         <code>addEventListener()</code>。
+      </li>
+    </ul>
+  <li><!--@Does your extension inject content scripts into Web pages
+    that need to access resources (like images and scripts)
+    that are contained in the extension’s package?-->
+    您的扩展程序会向网页中插入需要访问包含在扩展程序包内的资源（例如图片与脚本）的内容脚本吗？
+  </li>
+    <ul>
+      <li><!--@Define the-->定义 <a href="manifest/web_accessible_resources.html">web_accessible_resources</a>
+        <!--@property and list the resources
+        (and optionally a separate Content Security Policy for those resources).-->
+        属性，并列出这些资源（以及可选的单独用于这些资源的内容安全策略）。
+      </li>
+    </ul>
+  <li><!--@Does your extension embed external Web pages?-->您的扩展程序嵌入外部网页吗？</li>
+    <ul>
+      <li><!--@Define the-->定义 <a href="manifest/sandbox.html">sandbox</a> <!--@property.-->属性。</li>
+    </ul>
+  <li><!--@Is your code or library using <code>eval()</code>, new <code>Function()</code>,
+    <code>innerHTML</code>, <code>setTimeout()</code>, or otherwise passing strings
+    of JS code that are dynamically evaluated?-->
+    您的代码或库使用 <code>eval()</code>、<code>new Function()</code>、<code>innerHTML</code>、<code>setTimeout()</code>或者通过其他方式传递动态求值的
+    JavaScript 代码字符串吗？
+  </li>
+    <ul>
+      <li><!--@Use <code>JSON.parse()</code>
+        if you’re parsing JSON code into an object.-->
+        如果您需要将 JSON 代码分析为对象请使用 <code>JSON.parse()</code>。
+      </li>
+      <li><!--@Use a CSP-friendly library,
+        for example,-->使用CSP（内容安全策略）友好的库，例如 <a href="http://angularjs.org/">AngularJS</a><!--@.-->。</li>
+      <li><!--@Create a sandbox entry in your manifest and
+        run the affected code in the sandbox,
+        using <code>postMessage()</code> to communicate
+        with the sandboxed page.-->
+        在您的清单文件中创建一个沙箱项，在沙箱中运行受到影响的代码，使用
+        <code>postMessage()</code> 与受沙箱保护的页面通信。
+      </li>
+    </ul>
+  <li><!--@Are you loading external code,
+    such as jQuery or Google Analytics?-->
+    您从外部加载代码，例如 jQuery 或 Google Analytics（分析）吗？
+  </li>
+    <ul>
+      <li><!--@Consider downloading the library and
+        packaging it in your extension,
+        then loading it from the local package.-->
+        考虑下载库文件并将它与扩展程序一起打包，并从本地包中加载。
+      </li>
+      <li><!--@Whitelist the HTTPS domain that serves the resource
+        in the "content_security_policy” part of your manifest.-->
+        在清单文件的
+        "content_security_policy"
+        部分将托管资源的 HTTPS 域名加入白名单。
+      </li>
+    </ul>
+</ul>
+
+<h2 id="api-summary"><!--@Summary of API changes-->API 更改摘要</h2>
+
+<p>
+<!--@Manifest version 2 introduces a few changes
+to the browser action and page action APIs,
+and replaces a few old APIs with newer ones.-->
+清单文件版本 2 引入了对浏览器按钮与页面按钮 API 的一些更改，并将少量旧的
+API 用新的来代替。
+</p>
+
+<h3 id="browser_actions"><!--@Changes to browser actions-->对浏览器按钮的更改</h3>
+
+<p>
+<!--@The browser actions API introduces some naming changes:-->浏览器按钮 API 引入了某些名称上的更改：</p>
+
+<ul>
+  <li><!--@The <code>browser_actions</code> and
+    <code>chrome.browserActions</code> properties have been replaced
+    with their singular counterparts <code>browser_action</code>
+    and <code>chrome.browserAction</code>.-->
+     <code>browser_actions</code> 与 <code>chrome.browserActions</code>
+     属性已替换为它们的单数形式 <code>browser_action</code> 与
+     <code>chrome.browserAction</code>。
+  </li>
+  <li><!--@Under the old <code>browser_actions</code> property,
+    there were <code>icons</code>, <code>name</code>, and
+    <code>popup</code> properties.
+    These have been replaced with:-->
+    在旧的 <code>browser_actions</code> 属性下，有 <code>icons</code>、<code>name</code> 和 <code>popup</code> 属性，它们已替换为：
+  </li>
+  <ul>
+    <li><code>default_icon</code><!--@ for the browser action badge icon-->，用于浏览器按钮的图标。</li>
+    <li><code>default_name</code><!--@ for the text that appears in the tooltip when you hover over the badge-->，用于您将鼠标悬停在图标上时出现在工具提示中的文字。</li>
+    <li><code>default_popup</code><!--@ for the HTML page that represents the UI
+      for the browser action (and this must now be a string, it cannot be an object)-->，用于表示浏览器按钮用户界面的HTML网页（并且必须为字符串，不能是对象）。</li>
+  </ul>
+</ul>
+
+<h3 id="page_actions"><!--@Changes to page actions-->对页面按钮的更改</h3>
+
+<p><!--@Similar to the changes for browser actions,
+  the page actions API has also changed:-->类似于浏览器按钮的更改，页面按钮 API 也有变化：</p>
+<ul>
+  <li><!--@The <code>page_actions</code> and <code>chrome.pageActions</code> properties
+    have been replaced with their singular counterparts
+    <code>page_action</code> and <code>chrome.pageAction</code>.-->
+     <code>page_actions</code> 与 <code>chrome.pageActions</code>
+     属性已替换为它们的单数形式 <code>page_action</code> 与
+     <code>chrome.pageAction</code>。
+  </li>
+  <li><!--@Under the old <code>page_actions</code> property,
+    there were <code>icons</code>, <code>name</code>,
+    and <code>popup</code> properties.
+    These have been replaced with:-->
+    在旧的 <code>page_actions</code> 属性下，有 <code>icons</code>、<code>name</code> 和 <code>popup</code> 属性，它们已替换为：
+  </li>
+  <ul>
+    <li><code>default_icon</code><!--@ for the page action badge icon-->，用于页面按钮的图标。</li>
+    <li><code>default_name</code><!--@ for the text
+      that appears in the tooltip when you hover over the badge-->，用于您将鼠标悬停在图标上时出现在工具提示中的文字。</li>
+    <li><code>default_popup</code><!--@ for the HTML page
+      that represents the UI for the page action
+      (and this must now be a string, it cannot be an object)-->用于表示页面按钮用户界面的 HTML 网页（并且必须为字符串，不能是对象）。</li>
+  </ul>
+</ul>
+
+<h3 id="removed_and_changed"><!--@Removed and changed APIs-->移除和更改的 API</h3>
+
+<p>
+<!--@A few extension APIs have been removed and replaced with new counterparts:-->
+一些扩展程序 API 已经移除，并用对应的新 API 替换：
+</p>
+
+<ul>
+  <li><!--@The--> <code>background_page</code> <!--@property has been replaced
+    by-->属性已替换为 <a href="background_pages.html">background</a><!--@.-->。</li>
+  <li><!--@The--> <code>chrome.self</code> <!--@property has been removed,
+    use-->属性已移除，请使用 <code>chrome.extension</code><!--@.-->。</li>
+  <li><!--@The--> <code>Port.tab</code> <!--@property has been replaced
+    with-->属性已替换为 <code>Port.sender</code><!--@.-->。</li>
+  <li><!--@The--> <code>chrome.extension.getTabContentses()</code> <!--@and the-->和
+    <code>chrome.extension.getExtensionTabs()</code> <!--@APIs have been replaced
+    by-->API 已替换为 <code>chrome.extension.getViews( { "type" : "tab" } )</code><!--@.-->。</li>
+</ul>
+
+<h2 id="security-summary"><!--@Summary of security changes-->安全性更改摘要</h2>
+
+<p>
+<!--@There are a number of security-related changes
+that accompany the move from manifest version 1 to version 2.
+Many of these changes stem from Chrome’s adoption of
+<a href="contentSecurityPolicy">Content Security Policy</a>;
+you should read more about this policy to understand its implications.-->
+清单文件版本 1 到版本 2 的转换伴随着一系列安全性相关的更改。许多这些更改来源于 Chrome 浏览器对<a href="contentSecurityPolicy.html">内容安全策略</a>的采用，您应该了解这一策略的更多信息来理解它带来的影响。
+</p>
+
+<h3 id="inline_scripts"><!--@Inline scripts and event handlers disallowed-->禁止使用内嵌脚本和事件处理器</h3>
+
+<p>
+<!--@Due to the use of <a href="contentSecurityPolicy">Content Security Policy</a>,
+you can no longer use &lt;script> tags that are inline with the HTML content.
+These must be moved to external JS files.
+In addition, inline event handlers are also not supported.
+For example, suppose you had the following code in your extension:-->
+由于<a href="contentSecurityPolicy.html">内容安全策略</a>的使用，您不能继续使用
+HTML 内容中内嵌的 &lt;script&gt; 标签，它们必须移动至外部的 JS
+文件中去。此外，内嵌的事件处理器也不支持。例如，假设您的扩展程序中有如下代码：
+</p>
+
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script&gt;
+    function myFunc() { ... }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+<!--@This code would cause an error at runtime.
+To fix this, move &lt;script> tag contents to external files
+and reference them with a <code>src=’path_to_file.js’</code> attribute.-->
+这一代码在运行时会产生错误。要修复它，请将 &lt;script&gt;
+标签的内容移至外部文件，并使用 <code>src='文件路径.js'</code> 属性引用它们。
+</p>
+
+<p>
+<!--@Similarly, inline event handlers,
+which are a common occurrence and convenience feature
+used by many Web developers, will not execute.
+For example, consider common instances such as:-->
+类似地，常见的内嵌事件处理器尽管是许多 Web 开发者为了方便而使用的特性，但它们不会执行。例如，考虑如下常见情况：
+</p>
+
+<pre>
+&lt;body onload="initialize()"&gt;
+&lt;button onclick="handleClick()" id="button1"&gt;
+</pre>
+
+<p>
+<!--@These will not work in manifest V2 extensions.
+Remove the inline event handlers,
+place them in your external JS file and use <code>addEventListener()</code>
+to register event handlers for them instead.
+For example, in your JS code, use:-->
+它们不能在清单文件版本 2 的扩展程序中工作。请移除内嵌的事件处理器，将它们放在您的外部
+JS 文件中，并使用 <code>addEventListener()</code>
+为它们注册事件处理器。例如，在您的 JavaScript 代码中使用：
+</p>
+
+<pre>
+window.addEventListener("load", initialize);
+...
+document.getElementById("button1").addEventListener("click",handleClick);
+</pre>
+
+<p>
+<!--@This is a much cleaner way of separating
+your extension’s behavior from its user interface markup.-->
+这样将您的扩展程序的行为与用户界面标记分离的做法要整洁得多。
+</p>
+
+<h3 id="embedding"><!--@Embedding content-->嵌入内容</h3>
+
+<p>
+<!--@There are some scenarios where your extension might embed content
+that can be used externally or come from an external source. -->
+在某些情况下，您的扩展程序可能会嵌入可以在外部使用或者来自外部来源的内容：
+</p>
+
+<p>
+<strong><!--@Extension content in web pages:-->网页中的扩展程序内容：</strong><br>
+<!--@If your extension embeds resources (like images, script, CSS styles, etc)
+that are used in content scripts that are injected into web pages,
+you need to use the-->
+如果您的扩展程序插入网页中的内容脚本嵌入资源（例如图片、脚本、CSS 样式等），您需要使用
+<a href="manifest/web_accessible_resources.html">web_accessible_resources</a> <!--@property
+to whitelist these resources so that external Web pages can use them:-->
+属性将这些资源加入白名单，这样外部网页才能使用它们：
+</p>
+
+<pre data-filename="manifest.json">
+{ 
+...
+  "<strong>web_accessible_resources</strong>": [
+    "images/image1.png",
+    "script/myscript.js"
+  ],
+...
+}
+</pre>
+
+<p>
+<strong><!--@Embedding external content:-->嵌入外部内容：</strong><br>
+<!--@The Content Security Policy only allows local script
+and objects to loaded from your package,
+which prevents external attackers from introducing unknown code to your extension.
+However, there are times when you want to load externally served resources,
+such as jQuery or Google Analytics code.
+There are two ways to do this:-->
+内容安全策略仅允许从您的扩展程序包中加载本地脚本与对象，以免外部攻击者向您的扩展程序引入未知代码。然而，有时候您需要加载外部托管的资源，例如
+jQuery 或 Google Analytics（分析）代码。有两种方式可以实现：
+</p>
+
+<ol>
+  <li><!--@Download the relevant library locally (like jQuery)
+    and package it with your extension.-->下载相关的库（例如 jQuery）并将它与您的扩展程序一起打包。</li>
+    <li><!--@You can relax the CSP in a limited way by whitelisting HTTPS origins
+      in the “content_security_policy” section of your manifest.
+      To include a library like Google Analytics, this is the approach to take:-->
+      您也可以有限地放宽 CSP（内容安全策略），在您的清单文件中的
+      "content_security_policy" 部分将 HTTPS 来源加入白名单。要包含像
+      Google Analytics（分析）之类的库，可以采用如下方式：
+      <pre data-filename="manifest.json">
+{
+  ...,
+  "content_security_policy": "script-src 'self'
+  <strong>https://ssl.google-analytics.com</strong>; object-src 'self'",
+  ...
+}
+</pre>
+    </li>
+</ol>
+
+<h3 id="using"><!--@Using dynamic script evaluation-->使用动态脚本求值</h3>
+
+<p>
+<!--@Perhaps one of the biggest changes in the new manifest v2 scheme is
+that extensions can no longer use dynamic script evaluation techniques like
+<code>eval()</code> or new <code>Function()</code>,
+or pass strings of JS code to functions
+that will cause an <code>eval()</code> to be used,
+like <code>setTimeout()</code>.
+In addition, certain commonly used JavaScript libraries,
+such as Google Maps and certain templating libraries,
+are known to use some of these techniques.-->
+也许在新的清单文件版本 2
+架构中最大的变化之一就是扩展程序不能继续使用动态脚本求值技术，例如
+<code>eval</code> 或 <code>new Function()</code> 或者将 JavaScript
+代码字符串传递给会使用 <code>eval()</code> 的函数，例如
+<code>setTimeout()</code>。此外，已知某些常用的 JavaScript 库，例如
+Google Maps 以及一些模板库，会使用这些技术。
+</p>
+
+<p>
+<!--@Chrome provides a sandbox for pages to run in their own origin,
+which are denied access to chrome.* APIs.
+In order to use <code>eval()</code>
+and the like under the new Content Security Policy:-->
+Chrome 浏览器为页面提供了沙箱，以便在它们自己的来源中运行，拒绝访问
+chrome.* API。为了在新的内容安全策略下使用 <code>eval()</code> 及类似技术：
+</p>
+
+<ol>
+  <li><!--@Create a sandbox entry in your manifest file.-->在您的清单文件中创建一个 sandbox 项。</li>
+  <li><!--@In the sandbox entry,
+    list the pages you want to run in the sandbox.-->在 sandbox 项中列出您希望在沙箱中运行的页面。</li>
+  <li><!--@Use message passing via <code>postMessage()</code>
+    to communicate with the sandboxed page.-->
+    通过 <code>postMessage()</code> 使用消息传递和沙箱中的页面通信。
+  </li>
+</ol>
+
+<p>
+<!--@For more details on how to do this,
+see the <a href="sandboxingEval">Sandboxing Eval</a> documentation.-->
+有关如何做这些的更多详情，请参见<a href="sandboxingEval.html">受沙箱保护的
+eval 文档</a>。
+</p>
+
+<h2 id="further-reading"><!--@Further reading-->进一步的阅读</h2>
+
+<p>
+<!--@The changes in manifest version 2 are designed to guide developers
+toward building more secure and robustly-architected extensions and apps.
+To see a complete list of changes from manifest version 1 to version 2,
+see the <a href="manifestVersion">manifest file</a> documentation.
+For more information about using sandboxing to isolate unsafe code,
+read the <a href="sandboxingEval">sandboxing eval</a> article.
+You can learn more about Content Security Policy
+by visiting our extensions-related tutorial and a
+<a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">good introduction on HTML5Rocks</a>.-->
+清单文件版本 2 带来的更改是为了引导开发人员建立更安全、架构更健壮的扩展程序和应用。要查看清单文件版本
+1 至版本 2 的完整更改列表，请参见<a href="manifestVersion.html"
+>清单文件版本文档</a>。有关使用沙箱隔离不安全代码的更多信息，请阅读<a
+href="sandboxingEval.html">受沙箱保护的 eval</a>
+文章。您可以访问我们与扩展程序相关的教程以及
+<a href="http://www.html5rocks.com/en/tutorials/security/content-security-policy/">HTML5Rocks 上一个很棒的简介</a>（英文）了解有关内容安全策略的更多内容。
+</p>
+
+
+
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">开发扩展程序</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="a11y.html">辅助功能</a>
+                        </li>
+                        <li>
+                          <a href="contentSecurityPolicy.html">内容安全策略</a>
+                        </li>
+                        <li>
+                          <a href="xhr.html">跨站 XHR</a>
+                        </li>
+                        <li>
+                          <a href="tut_debugging.html">调试</a>
+                        </li>
+                        <li>
+                          <a href="i18n.html">国际化支持</a>
+                        </li>
+                        <li>
+                          <a href="messaging.html">消息传递</a>
+                        </li>
+                        <li>
+                          <a href="tut_migration_to_manifest_v2.html" class="active">迁移至清单文件版本 2</a>
+                        </li>
+                        <li>
+                          <a href="tut_oauth.html">OAuth</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="tut_migration_to_manifest_v2.html#api-checklist"
+          >API 更改清单</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="tut_migration_to_manifest_v2.html#security-checklist"
+          >安全性更改清单</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="tut_migration_to_manifest_v2.html#api-summary"
+          >API 更改摘要</a>
+          <ol class="toc">
+              <li><a data-list-item href="tut_migration_to_manifest_v2.html#browser_actions"
+                     >对浏览器按钮的更改</a>
+              </li>
+              <li><a data-list-item href="tut_migration_to_manifest_v2.html#page_actions"
+                     >对页面按钮的更改</a>
+              </li>
+              <li><a data-list-item href="tut_migration_to_manifest_v2.html#removed_and_changed"
+                     >移除和更改的 API</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="tut_migration_to_manifest_v2.html#security-summary"
+          >安全性更改摘要</a>
+          <ol class="toc">
+              <li><a data-list-item href="tut_migration_to_manifest_v2.html#inline_scripts"
+                     >禁止使用内嵌脚本和事件处理器</a>
+              </li>
+              <li><a data-list-item href="tut_migration_to_manifest_v2.html#embedding"
+                     >嵌入内容</a>
+              </li>
+              <li><a data-list-item href="tut_migration_to_manifest_v2.html#using"
+                     >使用动态脚本求值</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="tut_migration_to_manifest_v2.html#further-reading"
+          >进一步的阅读</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.contentSettings - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="contentSettings.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.contentSettings</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.contentSettings</code> API 更改设置，控制网站能否使用 Cookie、JavaScript 和插件之类的特性。大体上说，内容设置允许您针对不同的站点（而不是全局地）自定义 Chrome 浏览器的行为。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "contentSettings"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p><!--@You must declare the "contentSettings" permission
+      in your extension's manifest to use the API.
+      For example:-->
+      您必须在扩展程序的清单文件中声明 "contentSettings" 权限才能使用这一
+      API。例如：
+      </p>
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "contentSettings"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      
+      <h2 id="patterns"><!--@Content setting patterns-->内容设置的匹配表达式</h2>
+      <p>
+      <!--@You can use patterns to specify the websites that each content setting affects.
+      For example, <code>http://*.youtube.com/*</code> specifies youtube.com and all
+      of its subdomains. The syntax for content setting patterns is the same as for
+      <a href="match_patterns">match patterns</a>, with a few differences:-->
+      您可以使用匹配表达式来指定每一项内容设置将会影响哪些网站。例如，<code>http://*.youtube.com/*</code>
+      指定 youtube.com
+      以及所有子域名。用于内容设置的匹配表达式语法与一般的<a href="match_patterns.html">匹配表达式</a>类似，但有如下几个区别：
+      <ul><li><!--@For <code>http</code>,
+      <code>https</code>, and <code>ftp</code> URLs, the path must be a wildcard
+      (<code>/*</code>). For <code>file</code> URLs, the path must be completely
+      specified and <strong>must not</strong> contain wildcards.-->
+      对于<code>http</code>、<code>https</code> 以及 <code>ftp</code> 协议的
+      URL，路径必须是通配符（<code>/*</code>）。对于 <code>file</code> 协议的
+      URL，必须指定完整路径，<strong>不能</strong>包含通配符。
+      </li>
+      <li><!--@In contrast to match patterns, content setting patterns can specify a port
+      number. If a port number is specified, the pattern only matches websites with
+      that port. If no port number is specified, the pattern matches all ports.-->
+      与一般的匹配表达式相反，内容设置的匹配表达式可以指定端口。如果指定了端口，表达式将只匹配指定端口的网站。如果没有指定端口，表达式将匹配所有端口。
+      </li>
+      </ul>
+      </p>
+      
+      <h3 id="pattern-precedence"><!--@Pattern precedence-->匹配表达式的优先顺序</h3>
+      <p>
+      <!--@When more than one content setting rule applies for a given site, the rule with
+      the more specific pattern takes precedence.-->
+      当不止一个内容设置规则应用于同一个站点时，规则的匹配表达式更具体则优先。
+      </p>
+      <p><!--@For example, the following patterns are ordered by precedence:-->例如，匹配表达式按照优先顺序排列如下：</p>
+      <ol>
+      <li><code>http://www.example.com/*</code></li>
+      <li><code>http://*.example.com/*</code><!--@ (matching
+      example.com and all subdomains)-->（匹配 example.com 以及所有子域名）</li>
+      <li><code>&lt;all_urls&gt;</code><!--@ (matching every URL)-->（匹配所有 URL）</li>
+      </ol>
+      <p>
+      <!--@Three kinds of wildcards affect how specific a pattern is:-->
+      三种类型的通配符影响匹配表达式的具体程度：
+      </p>
+      <ul>
+      <li><!--@Wildcards in the port (for example-->端口号中的通配符（例如
+      <code>http://www.example.com:*/*</code><!--@)-->）</li>
+      <li><!--@Wildcards in the scheme (for example-->协议中的通配符（例如
+      <code>*://www.example.com:123/*</code><!--@)-->）</li>
+      <li><!--@Wildcards in the hostname (for example-->主机名中的通配符（例如
+      <code>http://*.example.com:123/*</code><!--@)-->）</li>
+      </ul>
+      <p>
+      <!--@If a pattern is more specific than another pattern in one part but less specific
+      in another part, the different parts are checked in the following order:
+      hostname, scheme, port. For example, the following patterns are ordered by
+      precedence:-->
+      如果某个匹配表达式中的某一部分比另一个更具体，但是另一部分却不太具体，将按照以下顺序检查不同的部分：主机名、协议、端口。例如，匹配表达式按照优先顺序排列如下：
+      </p>
+      <ol>
+      <li><code>http://www.example.com:*/*</code><br>
+      <!--@Specifies the hostname and scheme.-->指定主机名与协议。</li>
+      <li><code>*:/www.example.com:123/*</code><br>
+      <!--@Not as high, because although it specifies the hostname, it doesn't specify
+      the scheme.-->不如第一个优先级高，因为尽管它指定了主机名，但是没有指定协议。</li>
+      <li><code>http://*.example.com:123/*</code><br>
+      <!--@Lower because although it specifies the port and scheme, it has a wildcard
+      in the hostname.-->优先级更低，因为尽管它指定了端口和协议，但是主机名中包含通配符。</li>
+      </ol>
+      
+      <h2 id="primary-secondary"><!--@Primary and secondary patterns-->主要和辅助匹配表达式</h2>
+      <p>
+      <!--@The URL taken into account when deciding which content setting to apply depends
+      on the content type. For example, for
+      <a href=/extensions/contentSettings#property-notifications>contentSettings.notifications</a> settings are
+      based on the URL shown in the omnibox. This URL is called the "primary" URL.-->
+      当决定应用哪些内容设置时考虑的 URL
+      取决于内容类型。例如，对于
+      <a href="contentSettings.html#property-notifications">contentSettings.notifications</a>（通知）来说，设置基于多功能框中显示的
+      URL，这一 URL 称为“主要”URL。
+      </p>
+      <p>
+      <!--@Some content types can take additional URLs into account. For example,
+      whether a site is allowed to set a
+      <a href=/extensions/contentSettings#property-cookies>contentSettings.cookies</a> is decided based on the URL
+      of the HTTP request (which is the primary URL in this case) as well as the URL
+      shown in the omnibox (which is called the "secondary" URL).-->
+      某些内容类型会考虑额外的 URL。例如，某一站点是否允许设置
+      <a href="contentSettings.html#property-cookies">Cookie</a> 取决于 HTTP 请求的
+      URL（在这种情况下为主要 URL）以及多功能框中显示的 URL（称为“辅助”URL）。
+      </p>
+      <p>
+      <!--@If multiple rules have primary and secondary patterns, the rule with the more
+      specific primary pattern takes precedence. If there multiple rules have the same
+      primary pattern, the rule with the more specific secondary pattern takes
+      precedence. For example, the following list of primary/secondary pattern pairs
+      is ordered by precedence:-->
+      如果多个规则包含主要和辅助匹配表达式，规则的主要匹配表达式更具体则优先。如果多个规则包含同样的主要匹配表达式，规则的辅助匹配表达式更具体则优先。例如，主要/辅助匹配表达式对按照优先顺序排列如下：
+      </p>
+      <table>
+      <tr><th><!--@Precedence-->优先级</th><th><!--@Primary pattern-->主要匹配表达式</th><th><!--@Secondary pattern-->辅助匹配表达式</th>
+      <tr>
+        <td>1</td>
+        <td><code>http://www.moose.com/*</code>, </td>
+        <td><code>http://www.wombat.com/*</code></td>
+      </tr><tr>
+        <td>2</td>
+        <td><code>http://www.moose.com/*</code>, </td>
+        <td><code>&lt;all_urls&gt;</code></td>
+      </tr><tr>
+        <td>3</td>
+        <td><code>&lt;all_urls&gt;</code>, </td>
+        <td><code>http://www.wombat.com/*</code></td>
+      </tr><tr>
+        <td>4</td>
+        <td><code>&lt;all_urls&gt;</code>, </td>
+        <td><code>&lt;all_urls&gt;</code></td>
+      </tr>
+      </table>
+      
+      <h2 id="resource-identifiers"><!--@Resource identifiers-->资源标识符</h2>
+      <p>
+      <!--@Resource identifiers allow you to specify content settings for specific
+      subtypes of a content type. Currently, the only content type that supports
+      resource identifiers is <a href=/extensions/contentSettings#property-plugins>contentSettings.plugins</a>,
+      where a resource identifier identifies a specific plug-in. When applying content
+      settings, first the settings for the specific plug-in are checked. If there are
+      no settings found for the specific plug-in, the general content settings for
+      plug-ins are checked.-->
+      资源标识符允许您为某种内容类型特定的子类型指定内容设置。当前，支持资源标识符的内容类型只有
+      p<a href="contentSettings.html#property-plugins">contentSettings.plugins</a>（插件），其中资源标识符标识某个插件。当应用内容设置时，首先检查用于特定插件的设置。如果没有找到用于插件的设置，将检查用于所有插件的通用设置。
+      </p>
+      <p>
+      <!--@For example, if a content setting rule has the resource identifier
+      <code>adobe-flash-player</code> and the pattern <code>&lt;all_urls&gt;</code>,
+      it takes precedence over a rule without a resource identifier and the pattern
+      <code>http://www.example.com/*</code>, even if that pattern is more specific.-->
+      例如，如果一项内容设置规则的资源标识符为
+      <code>adobe-flash-player</code>，匹配表达式为
+      <code>&lt;all_urls&gt;</code>，则它的优先级高于没有资源标识符、只有匹配表达式
+      <code>http://www.example.com/*</code> 的规则，即使后者的匹配表达式更加具体。
+      </p>
+      <p>
+      <!--@You can get a list of resource identifiers for a content type by calling the
+      <a href=/extensions/contentSettings#method-ContentSetting-getResourceIdentifiers>contentSettings.ContentSetting.getResourceIdentifiers</a> method. The returned list
+      can change with the set of installed plug-ins on the user's machine, but Chrome
+      tries to keep the identifiers stable across plug-in updates.-->
+      您可以通过调用
+      <a href="contentSettings.html#method-ContentSetting-getResourceIdentifiers">contentSettings.ContentSetting.getResourceIdentifiers</a>
+      方法获得某一内容类型的所有资源标识符。返回的列表可能会随着用户计算机上安装的插件而变化，但是
+      Chrome 浏览器会尽可能保持标识符在插件更新前后的稳定。
+      </p>
+      
+      <h2 id="examples"><!--@Examples-->例子</h2>
+      
+      <p>
+      <!--@You can find samples of this API on the
+      <a href="samples#contentSettings">sample page</a>.-->
+      您可以在<a href="samples.html#contentSettings">示例页面</a>找到这一
+      API 的例子。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a></td></tr>
+          <tr><td><a href="contentSettings.html#type-ContentSetting">ContentSetting</a></td></tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="contentSettings.html#property-cookies">cookies</a></td>
+          <tr><td><a href="contentSettings.html#property-images">images</a></td>
+          <tr><td><a href="contentSettings.html#property-javascript">javascript</a></td>
+          <tr><td><a href="contentSettings.html#property-plugins">plugins</a></td>
+          <tr><td><a href="contentSettings.html#property-popups">popups</a></td>
+          <tr><td><a href="contentSettings.html#property-notifications">notifications</a></td>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-ResourceIdentifier">ResourceIdentifier</h3>
+              <table>
+                <dd>使用资源标识符的内容类型只有 <a href="contentSettings.html#property-plugins">contentSettings.plugins</a>（插件）。有关更多信息，请参见<a href="contentSettings.html#resource-identifiers">资源标识符</a>。</dd>
+                  <tr><th colspan="3" id="ResourceIdentifier-properties">属性</th></tr>
+                  <tr id="property-ResourceIdentifier-id">
+                    <td>string</td>
+                    <td>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      给定内容类型的资源标识符。
+                    </p></td>
+                  </tr><tr id="property-ResourceIdentifier-description">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        description</td>
+                    <td>
+                    
+                    <p>
+                      可读性较好的资源描述。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ContentSetting">ContentSetting</h3>
+              <table>
+                  <tr><th colspan="3" id="ContentSetting-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-ContentSetting-clear"
+                        >clear
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ContentSetting.clear(<span>object details</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        清除当前扩展程序设置的所有内容设置规则。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-clear-details">
+                            <td>object</td>
+                            <td>
+                                details</td>
+                            <td>
+                            
+                              <table class="innerTable">
+                                <tr id="property-details-scope">
+                                  <td>enum of <code>"regular"</code>, or <code>"incognito_session_only"</code></td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      scope</td>
+                                  <td>
+                                  
+                                  <p>
+                                    在哪些范围内清除这些设置（默认为 "regular"）。下列值之一：<br><var>"regular"</var>（普通）：用于普通配置文件的设置（如果没有另外覆盖的话也将由隐身配置文件继承）；<br><var>"incognito_session_only"</var>（仅用于隐身会话）：用于隐身配置文件的设置，只能在隐身会话中设置，并且在隐身会话结束时删除（覆盖普通设置）。
+                                  </p></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr id="property-clear-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-ContentSetting-get"
+                        >get
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ContentSetting.get(<span>object details</span>, <span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        获得指定主要/辅助 URL 对当前对应的内容设置。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-get-details">
+                            <td>object</td>
+                            <td>
+                                details</td>
+                            <td>
+                            
+                              <table class="innerTable">
+                                <tr id="property-details-primaryUrl">
+                                  <td>string</td>
+                                  <td>
+                                      primaryUrl</td>
+                                  <td>
+                                  
+                                  <p>
+                                    要获得当前内容设置的主要 URL，注意主要 URL 的意义取决于内容类型。
+                                  </p></td>
+                                </tr><tr id="property-details-secondaryUrl">
+                                  <td>string</td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      secondaryUrl</td>
+                                  <td>
+                                  
+                                  <p>
+                                    要获得当前内容设置的辅助 URL，默认为主要 URL。注意辅助 URL 的意义取决于内容类型，并且不是所有的内容类型都使用辅助 URL。
+                                  </p></td>
+                                </tr><tr id="property-details-resourceIdentifier">
+                                  <td>    <a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a></td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      resourceIdentifier</td>
+                                  <td>
+                                  
+                                  <p>
+                                    有关要获取设置的更具体的内容类型标识符。
+                                  </p></td>
+                                </tr><tr id="property-details-incognito">
+                                  <td>boolean</td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      incognito</td>
+                                  <td>
+                                  
+                                  <p>
+                                    是否为隐身会话检查内容设置。（默认为 false）
+                                  </p></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr id="property-get-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-setting">
+                                          <td>any</td>
+                                          <td>
+                                              setting</td>
+                                          <td>
+                                          
+                                          <p>
+                                            内容设置，有关可能的值请参见每一个 ContentSetting 对象的描述。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-ContentSetting-set"
+                        >set
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ContentSetting.set(<span>object details</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        应用新的内容设置规则。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-set-details">
+                            <td>object</td>
+                            <td>
+                                details</td>
+                            <td>
+                            
+                              <table class="innerTable">
+                                <tr id="property-details-primaryPattern">
+                                  <td>string</td>
+                                  <td>
+                                      primaryPattern</td>
+                                  <td>
+                                  
+                                  <p>
+                                    主要 URL 的匹配表达式。有关匹配表达式的格式细节，请参见<a href='contentSettings.html#patterns'>内容设置的匹配表达式</a>。
+                                  </p></td>
+                                </tr><tr id="property-details-secondaryPattern">
+                                  <td>string</td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      secondaryPattern</td>
+                                  <td>
+                                  
+                                  <p>
+                                    辅助 URL 的匹配表达式，默认匹配所有 URL。有关匹配表达式的格式详情，请参见<a href='contentSettings.html#patterns'>内容设置的匹配表达式</a>。
+                                  </p></td>
+                                </tr><tr id="property-details-resourceIdentifier">
+                                  <td>    <a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a></td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      resourceIdentifier</td>
+                                  <td>
+                                  
+                                  <p>
+                                    内容类型的资源标识符。
+                                  </p></td>
+                                </tr><tr id="property-details-setting">
+                                  <td>any</td>
+                                  <td>
+                                      setting</td>
+                                  <td>
+                                  
+                                  <p>
+                                    这一规则应用的设置。有关可能的值请参见每一个 ContentSetting 对象的描述。
+                                  </p></td>
+                                </tr><tr id="property-details-scope">
+                                  <td>enum of <code>"regular"</code>, or <code>"incognito_session_only"</code></td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      scope</td>
+                                  <td>
+                                  
+                                  <p>
+                                    在哪些范围内应用这些设置（默认为 "regular"）。下列值之一：<br><var>"regular"</var>（普通）：用于普通配置文件的设置（如果没有另外覆盖的话也将由隐身配置文件继承）；<br><var>"incognito_session_only"</var>（仅用于隐身会话）：用于隐身配置文件的设置，只能在隐身会话中设置，并且在隐身会话结束时删除（覆盖普通设置）。
+                                  </p></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr id="property-set-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-ContentSetting-getResourceIdentifiers"
+                        >getResourceIdentifiers
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ContentSetting.getResourceIdentifiers(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-getResourceIdentifiers-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(array of     <a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a> resourceIdentifiers) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-resourceIdentifiers">
+                                    <td>array of     <a href="contentSettings.html#type-ResourceIdentifier">ResourceIdentifier</a></td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        resourceIdentifiers</td>
+                                    <td>
+                                    
+                                    <p>
+                                      这一内容类型的资源标识符列表，如果这一内容类型不使用资源标识符的话则为 <var>undefined</var>。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">      <a href="contentSettings.html#type-ContentSetting">ContentSetting</a></span></td>
+              <td><code id="property-cookies">chrome.contentSettings.cookies</code></td>
+              <td>
+                  是否允许网站设置 Cookie 以及其他本地数据。以下值之一：<br><var>"allow"</var>：接受 Cookie<br><var>"block"</var>：阻止 Cookie<br><var>"session_only"</var>：接受仅在当前会话有效的 Cookie<br>默认值为 <var>"allow"</var>。<br>主要 URL 为代表 Cookie 来源的 URL，辅助 URL 为顶层框架的 URL。
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="contentSettings.html#type-ContentSetting">ContentSetting</a></span></td>
+              <td><code id="property-images">chrome.contentSettings.images</code></td>
+              <td>
+                  是否显示图片。以下值之一：<br><var>"allow"</var>：显示图片<br><var>"block"</var>：不要显示图片<br>默认值为 <var>"allow"</var>。<br>主要 URL 为主框架 URL，辅助 URL 为图片 URL。
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="contentSettings.html#type-ContentSetting">ContentSetting</a></span></td>
+              <td><code id="property-javascript">chrome.contentSettings.javascript</code></td>
+              <td>
+                  是否运行 JavaScript。以下值之一：<br><var>"allow"</var>：运行 JavaScript<br><var>"block"</var>：不要运行 JavaScript<br>默认值为 <var>"allow"</var>。<br>主要 URL 为顶层框架 URL，辅助 URL 未使用。
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="contentSettings.html#type-ContentSetting">ContentSetting</a></span></td>
+              <td><code id="property-plugins">chrome.contentSettings.plugins</code></td>
+              <td>
+                  是否运行插件。以下值之一：<br><var>"allow"</var>：自动运行插件<br><var>"block"</var>：不要自动运行插件<br>默认值为 <var>"allow"</var>。<br>主要 URL 为顶层框架 URL，辅助 URL 未使用。
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="contentSettings.html#type-ContentSetting">ContentSetting</a></span></td>
+              <td><code id="property-popups">chrome.contentSettings.popups</code></td>
+              <td>
+                  是否允许站点显示弹出式窗口。以下值之一：<br><var>"allow"</var>：允许站点显示弹出式窗口<br><var>"block"</var>：不允许站点显示弹出式窗口<br>默认值为 <var>"block"</var>。<br>主要 URL 为顶层框架 URL，辅助 URL 未使用。
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="contentSettings.html#type-ContentSetting">ContentSetting</a></span></td>
+              <td><code id="property-notifications">chrome.contentSettings.notifications</code></td>
+              <td>
+                  是否允许站点显示桌面通知。以下值之一：<br><var>"allow"</var>：允许站点显示桌面通知<br><var>"block"</var>：不允许站点显示桌面通知<br><var>"ask"</var>：当站点要显示桌面通知时询问用户<br>默认值为 <var>"ask"</var>。<br>主要 URL 为顶层框架 URL，辅助 URL 未使用。
+              </td>
+            </tr>
+          </table>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#content-settings">Content settings</a></strong>
+          &ndash; Shows the content settings for the current site.
+      </li>
+          <li><strong><a href="samples.html#per-plugin-content-settings">Per-plugin content settings</a></strong>
+          &ndash; Customize your content setting for different plug-ins.
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

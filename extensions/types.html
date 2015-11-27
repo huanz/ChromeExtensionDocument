@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.types - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="types.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.types</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            <code>chrome.types</code> API 包含用于 Chrome 浏览器的类型声明。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 13<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="ChromeSetting">Chrome <!--@settings-->浏览器设置</h2>
+      
+      <p>
+      <!--@The--> <code>ChromeSetting</code> <!--@prototype provides a common set of functions
+      (<code>get()</code>, <code>set()</code>, and <code>clear()</code>) as
+      well as an event publisher (<code>onChange</code>) for settings of the
+      Chrome browser. The <a href="proxy#overview-examples">proxy settings
+       examples</a> demonstrate how these functions are intended to be used.-->
+      原型提供一组常用函数（<code>get()</code>、<code>set()</code> 和
+      <code>clear()</code>）以及一个事件发布器（<code>onChange</code>），用于
+      Chrome 浏览器设置。<a href="proxy.html#overview-examples"
+      >代理设置的例子</a>演示了这些函数应该如何使用。
+      </p>
+      
+      <h3 id="ChromeSetting-lifecycle"><!--@Scope and life cycle-->范围和生命周期</h3>
+      
+      <p>
+      <!--@Chrome distinguishes between three different scopes of browser settings:-->
+      Chrome 浏览器区分三种不同范围的浏览器设置：
+      <dl>
+        <dt><code>regular</code></dt>
+        <dd><!--@Settings set in the <code>regular</code> scope apply to regular
+        browser windows and are inherited by incognito windows if they are not
+        overwritten. These settings are stored to disk and remain in place until
+        they are cleared by the governing extension, or the governing extension is
+        disabled or uninstalled.-->
+        在 <code>regular</code>
+        范围中的设置应用于普通浏览器窗口，并且在没有覆盖的情况下由隐身窗口继承。这些设置存储在磁盘上，一直保留，除非它们由所属扩展程序清除，或者所属扩展程序禁用或卸载。
+        </dd>
+      
+        <dt><code>incognito_persistent</code></dt>
+        <dd><!--@Settings set in the <code>incognito_persistent</code> scope apply only
+        to incognito windows. For these, they override <code>regular</code>
+        settings. These settings are stored to disk and remain in place until
+        they are cleared by the governing extension, or the governing extension is
+        disabled or uninstalled.-->
+        在 <code>incognito_persistent</code>
+        范围中的设置仅应用于隐身窗口，覆盖 <code>regular</code>
+        范围中的设置。这些设置保存在磁盘上，一直保留，直到它们由所属扩展程序清除，或所属扩展程序禁用或卸载。
+        </dd>
+      
+        <dt><code>incognito_session_only</code></dt>
+        <dd><!--@Settings set in the <code>incognito_session_only</code> scope apply only
+        to incognito windows. For these, they override <code>regular</code> and
+        <code>incognito_session_only</code> settings. These settings are not
+        stored to disk and are cleared when the last incognito window is closed. They
+        can only be set when at least one incognito window is open.-->
+        在 <code>incognito_session_only</code> 范围中的设置仅应用于隐身窗口，覆盖
+        <code>regular</code> 和 <code>incognito_persistent</code>
+        范围中的设置。这些设置不保存在磁盘上，当最后一个隐身窗口关闭时清除。它们只能在至少一个隐身窗口打开的情况下设置。
+        </dd>
+      
+      </dl>
+      </p>
+      
+      <h3 id="ChromeSetting-precedence"><!--@Precedence-->优先级</h3>
+      
+      <p>
+      <!--@Chrome manages settings on different layers. The following list describes the
+      layers that may influence the effective settings, in increasing order of
+      precedence.-->
+      Chrome
+      浏览器在不同的层面上管理设置。以下列表按照优先级递增的顺序描述了可能影响有效设置的不同层面。
+      <ol>
+        <li><!--@System settings provided by the operating system-->由操作系统提供的系统设置</li>
+        <li><!--@Command-line parameters-->命令行参数</li>
+        <li><!--@Settings provided by extensions-->由扩展程序提供的设置</li>
+        <li><!--@Policies-->策略</li>
+      </ol>
+      </p>
+      
+      <p>
+      <!--@As the list implies, policies might overrule any changes that you specify with
+      your extension. You can use the <code>get()</code> function to determine whether
+      your extension is capable of providing a setting or whether this setting would
+      be overridden.-->
+      这一列表暗含着策略可以覆盖您用扩展程序指定的任何更改，您可以使用
+      <code>get()</code> 函数来确定您的扩展程序能否提供设置或者设置是否会被覆盖。
+      </p>
+      
+      <p>
+      <!--@As discussed above, Chrome allows using different settings for regular
+      windows and incognito windows. The following example illustrates the behavior.
+      Assume that no policy overrides the settings and that an extension can set
+      settings for regular windows <b>(R)</b> and settings for incognito windows
+      <b>(I)</b>.-->
+      如前面所讨论，Chrome
+      浏览器允许普通窗口与隐身窗口使用不同的设置。以下例子演示了这一行为。假设没有策略覆盖设置并且扩展程序可以分别为普通窗口<b>（R）</b>和隐身窗口<b>（I）</b>更改设置。
+      </p>
+      
+      <p>
+      <ul>
+        <li><!--@If only <b>(R)</b> is set, these settings are effective for both
+        regular and incognito windows.-->
+        如果只设置了<b>（R）</b>，这些设置对普通窗口和隐身窗口都有效。
+        </li>
+        <li><!--@If only <b>(I)</b> is set, these settings are effective for only
+        incognito windows. Regular windows use the settings determined by the lower
+        layers (command-line options and system settings).-->
+        如果只设置了<b>（I）</b>，这些设置仅对隐身窗口有效。普通窗口使用更低的层面确定的设置（命令行参数和系统设置）。
+        </li>
+        <li><!--@If both <b>(R)</b> and <b>(I)</b> are set, the respective settings are
+        used for regular and incognito windows.-->
+        如果<b>（R）</b>和<b>（I）</b>都设置，将分别为普通窗口与隐身窗口使用相应的设置。
+        </li>
+      </ul>
+      </p>
+      
+      <p>
+      <!--@If two or more extensions want to set the same setting to different values,
+      the extension installed most recently takes precedence over the other
+      extensions.  If the most recently installed extension sets only <b>(I)</b>, the
+      settings of regular windows can be defined by previously installed extensions.-->
+      如果两个或更多的扩展程序需要将同一设置修改为不同的值，最近安装的扩展程序优先于其他扩展程序。如果最近安装的扩展程序只设置了<b>（I）</b>，普通窗口的设置可以由之前安装的扩展程序定义。
+      </p>
+      
+      <p>
+      <!--@The <em>effective</em> value of a setting is the one that results from
+      considering the precedence rules. It is used by Chrome.-->
+      设置的<em>有效</em>值是考虑到以上优先级规则之后的结果，Chrome
+      浏览器将会采用它。
+      <p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="types.html#type-ChromeSetting">ChromeSetting</a></td></tr>
+          <tr><td><a href="types.html#type-ImageDetails">ImageDetails</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-ChromeSetting">ChromeSetting</h3>
+              <table>
+                <dd>允许访问 Chrome 浏览器设置的接口，有关例子请参见 <a href="accessibilityFeatures.html">accessibilityFeatures</a>。</dd>
+                  <tr><th colspan="3" id="ChromeSetting-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-ChromeSetting-get"
+                        >get
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ChromeSetting.get(<span>object details</span>, <span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        获得设置的值。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-get-details">
+                            <td>object</td>
+                            <td>
+                                details</td>
+                            <td>
+                            
+                            <p>
+                              考虑哪一项设置。
+                            </p>  <table class="innerTable">
+                                <tr id="property-details-incognito">
+                                  <td>boolean</td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      incognito</td>
+                                  <td>
+                                  
+                                  <p>
+                                    是否返回应用于隐身会话的值（默认为 false）。
+                                  </p></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr id="property-get-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                    <p>
+                                      当前有效值的详情。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-details-value">
+                                          <td>any</td>
+                                          <td>
+                                              value</td>
+                                          <td>
+                                          
+                                          <p>
+                                            设置的值。
+                                          </p></td>
+                                        </tr><tr id="property-details-levelOfControl">
+                                          <td>enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code></td>
+                                          <td>
+                                              levelOfControl</td>
+                                          <td>
+                                          
+                                          <p>
+                                            以下值之一：<ul><li><var>"not_controllable"</var>：无法由任何扩展程序控制。</li><li><var>"controlled_by_other_extensions"</var>：由优先级更高的扩展程序控制。</li><li><var>"controllable_by_this_extension"</var>：可以由该扩展程序控制。</li><li><var>"controlled_by_this_extension"</var>：由该扩展程序控制。</li></ul>
+                                          </p></td>
+                                        </tr><tr id="property-details-incognitoSpecific">
+                                          <td>boolean</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              incognitoSpecific</td>
+                                          <td>
+                                          
+                                          <p>
+                                            有效值是否只适用于隐身会话。<br><em>只有</em>当 <code>get()</code> 方法的 <var>details</var> 参数中 <var>incognito</var> 属性为 true 时才存在。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-ChromeSetting-set"
+                        >set
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ChromeSetting.set(<span>object details</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        修改设置的值。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-set-details">
+                            <td>object</td>
+                            <td>
+                                details</td>
+                            <td>
+                            
+                            <p>
+                              考虑哪一项设置。
+                            </p>  <table class="innerTable">
+                                <tr id="property-details-value">
+                                  <td>any</td>
+                                  <td>
+                                      value</td>
+                                  <td>
+                                  
+                                  <p>
+                                    设置的值。<br>注意每一项设置都有特定的值类型，与该设置一起描述。扩展程序<em>不应该</em>设置不同类型的值。
+                                  </p></td>
+                                </tr><tr id="property-details-scope">
+                                  <td>enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code></td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      scope</td>
+                                  <td>
+                                  
+                                  <p>
+                                    修改哪些范围的设置（默认为 "regular"）。以下值之一：<ul><li><var>"regular"</var>：用于普通用户配置文件（如果没有被其他地方的设置覆盖，也将由隐身窗口继承）；</li><li><var>"regular_only"</var>：仅用于普通用户配置文件（不被隐身配置文件继承）；</li><li><var>"incognito_persistent"</var>：用于隐身配置文件的设置，并且在浏览器重启后仍保留（覆盖 "regular" 设置）；</li><li><var>"incognito_session_only"</var>：用于隐身配置文件的设置，并且只能在隐身会话中设置，在隐身会话结束时删除（覆盖 "regular" 和 "incognito_persistent" 设置）。</li></ul>
+                                  </p></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr id="property-set-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              设置操作完成后调用。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-ChromeSetting-clear"
+                        >clear
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ChromeSetting.clear(<span>object details</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        清除设置，恢复默认值。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-clear-details">
+                            <td>object</td>
+                            <td>
+                                details</td>
+                            <td>
+                            
+                            <p>
+                              要清除哪一项设置。
+                            </p>  <table class="innerTable">
+                                <tr id="property-details-scope">
+                                  <td>enum of <code>"regular"</code>, <code>"regular_only"</code>, <code>"incognito_persistent"</code>, or <code>"incognito_session_only"</code></td>
+                                  <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                      scope</td>
+                                  <td>
+                                  
+                                  <p>
+                                    清除哪些范围的设置（默认为 "regular"）。以下值之一：<ul><li><var>"regular"</var>：用于普通用户配置文件（如果没有被其他地方的设置覆盖，也将由隐身窗口继承）；</li><li><var>"regular_only"</var>：仅用于普通用户配置文件（不被隐身配置文件继承）；</li><li><var>"incognito_persistent"</var>：用于隐身配置文件的设置，并且在浏览器重启后仍保留（覆盖 "regular" 设置）；</li><li><var>"incognito_session_only"</var>：用于隐身配置文件的设置，并且只能在隐身会话中设置，在隐身会话结束时删除（覆盖 "regular" 和 "incognito_persistent" 设置）。
+                                  </p></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr id="property-clear-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              清除操作完成后调用。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+                  <tr><th colspan="3" id="ChromeSetting-events">事件</th></tr>
+                  <div>
+                    <h3 id="event-ChromeSetting-onChange">onChange</h3>
+                    <div class="description">
+                  <p>
+                        设置更改后产生。
+                      </p>      <tr><td>
+                        <div>
+                          <h4
+                              title="">addListener
+                          </h4>
+                          <div class="summary">
+                          <code class="prettyprint">
+                          onChange.addListener(<span>function callback</span>)
+                          </code>
+                          </div>
+                          <div class="description">
+                            <table class="innerTable">
+                              <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                                <tr id="property-onChange-callback">
+                                  <td>function</td>
+                                  <td>
+                                      callback</td>
+                                  <td>
+                                  
+                                      <p>
+                                          <!--@The <em>callback</em> parameter should be a function
+                                          that looks like this:-->
+                                          <em>callback</em> 参数应该是一个如下形式的函数：
+                                      </p>
+                                    <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                      <table class="innerTable">
+                                        <tr id="property-onChange-details">
+                                          <td>object</td>
+                                          <td>
+                                              details</td>
+                                          <td>
+                                          
+                                            <table class="innerTable">
+                                              <tr id="property-details-value">
+                                                <td>any</td>
+                                                <td>
+                                                    value</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  更改后的设置值。
+                                                </p></td>
+                                              </tr><tr id="property-details-levelOfControl">
+                                                <td>enum of <code>"not_controllable"</code>, <code>"controlled_by_other_extensions"</code>, <code>"controllable_by_this_extension"</code>, or <code>"controlled_by_this_extension"</code></td>
+                                                <td>
+                                                    levelOfControl</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  以下值之一：<ul><li><var>"not_controllable"</var>：无法由任何扩展程序控制。</li><li><var>"controlled_by_other_extensions"</var>：由优先级更高的扩展程序控制。</li><li><var>"controllable_by_this_extension"</var>：可以由该扩展程序控制。</li><li><var>"controlled_by_this_extension"</var>：由该扩展程序控制。</li></ul>
+                                                </p></td>
+                                              </tr><tr id="property-details-incognitoSpecific">
+                                                <td>boolean</td>
+                                                <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                    incognitoSpecific</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  有效值是否只适用于隐身会话。<br><em>只有</em>当用户允许这一扩展程序在隐身模式中运行时才会存在该属性。
+                                                </p></td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                  </td>
+                                </tr>
+                            </table>
+                          </div>
+                        </div>
+                        </td></tr>
+                    </div>
+                  </div>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ImageDetails">ImageDetails</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>图片格式和质量的有关详情。</dd>
+                  <tr><th colspan="3" id="ImageDetails-properties">属性</th></tr>
+                  <tr id="property-ImageDetails-format">
+                    <td>enum of <code>"jpeg"</code>, or <code>"png"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        format</td>
+                    <td>
+                    
+                    <p>
+                      所得图像的格式，默认为 jpeg。
+                    </p></td>
+                  </tr><tr id="property-ImageDetails-quality">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        quality</td>
+                    <td>
+                    
+                    <p>
+                      当格式为 <code>"jpeg"</code> 时，控制所得图像的质量。使用 PNG 图像时忽略该参数。随着质量下降，所得图像会更加粗糙，用于储存图像所需的字节数也会下降。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

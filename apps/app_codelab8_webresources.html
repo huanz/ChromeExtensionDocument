@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>访问网络资源 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_codelab8_webresources.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1 id="lab_8_web_resources"><!--@Access Web Resources-->访问网络资源</h1>
+
+<p>Chrome <!--@Apps have a strict
+<a href="contentSecurityPolicy">Content Security Policy</a>
+which will not let the user execute code or load resources that are hosted remotely.-->
+应用有一项严格的<a href="contentSecurityPolicy.html">内容安全策略</a>，不会让用户执行或加载远程托管的代码和资源。
+</p>
+
+<p><!--@Many applications, however, need to be able to load and display content from a remote location. A News Reader, for example, needs to display remote content inline or load and show images from a remote URL.-->
+然而许多应用都需要加载并显示来自远程位置的内容。例如新闻阅读器需要以内嵌方式显示远程内容，或者从远程 URL 加载并显示图片。
+</p>
+
+<h2 id="loading_external_web_content_into_an_element"><!--@Load external web content-->载入外部网络内容</h2>
+
+<p><!--@Sites on the internet are inherently a security risk and rendering arbitrary web pages directly into your application with elevated privileges would be a potential source of exploits.-->
+互联网上的站点有固有的安全风险，直接在您的应用中以提升的权限渲染网页是漏洞的潜在来源。
+</p>
+
+<p><!--@Chrome Apps offer developers the ability
+to securely render third-party content in the <code>&lt;webview&gt;</code> tag.
+A <a href="webview_tag">webview</a>
+is like an iframe that you can control with greater flexibility and added security.
+It runs in a separate sandboxed process and can&#39;t communicate directly with the application.-->
+Chrome 应用为开发者提供了在 <code>&lt;webview&gt;</code>
+标签中安全渲染第三方内容的能力。<a href="tags/webview.html">webview</a>
+就像 iframe
+一样，但是您能够更灵活地控制它，并具有额外的安全性。它在单独的经过沙盒屏蔽的进程中运行，不能直接与应用通信。
+</p>
+
+<p><!--@The <code>webview</code> has a very simple API.
+From your app you can:-->
+<code>webview</code> 包含一些很简单的 API，在您的应用中您可以：
+</p>
+
+<ul>
+<li> <!--@Change the URL of the <code>webview</code>.-->更改 <code>webview</code> 的 URL。</li>
+<li> <!--@Navigate forwards and backward, stop loading and reload.-->前进和后退导航、停止加载和重新加载。</li>
+<li> <!--@Check if the <code>webview</code> has finished loading and if it is possible, go back and forward in the history stack.-->检查 <code>webview</code> 是否加载完成，如果可能的话在历史栈中前进和后退。</li>
+</ul>
+
+<p><!--@We will change our code to render the content of URLs dropped
+in the drag-and-drop operations in a <code>webview</code> when the user clicks on a link.-->
+我们会修改我们的代码，当用户单击某个链接时，在 <code>webview</code> 中渲染拖放操作中的
+URL 的内容。
+</p>
+
+<h3 id="manifest"><!--@Update manifest-->更新清单文件</h3>
+
+<p><!--@Request a new permission, &quot;webview&quot;, in the manifest.-->
+在清单文件中请求一个新的权限——"webview"，<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/manifest.json">AngularJS manifest.json</a> <!--@and-->和
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/1_webview/manifest.json">JavaScript manifest.json</a> <!--@are the same:-->是一样的：
+</p>
+
+<pre data-filename="manifest.json">
+&quot;permissions&quot;: [&quot;storage&quot;, &quot;webview&quot;]
+</pre>
+
+<h3 id="view"><!--@Update view-->更新视图</h3>
+
+<p><!--@Add a <code>&lt;webview&gt;</code> tag and a link to the view:
+-->在视图中添加一个 <code>&lt;webview&gt;</code> 标签和一个链接：<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/index.html">AngularJS index.html</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/1_webview/index.html">JavaScript index.html</a><!--@:-->：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="index.html">
+&lt;!-- in TODO item: --&gt;
+&lt;a ng-show=&quot;todo.uri&quot; href=&quot;&quot; ng-click=&quot;showUri(todo.uri)&quot;&gt;(view url)&lt;/a&gt;
+&lt;!-- at the bottom, below the end of body: --&gt;
+&lt;webview&gt;&lt;/webview&gt;
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="index.html">
+&lt;!-- right after the &quot;dropText&quot; div: --&gt;
+&lt;webview&gt;&lt;/webview&gt;
+&lt;!-- in the TODO template, right before the end of the li: --&gt;
+&lt;a style=&quot;display: none;&quot; href=&quot;&quot;&gt;(view url)&lt;/a&gt;
+    </pre>
+  </content>
+
+</tabs>
+
+<h3 id="css"><!--@Update stylesheet-->更新样式表</h3>
+
+<p><!--@Set an appropriate width and height to the <code>&lt;webview&gt;</code> tag in
+the style sheet.
+-->在样式表中为 webview 标签设置合适的宽度和高度（默认大小为零），<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/todo.css">AngularJS todo.css</a> <!--@and-->和
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/1_webview/todo.css">JavaScript todo.css</a> <!--@are the same:-->
+是一样的：
+</p>
+
+<pre data-filename="todo.css">
+webview {
+  width: 100%;
+  height: 200px;
+}
+</pre>
+
+<h3 id="controller"><!--@Update controller-->更新控制器</h3>
+
+<p><!--@We now only need to add a method,
+<code>showUri</code>, to the-->
+我们现在只需要向
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/1_webview/controller.js">AngularJS controller.js</a>
+添加 <code>showUrl</code>方法，<!--@or an event handler, <code>showUrl</code>, to the-->或者向
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/1_webview/controller.js">JavaScript controller.js</a><!--@.-->
+添加一个 <code>showUrl</code> 事件处理程序。
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="controller.js">
+$scope.showUri = function(uri) {
+  var webview=document.querySelector(&quot;webview&quot;);
+  webview.src=uri;
+};
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="controller.js">
+if(/^http:\/\/|https:\/\//.test(todoObj.text)) {
+  var showUrl = el.querySelector('a');
+  showUrl.addEventListener('click', function(e) {
+    e.preventDefault();
+    var webview=document.querySelector("webview");
+    webview.src=todoObj.text;
+  });
+  showUrl.style.display = 'inline';
+}
+    </pre>
+  </content>
+
+</tabs>
+
+<h3 id="results"><!--@Check the results-->检查结果</h3>
+
+<p><!--@To test, open the app, right-click, and select Reload App.
+You should be able to click on the &quot;view url&quot; link
+on any dropped URL Todo item,
+and the corresponding web page will show in the <code>webview</code>.
+If it&#39;s not showing,
+inspect the page and check if you set the <code>webview</code> size appropriately.-->
+为了测试，请打开应用，单击右键，并选择“重新加载应用”。您应该能够在拖放的 URL
+待办事项上单击“view url”链接，相应的网页就会显示在 <code>webview</code>
+中。如果没有显示的话，审查页面并确认您正确设置了 <code>webview</code> 的大小。
+</p>
+
+<p><!--@If you get stuck and want to see the app in action,
+go to <code>chrome://extensions</code>,
+load the unpacked-->如果您遇到了困难，希望立刻看到修改后的应用，请进入
+<code>chrome://extensions</code>，加载未打包的
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/tree/master/lab8_webresources/angularjs/1_webview">AngularJS 1_webview</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/tree/master/lab8_webresources/javascript/1_webview">JavaScript 1_webview</a><!--@,
+and launch the app from a new tab.-->
+，并从新标签页中运行应用。
+</p>
+
+<h2 id="loading_external_images"><!--@Load external images-->加载外部图片</h2>
+
+<p><!--@If you try to add an <code>&lt;img&gt;</code> tag to your <code>index.html</code>, and point its <code>src</code> attribute to any site on the web, the following exception is thrown in the console and the image isn&#39;t loaded:-->
+如果您试着在 <code>index.html</code> 中添加一个 <code>&lt;img&gt;</code>
+标签，并将它的 <code>src</code>
+属性指向网上的任何一个站点，则会在控制台中产生如下异常，图片不会加载：
+</p>
+
+<p class="note"><b></b> Refused to load the image &#39;http://angularjs.org/img/AngularJS-large.png&#39; because it violates the following Content Security Policy directive: &quot;img-src &#39;self&#39; data: chrome-extension-resource:&quot;.（拒绝加载图片 &#39;http://angularjs.org/img/AngularJS-large.png&#39;，因为它违反了以下内容安全策略的指示：&quot;img-src &#39;self&#39; data: chrome-extension-resource:&quot;。）</p>
+
+<p><!--@Chrome apps cannot load any external resource directly in the DOM, because of the -->由于<a href="contentSecurityPolicy.html"><!--@CSP restrictions-->内容安全策略的限制</a>，Chrome 应用不能直接在 DOM 中加载任何外部资源。</p>
+
+<p><!--@To avoid this restriction, you can use XHR requests, grab the blob corresponding to the remote file and use it appropriately.
+For example, <code>&lt;img&gt;</code> tags can use a blob URL.
+Let&#39;s change our application to show a small icon in the Todo list if the dropped URL represents an image.-->
+为了避免这一限制，您可以使用 XHR 请求，获取远程文件对应的
+Blob，并以合适的方式使用它。例如，<code>&lt;img&gt;</code> 标签可以使用 Blob
+URL。让我们修改我们的应用，如果拖放的 URL
+表示图片的话，在待办事项列表中显示一个小图标。
+</p>
+
+<h3 id="manifest2"><!--@Update manifest-->更新清单文件</h3>
+
+<p><!--@Before you start firing XHR requests, you must request permissions.
+Since we want to allow users to drag and drop images from any server,
+we need to request permission to XHR to any URL.
+Change-->
+在您开始发出 XHR 请求前，您必须请求权限。因为我们希望允许用户拖放来自任意服务器的图片，我们需要请求向任意 URL 发出 XHR 的权限。修改
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/2_loading_resources/manifest.json">AngularJS manifest.json</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/2_loading_resources/manifest.json">JavaScript manifest.json</a><!--@:-->：
+</p>
+
+<pre data-filename="manifest.json">
+&quot;permissions&quot;: [&quot;storage&quot;, &quot;webview&quot;, &quot;&lt;all_urls&gt;&quot;]
+</pre>
+
+<h3 id="image"><!--@Add image-->添加图片</h3>
+
+<p><!--@Add to your project a placeholder image-->
+在您的项目中添加一个占位符图片
+<img src="https://github.com/GoogleChrome/chrome-app-codelab/raw/master/lab8_webresources/angularjs/2_loading_resources/loading.gif" alt="loading.gif"><!--@
+that will be shown while we are loading the proper image.-->，当我们加载正确的图片时显示它。
+</p>
+
+<p><!--@Then add the <code>&lt;img&gt;</code> tag to the Todo item on the view:
+-->然后在视图中向待办事项添加 <code>&lt;img&gt;</code> 标签：<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/2_loading_resources/index.html">AngularJS index.html</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/2_loading_resources/index.html">JavaScript index_html</a><!--@:-->：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="loader.js">
+&lt;img style=&quot;max-height: 48px; max-width: 120px;&quot; ng-show=&quot;todo.validImage&quot;
+ng-src=&quot;&#123;&#123;todo.imageUrl&#125;&#125;&quot;&gt;&lt;/img&gt;
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="loader.js">
+&lt;img style=&quot;max-height: 48px; max-width: 120px;&quot;&gt;&lt;/img&gt;
+    </pre>
+  </content>
+
+</tabs>
+
+<p>
+<!--@In the-->在
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/2_loading_resources/controller.js">JavaScript controller.js</a><!--@,
+add a constant for the placeholder image:-->
+中，添加一个占位符图片的常量：
+</p>
+
+<pre data-filename="controller.js">
+const PLACEHOLDER_IMAGE = "loading.gif";
+</pre>
+
+<p>
+<!--@As you will see soon,
+this element is only shown when the <code>validImage</code> attribute of the Todo item is true.-->
+您很快就会看到，只有当待办事项的 <code>validImage</code> 属性为 true 时才会显示该元素。
+</p>
+
+<h3 id="controller2"><!--@Update controller-->更新控制器</h3>
+
+<p><!--@Add the method <code>loadImage</code> to a new script file
+that will start a XHR request and execute a callback with a Blob URL.-->
+添加 loadImage 方法，发出 XHR 请求，并执行一个接受 Blob URL
+的回调函数，<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/2_loading_resources/loader.js">AngularJS loader.js</a> <!--@and-->和
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/2_loading_resources/loader.js">JavaScript loader.js</a> <!--@are the same:-->是一样的：
+</p>
+
+<pre data-filename="loader.js">
+var loadImage = function(uri, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = &#39;blob&#39;;
+  xhr.onload = function() {
+    callback(window.URL.createObjectURL(xhr.response), uri);
+  }
+  xhr.open(&#39;GET&#39;, uri, true);
+  xhr.send();
+}
+</pre>
+
+<p><!--@In the-->在
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/2_loading_resources/controller.js">AngularJS controller.js</a> <!--@or-->或
+<a href="">JavaScript controller.js</a><!--@,
+add a new method that will search the Todo list looking for images that are not loaded yet:-->
+中，添加一个新方法，搜索待办事项列表，寻找还未加载的图片：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="controller.js">
+// for each image with no imageUrl, start a new loader
+$scope.loadImages = function() {
+  for (var i=0; i&lt;$scope.todos.length; i++) {
+    var todo=$scope.todos[i];
+    if (todo.validImage &amp;&amp; todo.imageUrl===PLACEHOLDER_IMAGE) {
+      loadImage(todo.uri, function(blob_uri, requested_uri) {
+        $scope.$apply(function(scope) {
+          for (var k=0; k&lt;scope.todos.length; k++) {
+            if (scope.todos[k].uri==requested_uri) {
+              scope.todos[k].imageUrl = blob_uri;
+            }
+          }
+        });
+      });
+    }
+  }
+};
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="controller.js">
+ var maybeStartImageLoader = function(el, todo) {
+    var img = el.querySelector('img');
+    if (todo['extras'] && todo.extras.validImage && todo.extras.imageUrl) {
+      if (todo.extras.imageUrl===PLACEHOLDER_IMAGE) {
+        img.src = PLACEHOLDER_IMAGE;
+        img.style.display = 'inline';
+        window.loadImage(todo.extras.uri, function(blob_uri, requested_uri) {
+          todo.extras.imageUrl = blob_uri;
+          img.src = blob_uri;
+        });
+      } else {
+        img.src = todo.extras.imageUrl;
+        img.style.display = 'inline';
+      }
+    } else {
+      img.style.display = 'none'; 
+    }
+  };
+    </pre>
+  </content>
+
+</tabs>
+
+<p>
+<!--@If writing your app in JavaScript,
+you will need to call the <code>maybeStartImageLoader</code> function
+in the-->
+如果您使用 JavaScript 编写您的应用，您需要在
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/2_loading_resources/controller.js">JavaScript controller.js</a>
+<!--@to update the Todo list from the model:-->
+中调用 <code>maybeStartImageLoader</code> 函数，根据模型更新待办事项列表：
+</p>
+
+<pre data-filename="controller.js">
+var updateTodo = function(model) {
+  var todoElement = list.querySelector('li[data-id="'+model.id+'"]');
+  if (todoElement) {
+    var checkbox = todoElement.querySelector('input[type="checkbox"]');
+    var desc = todoElement.querySelector('span');
+    checkbox.checked = model.isDone;
+    desc.innerText = model.text;
+    desc.className = "done-"+model.isDone;
+
+    // load image, if this ToDo has image data
+    maybeStartImageLoader(todoElement, model);
+  }
+}
+</pre>
+
+<p><!--@Then in the -->然后，在
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/angularjs/2_loading_resources/controller.js">AngularJS controller.js</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab8_webresources/javascript/2_loading_resources/controller.js">JavaScript.controller.js</a><!--@,-->
+的
+<code>drop()</code> <!--@method,
+change the handling of URIs to appropriately detect a valid image.
+For simplicity sake, we only tested for png and jpg extensions.
+Feel free to have a better coverage in your code.-->
+方法中，修改 URI 的处理方式，适当地检测有效的图片。为了简单起见，我们只测试
+png 和 jpg 扩展名，您可以在您的代码中检测其他类型。
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="controller.js">
+var uri=e.dataTransfer.getData(&quot;text/uri-list&quot;);
+var todo = {text:uri, done:false, uri: uri};
+if (/.png$/.test(uri) || /.jpg$/.test(uri)) {
+  hasImage = true;
+  todo.validImage = true;
+  todo.imageUrl = PLACEHOLDER_IMAGE;
+}
+newTodos.push(todo);
+
+// [...] inside the $apply method, before save(), call the loadImages method:
+$scope.loadImages();
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="controller.js">
+var uri = e.dataTransfer.getData("text/uri-list");
+var extras = { uri: uri };
+if (/\.png$/.test(uri) || /\.jpg$/.test(uri)) {
+  hasImage = true;
+  extras.validImage = true;
+  extras.imageUrl = PLACEHOLDER_IMAGE;
+}
+model.addTodo(uri, false, extras);
+    </pre>
+  </content>
+
+</tabs>
+
+<p><!--@And, finally, we will change the load method to reset the Blob URLs,
+since Blob URLs don&#39;t span through sessions.
+Setting Todo&#39;s imageUrls to the PLACEHOLDER_IMAGE
+will force the loadImages method to request them again:-->
+最后，我们要修改 load 方法，重新设置 Blob URL，因为 Blob URL
+不会在会话间保留。将待办事项的 imageUrls 设置为 PLACEHOLDER_IMAGE 强制使
+loadImages 方法再次请求它们：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="controller.js">
+// If there is saved data in storage, use it. Otherwise, bootstrap with sample todos
+$scope.load = function(value) {
+  if (value &amp;&amp; value.todolist) {
+    // ObjectURLs are revoked when the document is removed from memory,
+    // so we need to reload all images.
+    for (var i=0; i&lt;value.todolist.length; i++) {
+      value.todolist[i].imageUrl = PLACEHOLDER_IMAGE;
+    }
+    $scope.todos = value.todolist;
+    $scope.loadImages();
+  } else {
+    $scope.todos = [
+      {text:&#39;learn angular&#39;, done:true},
+      {text:&#39;build an angular app&#39;, done:false}];
+  }
+}
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="controller.js">
+/**
+ * Listen to changes in the model and trigger the appropriate changes in the view
+ **/
+model.addListener(function(model, changeType, param) {
+  if ( changeType === 'reset' ) {
+    // let's invalidate all Blob URLs, since their lifetime is tied to the document's lifetime
+    for (var id in model.todos) {
+      if (model.todos[id].extras && model.todos[id].extras.validImage) {
+        model.todos[id].extras.imageUrl = PLACEHOLDER_IMAGE;
+      }
+    }
+  }
+
+  if ( changeType === 'removed' || changeType === 'archived' || changeType === 'reset') {
+    redrawUI(model);
+  } else if ( changeType === 'added' ) {
+    drawTodo(model.todos[param], list);
+  } else if ( changeType === 'stateChanged') {
+    updateTodo(model.todos[param]);
+  }
+  storageSave();
+  updateCounters(model);
+});
+    </pre>
+  </content>
+
+</tabs>
+
+<h3 id="results2"><!--@Check the results-->检查结果</h3>
+
+<p><!--@To test, open the app, right-click, and select Reload App.
+Go to-->
+为了测试，打开应用，单击右键，并选择重新加载应用。进入
+<a href="https://www.google.com/imghp?hl=en&tab=wi&authuser=0">Google <!--@images-->图片</a><!--@,
+search for and select an image,
+then drag and drop the image into the Todo list app.
+Assuming no mistakes were made,
+you should now have a thumbnail of every image URL dropped into the Todo list app.-->，搜索并选择一个图片，并将图片拖放到待办事项列表应用。如果没有任何错误的话，您应该看到拖放到待办事项应用的每一个图片
+URL 的缩略图。
+</p>
+
+<p>
+<!--@Notice we are not handling local images dropped from the file manager in this change.
+We leave this as a challenge for you.-->
+注意，我们在这一更改中没有处理从文件管理器中拖放的本地图片，我们将它作为一项挑战留给您。
+</p>
+
+<p><!--@If you get stuck and want to see the app in action,
+go to <code>chrome://extensions</code>, load the unpacked-->
+如果您遇到了困难，希望立刻看到修改后的应用，请进入
+<code>chrome://extensions</code>，加载未打包的
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/tree/master/lab8_webresources/angularjs/2_loading_resources">AngularJS 2_loading_resources</a> <!--@or,-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/tree/master/lab8_webresources/javascript/2_loading_resources">JavaScript 2_loading_resources</a><!--@
+and launch the app from a new tab.-->，并从新标签页中运行应用。</p>
+
+<p><!--@The-->以上的 <code>loadImage()</code> <!--@method above is not the best solution for this problem, because it doesn&#39;t handle errors correctly and it could cache images in a local filesystem.
+We've created the-->
+方法并不是这一问题的最佳解决方案，因为它不能正确处理错误，还会将图片缓存在本地文件系统中。我们建立了
+<a href="https://github.com/GoogleChrome/apps-resource-loader">apps-resource-loader <!--@library-->库</a><!--@
+that's much more robust.-->，它的健壮性更好。</p>
+
+<h2 id="takeaways_"><!--@Takeaways:-->更多信息</h2>
+
+<ul>
+<li><p><!--@The--> <code>&lt;webview&gt;</code> <!--@tag allows you to have a controlled browser inside your app.
+You can use it if you have part of your application that is not CSP compatible and you don&#39;t have resources to migrate it immediately, for example.
+One feature we didn&#39;t mention here is that webviews can communicate with your app and vice-versa using asynchronous-->
+标签允许您在您的应用中包含一个受控的浏览器。例如，如果您的应用有一部分不兼容
+CSP，而且您没有精力马上迁移，您可以使用它。我们没有在这里提到的一个特性是
+webview 可以使用异步的
+<a href="app_external.html#postMessage">postMessages</a><!--@.-->
+和您的应用（或反过来）通信。</p></li>
+<li><p><!--@Loading resources like images from the web is not straightforward compared to a standard web page.
+But it&#39;s not too different from traditional native platforms, where you need to handle the resource download and, only when it is correctly downloaded, you can render it in the UI. We have also developed <a href="https://github.com/GoogleChrome/apps-resource-loader">a sample library</a> to asynchronously handle resource loading from XHR calls. Feel free to use it in your projects.-->
+与标准网页相比，从网上加载图片之类的资源并不是那么直白，但是与传统的本机平台相比并没有太大的区别，您都需要处理资源下载，只有当它正确下载后才能在用户界面中显示。我们也开发了<a href="https://github.com/GoogleChrome/apps-resource-loader">一个示例库</a>，异步处理从 XHR 调用加载的资源。您可以在您的项目中自由使用它。
+</p></li>
+</ul>
+
+<h2 id="you_should_also_read"><!--@You should also read-->您还应该阅读</h2>
+
+<ul>
+<li><a href="tags/webview.html">Webview <!--@Tag-->标签 API</a> <!--@reference-->参考</li>
+<li><a href="app_external.html"><!--@Embed Content-->嵌入内容</a><!--@ tutorial-->教程</li>
+</ul>
+
+<h2 id="what_39_s_next_"><!--@What's next?-->接下来做什么？</h2>
+
+<p><!--@In-->在 <a href="app_codelab_10_publishing.html">8 - <!--@Publish App-->发布应用</a><!--@,
+we finish off with instructions on how to publish your app in the Chrome Web Store.-->中，我们将告诉您如何在 Chrome 网上应用店中发布您的应用，结束实验。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                      <h3 title="">通过代码实验室学习</h3>
+      <ol class="toc">
+                              <li>
+                                <a href="app_codelab1_setup.html">1、设置开发环境</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab2_basic.html">2、创建基本应用</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab5_data.html">4、保存和获取数据</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab8_webresources.html" class="active">7、访问网络资源</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab_10_publishing.html">8、发布应用</a>
+                              </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_codelab8_webresources.html#loading_external_web_content_into_an_element"
+          >载入外部网络内容</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_codelab8_webresources.html#manifest"
+                     >更新清单文件</a>
+              </li>
+              <li><a data-list-item href="app_codelab8_webresources.html#view"
+                     >更新视图</a>
+              </li>
+              <li><a data-list-item href="app_codelab8_webresources.html#css"
+                     >更新样式表</a>
+              </li>
+              <li><a data-list-item href="app_codelab8_webresources.html#controller"
+                     >更新控制器</a>
+              </li>
+              <li><a data-list-item href="app_codelab8_webresources.html#results"
+                     >检查结果</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab8_webresources.html#loading_external_images"
+          >加载外部图片</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_codelab8_webresources.html#manifest2"
+                     >更新清单文件</a>
+              </li>
+              <li><a data-list-item href="app_codelab8_webresources.html#image"
+                     >添加图片</a>
+              </li>
+              <li><a data-list-item href="app_codelab8_webresources.html#controller2"
+                     >更新控制器</a>
+              </li>
+              <li><a data-list-item href="app_codelab8_webresources.html#results2"
+                     >检查结果</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab8_webresources.html#takeaways_"
+          >更多信息</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab8_webresources.html#you_should_also_read"
+          >您还应该阅读</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab8_webresources.html#what_39_s_next_"
+          >接下来做什么？</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

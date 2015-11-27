@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.fontSettings - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="fontSettings.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.fontSettings</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.fontSettings</code> API 管理 Chrome 浏览器的字体设置。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "fontSettings"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p><!--@To use the Font Settings API, you must declare the "fontSettings" permission
+      in the <a href="manifest">extension manifest</a>.
+      For example:-->
+      要使用字体设置 API，您必须在<a
+      href="manifest.html">扩展程序的清单文件</a>中声明
+      "fontSettings" 权限。例如：
+      </p>
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的字体设置扩展程序",
+        "description": "自定义您的字体",
+        "version": "0.2",
+        <b>"permissions": [
+          "fontSettings"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <h2 id="scripts"><!--@Generic Font Families and Scripts-->一般字体系列及书写文字</h2>
+      <p><!--@Chrome allows for some font settings to depend on certain generic font
+      families and language scripts. For example, the font used for sans-serif
+      Simplified Chinese may be different than the font used for serif Japanese.-->
+      Chrome 浏览器提供了取决于某些一般字体系列与语言书写文字的字体设置。例如，用于简体中文的 Sans-serif 字体可能与用于日语的 Serif 字体不同。
+      </p>
+      
+      <p><!--@The generic font families supported by Chrome are based on
+      <a href="http://www.w3.org/TR/CSS21/fonts.html#generic-font-families">CSS generic font families</a>
+      and are listed in the API reference below. When a webpage specifies a generic
+      font family, Chrome selects the font based on the corresponding setting. If no
+      generic font family is specified, Chrome uses the setting for the "standard"
+      generic font family.-->
+      Chrome 浏览器支持的一般字体系列基于 <a
+      href="http://www.w3.org/TR/CSS21/fonts.html#generic-font-families">CSS
+      一般字体系列</a>，已在下面的 API
+      参考中列出。当网页指定一种一般字体系列时，Chrome
+      浏览器会基于相应的设置选择字体。如果没有指定一般字体系列，Chrome
+      浏览器会使用“标准”一般字体系列的设置。
+      </p>
+      
+      <p><!--@When a webpage specifies a language, Chrome selects the font based on the
+      setting for the corresponding language script. If no language is specified,
+      Chrome uses the setting for the default, or global, script.-->
+      当网页指定语言时，Chrome
+      浏览器基于相应语言书写文字的设置选择字体。如果没有指定语言，Chrome
+      浏览器会使用默认或全局书写文字的设置。
+      </p>
+      
+      <p><!--@The supported language scripts are specified by ISO 15924 script code and
+      listed in the API reference below. Technically, Chrome settings are not strictly
+      per-script but also depend on language. For example, Chrome chooses the font for
+      Cyrillic (ISO 15924 script code "Cyrl") when a webpage specifies the Russian
+      language, and uses this font not just for Cyrillic script but for everything the
+      font covers, such as Latin.-->
+      支持的语言书写文字基于 ISO 15924 书写文字代码，已在下面的 API
+      参考中列出。从技术上说，Chrome
+      浏览器的设置并不是严格地按照书写文字区分，也和语言相关。例如，当网页指定韩语时，Chrome
+      浏览器会选择用于谚文（ISO 15924 的书写文字代码为
+      "Hang"）的字体，而且不仅针对谚文，对于这种字体包含的所有文字，例如韩文汉字，也会使用这种字体。
+      </p>
+      
+      <h2 id="examples"><!--@Examples-->例子</h2>
+      <p><!--@The following code gets the standard font for Arabic.-->
+      如下代码获取阿拉伯语的标准字体：
+      </p>
+      <pre>
+      chrome.fontSettings.getFont(
+        { genericFamily: 'standard', script: 'Arab' },
+        function(details) { console.log(details.fontId); }
+      );
+      </pre>
+      
+      <p><!--@The next snippet sets the sans-serif font for Japanese.-->
+      下一个代码片段设置日语的 Sans-serif 字体：
+      </p>
+      <pre>
+      chrome.fontSettings.setFont(
+        { genericFamily: 'sansserif', script: 'Jpan', fontId: 'MS PGothic' }
+      );
+      </pre>
+      
+      <p><!--@You can find a sample extension using the Font Settings API in the-->
+      您可以在
+      <a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/fontSettings/">examples/api/fontSettings</a>
+      <!--@directory. For other examples and for help in viewing the source code, see
+      <a href="samples">Samples</a>.-->
+      目录中找到使用字体设置 API
+      的示例扩展程序。有关其他例子以及查看源代码的帮助，请参见<a
+      href="samples.html">示例</a>。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="fontSettings.html#type-FontName">FontName</a></td></tr>
+          <tr><td><a href="fontSettings.html#type-ScriptCode">ScriptCode</a></td></tr>
+          <tr><td><a href="fontSettings.html#type-GenericFamily">GenericFamily</a></td></tr>
+          <tr><td><a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="fontSettings.html#method-clearFont">clearFont</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.clearFont(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-getFont">getFont</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.getFont(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-setFont">setFont</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.setFont(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-getFontList">getFontList</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.getFontList(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-clearDefaultFontSize">clearDefaultFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.clearDefaultFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-getDefaultFontSize">getDefaultFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.getDefaultFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-setDefaultFontSize">setDefaultFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.setDefaultFontSize(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-clearDefaultFixedFontSize">clearDefaultFixedFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.clearDefaultFixedFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-getDefaultFixedFontSize">getDefaultFixedFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.getDefaultFixedFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-setDefaultFixedFontSize">setDefaultFixedFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.setDefaultFixedFontSize(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-clearMinimumFontSize">clearMinimumFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.clearMinimumFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-getMinimumFontSize">getMinimumFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.getMinimumFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fontSettings.html#method-setMinimumFontSize">setMinimumFontSize</a> &minus;
+            <code class="prettyprint">
+            chrome.fontSettings.setMinimumFontSize(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="fontSettings.html#event-onFontChanged">onFontChanged</a></td></tr>
+          <tr><td><a href="fontSettings.html#event-onDefaultFontSizeChanged">onDefaultFontSizeChanged</a></td></tr>
+          <tr><td><a href="fontSettings.html#event-onDefaultFixedFontSizeChanged">onDefaultFixedFontSizeChanged</a></td></tr>
+          <tr><td><a href="fontSettings.html#event-onMinimumFontSizeChanged">onMinimumFontSizeChanged</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-FontName">FontName</h3>
+              <table>
+                <dd>代表字体名称。</dd>
+                  <tr><th colspan="3" id="FontName-properties">属性</th></tr>
+                  <tr id="property-FontName-fontId">
+                    <td>string</td>
+                    <td>
+                        fontId</td>
+                    <td>
+                    
+                    <p>
+                      字体标识符。
+                    </p></td>
+                  </tr><tr id="property-FontName-displayName">
+                    <td>string</td>
+                    <td>
+                        displayName</td>
+                    <td>
+                    
+                    <p>
+                      用于显示的字体名称。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ScriptCode">ScriptCode</h3>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"Afak"</code>, 
+                  <code>"Arab"</code>, 
+                  <code>"Armi"</code>, 
+                  <code>"Armn"</code>, 
+                  <code>"Avst"</code>, 
+                  <code>"Bali"</code>, 
+                  <code>"Bamu"</code>, 
+                  <code>"Bass"</code>, 
+                  <code>"Batk"</code>, 
+                  <code>"Beng"</code>, 
+                  <code>"Blis"</code>, 
+                  <code>"Bopo"</code>, 
+                  <code>"Brah"</code>, 
+                  <code>"Brai"</code>, 
+                  <code>"Bugi"</code>, 
+                  <code>"Buhd"</code>, 
+                  <code>"Cakm"</code>, 
+                  <code>"Cans"</code>, 
+                  <code>"Cari"</code>, 
+                  <code>"Cham"</code>, 
+                  <code>"Cher"</code>, 
+                  <code>"Cirt"</code>, 
+                  <code>"Copt"</code>, 
+                  <code>"Cprt"</code>, 
+                  <code>"Cyrl"</code>, 
+                  <code>"Cyrs"</code>, 
+                  <code>"Deva"</code>, 
+                  <code>"Dsrt"</code>, 
+                  <code>"Dupl"</code>, 
+                  <code>"Egyd"</code>, 
+                  <code>"Egyh"</code>, 
+                  <code>"Egyp"</code>, 
+                  <code>"Elba"</code>, 
+                  <code>"Ethi"</code>, 
+                  <code>"Geor"</code>, 
+                  <code>"Geok"</code>, 
+                  <code>"Glag"</code>, 
+                  <code>"Goth"</code>, 
+                  <code>"Gran"</code>, 
+                  <code>"Grek"</code>, 
+                  <code>"Gujr"</code>, 
+                  <code>"Guru"</code>, 
+                  <code>"Hang"</code>, 
+                  <code>"Hani"</code>, 
+                  <code>"Hano"</code>, 
+                  <code>"Hans"</code>, 
+                  <code>"Hant"</code>, 
+                  <code>"Hebr"</code>, 
+                  <code>"Hluw"</code>, 
+                  <code>"Hmng"</code>, 
+                  <code>"Hung"</code>, 
+                  <code>"Inds"</code>, 
+                  <code>"Ital"</code>, 
+                  <code>"Java"</code>, 
+                  <code>"Jpan"</code>, 
+                  <code>"Jurc"</code>, 
+                  <code>"Kali"</code>, 
+                  <code>"Khar"</code>, 
+                  <code>"Khmr"</code>, 
+                  <code>"Khoj"</code>, 
+                  <code>"Knda"</code>, 
+                  <code>"Kpel"</code>, 
+                  <code>"Kthi"</code>, 
+                  <code>"Lana"</code>, 
+                  <code>"Laoo"</code>, 
+                  <code>"Latf"</code>, 
+                  <code>"Latg"</code>, 
+                  <code>"Latn"</code>, 
+                  <code>"Lepc"</code>, 
+                  <code>"Limb"</code>, 
+                  <code>"Lina"</code>, 
+                  <code>"Linb"</code>, 
+                  <code>"Lisu"</code>, 
+                  <code>"Loma"</code>, 
+                  <code>"Lyci"</code>, 
+                  <code>"Lydi"</code>, 
+                  <code>"Mand"</code>, 
+                  <code>"Mani"</code>, 
+                  <code>"Maya"</code>, 
+                  <code>"Mend"</code>, 
+                  <code>"Merc"</code>, 
+                  <code>"Mero"</code>, 
+                  <code>"Mlym"</code>, 
+                  <code>"Moon"</code>, 
+                  <code>"Mong"</code>, 
+                  <code>"Mroo"</code>, 
+                  <code>"Mtei"</code>, 
+                  <code>"Mymr"</code>, 
+                  <code>"Narb"</code>, 
+                  <code>"Nbat"</code>, 
+                  <code>"Nkgb"</code>, 
+                  <code>"Nkoo"</code>, 
+                  <code>"Nshu"</code>, 
+                  <code>"Ogam"</code>, 
+                  <code>"Olck"</code>, 
+                  <code>"Orkh"</code>, 
+                  <code>"Orya"</code>, 
+                  <code>"Osma"</code>, 
+                  <code>"Palm"</code>, 
+                  <code>"Perm"</code>, 
+                  <code>"Phag"</code>, 
+                  <code>"Phli"</code>, 
+                  <code>"Phlp"</code>, 
+                  <code>"Phlv"</code>, 
+                  <code>"Phnx"</code>, 
+                  <code>"Plrd"</code>, 
+                  <code>"Prti"</code>, 
+                  <code>"Rjng"</code>, 
+                  <code>"Roro"</code>, 
+                  <code>"Runr"</code>, 
+                  <code>"Samr"</code>, 
+                  <code>"Sara"</code>, 
+                  <code>"Sarb"</code>, 
+                  <code>"Saur"</code>, 
+                  <code>"Sgnw"</code>, 
+                  <code>"Shaw"</code>, 
+                  <code>"Shrd"</code>, 
+                  <code>"Sind"</code>, 
+                  <code>"Sinh"</code>, 
+                  <code>"Sora"</code>, 
+                  <code>"Sund"</code>, 
+                  <code>"Sylo"</code>, 
+                  <code>"Syrc"</code>, 
+                  <code>"Syre"</code>, 
+                  <code>"Syrj"</code>, 
+                  <code>"Syrn"</code>, 
+                  <code>"Tagb"</code>, 
+                  <code>"Takr"</code>, 
+                  <code>"Tale"</code>, 
+                  <code>"Talu"</code>, 
+                  <code>"Taml"</code>, 
+                  <code>"Tang"</code>, 
+                  <code>"Tavt"</code>, 
+                  <code>"Telu"</code>, 
+                  <code>"Teng"</code>, 
+                  <code>"Tfng"</code>, 
+                  <code>"Tglg"</code>, 
+                  <code>"Thaa"</code>, 
+                  <code>"Thai"</code>, 
+                  <code>"Tibt"</code>, 
+                  <code>"Tirh"</code>, 
+                  <code>"Ugar"</code>, 
+                  <code>"Vaii"</code>, 
+                  <code>"Visp"</code>, 
+                  <code>"Wara"</code>, 
+                  <code>"Wole"</code>, 
+                  <code>"Xpeo"</code>, 
+                  <code>"Xsux"</code>, 
+                  <code>"Yiii"</code>, 
+                  <code>"Zmth"</code>, 
+                  <code>"Zsym"</code>, 
+                  or <code>"Zyyy"</code>
+                </td></tr>
+                <dd>ISO 15924 书写文字代码，书写文字代码 "Zyyy" 代表默认或全局书写文字。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-GenericFamily">GenericFamily</h3>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"standard"</code>, 
+                  <code>"sansserif"</code>, 
+                  <code>"serif"</code>, 
+                  <code>"fixed"</code>, 
+                  <code>"cursive"</code>, 
+                  or <code>"fantasy"</code>
+                </td></tr>
+                <dd>CSS 一般字体系列。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-LevelOfControl">LevelOfControl</h3>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"not_controllable"</code>, 
+                  <code>"controlled_by_other_extensions"</code>, 
+                  <code>"controllable_by_this_extension"</code>, 
+                  or <code>"controlled_by_this_extension"</code>
+                </td></tr>
+                <dd>以下值之一：<br><var>"not_controllable"</var>：无法由任何扩展程序控制。<br><var>"controlled_by_other_extensions"</var>：由优先级更高的扩展程序控制。<br><var>"controllable_by_this_extension"</var>：可以由该扩展程序控制。<br><var>"controlled_by_this_extension"</var>：由该扩展程序控制。</dd>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-clearFont"
+                  >clearFont
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.clearFont(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  清除当前扩展程序设置过的字体（如果有的话）。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-clearFont-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-details-script">
+                            <td>    <a href="fontSettings.html#type-ScriptCode">ScriptCode</a></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                script</td>
+                            <td>
+                            
+                            <p>
+                              要清除字体设置的书写文字。如果省略，则清除全局书写文字的字体设置。
+                            </p></td>
+                          </tr><tr id="property-details-genericFamily">
+                            <td>    <a href="fontSettings.html#type-GenericFamily">GenericFamily</a></td>
+                            <td>
+                                genericFamily</td>
+                            <td>
+                            
+                            <p>
+                              要清除字体设置的一般字体系列。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-clearFont-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getFont"
+                  >getFont
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.getFont(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取指定书写文字和一般字体系列对应的字体。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getFont-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-details-script">
+                            <td>    <a href="fontSettings.html#type-ScriptCode">ScriptCode</a></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                script</td>
+                            <td>
+                            
+                            <p>
+                              要获取对应字体的书写文字。如果省略，则获取全局书写文字（书写文字代码为 "Zyyy"）对应的字体。
+                            </p></td>
+                          </tr><tr id="property-details-genericFamily">
+                            <td>    <a href="fontSettings.html#type-GenericFamily">GenericFamily</a></td>
+                            <td>
+                                genericFamily</td>
+                            <td>
+                            
+                            <p>
+                              要获取对应字体的一般字体系列。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getFont-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td>
+                                  details</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-details-fontId">
+                                    <td>string</td>
+                                    <td>
+                                        fontId</td>
+                                    <td>
+                                    
+                                    <p>
+                                      字体标识符。有可能是系统根据首选项的值解析出的字体标识符，而不一定是字面的字体标识符首选项值，所以 <var>fontId</var> 可能和传递给 <code>setFont</code> 的字体不同，例如如果指定字体在当前系统中不可用。空字符串意味着使用全局书写文字的字体设置。
+                                    </p></td>
+                                  </tr><tr id="property-details-levelOfControl">
+                                    <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                    <td>
+                                        levelOfControl</td>
+                                    <td>
+                                    
+                                    <p>
+                                      扩展程序对这一设置的控制级别。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setFont"
+                  >setFont
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.setFont(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  设置指定书写文字和一般字体系列对应的字体。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setFont-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-details-script">
+                            <td>    <a href="fontSettings.html#type-ScriptCode">ScriptCode</a></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                script</td>
+                            <td>
+                            
+                            <p>
+                              要设置对应字体的书写文字。如果省略，则设置全局书写文字（书写文字代码为 "Zyyy"）对应的字体。
+                            </p></td>
+                          </tr><tr id="property-details-genericFamily">
+                            <td>    <a href="fontSettings.html#type-GenericFamily">GenericFamily</a></td>
+                            <td>
+                                genericFamily</td>
+                            <td>
+                            
+                            <p>
+                              要设置对应字体的一般字体系列。
+                            </p></td>
+                          </tr><tr id="property-details-fontId">
+                            <td>string</td>
+                            <td>
+                                fontId</td>
+                            <td>
+                            
+                            <p>
+                              字体标识符。空字符串意味着使用全局书写文字的字体设置。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-setFont-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getFontList"
+                  >getFontList
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.getFontList(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取系统中所有字体的列表。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getFontList-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="fontSettings.html#type-FontName">FontName</a> results) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-results">
+                              <td>array of     <a href="fontSettings.html#type-FontName">FontName</a></td>
+                              <td>
+                                  results</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-clearDefaultFontSize"
+                  >clearDefaultFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.clearDefaultFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  清除当前扩展程序设置过的默认字体大小。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-clearDefaultFontSize-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        该参数当前未使用。
+                      </p></td>
+                    </tr>
+                    <tr id="property-clearDefaultFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getDefaultFontSize"
+                  >getDefaultFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.getDefaultFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取默认字体大小。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getDefaultFontSize-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        该参数当前未使用。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getDefaultFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td>
+                                  details</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-details-pixelSize">
+                                    <td>integer</td>
+                                    <td>
+                                        pixelSize</td>
+                                    <td>
+                                    
+                                    <p>
+                                      以像素为单位的字体大小。
+                                    </p></td>
+                                  </tr><tr id="property-details-levelOfControl">
+                                    <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                    <td>
+                                        levelOfControl</td>
+                                    <td>
+                                    
+                                    <p>
+                                      扩展程序对这一设置的控制级别。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setDefaultFontSize"
+                  >setDefaultFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.setDefaultFontSize(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  设置默认字体大小。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setDefaultFontSize-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-details-pixelSize">
+                            <td>integer</td>
+                            <td>
+                                pixelSize</td>
+                            <td>
+                            
+                            <p>
+                              以像素为单位的字体大小。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-setDefaultFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-clearDefaultFixedFontSize"
+                  >clearDefaultFixedFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.clearDefaultFixedFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  清除当前扩展程序设置过的默认的宽度固定的字体的大小。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-clearDefaultFixedFontSize-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        该参数当前未使用。
+                      </p></td>
+                    </tr>
+                    <tr id="property-clearDefaultFixedFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getDefaultFixedFontSize"
+                  >getDefaultFixedFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.getDefaultFixedFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取宽度固定的字体的默认大小。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getDefaultFixedFontSize-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        该参数当前未使用。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getDefaultFixedFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td>
+                                  details</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-details-pixelSize">
+                                    <td>integer</td>
+                                    <td>
+                                        pixelSize</td>
+                                    <td>
+                                    
+                                    <p>
+                                      以像素为单位的字体大小。
+                                    </p></td>
+                                  </tr><tr id="property-details-levelOfControl">
+                                    <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                    <td>
+                                        levelOfControl</td>
+                                    <td>
+                                    
+                                    <p>
+                                      扩展程序对这一设置的控制级别。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setDefaultFixedFontSize"
+                  >setDefaultFixedFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.setDefaultFixedFontSize(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  设置宽度固定的字体的默认大小。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setDefaultFixedFontSize-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-details-pixelSize">
+                            <td>integer</td>
+                            <td>
+                                pixelSize</td>
+                            <td>
+                            
+                            <p>
+                              以像素为单位的字体大小。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-setDefaultFixedFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-clearMinimumFontSize"
+                  >clearMinimumFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.clearMinimumFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  清除当前扩展程序设置过的字体大小下限。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-clearMinimumFontSize-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        该参数当前未使用。
+                      </p></td>
+                    </tr>
+                    <tr id="property-clearMinimumFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getMinimumFontSize"
+                  >getMinimumFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.getMinimumFontSize(<span class="optional">object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取字体大小下限。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getMinimumFontSize-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        该参数当前未使用。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getMinimumFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td>
+                                  details</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-details-pixelSize">
+                                    <td>integer</td>
+                                    <td>
+                                        pixelSize</td>
+                                    <td>
+                                    
+                                    <p>
+                                      以像素为单位的字体大小。
+                                    </p></td>
+                                  </tr><tr id="property-details-levelOfControl">
+                                    <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                    <td>
+                                        levelOfControl</td>
+                                    <td>
+                                    
+                                    <p>
+                                      扩展程序对这一设置的控制级别。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setMinimumFontSize"
+                  >setMinimumFontSize
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fontSettings.setMinimumFontSize(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  设置字体大小下限。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setMinimumFontSize-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-details-pixelSize">
+                            <td>integer</td>
+                            <td>
+                                pixelSize</td>
+                            <td>
+                            
+                            <p>
+                              以像素为单位的字体大小。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-setMinimumFontSize-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onFontChanged">onFontChanged</h3>
+              <div class="description">
+            <p>
+                  字体设置更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fontSettings.onFontChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onFontChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onFontChanged-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-fontId">
+                                          <td>string</td>
+                                          <td>
+                                              fontId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            字体标识符，参见 <code>getFont</code> 中的描述。
+                                          </p></td>
+                                        </tr><tr id="property-details-script">
+                                          <td>    <a href="fontSettings.html#type-ScriptCode">ScriptCode</a></td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              script</td>
+                                          <td>
+                                          
+                                          <p>
+                                            更改的字体设置对应的书写文字。
+                                          </p></td>
+                                        </tr><tr id="property-details-genericFamily">
+                                          <td>    <a href="fontSettings.html#type-GenericFamily">GenericFamily</a></td>
+                                          <td>
+                                              genericFamily</td>
+                                          <td>
+                                          
+                                          <p>
+                                            更改的字体设置对应的一般字体系列。
+                                          </p></td>
+                                        </tr><tr id="property-details-levelOfControl">
+                                          <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                          <td>
+                                              levelOfControl</td>
+                                          <td>
+                                          
+                                          <p>
+                                            扩展程序对这一设置的控制级别。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onDefaultFontSizeChanged">onDefaultFontSizeChanged</h3>
+              <div class="description">
+            <p>
+                  默认字体大小的设置更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fontSettings.onDefaultFontSizeChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onDefaultFontSizeChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onDefaultFontSizeChanged-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-pixelSize">
+                                          <td>integer</td>
+                                          <td>
+                                              pixelSize</td>
+                                          <td>
+                                          
+                                          <p>
+                                            以像素为单位的字体大小。
+                                          </p></td>
+                                        </tr><tr id="property-details-levelOfControl">
+                                          <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                          <td>
+                                              levelOfControl</td>
+                                          <td>
+                                          
+                                          <p>
+                                            扩展程序对这一设置的控制级别。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onDefaultFixedFontSizeChanged">onDefaultFixedFontSizeChanged</h3>
+              <div class="description">
+            <p>
+                  默认的宽度固定的字体大小设置更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fontSettings.onDefaultFixedFontSizeChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onDefaultFixedFontSizeChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onDefaultFixedFontSizeChanged-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-pixelSize">
+                                          <td>integer</td>
+                                          <td>
+                                              pixelSize</td>
+                                          <td>
+                                          
+                                          <p>
+                                            以像素为单位的字体大小。
+                                          </p></td>
+                                        </tr><tr id="property-details-levelOfControl">
+                                          <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                          <td>
+                                              levelOfControl</td>
+                                          <td>
+                                          
+                                          <p>
+                                            扩展程序对这一设置的控制级别。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onMinimumFontSizeChanged">onMinimumFontSizeChanged</h3>
+              <div class="description">
+            <p>
+                  字体大小下限的设置更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fontSettings.onMinimumFontSizeChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onMinimumFontSizeChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onMinimumFontSizeChanged-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-pixelSize">
+                                          <td>integer</td>
+                                          <td>
+                                              pixelSize</td>
+                                          <td>
+                                          
+                                          <p>
+                                            以像素为单位的字体大小。
+                                          </p></td>
+                                        </tr><tr id="property-details-levelOfControl">
+                                          <td>    <a href="fontSettings.html#type-LevelOfControl">LevelOfControl</a></td>
+                                          <td>
+                                              levelOfControl</td>
+                                          <td>
+                                          
+                                          <p>
+                                            扩展程序对这一设置的控制级别。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#advanced-font-settings">Advanced Font Settings</a></strong>
+          &ndash; Customize per-script font settings.
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

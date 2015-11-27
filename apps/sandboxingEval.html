@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>安全地在 Chrome 扩展程序中使用 eval - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="sandboxingEval.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Using eval in Chrome Extensions. Safely.-->安全地在 Chrome 扩展程序中使用 eval</h1>
+
+
+<p>
+  <!--@Chrome's extension system enforces a fairly strict default
+  <a href='../extensions/contentSecurityPolicy'>
+    <strong>Content Security Policy (CSP)</strong>
+  </a>. The policy restrictions are straightforward: script must be moved
+  out-of-line into separate JavaScript files, inline event handlers must be
+  converted to use <code>addEventListener</code>, and <code>eval()</code> is
+  disabled. Chrome Apps have an
+  <a href='contentSecurityPolicy'>even more strict
+  policy</a>, and we're quite happy with the security properties these policies
+  provide.-->
+  Chrome 浏览器的扩展程序系统默认情况下强制实施相当严格的<a
+  href='contentSecurityPolicy.html'><strong>内容安全策略（CSP）</strong></a>。这些策略限制非常直白：内嵌脚本必须移动至单独的
+  JavaScript 文件，内嵌的事件处理函数必须转换为使用
+  <code>addEventListener</code>，并且 <code>eval()</code> 已禁用。Chrome
+  浏览器的应用具有<a href='contentSecurityPolicy.html'
+  >更严格的策略</a>，然而我们对于这些策略提供的安全特性相当满意。
+</p>
+
+<p>
+  <!--@We recognize, however, that a variety of libraries use <code>eval()</code> and
+  <code>eval</code>-like constructs such as <code>new Function()</code> for
+  performance optimization and ease of expression. Templating libraries are
+  especially prone to this style of implementation. While some (like
+  <a href='http://angularjs.org/'>Angular.js</a>) support CSP out of the box,
+  many popular frameworks haven't yet updated to a mechanism that is compatible
+  with extensions' <code>eval</code>-less world. Removing support for that
+  functionality has therefore proven <a href='http://crbug.com/107538'>more
+  problematic than expected</a> for developers.-->
+  然而我们也承认，出于性能优化以及更简洁的表达，许多库都使用
+  <code>eval()</code> 或者类似于 eval 的构造，例如
+  <code>new Function()</code>。尽管其中某些（像
+  <a href='http://angularjs.org/'>Angular.js</a>）已经可以直接支持
+  CSP，许多流行的框架还没能更新至与扩展程序中禁止 <code>eval</code>
+  的环境兼容的机制，事实证明移除该功能的支持对开发人员来说产生的问题<a href='http://crbug.com/107538'>比预料中更多</a>。
+</p>
+
+<p>
+  <!--@This document introduces sandboxing as a safe mechanism to include these
+  libraries in your projects without compromising on security. For brevity,
+  we'll be using the term <em>extensions</em> throughout, but the concept
+  applies equally to applications.-->
+  该文档引入了沙箱，作为一种安全的机制，来将这些库包含在您的项目中，同时不威胁安全。为了简单起见，我们通篇使用<em>扩展程序</em>这一术语，但是这一概念同样适用于应用。
+</p>
+
+<h2 id="why_sandbox"><!--@Why sandbox?-->为什么使用沙箱？</h2>
+
+<p>
+  <code>eval</code> <!--@is dangerous inside an extension because the code it
+  executes has access to everything in the extension's high-permission
+  environment. A slew of powerful <code>chrome.*</code> APIs are available that
+  could severely impact a user's security and privacy; simple data exfiltration
+  is the least of our worries. The solution on offer is a sandbox in which
+  <code>eval</code> can execute code without access either to the extension's
+  data or the extension's high-value APIs. No data, no APIs, no problem.-->
+  在扩展程序中是危险的，因为它执行的代码可以在扩展程序高权限的环境下访问所有内容，对可用的强大
+  <code>chrome.* API</code>
+  的滥用会严重地影响用户的安全与隐私，而不仅仅是简单的数据泄漏。我们提供的解决方案是能够使
+  <code>eval</code> 执行代码，但是不能访问扩展程序数据或者扩展程序强大的
+  API。没有数据，没有 API，就不会有问题。
+</p>
+
+<p>
+  <!--@We accomplish this by listing specific HTML files inside the extension package
+  as being sandboxed. Whenever a sandboxed page is loaded, it will be moved to a
+  <a href='http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#sandboxed-origin-browsing-context-flag'>unique origin</a>,
+  and will be denied access to <code>chrome.*</code> APIs. If we load this
+  sandboxed page into our extension via an <code>iframe</code>, we can pass it
+  messages, let it act upon those messages in some way, and wait for it to pass
+  us back a result. This simple messaging mechanism gives us everything we need
+  to safely include <code>eval</code>-driven code in our extension's workflow.-->
+  我们通过这样的方法来实现这一点：列出扩展程序包内需要在沙箱中运行的特定
+  HTML
+  文件。每当沙箱保护的页面加载时，它将会被移至某个<a
+  href='http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#sandboxed-origin-browsing-context-flag'
+  >唯一的来源</a>，并且拒绝访问
+  <code>chrome.* API</code>。如果我们通过 <code>iframe</code>
+  将这一受沙箱保护的页面加载到扩展程序中，我们可以向它传递消息，让它以某种方式基于这些消息运行，并等待它传回结果。这种简单的消息机制使我们能够安全地在扩展程序的工作流程中包含
+  <code>eval</code> 驱动的代码。
+</p>
+
+<h2 id="creating_and_using"><!--@Creating and using a sandbox.-->创建和使用沙箱</h2>
+
+<p>
+  <!--@If you'd like to dive straight into code, please grab the
+  <a href='/extensions/samples#sandboxed-frame'>sandboxing
+  sample extension and take off</a>. It's a working example of a tiny messaging
+  API built on top of the <a href='http://handlebarsjs.com'>Handlebars</a>
+  templating library, and it should give you everything you need to get going.
+  For those of you who'd like a little more explanation, let's walk through that
+  sample together here.-->
+  如果您想直接深入代码，请参考<a href='samples.html#sandboxed-frame'
+  >沙箱示例扩展程序</a>。这一可以正常工作的例子包含基于
+  <a href='http://handlebarsjs.com'>Handlebars</a>
+  模板库构建的短小精悍的消息
+  API，它应该能够使您了解接下来所需的所有内容。如果您需要更多的解释，请跟我们一起在这里进行该示例的演练。
+</p>
+
+<h3 id="list_files"><!--@List files in manifest-->在清单文件中列出文件</h3>
+
+<p>
+  <!--@Each file that ought to be run inside a sandbox must be listed in the
+  extension manifest by adding a <code>sandbox</code> property. This is a
+  critical step, and it's easy to forget, so please double check that your
+  sandboxed file is listed in the manifest. In this sample, we're sandboxing the
+  file cleverly named "sandbox.html". The manifest entry looks like this:-->
+  应该在沙箱中执行的每一个文件都必须在扩展程序的清单文件中列出，添加
+  <code>sandbox</code> 属性。这是最关键的一步，也是最容易忘记的，所以请再次检查您需要沙箱保护的文件确实已在清单文件中列出。在该示例中，我们需要沙箱保护的文件恰好命名为“sandbox.html”。清单文件项如下所示：
+</p>
+
+<pre data-filename="manifest.json">
+{
+  ...,
+  "sandbox": {
+     "pages": ["sandbox.html"]
+  },
+  ...
+}
+</pre>
+
+<h3 id="load_file"><!--@Load the sandboxed file-->加载受沙箱保护的文件</h3>
+
+<p>
+  <!--@In order to do something interesting with the sandboxed file, we need to load
+  it in a context where it can be addressed by the extension's code. Here,
+  <a href='/extensions/examples/howto/sandbox/sandbox.html'>sandbox.html</a>
+  has been loaded into the extension's <a href='event_pages'>Event
+  Page</a> (<a href='/extensions/examples/howto/sandbox/eventpage.html'>eventpage.html</a>)
+  via an <code>iframe</code>. <a href='/extensions/examples/howto/sandbox/eventpage.js'>eventpage.js</a>
+  contains code that sends a message into the sandbox whenever the browser
+  action is clicked by finding the <code>iframe</code> on the page, and
+  executing the <code>postMessage</code> method on its
+  <code>contentWindow</code>. The message is an object containing two
+  properties: <code>context</code> and <code>command</code>. We'll dive into
+  both in a moment.-->
+  为了通过受沙箱保护的文件做一些有意义的事，我们需要在扩展程序代码可以访问的环境中加载它。在该示例中，<a href='examples/howto/sandbox/sandbox.html'>sandbox.html</a>
+  通过 <code>iframe</code> 在扩展程序的<a href="event_pages.html"
+  >事件页面</a>（<a href='examples/howto/sandbox/eventpage.html'
+  >eventpage.html</a>）中加载。每当浏览器按钮单击时，<a href='examples/howto/sandbox/eventpage_js.html'>eventpage.js</a>
+  中包含的代码会找到页面中的 <code>iframe</code>，并在它的
+  <code>contentWindow</code> 上执行 <code>postMessage</code>
+  方法，向沙箱发送消息。该消息为包含两个属性的对象：<code>context</code>
+  和 <code>command</code>，我们稍后会详细解释它们。
+</p>
+
+<pre data-filename="eventpage.js">
+chrome.browserAction.onClicked.addListener(function() {
+ var iframe = document.getElementById('theFrame');
+ var message = {
+   command: 'render',
+   context: {thing: 'world'}
+ };
+ iframe.contentWindow.postMessage(message, '*');
+});
+</pre>
+
+<p class="note">
+  <!--@For general information about the <code>postMessage</code> API, take a look at
+  the <a href="https://developer.mozilla.org/en/DOM/window.postMessage">
+    <code>postMessage</code> documentation on MDN
+  </a>. It's quite complete and worth reading. In particular, note that data can
+  only be passed back and forth if it's serializable. Functions, for instance,
+  are not.-->
+  有关 <code>postMessage</code> API 的一般信息，请参考
+  <a href="https://developer.mozilla.org/en/DOM/window.postMessage">MDN
+  上的 <code>postMessage</code>
+  文档</a>（英文），它非常完整，值得一读。特别注意只有可以序列化的数据才能来回传递，例如函数就不行。
+</p>
+
+<h3 id="do_something"><!--@Do something dangerous-->做一些有潜在危险的事</h3>
+
+<p>
+  <!--@When <code>sandbox.html</code> is loaded, it loads the Handlebars library, and
+  creates and compiles an inline template in the way Handlebars suggests:-->
+  当 <code>sandbox.html</code> 加载时，它会加载 Handlebars 库，并以
+  Handlebars 提供的方式创建并编译内嵌模板：
+</p>
+
+<pre data-filename="sandbox.html">
+&lt;script src="handlebars-1.0.0.beta.6.js"&gt;&lt;/script&gt;
+&lt;script id="hello-world-template" type="text/x-handlebars-template"&gt;
+  &lt;div class="entry"&gt;
+    &lt;h1&gt;Hello, &#123&#123thing&#125&#125!&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/script&gt;
+&lt;script&gt;
+  var templates = [];
+  var source = document.getElementById('hello-world-template').innerHTML;
+  templates['hello'] = Handlebars.compile(source);
+&lt;/script&gt;
+</pre>
+
+<p>
+  <!--@This doesn't fail! Even though <code>Handlebars.compile</code> ends up using
+  <code>new Function</code>, things work exactly as expected, and we end up with
+  a compiled template in <code>templates[‘hello']</code>.-->
+  以上代码不会失败！尽管 <code>Handlebars.compile</code> 最终会使用
+  <code>new Function</code>，一切都完全与预期中一样，最终
+  <code>templates['hello']</code> 中包含了已编译的模板。
+</p>
+
+<h3 id="pass_result"><!--@Pass the result back-->将结果传回</h3>
+
+<p>
+  <!--@We'll make this template available for use by setting up a message listener
+  that accepts commands from the Event Page. We'll use the <code>command</code>
+  passed in to determine what ought to be done (you could imagine doing more
+  than simply rendering; perhaps creating templates? Perhaps managing them in
+  some way?), and the <code>context</code> will be passed into the template
+  directly for rendering. The rendered HTML will be passed back to the Event
+  Page so the extension can do something useful with it later on:-->
+  我们将设置消息监听器，从事件页面接收命令，使得该模板可以使用。我们将使用传入的
+  <code>command</code>
+  来确定做什么（您可以想象，能做的不仅仅是简单的渲染，也许创建模板？也许用某种方式管理它们？），而
+  <code>context</code>
+  将直接传入模板，用于渲染。渲染得到的 HTML
+  将传回事件页面，以便扩展程序利用它接着做一些有用的事：
+</p>
+
+<pre data-filename="sandbox.html">
+&lt;script&gt;
+  window.addEventListener('message', function(event) {
+    var command = event.data.command;
+    var name = event.data.name || 'hello';
+    switch(command) {
+      case 'render':
+        event.source.postMessage({
+          name: name,
+          html: templates[name](event.data.context)
+        }, event.origin);
+        break;
+  
+      // case 'somethingElse':
+      //   ...
+    }
+  });
+&lt;/script&gt;
+</pre>
+
+<p>
+  <!--@Back in the Event Page, we'll receive this message, and do something
+  interesting with the <code>html</code> data we've been passed. In this case,
+  we'll just echo it out via a <a href='desktop_notifications'>Desktop
+  Notification</a>, but it's entirely possible to use this HTML safely as part
+  of the extension's UI. Inserting it via <code>innerHTML</code> doesn't pose a
+  significant security risk, as even a complete compromise of the sandboxed code
+  through some clever attack would be unable to inject dangerous script or
+  plugin content into the high-permission extension context.-->
+  回到事件页面，我们会接收到该消息，并利用传递给我们的 <code>html</code>
+  数据做一些有意义的事。在这一例子中，我们只是通过<a
+  href="desktop_notifications.html">桌面通知</a>显示它，但是完全可能安全地使用这一
+  HTML 作为扩展程序用户界面的一部分。通过 <code>innerHTML</code>
+  将其插入并没有严重的安全风险，即使是通过某些巧妙的攻击完全利用沙箱中的代码，也不可能向高权限的扩展程序环境插入危险的脚本或插件内容。
+</p>
+
+<p>
+  <!--@This mechanism makes templating straightforward, but it of course isn't
+  limited to templating. Any code that doesn't work out of the box under a
+  strict Content Security Policy can be sandboxed; in fact, it's often useful
+  to sandbox components of your extensions that <em>would</em> run correctly in
+  order to restrict each piece of your program to the smallest set of privileges
+  necessary for it to properly execute. The
+  <a href="http://www.youtube.com/watch?v=GBxv8SaX0gg">Writing Secure Web Apps
+  and Chrome Extensions</a> presentation from Google I/O 2012 gives some good
+  examples of these technique in action, and is worth 56 minutes of your time.-->
+  这一机制很直白地描述了模板的使用，然而它当然不仅仅限于使用模板，所有不能在严格的内容安全策略下直接运行的代码都可以在沙箱中运行。事实上，将您的扩展程序中<em>能够</em>正确运行的各组件限制在沙箱中，可以使您的程序的每一部分都限制在正常执行所需的最小权限下。来自
+  Google I/O 2012 的演示文稿<a href="https://www.youtube.com/watch?v=GBxv8SaX0gg">编写安全的网络应用和 Chrome 扩展程序</a>（英文）提供了利用这些技术的例子，值得花费您 56 分钟的时间。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+      <ol class="toc">
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="sandboxingEval.html#why_sandbox"
+          >为什么使用沙箱？</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="sandboxingEval.html#creating_and_using"
+          >创建和使用沙箱</a>
+          <ol class="toc">
+              <li><a data-list-item href="sandboxingEval.html#list_files"
+                     >在清单文件中列出文件</a>
+              </li>
+              <li><a data-list-item href="sandboxingEval.html#load_file"
+                     >加载受沙箱保护的文件</a>
+              </li>
+              <li><a data-list-item href="sandboxingEval.html#do_something"
+                     >做一些有潜在危险的事</a>
+              </li>
+              <li><a data-list-item href="sandboxingEval.html#pass_result"
+                     >将结果传回</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

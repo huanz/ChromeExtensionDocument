@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.storage - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="storage.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.storage</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.storage</code> API 存储、获取用户数据，追踪用户数据的更改。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 20<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "storage"
+                    </span>
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">内容脚本<!--@:-->：</td>
+        <td>
+              <!--@Fully supported.-->完全支持。<!--@
+            --><!--@
+            --><a href="../extensions/content_scripts.html"><!--@Learn more-->了解更多</a>
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="https://developers.google.com/live/shows/7320022/">
+            Chrome 应用办公时间：Chrome 存储 API
+                    </a>
+            <br>
+            <a href="https://developers.google.com/live/shows/7320022-1/">
+            Chrome 应用办公时间：存储 API 深入探索
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="overview"><!--@Overview-->概述</h2>
+      
+      <p>
+      <!--@This API has been optimized
+      to meet the specific storage needs of extensions.
+      It provides the same storage capabilities as the
+      <a href="https://developer.mozilla.org/en/DOM/Storage#localStorage">localStorage API</a>
+      with the following key differences:-->
+      这一 API 为扩展程序的存储需要而特别优化，它提供了与
+      <a href="https://developer.mozilla.org/en/DOM/Storage#localStorage">localStorage API</a>
+      相同的能力，但是具有如下几个重要的区别：
+      </p>
+      
+      <ul>
+        <li><!--@User data can be automatically synced with Chrome sync
+        (using <code>storage.sync</code>).-->
+        用户数据可以通过 Chrome
+        浏览器的同步功能自动同步（使用
+        <code>storage.sync</code>）。
+        </li>
+        <li><!--@Your app's content scripts can directly access user data
+        without the need for a background page.-->
+        您的应用的内容脚本可以直接访问用户数据，而不需要后台页面。
+        </li>
+        <li><!--@A user's extension settings can be persisted
+        even when using
+        <a href="manifest/incognito">split incognito behavior</a>.-->
+        即使使用<a href="../extensions/manifest/incognito.html">分离式隐身行为</a>，用户的扩展程序设置也会保留。
+        </li>
+        <li><!--@It's asynchronous with bulk read and write operations, and therefore
+        faster than the blocking and serial <code>localStorage API</code>.-->
+        它是异步的，并且能够进行大量的读写操作，因此比阻塞和串行化的
+        <code>localStorage</code> API 更快。
+        <li><!--@User data can be stored as objects
+        (the <code>localStorage API</code> stores data in strings).-->
+        用户数据可以存储为对象（<code>localStorage</code> API
+        以字符串方式存储数据）。
+        </li>
+        <li><!--@Enterprise policies configured by the administrator for the extension
+        can be read (using <code>storage.managed</code> with a
+        <a href="manifest/storage">schema</a>).-->
+        可以读取管理员为扩展程序配置的企业策略（使用 <code>storage.managed</code>
+        和<a href="manifest/storage.html">架构</a>）。
+        </li>
+      </ul>
+      
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p><!--@You must declare the "storage" permission in the <a
+        href="manifest">extension manifest</a>
+        to use the storage API.
+        For example:-->
+        您必须在<a href="manifest.html">扩展程序的清单文件</a>中声明
+        "storage" 权限才能使用存储 API。例如：
+      </p>
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "storage"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <h2 id="using-sync"><!--@Usage-->用法</h2>
+      
+      <p>
+      <!--@To store user data for your app,
+      you can use either
+      <code>storage.sync</code> or
+      <code>storage.local</code>.
+      When using <code>storage.sync</code>,
+      the stored data will automatically be synced
+      to any Chrome browser that the user is logged into,
+      provided the user has sync enabled.-->
+      如果要为您的应用储存用户数据，您可以使用
+      <code>storage.sync</code> 或 <code>storage.local</code>。使用
+      <code>storage.sync</code>
+      时，储存的数据将会自动在用户启用同步功能并已经登录的所有
+      Chrome 浏览器间同步。
+      </p>
+      
+      <p>
+      <!--@When Chrome is offline,
+      Chrome stores the data locally.
+      The next time the browser is online,
+      Chrome syncs the data.
+      Even if a user disables syncing,
+      <code>storage.sync</code> will still work.
+      In this case, it will behave identically
+      to <code>storage.local</code>.-->
+      当 Chrome 浏览器处于离线状态时，Chrome
+      浏览器将数据储存在本地。下一次浏览器在线时，Chrome
+      浏览器将会同步数据。即使用户关闭了同步，<code>storage.sync</code>
+      仍然有效，只是此时它与 <code>storage.local</code> 的行为相同。
+      </p>
+      
+      <p class="warning">
+      <!--@Confidential user information should not be stored!
+      The storage area isn't encrypted.-->
+      不应该储存机密的用户信息！存储区没有加密。
+      </p>
+      
+      <p>
+      <!--@The <code>storage.managed</code> storage is read-only.-->
+      <code>storage.managed</code> 存储区是只读的。
+      </p>
+      
+      <h2 id="limits"><!--@Storage and throttling limits-->存储空间与调用频率限制</h2>
+      
+      <p><code>chrome.storage</code> <!--@is not a big truck.
+      It's a series of tubes.
+      And if you don't understand,
+      those tubes can be filled,
+      and if they are filled
+      when you put your message in,
+      it gets in line,
+      and it's going to be delayed
+      by anyone that puts into that tube
+      enormous amounts of material.-->
+      并不像一辆大卡车那样，而是像一系列的管道，如果您不理解这一点的话，这样的管道很容易被填满。如果当您存入消息时它们填满了，它将会变成细线，任何人向其中存入大量数据都有可能使操作产生延迟。
+      
+      <p><!--@For details on the current limits
+      of the storage API, and what happens
+      when those limits are exceeded, please
+      see the quota information for-->
+      有关目前对存储 API 的限制以及超出限制的结果，请参见
+      <a href="storage.html#sync-properties">sync</a> <!--@and-->和
+      <a href="storage.html#local-properties">local</a><!--@.-->
+      的配额信息。
+      
+      <h2 id="examples"><!--@Examples-->例子</h2>
+      
+      <p>
+      <!--@The following example checks for
+      CSS code saved by a user on a form,
+      and if found,
+      stores it.-->
+      以下例子检查用户在表单中保存的 CSS
+      代码，如果找到的话则存储下来。
+      </p>
+      
+      <pre>
+      function saveChanges() {
+        // 获取表单中保存的值。
+        var theValue = textarea.value;
+        // 确保包含代码。
+        if (!theValue) {
+          message('错误：没有指定值');
+          return;
+        }
+        // 使用 Chrome 扩展程序的存储 API 保存它。
+        chrome.storage.sync.set({'value': theValue}, function() {
+          // 通知保存完成。
+          message('设置已保存');
+        });
+      }
+      </pre>
+      
+      <p>
+      <!--@If you're interested in tracking changes made
+      to a data object,
+      you can add a listener
+      to its <code>onChanged</code> event.
+      Whenever anything changes in storage,
+      that event fires.
+      Here's sample code
+      to listen for saved changes:-->
+      如果您希望追踪数据对象的更改，您可以向
+      <code>onChanged</code>
+      事件添加监听器，每当存储有任何更改时将会产生该事件。如下是监听对已保存内容的更改的示例代码：
+      </p>
+      
+      <pre>
+      chrome.storage.onChanged.addListener(function(changes, namespace) {
+        for (key in changes) {
+          var storageChange = changes[key];
+          console.log('存储键“%s”（位于“%s”命名空间中）已更改。' +
+                          '原来的值为“%s”，新的值为“%s”。',
+                      key,
+                      namespace,
+                      storageChange.oldValue,
+                      storageChange.newValue);
+        }
+      });
+      </pre>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="storage.html#type-StorageChange">StorageChange</a></td></tr>
+          <tr><td><a href="storage.html#type-StorageArea">StorageArea</a></td></tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="storage.html#property-sync">sync</a></td>
+          <tr><td><a href="storage.html#property-local">local</a></td>
+          <tr><td><a href="storage.html#property-managed">managed</a></td>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="storage.html#event-onChanged">onChanged</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-StorageChange">StorageChange</h3>
+              <table>
+                  <tr><th colspan="3" id="StorageChange-properties">属性</th></tr>
+                  <tr id="property-StorageChange-oldValue">
+                    <td>any</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        oldValue</td>
+                    <td>
+                    
+                    <p>
+                      如果有旧值，则为项目的旧值。
+                    </p></td>
+                  </tr><tr id="property-StorageChange-newValue">
+                    <td>any</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        newValue</td>
+                    <td>
+                    
+                    <p>
+                      如果有新值，则为项目的新值。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-StorageArea">StorageArea</h3>
+              <table>
+                  <tr><th colspan="3" id="StorageArea-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-StorageArea-get"
+                        >get
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    StorageArea.get(<span class="optional">string or array of string or object keys</span>, <span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        从存储中获得一个或多个值。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-get-keys">
+                            <td>string or array of string or object</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                keys</td>
+                            <td>
+                            
+                            <p>
+                              要获得的单个键、多个键的列表或者指定默认值的词典（参见对象的描述），空的列表或对象将会返回空的结果对象。要获得存储的所有内容，请传递 <code>null</code>。
+                            </p></td>
+                          </tr>
+                          <tr id="property-get-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              包含存储项目或者表示失败（这种情况下会设置 <a href="runtime.html#property-lastError">runtime.lastError</a>）的回调函数。
+                            </p>    <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object items) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-items">
+                                    <td>object</td>
+                                    <td>
+                                        items</td>
+                                    <td>
+                                    
+                                    <p>
+                                      包含按键-值映射的项目对象。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-StorageArea-getBytesInUse"
+                        >getBytesInUse
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    StorageArea.getBytesInUse(<span class="optional">string or array of string keys</span>, <span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        获得一个或多个项目正在使用的空间大小（以字节为单位）。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-getBytesInUse-keys">
+                            <td>string or array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                keys</td>
+                            <td>
+                            
+                            <p>
+                              要获得总计使用空间的单个键或多个键的列表，空的列表或对象将会返回 0。要获得所有存储占用的总空间，请传递 <code>null</code>。
+                            </p></td>
+                          </tr>
+                          <tr id="property-getBytesInUse-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              回调函数，将传递存储占用的空间大小，或者指示失败（这种情况下将会设置 <a href="runtime.html#property-lastError">runtime.lastError</a>）
+                            </p>    <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer bytesInUse) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-bytesInUse">
+                                    <td>integer</td>
+                                    <td>
+                                        bytesInUse</td>
+                                    <td>
+                                    
+                                    <p>
+                                      正在使用的存储空间大小，以字节为单位。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-StorageArea-set"
+                        >set
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    StorageArea.set(<span>object items</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        设置多个项目。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-set-items">
+                            <td>object</td>
+                            <td>
+                                items</td>
+                            <td>
+                            
+                            <p>
+                              <p>包含要更新的键/值对的对象，存储中的其他键/值对不会受到影响。</p><p>像数值之类的原生值会以预期的方式序列化，除了<code>Array</code>（按照预期的方式序列化）、<code>Date</code> 和 <code>RegExp</code>（以字符串表示形式序列化）以外，<code>typeof</code> 为 <code>"object"</code> 和 <code>"function"</code> 的值通常序列化为 <code>{}</code>。
+                            </p></td>
+                          </tr>
+                          <tr id="property-set-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              在成功或失败（这种情况下会设置 <a href="runtime.html#property-lastError">runtime.lastError</a>）时调用。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-StorageArea-remove"
+                        >remove
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    StorageArea.remove(<span>string or array of string keys</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        从存储中移除一个或多个项目。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-remove-keys">
+                            <td>string or array of string</td>
+                            <td>
+                                keys</td>
+                            <td>
+                            
+                            <p>
+                              单个键或多个键的列表，表示要移除的内容。
+                            </p></td>
+                          </tr>
+                          <tr id="property-remove-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              在成功或失败（这种情况下会设置 <a href="runtime.html#property-lastError">runtime.lastError</a>）时调用。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-StorageArea-clear"
+                        >clear
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    StorageArea.clear(<span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        从存储中删除所有值。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-clear-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              在成功或失败（这种情况下会设置 <a href="runtime.html#property-lastError">runtime.lastError</a>）时调用。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">      <a href="storage.html#type-StorageArea">StorageArea</a></span></td>
+              <td><code id="property-sync">chrome.storage.sync</code></td>
+              <td>
+                  位于 <code>sync</code>（同步）存储区下的项目将通过 Chrome 浏览器的同步功能同步。
+                <table class="innerTable">
+                <thead><th colspan="3"><!--@Properties-->属性</th></thead>
+                  <tr id="property-sync-QUOTA_BYTES">
+                    <td><code>102,400</code></td>
+                    <td>
+                        QUOTA_BYTES</td>
+                    <td>
+                    
+                    <p>
+                      可以在同步存储区储存的数据量大小（以字节为单位），计算方式为每一个值 JSON 字符串化的结果加上每一个键的长度。超出该限制的更新将失败，并设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-sync-QUOTA_BYTES_PER_ITEM">
+                    <td><code>8,192</code></td>
+                    <td>
+                        QUOTA_BYTES_PER_ITEM</td>
+                    <td>
+                    
+                    <p>
+                      同步存储区中每个项目的最大大小（以字节为单位），计算方式为值 JSON 字符串化的结果加上键的长度。包含的项目比该限制大的更新将失败，并设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-sync-MAX_ITEMS">
+                    <td><code>512</code></td>
+                    <td>
+                        MAX_ITEMS</td>
+                    <td>
+                    
+                    <p>
+                      可以储存在同步存储区中的最大项目数目。超出该限制的更新将失败，并设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-sync-MAX_WRITE_OPERATIONS_PER_HOUR">
+                    <td><code>1,000</code></td>
+                    <td>
+                        MAX_WRITE_OPERATIONS_PER_HOUR</td>
+                    <td>
+                    
+                    <p>
+                      一小时内可以进行的 <code>se</code>（设置）、<code>remove</code>（移除）或<code>clear</code>（清除）操作的最大次数。超出该限制的更新将失败，并设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-sync-MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE">
+                    <td><code>10</code></td>
+                    <td>
+                        MAX_SUSTAINED_WRITE_OPERATIONS_PER_MINUTE</td>
+                    <td>
+                    
+                    <p>
+                      在连续的 10 分钟内每分钟可以进行的 <code>se</code>（设置）、<code>remove</code>（移除）或<code>clear</code>（清除）操作的最大次数。超出该限制的更新将失败，并设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                    </p></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="storage.html#type-StorageArea">StorageArea</a></span></td>
+              <td><code id="property-local">chrome.storage.local</code></td>
+              <td>
+                  位于 <code>local</code>（本机）存储区下的项目仅对每一台计算机有效。
+                <table class="innerTable">
+                <thead><th colspan="3"><!--@Properties-->属性</th></thead>
+                  <tr id="property-local-QUOTA_BYTES">
+                    <td><code>5,242,880</code></td>
+                    <td>
+                        QUOTA_BYTES</td>
+                    <td>
+                    
+                    <p>
+                      可以在本地存储区储存的数据量大小（以字节为单位），计算方式为每一个值 JSON 字符串化的结果加上每一个键的长度。如果扩展程序拥有 <code>unlimitedStorage</code> 权限则会忽略这一值。
+                    </p></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="storage.html#type-StorageArea">StorageArea</a></span></td>
+              <td><code id="property-managed">chrome.storage.managed</code></td>
+              <td>
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                  <code>managed</code> 存储区中的项目由域管理员设置，对扩展程序来说只读，尝试修改这一命名空间会导致错误。
+              </td>
+            </tr>
+          </table>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onChanged">onChanged</h3>
+              <div class="description">
+            <p>
+                  当一个或多个项目更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.storage.onChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object changes, string areaName) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onChanged-changes">
+                                    <td>object</td>
+                                    <td>
+                                        changes</td>
+                                    <td>
+                                    
+                                    <p>
+                                      一个对象，将更改的每一个键映射到该项目对应的 <a href="storage.html#type-StorageChange">StorageChange</a> 对象。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onChanged-areaName">
+                                    <td>string</td>
+                                    <td>
+                                        areaName</td>
+                                    <td>
+                                    <p class="availability">
+                                      <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                    </p>
+                                    
+                                    <p>
+                                      这一更改对应的存储区（"sync"（同步）、"local"（本机）或 <code>"managed"</code>））。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

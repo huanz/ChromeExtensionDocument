@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.usb - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="usb.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.usb</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.usb</code> API to interact with connected USB
+             devices. This API provides access to USB operations from within the context
+             of an app. Using this API, apps can function as drivers for hardware devices.-->
+             使用 <code>chrome.usb</code> API 与已连接的 USB 设备交互。该 API
+             提供了在应用的环境中进行 USB 操作的能力，通过该 API
+             应用可以作为硬件设备的驱动程序使用。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "usb"
+                    </span>
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="app_usb.html">
+            访问硬件设备
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="usb.html#type-Direction">Direction</a></td></tr>
+          <tr><td><a href="usb.html#type-Device">Device</a></td></tr>
+          <tr><td><a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td></tr>
+          <tr><td><a href="usb.html#type-GenericTransferInfo">GenericTransferInfo</a></td></tr>
+          <tr><td><a href="usb.html#type-TransferResultInfo">TransferResultInfo</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="usb.html#method-getDevices">getDevices</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.getDevices(<span>object options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-requestAccess">requestAccess</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.requestAccess(<span>    Device device</span>, <span>integer interfaceId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-openDevice">openDevice</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.openDevice(<span>    Device device</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-findDevices">findDevices</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.findDevices(<span>object options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-closeDevice">closeDevice</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.closeDevice(<span>    ConnectionHandle handle</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-listInterfaces">listInterfaces</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.listInterfaces(<span>    ConnectionHandle handle</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-claimInterface">claimInterface</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.claimInterface(<span>    ConnectionHandle handle</span>, <span>integer interfaceNumber</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-releaseInterface">releaseInterface</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.releaseInterface(<span>    ConnectionHandle handle</span>, <span>integer interfaceNumber</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-setInterfaceAlternateSetting">setInterfaceAlternateSetting</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.setInterfaceAlternateSetting(<span>    ConnectionHandle handle</span>, <span>integer interfaceNumber</span>, <span>integer alternateSetting</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-controlTransfer">controlTransfer</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.controlTransfer(<span>    ConnectionHandle handle</span>, <span>object transferInfo</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-bulkTransfer">bulkTransfer</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.bulkTransfer(<span>    ConnectionHandle handle</span>, <span>    GenericTransferInfo transferInfo</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-interruptTransfer">interruptTransfer</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.interruptTransfer(<span>    ConnectionHandle handle</span>, <span>    GenericTransferInfo transferInfo</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-isochronousTransfer">isochronousTransfer</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.isochronousTransfer(<span>    ConnectionHandle handle</span>, <span>object transferInfo</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="usb.html#method-resetDevice">resetDevice</a> &minus;
+            <code class="prettyprint">
+            chrome.usb.resetDevice(<span>    ConnectionHandle handle</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Direction">Direction</h3>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"in"</code>, 
+                  or <code>"out"</code>
+                </td></tr>
+                <dd><!--@Direction, Recipient, RequestType, and TransferType all map to their namesakes within the USB specification.--> Direction（方向）、Recipient（接收方）和 RequestType（请求类型）都与 USB 规范中的相应术语一致。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-Device">Device</h3>
+              <table>
+                  <tr><th colspan="3" id="Device-properties">属性</th></tr>
+                  <tr id="property-Device-device">
+                    <td>integer</td>
+                    <td>
+                        device</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@The id of the USB device. It remains unchanged until the device is unplugged.--> USB 设备的标识符，在设备拔出前不会更改。
+                    </p></td>
+                  </tr><tr id="property-Device-vendorId">
+                    <td>integer</td>
+                    <td>
+                        vendorId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-Device-productId">
+                    <td>integer</td>
+                    <td>
+                        productId</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ConnectionHandle">ConnectionHandle</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="ConnectionHandle-properties">属性</th></tr>
+                  <tr id="property-ConnectionHandle-handle">
+                    <td>integer</td>
+                    <td>
+                        handle</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The id of the USB connection handle.--> USB 连接句柄的标识符。
+                    </p></td>
+                  </tr><tr id="property-ConnectionHandle-vendorId">
+                    <td>integer</td>
+                    <td>
+                        vendorId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-ConnectionHandle-productId">
+                    <td>integer</td>
+                    <td>
+                        productId</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-GenericTransferInfo">GenericTransferInfo</h3>
+              <table>
+                  <tr><th colspan="3" id="GenericTransferInfo-properties">属性</th></tr>
+                  <tr id="property-GenericTransferInfo-direction">
+                    <td>    <a href="usb.html#type-Direction">Direction</a></td>
+                    <td>
+                        direction</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The direction of this transfer.--> 本次传输的方向。
+                    </p></td>
+                  </tr><tr id="property-GenericTransferInfo-endpoint">
+                    <td>integer</td>
+                    <td>
+                        endpoint</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-GenericTransferInfo-length">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        length</td>
+                    <td>
+                    
+                    <p>
+                      <!--@If this is an input transfer then this field indicates the size of the input buffer. If this is an output transfer then this field is ignored.--> 如果本次传输是输入传输，则该字段表示输入缓冲区的大小。如果本次传输是输出传输，将忽略该字段。
+                    </p></td>
+                  </tr><tr id="property-GenericTransferInfo-data">
+                    <td>ArrayBuffer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        data</td>
+                    <td>
+                    
+                    <p>
+                      <!--@If this is an output transfer then this field must be populated. Otherwise, it will be ignored.--> 如果是输出传输，则必须包含该字段，否则将忽略。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-TransferResultInfo">TransferResultInfo</h3>
+              <table>
+                  <tr><th colspan="3" id="TransferResultInfo-properties">属性</th></tr>
+                  <tr id="property-TransferResultInfo-resultCode">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        resultCode</td>
+                    <td>
+                    
+                    <p>
+                      <!--@A value of 0 indicates that the transfer was a success. Other values indicate failure.--> 0 表示传输成功，其他值表示失败。
+                    </p></td>
+                  </tr><tr id="property-TransferResultInfo-data">
+                    <td>ArrayBuffer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        data</td>
+                    <td>
+                    
+                    <p>
+                      <!--@If the transfer was an input transfer then this field will contain all of the input data requested.--> 如果本次传输是输入传输，该字段将包含所有请求的输入数据。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getDevices"
+                  >getDevices
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.getDevices(<span>object options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Lists USB devices specified by vendorId/productId/interfaceId tuple.--> 列出制造商标识符/产品标识符/接口标识符指定的 USB 设备。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getDevices-options">
+                      <td>object</td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The properties to search for on target devices.--> 在目标设备上搜索的属性。
+                      </p>  <table class="innerTable">
+                          <tr id="property-options-vendorId">
+                            <td>integer</td>
+                            <td>
+                                vendorId</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-options-productId">
+                            <td>integer</td>
+                            <td>
+                                productId</td>
+                            <td>
+                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getDevices-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked with a list of |Device|s on complete.--> 完成时调用，传递 <code>Device</code> 对象列表。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="usb.html#type-Device">Device</a> devices) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-devices">
+                              <td>array of     <a href="usb.html#type-Device">Device</a></td>
+                              <td>
+                                  devices</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-requestAccess"
+                  >requestAccess
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.requestAccess(<span>    <a href="usb.html#type-Device">Device</a> device</span>, <span>integer interfaceId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@This method is ChromeOS specific. Calling this method on other platforms will fail. Requests access from the permission broker to an OS claimed device if the given interface on the device is not claimed.--> 该方法仅用于 ChromeOS，在其他平台上调用该方法会失败。如果设备上的指定接口没有被占有，则请求访问操作系统占有的设备。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-requestAccess-device">
+                      <td>    <a href="usb.html#type-Device">Device</a></td>
+                      <td>
+                          device</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The device to request access to.--> 要请求访问的设备。
+                      </p></td>
+                    </tr>
+                    <tr id="property-requestAccess-interfaceId">
+                      <td>integer</td>
+                      <td>
+                          interfaceId</td>
+                      <td>
+                      
+                      <p>
+                      </p></td>
+                    </tr>
+                    <tr id="property-requestAccess-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean sucess) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-sucess">
+                              <td>boolean</td>
+                              <td>
+                                  sucess</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-openDevice"
+                  >openDevice
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.openDevice(<span>    <a href="usb.html#type-Device">Device</a> device</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Opens a USB device returned by |getDevices|.--> 打开由 <code>getDevices</code> 返回的 USB 设备。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-openDevice-device">
+                      <td>    <a href="usb.html#type-Device">Device</a></td>
+                      <td>
+                          device</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The device to open.--> 要打开的 USB 设备。
+                      </p></td>
+                    </tr>
+                    <tr id="property-openDevice-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked with the created ConnectionHandle on complete.--> 完成时调用，传递创建的 ConnectionHandle（连接句柄）。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-handle">
+                              <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                              <td>
+                                  handle</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-findDevices"
+                  >findDevices
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.findDevices(<span>object options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@Finds USB devices specified by the vendorId/productId/interfaceId tuple and, if permissions allow, opens them for use.--> 寻找制造商标识符（venderId）/产品标识符（productId）/接口标识符（interfaceId）指定的 USB 设备，如果权限允许的话同时打开设备以便使用。</p><p><!--@On Chrome OS, you can specify the interfaceId. In that case the method will request access from permission broker in the same way as in |requestUsbAcess|.--> 在 ChromeOS 上，您可以指定 interfaceId，在这种情况下，该方法使用与 <code>requestUsbAcccess</code> 一样的方式请求访问权限。</p><p><!--@If the access request is rejected, or the device is failed to be opened, its connection handle will not be created or returned.--> 如果访问请求被拒绝，或者无法打开设备，则不会创建或返回连接句柄。</p><p><!--@Calling this method is equivalent to calling |getDevices| followed by a series of |requestAccess| (if it is on ChromeOs) and |openDevice| calls, and returning all the successfully opened connection handles.--> 调用该方法与调用 <code>getDevices</code> 并使用 <code>requestAccess</code>（如果是在 ChromeOS 上）和 <code>openDevice</code> 等价，同时返回所有成功打开的连接句柄。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-findDevices-options">
+                      <td>object</td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The properties to search for on target devices.--> 用于搜索目标设备的属性。
+                      </p>  <table class="innerTable">
+                          <tr id="property-options-vendorId">
+                            <td>integer</td>
+                            <td>
+                                vendorId</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-options-productId">
+                            <td>integer</td>
+                            <td>
+                                productId</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-options-interfaceId">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                interfaceId</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 29<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              <!--@The interface id to request access against. Only available on ChromeOS. It has no effect on other platforms.--> 要请求访问的接口标识符，仅在 ChromeOS 上可用，在其他平台上无效。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-findDevices-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked with the opened ConnectionHandle on complete.--> 完成后调用，传递打开的 ConnectionHandle（连接句柄）。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handles) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-handles">
+                              <td>array of     <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                              <td>
+                                  handles</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-closeDevice"
+                  >closeDevice
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.closeDevice(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Closes a connection handle. Invoking operations on a device after it has been closed is a safe operation, but causes no action to be taken.--> 关闭连接句柄。关闭设备后对其进行操作是安全的，而不会采取任何行动。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-closeDevice-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@The connection handle to close.--> 要关闭的连接句柄。
+                      </p></td>
+                    </tr>
+                    <tr id="property-closeDevice-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The callback to invoke once the device is closed.--> 设备关闭后调用的回调函数。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-listInterfaces"
+                  >listInterfaces
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.listInterfaces(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 29<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Lists all the interfaces on the USB device.--> 列举 USB 设备上的所有接口。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-listInterfaces-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@The device from which the interfaces should be listed.--> 要列举接口的设备。
+                      </p></td>
+                    </tr>
+                    <tr id="property-listInterfaces-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The callback to invoke when the interfaces are enumerated.--> 接口列举完成时调用的回调函数。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of object descriptors) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-descriptors">
+                              <td>array of object</td>
+                              <td>
+                                  descriptors</td>
+                              <td>
+                              
+                                <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                <dl>
+                                  <div>
+                                    <table>
+                                        <tr id="property-descriptorsType-interfaceNumber">
+                                          <td>integer</td>
+                                          <td>
+                                              interfaceNumber</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-descriptorsType-alternateSetting">
+                                          <td>integer</td>
+                                          <td>
+                                              alternateSetting</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-descriptorsType-interfaceClass">
+                                          <td>integer</td>
+                                          <td>
+                                              interfaceClass</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-descriptorsType-interfaceSubclass">
+                                          <td>integer</td>
+                                          <td>
+                                              interfaceSubclass</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-descriptorsType-interfaceProtocol">
+                                          <td>integer</td>
+                                          <td>
+                                              interfaceProtocol</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-descriptorsType-description">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              description</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-descriptorsType-endpoints">
+                                          <td>array of object</td>
+                                          <td>
+                                              endpoints</td>
+                                          <td>
+                                          
+                                            <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                            <dl>
+                                              <div>
+                                                <table>
+                                                    <tr id="property-endpointsType-address">
+                                                      <td>integer</td>
+                                                      <td>
+                                                          address</td>
+                                                      <td>
+                                                      
+                                                      </td>
+                                                    </tr><tr id="property-endpointsType-type">
+                                                      <td>enum of <code>"control"</code>, <code>"interrupt"</code>, <code>"isochronous"</code>, or <code>"bulk"</code></td>
+                                                      <td>
+                                                          type</td>
+                                                      <td>
+                                                      
+                                                      </td>
+                                                    </tr><tr id="property-endpointsType-direction">
+                                                      <td>    <a href="usb.html#type-Direction">Direction</a></td>
+                                                      <td>
+                                                          direction</td>
+                                                      <td>
+                                                      
+                                                      </td>
+                                                    </tr><tr id="property-endpointsType-maximumPacketSize">
+                                                      <td>integer</td>
+                                                      <td>
+                                                          maximumPacketSize</td>
+                                                      <td>
+                                                      
+                                                      </td>
+                                                    </tr><tr id="property-endpointsType-synchronization">
+                                                      <td>enum of <code>"asynchronous"</code>, <code>"adaptive"</code>, or <code>"synchronous"</code></td>
+                                                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                          synchronization</td>
+                                                      <td>
+                                                      
+                                                      <p>
+                                                        <!--@Used for isochronous mode.--> 用于同步模式。
+                                                      </p></td>
+                                                    </tr><tr id="property-endpointsType-usage">
+                                                      <td>enum of <code>"data"</code>, <code>"feedback"</code>, or <code>"explicitFeedback"</code></td>
+                                                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                          usage</td>
+                                                      <td>
+                                                      
+                                                      </td>
+                                                    </tr><tr id="property-endpointsType-pollingInterval">
+                                                      <td>integer</td>
+                                                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                          pollingInterval</td>
+                                                      <td>
+                                                      
+                                                      <p>
+                                                        <!--@If this is an interrupt endpoint, this will be 1-255.--> 如果是中断端点，这一值为 1～255。
+                                                      </p></td>
+                                                    </tr>
+                                                </table>
+                                              </div>
+                                            </dl>
+                                          </td>
+                                        </tr>
+                                    </table>
+                                  </div>
+                                </dl>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-claimInterface"
+                  >claimInterface
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.claimInterface(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>integer interfaceNumber</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@Claims an interface on the specified USB device. Before you can transfer data with endpoints, you must claim their parent interfaces. Only one connection handle on the same host can claim each interface. If the interface is already claimed, this call will fail.</p><p>You shall call releaseInterface when the interface is not needed anymore.--> 在指定 USB 设备上获取接口。在您可以与端点传输数据前，您必须获取它们所属的接口。同一主机上的每一个接口只有一个连接句柄可以占有。如果接口已经被占有，该调用会失败。</p><p>不再需要接口时您应该调用 releaseInterface。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-claimInterface-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@The device on which the interface is to be claimed.--> 要获取接口的设备。
+                      </p></td>
+                    </tr>
+                    <tr id="property-claimInterface-interfaceNumber">
+                      <td>integer</td>
+                      <td>
+                          interfaceNumber</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-claimInterface-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The callback to invoke once the interface is claimed.--> 获取接口后调用的回调函数。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-releaseInterface"
+                  >releaseInterface
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.releaseInterface(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>integer interfaceNumber</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Releases a claim to an interface on the provided device.--> 释放在提供的设备上获取的接口。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-releaseInterface-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@The device on which the interface is to be released.--> 要释放接口的设备。
+                      </p></td>
+                    </tr>
+                    <tr id="property-releaseInterface-interfaceNumber">
+                      <td>integer</td>
+                      <td>
+                          interfaceNumber</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-releaseInterface-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The callback to invoke once the interface is released.--> 接口释放后调用的回调函数。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setInterfaceAlternateSetting"
+                  >setInterfaceAlternateSetting
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.setInterfaceAlternateSetting(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>integer interfaceNumber</span>, <span>integer alternateSetting</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Selects an alternate setting on a previously claimed interface on a device.--> 在之前获取的设备接口上选择替代的设置。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setInterfaceAlternateSetting-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@The device on which the interface settings are to be set.--> 要设置接口设置的设备。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setInterfaceAlternateSetting-interfaceNumber">
+                      <td>integer</td>
+                      <td>
+                          interfaceNumber</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-setInterfaceAlternateSetting-alternateSetting">
+                      <td>integer</td>
+                      <td>
+                          alternateSetting</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The alternate setting to set.--> 要设置的替代设置。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setInterfaceAlternateSetting-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The callback to invoke once the interface setting is set.--> 接口设置后调用的回调函数。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-controlTransfer"
+                  >controlTransfer
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.controlTransfer(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>object transferInfo</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@Performs a control transfer on the specified device. See the ControlTransferInfo structure for the parameters required to make a transfer.--> 在指定设备上进行控制传输，有关进行传输所需要的参数，请参见 ControlTransferInfo 结构。</p><p><!--@Conceptually control transfer talks to the device itself. You do not need to claim interface 0 to perform a control transfer.--> 从概念上说，控制传输与设备本身通信，您不需要占有接口 0 来进行控制传输。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-controlTransfer-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@A connection handle to make the transfer on.--> 进行传输的连接句柄。
+                      </p></td>
+                    </tr>
+                    <tr id="property-controlTransfer-transferInfo">
+                      <td>object</td>
+                      <td>
+                          transferInfo</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The parameters to the transfer. See ControlTransferInfo.--> 传输的参数，参见 ControlTransferInfo。
+                      </p>  <table class="innerTable">
+                          <tr id="property-transferInfo-direction">
+                            <td>    <a href="usb.html#type-Direction">Direction</a></td>
+                            <td>
+                                direction</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The direction of this transfer.--> 本次传输的方向。
+                            </p></td>
+                          </tr><tr id="property-transferInfo-recipient">
+                            <td>enum of <code>"device"</code>, <code>"interface"</code>, <code>"endpoint"</code>, or <code>"other"</code></td>
+                            <td>
+                                recipient</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The intended recipient for this transfer.--> 本次传输的接收方。
+                            </p></td>
+                          </tr><tr id="property-transferInfo-requestType">
+                            <td>enum of <code>"standard"</code>, <code>"class"</code>, <code>"vendor"</code>, or <code>"reserved"</code></td>
+                            <td>
+                                requestType</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The type of this request.--> 本次请求的类型。
+                            </p></td>
+                          </tr><tr id="property-transferInfo-request">
+                            <td>integer</td>
+                            <td>
+                                request</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-transferInfo-value">
+                            <td>integer</td>
+                            <td>
+                                value</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-transferInfo-index">
+                            <td>integer</td>
+                            <td>
+                                index</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-transferInfo-length">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                length</td>
+                            <td>
+                            
+                            <p>
+                              <!--@If this transfer is an input transfer, then this field must be set to indicate the expected data length. If this is an output transfer, then this field is ignored.--> 如果本次传输是输入传输，则该字段必须设置为预期的数据长度。如果本次传输是输出传输，将忽略该字段。
+                            </p></td>
+                          </tr><tr id="property-transferInfo-data">
+                            <td>ArrayBuffer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                data</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The data payload carried by this transfer. If this is an output transfer then this field must be set.--> 本次传输所携带的数据。如果是输出传输，则必须设置该字段。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-controlTransfer-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked once the transfer has completed.--> 传输完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a> info) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-info">
+                              <td>    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a></td>
+                              <td>
+                                  info</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-bulkTransfer"
+                  >bulkTransfer
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.bulkTransfer(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>    <a href="usb.html#type-GenericTransferInfo">GenericTransferInfo</a> transferInfo</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Performs a bulk transfer on the specified device.--> 在指定设备上进行大块传输。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-bulkTransfer-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@A connection handle to make the transfer on.--> 进行传输的连接句柄。
+                      </p></td>
+                    </tr>
+                    <tr id="property-bulkTransfer-transferInfo">
+                      <td>    <a href="usb.html#type-GenericTransferInfo">GenericTransferInfo</a></td>
+                      <td>
+                          transferInfo</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The parameters to the transfer. See GenericTransferInfo.--> 传输的参数，参见 GenericTransferInfo。
+                      </p></td>
+                    </tr>
+                    <tr id="property-bulkTransfer-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked once the transfer has completed.--> 传输完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a> info) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-info">
+                              <td>    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a></td>
+                              <td>
+                                  info</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-interruptTransfer"
+                  >interruptTransfer
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.interruptTransfer(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>    <a href="usb.html#type-GenericTransferInfo">GenericTransferInfo</a> transferInfo</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Performs an interrupt transfer on the specified device.--> 在指定设备上进行中断传输。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-interruptTransfer-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@A connection handle to make the transfer on.--> 进行传输的连接句柄。
+                      </p></td>
+                    </tr>
+                    <tr id="property-interruptTransfer-transferInfo">
+                      <td>    <a href="usb.html#type-GenericTransferInfo">GenericTransferInfo</a></td>
+                      <td>
+                          transferInfo</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The parameters to the transfer. See GenericTransferInfo.--> 传输的参数，参见 GenericTransferInfo。
+                      </p></td>
+                    </tr>
+                    <tr id="property-interruptTransfer-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked once the transfer has completed.--> 传输完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a> info) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-info">
+                              <td>    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a></td>
+                              <td>
+                                  info</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-isochronousTransfer"
+                  >isochronousTransfer
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.isochronousTransfer(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>object transferInfo</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Performs an isochronous transfer on the specific device.--> 在指定设备上进行同步传输。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-isochronousTransfer-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@A connection handle to make the transfer on.--> 进行传输的连接句柄。
+                      </p></td>
+                    </tr>
+                    <tr id="property-isochronousTransfer-transferInfo">
+                      <td>object</td>
+                      <td>
+                          transferInfo</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The parameters to the transfer. See IsochronousTransferInfo.--> 传输的参数，参见 IsochronousTransferInfo。
+                      </p>  <table class="innerTable">
+                          <tr id="property-transferInfo-transferInfo">
+                            <td>    <a href="usb.html#type-GenericTransferInfo">GenericTransferInfo</a></td>
+                            <td>
+                                transferInfo</td>
+                            <td>
+                            
+                            <p>
+                              <!--@All of the normal transfer parameters are encapsulated in the transferInfo parameters. Note that the data specified in this parameter block is split along packetLength boundaries to form the individual packets of the transfer.--> 所有一般的传输参数都包含在此 transferInfo 参数中。注意，该参数块中指定的数据将按照数据包长度（packetLength）分割，构成传输过程中的每一个数据包。
+                            </p></td>
+                          </tr><tr id="property-transferInfo-packets">
+                            <td>integer</td>
+                            <td>
+                                packets</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The total number of packets in this transfer.--> 本次传输中数据包的总数。
+                            </p></td>
+                          </tr><tr id="property-transferInfo-packetLength">
+                            <td>integer</td>
+                            <td>
+                                packetLength</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The length of each of the packets in this transfer.--> 本次传输中每个数据包的长度。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-isochronousTransfer-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked once the transfer has been completed.--> 传输完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a> info) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-info">
+                              <td>    <a href="usb.html#type-TransferResultInfo">TransferResultInfo</a></td>
+                              <td>
+                                  info</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-resetDevice"
+                  >resetDevice
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.usb.resetDevice(<span>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a> handle</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Tries to reset the USB device and restores it to the previous status. If the reset fails, the given connection handle will be closed and the  USB device will appear to be disconnected then reconnected.  In that case you must call |getDevices| or |findDevices| again to acquire the device.--> 尝试重置 USB 设备，并恢复原来的状态。如果重置失败，指定的连接句柄将会关闭，USB 设备就像断开连接后再重新连接一样。在这种情况下，您必须再次调用 <cdoe>getDevices</code> 或 <code>findDevices</code> 获取设备。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-resetDevice-handle">
+                      <td>    <a href="usb.html#type-ConnectionHandle">ConnectionHandle</a></td>
+                      <td>
+                          handle</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@A connection handle to reset.--> 要重置的连接句柄。
+                      </p></td>
+                    </tr>
+                    <tr id="property-resetDevice-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked once the device is reset with a boolean indicating whether the reset is completed successfully.--> 设备重置后调用，传递的布尔值表示重置是否成功完成。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>boolean</td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>辅助功能（a11y） - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="a11y.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Accessibility (a11y)-->辅助功能（a11y）</h1>
+
+
+<p>
+<!--@When you design an extension,
+try to make it as accessible as possible
+to people with disabilities such as
+visual impairment, hearing loss, and limited dexterity.-->
+当您设计您的扩展程序时，尽可能地做到让有视觉障碍、听觉障碍和行动不便的用户无障碍地访问您的扩展。
+</p>
+
+<p>
+<!--@Everyone &mdash; not just people with special needs &mdash;
+can benefit from the alternative access modes
+that accessible extensions provide.
+For example, keyboard shortcuts are important
+for blind people and people with limited dexterity,
+but they also help power users get things done
+more quickly without using a mouse.
+Captions and transcripts give deaf people access to audio content,
+but they are also useful to language learners.-->
+每一个人，不仅仅是有特殊需要的人，都能从扩展程序的辅助功能中受益。例如，键盘快捷键对于有视觉障碍以及行动不便的人非常重要，同时也帮助高级用户不用鼠标就能更快地完成他们的工作。标题和文字解说可以使有听觉障碍的用户访问音频内容，但是对语言学习者来说也有帮助。
+</p>
+
+<p>
+<!--@People can interact with your extension in a variety of ways.
+They might use a standard monitor, keyboard, and mouse,
+or they might use a screen magnifier and just a keyboard.
+Another possibility is a <em>screen reader</em>,
+an assistive application tool that interprets
+what's displayed onscreen
+for a blind or visually impaired user.
+A screen reader might speak out loud or produce Braille output.-->
+用户可以通过各种方式与您的扩展程序交互，他们可能会使用普通的显示器、键盘和鼠标，他们也可能仅使用屏幕放大镜和键盘。另一种可能是屏幕阅读器，是一种为有视觉障碍的用户解析屏幕上显示的内容的辅助应用程序。屏幕阅读器可能会大声朗读屏幕上的内容或者产生盲文输出。
+</p>
+
+<p>
+<!--@Although you can't predict what tools people will use,
+by following a few simple guidelines
+you can write an extension that is
+more likely to be accessible to more people.
+The guidelines on this page aren't going to
+make your extension accessible for absolutely everyone,
+but they're a good starting point.-->
+尽管您无法预测用户会使用哪些工具，但是遵循几个简单的指导可以使您编写出适合更多人的扩展程序。此页面上的指导不一定能保证使您的扩展程序适合每一个人，但是它们是一个很好的起点。
+</p>
+
+
+<h2 id="controls"><!--@Use accessible UI controls-->使用支持辅助功能的用户界面控件</h2>
+
+<p>
+<!--@First, use UI controls that support accessibility.
+The easiest way to get an accessible control is to use a
+standard HTML control.
+If you need to build a custom control,
+keep in mind that it's much easier
+to make the control accessible from the beginning
+than to go back and add accessibility support later.-->
+首先使用支持辅助功能的用户界面控件，最简单的方法就是使用标准 HTML
+控件。如果您需要建立一个自定义控件，牢记从一开始就使控件支持辅助功能要比将来再添加要容易得多。
+</p>
+
+<h3 id="htmlcontrols"><!--@Standard controls-->标准控件</h3>
+
+<p>
+<!--@Try to use standard HTML UI controls whenever possible.
+Standard HTML controls (shown in the following figure)
+are keyboard accessible, scale easily,
+and are generally understood by screen readers.-->
+尽可能地使用标准 HTML 用户界面控件。标准 HTML 控件（如下图显示）可通过键盘访问，可以轻易地缩放，而且通常能被屏幕阅读器识别。
+</p>
+
+<img src="../static/images/a11y/standard-html-controls.png"
+ width="550" height="350"
+ alt="Screenshots and code for button, checkbox, radio, text, select/option, and link">
+
+
+<h3 id="aria">在自定义控件中使用 ARIA<!--@ in custom controls--></h3>
+
+<p>
+<!--@ARIA is a specification for making UI controls accessible to screen readers
+by means of a standard set of DOM attributes.
+These attributes provide clues to the screen reader
+about the function and current state of controls on a web page.
+ARIA is a
+<a href=" http://www.w3.org/WAI/intro/aria">work in progress at the W3C</a>.-->
+ARIA 是通过一组标准 DOM 属性使 UI 控件更适合屏幕阅读器的一种规范，这些属性给屏幕阅读器提供有关网页上各控件功能与状态的线索。ARIA 是 <a href="http://www.w3.org/WAI/intro/aria">W3C 正在进行中的一项规范</a>。
+</p>
+
+<p>
+<!--@Adding ARIA support to custom controls in your extension
+involves modifying DOM elements to add attributes
+Google Chrome uses
+to raise events during user interaction.
+Screen readers respond to these events
+and describe the function of the control.
+The DOM attributes specified by ARIA are classified into
+<em>roles</em>, <em>states</em>, and <em>properties</em>.-->
+向您的扩展程序中的自定义控件添加 ARIA 支持涉及到修改 DOM
+元素以及添加属性，以便 Google Chrome
+浏览器用来产生用户交互过程中的事件，屏幕阅读器响应这些事件，描述控件的功能。ARIA
+指定的 DOM 属性分为三类：<em>role</em>、<em>states</em> 和
+<em>properties</em>。
+</p>
+
+<p>
+<!--@The ARIA attribute <em>role</em>
+is an indication of the control type
+and describes the way the control should behave.
+It is expressed with the DOM attribute <code>role</code>,
+with a value set to one of the pre-defined ARIA role strings.
+Because ARIA roles are static,
+the role attribute should not change its value.-->
+ARIA 属性 <em>role</em>（角色）表示控件类型，描述控件的行为方式，通过 DOM
+属性 <code>role </code>表示，值为预定义的 ARIA 角色字符串之一。因为 ARIA
+角色是静态的，角色属性不应该改变它的值。
+</p>
+
+<p>
+<!--@The--> <a href="http://www.w3.org/WAI/PF/aria/roles">ARIA <!--@Role Specification-->角色规范</a><!--@
+holds detailed information on how to pick the correct role.
+For example, if your extension includes a toolbar,
+set the-->（英文）包含如何选择正确角色的详细信息。例如，如果您的扩展程序包含工具栏，如下列代码所示设置工具栏
+DOM 元素的
+<code>role</code> <!--@attribute of the toolbar's DOM element as follows:-->
+属性：
+</p>
+
+<pre>
+&lt;div role="toolbar"&gt;
+</pre>
+
+<p>
+<!--@ARIA attributes are also used to describe
+the current state and properties of controls of a particular role.
+A <em>state</em> is dynamic and should be updated during user interaction.
+For example, a control with the role "checkbox"
+could be in the states "checked" or "unchecked".
+A <em>property</em> is not generally dynamic,
+but is similar to a state
+in that it expresses specific information about a control.
+For more information on ARIA states and properties,
+refer to the
+<a href="http://www.w3.org/TR/wai-aria/states_and_properties">W3C States and Properties specification</a>.-->
+ARIA 属性也用来描述特定角色的控件的当前状态和属性。<em
+>状态</em>是动态的，应该在与用户交互的过程中更新。例如，角色为
+"checkbox" 的控件可能的状态有 "checked" 和 "unchecked"。<em
+>属性</em>通常不是动态的，但是与状态类似，表达控件的特定信息。有关 ARIA
+状态与属性的更多信息，请参见 <a
+href="http://www.w3.org/TR/wai-aria/states_and_properties">W3C
+状态与属性规范</a>。
+</p>
+
+
+<p class="note">
+<b><!--@Note:-->注意：</b>您不一定必须使用某个角色的所有可用状态和属性。
+<!--@You don't have to use
+all of the states and properties available for a particular role.-->
+</p>
+
+<p>
+<!--@Here's an example of adding
+the ARIA property-->如下是一个例子，向示例工具栏控件添加 ARIA 属性
+<code>aria-activedescendant</code>：
+<!--@to the example toolbar control:-->
+</p>
+
+<pre>
+&lt;div role="toolbar" tabindex="0" aria-activedescendant="button1"&gt;
+</pre>
+
+<p>
+<!--@The-->
+<a href="http://www.w3.org/WAI/PF/aria/states_and_properties#aria-activedescendant"><code>aria-activedescendant</code></a>
+<!--@property specifies which child of the toolbar receives focus
+when the toolbar receives focus.
+In this example, the toolbar's first button
+(which has the <code>id</code> "button1")
+is the child that gets focus.
+The code <code>tabindex="0"</code>
+specifies that the toolbar
+receives focus in document order.-->
+属性指定工具栏获得焦点时哪一个子控件获得焦点。在这一例子中，工具栏的第一个按钮（<code>id</code>
+为 "button1" ）为获得焦点的子控件。代码
+<code>tabindex="0"</code> 指定控件在文档中获得焦点的顺序。
+</p>
+
+<p>
+<!--@Here's the complete specification for the example toolbar:-->
+如下是示例工具栏的完整表示：
+</p>
+
+<pre>
+&lt;div role="toolbar" tabindex="0" aria-activedescendant="button1"&gt;
+  &lt;img src="buttoncut.png" role="button" alt="cut" id="button1"&gt;
+  &lt;img src="buttoncopy.png" role="button" alt="copy" id="button2"&gt;
+  &lt;img src="buttonpaste.png" role="button" alt="paste" id="button3"&gt;
+&lt;/div&gt;
+</pre>
+
+<p>
+<!--@Once ARIA roles, states, and properties are added to the DOM of a control,
+Google Chrome raises the appropriate events to the screen reader.
+Because ARIA support is still a work in progress,
+Google Chrome might not raise an event for every ARIA property,
+and screen readers might not recognize all of the events being raised.
+You can find more information on ARIA support in Google Chrome in the
+<a href="http://www.chromium.org/developers/design-documents/accessibility#TOC-WAI-ARIA-Support">Chromium Accessibility Design Document</a>.-->
+一旦 ARAI 角色、状态和属性添加到控件的 DOM 中，Google Chrome
+浏览器将为屏幕阅读器产生合适的事件。因为 ARIA 支持仍在标准化中，Google
+Chrome 浏览器不一定会为每一个 ARIA
+属性产生事件，屏幕阅读器也不一定会识别所有产生的事件。您可以在
+<a href="http://www.chromium.org/developers/design-documents/accessibility#TOC-WAI-ARIA-Support">Chromium
+辅助功能设计文档</a>（英文）中找到有关 Google Chrome 浏览器对 ARIA
+支持的更多信息。
+</p>
+
+<p>
+<!--@For a quick tutorial on adding ARIA controls to custom controls, see
+<a href="http://www.w3.org/2010/Talks/www2010-dsr-diy-aria/">Dave Raggett's presentation from WWW2010</a>.-->
+有关向自定义控件添加 ARIA 属性的快速教程，请参见
+<a href="http://www.w3.org/2010/Talks/www2010-dsr-diy-aria/">Dave Raggett
+在 WWW2010 的演示文稿</a>（英文）。
+
+<h3 id="focus"><!--@Focus in custom controls-->自定义控件的焦点</h3>
+
+<p>
+<!--@Make sure that operation and navigation controls of your extension
+can receive keyboard focus.
+Operation controls might include
+buttons, trees, and list boxes.
+Navigation controls might include tabs and menu bars.-->
+确保您的扩展程序的操作和导航控件可以接收键盘焦点。操作控件可能包含按钮、树和列表框，导航控件可能包含标签页和菜单栏。
+</p>
+
+<p>
+<!--@By default, the only elements in the HTML DOM
+that can receive keyboard focus
+are anchors, buttons, and form controls.
+However, setting the HTML attribute <code>tabIndex</code> to <code>0</code>
+places DOM elements in the default tab sequence,
+enabling them to receive keyboard focus.
+For example:-->
+默认情况下，HTML DOM
+中能够接收键盘焦点的元素只有链接、按钮和表单控件。然而，将 HTML 属性
+<code>tabIndex</code> 设为 <code>0</code> 可以把 DOM 元素添加到默认 Tab
+顺序中，让它们可以接收键盘焦点。例如：
+</p>
+
+<pre>
+<em>element</em>.tabIndex = 0
+</pre>
+
+<p>
+<!--@Setting <code>tabIndex = -1</code> removes the element from the tab sequence
+but still allows the element to receive keyboard focus programmatically.
+Here's an example of setting keyboard focus:-->
+设置 <code>tabIndex = -1</code> 将元素从 Tab
+顺序中删除，但是仍然允许元素以编程方式接受键盘焦点。如下是一个设置键盘焦点的例子：
+</p>
+
+<pre>
+<em>element</em>.focus();
+</pre>
+
+<p>
+<!--@Ensuring that your custom UI controls include keyboard support
+is important not only for users who don't use the mouse
+but also because screen readers use keyboard focus
+to determine which control to describe.-->
+确保您的自定义用户界面控件包含键盘支持，这不仅对于不使用鼠标的用户来说很重要，而且屏幕阅读器也需要使用键盘焦点来确定描述哪一个控件。
+</p>
+
+<h2 id="keyboard"> <!--@Support keyboard access-->支持键盘访问 </h2>
+
+<p>
+<!--@People should be able to use your extension
+even if they can't or don't want to use a mouse.-->
+即使用户不能或不想使用鼠标，他们也应该能够使用您的扩展程序。
+</p>
+
+<h3 id="navigation"> <!--@Navigation-->导航 </h3>
+
+<p>
+<!--@Check that the user can navigate between
+the different parts of your extension
+without using the mouse.
+Also check that any popups on page actions or browser actions
+are keyboard navigable. -->
+确保用户不通过鼠标就能在您的扩展程序的不同部分之间导航，同时确保页面按钮或浏览器按钮的任何弹出菜单可以通过键盘导航。
+</p>
+
+<p id="builtin">
+<!--@On Windows, you can use-->在 Windows 中，您可以使用 <b>Shift+Alt+T</b>
+<!--@to switch the keyboard focus to the toolbar,
+which lets you navigate to the icons of page actions and browser actions.
+The help topic
+<a href="http://www.google.com/support/chrome/bin/static.py?hl=en&page=guide.cs&guide=25799&from=25799&rd=1">Keyboard and mouse shortcuts</a>
+lists all of Google Chrome's keyboard shortcuts;
+details about toolbar navigation
+are in the section <b>Google Chrome feature shortcuts</b>.-->
+将键盘焦点切换至工具栏，使您导航到页面按钮或浏览器按钮的图标上。帮助主题<a href="https://www.google.com/support/chrome/bin/static.py?hl=zh-CN&page=guide.cs&guide=25799&from=25799&rd=1">键盘和鼠标快捷键</a>列出了所有
+Google Chrome 浏览器的键盘快捷键，有关工具栏导航的详情在
+<b>Google Chrome 浏览器功能快捷键</b>部分。
+</p>
+
+<p class="note">
+<b><!--@Note:-->注意：</b><!--@
+The Windows version of Google Chrome 6 was the first
+to support keyboard navigation to the toolbar.
+Support is also planned for Linux.
+On Mac OS X,
+access to the toolbar is provided through VoiceOver,
+Apple's screenreader.-->Windows 版本的 Google Chrome 6
+首先开始支持工具栏的键盘导航，还计划在 Linux
+版本中提供支持。在 Mac OS X 中，工具栏的访问通过 VoiceOver——Apple
+的屏幕阅读器提供。
+</p>
+
+<p>
+<!--@Make sure that it's easy to see
+which part of the interface has keyboard focus.
+Usually a focus outline moves around the interface,
+but if you’re using CSS heavily this outline might be suppressed 
+or the contrast might be reduced.
+Two examples of focus outline follow.-->
+确保用户可以轻松看到界面中的哪一部分具有键盘焦点。通常焦点轮廓显示在界面周围，但是如果您过度地使用
+CSS，这一轮廓可能不会显示，或者对比度降低了。如下是两个焦点轮廓的例子。
+</p>
+
+<img src="../static/images/a11y/focus-outline-2.png"
+  width="200" height="75"
+  alt="A focus outline on a Search button">
+<br />
+<img src="../static/images/a11y/focus-outline.png"
+  width="400" height="40"
+  alt="A focus outline on one of a series of links">
+
+
+<h3 id="shortcuts"> <!--@Shortcuts-->快捷键 </h3>
+
+<p>
+<!--@Although the most common keyboard navigation strategy involves
+using the Tab key to move focus through the extension interface,
+that's not always the easiest or most efficient way
+to use the interface.
+You can make keyboard navigation easier
+by providing explicit keyboard shortcuts.-->
+尽管最常见的键盘导航方式是使用 Tab
+键在扩展程序的界面间移动焦点，但是这并不一定是最简单或最有效的方式。您可以提供明确的键盘快捷键，使键盘导航更容易。
+</p>
+
+<p>
+<!--@To implement shortcuts,
+connect keyboard event listeners to your controls.
+A good reference is the DHTML Style Guide Working Group’s
+<a href="http://dev.aol.com/dhtml_style_guide">guidelines for keyboard shortcuts</a>.-->
+要实现快捷键，您需要为您的控件处理键盘快捷键事件。有关这方面比较好的参考资料是
+DHTML 样式指导工作组的<a href="http://dev.aol.com/dhtml_style_guide"
+>键盘快捷键指导</a>。
+</p>
+
+<p>
+<!--@A good way to ensure discoverability of keyboard shortcuts
+is to list them somewhere.
+  Your extension's
+  <a href="options">Options page</a>
+might be a good place to do this.-->
+确保用户能发现键盘快捷键的良好方式是在合适的地方列举出来，您的扩展程序的<a
+href="options.html">选项页面</a>可能比较合适。
+</p>
+
+<p>
+<!--@For the example toolbar,
+a simple JavaScript keyboard handler could look like the following.
+Note how the ARIA property <code>aria-activedescendant</code>
+is updated in response to user input
+to reflect the current active toolbar button.-->
+在工具栏的例子中，一个简单的 JavaScript 键盘处理函数如下列代码所示。注意
+如何使 ARIA 属性 <code>aria-activedescendant</code>
+随着用户输入而更新，反映当前活动的工具栏按钮。
+</p>
+
+<pre>
+&lt;head&gt;
+&lt;script&gt;		
+ function optionKeyEvent(event) {
+  var tb = event.target;
+  var buttonid; 
+ 
+  ENTER_KEYCODE = 13;
+  RIGHT_KEYCODE = 39;
+  LEFT_KEYCODE = 37;
+  // 处理方向键的部分示例代码。
+  if (event.type == "keydown") {
+    // 实现工具栏按钮中的循环键盘导航
+    if (event.keyCode == ENTER_KEYCODE) {
+      ExecuteButtonAction(getCurrentButtonID());
+      <em>// getCurrentButtonID 在其他地方定义</em>
+    } else if (event.keyCode == event.RIGHT_KEYCODE) {
+      // 将当前工具栏按钮更改为右边一个（循环）
+      var buttonid = getNextButtonID();
+      <em>// getNextButtonID 在其他地方定义</em>
+      tb.setAttribute("aria-activedescendant", buttonid); 
+    } else if (event.keyCode == event.LEFT_KEYCODE) {
+      // 将当前工具栏按钮更改为左边一个（循环）
+      var buttonid = getPrevButtonID();
+      <em>// getPrevButtonID 在其他地方定义</em>
+      tb.setAttribute("aria-activedescendant", buttonid); 
+    } else {
+      return true;
+    }
+    return false;
+  }
+}  
+&lt;/script&gt;		
+
+&lt;div role="toolbar" tabindex="0" aria-activedescendant="button1" id="tb1" 
+     onkeydown="return optionKeyEvent(event);"
+     onkeypress="return optionKeyEvent(event);"&gt;
+  &lt;img src="buttoncut" role="button" alt="cut" id="button1"&gt;      
+  &lt;img src="buttoncopy" role="button" alt="copy" id="button1"&gt;     
+  &lt;img src="buttonpaste" role="button" alt="paste" id="button1"&gt;     
+&lt;/div&gt;
+</pre>
+
+
+<h2 id="more"> <!--@Provide accessible content-->提供具有辅助功能的内容 </h2>
+
+
+<p>
+<!--@The remaining guidelines might be familiar
+because they reflect good practices for all web content,
+not just extensions.-->
+剩下的指导可能对您来说比较熟悉，因为它们反映了所有网上内容的良好做法，不仅仅适用于扩展程序。
+</p>
+
+<h3 id="text"><!--@Text-->文字</h3>
+
+<p>
+<!--@Evaluate your use of text in your extension.
+Many people might find it helpful
+if you provide a way to increase the text size within your extension.
+If you are using keyboard shortcuts,
+make sure that they don't interfere with
+the zoom shortcuts built into Google Chrome.-->
+评估您的扩展程序中文字的使用。很多人可能觉得如果能提供某种方式增加您的扩展程序中的字体大小，这样会很好。如果您使用键盘快捷键，确保它们不会干扰
+Google Chrome 浏览器内建的缩放快捷键。
+</p>
+
+<p>
+<!--@As an indicator of the flexibility of your UI,
+apply the <a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale">200% test</a>.
+If you increase the text size or page zoom 200%,
+is your extension still usable?-->
+作为您的用户界面伸缩性的指示，尝试
+<a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale">200% 测试</a>。如果增加字体大小或页面缩放至
+200%，您的扩展程序仍然可用吗？
+</p>
+
+<p>
+<!--@Also, avoid baking text into images:
+users cannot modify the size of text displayed as an image,
+and screenreaders cannot interpret images.
+Consider using a web font instead,
+such as one of the fonts collected in the
+<a href="http://code.google.com/apis/webfonts/">Google Font API</a>.
+Text styled in a web font is searchable,
+scales to different sizes,
+and is accessible to people using screen readers.-->
+同时，避免将文字变成图像：用户不能更改显示为图像的文字，屏幕阅读器也不能识别图像。考虑使用网上字体，例如
+<a href="https://developers.google.com/webfonts/">Google Font API</a>
+中的某一种字体。使用网上字体的文字可以搜索，可以缩放至不同大小，并且方便使用屏幕阅读器的用户。
+</p>
+
+<h3 id="colors"><!--@Colors-->颜色</h3>
+
+<p>
+<!--@Check that there is sufficient contrast between
+background color and foreground/text color in your extension.
+<a href="http://snook.ca/technical/colour_contrast/colour.html">This contrast checking tool</a>
+checks whether your background and foreground colors
+provide appropriate contrast.
+If you’re developing in a Windows environment,
+you can also enable High Contrast Mode
+to check the contrast of your extension.
+When evaluating contrast,
+verify that every part of your extension that relies on
+color or graphics to convey information is clearly visible.
+For specific images, you can use a tool such as the
+<a href="http://www.vischeck.com/vischeck/">Vischeck simulation tool</a>
+to see what an image looks like in various forms of color deficiency.-->
+确保您的扩展程序中背景颜色和前景、文字颜色对比明显。<a
+href="http://snook.ca/technical/colour_contrast/colour.html">这一对比度检查工具</a>检查您的背景和前景颜色是否具有足够的对比度。如果您在
+Windows 环境中开发，您也可以打开高对比度模式来检查您的扩展程序的对比度。当评估对比度时，确保您的扩展程序中依赖颜色或图像传达信息的每一部分清晰可见。对于特定的图像，您可以使用某些工具，例如
+<a href="http://www.vischeck.com/vischeck/">Vischeck 模拟工具</a>来检验图片在不同形式的色觉缺陷下看到的效果。
+</p>
+
+<p>
+<!--@You might consider offering different color themes,
+or giving the user the ability to customize the color scheme
+for better contrast. -->
+您可以考虑提供不同的配色方案，或者让用户自定义配色方案，使对比度更好。
+</p>
+
+<h3 id="sound"><!--@Sound-->声音</h3>
+
+<p>
+<!--@If your extension relies upon sound or video to convey information,
+ensure that captions or a transcript are available.
+See the
+<a href="http://www.dcmp.org/ciy/">Described and Captioned Media Program guidelines</a>
+for more information on captions. -->
+如果您的扩展程序依赖声音或视频传递信息，确保标题及文字稿可用。有关标题的更多信息请参见<a href="http://www.dcmp.org/ciy/">为多媒体内容添加描述及标题的指导</a>。
+</p>
+
+<h3 id="images"><!--@Images-->图像</h3>
+
+<p>
+<!--@Provide informative alt text for your images.
+For example:-->
+为您所有的图像提供信息量充足的 alt 文字。例如：
+</p>
+
+<pre>
+&lt;img src="img.jpg" alt="扩展程序标识"&gt;
+</pre>
+
+<p>
+<!--@Use the alt text to state the purpose of the image
+rather than as a literal description of the contents of an image.
+Spacer images or purely decorative images
+should have blank ("") alt text
+or be removed from the HTML entirely and placed in the CSS.-->
+使用 alt 文字陈述图片的目的，而不是用于图片内容的字面描述。用于增加空间或纯粹装饰性的图片应该使用空的（""） alt 文字或者完全从 HTML 中删除，放在 CSS 中。
+</p>
+
+<p>
+<!--@If you must use text in an image,
+include the image text in the alt text.
+A good resource to refer to is the
+<a href="http://www.webaim.org/techniques/alttext/">WebAIM article on appropriate alt text</a>.-->
+如果您必须在图片中使用文字，将图片中的文字包含在 alt
+文字中。可供参考的优秀的资源为
+<a href="http://www.webaim.org/techniques/alttext/">WebAIM 文章：合适的 alt
+文字</a>（英文）。
+
+<h2 id="examples"><!--@Examples-->例子</h2>
+
+<p>
+<!--@For an example that implements keyboard navigation and ARIA properties, see-->
+有关实现键盘导航以及 ARIA 属性的例子，请参见
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/extensions/news_a11y/">examples/extensions/news_a11y</a><!--@
+(compare it to
+-->将它和
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/extensions/news/">examples/extensions/news</a><!--@).
+For more examples and for help in viewing the source code,
+see <a href="samples">Samples</a>.-->
+比较）。有关更多例子以及查看源代码的帮助，请参见<a href="samples.html">示例</a>。
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">开发扩展程序</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="a11y.html" class="active">辅助功能</a>
+                        </li>
+                        <li>
+                          <a href="contentSecurityPolicy.html">内容安全策略</a>
+                        </li>
+                        <li>
+                          <a href="xhr.html">跨站 XHR</a>
+                        </li>
+                        <li>
+                          <a href="tut_debugging.html">调试</a>
+                        </li>
+                        <li>
+                          <a href="i18n.html">国际化支持</a>
+                        </li>
+                        <li>
+                          <a href="messaging.html">消息传递</a>
+                        </li>
+                        <li>
+                          <a href="tut_migration_to_manifest_v2.html">迁移至清单文件版本 2</a>
+                        </li>
+                        <li>
+                          <a href="tut_oauth.html">OAuth</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="a11y.html#controls"
+          >使用支持辅助功能的用户界面控件</a>
+          <ol class="toc">
+              <li><a data-list-item href="a11y.html#htmlcontrols"
+                     >标准控件</a>
+              </li>
+              <li><a data-list-item href="a11y.html#aria"
+                     >在自定义控件中使用 ARIA</a>
+              </li>
+              <li><a data-list-item href="a11y.html#focus"
+                     >自定义控件的焦点</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="a11y.html#keyboard"
+          > 支持键盘访问 </a>
+          <ol class="toc">
+              <li><a data-list-item href="a11y.html#navigation"
+                     > 导航 </a>
+              </li>
+              <li><a data-list-item href="a11y.html#shortcuts"
+                     > 快捷键 </a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="a11y.html#more"
+          > 提供具有辅助功能的内容 </a>
+          <ol class="toc">
+              <li><a data-list-item href="a11y.html#text"
+                     >文字</a>
+              </li>
+              <li><a data-list-item href="a11y.html#colors"
+                     >颜色</a>
+              </li>
+              <li><a data-list-item href="a11y.html#sound"
+                     >声音</a>
+              </li>
+              <li><a data-list-item href="a11y.html#images"
+                     >图像</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="a11y.html#examples"
+          >例子</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>概述 - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="overview.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Overview-->概述</h1>
+
+
+<p>
+<!--@Once you've finished this page
+and the
+<a href="getstarted">Getting Started</a> tutorial,
+you'll be all set to start writing extensions.-->
+当您看完该页面以及<a
+href="getstarted.html">入门</a>教程后，您已经准备好开始编写扩展程序了。
+</p>
+
+<h2 id="what"><!--@The basics-->基础</h2>
+
+<p>
+<!--@An extension is a zipped bundle of files&mdash;HTML,
+CSS, JavaScript, images, and anything else you need&mdash;that
+adds functionality to the Google Chrome browser.
+Extensions are essentially web pages,
+and they can use all the
+<a href="api_other">APIs that the browser provides to web pages</a>,
+from XMLHttpRequest to JSON to HTML5.-->
+扩展程序由一些文件（包括
+HTML、CSS、JavaScript、图片以及其他任何您需要的文件）经过 zip 打包得到，为
+Google Chrome 浏览器增加功能。扩展程序本质上是网页，它们可以利用<a
+href="api_other.html">浏览器为网页提供的所有 API</a>，例如
+XMLHttpRequest、JSON、HTML 5 等等。
+</p>
+
+<p>
+<!--@Extensions can interact with web pages or servers using
+<a href="content_scripts">content scripts</a> or
+<a href="xhr">cross-origin XMLHttpRequests</a>.
+Extensions can also interact programmatically
+with browser features such as
+<a href="bookmarks">bookmarks</a>
+and <a href="tabs">tabs</a>.-->
+扩展程序可以通过<a href="content_scripts.html">内容脚本</a>或<a
+href="xhr.html">跨站 XMLHttpRequest</a> 与网页或者服务器交互，扩展程序也可以以编程方式与浏览器功能（例如<a href="bookmarks.html">书签</a>和<a href="tabs.html">标签页</a>交互）。
+</p>
+
+<h3 id="extension-ui"><!--@Extension UIs-->扩展程序的用户界面</h3>
+
+<p>
+<!--@Many extensions&mdash;but not Chrome Apps&mdash;add
+UI to Google Chrome in the form of
+<a href="browserAction">browser actions</a>
+or <a href="pageAction">page actions</a>.
+Each extension can have at most one browser action or page action.
+Choose a <b>browser action</b> when the extension is relevant to most pages.
+Choose a <b>page action</b> when the extension's icon
+should appear or disappear,
+depending on the page.-->
+许多扩展程序（但不包括 Chrome 应用）以<a href="browserAction.html"
+>浏览器按钮</a>或<a href="pageAction.html">页面按钮</a>的形式向
+Google Chrome
+浏览器增加用户界面，每个扩展程序最多能有一个浏览器按钮或页面按钮。当扩展程序与大部分网页相关时选择使用<b>浏览器按钮</b>，当扩展程序的图标显示还是消失取决于具体网页时选择使用<b>页面按钮</b>。
+</p>
+
+<table class="simple">
+<tr>
+  <td width="33%">
+    <img src="../static/images/overview/browser-action.png"
+      width="147" height="100"
+      alt="screenshot" />
+  </td>
+  <td width="33%">
+    <img src="../static/images/overview/page-action.png"
+      width="147" height="100"
+      alt="screenshot" />
+  </td>
+  <td>
+    <img src="../static/images/overview/browser-action-with-popup.png"
+      width="147" height="100"
+      alt="screenshot" />
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <!--@This <a href="samples#google-mail-checker">Google Mail Checker extension</a>
+    uses a <em>browser action</em>
+    (icon in the toolbar).-->
+    这一<a href="samples.html#google-mail-checker">Google Mail Checker
+    扩展程序</a>使用<em
+    >浏览器按钮</em>（工具栏中的图标）。
+  </td>
+  <td>
+    <!--@This <a href="samples#mappy">Mappy extension</a>
+    uses a <em>page action</em>
+    (icon in the address bar)
+    and <em>content script</em>
+    (code injected into a web page).-->
+    这一<a href="samples.html#mappy">Mappy 扩展程序</a>使用<em
+    >页面按钮</em>（地址栏中的图标）以及<em>内容脚本</em>（插入网页的代码）。
+  </td>
+  <td>
+    <!--@This <a href="samples#news-reader">News Reader extension</a>
+    features a browser action that,
+    when clicked,
+    shows a <em>popup</em>.-->
+    单击时显示<em>弹出菜单</em>的浏览器按钮是这一<a
+    href="samples.html#news-reader">新闻阅读器扩展程序</a>的特色。
+  </td>
+</tr>
+</table>
+
+<p>
+<!--@Extensions (and Chrome Apps) can also present a UI in other ways,
+such as adding to the Chrome context menu,
+providing an options page,
+or using a content script that changes how pages look.
+See the <a href="devguide">Developer's Guide</a>
+for a complete list of extension features,
+with links to implementation details
+for each one.-->
+扩展程序（以及 Chrome 应用）也可以以其他形式呈现用户界面，例如在 Chrome
+浏览器的右键菜单中添加内容，提供选项页面，或者利用内容脚本更改页面的显示方式。有关完整的扩展程序功能以及每一种功能的实现细节，请参见<a href="devguide.html">开发者指南</a>。
+</p>
+
+<h2 id="files"><!--@Files-->文件</h2>
+<p>
+<!--@Each extension has the following files:-->
+每一个扩展程序包含以下文件：
+
+</p>
+
+<ul>
+  <li><!--@A <b>manifest file</b>-->一个<b>清单文件</b></li>
+  <li><!--@One or more <b>HTML files</b> (unless the extension is a theme)-->一个或多个 <b>HTML 文件</b>（除非扩展程序是一个主题背景）</li>
+  <li><!--@<em>Optional:</em> One or more <b>JavaScript files</b>--><em>可选：</em>一个或多个 <b>JavaScript 文件</b></li>
+  <li><!--@<em>Optional:</em> Any other files your extension needs&mdash;for
+  example, image files--><em>可选：</em>您的扩展程序需要的任何其他文件，例如图片</li>
+</ul>
+
+<p>
+<!--@While you're working on your extension,
+you put all these files into a single folder.
+When you distribute your extension,
+the contents of the folder are packaged into a special ZIP file
+that has a <code>.crx</code> suffix.
+If you upload your extension using the
+<a href="https://chrome.google.com/webstore/developer/dashboard">Chrome Developer Dashboard</a>,
+the <code>.crx</code> file is created for you.
+For details on distributing extensions,
+see <a href="hosting">Hosting</a>.-->
+当您编写您的扩展程序时，您将所有这些文件放在一个文件夹中。当您发布您的扩展程序时，该文件夹的内容将被压缩成一个特殊的
+ZIP 文件，以 <code>.crx</code> 为后缀。如果您通过
+<a href="https://chrome.google.com/webstore/developer/dashboard">Chrome
+开发者信息中心</a>上传您的扩展程序，该 <code>.crx</code>
+文件会自动为您创建。有关发布扩展的细节，请参见<a
+href="hosting.html">托管</a>。
+</p>
+
+
+<h3 id="relative-urls"><!--@Referring to files-->引用文件</h3>
+
+<p>
+<!--@You can put any file you like into an extension,
+but how do you use it?
+Usually,
+you can refer to the file using a relative URL,
+just as you would in an ordinary HTML page.
+Here's an example of referring to
+a file named <code>myimage.png</code>
+that's in a subfolder named <code>images</code>.-->
+您可以在扩展程序中放置您需要的任何文件，但是您如何使用它们呢？通常，您可以通过相对
+URL 引用文件，就像在普通的 HTML
+页面中那样。下面是一个例子，引用位于子文件夹 <code>images</code> 中名为
+<code>myimage.png</code> 的文件。
+</p>
+
+<pre>
+&lt;img <b>src="images/myimage.png"</b>>
+</pre>
+
+<p>
+<!--@As you might notice while you use the Google Chrome debugger,
+every file in an extension is also accessible by an absolute URL like this:-->
+您使用 Google Chrome 浏览器的调试器时可能会发现，扩展程序中的每一个文件也可以通过绝对 URL 访问，如下所示：
+</p>
+
+<blockquote>
+<b>chrome-extension://</b><em>&lt;扩展程序标识符&gt;</em><b>/</b><em>&lt;文件路径&gt;</em>
+</blockquote>
+
+<p>
+<!--@In that URL, the <em>&lt;extensionID></em> is a unique identifier
+that the extension system generates for each extension.
+You can see the IDs for all your loaded extensions
+by going to the URL <b>chrome://extensions</b>.
+The <em>&lt;pathToFile></em> is the location of the file
+under the extension's top folder;
+it's the same as the relative URL.-->
+在这一 URL 中，<em>&lt;扩展程序标识符&gt;</em>
+是扩展程序系统为每一个扩展程序生成的唯一标识符，您可以进入
+<b>chrome://extensions</b>
+查看您加载的所有扩展程序的标识符。<em>&lt;文件路径&gt;</em>
+是扩展程序的主目录下的文件位置，与相对 URL 相同。
+</p>
+
+<p>
+<!--@While you're working on an extension
+(before it's packaged),
+the extension ID can change.
+Specifically, the ID of an unpacked extension will change
+if you load the extension from a different directory;
+the ID will change again when you package the extension.
+If your extension's code
+needs to specify the full path to a file within the extension,
+you can use the <code>@@extension_id</code>
+<a href="i18n#overview-predefined">predefined message</a>
+to avoid hardcoding the ID during development.-->
+当您编写扩展程序时（打包之前），扩展程序标识符可能会更改。特别地，如果您从另一个目录加载未打包的扩展程序，它的标识符会改变，当您打包扩展程序时会再次改变。如果您的扩展程序代码需要指定扩展程序中某个文件的完整路径，您可以使用
+<code>@@extension_id</code> 这一<a href="i18n.html#overview-predefined"
+>预定义消息</a>，避免开发过程中硬编码标识符。
+</p>
+
+<p>
+<!--@When you package an extension
+(typically, by uploading it with the dashboard),
+the extension gets a permanent ID,
+which remains the same even after you update the extension.
+Once the extension ID is permanent,
+you can change all occurrences of
+<code>@@extension_id</code> to use the real ID.-->
+当您打包扩展程序时（典型情况下，通过信息中心上传），该扩展程序将会获得一个永久的标识符，即使您更新了这一扩展程序仍然保持不变。一旦扩展程序的标识符变成永久的了，您就可以将所有的 <code>@@extension_id</code> 修改为真正的唯一标识符。
+</p>
+
+
+<h3 id="manifest"><!--@The manifest file-->清单文件</h3>
+
+<p>
+<!--@The manifest file, called-->清单文件名为 <code>manifest.json</code><!--@,
+gives information about the extension,
+such as the most important files
+and the capabilities that the extension might use.
+Here's a typical manifest file for a browser action
+that uses information from google.com:-->
+，提供有关扩展程序的各种信息，例如最重要的文件和扩展程序可能具有的能力。以下是一个典型的清单文件，用于一个浏览器按钮，它将会访问来自 google.com 的信息：
+</p>
+
+<pre data-filename="manifest.json">
+{
+  "name": "我的扩展程序",
+  "version": "2.1",
+  "description": "从 Google 获取信息。",
+  "icons": { "128": "icon_128.png" },
+  "background": {
+    "persistent": false,
+    "scripts": ["bg.js"]
+  },
+  "permissions": ["http://*.google.com/", "https://*.google.com/"],
+  "browser_action": {
+    "default_title": "",
+    "default_icon": "icon_19.png",
+    "default_popup": "popup.html"
+  }
+}</pre>
+
+<p>
+<!--@For details, see
+<a href="manifest">Manifest Files</a>.-->
+有关更多细节，请参见<a href="manifest.html">清单文件</a>。
+</p>
+
+<h2 id="arch"><!--@Architecture-->架构</h2>
+
+<p>
+<!--@Many extensions have a <em>background page</em>,
+an invisible page
+that holds the main logic of the extension.
+An extension can also contain other pages
+that present the extension's UI.
+If an extension needs to interact with web pages that the user loads
+(as opposed to pages that are included in the extension),
+then the extension must use a content script.-->
+许多扩展程序有一个<em>后台网页</em>，它是一个包含扩展程序主要逻辑的不可见页面。扩展程序也可以包含其他页面，展现扩展程序的用户界面。如果扩展程序需要与用户加载的网页交互（相对于包含在扩展程序中的页面），扩展程序必须使用内容脚本。
+</p>
+
+
+<h3 id="background_page"><!--@The background page-->后台网页</h3>
+
+<p>
+<!--@The following figure shows a browser
+that has at least two extensions installed:
+a browser action (yellow icon)
+and a page action (blue icon).
+Both the browser action and the page action
+have background pages.
+This figure shows the browser action's background page,
+which is defined by <code>background.html</code>
+and has JavaScript code that controls
+the behavior of the browser action in both windows.-->
+下图所示的浏览器至少安装了两个扩展程序：一个浏览器按钮（黄色图标）和一个页面按钮（蓝色图标）。浏览器按钮和页面按钮都有后台页面。下图显示了浏览器按钮的后台页面，由
+<code>background.html</code> 定义，并且包含在这两个窗口中控制浏览器按钮的
+JavaScript 代码。
+</p>
+
+<img src="../static/images/overview/arch-1.gif"
+ width="232" height="168"
+ alt="Two windows and a box representing a background page (background.html). One window has a yellow icon; the other has both a yellow icon and a blue icon. The yellow icons are connected to the background page." />
+
+<p>
+<!--@There are two types of background pages:
+<a href="background_pages">persistent background pages</a>,
+and <a href="event_pages">event pages</a>. Persistent
+background pages, as the name suggests, are always open.
+Event pages are opened and closed as needed. Unless you absolutely
+need your background page to run all the time, prefer to use
+an event page.-->
+后台网页分两种：<a href="background_pages.html"
+>持续运行的后台网页</a>与<a href="event_pages.html"
+>事件页面</a>。正如它们的名称所述，持续运行的后台网页保持打开状态，事件页面根据需要打开与关闭。除非您绝对需要您的后台网页一直运行，请首选事件页面。
+</p>
+
+<!-- PENDING: Perhaps show a picture of many background page processes.
+  This could build on a figure that shows the process architecture. -->
+
+<p>
+<!--@See <a href="event_pages">Event Pages</a>
+and <a href="background_pages">Background Pages</a>
+for more details.-->
+有关更多细节，请参见<a href="event_pages.html">事件页面</a>与<a href="background_pages.html">后台网页</a>。
+</p>
+
+<h3 id="pages"><!--@UI pages-->用户界面网页</h3>
+
+<p>
+<!--@Extensions can contain ordinary HTML pages that display the extension's UI.
+For example, a browser action can have a popup,
+which is implemented by an HTML file.
+Any extension can have an options page,
+which lets users customize how the extension works.
+Another type of special page is the override page.
+And finally, you can
+use <a href=/extensions/tabs#method-create>tabs.create</a>
+or <code>window.open()</code>
+to display any other HTML files that are in the extension.-->
+扩展程序可以包含普通的 HTML
+网页，用来显示扩展程序的用户界面。例如，浏览器按钮可以包含弹出菜单，通过
+HTML 文件实现。任何一个扩展程序都可以有选项页面，让用户自定义扩展程序的工作方式。另外一种特殊页面是替代页面。最后，您可以使用
+<a href="tabs.html#method-create">tabs.create</a> 或 <code>window.open()</code>
+来显示扩展程序中的任何其他 HTML 文件。
+</p>
+
+<p>
+<!--@The HTML pages inside an extension
+have complete access to each other's DOMs,
+and they can invoke functions on each other.-->
+扩展程序中的 HTML 网页可以互相访问其他页面的全部
+DOM，并且可以互相调用函数。
+</p>
+
+<!-- PENDING: Change the following example and figure
+to use something that's not a popup?
+(It might lead people to think that popups need background pages.) -->
+
+<p>
+<!--@The following figure shows the architecture
+of a browser action's popup.
+The popup's contents are a web page
+defined by an HTML file
+(<code>popup.html</code>).
+This extension also happens to have a background page
+(<code>background.html</code>).
+The popup doesn't need to duplicate code
+that's in the background page
+because the popup can invoke functions on the background page.-->
+下图显示了浏览器按钮弹出菜单的架构。弹出菜单是由一个 HTML
+文件（<code>popup.html</code>）定义的网页，该扩展程序也正好有一个后台网页（<code>background.html</code>）。弹出窗口不用重复后台网页中的代码，因为弹出窗口可以调用后台网页上的函数。
+</p>
+
+<img src="../static/images/overview/arch-2.gif"
+ width="256" height="168"
+ alt="A browser window containing a browser action that's displaying a popup. The popup's HTML file (popup.html) can communicate with the extension's background page (background.html)." />
+
+<p>
+<!--@See <a href="browserAction">Browser Actions</a>,
+<a href="options">Options</a>,
+<a href="override">Override Pages</a>,
+and the <a href="#pageComm">Communication between pages</a> section
+for more details.-->
+有关更多细节，请参见<a href="browserAction.html">浏览器按钮</a>、<a href="options.html">选项</a>、<a href="override.html">替代页面</a>和<a href="overview.html#pageComm">页面间通信</a>这些部分。
+</p>
+
+
+<h3 id="contentScripts"><!--@Content scripts-->内容脚本</h3>
+
+<p>
+<!--@If your extension needs to interact with web pages,
+then it needs a <em>content script</em>.
+A content script is some JavaScript
+that executes in the context of a page
+that's been loaded into the browser.
+Think of a content script as part of that loaded page,
+not as part of the extension it was packaged with
+(its <em>parent extension</em>).-->
+如果您的扩展程序需要与网页交互，您就需要使用<em>内容脚本</em>。内容脚本是一些
+JavaScript
+代码，它们在浏览器中已加载页面的上下文中执行。您应该将内容脚本视为已加载页面的一部分，而不是打包在一起的扩展程序（它<em>所属的扩展程序</em>）的一部分。
+</p>
+
+<!-- [PENDING: Consider explaining that the reason content scripts are separated from the extension is due to chrome's multiprocess design.  Something like:
+
+Each extension runs in its own process.
+To have rich interaction with a web page, however,
+the extension must be able to
+run some code in the web page's process.
+Extensions accomplish this with content scripts.]
+-->
+
+<p>
+<!--@Content scripts can read details of the web pages the browser visits,
+and they can make changes to the pages.
+In the following figure,
+the content script
+can read and modify
+the DOM for the displayed web page.
+It cannot, however, modify the DOM of its parent extension's background page.-->
+内容脚本可以读取浏览器访问的网页的细节，并且可以修改页面。在下图中，内容脚本可以读取并且修改显示的网页的
+DOM。然而，它不能修改所属扩展程序后台网页的 DOM。
+</p>
+
+<img src="../static/images/overview/arch-3.gif"
+ width="238" height="169"
+ alt="A browser window with a browser action (controlled by background.html) and a content script (controlled by contentscript.js)." />
+
+<p>
+<!--@Content scripts aren't completely cut off from their parent extensions.
+A content script can exchange messages with its parent extension,
+as the arrows in the following figure show.
+For example, a content script might send a message
+whenever it finds an RSS feed in a browser page.
+Or a background page might send a message
+asking a content script to change the appearance of its browser page.-->
+内容脚本并不是完全与所属扩展程序隔离的。内容脚本可以与所属扩展程序交换消息，如下图箭头所示。例如，每当在浏览器页面中发现 RSS 供稿时，内容脚本可以发送消息，反过来后台页面也可以发送消息要求内容脚本更改浏览器页面的外观。
+</p>
+
+<img src="../static/images/overview/arch-cs.gif"
+ width="238" height="194"
+ alt="Like the previous figure, but showing more of the parent extension's files, as well as a communication path between the content script and the parent extension." />
+
+
+
+<p>
+<!--@For more information,
+see <a href="content_scripts">Content Scripts</a>.-->
+有关更多信息，请参见<a href="content_scripts.html">内容脚本</a>。
+</p>
+
+
+<h2 id="apis"> <!--@Using the chrome.* APIs-->使用 chrome.* API </h2>
+
+<p>
+<!--@In addition to having access to all the APIs that web pages and apps can use,
+extensions can also use Chrome-only APIs
+(often called <em>chrome.* APIs</em>)
+that allow tight integration with the browser.
+For example, any extension or web app can use the
+standard <code>window.open()</code> method to open a URL.
+But if you want to specify which window that URL should be displayed in,
+your extension can use the Chrome-only
+<a href=/extensions/tabs#method-create>tabs.create</a>
+method instead.-->
+扩展程序除了能够使用网页和应用可以使用的所有 API 外，还能使用仅用于
+Chrome 浏览器的 API（通常称为 <em>chrome.* API</em>）来更好地与浏览器集成。例如，任何扩展程序或网上应用可以使用标准的
+<code>window.open()</code>
+方法来打开一个网页，但是如果您想指定网页应该显示在哪个窗口中，您的扩展程序就可以使用仅用于
+Chrome 浏览器的 <a href="tabs.html#method-create">tabs.create</a> 方法。
+</p>
+
+<h3 id="sync"> <!--@Asynchronous vs. synchronous methods-->异步方法与同步方法的区别 </h3>
+<p>
+<!--@Most methods in the chrome.* APIs are <b>asynchronous</b>:
+they return immediately, without waiting for the operation to finish.
+If you need to know the outcome of that operation,
+then you pass a callback function into the method.
+That callback is executed later (potentially <em>much</em> later),
+sometime after the method returns.
+Here's an example of the signature for an asynchronous method:-->
+大部分 chrome.* API 的方法都是<b>异步的</b>，它们不等待操作完成就立即返回。如果您需要知道操作结果，您可以向方法传递一个回调函数，回调函数将稍后在方法返回后的某个时刻执行（可能<em>很久</em>之后）。下面是一个异步方法签名的例子：
+</p>
+
+<p>
+<code>
+chrome.tabs.create(object <em>createProperties</em>, function <em>callback</em>)
+</code>
+</p>
+
+<p>
+<!--@Other chrome.* methods are <b>synchronous</b>.
+Synchronous methods never have a callback
+because they don't return until they've completed all their work.
+Often, synchronous methods have a return type.
+Consider the
+<a href=/extensions/runtime#method-getURL>runtime.getURL</a> method:-->
+也有一些 chrome.* 方法是<b>同步的</b>。同步的方法没有回调参数，因为它们只有当所有操作完成后才返回。通常，同步方法有返回值类型。考虑
+<a href="runtime.html#method-getURL">runtime.getURL</a> 方法：
+</p>
+
+<p>
+<code>
+string chrome.runtime.getURL()
+</code>
+</p>
+
+<p>
+<!--@This method has no callback and a return type of <code>string</code>
+because it synchronously returns the URL
+and performs no other, asynchronous work.-->
+该方法没有回调参数，但是有返回值类型 <code>string</code>，因为它同步地返回
+URL，不进行任何其他异步操作。
+</p>
+
+
+<h3 id="sync-example"> <!--@Example: Using a callback-->例子：使用回调函数 </h3>
+
+<p>
+<!--@Say you want to navigate
+the user's currently selected tab to a new URL.
+To do this, you need to get the current tab's ID
+(using <a href=/extensions/tabs#method-query>tabs.query</a>)
+and then make that tab go to the new URL
+(using <a href=/extensions/tabs#method-update>tabs.update</a>).-->
+假设您想在用户当前选定的标签页中打开新的页面。要想这么做，您首先需要获得当前标签页的标识符（使用 <a href="tabs.html#method-query">tabs.query</a>），然后使该标签转到指定的新的
+URL（使用 <a href="tabs.html#method-update">tabs.update</a>）。
+</p>
+
+<p>
+<!--@If-->假如 <code>query()</code> <!--@were synchronous,
+you might write code like this:-->
+是同步的，您可能会写这样的代码：
+</p>
+
+<pre>
+<b>//以下代码不能正常工作！</b>
+var tab = chrome.tabs.query({'active': true}); <b>//错误！</b>
+chrome.tabs.update(tab.id, {url:newUrl});
+someOtherFunction();
+</pre>
+
+<p>
+<!--@That approach fails
+because <code>query()</code> is asynchronous.
+It returns without waiting for its work to complete,
+and it doesn't even return a value
+(although some asynchronous methods do).
+You can tell that <code>query()</code> is asynchronous
+by the <em>callback</em> parameter in its signature:-->
+这样的方法不行，因为 <code>query()</code>
+是异步的，它不等待操作完成就返回了，并且事实上它都不返回任何值（尽管有些异步方法会返回信息）。您可以通过它签名中的
+<em>callback</em>参数看出 <code>query()</code> 是异步的：
+
+<p>
+<code>
+chrome.tabs.query(object <em>queryInfo</em>, function <em>callback</em>)
+</code>
+</p>
+
+<p>
+<!--@To fix the preceding code,
+you must use that callback parameter.
+The following code shows
+how to define a callback function
+that gets the results from <code>query()</code>
+(as a parameter named <code>tab</code>)
+and calls <code>update()</code>.-->
+要改正上面的代码，您必须使用那个回调参数。以下代码显示如何定义一个回调函数，从
+<code>query()</code> 获得结果（通过名为 <code>tab</code> 的参数）并调用
+<code>update()</code>。
+</p>
+
+<pre>
+<b>//以下代码可以正常工作</b>
+chrome.tabs.query({'active': true}, <b>function(tabs) {</b>
+  chrome.tabs.update(tabs[0].id, {url: newUrl});
+<b>}</b>);
+someOtherFunction();
+</pre>
+
+<p>
+<!--@In this example, the lines are executed in the following order: 1, 4, 2.
+The callback function specified to <code>query()</code> is called
+(and line 2 executed)
+only after information about the currently selected tab is available,
+which is sometime after <code>query()</code> returns.
+Although <code>update()</code> is asynchronous,
+this example doesn't use its callback parameter,
+since we don't do anything about the results of the update.-->
+在这一例子中，以上几行是按照这样的顺序执行的：1、4、2。只有在有关当前选定标签的信息可用后，即
+<code>query()</code> 返回后的某一时刻，才调用在 <code>query()</code>
+中指定的回调函数（并且执行第二行）。尽管 <code>update()</code>
+是异步的，这一例子没有使用回调参数，因为我们对于调用的结果并不感兴趣。
+</p>
+
+
+<h3 id="chrome-more"> <!--@More details-->更多详情 </h3>
+
+<p>
+<!--@For more information, see the
+<a href="api_index">chrome.* API docs</a>
+and watch this video:-->
+有关更多信息，请参见
+<a href="api_index.html">chrome.* API 文档</a>并观看以下视频（英文）：
+</p>
+
+<div class="video-container">
+  <!--<iframe title="YouTube video player" width="640" height="390" src="https://www.youtube.com/embed/bmxr75CV36A?rel=0" frameborder="0" allowfullscreen></iframe>-->
+<video controls="" width="640" height="390">
+	<source src="http://r5---sn-npo7ene7.googlevideo.com/videoplayback?id=o-AP5zB8Dr8ek6ZMKP_Vu2lUeaZL90AuznVIRAhX0xanBL&upn=KecdMWwtlLc&fexp=9405186,9408710,9414733,9416126,9417683,9418959,9419452,9420452,9420540,9421173,9421250,9421463,9422283,9422596,9422618,9423299,9423662,9423786,9424051,9424114,9424372,9424377,9424915,9424966&sparams=dur,id,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,nh,pl,ratebypass,source,upn,expire&mt=1448592447&sver=3&itag=18&ms=au&source=youtube&mv=u&dur=284.537&signature=644EBCAA3999DD531554B94E74100F080BFDFB04.7E9DA5A2B1FFD51B1FB106D631DC0ACB7AF87513&pl=26&ipbits=0&mm=31&mn=sn-npo7ene7&key=yt6&expire=1448614702&lmt=1390827794868293&ratebypass=yes&mime=video/mp4&ip=45.118.135.109&nh=IgpwcjAxLnNpbjAzKgkxMjcuMC4wLjE&name=bmxr75CV36A" type="video/mp4">
+</video>
+
+</div>
+
+<h2 id="pageComm"><!--@Communication between pages-->页面间的通信 </h2>
+
+<p>
+<!--@The HTML pages within an extension often need to communicate.
+
+Because all of an extension's pages
+execute in same process on the same thread,
+the pages can make direct function calls to each other.-->
+扩展程序中的 HTML 网页通常需要通信。因为一个扩展程序的所有网页在同一个进程中的同一个线程上执行，网页之间可以直接调用函数。
+</p>
+
+<p>
+<!--@To find pages in the extension, use
+<a href="extension"><code>chrome.extension</code></a>
+methods such as
+<code>getViews()</code> and
+<code>getBackgroundPage()</code>.
+Once a page has a reference to other pages within the extension,
+the first page can invoke functions on the other pages,
+and it can manipulate their DOMs.-->
+要获得扩展程序中的网页，请使用
+<a href="extension.html"><code>chrome.extension</code></a>
+方法，例如 <a href="extension.html#method-getViews">extension.getViews</a> 和 <a href="extension.html#method-getBackgroundPage">extension.getBackgroundPage</a>。一旦一个网页引用了扩展程序中的其他网页，第一个网页可以执行其他网页上的函数，并且可以操纵它们的 DOM。
+</p>
+
+<h2 id="incognito"> <!--@Saving data and incognito mode-->保存数据和隐身模式 </h2>
+
+<p>
+<!--@Extensions can save data using the <a href=/extensions/storage>storage</a> API,
+the HTML5 <a href="http://dev.w3.org/html5/webstorage/">web storage API</a>
+(such as <code>localStorage</code>)
+or by making server requests that result in saving data.
+Whenever you want to save something,
+first consider whether it's
+from a window that's in incognito mode.
+By default, extensions don't run in incognito windows.
+You need to consider what a user expects
+from your extension
+when the browser is incognito.-->
+扩展程序可以使用 <a href="storage.html">storage</a> API、<a
+href="http://dev.w3.org/html5/webstorage/">HTML5
+网页存储 API</a>（例如 <code>localStorage</code>）或者向服务器发出请求保存数据。每当您要保存任何数据前，首先要考虑它是否来自隐身窗口。默认情况下，扩展程序不在隐身窗口中运行。当浏览器处于隐身模式时，您需要考虑用户对您的扩展程序的需求。
+</p>
+
+<p>
+<!--@<em>Incognito mode</em> promises that the window will leave no tracks.
+When dealing with data from incognito windows,
+do your best to honor this promise.
+For example, if your extension normally
+saves browsing history to the cloud,
+don't save history from incognito windows.
+On the other hand, you can store
+your extension's settings from any window,
+incognito or not.-->
+<em>隐身模式</em>确保不会留下任何痕迹。当处理来自隐身窗口的数据时，尽可能地遵守这一约定。例如，如果您的扩展程序通常将浏览器历史记录保存至云端，不要保存来自隐身窗口的历史记录。另一方面，您可以在任何窗口中保存您的扩展程序设置，无论隐身与否。
+</p>
+
+<p class="note">
+<b><!--@Rule of thumb:-->准则：</b>
+<!--@If a piece of data might show where a user
+has been on the web or what the user has done,
+don't store it if it's from an incognito window.-->
+如果某些数据可能显示用户在网上的访问记录或者用户所做的事情，千万不要保存这些来自隐身窗口的数据。
+</p>
+
+<p>
+<!--@To detect whether a window is in incognito mode,
+check the <code>incognito</code> property of the relevant
+<a href=/extensions/tabs#type-Tab>tabs.Tab</a> or
+<a href=/extensions/windows#type-Window>windows.Window</a> object.
+For example:-->
+要确定窗口是否处于隐身模式，检查相关的 <a href="tabs.html#type-Tab">tabs.Tab</a> 或
+<a href="windows.html#type-Window">windows.Window</a> 对象的 <code>icognito</code> 属性。例如：
+</p>
+
+<pre>
+function saveTabData(tab, data) {
+  if (tab.incognito) {
+    chrome.runtime.getBackgroundPage(function(bgPage) {
+      bgPage[tab.url] = data;      // 仅在内存中保留数据
+    });
+  } else {
+    localStorage[tab.url] = data;  // 可以保存数据
+  }
+}
+</pre>
+
+
+<h2 id="now-what"> <!--@Now what?-->现在做什么呢？ </h2>
+
+<p>
+<!--@Now that you've been introduced to extensions,
+you should be ready to write your own.
+Here are some ideas for where to go next:-->
+现在您已经大致了解扩展程序了，您应该准备好编写您自己的扩展程序了。您接下来可以参考以下内容：
+</p>
+
+<ul>
+  <li> <a href="getstarted.html"><!--@Tutorial: Getting Started-->教程：入门</a> </li>
+  <li> <a href="tut_debugging.html"><!--@Tutorial: Debugging-->教程：调试</a> </li>
+  <li> <a href="devguide.html"><!--@Developer's Guide-->开发者指南</a> </li>
+  <li> <a href="samples.html"><!--@Samples-->示例</a> </li>
+  <li> <a href="https://www.youtube.com/view_play_list?p=CA101D6A85FE9D4B"><!--@Videos-->视频（英文）</a><!--@,
+    such as
+    -->，例如<a href="https://www.youtube.com/watch?v=B4M_a7xejYI&feature=PlayList&p=CA101D6A85FE9D4B&index=6"><!--@Extension Message Passing-->扩展程序的消息传递</a>
+    </li>
+</ul>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">了解基础知识</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="getstarted.html">入门教程</a>
+                        </li>
+                        <li>
+                          <a href="overview.html" class="active">概述</a>
+                        </li>
+                        <li>
+                          <a href="hosting_changes.html">托管扩展程序的更改</a>
+                        </li>
+                        <li>
+                          <a href="single_purpose.html">扩展程序质量准测的常见问题</a>
+                        </li>
+                        <li>
+                          <a href="event_pages.html">事件页面</a>
+                        </li>
+                        <li>
+                          <a href="content_scripts.html">内容脚本</a>
+                        </li>
+                        <li>
+                          <a href="activeTab.html">activeTab 权限</a>
+                        </li>
+                        <li>
+                          <a href="whats_new.html">新增特性</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="overview.html#what"
+          >基础</a>
+          <ol class="toc">
+              <li><a data-list-item href="overview.html#extension-ui"
+                     >扩展程序的用户界面</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="overview.html#files"
+          >文件</a>
+          <ol class="toc">
+              <li><a data-list-item href="overview.html#relative-urls"
+                     >引用文件</a>
+              </li>
+              <li><a data-list-item href="overview.html#manifest"
+                     >清单文件</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="overview.html#arch"
+          >架构</a>
+          <ol class="toc">
+              <li><a data-list-item href="overview.html#background_page"
+                     >后台网页</a>
+              </li>
+              <li><a data-list-item href="overview.html#pages"
+                     >用户界面网页</a>
+              </li>
+              <li><a data-list-item href="overview.html#contentScripts"
+                     >内容脚本</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="overview.html#apis"
+          > 使用 chrome.* API </a>
+          <ol class="toc">
+              <li><a data-list-item href="overview.html#sync"
+                     > 异步方法与同步方法的区别 </a>
+              </li>
+              <li><a data-list-item href="overview.html#sync-example"
+                     > 例子：使用回调函数 </a>
+              </li>
+              <li><a data-list-item href="overview.html#chrome-more"
+                     > 更多详情 </a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="overview.html#pageComm"
+          >页面间的通信 </a>
+      </li>
+      <li class="toplevel"><a data-list-item href="overview.html#incognito"
+          > 保存数据和隐身模式 </a>
+      </li>
+      <li class="toplevel"><a data-list-item href="overview.html#now-what"
+          > 现在做什么呢？ </a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>网络通信 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_network.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Network Communications-->网络通信</h1>
+
+<p>
+<!--@Chrome Apps can act as a network client
+for TCP and UDP connections.
+This doc shows you how to use TCP and UDP
+to send and receive data over the network.
+For more information,
+see the
+<a href="sockets_udp">Sockets UDP</a>,
+<a href="sockets_tcp">Sockets TCP</a> and
+<a href="sockets_tcp_server">Sockets TCP Server</a> APIs.-->
+Chrome 应用可以用作 TCP 与 UDP 连接的网络客户端，该文档向您展示如何使用
+TCP 与 UDP 在网络上发送与接收数据。有关更多信息，请参见
+<a href="sockets_udp.html">UDP 套接字</a>、<a
+href="sockets_tcp.html">TCP 套接字</a> 以及
+<a href="sockets_tcpServer.html">TCP 服务器套接字</a> API。
+</p>
+
+<p class="note">
+<b><!--@Note: -->注意：</b><!--@The previous version of the networking APIs (<a href=/apps/socket>socket</a>) has been
+deprecated.-->前一版本的网络 API（<a href="socket.html">socket</a>）已弃用。
+</p>
+<p></p>
+<p class="note">
+<b>API <!--@Samples: -->示例：</b><!--@
+Want to play with the code?
+Check out the-->想试试这些代码吗？请参见
+<a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/telnet">telnet</a>
+<!--@and-->与 <a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/udp">udp</a><!--@ samples.-->
+示例。
+</p>
+
+<h2 id="manifest"><!--@Manifest requirements-->清单文件的要求</h2>
+
+<p>
+<!--@For Chrome Apps that use TCP or UDP,
+add the <a href="manifest/sockets">sockets</a> entry to the manifest
+and specify the IP end point permission rules.
+For example:-->
+如果 Chrome 应用使用 TCP 或 UDP，请在清单文件中添加
+<a href="manifest/sockets.html">sockets</a> 项并指定 IP 端点权限规则。例如：
+</p>
+
+<pre data-filename="manifest.json">
+"sockets": {
+    "udp": {
+      "send": ["host-pattern1", ...],
+      "bind": ["host-pattern2", ...],
+      ...
+    },
+    "tcp" : {
+      "connect": ["host-pattern1", ...],
+      ...
+    },
+    "tcpServer" : {
+      "listen": ["host-pattern1", ...],
+      ...
+    }
+  }
+</pre>
+
+<p>
+<!--@The syntax of socket "host-pattern" entries follows these rules:-->
+套接字 "host-pattern" 项的语法遵循如下模式：
+</p>
+
+<pre>
+&lt;host-pattern> := &lt;host> | ':' &lt;port> | &lt;host> ':' &lt;port>
+&lt;host> := '*' | '*.' &lt;anychar except '/' and '*'>+
+&lt;port> := '*' | &lt;port number between 1 and 65535>)
+</pre>
+
+<p>
+<!--@See <a href="manifest/sockets">Sockets Manifest Key</a> for detailed
+description of the syntax.-->
+有关语法的详细描述请参见<a href="manifest/sockets.html">清单文件中的
+sockets 属性</a>。
+</p>
+
+<p>
+<!--@Examples of socket manifest entries:-->
+清单文件中套接字项的例子如下：
+</p>
+
+<ul>
+  <li><code>{ "tcp": { "connect" : "*:23" } }</code> &ndash; <!--@connecting on
+   port 23 of any hosts-->
+   连接到任意主机的 23 端口
+  </li>
+  <li><code>{ "tcp": { "connect" : ["*:23", "*:80"] } }</code> &ndash;
+   <!--@connecting on port 23 or 80 of any hosts-->
+   连接到任意主机的的 23 或 80 端口
+  </li>
+  <li><code>{ "tcp": { "connect" : "www.example.com:23" } }</code> &ndash;
+   <!--@connecting port 23 of <em>www.example.com</em>-->
+   连接到 <em>www.example.com</em> 的 23 端口
+  </li>
+  <li><code>{ "tcp": { "connect" : "" } }</code> &ndash; <!--@connecting any ports
+   of any hosts-->
+   连接任意主机的任意端口
+  </li>
+  <li><code>{ "udp": { "send" : ":99" } }</code> &ndash; <!--@sending UDP packet
+   to port 99 of any hosts-->
+   向任意主机的 99 端口发送 UDP 数据包
+  </li>
+  <li><code>{ "udp": { "bind" : ":8899" } }</code> &ndash; <!--@binding local port
+   8899 to receive UDP packets-->
+   绑定本地端口 8899 接收 UDP 数据包
+  </li>
+  <li><code>{ "tcpServer": { "listen" : ":8080" } }</code> &ndash; <!--@TCP
+   listening on local port 8080-->
+   监听本机 8080 端口上的 TCP 连接
+  </li>
+</ul>
+
+<h2 id="tcp"><!--@Using-->使用 TCP</h2>
+
+<p>
+<!--@Chrome Apps can make connections to any service that supports TCP.-->
+Chrome 应用可以连接到任何支持 TCP 的服务。
+</p>
+
+<h3 id="connecting"><!--@Connecting to a socket-->连接到套接字</h3>
+
+<p>
+<!--@Here's a sample showing how to connect
+(<a href=/apps/sockets.tcp#method-connect>sockets.tcp.connect</a>) to a socket:-->
+如下是一个演示如何连接（<a href="sockets_tcp.html#method-connect">sockets.tcp.connect</a>）到套接字的示例：
+</p>
+
+<pre>
+chrome.sockets.tcp.create({}, function(createInfo) {
+  chrome.sockets.tcp.connect(createInfo.socketId,
+    IP, PORT, onConnectedCallback);
+});
+</pre>
+
+<p>
+<!--@Keep a handle to the <code>socketId</code> so that
+you can later received and send data
+(<a href=/apps/sockets.tcp#method-send>sockets.tcp.send</a>) to this socket.-->
+请保存 <code>socketId</code>
+的值，之后可以接收或发送（<a href="sockets_tcp.html#method-send">sockets.tcp.send</a>）套接字数据。
+</p>
+
+<h3 id="reading"><!--@Receiving from and sending to a socket-->接收和发送套接字数据</h3>
+
+<p>
+<!--@Receiving from (<a href=/apps/sockets.tcp#event-onReceive>sockets.tcp.onReceive</a>) and sending to a socket uses
+ArrayBuffer objects. To learn about ArrayBuffers, check out the overview,
+<a href="https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays">JavaScript typed arrays</a>,
+and the tutorial,
+<a href="http://updates.html5rocks.com/2012/06/How-to-convert-ArrayBuffer-to-and-from-String">How to convert ArrayBuffer to and from String</a>.-->
+接收（<a href="sockets_tcp.html#event-onReceive">sockets.tcp.onReceive</a>）或发送套接字数据时使用 ArrayBuffer
+对象。如果您想了解 ArrayBuffer，请参见
+<a href="https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays">JavaScript
+类型化数组</a>概述以及<a href="http://updates.html5rocks.com/2012/06/How-to-convert-ArrayBuffer-to-and-from-String"
+>如何在 ArrayBuffer 和字符串之间转换</a>的教程。
+</p>
+
+<pre>
+chrome.sockets.tcp.send(socketId, arrayBuffer, onSentCallback);
+</pre>
+
+<pre>
+chrome.sockets.tcp.onReceive.addListener(function(info) {
+  if (info.socketId != socketId)
+    return;
+  // info.data 为 ArrayBuffer 对象。
+});
+</pre>
+
+<h3 id="disconnecting"><!--@Disconnecting from a socket-->断开套接字的连接</h3>
+
+<p><!--@Here's how to disconnect (<a href=/apps/sockets.tcp#method-disconnect>sockets.tcp.disconnect</a>):-->
+如下是断开连接（<a href="sockets_tcp.html#method-disconnect">sockets.tcp.disconnect</a>）的方法：
+</p>
+
+<pre>chrome.sockets.tcp.disconnect(socketId);</pre>
+
+<h2 id="udp"><!--@Using-->使用 UDP</h2>
+
+<p>
+<!--@Chrome Apps can make connections to any service that supports UDP.-->
+Chrome 应用可以连接到支持 UDP 的任何服务。
+</p>
+
+<h3 id="sending"><!--@Sending data-->发送数据</h3>
+
+<p>
+<!--@Here's a sample showing how to send data (<a href=/apps/sockets.udp#method-send>sockets.udp.send</a>)
+over the network using UDP:-->
+以下示例演示如何使用 UDP 通过网络发送数据（<a href="sockets_udp.html#method-send">sockets.udp.send</a>）：
+</p>
+
+<pre>
+// 创建套接字
+chrome.sockets.udp.create({}, function(socketInfo) {
+  // 套接字已创建，现在我们可以发送一些数据
+  var socketId = socketInfo.socketId;
+  chrome.sockets.udp.send(socketId, arrayBuffer,
+    '127.0.0.1', 1337, function(sendInfo) {
+      console.log("已发送 " + sendInfo.bytesSent + " 字节");
+  });
+});
+</pre>
+
+<h3 id="receiving"><!--@Receiving data-->接收数据</h3>
+
+<p>
+<!--@This example is very similar to the 'Sending data' example, except we
+setup an event handler for receiving data.-->
+下面的例子和“发送数据”的例子类似，只是我们需要设置一个事件处理程序来接收数据。
+</p>
+
+<pre>
+var socketId;
+
+// 处理 onReceive 事件。
+var onReceive = function(info) {
+  if (info.socketId !== socketId)
+    return;
+  console.log(info.data);
+};
+
+// 创建套接字
+chrome.sockets.udp.create({}, function(socketInfo) {
+  socketId = socketInfo.socketId;
+  // 设置事件处理程序并绑定套接字。
+  chrome.sockets.udp.onReceive.addListener(onReceive);
+  chrome.sockets.udp.bind(socketId,
+    "0.0.0.0", 0, function(result) {
+      if (result < 0) {
+        console.log("无法绑定套接字。");
+        return;
+      }
+      chrome.sockets.udp.send(socketId, arrayBuffer,
+        '127.0.0.1', 1337, function(sendInfo) {
+          console.log("已发送 " + sendInfo.bytesSent + " 字节");
+      });
+  });
+});
+</pre>
+
+<h2 id="tcpServer"><!--@Using TCP Server-->使用 TCP 服务器</h2>
+
+<p>
+<!--@Chrome Apps can act as TCP servers using the <a href=/apps/sockets.tcpServer>sockets.tcpServer</a> API.-->
+Chrome 应用可以使用 <a href="sockets_tcpServer.html">sockets.tcpServer</a> API 以 TCP 服务器的方式工作。
+</p>
+
+<h3 id="creating-server"><!--@Creating a TCP server socket-->创建 TCP
+服务器套接字</h3>
+
+<p>
+<!--@Create a TCP server socket with <a href=/apps/sockets.tcpServer#method-create>sockets.tcpServer.create</a>.-->
+使用 <a href="sockets_tcpServer.html#method-create">sockets.tcpServer.create</a> 创建 TCP 服务器套接字。
+</p>
+
+<pre>
+chrome.sockets.tcpServer.create({}, function(createInfo) {
+  listenAndAccept(createInfo.socketId);
+});
+</pre>
+
+<h3 id="accepting"><!--@Accepting client connections-->接受客户端连接</h3>
+
+<p>
+<!--@Here's a sample showing how to accept connections
+(<a href=/apps/sockets.tcpServer#method-listen>sockets.tcpServer.listen</a>) on a TCP server socket:-->
+如下示例演示如何在 TCP
+服务器套接字上接受连接（<a href="sockets_tcpServer.html#method-listen">sockets.tcpServer.listen</a>）。
+</p>
+
+<pre>
+function listenAndAccept(socketId) {
+  chrome.sockets.tcp.listen(socketId,
+    IP, PORT, function(resultCode) {
+      onListenCallback(socketId, resultCode)
+  });
+}
+</pre>
+
+<p>
+<!--@Keep a handle to the <code>socketId</code> so that
+you can later accept new connections
+(<a href=/apps/sockets.tcpServer#event-onAccept>sockets.tcpServer.onAccept</a>) .-->
+请保存 <code>socketId</code>
+的值，之后可以接受新连接（<a href="sockets_tcpServer.html#event-onAccept">sockets.tcpServer.onAccept</a>）。
+</p>
+
+<pre>
+var serverSocketId;
+function onListenCallback(socketId, resultCode) {
+  if (resultCode < 0) {
+    console.log("无法监听连接：" +
+      chrome.runtime.lastError.message);
+    return;
+  }
+  serverSocketId = socketId;
+  chrome.sockets.tcpServer.onAccept.addListener(onAccept)
+}
+</pre>
+
+<p>
+<!--@When a new connection is established, <code>onAccept</code> is invoked with
+the <code>clientSocketId</code> of the new TCP connection. The client socket ID
+must be used with the <a href=/apps/sockets.tcp>sockets.tcp</a> API.
+The socket of the new connection is paused by default. Un-pause it with
+<a href=/apps/sockets.tcp#method-setPaused>sockets.tcp.setPaused</a> to start receiving data.-->
+连接建立后调用 <code>onAccept</code> 并传递新的 TCP 连接的
+<code>clientSocketId</code>，客户端套接字标识符只能在 <a href="sockets_tcp.html">sockets.tcp</a> API
+中使用。新连接的套接字默认情况下已经暂停，请使用 <a href="sockets_tcp.html#method-setPaused">sockets.tcp.setPaused</a>
+取消暂停状态，以便开始接收数据。
+</p>
+
+<pre>
+function onAccept(info) {
+  if (info.socketId != serverSocketId)
+    return;
+
+  // 新的 TCP 连接已经建立。
+  chrome.sockets.tcp.send(info.clientSocketId, data,
+    function(resultCode) {
+      console.log("Data sent to new TCP client connection.")
+  });
+  // 开始接收数据。
+  chrome.sockets.tcp.onReceive(info.clientSocketId, onReceive);
+  chrome.sockets.tco.setPaused(false);
+}
+</pre>
+
+<h3 id="stop-accepting"><!--@Stop accepting client connections-->停止接受客户端连接</h3>
+
+<p>
+<!--@Call <a href=/apps/sockets.tcp#method-disconnect>sockets.tcp.disconnect</a> on the server socket ID to stop accepting
+new connections.-->
+在服务器套接字上调用 <a href="sockets_tcp.html#method-disconnect">sockets.tcp.disconnect</a> 停止接受新连接。
+</p>
+
+<pre>
+chrome.sockets.tcpServer.onAccept.removeListener(onAccept);
+chrome.sockets.tcpServer.disconnect(serverSocketId);</pre>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">使用低级系统服务</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="app_usb.html">USB</a>
+                        </li>
+                        <li>
+                          <a href="app_serial.html">串行端口</a>
+                        </li>
+                        <li>
+                          <a href="app_network.html" class="active">网络通信</a>
+                        </li>
+                        <li>
+                          <a href="app_bluetooth.html">蓝牙</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_network.html#manifest"
+          >清单文件的要求</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_network.html#tcp"
+          >使用 TCP</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_network.html#connecting"
+                     >连接到套接字</a>
+              </li>
+              <li><a data-list-item href="app_network.html#reading"
+                     >接收和发送套接字数据</a>
+              </li>
+              <li><a data-list-item href="app_network.html#disconnecting"
+                     >断开套接字的连接</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_network.html#udp"
+          >使用 UDP</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_network.html#sending"
+                     >发送数据</a>
+              </li>
+              <li><a data-list-item href="app_network.html#receiving"
+                     >接收数据</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_network.html#tcpServer"
+          >使用 TCP 服务器</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_network.html#creating-server"
+                     >创建 TCP服务器套接字</a>
+              </li>
+              <li><a data-list-item href="app_network.html#accepting"
+                     >接受客户端连接</a>
+              </li>
+              <li><a data-list-item href="app_network.html#stop-accepting"
+                     >停止接受客户端连接</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

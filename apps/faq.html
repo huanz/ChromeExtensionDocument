@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>常见问题 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="faq.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Frequently Asked Questions-->常见问题</h1>
+
+
+<!--  -->
+
+<p>
+<!--@If you don't find an answer to your question here,
+try the-->
+如果您在这里找不到您的问题的答案，请尝试
+<a href="https://code.google.com/chrome/webstore/faq.html">Chrome Web Store <!--@FAQ-->常见问题</a><!--@, the
+-->、<a href="http://stackoverflow.com/questions/tagged/google-chrome-extension">Stack Overflow 上的 [google-chrome-extension] 标签<!--@ tag on Stack Overflow--></a><!--@, the
+-->、<a href="https://groups.google.com/a/chromium.org/group/chromium-extensions"><!--@group-->网上论坛</a><!--@, or the
+-->或<a href="https://support.google.com/chrome_webstore/"><!--@store help-->网上应用店帮助</a><!--@.-->。
+</p>
+
+<div id="faq-TOC">
+  <h4 id="general"><!--@General-->一般问题</h4>
+  <ul>
+    <li><a href="faq.html#faq-gen-01"><!--@What are Google Chrome Extensions?-->什么是 Google Chrome 浏览器扩展程序？</a></li>
+    <li><a href="faq.html#faq-gen-02"><!--@What technologies are used to write extensions for Chrome?-->为 Chrome 浏览器编写扩展程序时需要用到哪些技术？</a></li>
+    <li><a href="faq.html#faq-gen-03"><!--@Are extensions fetched from the web every time the browser is loaded?-->扩展程序是不是每一次浏览器加载时都要从网上获取？</a></li>
+    <li><a href="faq.html#faq-dev-14"><!--@How do I determine which version of Chrome is deployed to which channel?-->我应该如何确定 Chrome 浏览器版本与分支间的对应关系？</a></li>
+  </ul>
+  <h4 id="capabilities"><!--@Capabilities-->扩展程序的能力</h4>
+  <ul>
+    <li><a href="faq.html#faq-dev-02"><!--@Can extensions make cross-domain Ajax requests?-->扩展程序能否发起跨域 Ajax 请求？</a></li>
+    <li><a href="faq.html#faq-dev-03"><!--@Can extensions use 3rd party web services?-->扩展程序能否使用第三方网络服务？</a></li>
+    <li><a href="faq.html#faq-dev-07"><!--@Can extensions encode/decode JSON data?-->扩展程序能否编码/解码 JSON 数据？</a></li>
+    <li><a href="faq.html#faq-dev-08"><!--@Can extensions store data locally?-->扩展程序能否在本地存储数据？</a></li>
+    <li><a href="faq.html#faq-dev-04"><!--@Can extensions use OAuth?-->扩展程序能否使用 OAuth？</a></li>
+    <li><a href="faq.html#faq-dev-06"><!--@Can extensions load DLLs?-->扩展程序能否加载 DLL？</a></li>
+    <li><a href="faq.html#faq-dev-05"><!--@Can extensions create UI outside of the rendered web page?-->扩展程序能否在呈现的网页外创建用户界面？</a></li>
+    <li><a href="faq.html#faq-interact-chrome"><!--@Can extensions listen to clicks on Chrome tabs and navigation buttons?-->扩展程序能否监听 Chrome 标签页以及导航按钮的点击？</a>
+    <li><a href="faq.html#faq-dev-11"><!--@Can two extensions communicate with each other?-->两个扩展程序能否互相通信？</a></li>
+    <li><a href="faq.html#faq-open-popups"><!--@Can extensions open browser/page action popups without user interaction?-->扩展程序能否在没有用户交互的情况下打开浏览器/页面按钮的弹出内容？</a></li>
+    <li><a href="faq.html#faq-persist-popups"><!--@Can extensions keep popups open after the user clicks away from them?-->扩展程序能否在用户单击其他地方后仍然使弹出内容保持打开状态？</a></li>
+    <li><a href="faq.html#faq-lifecycle-events"><!--@Can extensions be notified when they are installed/uninstalled?-->扩展程序能否在安装和卸载时得到通知？</a></li>
+  </ul>
+  <h4 id="development"><!--@Development-->开发</h4>
+  <ul>
+    <li><a href="faq.html#faq-building-ui"><!--@How do I build a UI for my extension?-->我应该如何为我的扩展程序建立用户界面？</a>
+    <li><a href="faq.html#faq-dev-09"><!--@How much data can I store in localStorage?-->我能够在本地存储中储存多少数据？</a></li>
+    <li><a href="faq.html#faq-dev-12"><!--@What debugging tools are available to extension developers?-->扩展程序的开发者可以使用哪些调试工具？</a></li>
+    <li><a href="faq.html#faq-dev-16"><!--@Why do wildcard matches not work for top level domains (TLDs)?-->为什么通配符匹配对于顶级域名（TLD）不适用？</a></li>
+    <li><a href="faq.html#faq-management"><!--@Why does the management API not fire events when my extension is installed/uninstalled?-->为什么当我的扩展程序安装或卸载时管理 API 不产生事件？</a></li>
+    <li><a href="faq.html#faq-firstrun"><!--@How can an extension determine whether it is running for the first time?-->扩展程序如何确定是否是第一次运行？</a></li>
+  </ul>
+  <h4 id="features"><!--@Features and bugs-->请求新特性和报告问题</h4>
+  <ul>
+    <li><a href="faq.html#faq-fea-01"><!--@I think I've found a bug! How do I make sure it gets fixed?-->我认为我发现了一个 bug！我应该做什么确保让它被修复？</a></li>
+    <li><a href="faq.html#faq-fea-02"><!--@I have a feature request! How can I report it?-->我想请求新特性！我应该如何报告？</a></li>
+  </ul>
+</div>
+
+<h2 id="general2"><!--@General-->一般问题</h2>
+
+<h3 id="faq-gen-01"><!--@What are Google Chrome Extensions?-->什么是 Google Chrome 浏览器扩展程序？</h3>
+<p>
+  <!--@Google Chrome Extensions are applications that run inside the
+  Chrome browser and provide additional functionality, integration with third
+  party websites or services, and customized browsing experiences.-->
+  Google Chrome 浏览器的扩展程序是在 Chrome
+  浏览器中运行并提供附加功能、与第三方网站或服务整合、自定义浏览体验的应用。
+</p>
+
+
+<h3 id="faq-gen-02"><!--@What technologies are used to write extensions for Chrome?-->为 Chrome 浏览器编写扩展程序时需要用到哪些技术？</h3>
+<p>
+  <!--@Extensions are written using the same standard web
+  technologies that developers use to create websites. HTML is used as a
+  content markup language, CSS is used for styling, and JavaScript for
+  scripting. Because Chrome supports HTML5 and CSS3, developers can
+  use the latest open web technologies such as canvas and CSS animations in
+  their extensions. Extensions also have access to several
+  <a href="/extensions/api_other">JavaScript APIs</a>
+  that help perform functions like JSON encoding and interacting with the
+  browser.-->
+  编写扩展程序与开发者创建网站一样，使用相同的标准网络技术。HTML
+  用于内容标记语言，CSS 用于格式化，JavaScript
+  用于脚本。由于 Chrome 浏览器支持 HTML5 和
+  CSS3，开发者可以在扩展程序中使用最新的网络技术，例如画布和
+  CSS 动画。扩展程序也可以访问一些
+  <a href="api_other.html">JavaScript
+  API</a>，帮助进行诸如 JSON
+  编码以及与浏览器交互的功能。
+</p>
+
+
+<h3 id="faq-gen-03"><!--@Are extensions fetched from the web every time the browser is loaded?-->扩展程序是不是每一次浏览器加载时都要从网上获取？</h3>
+<p>
+  <!--@Extensions are downloaded by the Chrome browser upon install, and
+  are subsequently run off of the local disk in order to speed up
+  performance. However, if a new version of the extension is pushed online,
+  it will be automatically downloaded in the background to any users who
+  have the extension installed. Extensions may also make requests for remote
+  content at any time, in order to interact with a web service or pull new
+  content from the web.-->
+  扩展程序在安装时由 Chrome
+  浏览器下载，以后从本地磁盘上运行，以提高性能。然而，如果扩展程序的新版本上传到网上，将会在后台自动下载下来，给所有安装了这一扩展程序的用户。扩展程序也可以在任何时候请求远程内容，与网络服务交互或从网上获取内容。
+</p>
+
+<h3 id="faq-dev-14"><!--@How do I determine which version of Chrome is deployed to which channel?-->我应该如何确定 Chrome 浏览器版本与分支间的对应关系？</h3>
+<p>
+  <!--@To determine which version of Chrome is currently available on each
+  of the different platforms, visit-->
+  要确定 Chrome 浏览器的不同版本当前在各个不同平台上是否可用，请访问
+  <a href="https://omahaproxy.appspot.com">omahaproxy.appspot.com</a><!--@.  On that
+  site you will see data in a format similar to:-->。在该站点上您将会看到类似于如下形式的数据：
+</p>
+
+<pre>cf,dev,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+cf,beta,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+cf,stable,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+linux,dev,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+linux,beta,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+linux,stable,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+mac,dev,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+mac,beta,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+mac,stable,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+win,canary,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+win,dev,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+win,beta,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+win,stable,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+cros,dev,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####
+cros,beta,#.#.###.#,#.#.###.#,mm/dd/yy,mm/dd/yy,#####,#####,#####</pre>
+
+<p>
+  <!--@Each line represents information about a different platform and channel
+  combination. The
+  listed platforms are <code>cf</code> (Google Chrome Frame),
+  <code>linux</code>, <code>mac</code>, <code>win</code>, and
+  <code>cros</code> (Google Chrome OS).  The listed
+  channels are <code>canary</code>, <code>dev</code>, <code>beta</code>,
+  and <code>stable</code>.
+  The two four-part numbers after the channel represent the current and previous
+  versions of Chrome deployed to that platform-channel
+  combination.  The rest of the information is metadata about when the releases
+  were first pushed, as well as revision numbers associated with each build.-->
+  每一行代表不同平台和分支的组合信息。列出的平台包括
+  <code>cf</code>（Google Chrome Frame）、<code>linux</code>、<code
+  >mac</code>、<code>win</code>、<code>cros</code>（Google Chrome
+  OS）、<code>ios</code> 和
+  <code>android</code>。列出的分支包括
+  <code>canary</code>、<code>dev</code>、<code>beta</code>
+  和 <code>stable</code>。分支后面分成四部分的数是部署至相应平台、分支组合的当前和前一个
+  Chrome 浏览器的版本号。剩下的信息是一些元数据，有关发行版最早开始的时间以及与每一次编译相关的修订版本。
+</p>
+
+
+<h2 id="capabilities2"><!--@Capabilities-->扩展程序的能力</h2>
+
+<h3 id="faq-dev-02"><!--@Can extensions make cross-domain Ajax requests?-->扩展程序能否发起跨域 Ajax 请求？</h3>
+<p>
+  <!--@Yes. Extensions can make cross-domain requests.  See
+  <a href="/extensions/xhr">this page</a>
+  for more information.-->
+  可以，扩展程序能够发出跨域请求。有关更多信息，请参见<a
+  href="xhr.html">这一页面</a>。
+</p>
+
+<h3 id="faq-dev-03"><!--@Can extensions use 3rd party web services?-->扩展程序能否使用第三方网络服务？</h3>
+<p>
+  <!--@Yes. Extensions are capable of making cross-domain Ajax
+  requests, so they can call remote APIs directly. APIs that provide data
+  in JSON format are particularly easy to use.-->
+  可以。扩展程序能够发出跨域 Ajax
+  请求，所以它们能够直接调用任何远程
+  API。以 JSON 格式提供数据的 API
+  使用起来特别方便。
+</p>
+
+<h3 id="faq-dev-07"><!--@Can extensions encode/decode JSON data?-->扩展程序能否编码/解码 JSON 数据？</h3>
+<p>
+  <!--@Yes, because V8 (Chrome's JavaScript engine) supports
+  JSON.stringify and JSON.parse natively, you may use these functions in your
+  extensions
+  <a href="http://json.org/js.html">as described here</a> without including
+  any additional JSON libraries in your code.-->
+  可以。因为 V8（Chrome 浏览器的 JavaScript 引擎）原生支持
+  JSON.stringify 和
+  JSON.parse，您可以在您的扩展程序中使用这些函数，<a
+  href="http://json.org/js.html">如这一页面（英文）所述</a>，而不用在您的代码中包含任何额外的
+  JSON 库。
+</p>
+
+<h3 id="faq-dev-08"><!--@Can extensions store data locally?-->扩展程序能否在本地存储数据？</h3>
+<p>
+  <!--@Yes, extensions can use <a href="http://dev.w3.org/html5/webstorage/">localStorage</a>
+  to store string data permanently. Using Chrome's built-in JSON
+  functions, you can store complex data structures in localStorage.  For
+  extensions that need to execute SQL queries on their stored data,
+  Chrome implements
+  <a href="http://dev.w3.org/html5/webdatabase/">client side SQL databases</a>,
+  which may be used as well.-->
+  可以。扩展程序可以使用
+  <a href="http://dev.w3.org/html5/webstorage/">localStorage</a>
+  来永久地存储数据。使用 Chrome 浏览器内建的 JSON 函数，您可以在
+  localStorage 中存储复杂的数据结构。对于需要在存储的数据上执行
+  SQL 查询的扩展程序，Chrome
+  浏览器实现了<a href="http://dev.w3.org/html5/webdatabase/">客户端
+  SQL 数据库</a>，您也可以使用。从 Chrome 20
+  开始，扩展程序还能使用
+  <a href="storage.html">chrome.storage</a> API
+  存储数据，并且还可以自动同步。
+</p>
+
+<h3 id="faq-dev-04"><!--@Can extensions use OAuth?-->扩展程序能否使用 OAuth？</h3>
+<p>
+  <!--@Yes, there are extensions that use OAuth to access remote data
+  APIs. Most developers find it convenient to use a
+  <a href="http://unitedheroes.net/OAuthSimple/js/OAuthSimple.js">JavaScript OAuth library</a>
+  in order to simplify the process of signing OAuth requests.-->
+  可以。某些扩展程序就使用 OAuth 访问远程数据
+  API，大部分开发者觉得使用
+  <a href="http://unitedheroes.net/OAuthSimple/js/OAuthSimple.js">JavaScript OAuth</a>
+  库会更方便，这样可以简化发送 OAuth 请求的过程。
+</p>
+
+<h3 id="faq-dev-06"><!--@Can extensions load DLLs?-->扩展程序能否加载 DLL？</h3>
+<p>
+  <!--@Yes, using the <a href="npapi">NPAPI interface</a>.
+  Because of the possibility for abuse, though, we will review your extension
+  before hosting it in the Chrome Web Store.-->
+  可以，只要使用 <a href="npapi.html">NPAPI 接口</a>。然而由于可能的滥用行为，我们在
+  Chrome 网上应用店中托管您的扩展程序前要先审核。
+</p>
+
+<h3 id="faq-dev-05"><!--@Can extensions create UI outside of the rendered web page?-->扩展程序能否在呈现的网页外创建用户界面？</h3>
+<p>
+  <!--@Yes, your extension may add buttons to the Chrome browser's user interface.
+  See <a href="browserAction">browser actions</a> and
+  <a href="pageAction">page actions</a> for more information.-->
+  可以。您的扩展程序可以向 Chrome
+  浏览器的用户界面添加按钮，有关更多信息请参见<a
+  href="../extensions/browserAction.html">浏览器按钮和<a
+  href="../extensions/pageAction.html">页面按钮</a>。
+</p>
+<p>
+  <!--@An extension may also create popup notifications, which exist outside of the
+  browser window.  See the <a href="desktop_notifications">desktop
+    notifications</a> documentation for more details.-->
+    扩展程序也可以创建弹出通知，在浏览器窗口外存在。有关更多详情请参见<a href="desktop_notifications.html">桌面通知</a>文档。
+</p>
+
+<h3 id="faq-interact-chrome"><!--@Can extensions listen to clicks on Chrome tabs and
+  navigation buttons?-->扩展程序能否监听 Chrome 标签页以及导航按钮的点击？</h3>
+<p>
+  <!--@No.  Extensions are limited to listening to the events described in the <a
+    href="api_index">API documentation</a>.-->
+  不能。扩展程序仅限于监听
+  <a href="api_index.html">API 文档</a>中描述的事件。
+</p>
+
+<h3 id="faq-dev-11"><!--@Can two extensions communicate with each other?-->两个扩展程序能否互相通信？</h3>
+<p>
+  <!--@Yes, extensions may pass messages to other extensions. See the
+  <a href="messaging#external">message passing documentation</a>
+  for more information.-->
+  可以。扩展程序可以向其他扩展程序传递消息，有关更多信息请参见<a
+  href="messaging.html#external">消息传递文档</a>。
+</p>
+
+
+
+<h3 id="faq-open-popups"><!--@Can extensions open browser/page action popups without
+  user interaction?-->扩展程序能否在没有用户交互的情况下打开浏览器/页面按钮的弹出内容？</h3>
+<p>
+  <!--@No, popups can only be opened if the user clicks on the corresponding page or
+  browser action.  An extension cannot open its popup programatically.-->
+  不能。弹出内容只有当用户单击相应的页面/浏览器按钮时才能打开，扩展程序不能以编程方式打开自己的弹出内容。
+</p>
+
+<h3 id="faq-persist-popups"><!--@Can extensions keep popups open after the user
+  clicks away from them?-->扩展程序能否在用户单击其他地方后仍然使弹出内容保持打开状态？</h3>
+<p>
+  <!--@No, popups automatically close when the user focuses on some portion of the
+  browser outside of the popup.  There is no way to keep the popup open after
+  the user has clicked away.-->
+  不能。当用户将焦点移至弹出内容外的其他浏览器区域时，弹出内容会自动关闭，没有办法在用户单击其他地方后仍然保持弹出内容打开。
+</p>
+
+<h3 id="faq-lifecycle-events"><!--@Can extensions be notified when they are
+  installed/uninstalled?-->扩展程序能否在安装和卸载时得到通知？</h3>
+<p>
+  <!--@You can listen to the-->
+  您可以监听
+  <a href="runtime.html#event-onInstalled">runtime.onInstalled</a>
+  <!--@event to be notified when your extension is installed or updated, or when
+  Chrome itself is updated. There is no corresponding event for when your
+  extension is uninstalled.-->
+  事件，当您的扩展程序安装或更新，或者 Chrome
+  浏览器本身更新时收到通知。您的扩展程序卸载时没有相应的事件产生。
+</p>
+
+
+<h2 id="development2"><!--@Development-->开发</h2>
+
+
+<h3 id="faq-building-ui"><!--@How do I build a UI for my extension?-->我应该如何为我的扩展程序建立用户界面？</h3>
+<p>
+  <!--@Extensions use HTML and CSS to define their user interfaces, so you can use
+  standard form controls to build your UI, or style the interface with CSS,
+  as you would a web page.  Additionally, extensions can add
+  <a href="#faq-dev-05">some limited UI elements to Chrome itself.</a>-->
+  扩展程序使用 HTML 和 CSS
+  定义它们的用户界面，所以您可以使用标准表单控件来建立您的用户界面，或者用
+  CSS 修改您的用户界面的样式，就像网页中一样。另外，扩展程序还可以<a
+  href="faq.html#faq-dev-05">向  Chrome 浏览器本身添加有限的用户界面元素</a>。
+</p>
+
+<h3 id="faq-dev-09"><!--@How much data can I store in localStorage?-->我能够在本地存储中储存多少数据？</h3>
+<p>
+  <!--@Extensions can store up to 5MB of data in localStorage.-->
+  扩展程序最多可以在本地存储中储存 5MB 数据。如果使用
+  <a href="storage.html">chrome.storage</a> API 并在清单文件中指定了
+  "unlimitedStorage" 权限则不受这一限制。
+</p>
+
+
+<h3 id="faq-dev-12"><!--@What debugging tools are available to extension developers?-->扩展程序的开发者可以使用哪些调试工具？</h3>
+<p>
+  <!--@Chrome's built-in developer tools can be used to debug extensions
+  as well as web pages. See this
+  <a href="/extensions/tut_debugging">tutorial on debugging extensions</a>
+  for more information.-->
+  Chrome 浏览器内建的开发者工具可以用来调试扩展程序和网页，有关更多信息请参见<a
+  href="tut_debugging.html">有关调试扩展程序的教程</a>。
+</p>
+
+<h3 id="faq-dev-16"><!--@Why do wildcard matches not work for top level domains
+  (TLDs)?-->为什么通配符匹配对于顶级域名（TLD）不适用？</h3>
+<p>
+  <!--@You cannot use wildcard match patterns like <code>http://google.*/*</code>
+  to match TLDs (like <code>http://google.es</code> and
+  <code>http://google.fr</code>) due to the
+  complexity of actually restricting such a match to only the desired domains.-->
+  您不能使用类似于 <code>http://google.*/*</code>
+  的通配符匹配表达式来匹配顶级域名（TLD）（像
+  <code>http://google.es</code> 和
+  <code>http://google.fr</code>），这是由于将这一匹配表达式限制在期望域名中的复杂性导致的。
+</p>
+<p>
+  <!--@For the example of <code>http://google.*/*</code>, the Google domains would
+  be matched, but so would <code>http://google.someotherdomain.com</code>.
+  Additionally, many sites do not own all of the TLDs for their
+  domain.  For an example, assume you want to use
+  <code>http://example.*/*</code> to match <code>http://example.com</code> and
+  <code>http://example.es</code>, but <code>http://example.net</code> is a
+  hostile site.  If your extension has a bug, the hostile site could potentially
+  attack your extension in order to get access to your extension's increased
+  privileges.-->
+  对于 <code>http://google.*/*</code>
+  的例子，Google 的域名可以匹配，但是
+  <code>http://google.someotherdomain.com</code>
+  也可以。另外，许多站点并不拥有它们域名的所有顶级域名（TLD）。例如，假定您想使用
+  <code>http://example.*/*</code> 匹配
+  <code>http://example.com</code> 和
+  <code>http://example.es</code>，但是
+  <code>http://example.net</code>
+  是一个恶意站点。如果您的扩展程序有漏洞，恶意站点可能会攻击您的扩展程序，通过您的扩展程序获得提升的特权。
+</p>
+<p>
+  <!--@You should explicitly enumerate the TLDs that you wish to run
+  your extension on.-->
+  您应该显式地列出所有您希望在上面运行您的扩展程序的顶级域名（TLD）。
+</p>
+
+<h3 id="faq-management"><!--@Why does the management API not fire events when my
+  extension is installed/uninstalled?-->为什么当我的扩展程序安装或卸载时管理 API 不产生事件？</h3>
+<p>
+  <!--@The <a href="management">management API</a> was intended to help create
+  new tab page replacement extensions.  It was not intended to fire
+  install/uninstall events for the current extension.-->
+  <a href="../extensions/management.html">管理 API</a>
+  的目的是帮助您创建替代“打开新的标签页”页面的扩展程序，而不是为当前扩展程序产生安装/卸载事件。
+</p>
+
+<h3 id="faq-firstrun"><!--@How can an extension determine whether it is running for
+  the first time?-->扩展程序如何确定它是否是第一次运行？</h3>
+<p>
+  <!--@You can listen to the-->您可以监听
+  <a href="runtime.html#event-onInstalled">runtime.onInstalled</a>
+  <!--@event. See -->事件，参见<a href="faq.html#faq-lifecycle-events"><!--@this FAQ entry-->这一常见问题条目</a><!--@.-->。
+</p>
+
+<h2 id="features2"><!--@Features and bugs-->请求新特性和报告问题</h2>
+
+
+<h3 id="faq-fea-01"><!--@I think I've found a bug! How do I make sure it gets
+  fixed?-->我认为我发现了一个bug！我应该做什么确保让它被修复？</h3>
+<p>
+  <!--@While developing an extension, you may find behavior that does not
+  match the extensions documentation and may be the result of a bug in
+  Chrome.  The best thing to do is to make sure an appropriate issue
+  report is filed, and the Chromium team has enough information to reproduce
+  the behavior.-->
+  当您开发扩展程序时，您可能会发现不匹配扩展程序文档的行为，而这有可能是
+  Chrome 浏览器中的问题导致的。最好提交合适的问题报告，并向
+  Chromium 小组提供足够的信息来重现这一行为。
+</p>
+
+<p><!--@The steps you should follow to ensure this are:-->为了确保这一点，您应该遵循如下步骤：</p>
+
+<ol>
+  <li>
+    <!--@Come up with a <em>minimal</em> test extension that demonstrates the issue
+    you wish to report.  This extension should have as little code as possible
+    to demonstrate the bug&mdash;generally this should be 100 lines of
+    code or less.  Many times, developers find that they cannot reproduce their
+    issues this way, which is a good indicator that the bug is in their own
+    code.-->
+    建立一个<em>最小</em>的测试扩展程序，演示您想要报告的问题。该扩展程序应该包含尽可能少的代码，只要能演示问题就行。通常应该包含
+    100
+    行以下的代码。然而开发者经常发现他们不能用这种方式重现他们的问题，而这很可能意味着问题在他们自己的代码中。
+  </li>
+  <li>
+    <!--@Search the issue tracker at
+    <a href="http://crbug.com">http://crbug.com</a> to see whether
+    someone has reported a similar issue.  Most issues related to
+    extensions are filed under <strong>Cr=Platform-Extensions</strong>, so to
+    look for an extension bug related to the
+    chrome.tabs.executeScript function (for example), search for
+    "<code>Cr=Platform-Extensions Type=Bug chrome.tabs.executeScript</code>",
+    which will give you
+    <a href="https://code.google.com/p/chromium/issues/list?can=2&q=Cr%3DPlatform-Extensions+Type%3DBug+chrome.tabs.executeScript&colspec=ID+Pri+M+Iteration+ReleaseBlock+Cr+Status+Owner+Summary+Modified&x=m&y=releaseblock&cells=tiles">
+    this list of results</a>.-->
+    在 <a href="http://crbug.com">http://crbug.com</a>
+    的问题追踪器中搜索是否已经有人报告了类似的问题，大部分与扩展程序相关的问题在
+    <strong>Feature-Extensions</strong>
+    分类中。例如要查找有关
+    chrome.tabs.executeScript
+    函数的扩展程序问题，请搜索“Feature=Extensions Type=Bug chrome.tabs.executeScript”，然后会出现<a href="https://code.google.com/p/chromium/issues/list?can=2&q=Feature%3DExtensions+Type%3DBug+chrome.tabs.executeScript&colspec=ID+Stars+Pri+Area+Feature+Type+Status+Summary+Modified+Owner+Mstone+OS&x=mstone&y=area&cells=tiles">结果</a>。
+  </li>
+  <li>
+    <!--@If you find a bug that describes your issue, click the star icon to be
+    notified when the bug receives an update.  <em>Do not respond to the
+    bug to say "me too" or ask "when will this be fixed?"</em>; such updates
+    can cause hundreds of emails to be sent.  Add a comment only if you have
+    information (such as a better test case or a suggested fix) that is likely
+    to be helpful.-->
+    如果您发现了描述您的问题的 bug，单击加星图标，以便在这一 bug
+    收到更新时得到通知。<em>请不要用“我也有这个问题”或者问“什么时候修复？”来回复这一
+    bug</em>，这样的更新可能会导致几百封邮件的发送。只有当您要提供可能有帮助的信息（例如更好的测试案例或建议的修复）时才添加评论。
+  </li>
+  <li>
+    <!--@If you found no appropriate bug to star, file a new issue report at
+    <a href="http://crbug.com/new">http://crbug.com/new</a>.  Be as explicit
+    as possible when filling out this form: choose a descriptive title,
+    explain the steps to reproduce the bug, and describe the expected and
+    actual behavior.  Attach your test example to the report and add
+    screenshots if appropriate.  The easier your report makes it for others
+    to reproduce your issue, the greater chance that your bug will be fixed
+    promptly.-->
+    如果您没有找到合适的问题来加星，请在
+    <a href="http://crbug.com/new">http://crbug.com/new</a>
+    提交新的问题报告。当您填写这一表格时要尽量明确：选择描述性的标题，解释重现问题的步骤，并描述预期的和实际的行为。将您的测试案例添加为附件，如果合适的话添加屏幕截图。您的报告越容易让别人重现您的问题，您的问题越有可能尽早修复。
+  </li>
+  <li>
+    <!--@Wait for the bug to be updated.  Most new bugs are triaged within a week,
+    although it can sometimes take longer for an update.  <em>Do not reply
+    to the bug to ask when the issue will be fixed.</em>  If your bug has not
+    been modified after two weeks, please post a message to the
+    <a href="http://groups.google.com/a/chromium.org/group/chromium-extensions/topics">
+    discussion group</a> with a link back to your bug.-->
+    等待问题更新。大部分新的问题会在一周内鉴别分类，尽管有时候可能要花更长的时间更新。<em>不要回复问题，问这一问题何时修复。</em>如果您的问题在两周后还没有修改，请向<a href="https://groups.google.com/a/chromium.org/forum/?fromgroups#!forum/chromium-extensions">讨论组</a>发送消息，附上您的问题的链接。
+  </li>
+  <li>
+    <!--@If you originally reported your bug on the discussion group and were
+    directed to this FAQ entry, reply to your original thread with a link
+    to the bug you starred or reported.  This will make it easier for others
+    experiencing the same issue to find the correct bug.-->
+    如果您原来在讨论组上报告了您的问题，并被引导至这一常见问题项，回复您原来的帖子，附上您加星或报告的问题的链接。这将会使遇到同样问题的其他人找到正确的 bug。
+  </li>
+</ol>
+
+<h3 id="faq-fea-02"><!--@I have a feature request! How can I report it?-->我想请求新特性！我应该如何报告？</h3>
+
+<p><!--@If you identify a feature (especially if it's related to an experimental
+  API) that could be added to improve the extension development experience,
+  make sure an appropriate request is filed in the issue tracker.-->
+  如果您想到一个新功能（尤其是有关实验性 API
+  的），增加后可以改善扩展程序开发体验，确保合适的请求在问题追踪器中提交。
+</p>
+
+<p><!--@The steps you should follow to ensure this are:-->为了确保这一点，您应该遵循如下步骤：</p>
+
+<ol>
+  <li>
+    <!--@Search the issue tracker at
+    <a href="http://crbug.com">http://crbug.com</a> to see whether
+    someone has requested a similar feature.  Most requests related to
+    extensions are filed under <strong>Cr=Platform-Extensions</strong>, so to
+    look for an extension feature request related to keyboard shortcuts
+    (for example), search
+    for "<code>Cr=Platform-Extensions Type=Feature shortcuts</code>",
+    which will give you
+    <a href="https://code.google.com/p/chromium/issues/list?can=2&q=Cr%3DPlatform-Extensions+Type%3DFeature+shortcuts&colspec=ID+Pri+M+Iteration+ReleaseBlock+Cr+Status+Owner+Summary+Modified&x=m&y=releaseblock&cells=tiles">
+    this list of results</a>.-->
+    在
+    <a href="http://crbug.com/">http://crbug.com</a>
+    中的问题追踪器中搜索，看看有没有人已经请求了类似的特性。大部分有关于扩展程序的请求在
+    <strong>Feature-Extensions</strong>
+    分类中。例如要想寻找有关键盘快捷键的扩展程序特性请求，请搜索“Feature=Extensions Type=Feature shortcuts”，然后出现<a href="http://code.google.com/p/chromium/issues/list?can=2&q=Feature%3DExtensions+Type%3DFeature+shortcuts&colspec=ID+Stars+Pri+Area+Feature+Type+Status+Summary+Modified+Owner+Mstone+OS&x=mstone&y=area&cells=tiles">结果</a>。
+  </li>
+  <li>
+    <!--@If you find a ticket that matches your request, click the star icon to be
+    notified when the bug receives an update.  <em>Do not respond to the
+    bug to say "me too" or ask "when will this be implemented?"</em>; such
+    updates can cause hundreds of emails to be sent.-->
+    如果您发现了匹配您的请求的内容，单击加星图标，以便在这一请求更新时得到通知。<em>不要回复“我也是这么想的”或询问“什么时候实现？”</em>，这样的更新可能导致几百封邮件的发送。
+  </li>
+  <li>
+    <!--@If you found no appropriate ticket to star, file a new request at
+    <a href="http://crbug.com/new">http://crbug.com/new</a>.  Be as detailed
+    as possible when filling out this form: choose a descriptive title
+    and explain exactly what feature you would like and how you plan to use it.-->
+    如果您没有找到合适的内容来加星，请在
+    <a href="http://crbug.com/new">http://crbug.com/new</a>
+    中填写新的请求。当您填写这一表格时要尽可能详细：选择描述性的标题，并准确描述您想要的特性以及您计划如何利用它。</a>
+  </li>
+  <li>
+    <!--@Wait for the ticket to be updated.  Most new requests are triaged within a
+    week, although it can sometimes take longer for an update.  <em>Do not reply
+    to the ticket to ask when the feature will be added.</em>  If your
+    ticket has not been modified after two weeks, please post a message to the
+    <a href="http://groups.google.com/a/chromium.org/group/chromium-extensions/topics">
+    discussion group</a> with a link back to your request.-->
+    等待请求更新。大部分新请求将会在一周内分类，尽管有时候可能需要更长的时间更新。<em>不要直接回复请求，询问这一特性什么时候添加。</em>如果您的请求在两周后还没有更新，请向<a href="https://groups.google.com/a/chromium.org/forum/?fromgroups#!forum/chromium-extensions">讨论组</a>发送消息，附上您的请求的链接。
+  </li>
+  <li>
+    <!--@If you originally reported your request on the discussion group and were
+    directed to this FAQ entry, reply to your original thread with a link
+    to the ticket you starred or opened.  This will make it easier for others
+    with the same request to find the correct ticket.-->
+    如果您原来在讨论组上报告了您的请求，并被引导至这一常见问题项，请回复您原来的帖子，附上您加星或提出的请求的链接。这将会使具有同样请求的其他人找到正确的内容。
+  </li>
+</ol>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">帮助</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="samples.html">示例</a>
+                        </li>
+                        <li>
+                          <a href="faq.html" class="active">常见问题</a>
+                        </li>
+                        <li>
+                          <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">Google 网上论坛</a>
+                        </li>
+                        <li>
+                          <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">Stack Overflow</a>
+                        </li>
+      </ol>
+      </section>
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

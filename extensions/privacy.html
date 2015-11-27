@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.privacy - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="privacy.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.privacy</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.privacy</code> API 控制 Chrome 浏览器中可能会影响用户隐私的特性。这一模块依赖于<a href='types.html#ChromeSetting'>类型 API 中的 ChromeSettings 原型</a>，用于获取和设置 Chrome 浏览器的配置。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "privacy"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <p class="note">
+        <!--@The <a href="http://www.google.com/intl/en/landing/chrome/google-chrome-privacy-whitepaper.pdf">Chrome Privacy Whitepaper</a>
+        gives background detail regarding the features which this API can control.-->
+        <a href="https://www.google.com/intl/zh-CN/chrome/browser/privacy/whitepaper.html">Google Chrome 浏览器隐私权白皮书</a>提供了与这一 API 可以控制的特性有关的背景资料。
+      </p>
+      
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p>
+        <!--@You must declare the "privacy" permission in your extension's
+        <a href="manifest">manifest</a> to use the API. For example:-->
+        您必须在扩展程序的<a href="manifest.html">清单文件</a>中声明
+        "privacy" 权限才能使用这一 API。例如：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "privacy"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <h2 id="usage"><!--@Usage-->用法</h2>
+      
+      <p>
+        <!--@Reading the current value of a Chrome setting is straightforward. You'll first
+        need to find the property you're interested in, then you'll call
+        <code>get()</code> on that object in order to retrieve its current value and
+        your extension's level of control. For example, to determine if Chrome's
+        Autofill feature is enabled, you'd write:-->
+        读取某个 Chrome 浏览器设置的当前值是很直接的。您首先需要找到您感兴趣的属性，然后调用那个对象的
+        <code>get()</code>
+        方法，获得它当前的值以及您的扩展程序对它的控制级别。例如，要确定 Chrome
+        浏览器的自动填充功能是否已启用，您可以编写如下代码：
+      </p>
+      
+      <pre>chrome.privacy.services.autofillEnabled.get({}, function(details) {
+        if (details.value)
+          console.log('自动填充已启用！');
+        else
+          console.log('自动填充已禁用！');
+      });</pre>
+      
+      <p>
+        <!--@Changing the value of a setting is a little bit more complex, simply because
+        you first must verify that your extension can control the setting. The user
+        won't see any change to her settings if your extension toggles a setting that
+        is either locked to a specific value by enterprise policies
+        (<code>levelOfControl</code> will be set to "not_controllable"), or if another
+        extension is controlling the value (<code>levelOfControl</code> will be set to
+        "controlled_by_other_extensions"). The <code>set()</code> call will succeed,
+        but the setting will be immediately overridden. As this might be confusing, it
+        is advisable to warn the user when the settings they've chosen aren't
+        practically applied.-->
+        更改设置的值稍微有点复杂，因为您必须首先确认您的扩展程序可以控制某一项设置。如果扩展程序调整了通过企业策略（<code>levelOfControl</code>
+        将设置为 "not_controllable"）限制为特定值的设置，或者另外一个扩展程序正在控制设置值（<code>levelOfControl</code>
+        将设置为 "controlled_by_other_extensions"），用户将不能看见任何设置的更改。<code>set()</code>
+        调用将会成功，但是设置会立即被覆盖。这可能令人疑惑，如果用户选择的设置实际上无法应用，建议警告用户。
+      </p>
+      
+      <p class="note">
+        <!--@Full details about extensions' ability to control <code>ChromeSetting</code>s
+        can be found under
+        <a href="types#ChromeSetting">
+          <code>chrome.types.ChromeSetting</code></a>.-->
+        有关扩展程序控制 <code>ChromeSetting</code> 的能力的完整详情可以在
+        <a href="types.html#ChromeSetting"><code>chrome.types.ChromeSetting</code></a>
+        中找到。
+      </p>
+      
+      <p>
+        <!--@This means that you ought to use the <code>get()</code> method to determine
+        your level of access, and then only call <code>set()</code> if your extension
+        can grab control over the setting (in fact if your extension can't control the
+        setting it's probably a good idea to visually disable the functionality to
+        reduce user confusion):-->
+        这意味着您应该先使用 <code>get()</code>
+        方法确定您的访问级别，只有当您的扩展程序可以控制这一设置时才调用
+        <code>set()</code>（事实上，如果您的扩展程序不能控制这一设置，在用户界面中禁用相应功能可能会更好，减少用户的疑惑）：
+      </p>
+      
+      <pre>chrome.privacy.services.autofillEnabled.get({}, function(details) {
+        if (details.levelOfControl === 'controllable_by_this_extension') {
+          chrome.privacy.services.autofillEnabled.set({ value: true }, function() {
+            if (chrome.runtime.lastError === undefined)
+              console.log("哈哈，成功了！");
+            else
+              console.log("喔唷！", chrome.runtime.lastError);
+          });
+        }
+      });</pre>
+      
+      <p>
+        <!--@If you're interested in changes to a setting's value, add a listener to its
+        <code>onChange</code> event. Among other uses, this will allow you to warn the
+        user if a more recently installed extension grabs control of a setting, or if
+        enterprise policy overrides your control. To listen for changes to Autofill's
+        status, for example, the following code would suffice:-->
+        如果您对设置值的更改有兴趣，请向 <code>onChange</code>
+        事件添加监听器。除了其他用途外，如果最近安装的扩展程序拥有了某一项设置的控制权，或者企业策略覆盖了您的控制，这将允许您警告用户。例如，要监听自动填充状态的更改，如下所示代码就可以了：
+      </p>
+      
+      <pre>chrome.privacy.services.autofillEnabled.onChange.addListener(
+          function (details) {
+            // 新的值存储在 `details.value` 中，新的控制级别在
+            // `details.levelOfControl` 中。另外，如果设置值仅用于
+            // 隐身模式，则 `details.incognitoSpecific` 将为 `true`。
+          });</pre>
+      
+      <h2 id="examples"><!--@Examples-->例子</h2>
+      <p>
+        <!--@For example code, see the
+        <a href="samples#privacy">Privacy API samples</a>.-->
+        有关示例代码，请参见<a href="samples.html#privacy">隐私权 API 示例</a>。
+      </p>
+          </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="privacy.html#property-network">network</a></td>
+          <tr><td><a href="privacy.html#property-services">services</a></td>
+          <tr><td><a href="privacy.html#property-websites">websites</a></td>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">  object</span></td>
+              <td><code id="property-network">chrome.privacy.network</code></td>
+              <td>
+                  总体上影响 Chrome 浏览器对网络连接的处理的设置。
+                <table class="innerTable">
+                <thead><th colspan="3"><!--@Properties-->属性</th></thead>
+                  <tr id="property-network-networkPredictionEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        networkPredictionEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器会尝试通过预取 DNS 项、预呈现站点（<code>&lt;link rel="prefetch" ...&gt;</code>），并提前打开向服务器的 TCP 和 SSL 连接。这一选项的值为布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">  object</span></td>
+              <td><code id="property-services">chrome.privacy.services</code></td>
+              <td>
+                  启用或禁用需要由 Google 以及您的默认搜索引擎提供的第三方网络服务。
+                <table class="innerTable">
+                <thead><th colspan="3"><!--@Properties-->属性</th></thead>
+                  <tr id="property-services-alternateErrorPagesEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        alternateErrorPagesEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器将使用网络服务帮助解决导航错误。这一选项的值是布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-services-autofillEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        autofillEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器会自动填充表单。这一选项的值是布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-services-passwordSavingEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        passwordSavingEnabled</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 38<!--@.
+                       --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                      -->目前为 <strong>Dev</strong> 分支。<!--@
+                      
+                       --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                    </p>
+                    
+                    <p>
+                      如果启用的话，密码管理器会询问是否要保存密码。这一选项的值是布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-services-safeBrowsingEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        safeBrowsingEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器会尽可能地保护您，以防网上诱骗和恶意软件。这一选项的值为布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-services-searchSuggestEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        searchSuggestEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器将会把您在多功能框中输入的文字发送至您的默认搜索引擎，提供网站预测以及对您已输入内容的自动完成。这一选项的值为布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-services-spellingServiceEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        spellingServiceEnabled</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 20<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器将使用网络服务帮助您纠正拼写错误。这一选项的值为布尔类型，默认为 <code>false</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-services-translationServiceEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        translationServiceEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 会对不使用您所用语言撰写的页面进行翻译。这一选项的值为布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">  object</span></td>
+              <td><code id="property-websites">chrome.privacy.websites</code></td>
+              <td>
+                  决定 Chrome 浏览器使哪些信息对网站可用。
+                <table class="innerTable">
+                <thead><th colspan="3"><!--@Properties-->属性</th></thead>
+                  <tr id="property-websites-thirdPartyCookiesAllowed">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        thirdPartyCookiesAllowed</td>
+                    <td>
+                    
+                    <p>
+                      如果禁用的话，Chrome 浏览器会阻止第三方站点设置 Cookie。这一选项的值为布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-websites-hyperlinkAuditingEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        hyperlinkAuditingEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器在网站请求（<code>&lt;a ping&gt;</code>）时会自动发送审核信息。这一选项的值为布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-websites-referrersEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        referrersEnabled</td>
+                    <td>
+                    
+                    <p>
+                      如果启用的话，Chrome 浏览器发送您的请求时会同时发送 <code>referer</code> 头信息。的确，这一选项的名称与拼写错误的头信息名称不匹配，然而我们不打算更改它。这一选项的值为布尔类型，默认值为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                  <tr id="property-websites-protectedContentEnabled">
+                    <td>    <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></td>
+                    <td>
+                        protectedContentEnabled</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 21<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <strong>仅在 Windows 和 Chrome OS 上可用：</strong>如果启用的话，Chrome 浏览器将会向插件提供唯一标志符来运行受保护的内容。这一选项的值为布尔类型，默认为 <code>true</code>。
+                    </p></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

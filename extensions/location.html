@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.location - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="location.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<p class="warning">
+  <!--@This API is experimental. It is only available to Chrome users on the-->
+  该 API 还是实验性的，仅对
+  <a href="http://www.chromium.org/getting-involved/dev-channel">dev <!--@channel-->分支</a><!--@.-->的
+  Chrome 用户可用。
+</p>
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.location</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the-->使用 <code>chrome.location</code> API <!--@to retrieve the geographic location
+             of the host machine. This API is a version of the <a
+             href="http://dev.w3.org/geo/api/spec-source.html">HTML Geolocation API</a>
+             that is compatible with event pages.-->
+             获取计算机的地理位置。该 API 是 <a
+             href="http://dev.w3.org/geo/api/spec-source.html">HTML 地理定位 API</a>
+             的另一种版本，与事件页面兼容。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@<strong>Dev</strong> channel only.
+            -->仅用于 <strong>Dev</strong> 分支。<!--@
+            
+             --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "location"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="overview"><!--@Overview-->概述</h2>
+      <p>
+        <!--@To start retrieving location information, you need to create a location watch
+        by calling <a href=/extensions/location#method-watchLocation>location.watchLocation</a>, passing in
+        the location watch details via the <code>requestInfo</code> parameter:-->
+        要开始接收位置信息，您需要调用 <a href="location.html#method-watchLocation">location.watchLocation</a> 监视位置，通过
+        <code>requestInfo</code> 参数传递位置监视详情：
+      </p>
+      
+      <pre>chrome.location.watchLocation(name, requestInfo);</pre>
+      <p>
+        <!--@You also need to add a listener
+        for the <a href=/extensions/location#event-onLocationUpdate>location.onLocationUpdate</a> event.
+        Chrome will fire this event after you create your location watch, and
+        it will keep firing the event every time the geographic
+        location of the host machine changes, until you call <a href=/extensions/location#method-clearWatch>location.clearWatch</a>.-->
+        您还需要为 <a href="location.html#event-onLocationUpdate">location.onLocationUpdate</a>
+        事件添加一个监听器。在您开始位置监视后，Chrome
+        浏览器会产生该事件，并且每一次主机的地理位置更改时，还会产生该事件，直到您调用
+        <a href="location.html#method-clearWatch">location.clearWatch</a> 为止。
+      </p>
+      <p>
+        <!--@Here's sample code
+        to listen for location updates:-->
+        如下是监听位置更新的示例代码：
+      </p>
+      <pre>
+        chrome.location.onLocationUpdate.addListener(function(position) {
+          console.log(JSON.stringify(position));
+        });
+      </pre>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="location.html#method-watchLocation">watchLocation</a> &minus;
+            <code class="prettyprint">
+            chrome.location.watchLocation(<span>string name</span>, <span>object requestInfo</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="location.html#method-clearWatch">clearWatch</a> &minus;
+            <code class="prettyprint">
+            chrome.location.clearWatch(<span>string name</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="location.html#event-onLocationUpdate">onLocationUpdate</a></td></tr>
+          <tr><td><a href="location.html#event-onLocationError">onLocationError</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-watchLocation"
+                  >watchLocation
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.location.watchLocation(<span>string name</span>, <span>object requestInfo</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Starts a location watching request. If there is another location watching request with the same name (or no name if none is specified), it will be cancelled and replaced by this request.--> 开始位置监视请求。如果已经有相同名称（或者没有指定的话则没有名称）的位置监视请求，它将会被取消并由这一请求替代。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-watchLocation-name">
+                      <td>string</td>
+                      <td>
+                          name</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Optional name to identify this request. Defaults to the empty string.--> 标识本次请求的可选名称，默认为空字符串。
+                      </p></td>
+                    </tr>
+                    <tr id="property-watchLocation-requestInfo">
+                      <td>object</td>
+                      <td>
+                          requestInfo</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Optional parameters for this request.--> 本次请求的可选参数。
+                      </p>  <table class="innerTable">
+                          <tr id="property-requestInfo-minDistanceInMeters">
+                            <td>double</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                minDistanceInMeters</td>
+                            <td>
+                            
+                            <p>
+                              <!--@Minimum distance between location updates, in meters. Defaults to 0 - any change in location will be reported.--> 两次位置更新之间的最小距离，以米为单位，默认为 0，即报告所有位置的改变。
+                            </p></td>
+                          </tr><tr id="property-requestInfo-minTimeInMilliseconds">
+                            <td>double</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                minTimeInMilliseconds</td>
+                            <td>
+                            
+                            <p>
+                              <!--@Minimum time interval between location updates, in milliseconds. Defaults to 0 - system-defined frequency of updates will be used.--> 两次位置更新之间的最小时间间隔，以毫秒为单位，默认为 0，使用系统定义的更新频率。
+                            </p></td>
+                          </tr><tr id="property-requestInfo-maximumAge">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                maximumAge</td>
+                            <td>
+                            
+                            <p>
+                              <!--@Maximum age of a cached location, in milliseconds, that Chrome can pass to the first onLocationUpdate event for this location watch request. If this value <= 0, Chrome will always attempt to acquire a new location. Defaults to 0.--> Chrome 浏览器传递给本次位置监视的请求第一个 onLocationUpdate 事件的位置缓存的最长时间，以毫秒为单位。如果这一值小于或等于零，则 Chrome 浏览器随时会尝试获取新位置。默认为 0。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-clearWatch"
+                  >clearWatch
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.location.clearWatch(<span>string name</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Ends a location watching request.--> 结束位置监视请求。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-clearWatch-name">
+                      <td>string</td>
+                      <td>
+                          name</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Optional name to identify the request to remove. Defaults to the empty string.--> 表示要结束的请求名称，默认为空字符串。
+                      </p></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onLocationUpdate">onLocationUpdate</h3>
+              <div class="description">
+            <p>
+                  <!--@Fired when a location change is detected.--> 检测到位置更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.location.onLocationUpdate.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onLocationUpdate-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object location) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onLocationUpdate-location">
+                                    <td>object</td>
+                                    <td>
+                                        location</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@An object containing matching events and new location.--> 包含匹配的事件及新位置。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-location-name">
+                                          <td>string</td>
+                                          <td>
+                                              name</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@Location watch request name.--> 位置监视请求名称。
+                                          </p></td>
+                                        </tr><tr id="property-location-coords">
+                                          <td>object</td>
+                                          <td>
+                                              coords</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@Coordinates and their accuracy.--> 坐标及其精度。
+                                          </p>  <table class="innerTable">
+                                              <tr id="property-coords-latitude">
+                                                <td>double</td>
+                                                <td>
+                                                    latitude</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@The geographic latitude specified in degrees.--> 地理纬度，以度为单位。
+                                                </p></td>
+                                              </tr><tr id="property-coords-longitude">
+                                                <td>double</td>
+                                                <td>
+                                                    longitude</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@The geographic longitude specified in degrees.--> 地理经度，以度为单位。
+                                                </p></td>
+                                              </tr><tr id="property-coords-altitude">
+                                                <td>double</td>
+                                                <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                    altitude</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@The height of the position, specified in meters above the [WGS84] ellipsoid, or null if Chrome cannot provide altitude information.--> 位置的高度，以 [WGS84] 椭球面上多少米表示。如果 Chrome 浏览器无法提供 高度信息则为 null。
+                                                </p></td>
+                                              </tr><tr id="property-coords-accuracy">
+                                                <td>double</td>
+                                                <td>
+                                                    accuracy</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@The accuracy of the latitude and longitude coordinates, in meters. This represents the radius of a circle around the given location.--> 纬度和经度坐标的精度，以米为单位，表示以指定位置为圆心的圆的半径。
+                                                </p></td>
+                                              </tr><tr id="property-coords-altitudeAccuracy">
+                                                <td>double</td>
+                                                <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                    altitudeAccuracy</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@The accuracy in meters of the 'altitude' attribute if it's not null, otherwise, null.--> altitude 属性的精度，以米为单位。如果 altitude 为 null 则该属性也为 null。
+                                                </p></td>
+                                              </tr><tr id="property-coords-heading">
+                                                <td>double</td>
+                                                <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                    heading</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@The direction of travel of the hosting device and is specified in degrees, where 0 <= heading < 360, counting clockwise relative to the true north. If the Chrome cannot provide heading information, the value of this attribute is null. If the hosting device is stationary (i.e. the value of the speed attribute is 0), then the value of the heading attribute is NaN.--> 主机设备的方向，以度为单位，且 0 <= heading <= 360，相对于真北以顺时针方向计算。如果 Chrome 浏览器无法提供方向信息，该属性的值为 null。如果主机设备处于静止状态（即 speed 属性为 0），则该属性的值为 NaN。
+                                                </p></td>
+                                              </tr><tr id="property-coords-speed">
+                                                <td>double</td>
+                                                <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                                    speed</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@The magnitude of the horizontal component of the hosting device's current velocity and is specified in meters per second. If the Chrome cannot provide speed information, the value of this attribute is null.--> 主机设备当前速度的水平分量大小，单位为米每秒。如果 Chrome 浏览器无法提供速度信息，该属性的值为 null。
+                                                </p></td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr><tr id="property-location-timestamp">
+                                          <td>double</td>
+                                          <td>
+                                              timestamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The time when the Location object was acquired in milliseconds since the start of the Unix Epoch.--> 获取 Location 对象的事件，表示为 1970 年 1 月 1 日以来所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onLocationError">onLocationError</h3>
+              <div class="description">
+            <p>
+                  <!--@Fired when detecting location in not possible.--> 无法检测位置时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.location.onLocationError.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onLocationError-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(string error) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onLocationError-error">
+                                    <td>string</td>
+                                    <td>
+                                        error</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Human-readable error description.--> 可读的错误描述。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

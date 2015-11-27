@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.webNavigation - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="webNavigation.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.webNavigation</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.webNavigation</code> API 实时地接收有关导航请求状态的通知。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "webNavigation"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p>
+      <!--@All <code>chrome.webNavigation</code> methods and events require you to declare
+      the "webNavigation" permission in the <a href="manifest">extension
+      manifest</a>.
+      For example:-->
+      所有 <code>chrome.webNavigation</code>
+      方法和事件要求您在<a href="manifest.html">扩展程序的清单文件</a>中声明
+      "webNavigation" 权限。例如：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "webNavigation"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      
+      <h2 id="examples"><!--@Examples-->例子</h2>
+      
+      <p>
+      <!--@You can find simple examples of using the tabs module in the-->
+      您可以在
+      <a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/webNavigation/">examples/api/webNavigation</a>
+      <!--@directory.
+      For other examples and for help in viewing the source code, see
+      <a href="samples">Samples</a>.-->
+      目录中找到使用网页导航模块的简单例子。有关其他例子以及查看源代码的帮助，请参见<a href="samples.html">示例</a>。
+      </p>
+      
+      <h2 id="event_order"><!--@Event order-->事件顺序</h2>
+      <p>
+      <!--@For a navigation that is successfully completed, events are fired in the
+      following order:-->
+      对于一次成功完成的导航，事件按照如下顺序产生：
+      <pre>
+      onBeforeNavigate -&gt; onCommitted -&gt; onDOMContentLoaded -&gt; onCompleted
+      </pre>
+      </p>
+      <p>
+      <!--@Any error that occurs during the process results in an
+      <code>onErrorOccurred</code> event. For a specific navigation, there are no
+      further events fired after <code>onErrorOccurred</code>.-->
+      在这一过程中如果发生任何错误都将产生 <code>onErrorOccurred</code>
+      事件。对于一次导航，在 <code>onErrorOccurred</code>
+      之后不会再产生进一步的事件。
+      </p>
+      <p>
+      <!--@If a navigating frame contains subframes, its <code>onCommitted</code> is fired
+      before any of its children's <code>onBeforeNavigate</code>; while
+      <code>onCompleted</code> is fired after all of its children's
+      <code>onCompleted</code>.-->
+      如果导航中的框架包含子框架，它的 <code>onCommitted</code>
+      事件将在所有子框架的 <code>onBeforeNavigate</code> 事件之前产生，而
+      <code>onCompleted</code> 事件将在所有子框架的 <code>onCompleted</code>
+      事件之后产生。
+      </p>
+      <p>
+      <!--@If the reference fragment of a frame is changed, a
+      <code>onReferenceFragmentUpdated</code> event is fired. This event can fire any
+      time after <code>onDOMContentLoaded</code>, even after
+      <code>onCompleted</code>.-->
+      <!--@如果框架的引用片段发生更改，将产生 onReferenceFragmentUpdated 事件。这一事件可以在 onDOMContentLoaded 之后，甚至 onCompleted 之后的任何时间产生。-->
+      </p>
+      <p>
+      <!--@If the history API is used to modify the state of a frame (e.g. using
+      <code>history.pushState()</code>, a <code>onHistoryStateUpdated</code> event is
+      fired. This event can fire any time after <code>onDOMContentLoaded</code>.-->
+      如果使用了 <code>history</code> API 修改框架的状态（例如使用
+      <code>history.pushState()</code>），将产生
+      <code>onHistoryStateUpdated</code> 事件。这一事件可以在
+      <code>onDOMContentLoaded</code> 之后的任何时候产生。
+      </p>
+      <p>
+      <!--If a navigation was triggered via <a
+      href="https://support.google.com/chrome/bin/answer.py?answer=177873">Chrome
+      Instant</a> or <a
+      href="https://support.google.com/chrome/bin/answer.py?answer=1385029">Instant
+      Pages</a>, a completely loaded page is swapped into the current tab. In that
+      case, an <code>onTabReplaced</code> event is fired.-->
+      如果导航通过 <a
+      href="https://support.google.com/chrome/bin/answer.py?answer=177873">Chrome
+      即搜即得</a>功能或<a href="https://support.google.com/chrome/bin/answer.py?answer=1385029">网页即时看</a>功能触发，已完全加载的页面将与当前标签页中的页面交换，这种情况下将产生
+      <code>onTabReplaced</code> 事件。
+      </p>
+      
+      <h2 id="relation_to_webRequest"><!--@Relation to webRequest events-->与网络请求事件间的关系</h2>
+      <p>
+      <!--@There is no defined ordering between events of the <a
+      href="webRequest">webRequest API</a> and the events of the
+      webNavigation API. It is possible that webRequest events are still received for
+      frames that already started a new navigation, or that a navigation only
+      proceeds after the network resources are already fully loaded.-->
+      在<a href="webRequest.html">网络请求 API</a> 与网页导航 API
+      产生的事件之间没有确定的顺序。已经开始新导航的框架可能还会收到网络请求事件，或者也可能导航仅在网络资源完全加载后才继续进行。
+      </p>
+      <p>
+      <!--@In general, the webNavigation events are closely related to the navigation
+      state that is displayed in the UI, while the webRequest events correspond to
+      the state of the network stack which is generally opaque to the user.-->
+      大体上说，网页导航事件与用户界面中显示的导航状态密切相关，而网络请求事件对应于通常对用户来说不可见的网络栈状态。
+      </p>
+      
+      <h2 id="tab_ids"><!--@A note about tab IDs-->有关标签页标识符的说明</h2>
+      <p>
+      <!--@Not all navigating tabs correspond to actual tabs in Chrome's UI, e.g., a tab
+      that is being pre-rendered. Such tabs are not accessible via the
+      <a href="tabs">tabs API</a> nor can you request information about them via
+      <code>webNavigation.getFrame</code> or <code>webNavigation.getAllFrames</code>.
+      Once such a tab is swapped in, an <code>onTabReplaced</code> event is fired and
+      they become accessible via these APIs.-->
+      并不是所有正在导航的标签页都对应于 Chrome 
+      浏览器用户界面中的真实标签页，例如预呈现标签页。这样的标签页不能通过<a
+      href="tabs.html">标签页 API</a> 访问，您也不能通过
+      <code>webRequest.getFrame</code> 或 <code>webRequest.getAllFrames</code>
+      请求有关信息。一旦这样的标签页交换进来，将产生 <code>onTabReplced</code>
+      事件，并且它们也可以通过这些 API 访问了。
+      </p>
+      
+      <h2 id="timestamps"><!--@A note about timestamps-->有关时间戳的说明</h2>
+      <p>
+      <!--@It's important to note that some technical oddities in the OS's handling
+      of distinct Chrome processes can cause the clock to be skewed between the
+      browser itself and extension processes. That means that WebNavigation's events'
+      <code>timeStamp</code> property is only guaranteed to be <i>internally</i>
+      consistent. Comparing one event to another event will give you the correct
+      offset between them, but comparing them to the current time inside the
+      extension (via <code>(new Date()).getTime()</code>, for instance) might give
+      unexpected results.-->
+      值得重视的是，操作系统对不同的 Chrome
+      浏览器进程在某些技术上的反常可能会导致时钟在浏览器自身以及扩展程序进程间不一致。这意味着网络请求事件的
+      <code>timeStamp</code>
+      属性仅保证内部的一致性，将两个事件的时间相比较会得到它们之间正确的时间差，但是与扩展程序内的当前时间（例如通过(
+      <code>new Date()).getTime()</code>）比较可能会导致不可预料的结果。
+      </p>
+      
+      <h2 id="frame_ids"><!--@A note about frame and process IDs-->有关框架和进程标识符的说明</h2>
+      <p>
+      <!--@Due to the multi-process nature of Chrome, a tab might use different processes
+      to render the source and destination of a web page. Therefore, if a navigation
+      takes place in a new process, you might receive events both from the new and
+      the old page until the new navigation is committed (i.e. the
+      <code>onCommitted</code> event is send for the new main frame). Because frame
+      IDs are only unique for a given process, the webNavigation events include a
+      process ID, so you can still determine which frame a navigation came from.-->
+      由于 Chrome
+      浏览器使用多进程的基本架构，标签页可能会使用不同的进程来渲染网页的源和目标。因此，如果导航在新的进程中进行，您可能会同时接收到来自新旧页面的事件，直到新的导航已提交（即为新的主框架发送了
+      <code>onCommitted</code>
+      事件）。因为框架标识符对于给定进程是唯一的，网页导航事件包含进程标识符，所以您仍然可以确定导航来自哪个标签页。
+      </p>
+      <p>
+      <!--@Also note that during a provisional load the process might be switched several
+      times. This happens when the load is redirected to a different site. In this
+      case, you will receive repeated <code>onBeforeNavigate</code> and
+      <code>onErrorOccurred</code> events, until you receive the final
+      <code>onCommitted</code> event.-->
+      同时也请注意，在临时加载的过程中，进程可能会多次切换。当加载过程需要重定向至另一个站点时就会发生这种情况。在这种情况下，您会多次收到
+      <code>onBeforeNavigate</code> 和 <code>onErrorOccurred</code>
+      事件，直到您接收到最终的 <code>onCommitted</code> 事件。
+      </p>
+      
+      <h2 id="transition_types"><!--@Transition types and qualifiers-->过渡类型和限定符</h2>
+      <p>
+      <!--@The webNavigation API's <code>onCommitted</code> event has a
+      <code>transitionType</code> and a <code>transitionQualifiers</code> property.
+      The <em>transition type</em> is the same as used in the <a
+      href="history#transition_types">history API</a> describing how the browser
+      navigated to this particular URL. In addition, several <em>transition
+      qualifiers</em> can be returned that further define the navigation.-->
+      网页导航 API 的 <code>onCommitted</code> 事件包含
+      <code>transitionType</code> 与 <code>transitionQualifiers</code>
+      属性。过渡类型与<a href="history.html#transition_types">历史记录 API</a>
+      中所使用的相同，描述浏览器如何导航至这一特定的 URL。此外，还会返回几种过渡限定符，进一步定义本次导航。
+      </p>
+      <p>
+      <!--@The following transition qualifiers exist:-->
+      存在如下几种过渡限定符：
+      </p>
+      <table>
+      <tr>
+        <th> <!--@Transition qualifier-->过渡限定符 </th> <th> <!--@Description-->描述 </th>
+      </tr>
+      <tr>
+        <td>"client_redirect"</td>
+        <td>
+          <!--@One or more redirects caused by JavaScript or meta refresh tags on the page
+          happened during the navigation.-->
+          导航过程中由页面上的 JavaScript 或 meta 刷新标记产生的一次或多次重定向。
+        </td>
+      </tr>
+      <tr>
+        <td>"server_redirect"</td>
+        <td>
+          <!--@One or more redirects caused by HTTP headers sent from the server happened
+          during the navigation.-->
+          导航过程中由服务器发送的 HTTP 头产生的一次或多次重定向。
+        </td>
+      </tr>
+      <tr>
+        <td>"forward_back"</td>
+        <td>
+          <!--@The user used the Forward or Back button to initiate the navigation.-->
+          用户使用“前进”、“后退”按钮开始导航。
+        </td>
+      </tr>
+      <tr>
+        <td>"from_address_bar"</td>
+        <td>
+          <!--@The user initiated the navigation from the address bar (aka Omnibox).-->
+          用户从地址栏（即多功能框）开始导航。
+        </td>
+      </tr>
+      </table>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="webNavigation.html#method-getFrame">getFrame</a> &minus;
+            <code class="prettyprint">
+            chrome.webNavigation.getFrame(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webNavigation.html#method-getAllFrames">getAllFrames</a> &minus;
+            <code class="prettyprint">
+            chrome.webNavigation.getAllFrames(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="webNavigation.html#event-onBeforeNavigate">onBeforeNavigate</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onCommitted">onCommitted</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onDOMContentLoaded">onDOMContentLoaded</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onCompleted">onCompleted</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onErrorOccurred">onErrorOccurred</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onCreatedNavigationTarget">onCreatedNavigationTarget</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onReferenceFragmentUpdated">onReferenceFragmentUpdated</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onTabReplaced">onTabReplaced</a></td></tr>
+          <tr><td><a href="webNavigation.html#event-onHistoryStateUpdated">onHistoryStateUpdated</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getFrame"
+                  >getFrame
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.webNavigation.getFrame(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取指定框架的有关信息。框架指网页中的 &lt;iframe&gt; 或者 &lt;frame&gt; 元素，通过标签页标识符以及框架标识符指定。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getFrame-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        要获取信息的框架的有关信息。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-tabId">
+                            <td>integer</td>
+                            <td>
+                                tabId</td>
+                            <td>
+                            
+                            <p>
+                              框架所在的标签页标识符。
+                            </p></td>
+                          </tr><tr id="property-details-processId">
+                            <td>integer</td>
+                            <td>
+                                processId</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              该标签页的渲染器进程标识符。
+                            </p></td>
+                          </tr><tr id="property-details-frameId">
+                            <td>integer</td>
+                            <td>
+                                frameId</td>
+                            <td>
+                            
+                            <p>
+                              指定标签页中的框架标识符。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getFrame-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  details</td>
+                              <td>
+                              
+                              <p>
+                                请求框架的有关信息，如果框架标识符和/或标签页标识符无效则为 null。
+                              </p>  <table class="innerTable">
+                                  <tr id="property-details-errorOccurred">
+                                    <td>boolean</td>
+                                    <td>
+                                        errorOccurred</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果该框架中的上一次导航由于错误（即产生了 onErrorOccurred 事件）而中断则为 true。
+                                    </p></td>
+                                  </tr><tr id="property-details-url">
+                                    <td>string</td>
+                                    <td>
+                                        url</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果在指定标签页中 frameId 指定的框架标识符在某一时刻曾经存在的话，则为当前与该框架相关联的 URL。URL 与给定的框架标识符相关联并不意味着相应的框架仍然存在。
+                                    </p></td>
+                                  </tr><tr id="property-details-parentFrameId">
+                                    <td>integer</td>
+                                    <td>
+                                        parentFrameId</td>
+                                    <td>
+                                    
+                                    <p>
+                                      包含当前框架的父框架，如果不存在父框架则设为 -1。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getAllFrames"
+                  >getAllFrames
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.webNavigation.getAllFrames(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取给定标签页中所有框架的有关信息。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAllFrames-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        要获取所有框架的标签页信息。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-tabId">
+                            <td>integer</td>
+                            <td>
+                                tabId</td>
+                            <td>
+                            
+                            <p>
+                              标签页的标识符。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getAllFrames-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>array of object</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  details</td>
+                              <td>
+                              
+                              <p>
+                                指定标签页中的所有框架，若标签页标识符无效则为 null。
+                              </p>  <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                <dl>
+                                  <div>
+                                    <table>
+                                        <tr id="property-detailsType-errorOccurred">
+                                          <td>boolean</td>
+                                          <td>
+                                              errorOccurred</td>
+                                          <td>
+                                          
+                                          <p>
+                                            如果该框架中的上一次导航由于错误（即产生了 onErrorOccurred 事件）而中断则为 true。
+                                          </p></td>
+                                        </tr><tr id="property-detailsType-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            该标签页的渲染器进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-detailsType-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            框架标识符，0 表示主框架，正整数表示子框架标识符。
+                                          </p></td>
+                                        </tr><tr id="property-detailsType-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            包含当前框架的父框架，如果不存在父框架则设为 -1。
+                                          </p></td>
+                                        </tr><tr id="property-detailsType-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          <p>
+                                            当前与该框架相关联的URL。
+                                          </p></td>
+                                        </tr>
+                                    </table>
+                                  </div>
+                                </dl>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onBeforeNavigate">onBeforeNavigate</h3>
+              <div class="description">
+            <p>
+                  当导航即将发生时产生。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onBeforeNavigate-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onBeforeNavigate.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onBeforeNavigate-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onBeforeNavigate-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            将要发生的导航所在的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            渲染当前标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示导航发生在标签页内容窗口中，正数表示导航发生在子框架中。框架标识符在给定标签页与进程中唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 24<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            包含当前框架的父框架，如果不存在父框架则设为 -1。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            浏览器将要开始导航的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onCommitted">onCommitted</h3>
+              <div class="description">
+            <p>
+                  当一次导航提交时产生。文档（以及它引用的资源，例如图片与子框架）可能还在下载，但是至少文档的一部分已经从服务器接收到，并且浏览器已经决定切换到新文档。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onCommitted-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onCommitted.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onCommitted-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onCommitted-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航所在的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            渲染当前标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示导航发生在标签页内容窗口中，正数表示导航发生在子框架中。框架标识符在标签页中唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-transitionType">
+                                          <td>enum of <code>"link"</code>, <code>"typed"</code>, <code>"auto_bookmark"</code>, <code>"auto_subframe"</code>, <code>"manual_subframe"</code>, <code>"generated"</code>, <code>"start_page"</code>, <code>"form_submit"</code>, <code>"reload"</code>, <code>"keyword"</code>, or <code>"keyword_generated"</code></td>
+                                          <td>
+                                              transitionType</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航发生的原因，这些过渡类型与<a href='history.html#transition_types'>历史记录API</a>中所定义的相同，除了用 <code>"start_page"</code> 代替 <code>"auto_toplevel"</code>（为了保持向后兼容）。
+                                          </p></td>
+                                        </tr><tr id="property-details-transitionQualifiers">
+                                          <td>array of enum of <code>"client_redirect"</code>, <code>"server_redirect"</code>, <code>"forward_back"</code>, or <code>"from_address_bar"</code></td>
+                                          <td>
+                                              transitionQualifiers</td>
+                                          <td>
+                                          
+                                          <p>
+                                            过渡限定符列表。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航提交的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onDOMContentLoaded">onDOMContentLoaded</h3>
+              <div class="description">
+            <p>
+                  当页面的 DOM 已完全构造时产生，但是此时引用的资源可能还未完成加载。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onDOMContentLoaded-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onDOMContentLoaded.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onDOMContentLoaded-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onDOMContentLoaded-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航所在的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            渲染当前标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示导航发生在标签页内容窗口中，正数表示导航发生在子框架中。框架标识符在标签页中唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            页面 DOM 完全构造的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onCompleted">onCompleted</h3>
+              <div class="description">
+            <p>
+                  当文档（包括它所引用的资源）已经完全加载并初始化完成时产生。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onCompleted-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onCompleted.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onCompleted-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onCompleted-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航所在的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            渲染当前标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示导航发生在标签页内容窗口中，正数表示导航发生在子框架中。框架标识符在标签页中唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            文档加载完成的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onErrorOccurred">onErrorOccurred</h3>
+              <div class="description">
+            <p>
+                  当错误发生，导航终止时产生。无论网络错误还是用户终止导航都会产生这一事件。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onErrorOccurred-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onErrorOccurred.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onErrorOccurred-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onErrorOccurred-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航所在的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            渲染当前标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示导航发生在标签页内容窗口中，正数表示导航发生在子框架中。框架标识符在标签页中唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-error">
+                                          <td>string</td>
+                                          <td>
+                                              error</td>
+                                          <td>
+                                          
+                                          <p>
+                                            错误描述。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            发生错误的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onCreatedNavigationTarget">onCreatedNavigationTarget</h3>
+              <div class="description">
+            <p>
+                  当用来进行导航的新窗口或现有窗口中的新标签页创建时产生。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onCreatedNavigationTarget-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onCreatedNavigationTarget.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onCreatedNavigationTarget-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onCreatedNavigationTarget-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-sourceTabId">
+                                          <td>integer</td>
+                                          <td>
+                                              sourceTabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            触发这一导航的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-sourceProcessId">
+                                          <td>integer</td>
+                                          <td>
+                                              sourceProcessId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            渲染来源标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-sourceFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              sourceFrameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            触发这一导航的框架标识符。0 表示主框架。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          <p>
+                                            要在新窗口中打开的 URL。
+                                          </p></td>
+                                        </tr><tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            打开这一 URL 的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            浏览器将要创建新视图的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onReferenceFragmentUpdated">onReferenceFragmentUpdated</h3>
+              <div class="description">
+            <p>
+                  当框架的引用片段更新时产生，该框架以后所有的事件都会使用更新的 URL。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onReferenceFragmentUpdated-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onReferenceFragmentUpdated.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReferenceFragmentUpdated-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReferenceFragmentUpdated-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航所在的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            渲染当前标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示导航发生在标签页内容窗口中，正数表示导航发生在子框架中。框架标识符在标签页中唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-transitionType">
+                                          <td>enum of <code>"link"</code>, <code>"typed"</code>, <code>"auto_bookmark"</code>, <code>"auto_subframe"</code>, <code>"manual_subframe"</code>, <code>"generated"</code>, <code>"start_page"</code>, <code>"form_submit"</code>, <code>"reload"</code>, <code>"keyword"</code>, or <code>"keyword_generated"</code></td>
+                                          <td>
+                                              transitionType</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航发生的原因，这些过渡类型与<a href='history.html'>历史记录API</a>中所定义的相同，除了用 <code>"start_page"</code> 代替 <code>"auto_toplevel"</code>（为了保持向后兼容）。
+                                          </p></td>
+                                        </tr><tr id="property-details-transitionQualifiers">
+                                          <td>array of enum of <code>"client_redirect"</code>, <code>"server_redirect"</code>, <code>"forward_back"</code>, or <code>"from_address_bar"</code></td>
+                                          <td>
+                                              transitionQualifiers</td>
+                                          <td>
+                                          
+                                          <p>
+                                            过渡限定符列表。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航提交的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onTabReplaced">onTabReplaced</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当标签页内容由另一个（通常时之前预呈现的）标签页替换时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onTabReplaced.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onTabReplaced-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onTabReplaced-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-replacedTabId">
+                                          <td>integer</td>
+                                          <td>
+                                              replacedTabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            被替换的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            替换旧标签页的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            替换发生的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onHistoryStateUpdated">onHistoryStateUpdated</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当框架的历史记录更新为新的 URL 时产生，对应框架之后产生的所有事件都会使用已更新的 URL。
+                </p>      <h4 title=""><!--@Filters--><a href="events.html#filtered">过滤器</a></h4>
+                  <dl>
+                    <tr id="property-onHistoryStateUpdated-url">
+                      <td>array of     <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        正在导航的 URL 所需满足的条件。对于该事件，UrlFilter 的 schemes 和 ports 字段将忽略。
+                      </p></td>
+                    </tr>
+                  </dl>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.webNavigation.onHistoryStateUpdated.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onHistoryStateUpdated-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onHistoryStateUpdated-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航所在的标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-processId">
+                                          <td>integer</td>
+                                          <td>
+                                              processId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            渲染当前标签页的进程标识符。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示导航发生在标签页内容窗口中，正数表示导航发生在子框架中。框架标识符在标签页中唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-transitionType">
+                                          <td>enum of <code>"link"</code>, <code>"typed"</code>, <code>"auto_bookmark"</code>, <code>"auto_subframe"</code>, <code>"manual_subframe"</code>, <code>"generated"</code>, <code>"start_page"</code>, <code>"form_submit"</code>, <code>"reload"</code>, <code>"keyword"</code>, or <code>"keyword_generated"</code></td>
+                                          <td>
+                                              transitionType</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航发生的原因，这些过渡类型与<a href='history.html'>历史记录API</a>中所定义的相同，除了用 <code>"start_page"</code> 代替 <code>"auto_toplevel"</code>（为了保持向后兼容）。
+                                          </p></td>
+                                        </tr><tr id="property-details-transitionQualifiers">
+                                          <td>array of enum of <code>"client_redirect"</code>, <code>"server_redirect"</code>, <code>"forward_back"</code>, or <code>"from_address_bar"</code></td>
+                                          <td>
+                                              transitionQualifiers</td>
+                                          <td>
+                                          
+                                          <p>
+                                            过渡限定符列表。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            导航提交的时间，表示为自 1970 年 1 月 1 日午夜开始所经过的毫秒数。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#webnavigation-tech-demo">WebNavigation Tech Demo</a></strong>
+          &ndash; Demonstration of the WebNavigation extension API.
+      </li>
+          <li><strong><a href="samples.html#google-mail-checker">Google Mail Checker</a></strong>
+          &ndash; 显示 Google Mail 收件箱中的未读邮件数。点击该按钮还可以打开您的收件箱。
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

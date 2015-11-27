@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>格式：区域特定的消息 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="i18n-messages.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Formats: Locale-Specific Messages-->格式：区域特定的消息</h1>
+
+
+<p>
+<!--@Each internationalized extension or app has at least one
+file named <code>messages.json</code>
+that provides locale-specific strings.
+This page describes the format of <code>messages.json</code> files.
+For information on how to internationalize and localize,
+see the <a href="i18n">Internationalization</a> page.-->
+每一个具有国际化支持的扩展程序或应用至少有一个名为
+<code>messages.json</code>
+的文件，提供区域特定的字符串。这一页面描述了
+<code>messages.json</code>
+文件的格式。有关如何添加国际化支持以及如何本地化的更多内容，请参见<a
+href="i18n.html">国际化支持</a>页面。
+</p>
+
+<h2 id="overview"> <!--@Field summary-->字段概述 </h2>
+
+<p>
+<!--@The following code shows the supported fields for
+<code>messages.json</code>.
+Only the "<em>name</em>" and "message" fields are required.-->
+如下代码展示了
+<code>messages.json</code>
+支持的字段，只有 "<em>name</em>" 和
+"message" 字段是必需的。
+</p>
+
+<pre data-filename="manifest.json">
+{
+  "<a href="i18n-messages.html#name"><em>name</em></a>": {
+    "<a href="i18n-messages.html#message">message</a>": "<em>消息文本，可以包含可选的占位符。</em>",
+    "<a href="i18n-messages.html#description">description</a>": "<em>帮助翻译者的消息描述。</em>",
+    "<a href="i18n-messages.html#placeholders">placeholders</a>": {
+      "<em>placeholder_name</em>": {
+        "content": "<em><!--@A string to be placed within the message.-->放在消息中的字符串。</em>",
+        "example": "<em><!--@Translator-aimed example of the placeholder string.-->帮助翻译者的占位符字符串举例。</em>"
+      },
+      ...
+    }
+  },
+  ...
+}
+</pre>
+
+<h2 id="example"> <!--@Example-->例子 </h2>
+
+<p>
+<!--@Here's a <code>messages.json</code> file
+that defines three messages
+named "prompt_for_name", "hello", and "bye":-->
+如下是一个
+<code>messages.json</code>
+文件，定义了三个消息，名称分别为
+"prompt_for_name"、"hello" 和 "bye"：
+</p>
+
+<pre data-filename="messages.json">
+{
+  "prompt_for_name": {
+    "message": "您叫什么名字？",
+    "description": "询问用户的姓名"
+  },
+  "hello": {
+    "message": "$USER$，您好！",
+    "description": "向用户打招呼",
+    "placeholders": {
+      "user": {
+        "content": "$1",
+        "example": "Cira"
+      }
+    }
+  },
+  "bye": {
+    "message": "$USER$，再见。欢饮再次光临 $OUR_SITE$！",
+    "description": "向用户道别",
+    "placeholders": {
+      "our_site": {
+        "content": "Example.com",
+      },
+      "user": {
+        "content": "$1",
+        "example": "Cira"
+      }
+    }
+  }
+}
+</pre>
+
+
+<h2 id="field_details"><!--@Field details-->字段详情</h2>
+
+<p>
+<!--@This section describes each field
+that can appear in a <code>messages.json</code> file.
+For details on how the messages file is used &mdash;
+for example, what happens when a locale doesn't define
+all the messages &mdash;
+see <a href="i18n">Internationalization</a>.-->
+这一部分描述了可以出现在
+<code>messages.json</code>
+文件中的各个字段。有关如何使用消息文件，例如某种语言没有定义所有消息的情况下如何处理，请参见<a href="i18n.html">国际化支持</a>。
+</p>
+
+
+<h3 id="name">name</h3>
+
+<p>
+<!--@Actually, there's no field called "name".
+This field's name is the name of the message &mdash;
+the same <em>name</em> that you see in
+<code>__MSG_<em>name</em>__</code>
+or <code>getMessage("<em>name</em>")</code>.-->
+事实上，没有字段名为
+"name"，该字段的名称即消息的名称——与您在
+<code><em>__MSG_name__</em></code> 或
+<code>getMessage("<em>name</em>")</code>
+中看到的是同一个<em>名称</em>。
+名称不区分大小写，通过它使您获得本地化的消息文本。名称可以包含下列字符：
+</p>
+
+<p>
+<!--@The name is a case-insensitive key
+that lets you retrieve the localized message text.
+The name can include the following characters:-->
+名称是一个不区分大小写的键，通过它使您获得本地化消息的文本。名称可以包含下列字符：
+</p>
+
+<ul>
+  <li> A-Z </li>
+  <li> a-z </li>
+  <li> 0-9 </li>
+  <li> _<!--@ (underscore)-->（下划线） </li>
+  <li> @ </li>
+</ul>
+
+<p class="note">
+<b><!--@Note:-->注意：</b><!--@
+Don't define names that begin with "@@".
+Those names are reserved for
+<a href="i18n#overview-predefined">predefined messages</a>.-->不要定义以“@@”开头的名称，这些名称保留给<a href="i18n.html#overview-predefined">预定义消息</a>使用。
+</p>
+
+<p>
+<!--@Here are three examples of names,
+taken from the <a href="#example">Example</a> section:-->
+如下是名称的三个例子，来自<a href="i18n-messages.html#example">例子</a>部分：
+</p>
+
+<pre>
+"prompt_for_name": {
+  ...
+},
+"hello": {
+  ...
+},
+"bye": {
+  ...
+}
+</pre>
+
+<p>
+<!--@For more examples of using names, see the
+<a href="i18n">Internationalization</a> page.-->
+有关使用名称的更多例子，请参见<a href="i18n.html">国际化支持</a>页面。
+</p>
+
+
+<h3 id="message">message</h3>
+
+<p>
+<!--@The translated message,
+in the form of a string that can contain
+<a href="#placeholders">placeholders</a>.
+Use <code>$<em>placeholder_name</em>$</code>
+(case insensitive)
+to refer to a particular placeholder.
+For example, you can refer to a placeholder named "our_site" as
+<code>$our_site$</code>, <code>$OUR_SITE$</code>, or <code>$oUR_sITe$</code>.-->
+经过翻译的消息，以字符串形式表示，可以包含<a href="i18n-messages.html#placeholders"
+>占位符</a>。使用
+<code>$<em>占位符名称</em>$</code>（不区分大小写）引用某个占位符。例如，您可以引用名为
+"our_site" 的占位符：<code>$our_site$</code>、<code>$OUR_SITE$</code>
+或 <code>$oUR_sITe$</code>。
+</p>
+
+<p>
+<!--@Here are three examples of messages,
+taken from the <a href="#example">Example</a> section:-->
+如下是消息的三个例子，来自<a href="i18n-messages.html#example">例子</a>部分：
+</p>
+
+<pre>
+"message": "您叫什么名字？"
+...
+"message": "$USER$，您好！"
+...
+"message": "$USER$，再见。欢饮再次光临 $OUR_SITE$！"
+</pre>
+
+<p>
+<!--@To put a dollar sign (<code>$</code>) into the string,
+use <code>$$</code>.
+For example, use the following code to specify the message
+<b>Amount (in $)</b>:-->
+如果要在字符串中使用半角美元符号（$），请使用
+<code>$$</code>。例如，使用如下代码指定消息<b>金额 $</b>：
+
+<pre>
+"message": "金额 $$"
+</pre>
+
+<p>
+<!--@Although placeholders such as <code>$USER$</code> are
+the preferred way of referring to <em>substitution strings</em>
+(strings specified using the <em>substitutions</em> parameter of
+<a href=/apps/i18n#method-getMessage>i18n.getMessage</a>)
+you can also refer to substitution strings directly
+within the message.
+For example, the following message
+refers to the first three substitution strings passed into
+<code>getMessage()</code>:-->
+尽管诸如
+<code>$USER$</code>
+这样的占位符是引用替代字符串（在
+<a href="i18n.html#method-getMessage">i18n.getMessage</a> 的
+<code>substitutions</code>
+参数中指定的字符串）的推荐方式，但是您也可以直接在消息中引用替代字符串。例如，如下消息引用传递给
+<code>getMessage()</code>的前三个替代字符串：
+</p>
+
+<pre>
+"message": "参数：$1, $2, $3"
+</pre>
+
+<p>
+<!--@Despite that example,
+we recommend that you stick to using placeholders
+instead of <code>$<em>n</em></code> strings
+within your messages.
+Think of placeholders as good variable names.
+A week after you write your code,
+you'll probably forget what <code>$1</code> refers to,
+but you'll know what your placeholders refer to.
+For more information on placeholders and substitution strings, see
+the <a href="#placeholders">placeholders</a> section.-->
+尽管给出了这样的例子，但我们仍然推荐您在消息中坚持使用占位符，而不是
+<code>$<em>n</em></code>
+字符串。把占位符看作是好的变量名，您编写完代码的一周后，您可能会忘记
+<code>$1</code>
+引用什么，但是您知道您的占位符引用什么。有关占位符以及替代字符串的更多信息，请参见<a href="i18n-messages.html#placeholders">占位符</a>部分。
+</p>
+
+<h3 id="description">description</h3>
+
+<p>
+<em><!--@Optional.-->可选。</em><!--@
+A description of the message,
+intended to give context
+or details to help the translator
+make the best possible translation.-->消息的描述，用于向翻译者提供语境或细节，以便作出最好的翻译。
+</p>
+
+<p>
+<!--@Here are three examples of descriptions,
+taken from the <a href="#example">Example</a> section:-->
+如下是描述的三个例子，来自<a href="i18n-messages.html#example">例子</a>部分：
+</p>
+
+<pre>
+"description": "询问用户的姓名"
+...
+"description": "向用户打招呼"
+...
+"description": "向用户道别"
+</pre>
+
+<h3 id="placeholders">placeholders</h3>
+
+<p>
+<em><!--@Optional.-->可选。</em><!--@
+Defines one or more substrings
+to be used within the message.
+Here are two reasons you might want to use a placeholder:-->定义一个或多个在消息中使用的字符串。如下是您需要使用占位符的两个原因：
+</p>
+
+<ul>
+  <li>
+    <!--@To define the text
+    for a part of your message
+    that shouldn't be translated.
+    Examples: HTML code, trademarked names, formatting specifiers.-->
+    定义文本，用于您消息中不应该翻译的部分。例如：HTML
+    代码、商标名称、格式化指示符等。
+  </li>
+  <li>
+    <!--@To refer to a substitution string passed into
+    <code>getMessage()</code>.
+    Example: <code>$1</code>.-->
+    引用传递给 <code>getMessage()</code>
+    的字符串，例如：<code>$1</code>。
+  </li>
+</ul>
+
+<p>
+<!--@Each placeholder has a name,
+a "content" item,
+and an optional "example" item.
+A placeholder's name is case-insensitive
+and can contain the same characters
+as a <a href="#name">message name</a>.-->
+每一个占位符都有名称以及
+"content" 项，以及可选的
+"example" 项。占位符的名称不分大小写，可以包含的字符与<a
+href="i18n-messages.html#name">消息名称</a>相同。
+</p>
+
+<p>
+<!--@The "content" item's value is a string
+that can refer to substitution strings, which are
+specified using the
+<a href=/apps/i18n#method-getMessage>i18n.getMessage</a> method's
+<em>substitutions</em> parameter.
+The value of a "content" item is typically something like
+"Example.com" or "$1".
+If you refer to
+a substitution string that doesn't exist,
+you get an empty string.
+The following table shows how
+<code>$<em>n</em></code> strings correspond to
+strings specified by the <em>substitutions</em> parameter.-->
+"content" 项的值为一字符串，用于引用
+<a href="i18n.html#method-getMessage">i18n.getMessage</a> 的
+<em>substitutions</em>
+参数中指定的替代字符串。"content"
+项的值通常为 "Example.com" 或 "$1"
+等。如果您引用了不存在的替代字符串，您将得到空字符串。下表显示
+<code>$<em>n</em></code>
+字符串如何对应
+<em>substitutions</em>
+参数中指定的字符串。
+</p>
+
+<table class="simple">
+<tr>
+<th> <em>substitutions</em> <!--@parameter-->参数 </th>
+<th> <!--@Value of--> $1 的值</th>
+<th> <!--@Value of--> $2 的值</th>
+<th> <!--@Value of--> $3 的值</th>
+</tr>
+<tr>
+  <td> <code>userName</code> </td>
+  <td> <!--@value of--> <code>userName</code> 的值 </td>
+  <td> <code>""</code> </td>
+  <td> <code>""</code> </td>
+</tr>
+<tr>
+  <td> <code>["Cira", "Kathy"]</code> </td>
+  <td> <code>"Cira"</code> </td>
+  <td> <code>"Kathy"</code> </td>
+  <td> <code>""</code> </td>
+</tr>
+</table>
+
+<p>
+<!--@The "example" item
+(optional, but highly recommended)
+helps translators by showing how the content appears to the end user.
+For example, a placeholder
+for a dollar amount
+should have an example like <code>"$23.45"</code>.-->
+"example" 项（可选，但强烈建议使用）显示内容将如何展现给最终用户，有助于翻译者。例如，用于美元金额的占位符应该具有
+"example" 属性值 <code>"$23.45"</code>。
+</p>
+
+<p>
+<!--@The following snippet,
+taken from the <a href="#example">Example</a> section,
+shows a "placeholders" item that contains two placeholders
+named "our_site" and "user".
+The "our_site" placeholder has no "example" item
+because its value is obvious from the "content" field.-->
+来自<a href="i18n-messages.html#example">例子</a>部分的如下片段展示了一个
+"placeholders" 项，包含两个占位符，分别名为
+"our_site" 和 "user"。"our_site"
+占位符没有 "example"
+属性，因为它的值从 "content"
+属性中可以明显看出。
+</p>
+
+<pre>
+"placeholders": {
+  "our_site": {
+    "content": "Example.com",
+  },
+  "user": {
+    "content": "$1",
+    "example": "Cira"
+  }
+}
+</pre>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+      <ol class="toc">
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="i18n-messages.html#overview"
+          > 字段概述 </a>
+      </li>
+      <li class="toplevel"><a data-list-item href="i18n-messages.html#example"
+          > 例子 </a>
+      </li>
+      <li class="toplevel"><a data-list-item href="i18n-messages.html#field_details"
+          >字段详情</a>
+          <ol class="toc">
+              <li><a data-list-item href="i18n-messages.html#name"
+                     >name</a>
+              </li>
+              <li><a data-list-item href="i18n-messages.html#message"
+                     >message</a>
+              </li>
+              <li><a data-list-item href="i18n-messages.html#description"
+                     >description</a>
+              </li>
+              <li><a data-list-item href="i18n-messages.html#placeholders"
+                     >placeholders</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

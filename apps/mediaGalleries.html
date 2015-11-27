@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.mediaGalleries - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="mediaGalleries.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.mediaGalleries</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.mediaGalleries</code> API to access media files (audio,
+             images, video) from the user's local disks (with the user's consent).-->
+             使用 <code>chrome.mediaGalleries</code> API
+             （在用户允许的前提下）访问用户本地磁盘中的媒体文件（音频、图片、视频）。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            {"mediaGalleries": ["accessType1", "accessType2", ...]}
+                    </span>
+            <br>
+            <span class="code">
+            {"mediaGalleries": ["accessType1", "accessType2", ..., "allAutoDetected"]}
+                    </span>
+            <br>
+            <!--@See -->有关更多信息，请参见下面的<a href="mediaGalleries.html#manifest"><!--@Manifest-->清单文件</a><!--@ below for more information.-->部分。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="https://developers.google.com/live/shows/10479832/">
+            Chrome 浏览器办公时间：媒体库 API
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="usage"><!--@Usage-->用法</h2>
+      
+      <p><!--@The mediaGalleries API lets you prompt the user for permission to access
+      media galleries on the user's computer. The permission dialog contains common
+      media locations for the platform and allows the user to specify additional
+      locations. From those locations, only media files will be present in the file
+      system objects.-->
+      媒体库 API
+      让您提示用户，请求访问用户计算机上媒体库的权限。权限对话框包含当前平台上常用的媒体位置，并允许用户指定其他位置。在这些位置中，只有媒体文件才会在文件系统对象中出现。
+      </p>
+      
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      
+      <p><!--@The media galleries API has two axes of permission parameters:-->
+      媒体库 API 有两种权限参数：
+      </p>
+      
+      <ul>
+        <li><!--@the locations that can be accessed-->可以访问的位置</li>
+        <li><!--@the type of access-->访问类型</li>
+      </ul>
+      
+      <p><!--@These two axes and the permission parameters on each axis are described
+      in the table below:-->
+      这两种类型以及每一种类型的权限参数如下表所述：
+      </p>
+      
+      <table>
+          <tr>
+            <th><!--@Axis-->类型</th>
+            <th><!--@Parameter-->参数</th>
+            <th><!--@Effect-->效果</th>
+          </tr>
+          <tr>
+            <td rowspan="2"><!--@Locations-->位置</td>
+            <td><!--@none-->无</td>
+            <td>
+              <!--@If you do not specify a location permission parameter, your app will
+              not be able to access any media galleries until the user grants
+              permission to access specific media galleries at runtime using the
+              media gallery permission dialog.-->
+              如果您不指定位置权限参数，只有在运行时用户使用媒体库权限对话框授予访问指定媒体库的权限后，才能访问媒体库。
+            </td>
+          </tr>
+          <tr>
+            <td>"allAutoDetected"</td>
+            <td>
+              <!--@Grants your app access to all auto-detected media galleries on the
+              user's computer. This permission causes an install-time prompt to be
+              displayed indicating that the app will have access to the user's media
+              files.-->
+              授予您的应用访问用户计算机上所有自动检测到的媒体库的权限，该权限使得应用安装时显示提示，表示应用可以访问用户的媒体文件。
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3"><!--@Access&nbsp;type-->访问类型</td>
+            <td>"read"</td>
+            <td><!--@Grants your app the right to read files in media galleries.-->
+            授予您的应用读取媒体库文件的权限。
+            </td>
+          </tr>
+          <tr>
+            <td>"delete"</td>
+            <td>
+              <!--@Grants your app the right to delete files from media galleries.
+              "read" permission is a prerequisite for "delete". Specify both "read"
+              and "delete" to obtain both types of permissions to media galleries.-->
+            授予您的应用从媒体库删除文件的权限，"read" 权限是 "delete"
+            的前提条件，同时指定 "read" 与 "delete" 获得这两种访问媒体库的权限。
+            </td>
+          </tr>
+          <tr>
+            <td>"copyTo"</td>
+            <td>
+              <!--@Grants your app the right to copy files into media galleries.
+              Only valid media files that Chrome is capable of playing or displaying
+              are permitted; files that Chrome is not able to validate will result
+              in a security error. "read" and "delete" permissions are prerequisites
+              for "copyTo". Specify "read", "delete" and "copyTo" to obtain all three
+              types of permissions to media galleries.-->
+              授予您的应用向媒体库复制文件的权限，只允许 Chrome
+              浏览器能够播放或显示的有效媒体文件，复制 Chrome
+              浏览器无法验证的文件将导致安全错误。"read" 与 "delete" 权限是
+              "copyTo" 的前提条件，同时指定 "read"、"delete" 和 "copyTo"
+              获得媒体库的所有访问权限。
+            </td>
+          </tr>
+      </table>
+      
+      <p><!--@Notes:-->注意：</p>
+      <ul>
+        <li><!--@The media gallery permission dialog can be triggered programmatically.
+        The user may have alternate media locations, so even if you specify
+        "allAutoDetected" permsission, it is still important to provide a mechanism
+        to open the permission dialog in your app.-->
+        媒体库权限对话框可以以编程方式触发。用户可能还有其他媒体位置，所以即使您指定了
+        "allAutoDetected" 权限，您也应当在您的应用中提供某种方式打开权限对话框。
+        </li>
+      
+        <li><!--@There is no write access to media galleries due to the
+        file validation requirement. However, you can write files to
+        a different file system like the temporary file system, and then copy
+        the files into the desired media gallery.-->
+        由于文件验证的要求，没有对媒体库的写入权限。然而，您可以将文件写入另一个文件系统，如临时文件系统，然后将这些文件复制到期望的媒体库中。
+        </li>
+      
+        <li><!--@Access type permissions do not trigger an install-time prompt
+        by themselves. However, the type of access will be reflected in the
+        media gallery permission dialog, as well as the install-time prompt if
+        "allAutoDetected" permission is requested.-->
+        访问类型权限本身不会触发安装时的提示，但是访问类型会在媒体库权限对话框和安装时的提示（如果请求了 "allAutoDetected" 权限）中反映出来
+        </li>
+      </ul>
+      
+      <p><!--@Below is an example of a manifest file with mediaGalleries permissions:-->
+      如下是指定媒体库权限的清单文件的例子：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的应用",
+        ...
+        "permissions": [
+          <b>{ "mediaGalleries": ["read", "allAutoDetected"] }</b>
+        ],
+        ...
+      }
+      </pre>
+      
+      <p><!--@This example manifest file will trigger an install-time permission prompt,
+      and let the app read from all auto-detected media galleries on the
+      user's computer. The user may add or remove galleries using the
+      media gallery permission dialog, after which the app will be able
+      to read all the media files from galleries that the user selected.-->
+      这一清单文件的例子在安装时会触发权限提示，让应用读取用户计算机上所有自动检测到的媒体库。用户可以使用媒体库权限对话框添加或删除库，之后应用就能够读取用户选择的库中的所有媒体文件。
+      </p>
+      
+      <h2 id="iTunes">iTunes</h2>
+      
+      <p><!--@If present, the user's iTunes library can be accessed as a media gallery.
+      In addition to the media files in the library, the "iTunes Music Library.xml"
+      file is also presented.-->
+      如果存在，用户的 iTunes 库可以作为媒体库访问。除了库中的媒体文件，“iTunes
+      Music Library.xml”文件也会存在。</p>
+      <p><!--@Regardless of where the music files are actually on the disk (and where
+      the xml file says they are), they are mapped into an Artist/Album/Track
+      hierarchy like iTunes does by default.  This mapping doesn't always work
+      perfectly, so there are two things to note for Apps trying to match the
+      xml file with files in the gallery.-->
+      无论音乐文件在磁盘上的什么位置（以及 XML
+      文件中包含的位置），默认情况下它们都会被映射至艺术家/唱片集/音轨这样的结构。这种映射方式有时候并不完美，所以如果应用需要将
+      XML
+      文件与媒体库中的文件配对的话，需要注意两点。</p>
+      <p><!--@If the filenames for tracks within an album are not unique, they will be
+      uniquified by adding the track id in parentheses before the extension, and
+      if there is a colon or a slash in the artist, album, or track name, they are
+      turned into underscore characters.-->
+      如果唱片集中的音轨文件名不唯一，在扩展名之前会加上包含括号的音轨号，使它们唯一。如果艺术家、唱片集或音轨名称中包含冒号或斜杠，它们会变成下划线。
+      </p>
+      
+      <h2 id="Picasa">Picasa</h2>
+      
+      <p><!--@If present, the user's Picasa library can also be accessed as a media
+      gallery. Directories on the filesystem scanned by Picasa are presented under
+      folders/. Picasa Albums are presented under albums/.-->
+      如果存在的话，用户的 Picasa 库也可以作为媒体库访问。Picasa
+      扫描的文件系统目录呈现在 folders/ 中，Picasa 相册呈现在 albums/
+      中。</p>
+      <p><!--@Albums and Folders that have duplicate names and dates will be uniquified
+      using an incrementing integer in parenthesis before the extension.-->
+      如果相册和文件夹具有相同的名称与日期，在扩展名前会加上包含括号的增量整数，使它们唯一。</p>
+      <p><!--@Duplicate filenames within the same Album will also be uniquified using an
+      incrementing integer in parenthesis before the extension.-->
+      同一相册中如果有相同的文件名，也会在扩展名前加上包含括号的增量整数使之唯一。
+      </p>
+      
+      <h2 id="iPhoto">iPhoto</h2>
+      
+      <p><!--@If present, the user's iPhoto library can be accessed as a media gallery.
+      The files are structured within a subdirectory called "Albums/". Within that
+      subdirectory, each album in the user's iPhoto library will appear as a
+      subdirectory by name, and contain file entries for the photos in that album.-->
+      如果存在的话，用户的 iPhoto
+      库也可以作为媒体库访问。这些文件存放在名为“Albums/”的子目录中。在这一子目录中，用户 iPhoto 库中的每一个相册都按照各自的名称以子目录形式呈现，并且包含相册中的照片对应的文件项。
+      </p>
+      <p><!--@Duplicate album names or image filenames within albums will get a
+      disambiguating suffix like "(NN)" where NN is a unique number.-->
+      如果相册名重复或相册中图片文件名重复，在文件名后就会附加不重复的后缀，如“(NN)”，其中
+      NN 是唯一的数值。
+      </p>
+      <p><!--@Any items appearing in multiple albums in iPhoto will appear in all those
+      albums in the gallery.-->
+      在 iPhoto 的多个相册中出现的项目也会在媒体库中对应相册中出现。
+      </p>
+      <p><!--@If the user has modified any images within an album, there will be an
+      additional subdirectory called "originals/" within the album directory.
+      It will contain the original image with the same filename as in the parent
+      album subdirectory. The file as it appears in the parrent album directory
+      will be the one the user has invested time cropping, rotating, or
+      otherwise editing.-->
+      如果用户修改了相册中的图片，相册目录中就会有另外一个名为“originals/”的子目录，它包含原始的图片，与上级相册目录中的文件名相同，而出现在上级相册目录中的文件则是用户进行裁剪、旋转等编辑操作之后的图片。
+      </p>
+          </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="mediaGalleries.html#method-getMediaFileSystems">getMediaFileSystems</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.getMediaFileSystems(<span class="optional">object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-addUserSelectedFolder">addUserSelectedFolder</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.addUserSelectedFolder(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-dropPermissionForMediaFileSystem">dropPermissionForMediaFileSystem</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.dropPermissionForMediaFileSystem(<span>string galleryId</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-startMediaScan">startMediaScan</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.startMediaScan()
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-cancelMediaScan">cancelMediaScan</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.cancelMediaScan()
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-addScanResults">addScanResults</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.addScanResults(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-getMediaFileSystemMetadata">getMediaFileSystemMetadata</a> &minus;
+            <code class="prettyprint">
+            object
+            chrome.mediaGalleries.getMediaFileSystemMetadata(<span>DOMFileSystem mediaFileSystem</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-getAllMediaFileSystemMetadata">getAllMediaFileSystemMetadata</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.getAllMediaFileSystemMetadata(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="mediaGalleries.html#method-getMetadata">getMetadata</a> &minus;
+            <code class="prettyprint">
+            chrome.mediaGalleries.getMetadata(<span>Blob mediaFile</span>, <span class="optional">object options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="mediaGalleries.html#event-onGalleryChanged">onGalleryChanged</a></td></tr>
+          <tr><td><a href="mediaGalleries.html#event-onScanProgress">onScanProgress</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getMediaFileSystems"
+                  >getMediaFileSystems
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.getMediaFileSystems(<span class="optional">object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Get the media galleries configured in this user agent. If none are configured or available, the callback will receive an empty array.--> 获取当前用户代理配置下的媒体库。如果没有配置或者没有可用的媒体库，回调函数将会接收空数组。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getMediaFileSystems-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-details-interactive">
+                            <td>enum of <code>"no"</code>, <code>"yes"</code>, or <code>"if_needed"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                interactive</td>
+                            <td>
+                            
+                            <p>
+                              <!--@Whether to prompt the user for permission to additional media galleries before returning the permitted set. Default is silent.  If the value 'yes' is passed, or if the application has not been granted access to any media galleries and the value 'if_needed' is passed, then the media gallery configuration dialog will be displayed.--> 返回允许的内容前是否提示用户访问其他媒体库的权限，默认情况下不提示。如果传递了 'yes'，或者如果应用没有被授予访问任何媒体库的权限并且传递了 'if_needed'，则会显示媒体库配置对话框。
+                            </p>    <dl>
+                                  <dt>no</dt>
+                                  <dd>
+                                    <!--@Do not act interactively.--> 不要交互式地进行。
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>yes</dt>
+                                  <dd>
+                                    <!--@Ask the user to manage permitted media galleries.--> 询问用户管理允许的媒体库。
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>if_needed</dt>
+                                  <dd>
+                                    <!--@Ask the user to manage permitted galleries only if the return set would otherwise be empty.--> 只有当返回值会为空时才询问用户管理允许的媒体库。
+                                  </dd>
+                                </dl>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getMediaFileSystems-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of DOMFileSystem mediaFileSystems) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-mediaFileSystems">
+                              <td>array of DOMFileSystem</td>
+                              <td>
+                                  mediaFileSystems</td>
+                              <td>
+                              
+                                <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                <dl>
+                                  <div>
+                                    <table>
+                                    </table>
+                                  </div>
+                                </dl>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-addUserSelectedFolder"
+                  >addUserSelectedFolder
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.addUserSelectedFolder(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 34<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Present a directory picker to the user and add the selected directory as a gallery. If the user cancels the picker, selectedFileSystemName will be empty. A user gesture is required for the dialog to display. Without a user gesture, the callback will run as though the user canceled.--> 向用户显示选择文件夹对话框，并将选定目录添加为媒体库。如果用户取消对话框，selectedFileSystemName 为空。需要用户操作才能显示对话框，如果没有用户操作，调用回调函数时就像用户取消操作一样。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-addUserSelectedFolder-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of DOMFileSystem mediaFileSystems, string selectedFileSystemName) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-mediaFileSystems">
+                              <td>array of DOMFileSystem</td>
+                              <td>
+                                  mediaFileSystems</td>
+                              <td>
+                              
+                                <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                <dl>
+                                  <div>
+                                    <table>
+                                    </table>
+                                  </div>
+                                </dl>
+                              </td>
+                            </tr>
+                            <tr id="property-callback-selectedFileSystemName">
+                              <td>string</td>
+                              <td>
+                                  selectedFileSystemName</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-dropPermissionForMediaFileSystem"
+                  >dropPermissionForMediaFileSystem
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.dropPermissionForMediaFileSystem(<span>string galleryId</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 36<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Give up access to a given media gallery.--> 放弃指定媒体库的访问权限。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-dropPermissionForMediaFileSystem-galleryId">
+                      <td>string</td>
+                      <td>
+                          galleryId</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-dropPermissionForMediaFileSystem-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-startMediaScan"
+                  >startMediaScan
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.startMediaScan()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Start a scan of the user's hard disks for directories containing media. The scan may take a long time so progress and completion is communicated by events. No permission is granted as a result of the scan, see addScanResults.--> 开始扫描用户的硬盘，寻找包含媒体的目录。扫描可能需要很长时间，所以进度和完成情况通过事件的方式通知。扫描完成后不会授予任何权限，而需要调用 addScanResults。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-cancelMediaScan"
+                  >cancelMediaScan
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.cancelMediaScan()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Cancel any pending media scan.  Well behaved apps should provide a way for the user to cancel scans they start.--> 取消正在进行的媒体扫描，正常情况下应用应该提供某种方式让用户取消他们开始的扫描操作。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-addScanResults"
+                  >addScanResults
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.addScanResults(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Show the user the scan results and let them add any or all of them as galleries. This should be used after the 'finish' onScanProgress() event has happened. All galleries the app has access to are returned, not just the newly added galleries.--> 向用户显示扫描的结果，并让他们将其中的一部分或者全部添加为媒体库。该方法应该在 'finish'（完成）类型的  onScanProgress 事件产生之后调用，调用后返回应用能够访问的所有媒体库，而不仅仅是新增加的媒体库。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-addScanResults-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of DOMFileSystem mediaFileSystems) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-mediaFileSystems">
+                              <td>array of DOMFileSystem</td>
+                              <td>
+                                  mediaFileSystems</td>
+                              <td>
+                              
+                                <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                <dl>
+                                  <div>
+                                    <table>
+                                    </table>
+                                  </div>
+                                </dl>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getMediaFileSystemMetadata"
+                  >getMediaFileSystemMetadata
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              object
+              chrome.mediaGalleries.getMediaFileSystemMetadata(<span>DOMFileSystem mediaFileSystem</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Get metadata about a specific media file system.--> 获取指定媒体文件系统的元数据。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getMediaFileSystemMetadata-mediaFileSystem">
+                      <td>DOMFileSystem</td>
+                      <td>
+                          mediaFileSystem</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                </table>
+                  <h4 title=""><!--@Returns-->返回值</h4>
+                  <div>
+                    <table>
+                        <tr id="property-getMediaFileSystemMetadataReturnType-name">
+                          <td>string</td>
+                          <td>
+                              name</td>
+                          <td>
+                          
+                          <p>
+                            <!--@The name of the file system.--> 文件系统的名称。
+                          </p></td>
+                        </tr><tr id="property-getMediaFileSystemMetadataReturnType-galleryId">
+                          <td>string</td>
+                          <td>
+                              galleryId</td>
+                          <td>
+                          
+                          <p>
+                            <!--@A unique and persistent id for the media gallery.--> 媒体库的唯一持久标识符。
+                          </p></td>
+                        </tr><tr id="property-getMediaFileSystemMetadataReturnType-deviceId">
+                          <td>string</td>
+                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                              deviceId</td>
+                          <td>
+                          
+                          <p>
+                            <!--@If the media gallery is on a removable device, a unique id for the device while the device is online.--> 如果媒体库位于可移动设备上，并且设备在线，则为设备的唯一标识符。
+                          </p></td>
+                        </tr><tr id="property-getMediaFileSystemMetadataReturnType-isRemovable">
+                          <td>boolean</td>
+                          <td>
+                              isRemovable</td>
+                          <td>
+                          
+                          <p>
+                            <!--@True if the media gallery is on a removable device.--> 如果媒体库在可移动设备上则为 true。
+                          </p></td>
+                        </tr><tr id="property-getMediaFileSystemMetadataReturnType-isMediaDevice">
+                          <td>boolean</td>
+                          <td>
+                              isMediaDevice</td>
+                          <td>
+                          
+                          <p>
+                            <!--@True if the device the media gallery is on was detected as a media device.  i.e. a PTP or MTP device, or a DCIM directory is present.--> 如果检测到媒体库所在的设备是媒体设备（即 PTP 或 MTP 设备，或存在 DCIM 目录）则为 true。
+                          </p></td>
+                        </tr><tr id="property-getMediaFileSystemMetadataReturnType-isAvailable">
+                          <td>boolean</td>
+                          <td>
+                              isAvailable</td>
+                          <td>
+                          
+                          <p>
+                            <!--@True if the device is currently available.--> 如果设备当前可用则为 true。
+                          </p></td>
+                        </tr>
+                    </table>
+                  </div>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getAllMediaFileSystemMetadata"
+                  >getAllMediaFileSystemMetadata
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.getAllMediaFileSystemMetadata(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Get metadata for all available media galleries.--> 获取所有可用媒体库的元数据。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAllMediaFileSystemMetadata-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of object metadata) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-metadata">
+                              <td>array of object</td>
+                              <td>
+                                  metadata</td>
+                              <td>
+                              
+                                <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                <dl>
+                                  <div>
+                                    <table>
+                                        <tr id="property-metadataType-name">
+                                          <td>string</td>
+                                          <td>
+                                              name</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The name of the file system.--> 文件系统的名称。
+                                          </p></td>
+                                        </tr><tr id="property-metadataType-galleryId">
+                                          <td>string</td>
+                                          <td>
+                                              galleryId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@A unique and persistent id for the media gallery.--> 媒体库的唯一持久标识符。
+                                          </p></td>
+                                        </tr><tr id="property-metadataType-deviceId">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              deviceId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@If the media gallery is on a removable device, a unique id for the device while the device is online.--> 如果媒体库位于可移动设备上，并且设备在线，则为设备的唯一标识符。
+                                          </p></td>
+                                        </tr><tr id="property-metadataType-isRemovable">
+                                          <td>boolean</td>
+                                          <td>
+                                              isRemovable</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@True if the media gallery is on a removable device.--> 如果媒体库在可移动设备上则为 true。
+                                          </p></td>
+                                        </tr><tr id="property-metadataType-isMediaDevice">
+                                          <td>boolean</td>
+                                          <td>
+                                              isMediaDevice</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@True if the device the media gallery is on was detected as a media device.  i.e. a PTP or MTP device, or a DCIM directory is present.--> 如果检测到媒体库所在的设备是媒体设备（即 PTP 或 MTP 设备，或存在 DCIM 目录）则为 true。
+                                          </p></td>
+                                        </tr><tr id="property-metadataType-isAvailable">
+                                          <td>boolean</td>
+                                          <td>
+                                              isAvailable</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@True if the device is currently available.--> 如果设备当前可用则为 true。
+                                          </p></td>
+                                        </tr>
+                                    </table>
+                                  </div>
+                                </dl>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getMetadata"
+                  >getMetadata
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.mediaGalleries.getMetadata(<span>Blob mediaFile</span>, <span class="optional">object options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 38<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                  -->目前为 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  <!--@Gets the media-specific metadata for a media file. This should work for files in media galleries as well as other DOM filesystems.--> 获取媒体文件特定的元数据，媒体库和其他 DOM 文件系统中的文件都可以使用该方法。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getMetadata-mediaFile">
+                      <td>Blob</td>
+                      <td>
+                          mediaFile</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                      </p>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-getMetadata-options">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                      </p>
+                      
+                        <table class="innerTable">
+                          <tr id="property-options-metadataType">
+                            <td>enum of <code>"all"</code>, <code>"mimeTypeAndTags"</code>, or <code>"mimeTypeOnly"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                metadataType</td>
+                            <td>
+                            
+                            <p>
+                              <!--@Specifies which subset of the metadata to retrieve. Defaults to 'all' if the option is omitted.--> 指定要获取哪些元数据，如果省略该选项则默认为 'all'（全部）。
+                            </p>    <dl>
+                                  <dt>all</dt>
+                                  <dd>
+                                    <!--@Retrieve the mime type, metadata tags, and attached images.--> 获取 MIME 类型、元数据标签以及附带的图片。
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>mimeTypeAndTags</dt>
+                                  <dd>
+                                    <!--@Retrieve only the mime type and the metadata tags.--> 只获取 MIME 类型和元数据标签。
+                                  </dd>
+                                </dl>
+                                <dl>
+                                  <dt>mimeTypeOnly</dt>
+                                  <dd>
+                                    <!--@Retrieve only the mime type.--> 仅获取 MIME 类型。
+                                  </dd>
+                                </dl>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getMetadata-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object metadata) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-metadata">
+                              <td>object</td>
+                              <td>
+                                  metadata</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-metadata-mimeType">
+                                    <td>string</td>
+                                    <td>
+                                        mimeType</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The browser sniffed mime type.--> 浏览器检测到的 MIME 类型。
+                                    </p></td>
+                                  </tr><tr id="property-metadata-height">
+                                    <td>integer</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        height</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Defined for images and video. In pixels.--> 图片和视频会包含这些属性，以像素为单位。
+                                    </p></td>
+                                  </tr><tr id="property-metadata-width">
+                                    <td>integer</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        width</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-xResolution">
+                                    <td>double</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        xResolution</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Defined for images only.--> 图片会包含这些属性。
+                                    </p></td>
+                                  </tr><tr id="property-metadata-yResolution">
+                                    <td>double</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        yResolution</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-duration">
+                                    <td>double</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        duration</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Defined for audio and video. In seconds.--> 音频和视频会包含该属性，以秒为单位。
+                                    </p></td>
+                                  </tr><tr id="property-metadata-rotation">
+                                    <td>integer</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        rotation</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Defined for images and video. In degrees.--> 图片和视频会包含该属性，以度为单位。
+                                    </p></td>
+                                  </tr><tr id="property-metadata-cameraMake">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        cameraMake</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Defined for images only.--> 图片会包含这些属性。
+                                    </p></td>
+                                  </tr><tr id="property-metadata-cameraModel">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        cameraModel</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-exposureTimeSeconds">
+                                    <td>double</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        exposureTimeSeconds</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-flashFired">
+                                    <td>boolean</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        flashFired</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-fNumber">
+                                    <td>double</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        fNumber</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-focalLengthMm">
+                                    <td>double</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        focalLengthMm</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-isoEquivalent">
+                                    <td>double</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        isoEquivalent</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-album">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        album</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Defined for audio and video only.--> 音频和视频会包含这些属性。
+                                    </p></td>
+                                  </tr><tr id="property-metadata-artist">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        artist</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-comment">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        comment</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-copyright">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        copyright</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-disc">
+                                    <td>integer</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        disc</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-genre">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        genre</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-language">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        language</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-title">
+                                    <td>string</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        title</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-track">
+                                    <td>integer</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        track</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr><tr id="property-metadata-rawTags">
+                                    <td>array of object</td>
+                                    <td>
+                                        rawTags</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@All the metadata in the media file. For formats with multiple streams, stream order will be preserved. Container metadata is the first element.--> 包含媒体文件中所有元数据的词典。如果文件格式包含多个媒体流，则按照媒体流的顺序表示，第一个元素是容器元数据。
+                                    </p>  <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                      <dl>
+                                        <div>
+                                          <table>
+                                              <tr id="property-rawTagsType-type">
+                                                <td>string</td>
+                                                <td>
+                                                    type</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@Describes format of container or codec of stream, i.e. "mp3", "h264".--> 描述媒体流的容器或编解码器格式，即 "mp3"、"h264" 等。
+                                                </p></td>
+                                              </tr><tr id="property-rawTagsType-tags">
+                                                <td>object</td>
+                                                <td>
+                                                    tags</td>
+                                                <td>
+                                                
+                                                <p>
+                                                  <!--@An unfiltered string->string dictionary of tags for the stream.--> 媒体流的标签，以未经过滤的字符串->字符串词典的形式表示。
+                                                </p></td>
+                                              </tr>
+                                          </table>
+                                        </div>
+                                      </dl>
+                                    </td>
+                                  </tr><tr id="property-metadata-attachedImages">
+                                    <td>array of Blob</td>
+                                    <td>
+                                        attachedImages</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The images embedded in the media file's metadata. This is most often used for album art or video thumbnails.--> 内嵌在媒体文件元数据中的图片，通常为艺术专辑或视频缩略图。
+                                    </p>  <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                      <dl>
+                                        <div>
+                                          <table>
+                                          </table>
+                                        </div>
+                                      </dl>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onGalleryChanged">onGalleryChanged</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 38<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                  -->目前为 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+            <p>
+                  <!--@Fired when a media gallery is changed or a gallery watch is dropped.--> 媒体库更改时或取消媒体库监视时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.mediaGalleries.onGalleryChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onGalleryChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onGalleryChanged-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-type">
+                                          <td>enum of <code>"contents_changed"</code>, or <code>"watch_dropped"</code></td>
+                                          <td>
+                                              type</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@Type of change event.--> 更改事件的类型。
+                                          </p>    <dl>
+                                                <dt>contents_changed</dt>
+                                                <dd>
+                                                  <!--@The contents of the gallery have changed.--> 媒体库的内容已经更改。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>watch_dropped</dt>
+                                                <dd>
+                                                  <!--@The watch has been dropped because the device has been detached, the gallery permission has been removed, or any other reason.--> 监视已经取消，因为设备已经弹出、媒体库权限取消或者其他原因。
+                                                </dd>
+                                              </dl>
+                                          </td>
+                                        </tr><tr id="property-details-galleryId">
+                                          <td>string</td>
+                                          <td>
+                                              galleryId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@Identifies the modified gallery.--> 标识修改的媒体库。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onScanProgress">onScanProgress</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@The pending media scan has changed state. See details for more information.--> 正在进行中的媒体扫描已经更改状态，有关更多信息请参见 details 参数。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.mediaGalleries.onScanProgress.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onScanProgress-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onScanProgress-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    <p class="availability">
+                                      <!--@Since-->从 Chrome 34<!--@.--> 开始支持。
+                                    </p>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-type">
+                                          <td>enum of <code>"start"</code>, <code>"cancel"</code>, <code>"finish"</code>, or <code>"error"</code></td>
+                                          <td>
+                                              type</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The type of progress event, i.e. start, finish, etc.--> 进度事件的类型，例如 start（开始）、finish（完成）等。
+                                          </p>    <dl>
+                                                <dt>start</dt>
+                                                <dd>
+                                                  <!--@The scan started.--> 扫描开始。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>cancel</dt>
+                                                <dd>
+                                                  <!--@The scan was cancelled.--> 扫描取消。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>finish</dt>
+                                                <dd>
+                                                  <!--@The scan finished but none of the result have been added, addScanResults() has to be called to ask the user for permission.--> 扫描完成，但是结果还没添加，您必须调用 addScanResults() 得到用户的许可。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>error</dt>
+                                                <dd>
+                                                  <!--@The scan encountered an error and could not proceed.--> 扫描遇到错误，不能继续进行。
+                                                </dd>
+                                              </dl>
+                                          </td>
+                                        </tr><tr id="property-details-galleryCount">
+                                          <td>integer</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              galleryCount</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The number of Galleries found.--> 找到的媒体库数目。
+                                          </p></td>
+                                        </tr><tr id="property-details-audioCount">
+                                          <td>integer</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              audioCount</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@Appoximate number of media files found; some file types can be either audio or video and are included in both counts.--> 找到的媒体文件的大致数目。某些文件类型既有可能是音频，也有可能是视频，在这两种类型中都会计算在内。
+                                          </p></td>
+                                        </tr><tr id="property-details-imageCount">
+                                          <td>integer</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              imageCount</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-videoCount">
+                                          <td>integer</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              videoCount</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

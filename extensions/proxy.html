@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.proxy - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="proxy.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.proxy</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.proxy</code> API 管理 Chrome 浏览器的代理服务器设置。该模块依赖于<a href='types.html#ChromeSetting'>类型 API 中的 ChromeSetting 原型</a>，用于获取和设置代理服务器配置。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 13<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "proxy"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p><!--@You must declare the "proxy" permission
+      in the <a href="manifest">extension manifest</a>
+      to use the proxy settings API.
+      For example:-->
+      您必须在<a href="manifest.html">扩展程序的清单文件</a>中声明
+      "proxy"（代理服务器）权限来使用代理服务器设置 API。例如：
+      </p>
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "proxy"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <h2 id="description"><!--@Objects and properties-->对象和属性</h2>
+      
+      <p>
+      <!--@Proxy settings are defined in a
+      <a href=/extensions/proxy#type-ProxyConfig>proxy.ProxyConfig</a> object. Depending on
+      Chrome's proxy settings, the settings may contain
+      <a href=/extensions/proxy#type-ProxyRules>proxy.ProxyRules</a> or a 
+        <a href=/extensions/proxy#type-PacScript>proxy.PacScript</a>.-->
+      代理服务器设置定义在 <a href="proxy.html#type-ProxyConfig">proxy.ProxyConfig</a> 对象中。取决于 Chrome
+      浏览器的代理服务器设置，设置可以包含 <a href="proxy.html#type-ProxyRules">proxy.ProxyRules</a> 对象或者一个
+      <a href="proxy.html#type-PacScript">proxy.PacScript</a> 对象。
+      </p>
+      
+      <h3 id="proxy_modes"><!--@Proxy modes-->代理服务器模式</h3>
+      
+      <p>
+      <!--@A ProxyConfig object's <code>mode</code> attribute determines the overall
+      behavior of Chrome with regards to proxy usage. It can take the following
+      values:-->
+      ProxyConfig 对象的 <code>mode</code> 属性决定 Chrome
+      浏览器使用代理服务器的整体行为。它可以为以下值：
+      <dl>
+        <dt><code>direct</code></dt>
+        <dd><!--@In <code>direct</code> mode all connections are created directly, without
+        any proxy involved. This mode allows no further parameters in the
+        <code>ProxyConfig</code> object.-->
+        在 <code>direct</code>
+        模式下所有连接都直接建立，不涉及任何代理服务器。使用这一模式时不允许
+        <code>ProxyConfig</code> 对象中包含其他任何参数。
+        </dd>
+      
+        <dt><code>auto_detect</code></dt>
+        <dd><!--@In <code>auto_detect</code> mode the proxy configuration is determined by
+        a PAC script that can be downloaded at
+        <a href="http://wpad/wpad.dat">http://wpad/wpad.dat</a>.
+        This mode allows no further parameters in the <code>ProxyConfig</code>
+        object.-->
+        在 <code>auto_detect</code> 模式下，代理服务器配置通过下载自
+        <a href="http://wpad/wpad.dat">http://wpad/wpad.dat</a>
+        的一个 PAC 脚本确定。使用这一模式时不允许 <code>ProxyConfig</code>
+        对象中包含其他任何参数。
+        </dd>
+      
+        <dt><code>pac_script</code></dt>
+        <dd><!--@In <code>pac_script</code> mode the proxy configuration is determined by
+        a PAC script that is either retrieved from the URL specified in the
+        <a href=/extensions/proxy#type-PacScript>proxy.PacScript</a> object or
+        taken literally from the <code>data</code> element specified in the
+        <a href=/extensions/proxy#type-PacScript>proxy.PacScript</a> object.
+        Besides this, this mode allows no further parameters in the
+        <code>ProxyConfig</code> object.-->
+        在 <code>pac_script</code> 模式下代理服务器配置由一个 PAC
+        脚本确定，它既可以从 <a href="proxy.html#type-PacScript">proxy.PacScript</a> 对象中指定的 URL
+        获取，也可以直接来自 <a href="proxy.html#type-PacScript">proxy.PacScript</a> 对象中的 <code>data</code>
+        属性。除此之外，使用该模式时不允许 <code>ProxyConfig</code>
+        对象中包含其他任何参数。
+        </dd>
+      
+        <dt><code>fixed_servers</code></dt>
+        <dd><!--@In <code>fixed_servers</code> mode the proxy configuration is codified in
+        a <a href=/extensions/proxy#type-ProxyRules>proxy.ProxyRules</a>
+        object. Its structure is described in <a href="#proxy_rules">Proxy rules</a>.
+        Besides this, the <code>fixed_servers</code> mode allows no further parameters
+        in the <code>ProxyConfig</code> object.-->
+        在 <code>fixed_servers</code> 模式下代理服务器配置通过一个
+        <a href="proxy.html#type-ProxyRules">proxy.ProxyRules</a>
+        对象指定。它的结构将在<a href="proxy.html#proxy_rules"
+        >代理服务器</a>规则部分描述。除此之外，<code>fixed_servers</code>
+        模式时不允许 <code>ProxyConfig</code> 对象中包含其他任何参数。
+        </dd>
+      
+        <dt><code>system</code></dt>
+        <dd><!--@In <code>system</code> mode the proxy configuration is taken from the
+        operating system. This mode allows no further parameters in the
+        <code>ProxyConfig</code> object. Note that the <code>system</code> mode is
+        different from setting no proxy configuration. In the latter case, Chrome
+        falls back to the system settings only if no command-line options influence
+        the proxy configuration.-->
+        在 <code>system</code>
+        模式下代理服务器配置直接从操作系统获取，使用这一模式时不允许
+        <code>ProxyConfig</code> 对象中包含其他任何参数。注意 <code>system</code>
+        模式与不设置代理服务器配置不同，在后一种情况下，Chrome
+        浏览器只有在没有任何命令行选项影响代理服务器配置的情况下才会使用系统设置。
+        </dd>
+      </dl>
+      </p>
+      
+      <h3 id="proxy_rules"><!--@Proxy rules-->代理服务器规则</h3>
+      
+      <p>
+      <!--@The--> <a href="proxy.html#type-ProxyRules">proxy.ProxyRules</a> <!--@object can contain
+      either a <code>singleProxy</code> attribute or a subset of
+      <code>proxyForHttp</code>, <code>proxyForHttps</code>, <code>proxyForFtp</code>,
+      and <code>fallbackProxy</code>.-->
+      对象可以包含一个 <code>singleProxy</code> 属性或者
+      <code>proxyForHttp</code>、<code>proxyForHttps</code>、<code>proxyForFtp</code>
+      或 <code>fallbackProxy</code> 这些属性中的一个子集。
+      </p>
+      
+      <p>
+      <!--@In the first case, HTTP, HTTPS and FTP traffic is proxied through the specified
+      proxy server. Other traffic is sent directly. In the latter case the behavior is
+      slightly more subtle: If a proxy server is configured for the HTTP, HTTPS or FTP
+      protocol, the respective traffic is proxied through the specified server. If no
+      such proxy server is specified or traffic uses a different protocol than HTTP,
+      HTTPS or FTP, the <code>fallbackProxy</code> is used. If no
+      <code>fallbackProxy</code> is specified, traffic is sent directly without a
+      proxy server.-->
+      在第一种情况下，HTTP、HTTPS 和 FTP
+      流量都将通过指定的代理服务器，其他流量直接发送。在后一种情况下行为稍微复杂一些：如果分别为
+      HTTP、HTTPS 或 FTP
+      协议配置了代理服务器，则相应的流量通过指定的服务器代理。如果没有指定相应的代理服务器或者流量使用了
+      HTTP、HTTPS 或 FTP 之外的另一种协议，则使用
+      <code>fallbackProxy</code>。如果没有指定
+      <code>fallbackProxy</code>，将直接发送，不通过代理服务器。
+      </p>
+      
+      <h3 id="proxy_server_objects"><!--@Proxy server objects-->代理服务器对象</h3>
+      
+      <p>
+      <!--@A proxy server is configured in a
+      <a href=/extensions/proxy#type-ProxyServer>proxy.ProxyServer</a> object. The connection
+      to the proxy server (defined by the <code>host</code> attribute) uses the
+      protocol defined in the <code>scheme</code> attribute. If no <code>scheme</code>
+      is specified, the proxy connection defaults to <code>http</code>.-->
+      代理服务器在 <a href="proxy.html#type-ProxyServer">proxy.ProxyServer</a> 对象中配置。连接到代理服务器（由
+      <code>host</code> 属性定义）时使用定义在 <code>scheme</code>
+      属性中的协议。如果没有指定 <code>scheme</code>，代理服务器连接默认使用
+      <code>http</code>。
+      </p>
+      
+      <p>
+      <!--@If no <code>port</code> is defined in a
+      <a href=/extensions/proxy#type-ProxyServer>proxy.ProxyServer</a> object, the port is
+      derived from the scheme. The default ports are:-->
+      如果 <a href="proxy.html#type-ProxyServer">proxy.ProxyServer</a> 对象中没有定义 <code>port</code>
+      属性，端口将使用协议的默认值。默认端口分别为：
+      <table>
+        <tr><th><!--@Scheme-->协议</th><th><!--@Port-->端口</th></tr>
+        <tr><td>http</td><td>80</td></tr>
+        <tr><td>https</td><td>443</td></tr>
+        <tr><td>socks4</td><td>1080</td></tr>
+        <tr><td>socks5</td><td>1080</td></tr>
+      </table>
+      </p>
+      
+      <h3 id="bypass_list"><!--@Bypass list-->例外列表</h3>
+      
+      <p>
+      <!--@Individual servers may be excluded from being proxied with the
+      <code>bypassList</code>. This list may contain the following entries:-->
+      个别的服务器可以通过 <code>bypassList</code>
+      属性排除在代理服务器之外。这一列表可以包含如下条目：
+      <dl>
+        <dt><code>[<em>&lt;scheme&gt;</em>://]<em>&lt;host-pattern&gt;</em>[:<em>&lt;port&gt;</em>]</code></dt>
+        <dd><!--@Match all hostnames that match the pattern <em>&lt;host-pattern&gt;</em>.
+        A leading <code>"."</code> is interpreted as a <code>"*."</code>.-->
+        匹配所有符合 <em>&lt;host-pattern&gt;</em>
+        表达式的主机名，前导的“<code>.</code>”将被视为“<code>*.</code>”。
+        <br>
+        <!--@Examples: -->例如：<code>"foobar.com", "*foobar.com", "*.foobar.com", "*foobar.com:99",
+          "https://x.*.y.com:99"</code>.<br>
+        <table>
+          <tr>
+            <th><!--@Pattern-->表达式
+            <th><!--@Matches-->匹配的域名
+            <th><!--@Does not match-->不匹配的域名
+          <tr>
+            <td><code>".foobar.com"</code>
+            <td><code>"www.foobar.com"</code>
+            <td><code>"foobar.com"</code>
+          <tr>
+            <td><code>"*.foobar.com"</code>
+            <td><code>"www.foobar.com"</code>
+            <td><code>"foobar.com"</code>
+          <tr>
+            <td><code>"foobar.com"</code>
+            <td><code>"foobar.com"</code>
+            <td><code>"www.foobar.com"</code>
+          <tr>
+            <td><code>"*foobar.com"</code>
+            <td><code>"foobar.com"</code>, <code>"www.foobar.com"</code>,
+                <code>"foofoobar.com"</code>
+            <td>
+        </table>
+        </dd>
+      
+        <dt><code>[<em>&lt;scheme&gt;</em>://]<em>&lt;ip-literal&gt;</em>[:<em>&lt;port&gt;</em>]</code></dt>
+        <dd><!--@Match URLs that are IP address literals.-->
+        匹配包含字面 IP 地址的 URL。
+        <br>
+        <!--@Conceptually this is the similar to the first case, but with special cases
+        to handle IP literal canonicalization. For example, matching
+        on "[0:0:0::1]" is the same as matching on "[::1]" because
+        the IPv6 canonicalization is done internally.-->
+        概念上这和第一种情况相似，但是特别之处在于它会处理 IP
+        地址规范化的情况。例如匹配"[0:0:0::1]"与匹配"[::1]"是相同的，因为在内部会自动进行
+        IPv6 规范化。
+        <br>
+        <!--@Examples: -->例如：<code>"127.0.1", "[0:0::1]", "[::1]", "http://[::1]:99"</code></dd>
+      
+        <dt><code><em>&lt;ip-literal&gt;</em>/<em>&lt;prefix-length-in-bits&gt;</em></code></dt>
+        <dd><!--@Match any URL containing an IP literal within the given range. The IP
+        range is specified using CIDR notation.-->
+        匹配包含指定范围内 IP 地址的任何 URL，IP 范围使用 <a
+        href="https://en.wikipedia.org/wiki/CIDR_notation">CIDR 记号</a>表示。
+        <br>
+        <!--@Examples: -->例如：<code>"192.168.1.1/16", "fefe:13::abc/33"</code></dd>
+      
+        <dt><code>&lt;local&gt;</code></dt>
+        <dd><!--@Match local addresses. An address is local if the host is "127.0.0.1",
+        "::1", or "localhost".-->
+        匹配本机地址。本机地址包括主机为 "127.0.0.1"、"::1"或 "localhost" 的地址。
+        <br>
+        <!--@Example: -->例如：<code>"&lt;local&gt;"</code></dd>
+      </dl>
+      
+      
+      <h2 id="overview-examples"><!--@Examples-->例子</h2>
+      
+      <p>
+      <!--@The following code sets a SOCKS 5 proxy for HTTP connections to all servers but
+      foobar.com and uses direct connections for all other protocols. The settings
+      apply to regular and incognito windows, as incognito windows inherit settings
+      from regular windows. Please also consult the <a
+        href="types#ChromeSetting">Types API</a> documentation.-->
+      以下代码为除了 foobar.com 以外的所有 HTTP 连接设置 SOCKS 5
+      代理，并为所有其他协议使用直接连接。这些设置应用于普通窗口和隐身窗口，因为隐身窗口从普通窗口继承设置。同时请参见<a
+      href="types.html#ChromeSetting">类型 API</a> 文档。
+      </p>
+      
+      <pre>
+      var config = {
+        mode: "fixed_servers",
+        rules: {
+          proxyForHttp: {
+            scheme: "socks5",
+            host: "1.2.3.4"
+          },
+          bypassList: ["foobar.com"]
+        }
+      };
+      chrome.proxy.settings.set(
+          {value: config, scope: 'regular'},
+          function() {});
+      </pre>
+      
+      <p>
+      <!--@The following code sets a custom PAC script.-->
+      如下代码设置一个自定义 PAC 脚本。
+      </p>
+      
+      <pre>
+      var config = {
+        mode: "pac_script",
+        pacScript: {
+          data: "function FindProxyForURL(url, host) {\n" +
+                "  if (host == 'foobar.com')\n" +
+                "    return 'PROXY blackhole:80';\n" +
+                "  return 'DIRECT';\n" +
+                "}"
+        }
+      };
+      chrome.proxy.settings.set(
+          {value: config, scope: 'regular'},
+          function() {});
+      </pre>
+      
+      <p>
+      <!--@The next snippet queries the currently effective proxy settings. The effective
+      proxy settings can be determined by another extension or by a policy. See the <a
+        href="types#ChromeSetting">Types API</a> documentation for details.-->
+      下一个代码片段查询当前有效的代理服务器设置，有效代理服务器设置可以由另一个扩展程序或者其他策略确定。有关细节请参见<a
+      href="types.html#ChromeSetting">类型 API</a>。
+      </p>
+      
+      <pre>
+      chrome.proxy.settings.get(
+          {'incognito': false},
+          function(config) {console.log(JSON.stringify(config));});
+      </pre>
+      
+      <p>
+      <!--@Note that the <code>value</code> object passed to <code>set()</code> is not
+      identical to the <code>value</code> object passed to callback function of
+      <code>get()</code>. The latter will contain a
+      <code>rules.proxyForHttp.port</code> element.-->
+      注意，传递给 <code>set()</code> 的 <code>value</code> 对象与传递给
+      <code>get()</code> 的回调函数的 <code>value</code> 对象不同，后者会包含
+      <code>rules.httpProxy.port</code> 元素。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="proxy.html#type-ProxyServer">ProxyServer</a></td></tr>
+          <tr><td><a href="proxy.html#type-ProxyRules">ProxyRules</a></td></tr>
+          <tr><td><a href="proxy.html#type-PacScript">PacScript</a></td></tr>
+          <tr><td><a href="proxy.html#type-ProxyConfig">ProxyConfig</a></td></tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="proxy.html#property-settings">settings</a></td>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="proxy.html#event-onProxyError">onProxyError</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-ProxyServer">ProxyServer</h3>
+              <table>
+                <dd>包含单个代理服务器信息的对象。</dd>
+                  <tr><th colspan="3" id="ProxyServer-properties">属性</th></tr>
+                  <tr id="property-ProxyServer-scheme">
+                    <td>enum of <code>"http"</code>, <code>"https"</code>, <code>"quic"</code>, <code>"socks4"</code>, or <code>"socks5"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        scheme</td>
+                    <td>
+                    
+                    <p>
+                      代理服务器自己的协议，默认为 "http"。
+                    </p></td>
+                  </tr><tr id="property-ProxyServer-host">
+                    <td>string</td>
+                    <td>
+                        host</td>
+                    <td>
+                    
+                    <p>
+                      代理服务器的 URL，必须为 ASCII 主机名（以 <a href="https://en.wikipedia.org/wiki/Punycode">Punycode</a> 的格式），暂时还不支持 IDNA。
+                    </p></td>
+                  </tr><tr id="property-ProxyServer-port">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        port</td>
+                    <td>
+                    
+                    <p>
+                      代理服务器的端口，默认值与协议相关。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ProxyRules">ProxyRules</h3>
+              <table>
+                <dd>包含用于所有协议的代理规则的对象。仅使用 "singleProxy" 属性或者使用以下属性（及其子集）："proxyForHttp"、"proxyForHttps"、"proxyForFtp" 和 "fallbackProxy"。</dd>
+                  <tr><th colspan="3" id="ProxyRules-properties">属性</th></tr>
+                  <tr id="property-ProxyRules-singleProxy">
+                    <td>    <a href="proxy.html#type-ProxyServer">ProxyServer</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        singleProxy</td>
+                    <td>
+                    
+                    <p>
+                      用于所有 URL 请求（即 HTTP、HTTPS 和 FTP）的代理服务器。
+                    </p></td>
+                  </tr><tr id="property-ProxyRules-proxyForHttp">
+                    <td>    <a href="proxy.html#type-ProxyServer">ProxyServer</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        proxyForHttp</td>
+                    <td>
+                    
+                    <p>
+                      用于 HTTP 请求的代理服务器。
+                    </p></td>
+                  </tr><tr id="property-ProxyRules-proxyForHttps">
+                    <td>    <a href="proxy.html#type-ProxyServer">ProxyServer</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        proxyForHttps</td>
+                    <td>
+                    
+                    <p>
+                      用于 HTTPS 请求的代理服务器。
+                    </p></td>
+                  </tr><tr id="property-ProxyRules-proxyForFtp">
+                    <td>    <a href="proxy.html#type-ProxyServer">ProxyServer</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        proxyForFtp</td>
+                    <td>
+                    
+                    <p>
+                      用于 FTP 请求的代理服务器。
+                    </p></td>
+                  </tr><tr id="property-ProxyRules-fallbackProxy">
+                    <td>    <a href="proxy.html#type-ProxyServer">ProxyServer</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        fallbackProxy</td>
+                    <td>
+                    
+                    <p>
+                      用于其他协议或者未指定 proxyFor... 的协议的代理服务器。
+                    </p></td>
+                  </tr><tr id="property-ProxyRules-bypassList">
+                    <td>array of string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        bypassList</td>
+                    <td>
+                    
+                    <p>
+                      不通过代理服务器连接的服务器列表。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-PacScript">PacScript</h3>
+              <table>
+                <dd>包含代理自动配置信息的对象。以下前两个属性中有且只有一个非空。</dd>
+                  <tr><th colspan="3" id="PacScript-properties">属性</th></tr>
+                  <tr id="property-PacScript-url">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      要使用的 PAC 文件 URL。
+                    </p></td>
+                  </tr><tr id="property-PacScript-data">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        data</td>
+                    <td>
+                    
+                    <p>
+                      PAC 脚本内容。
+                    </p></td>
+                  </tr><tr id="property-PacScript-mandatory">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        mandatory</td>
+                    <td>
+                    
+                    <p>
+                      如果为 true，无效的 PAC 脚本将不会使网络栈回退到直接连接方式。默认为 false。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ProxyConfig">ProxyConfig</h3>
+              <table>
+                <dd>包含完整代理配置的对象。</dd>
+                  <tr><th colspan="3" id="ProxyConfig-properties">属性</th></tr>
+                  <tr id="property-ProxyConfig-rules">
+                    <td>    <a href="proxy.html#type-ProxyRules">ProxyRules</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        rules</td>
+                    <td>
+                    
+                    <p>
+                      描述该配置的代理规则。请在 "fixed_servers" 模式下使用该属性。
+                    </p></td>
+                  </tr><tr id="property-ProxyConfig-pacScript">
+                    <td>    <a href="proxy.html#type-PacScript">PacScript</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        pacScript</td>
+                    <td>
+                    
+                    <p>
+                      该配置下的代理服务器自动配置（PAC）脚本。请在 "pac_script" 模式下使用该属性。
+                    </p></td>
+                  </tr><tr id="property-ProxyConfig-mode">
+                    <td>enum of <code>"direct"</code>, <code>"auto_detect"</code>, <code>"pac_script"</code>, <code>"fixed_servers"</code>, or <code>"system"</code></td>
+                    <td>
+                        mode</td>
+                    <td>
+                    
+                    <p>
+                      "direct" = 永远不使用代理服务器<br>"auto_detect" = 自动检测代理服务器设置<br>"pac_script" = 使用指定的 PAC 脚本<br>"fixed_servers" = 手动指定代理服务器<br>"system" = 使用系统的代理服务器设置
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">      <a href="types.html#type-ChromeSetting">types.ChromeSetting</a></span></td>
+              <td><code id="property-settings">chrome.proxy.settings</code></td>
+              <td>
+                  使用的代理服务器设置，这一设置的值是一个 ProxyConfig 对象。
+              </td>
+            </tr>
+          </table>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onProxyError">onProxyError</h3>
+              <div class="description">
+            <p>
+                  通知代理服务器错误。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.proxy.onProxyError.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onProxyError-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onProxyError-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-fatal">
+                                          <td>boolean</td>
+                                          <td>
+                                              fatal</td>
+                                          <td>
+                                          
+                                          <p>
+                                            如果为 true，该错误是致命的，网络连接将终止。否则，将改用直接连接。
+                                          </p></td>
+                                        </tr><tr id="property-details-error">
+                                          <td>string</td>
+                                          <td>
+                                              error</td>
+                                          <td>
+                                          
+                                          <p>
+                                            错误描述。
+                                          </p></td>
+                                        </tr><tr id="property-details-details">
+                                          <td>string</td>
+                                          <td>
+                                              details</td>
+                                          <td>
+                                          
+                                          <p>
+                                            有关错误的其他详情，例如 JavaScript 运行时错误。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#proxy-extension-api-sample">Proxy Extension API Sample</a></strong>
+          &ndash; Set Chrome-specific proxies; a demonstration of Chrome's Proxy API
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

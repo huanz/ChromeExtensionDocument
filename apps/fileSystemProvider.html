@@ -1,0 +1,2058 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.fileSystemProvider - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="fileSystemProvider.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<p class="warning">
+  <!--@This API is still being developed. It is only available to developers building from-->
+  该 API 还在开发中，仅对由
+  <a href="http://www.chromium.org/developers/">trunk</a><!--@.-->
+  建立的开发者可用。
+</p>
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.fileSystemProvider</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.fileSystemProvider</code> API to create file systems,
+             that can be accessible from the file manager on Chrome OS.-->
+             使用 <code>chrome.fileSystemProvider</code> API 创建可以在 Chrome OS
+             文件管理器中访问的文件系统。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <strong><!--@Not fully implemented-->尚未完全实现</strong><!--@.
+             You must build Chromium from source to try this API.
+            
+             -->，您必须通过源代码建立 Chromium 才能尝试该 API。<a href="http://www.chromium.org/developers"><!--@Learn more-->了解更多内容</a><!--@.-->
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "fileSystemProvider"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p><!--@You must declare the "fileSystemProvider" permission
+      in the <a href="manifest">extension manifest</a>
+      to use the File System Provider API.
+      For example:-->
+      您必须在<a href="manifest.html">扩展程序的清单文件</a>中声明
+      "fileSystemProvider" 权限才能使用文件系统提供者 API。例如：
+      </p>
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "fileSystemProvider"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <h2 id="overview"><!--@Overview-->概述</h2>
+      <p>
+      <!--@File System Provider API allows extensions to support virtual file systems,
+      which are available in the file manager on Chrome OS.
+      Use cases include decompressing archives and accessing files in a cloud
+      service other than Drive.-->
+      文件系统提供者 API 允许扩展程序支持虚拟文件系统，可以在 Chrome OS
+      的文件管理器中使用。例如可以释放压缩包，还有访问 Google
+      云端硬盘以外的其他云端文件。
+      </p>
+      
+      <h2 id="archives"><!--@File handlers-->文件处理程序</h2>
+      <p>
+      <!--@Provided file systems can either provide file system contents from an external
+      source (such as a remote server), or using a local file (such as an archive) as
+      its input.-->
+      提供的文件系统既可以提供来自外部（例如远程服务起）的文件系统内容，也可以使用本地文件（例如压缩包）作为输入。
+      </p>
+      <p>
+      <!--@In the second case, the providing extension should have a
+      <a href="manifest/file_handlers">file_handlers</a> manifest entry in order
+      to be launched when the file is selected in the file manager.
+      When the extension is executed with a file to be handled, it has to mount a
+      file system and start serving contents from the provided file.-->
+      在第二种情况下，提供文件系统的扩展程序清单文件中应当包含
+      <a href="manifest/file_handlers.html">file_handlers</a> 项，当指定文件在文件管理器中选择时启动。当扩展程序由于处理文件而执行时，它应当挂载文件系统，并开始从提供的文件获取内容。
+      </p>
+      
+      <h2 id="archives"><!--@Life cycle-->生命周期</h2>
+      <p>
+      <!--@Provided file systems once mounted are remembered by Chrome and remounted
+      automatically after reboot or restart. Hence, once a file system is
+      <a href="method-mount">mounted</a> by a providing extension, it will stay until
+      either the extension is unloaded, or the extension calls the
+      <a href="#method-unmount"> unmount</a> method.-->
+      提供的文件系统挂载后，Chrome 会记录下来，重新启动后会自动重新挂载。因此，一旦文件系统由提供的扩展程序<a href="fileSystemProvider.html#method-mount">挂载</a>，它会始终保留，直到扩展程序卸载或调用
+      <a href="fileSystemProvider.html#method-unmount">unmount</a> 方法。
+      </p>
+      <p>
+      <!--@In case of acting as a file handler, the handled file may need to be stored
+      to access it after either a reboot, or suspending and resuming an event page
+      of the providing extension. In such case
+      <a href="fileSystem#method-retainEntry">chrome.fileSystem.retainEntry</a> and
+      <a href="fileSystem#method-restoreEntry">chrome.fileSystem.restoreEntry</a>
+      should be used.-->
+      如果作为文件处理程序，处理的文件需要保留下来，以便重启，或提供文件系统的扩展程序事件页面暂停和恢复时访问。这种情况下，您应该使用
+      <a href="fileSystem.html#method-retainEntry">fileSystem.retainEntry</a> 和 <a href="fileSystem.html#method-restoreEntry">fileSystem.restoreEntry</a>。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="fileSystemProvider.html#type-ProviderError">ProviderError</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-EntryMetadata">EntryMetadata</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-CreateDirectoryRequestedOptions">CreateDirectoryRequestedOptions</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-DeleteEntryRequestedOptions">DeleteEntryRequestedOptions</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-CreateFileRequestedOptions">CreateFileRequestedOptions</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-CopyEntryRequestedOptions">CopyEntryRequestedOptions</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-MoveEntryRequestedOptions">MoveEntryRequestedOptions</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-TruncateRequestedOptions">TruncateRequestedOptions</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#type-WriteFileRequestedOptions">WriteFileRequestedOptions</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="fileSystemProvider.html#method-mount">mount</a> &minus;
+            <code class="prettyprint">
+            chrome.fileSystemProvider.mount(<span>object options</span>, <span>function successCallback</span>, <span>function errorCallback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="fileSystemProvider.html#method-unmount">unmount</a> &minus;
+            <code class="prettyprint">
+            chrome.fileSystemProvider.unmount(<span>object options</span>, <span>function successCallback</span>, <span>function errorCallback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="fileSystemProvider.html#event-onUnmountRequested">onUnmountRequested</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#event-onGetMetadataRequested">onGetMetadataRequested</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#event-onReadDirectoryRequested">onReadDirectoryRequested</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#event-onOpenFileRequested">onOpenFileRequested</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#event-onCloseFileRequested">onCloseFileRequested</a></td></tr>
+          <tr><td><a href="fileSystemProvider.html#event-onReadFileRequested">onReadFileRequested</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-ProviderError">ProviderError</h3>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"OK"</code>, 
+                  <code>"FAILED"</code>, 
+                  <code>"IN_USE"</code>, 
+                  <code>"EXISTS"</code>, 
+                  <code>"NOT_FOUND"</code>, 
+                  <code>"ACCESS_DENIED"</code>, 
+                  <code>"TOO_MANY_OPENED"</code>, 
+                  <code>"NO_MEMORY"</code>, 
+                  <code>"NO_SPACE"</code>, 
+                  <code>"NOT_A_DIRECTORY"</code>, 
+                  <code>"INVALID_OPERATION"</code>, 
+                  <code>"SECURITY"</code>, 
+                  <code>"ABORT"</code>, 
+                  <code>"NOT_A_FILE"</code>, 
+                  <code>"NOT_EMPTY"</code>, 
+                  <code>"INVALID_URL"</code>, 
+                  or <code>"IO"</code>
+                </td></tr>
+                <dd><!--@Error codes used by providing extensions in response to requests. For success, <code>OK</code> should be used.--> 扩展程序响应请求时使用的错误代码，如果成功则应该使用 <code>OK</code>。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-EntryMetadata">EntryMetadata</h3>
+              <table>
+                  <tr><th colspan="3" id="EntryMetadata-properties">属性</th></tr>
+                  <tr id="property-EntryMetadata-isDirectory">
+                    <td>boolean</td>
+                    <td>
+                        isDirectory</td>
+                    <td>
+                    
+                    <p>
+                      <!--@True if it is a directory.--> 如果为目录则为 true。
+                    </p></td>
+                  </tr><tr id="property-EntryMetadata-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Name of this entry (not full path name).--> 项目名称（不是完整路径）。
+                    </p></td>
+                  </tr><tr id="property-EntryMetadata-size">
+                    <td>double</td>
+                    <td>
+                        size</td>
+                    <td>
+                    
+                    <p>
+                      <!--@File size in bytes.--> 文件大小，以字节为单位。
+                    </p></td>
+                  </tr><tr id="property-EntryMetadata-modificationTime">
+                    <td>Date</td>
+                    <td>
+                        modificationTime</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The last modified time of this entry.--> 该项目上一次修改的时间。
+                    </p></td>
+                  </tr><tr id="property-EntryMetadata-mimeType">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        mimeType</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Mime type for the entry.--> 该项目的 MIME 类型。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-CreateDirectoryRequestedOptions">CreateDirectoryRequestedOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="CreateDirectoryRequestedOptions-properties">属性</th></tr>
+                  <tr id="property-CreateDirectoryRequestedOptions-fileSystemId">
+                    <td>string</td>
+                    <td>
+                        fileSystemId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CreateDirectoryRequestedOptions-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CreateDirectoryRequestedOptions-directoryPath">
+                    <td>string</td>
+                    <td>
+                        directoryPath</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CreateDirectoryRequestedOptions-exclusive">
+                    <td>boolean</td>
+                    <td>
+                        exclusive</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CreateDirectoryRequestedOptions-recursive">
+                    <td>boolean</td>
+                    <td>
+                        recursive</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-DeleteEntryRequestedOptions">DeleteEntryRequestedOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="DeleteEntryRequestedOptions-properties">属性</th></tr>
+                  <tr id="property-DeleteEntryRequestedOptions-fileSystemId">
+                    <td>string</td>
+                    <td>
+                        fileSystemId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-DeleteEntryRequestedOptions-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-DeleteEntryRequestedOptions-entryPath">
+                    <td>string</td>
+                    <td>
+                        entryPath</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-DeleteEntryRequestedOptions-recursive">
+                    <td>boolean</td>
+                    <td>
+                        recursive</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-CreateFileRequestedOptions">CreateFileRequestedOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="CreateFileRequestedOptions-properties">属性</th></tr>
+                  <tr id="property-CreateFileRequestedOptions-fileSystemId">
+                    <td>string</td>
+                    <td>
+                        fileSystemId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CreateFileRequestedOptions-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CreateFileRequestedOptions-filePath">
+                    <td>string</td>
+                    <td>
+                        filePath</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-CopyEntryRequestedOptions">CopyEntryRequestedOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="CopyEntryRequestedOptions-properties">属性</th></tr>
+                  <tr id="property-CopyEntryRequestedOptions-fileSystemId">
+                    <td>string</td>
+                    <td>
+                        fileSystemId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CopyEntryRequestedOptions-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CopyEntryRequestedOptions-sourcePath">
+                    <td>string</td>
+                    <td>
+                        sourcePath</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-CopyEntryRequestedOptions-targetPath">
+                    <td>string</td>
+                    <td>
+                        targetPath</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-MoveEntryRequestedOptions">MoveEntryRequestedOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="MoveEntryRequestedOptions-properties">属性</th></tr>
+                  <tr id="property-MoveEntryRequestedOptions-fileSystemId">
+                    <td>string</td>
+                    <td>
+                        fileSystemId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-MoveEntryRequestedOptions-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-MoveEntryRequestedOptions-sourcePath">
+                    <td>string</td>
+                    <td>
+                        sourcePath</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-MoveEntryRequestedOptions-targetPath">
+                    <td>string</td>
+                    <td>
+                        targetPath</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-TruncateRequestedOptions">TruncateRequestedOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="TruncateRequestedOptions-properties">属性</th></tr>
+                  <tr id="property-TruncateRequestedOptions-fileSystemId">
+                    <td>string</td>
+                    <td>
+                        fileSystemId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-TruncateRequestedOptions-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-TruncateRequestedOptions-filePath">
+                    <td>string</td>
+                    <td>
+                        filePath</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-TruncateRequestedOptions-length">
+                    <td>double</td>
+                    <td>
+                        length</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-WriteFileRequestedOptions">WriteFileRequestedOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="WriteFileRequestedOptions-properties">属性</th></tr>
+                  <tr id="property-WriteFileRequestedOptions-fileSystemId">
+                    <td>string</td>
+                    <td>
+                        fileSystemId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-WriteFileRequestedOptions-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-WriteFileRequestedOptions-openRequestId">
+                    <td>integer</td>
+                    <td>
+                        openRequestId</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-WriteFileRequestedOptions-offset">
+                    <td>double</td>
+                    <td>
+                        offset</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-WriteFileRequestedOptions-length">
+                    <td>double</td>
+                    <td>
+                        length</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-WriteFileRequestedOptions-data">
+                    <td>ArrayBuffer</td>
+                    <td>
+                        data</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-mount"
+                  >mount
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fileSystemProvider.mount(<span>object options</span>, <span>function successCallback</span>, <span>function errorCallback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@Mounts a file system with the given <code>fileSystemId</code> and <code> displayName</code>. <code>displayName</code> will be shown in the left panel of Files.app. <code>displayName</code> can contain any characters including '/', but cannot be an empty string. <code>displayName</code> should be descriptive but doesn't have to be unique. Duplicate display names are uniquified by adding suffix like "(1)" in the Files app UI.--> 挂载指定 <code>fileSystemId</code>（文件系统标识符）和 <code>displayName</code>（显示名称）的文件系统。<code>displayName</code> 显示在文件管理器的左侧面板，可以包含任意字符，包括“/”，但不能为空字符串。<code>displayName</code> 应当具有描述性，但不一定需要唯一。文件管理器用户界面中，重复的显示名称后会添加“(1)”这样的后缀使之唯一。</p><p><!--@If a file system with the passed <code>fileSystemId</code> is already mounted by this extension, then <code>errorCallback</code> will be called with <code>ProviderError.EXISTS</code> value. The <code>fileSystemId </code> must not be an empty string.--> 如果传递的 <code>fileSystemId</code> 对应的文件系统已经由当前扩展程序挂载，则会调用 <code>errorCallback</code>，并传递 <code>ProviderError.EXISTS</code> 值。<code>fileSystemId</code> 不能为空字符串。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-mount-options">
+                      <td>object</td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-options-fileSystemId">
+                            <td>string</td>
+                            <td>
+                                fileSystemId</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-options-displayName">
+                            <td>string</td>
+                            <td>
+                                displayName</td>
+                            <td>
+                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-mount-successCallback">
+                      <td>function</td>
+                      <td>
+                          successCallback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Callback to receive the result of mount() function.--> 接收 mount() 函数结果的回调函数。
+                      </p>  <table class="innerTable">
+                          <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-successCallback-error">
+                            <td>DOMError</td>
+                            <td>
+                                error</td>
+                            <td>
+                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-mount-errorCallback">
+                      <td>function</td>
+                      <td>
+                          errorCallback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Callback to handle an error raised from the browser.--> 处理由浏览器产生的错误的回调函数。
+                      </p>    <p>
+                              <!--@The <em>errorCallback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(DOMError error) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-errorCallback-error">
+                              <td>DOMError</td>
+                              <td>
+                                  error</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-unmount"
+                  >unmount
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.fileSystemProvider.unmount(<span>object options</span>, <span>function successCallback</span>, <span>function errorCallback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Unmounts a file system with the given <code>fileSystemId</code>. It should be called after <code>onUnmountRequested</code> is invoked. Also, the providing extension can decide to perform unmounting if not requested (eg. in case of lost connection, or a file error). If there is no file system with the requested id, or unmounting fails, then the <code>errorCallback</code> will be called.--> 取消挂载指定 <code>fileSystemId</code>（文件系统标识符）的文件系统，应当在 <code>onUnmountRequested</code> 执行后调用。此外，提供文件系统的扩展程序即使没有被请求也可以进行取消挂载操作（例如连接丢失或文件错误的情况下）。如果不存在指定标识符的文件系统，或取消挂载失败，则会调用 <code>errorCallback</code>。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-unmount-options">
+                      <td>object</td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-options-fileSystemId">
+                            <td>string</td>
+                            <td>
+                                fileSystemId</td>
+                            <td>
+                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-unmount-successCallback">
+                      <td>function</td>
+                      <td>
+                          successCallback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Callback to receive the result of unmount() function.--> 接收 unmount() 函数结果的回调函数。
+                      </p>  <table class="innerTable">
+                          <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-successCallback-error">
+                            <td>DOMError</td>
+                            <td>
+                                error</td>
+                            <td>
+                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-unmount-errorCallback">
+                      <td>function</td>
+                      <td>
+                          errorCallback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Callback to handle an error raised from the browser.--> 处理由浏览器产生的错误的回调函数。
+                      </p>    <p>
+                              <!--@The <em>errorCallback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(DOMError error) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-errorCallback-error">
+                              <td>DOMError</td>
+                              <td>
+                                  error</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onUnmountRequested">onUnmountRequested</h3>
+              <div class="description">
+            <p>
+                  <!--@Raised when unmounting for the file system with the <code>fileSystemId </code> identifier is requested. In the response, the <code>unmount </code> API method should be called together with <code>successCallback </code>. If unmounting is not possible (eg. due to a pending operation), then <code>errorCallback</code> must be called.--> 请求取消挂载标识符为 <code>fileSystemId</code> 的文件系统时产生。响应该事件时应调用 <code>unmount</code> API 方法以及 <code>successCallback</code>。如果不能取消挂载（例如操作未完成），必须调用 <code>errorCallback</code>。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fileSystemProvider.onUnmountRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onUnmountRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object options, function successCallback, function errorCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onUnmountRequested-options">
+                                    <td>object</td>
+                                    <td>
+                                        options</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-options-fileSystemId">
+                                          <td>string</td>
+                                          <td>
+                                              fileSystemId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-requestId">
+                                          <td>integer</td>
+                                          <td>
+                                              requestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onUnmountRequested-successCallback">
+                                    <td>function</td>
+                                    <td>
+                                        successCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of a success.--> 操作成功后由提供文件系统的扩展程序调用的回调函数。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onUnmountRequested-errorCallback">
+                                    <td>function</td>
+                                    <td>
+                                        errorCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of an error.--> 遇到错误时由提供文件系统的扩展程序调用的回调函数。
+                                    </p>    <p>
+                                            <!--@The <em>errorCallback</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a> error) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-errorCallback-error">
+                                            <td>    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a></td>
+                                            <td>
+                                                error</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onGetMetadataRequested">onGetMetadataRequested</h3>
+              <div class="description">
+            <p>
+                  <!--@Raised when metadata of a file or a directory at <code>entryPath</code> is requested. The metadata should be returned with the <code> successCallback</code> call. In case of an error, <code>errorCallback </code> must be called.--> 请求位于 <code>entryPath</code> 的文件或目录元数据时产生，您应该调用 <code>successCallback</code> 返回元数据，如果发生错误则必须调用 <code>errorCallback</code>。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fileSystemProvider.onGetMetadataRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onGetMetadataRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object options, function successCallback, function errorCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onGetMetadataRequested-options">
+                                    <td>object</td>
+                                    <td>
+                                        options</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-options-fileSystemId">
+                                          <td>string</td>
+                                          <td>
+                                              fileSystemId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-requestId">
+                                          <td>integer</td>
+                                          <td>
+                                              requestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-entryPath">
+                                          <td>string</td>
+                                          <td>
+                                              entryPath</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onGetMetadataRequested-successCallback">
+                                    <td>function</td>
+                                    <td>
+                                        successCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Success callback for the <code>onGetMetadataRequested</code> event.--> <code>onGetMetadataRequested</code> 事件成功时的回调函数。
+                                    </p>  <table class="innerTable">
+                                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                                        <tr id="property-successCallback-metadata">
+                                          <td>    <a href="fileSystemProvider.html#type-EntryMetadata">EntryMetadata</a></td>
+                                          <td>
+                                              metadata</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onGetMetadataRequested-errorCallback">
+                                    <td>function</td>
+                                    <td>
+                                        errorCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of an error.--> 遇到错误时由提供文件系统的扩展程序调用的回调函数。
+                                    </p>    <p>
+                                            <!--@The <em>errorCallback</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a> error) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-errorCallback-error">
+                                            <td>    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a></td>
+                                            <td>
+                                                error</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onReadDirectoryRequested">onReadDirectoryRequested</h3>
+              <div class="description">
+            <p>
+                  <!--@Raised when contents of a directory at <code>directoryPath</code> are requested. The results should be returned in chunks by calling the <code> successCallback</code> several times. In case of an error, <code> errorCallback</code> must be called.--> 请求位于 <code>directoryPath</code> 的目录内容时产生，您应该多次调用 <code>successCallback</code> 分块返回结果，如果发生错误则必须调用 <code>errorCallback</code>。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fileSystemProvider.onReadDirectoryRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReadDirectoryRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object options, function successCallback, function errorCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReadDirectoryRequested-options">
+                                    <td>object</td>
+                                    <td>
+                                        options</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-options-fileSystemId">
+                                          <td>string</td>
+                                          <td>
+                                              fileSystemId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-requestId">
+                                          <td>integer</td>
+                                          <td>
+                                              requestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-directoryPath">
+                                          <td>string</td>
+                                          <td>
+                                              directoryPath</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onReadDirectoryRequested-successCallback">
+                                    <td>function</td>
+                                    <td>
+                                        successCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Success callback for the <code>onReadDirectoryRequested</code> event. If more entries will be returned, then <code>hasMore</code> must be true, and it has to be called again with additional entries. If no more entries are available, then <code>hasMore</code> must be set to false.--> <code>onReadDirectoryRequested</code> 事件成功时的回调函数。如果还会返回更多项目，必须将 <code>hasMore</code> 设置为 true，而且必须再次调用，传递其他项目。如果没有可用的项目，<code>hasMore</code> 必须设为 false。
+                                    </p>  <table class="innerTable">
+                                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                                        <tr id="property-successCallback-entries">
+                                          <td>array of     <a href="fileSystemProvider.html#type-EntryMetadata">EntryMetadata</a></td>
+                                          <td>
+                                              entries</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-successCallback-hasMore">
+                                          <td>boolean</td>
+                                          <td>
+                                              hasMore</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onReadDirectoryRequested-errorCallback">
+                                    <td>function</td>
+                                    <td>
+                                        errorCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of an error.--> 遇到错误时由提供文件系统的扩展程序调用的回调函数。
+                                    </p>    <p>
+                                            <!--@The <em>errorCallback</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a> error) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-errorCallback-error">
+                                            <td>    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a></td>
+                                            <td>
+                                                error</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onOpenFileRequested">onOpenFileRequested</h3>
+              <div class="description">
+            <p>
+                  <!--@Raised when opening a file at <code>filePath</code> is requested. If the file does not exist, then the operation must fail.--> 请求打开位于 <code>directoryPath</code> 的文件时产生。如果文件不存在，则该操作必须失败。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fileSystemProvider.onOpenFileRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onOpenFileRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object options, function successCallback, function errorCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onOpenFileRequested-options">
+                                    <td>object</td>
+                                    <td>
+                                        options</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-options-fileSystemId">
+                                          <td>string</td>
+                                          <td>
+                                              fileSystemId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-requestId">
+                                          <td>integer</td>
+                                          <td>
+                                              requestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-filePath">
+                                          <td>string</td>
+                                          <td>
+                                              filePath</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-mode">
+                                          <td>enum of <code>"READ"</code>, or <code>"WRITE"</code></td>
+                                          <td>
+                                              mode</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onOpenFileRequested-successCallback">
+                                    <td>function</td>
+                                    <td>
+                                        successCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of a success.--> 操作成功后由提供文件系统的扩展程序调用的回调函数。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onOpenFileRequested-errorCallback">
+                                    <td>function</td>
+                                    <td>
+                                        errorCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of an error.--> 遇到错误时由提供文件系统的扩展程序调用的回调函数。
+                                    </p>    <p>
+                                            <!--@The <em>errorCallback</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a> error) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-errorCallback-error">
+                                            <td>    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a></td>
+                                            <td>
+                                                error</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onCloseFileRequested">onCloseFileRequested</h3>
+              <div class="description">
+            <p>
+                  <!--@Raised when opening a file previously opened with <code>openRequestId </code> is requested to be closed.--> 请求关闭之前使用 <code>openRequestId</code> 打开的文件时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fileSystemProvider.onCloseFileRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onCloseFileRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object options, function successCallback, function errorCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onCloseFileRequested-options">
+                                    <td>object</td>
+                                    <td>
+                                        options</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-options-fileSystemId">
+                                          <td>string</td>
+                                          <td>
+                                              fileSystemId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-requestId">
+                                          <td>integer</td>
+                                          <td>
+                                              requestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-openRequestId">
+                                          <td>integer</td>
+                                          <td>
+                                              openRequestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onCloseFileRequested-successCallback">
+                                    <td>function</td>
+                                    <td>
+                                        successCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of a success.--> 操作成功后由提供文件系统的扩展程序调用的回调函数。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onCloseFileRequested-errorCallback">
+                                    <td>function</td>
+                                    <td>
+                                        errorCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of an error.--> 遇到错误时由提供文件系统的扩展程序调用的回调函数。
+                                    </p>    <p>
+                                            <!--@The <em>errorCallback</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a> error) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-errorCallback-error">
+                                            <td>    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a></td>
+                                            <td>
+                                                error</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onReadFileRequested">onReadFileRequested</h3>
+              <div class="description">
+            <p>
+                  <!--@Raised when reading contents of a file opened previously with <code> openRequestId</code> is requested. The results should be returned in chunks by calling <code>successCallback</code> several times. In case of an error, <code>errorCallback</code> must be called.--> 请求读取之前使用 <code>openRequestId</code> 打开的文件内容时产生。您应该多次调用 <code>successCallback</code> 分块返回结果，如果发生错误，则必须调用 <code>errorCallback</code>。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.fileSystemProvider.onReadFileRequested.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReadFileRequested-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object options, function successCallback, function errorCallback) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReadFileRequested-options">
+                                    <td>object</td>
+                                    <td>
+                                        options</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-options-fileSystemId">
+                                          <td>string</td>
+                                          <td>
+                                              fileSystemId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-requestId">
+                                          <td>integer</td>
+                                          <td>
+                                              requestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-openRequestId">
+                                          <td>integer</td>
+                                          <td>
+                                              openRequestId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-offset">
+                                          <td>double</td>
+                                          <td>
+                                              offset</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-options-length">
+                                          <td>double</td>
+                                          <td>
+                                              length</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onReadFileRequested-successCallback">
+                                    <td>function</td>
+                                    <td>
+                                        successCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Success callback for the <code>onReadFileRequested</code> event. If more data will be returned, then <code>hasMore</code> must be true, and it has to be called again with additional entries. If no more data is available, then <code>hasMore</code> must be set to false.--> <code>onReadDirectoryRequested</code> 事件成功时的回调函数。如果还会返回更多数据，必须将 <code>hasMore</code> 设置为 true，而且必须再次调用，传递其他数据。如果没有可用的数据，<code>hasMore</code> 必须设为 false。
+                                    </p>  <table class="innerTable">
+                                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                                        <tr id="property-successCallback-data">
+                                          <td>ArrayBuffer</td>
+                                          <td>
+                                              data</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-successCallback-hasMore">
+                                          <td>boolean</td>
+                                          <td>
+                                              hasMore</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onReadFileRequested-errorCallback">
+                                    <td>function</td>
+                                    <td>
+                                        errorCallback</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Callback to be called by the providing extension in case of an error.--> 遇到错误时由提供文件系统的扩展程序调用的回调函数。
+                                    </p>    <p>
+                                            <!--@The <em>errorCallback</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>errorCallback</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a> error) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-errorCallback-error">
+                                            <td>    <a href="fileSystemProvider.html#type-ProviderError">ProviderError</a></td>
+                                            <td>
+                                                error</td>
+                                            <td>
+                                            
+                                            </td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

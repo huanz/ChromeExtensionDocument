@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>访问用户数据 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_codelab7_useridentification.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1 id="lab_7_user_identity"><!--@Access User's Data-->访问用户数据</h1>
+
+<p><!--@Most modern applications are attached to the web to synchronize data. When synchronizing data, you need to identify who the user is.
+Chrome Apps come with an <a href="experimental.identity">identity API</a> that makes it easy to integrate either with Google accounts or with any other service that supports OAuth.-->
+大部分现代应用程序都为了同步数据而依赖网络。同步数据时，您需要确定用户是谁。Chrome
+应用内建<a href="identity.html">认证 API</a>，使您更方便地与
+Google 账户或任何其他支持 OAuth 的服务集成。
+</p>
+
+<ol>
+<li> <!--@Built in - Google Authenticiation-->内建 Google 认证</li>
+<li> <!--@Third Party Authentication (Twitter, Foursquare, etc.)-->第三方认证（Twitter、Foursquare 等等）</li>
+</ol>
+
+<p class="warning"><b><!--@Warning:-->警告：</b>
+<!--@Apps with authentication require the experimental permission in the
+<code>manifest.json</code> and, until they came out of experimental state,
+they cannot be uploaded to the Chrome Web Store.
+If you prefer, you can choose to skip this lab.-->使用认证的应用需要在
+<code>manifest.json</code> 中指定 experimental
+权限，而且在它们仍然处于实验性状态时不能上传到 Chrome
+网上应用店。如果您愿意的话，您可以选择跳过这一实验。
+</p>
+
+<h2 id="authenticating_with_google"><!--@Authenticating with Google-->与 Google 认证</h2>
+
+<p><!--@We are working on a very easy integration flow for apps that authenticate with Google accounts. However, this flow is not yet available for general use. In the meantime, you may still use the third-party flow described below, even for Google services.-->
+我们正在开发一种很简单的整合流程，用于和 Google
+账户认证的应用。然而，该流程还不能用于一般用途。在此同时，您仍然可以使用如下所述的第三方流程，即使是用在
+Google 服务上。
+</p>
+
+<h2 id="integrating_with_a_third_party_service"><!--@Integrating with a third-party service-->与第三方服务整合</h2>
+
+<p><!--@Chrome Apps have a dedicated API for lauching the authentication flow to any third-party OAuth2 service, called <a href=/apps/identity#method-launchWebAuthFlow>identity.launchWebAuthFlow</a>.
+To show how this flow works, we&#39;re going to update our sample to import <a href="https://developers.google.com/google-apps/tasks/">Google Tasks</a> into the Todo list.-->
+Chrome 应用有一个专门的 API，可以对任何第三方 OAuth2 服务进行认证流程，称为
+<a href="identity.html#method-launchWebAuthFlow">identity.launchWebAuthFlow</a>。为了演示该流程的工作方式，我们将更新我们的示例，将
+<a href="https://developers.google.com/google-apps/tasks/">Google 工作表</a>
+引入到待办事项列表中。
+</p>
+
+<h3 id="register_with_the_provider"><!--@Register with the provider-->与提供商注册</h3>
+
+<p><!--@To use a third-party OAuth2 provider, you will first need to register your application with the provider. Each provider has a different way of registering applications, but in general it will be in a section called Developer or API at the provider&#39;s website.-->
+要使用第三方 OAuth2 提供商，您首先需要在提供商注册您的应用程序。每一个提供商都有自己的方式来注册应用程序，但是大体上应该在提供商网站上一个称为开发者或
+API 的部分。
+</p>
+
+<p><!--@Here we are treating Google as a third-party service. Just follow Google&#39;s own registration procedure for apps requiring API access below:-->
+这里我们将 Google 视为第三方服务，只需要遵循 Google 自己过程，为需要 API
+访问的应用注册。
+</p>
+
+<ol>
+<li><!--@Create a new project in the-->在 <a href="https://code.google.com/apis/console">Google API <!--@console-->控制台</a><!--@.-->创建一个新项目。</li>
+<li><!--@Activate the Tasks API on the Services secion.-->在 Services（服务）部分激活 Tasks（工作表） API。</li>
+<li><!--@Create a new OAuth2.0 client ID on API Access section. Select Web application and leave other fields unchanged.-->在 API Access 部分创建一个新的 OAuth2.0 客户端标识符，选择 Web application，其他字段不用修改。</li>
+<li><!--@Click on Edit settings for the newly created client ID.-->在新创建的客户端标识符上单击 Edit settings。</li>
+<li><!--@In Authorized Redirect URLs, add <code>https://&lt;YOURAPP_ID&gt;.chromiumapp.org/</code>,
+replacing &lt;YOURAPP_ID&gt; with your app ID (this is the app&#39;s long alphanumeric ID you can find in <code>chrome://extensions</code>).-->
+在 Authorized Redirect URLs 中添加
+<code>https://&lt;YOURAPP_ID&gt;.chromiumapp.org/</code>，将
+&lt;YOURAPP_ID&gt;
+替换为您的应用标识符（也就是由字母和数字组成的应用的长标识符，您可以在
+<code>chrome://extensions</code> 中找到）。
+</li>
+</ol>
+
+<h3 id="add_permissions"><!--@Add permissions-->添加权限</h3>
+
+<p><!--@Update the-->更新
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/angularjs/manifest.json">AngularJS manifest.json</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/javascript/manifest.json">JavaScript manifest.json</a>
+<!--@to use &quot;experimental&quot; features.
+Note that we&#39;ve also requested permission
+to make XHR requests to the Tasks service URL - for security reasons,
+you need to request explicit permission in the manifest for every URL you will call via XHR.-->
+使用实验性的特性。注意我们也请求了向工作表服务 URL 发出 XHR
+请求的权限，出于安全原因，您需要在清单文件中为您需要通过 XHR 调用的每一个
+URL 明确请求权限。
+</p>
+
+<pre data-filename="manifest.json">
+{
+     ... ,
+     &quot;permissions&quot;: [&quot;storage&quot;, &quot;experimental&quot;, &quot;https://www.googleapis.com/tasks/*&quot;]
+}
+</pre>
+
+<h3 id="add_google_tasks_to_the_todo_list"><!--@Add Google tasks to the Todo list-->将 Google 工作表添加到待办事项列表</h3>
+
+<p><!--@Now we are ready to ask user&#39;s authorization, so we can connect to the Tasks service and import his tasks into our Todo list. First, we will need to request an access token - which, at the first run will automatically pops up an authentication and authorization window to the user.
+Once we have this token, we are able to call the Google Tasks API directly.-->
+现在我们已经准备好请求用户认证，以便连接到工作表服务，并将工作表导入我们的待办事项列表。首先，我们需要请求访问令牌，第一次运行时会自动向用户弹出认证和授权窗口。一旦我们拥有了这一令牌，我们就能直接调用 Google 工作表 API 了。
+</p>
+
+<ol>
+<li><p><!--@Since this is time consuming and error prone, you can cheat and copy our JavaScript that handles the authentication to the Google Tasks API from here: <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/angularjs/gapi_tasks.js">Angular gapi_tasks.js</a>
+and <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/javascript/gapi_tasks.js">JavaScript gapi_tasks.js</a> are the same.
+This script calls <code>launchWebFlow</code> and
+gets a valid access token for the specified client ID.
+It also has simple JavaScript methods that, after authenticated,
+goes to the Tasks API and gets the user&#39;s task lists and the corresponding tasks. -->
+由于这一部分很费时间，而且容易出错，您可以直接从这里复制我们用来处理
+Google 工作表 API 认证的
+JavaScript：<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/angularjs/gapi_tasks.js">Angular gapi_tasks.js</a>
+和
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/javascript/gapi_tasks.js">JavaScript gapi_tasks.js</a>
+是一样的。该脚本调用
+<code>launchWebFlow</code>
+并为指定的客户端标识符获取有效的访问令牌。它还有一些简单的 JavaScript
+方法，可以在认证后进入工作表 API，并获取用户的任务列表以及对应的任务。
+</p>
+
+<p class="note"><b><!--@Note:-->注意：</b><!--@ This script is NOT intented to be used in production - it is just a very simple, limited and definitely not robust piece of code intented to highlight the basic authentication and API calls.-->该脚本<em>并非</em>用于产品中的，它只是一段很简单、很有限而且肯定不健壮的代码，仅仅是为了突出基本认证过程和 API 调用。</p></li>
+<li><p><!--@Add a new method to the existing-->向现有的
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/angularjs/controller.js">AngularJS controller.js</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab7_useridentification/javascript/controller.js">JavaScript controller.js</a><!--@that,
+using the methods from the script of the previous step,
+authenticates the user and imports his Google tasks into the Todo list:-->
+添加一个新方法，使用前一步脚本中的方法认证用户并将他的 Google
+任务导入待办事项列表：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="controller.js">
+$scope.importFromGTasks = function() {
+  var api = new TasksAPI();
+  var clientId = &quot;&lt;GET_YOURS_AT_https://code.google.com/apis/console&gt;&quot;;
+  api.authenticate(clientId, function() {
+    api.getLists(function(result) {
+      console.log(result);
+      if (!result || !result.items || result.items.length==0) {
+        throw &quot;No task lists available&quot;;
+      }
+      var listId=result.items[0].id;
+      api.getTasks(listId, function(tasks) {
+        console.log(tasks);
+        for (var j=0; j&lt;tasks.items.length; j++) {
+          $scope.$apply(function() {
+            $scope.todos.push({text:tasks.items[j].title, done:tasks.items[j].status!=&quot;needsAction&quot;});
+          });
+        }
+      });
+    });
+  });
+}
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="controller.js">
+document.getElementById('importGTasks').addEventListener('click',
+    function() {
+  var api = new TasksAPI();
+  var clientId = &quot;&lt;GET_YOURS_AT_https://code.google.com/apis/console&gt;&quot;;
+  api.authenticate(clientId, function() {
+    api.getLists(function(result) {
+      console.log(result);
+      if (!result || !result.items || result.items.length==0) {
+        throw "No task lists available";
+      }
+      var listId=result.items[0].id;
+      api.getTasks(listId, function(tasks) {
+        console.log(tasks);
+        for (var j=0; j&lt;tasks.items.length; j++) {
+          model.addTodo(tasks.items[j].title, tasks.items[j].status!='needsAction');
+        }
+      });
+    });
+  });
+});
+    </pre>
+
+</tabs>
+
+<p><!--@Replace the following line in the code above:-->
+将以上代码的下面几行：
+<pre data-filename="controller.js">
+  var clientId = &quot;&lt;GET_YOURS_AT_https://code.google.com/apis/console&gt;&quot;;
+</pre>
+<!--@with your own project&#39;s Client ID that you got from the Google API Console.
+Should look like this:-->
+替换为您自己的项目在 Google API 客户端获得的客户端标识符，应该如下所示：
+<pre data-filename="controller.js">
+  var clientId = &quot;xxxxxxxxxxxxxx.apps.googleusercontent.com&quot;;
+</pre></p></li>
+<li><p><!--@Now we just need a button that starts the import process. Update the <code>index.html</code> to include <code>gapi_tasks.js</code> and add a new button to call <code>importFromGTasks</code>:-->
+现在我们只需要一个按钮，开始导入过程。更新 <code>index.html</code>
+包含 <code>gapi_tasks.js</code>，并添加一个新的按钮，调用
+<code>importFromGTasks</code>：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="index.html">
+&lt;script src=&quot;gapi_tasks.js&quot;&gt;&lt;/script&gt;
+...
+&lt;button ng-click=&quot;importFromGTasks()&quot;&gt;import tasks from GTasks&lt;/button&gt;
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="index.html">
+&lt;button id="importGTasks"&gt;import tasks from GTasks&lt;/button&gt;
+...
+&lt;script src="gapi_tasks.js"&gt;&lt;/script&gt;
+    </pre>
+  </content>
+
+</tabs></li>
+</ol>
+
+<h3 id="results"><!--@Check the results-->检查结果</h3>
+
+<p><!--@If you get stuck and want to see the app in action,
+go to -->
+如果您遇到了困难，希望立刻看到修改后的应用，请进入
+<code>chrome://extensions</code><!--@,
+load the unpacked-->，加载未打包的
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/tree/master/lab7_useridentification/angularjs">AngularJS <!--@app-->应用</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/tree/master/lab7_useridentification/javascript">JavaScript <!--@app-->应用</a><!--@,
+and launch the app from a new tab.-->，并从新标签页中运行应用。
+</p>
+
+<h2 id="you_should_also_read"><!--@You should also read-->您还应该阅读</h2>
+<p><a href="app_identity.html"><!--@Identify User-->认证用户</a><!--@ tutorial-->教程</p>
+
+<h2 id="what_39_s_next_"><!--@What&#39;s next?-->接下来做什么？</h2>
+
+<p><!--@In-->在 <a href="app_codelab8_webresources.html">7 - <!--@Access Web Resources-->访问网络资源</a><!--@,
+you will learn how to load and show images from a remote URL.-->
+中，您将会学习如何加载并显示来自远程 URL 的图片。
+</p>
+
+<p class="note"><b><!--@Note:-->注意：</b><!--@  Up until now, the code in each lab builds upon the previous lab code sample.
+We&#39;ve decided not to include the user identification code changes in the remainder of the lab since the <code>identity API</code> is still experimental and as such it would prevent you from publishing your final code to the Chrome Web Store.-->直到现在，每一个实验中的代码都基于前一个实验的代码示例建立。我们决定不将用户认证代码的更改包含在剩下的实验中，因为认证
+API 还是实验性的，这样会阻止您将您的最终代码发布到 Chrome 网上应用店。</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                      <h3 title="">通过代码实验室学习</h3>
+      <ol class="toc">
+                              <li>
+                                <a href="app_codelab1_setup.html">1、设置开发环境</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab2_basic.html">2、创建基本应用</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab5_data.html">4、保存和获取数据</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab7_useridentification.html" class="active">6、访问用户数据</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab_10_publishing.html">8、发布应用</a>
+                              </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_codelab7_useridentification.html#authenticating_with_google"
+          >与 Google 认证</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab7_useridentification.html#integrating_with_a_third_party_service"
+          >与第三方服务整合</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_codelab7_useridentification.html#register_with_the_provider"
+                     >与提供商注册</a>
+              </li>
+              <li><a data-list-item href="app_codelab7_useridentification.html#add_permissions"
+                     >添加权限</a>
+              </li>
+              <li><a data-list-item href="app_codelab7_useridentification.html#add_google_tasks_to_the_todo_list"
+                     >将 Google 工作表添加到待办事项列表</a>
+              </li>
+              <li><a data-list-item href="app_codelab7_useridentification.html#results"
+                     >检查结果</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab7_useridentification.html#you_should_also_read"
+          >您还应该阅读</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab7_useridentification.html#what_39_s_next_"
+          >接下来做什么？</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

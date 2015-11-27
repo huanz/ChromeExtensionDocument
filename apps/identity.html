@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.identity - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="identity.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.identity</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.identity</code> API to get OAuth2 access tokens.-->
+             使用 <code>chrome.identity</code> API 获取 OAuth2 访问令牌。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 29<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "identity"
+                    </span>
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="app_identity.html">
+            认证用户
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="identity.html#type-AccountInfo">AccountInfo</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="identity.html#method-getAccounts">getAccounts</a> &minus;
+            <code class="prettyprint">
+            chrome.identity.getAccounts(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="identity.html#method-getAuthToken">getAuthToken</a> &minus;
+            <code class="prettyprint">
+            chrome.identity.getAuthToken(<span class="optional">object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="identity.html#method-getProfileUserInfo">getProfileUserInfo</a> &minus;
+            <code class="prettyprint">
+            chrome.identity.getProfileUserInfo(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="identity.html#method-removeCachedAuthToken">removeCachedAuthToken</a> &minus;
+            <code class="prettyprint">
+            chrome.identity.removeCachedAuthToken(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="identity.html#method-launchWebAuthFlow">launchWebAuthFlow</a> &minus;
+            <code class="prettyprint">
+            chrome.identity.launchWebAuthFlow(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="identity.html#method-getRedirectURL">getRedirectURL</a> &minus;
+            <code class="prettyprint">
+            string
+            chrome.identity.getRedirectURL(<span class="optional">string path</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="identity.html#event-onSignInChanged">onSignInChanged</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-AccountInfo">AccountInfo</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="AccountInfo-properties">属性</th></tr>
+                  <tr id="property-AccountInfo-id">
+                    <td>string</td>
+                    <td>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      <!--@A unique identifier for the account. This ID will not change for the lifetime of the account.--> 账户的唯一标识符，在账户的生命周期内不会更改。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getAccounts"
+                  >getAccounts
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.identity.getAccounts(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Dev</strong> channel only.
+                  -->仅用于 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  <p><!--@Retrieves a list of AccountInfo objects describing the accounts present on the profile.--> 获取 AccountInfo 对象列表，描述配置文件中存在的账户。</p><p><!--@<code>getAccounts</code> is only supported on dev channel.--> <code>getAccounts</code> 目前仅在 Dev 分支中支持。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAccounts-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="identity.html#type-AccountInfo">AccountInfo</a> accounts) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-accounts">
+                              <td>array of     <a href="identity.html#type-AccountInfo">AccountInfo</a></td>
+                              <td>
+                                  accounts</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getAuthToken"
+                  >getAuthToken
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.identity.getAuthToken(<span class="optional">object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@Gets an OAuth2 access token using the client ID and scopes specified in the <a href="app_identity#update_manifest"><code>oauth2</code> section of manifest.json</a>.--> 获取 <a href="app_identity.html#update_manifest">manifest.json 中 <code>oauth2</code> 部分</a>指定的 OAuth2 访问令牌。</p><p><!--@The Identity API caches access tokens in memory, so it's ok to call <code>getAuthToken</code> non-interactively any time a token is required. The token cache automatically handles expiration.--> 认证 API 会在内存中缓存访问令牌，所以可以在需要令牌的任何时候以非交互方式调用 <code>getAuthToken</code>。令牌缓存的过期问题会自动处理。</p><p><!--@For a good user experience it is important interactive token requests are initiated by UI in your app explaining what the authorization is for. Failing to do this will cause your users to get authorization requests, or Chrome sign in screens if they are not signed in, with with no context. In particular, do not use <code>getAuthToken</code> interactively when your app is first launched.--> 为了良好的用户体验，交互式令牌请求应该通过应用中的用户界面发起，并解释认证的原因。如果您没有做到这一点，用户会在没有任何上下文的情况下看到认证请求，如果未登录的话还会显示 Chrome 登录屏幕。特别注意，不要在应用第一次启动时以交互方式调用 <code>getAuthToken</code>。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAuthToken-details">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Token options.--> 令牌选项。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-interactive">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                interactive</td>
+                            <td>
+                            
+                            <p>
+                              <!--@Fetching a token may require the user to sign-in to Chrome, or approve the application's requested scopes. If the interactive flag is <code>true</code>, <code>getAuthToken</code> will prompt the user as necessary. When the flag is <code>false</code> or omitted, <code>getAuthToken</code> will return failure any time a prompt would be required.--> 获取令牌可能需要用户登录到 Chrome 浏览器，或同意应用程序请求的范围。如果交互式标志为 <code>true</code>，<code>getAuthToken</code> 会在必要时提示用户。当该标志为 <code>false</code> 或省略时，需要提示时 <code>getAuthToken</code> 会返回失败。
+                            </p></td>
+                          </tr><tr id="property-details-account">
+                            <td>    <a href="identity.html#type-AccountInfo">AccountInfo</a></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                account</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 37<!--@.
+                               --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                              -->目前为 <strong>Beta</strong> 分支。<!--@
+                              
+                               --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                            </p>
+                            
+                            <p>
+                              <p><!--@The account ID whose token should be returned. If not specified, the primary account for the profile will be used.--> 返回对应令牌的账户标识符，如果未指定，则使用当前配置文件中的主账户。</p><p><!--@<code>account</code> is only supported when the "enable-new-profile-management" flag is set.--> 只有设置“enable-new-profile-management”标志后才支持 <code>account</code> 参数。</p>
+                            </p></td>
+                          </tr><tr id="property-details-scopes">
+                            <td>array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                scopes</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 37<!--@.
+                               --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                              -->目前为 <strong>Beta</strong> 分支。<!--@
+                              
+                               --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                            </p>
+                            
+                            <p>
+                              <p><!--@A list of OAuth2 scopes to request.--> 要请求的 OAuth2 范围列表。</p><p><!--@When the <code>scopes</code> field is present, it overrides the list of scopes specified in manifest.json.--> <code>scopes</code> 字段存在时，它会覆盖 manifest.json 中指定的范围列表。</p>
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getAuthToken-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called with an OAuth2 access token as specified by the manifest, or undefined if there was an error.--> 调用时传递清单文件中指定的 OAuth2 访问令牌，如果发生错误则为 undefined。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(string token) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-token">
+                              <td>string</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  token</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getProfileUserInfo"
+                  >getProfileUserInfo
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.identity.getProfileUserInfo(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 37<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                  -->目前为 <strong>Beta</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  <p><!--@Retrieves email address and obfuscated gaia id of the user signed into a profile.--> 获取当前配置文件中登录用户的电子邮件地址和模糊处理后的 GAIA 标识符。</p><p><!--@This API is different from identity.getAccounts in two ways. The information returned is available offline, and it only applies to the primary account for the profile.--> 该 API 与 identity.getAccounts 的区别表现在以下两方面，返回的信息可以在离线状态下获得，并且只适用于当前配置文件的主帐户。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getProfileUserInfo-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object userInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-userInfo">
+                              <td>object</td>
+                              <td>
+                                  userInfo</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-userInfo-email">
+                                    <td>string</td>
+                                    <td>
+                                        email</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@An email address for the user account signed into the current profile. Empty if the user is not signed in.--> 当前配置文件中登录用户账户的电子邮件地址，如果用户未登录则为空。
+                                    </p></td>
+                                  </tr><tr id="property-userInfo-id">
+                                    <td>string</td>
+                                    <td>
+                                        id</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@A unique identifier for the account. This ID will not change for the lifetime of the account. Empty if the user is not signed in.--> 账户的唯一标志符，在账户的整个生命周期内不会更改。如果用户未登录则为空。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-removeCachedAuthToken"
+                  >removeCachedAuthToken
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.identity.removeCachedAuthToken(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@Removes an OAuth2 access token from the Identity API's token cache.--> 从认证 API 的令牌缓存中移除 OAuth2 访问令牌。</p><p><!--@If an access token is discovered to be invalid, it should be passed to removeCachedAuthToken to remove it from the cache. The app may then retrieve a fresh token with <code>getAuthToken</code>.--> 如果发现某个访问令牌无效，应该将它传递给 removeCachedAuthToken 将它从缓存中移除，接着应用可以使用 <code>getAuthToken</code> 获取新的令牌。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-removeCachedAuthToken-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        Token information.
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-token">
+                            <td>string</td>
+                            <td>
+                                token</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The specific token that should be removed from the cache.--> 应该从缓存中移除的某个令牌。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-removeCachedAuthToken-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        Called when the token has been removed from the cache.
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-launchWebAuthFlow"
+                  >launchWebAuthFlow
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.identity.launchWebAuthFlow(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@Starts an auth flow at the specified URL.--> 在指定 URL 开始认证流程。</p><p><!--@This method enables auth flows with non-Google identity providers by launching a web view and navigating it to the first URL in the provider's auth flow. When the provider redirects to a URL matching the pattern <code>https://&lt;app-id&gt;.chromiumapp.org/*</code>, the window will close, and the final redirect URL will be passed to the <var>callback</var> function.--> 该方法通过打开一个网页视图并导航至提供商认证流程的第一个 URL，可以与非 Google 认证提供商进行认证流程。当提供商重定向至某个匹配 <code>https://&lt;app-id&gt;.chromiumapp.org/*</code> 的 URL 时，窗口会关闭，最终的重定向 URL 会传递给 <var>callback</var> 函数。</p><p><!--@For a good user experience it is important interactive auth flows are initiated by UI in your app explaining what the authorization is for. Failing to do this will cause your users to get authorization requests with no context. In particular, do not launch an interactive auth flow when your app is first launched.--> 为了更好的用户体验，交互式认证流程应该通过应用中的用户界面发起，并解释认证原因。如果您没有这样做，您的用户看到认证请求时没有任何上下文。尤其注意，不要在应用第一次启动时开始交互式认证流程。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-launchWebAuthFlow-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        <!--@WebAuth flow options.--> WebAuth 流程选项。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-url">
+                            <td>string</td>
+                            <td>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              <!--@The URL that initiates the auth flow.--> 开始认证流程的 URL。
+                            </p></td>
+                          </tr><tr id="property-details-interactive">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                interactive</td>
+                            <td>
+                            
+                            <p>
+                              <p><!--@Whether to launch auth flow in interactive mode.--> 是否要以交互模式执行认证流程。</p><p><!--@Since some auth flows may immediately redirect to a result URL, <code>launchWebAuthFlow</code> hides its web view until the first navigation either redirects to the final URL, or finishes loading a page meant to be displayed.--> 由于某些认证流程可能会立刻重定向至结果 URL，<code>launchWebAuthFlow</code> 会隐藏该网页视图，直到第一次导航重定向至最终的 URL，或者要显示的网页加载完成。</p><p><!--@If the interactive flag is <code>true</code>, the window will be displayed when a page load completes. If the flag is <code>false</code> or omitted, <code>launchWebAuthFlow</code> will return with an error if the initial navigation does not complete the flow.--> 如果交互式标识为 <code>true</code>，网页加载完成后会显示窗口。如果该标识为 <code>false</code> 或省略，<code>launchWebAuthFlow</code> 在第一次导航没有完成认证流程的情况下会返回错误。</p>
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-launchWebAuthFlow-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called with the URL redirected back to your application.--> 调用时传递重定向回您的应用程序的 URL。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(string responseUrl) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-responseUrl">
+                              <td>string</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  responseUrl</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getRedirectURL"
+                  >getRedirectURL
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              string
+              chrome.identity.getRedirectURL(<span class="optional">string path</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <p><!--@Generates a redirect URL to be used in |launchWebAuthFlow|.--> 生成重定向 URL，以便在 <code>launchWebAuthFlow</code> 中使用。</p><p><!--@The generated URLs match the pattern--> 生成的 URL 匹配如下表达式 <code>https://&lt;app-id&gt;.chromiumapp.org/*</code><!--@.-->。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getRedirectURL-path">
+                      <td>string</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          path</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The path appended to the end of the generated URL.--> 附加到生成的 URL 末尾的路径。
+                      </p></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onSignInChanged">onSignInChanged</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Fired when signin state changes for an account on the user's profile.--> 当用户配置文件中某个账户的登录状态更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.identity.onSignInChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onSignInChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="identity.html#type-AccountInfo">AccountInfo</a> account, boolean signedIn) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onSignInChanged-account">
+                                    <td>    <a href="identity.html#type-AccountInfo">AccountInfo</a></td>
+                                    <td>
+                                        account</td>
+                                    <td>
+                                    <p class="availability">
+                                      <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                                    </p>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onSignInChanged-signedIn">
+                                    <td>boolean</td>
+                                    <td>
+                                        signedIn</td>
+                                    <td>
+                                    <p class="availability">
+                                      <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                                    </p>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

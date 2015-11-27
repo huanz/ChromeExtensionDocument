@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>蓝牙 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_bluetooth.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Bluetooth-->蓝牙</h1>
+
+<p>
+  <!--@This document describes how to use the <a href="bluetooth.html">Bluetooth</a>,
+  <a href="bluetoothSocket">Bluetooth Socket</a> and
+  <a href="bluetoothLowEnergy">Bluetooth Low Energy</a> APIs to
+  communicate with Bluetooth and Bluetooth Low Energy devices.-->
+  该文档描述如何使用<a href="bluetooth.html">蓝牙</a>、<a href="bluetoothSocket.html"
+  >蓝牙套接字</a>以及<a
+  href="bluetoothLowEnergy.html">蓝牙低功耗</a> API
+  与蓝牙设备和低功耗蓝牙设备通信。
+</p>
+
+<p>
+  <!--@For background information about Bluetooth, see the official
+  <a href="http://www.bluetooth.org">Bluetooth specifications</a>.-->
+  有关蓝牙的背景信息，请参见官方<a href="https://www.bluetooth.org/zh-cn">蓝牙规范</a>。
+</p>
+
+<h2 id="manifest"><!--@Manifest requirements-->清单文件的要求</h2>
+
+<p>
+  <!--@For Chrome Apps that use Bluetooth, add the
+  <a href="manifest/bluetooth">bluetooth</a> entry to the manifest
+  and specify, if appropriate, the UUIDs of profiles, protocols or services
+  you wish to implement along with whether you wish to implement these with the
+  socket and/or Low Energy APIs.-->
+  使用蓝牙的 Chrome 应用需要在清单文件中添加
+  <a href="manifest/bluetooth.html">bluetooth</a> 项，如果适用的话还需要指定您希望实现的配置文件、协议或服务 UUID，还有您是否希望通过套接字和/或低能耗 API
+  实现它们。
+</p>
+
+<p>
+  <!--@For example for a socket implementation:-->
+  例如套接字实现：
+</p>
+
+<pre data-filename="manifest.json">
+"bluetooth": {
+  "uuids": [ "1105", "1106" ],
+  "socket": true
+}
+</pre>
+
+<p>
+  <!--@And for a Low Energy implementation:-->
+  低能耗实现：
+</p>
+
+<pre data-filename="manifest.json">
+"bluetooth": {
+  "uuids": [ "180D", "1809", "180F" ],
+  "low_energy": true
+}
+</pre>
+
+<p>
+  <!--@To only access adapter state, discover nearby devices, and obtain basic
+  information about devices, only the entry itself is required:-->
+  如果只要访问适配器状态、发现附近的设备、获取设备的基本信息，只需要指定
+  bluetooth。
+</p>
+
+<pre data-filename="manifest.json">
+"bluetooth": { }
+</pre>
+
+<h2 id="adapter_info"><!--@Adapter information-->适配器信息</h2>
+
+<h3 id="adapter_state"><!--@Obtaining adapter state-->获取适配器状态</h3>
+
+<p>
+  <!--@To obtain the state of the Bluetooth adapter, use the
+  <a href=/apps/bluetooth#method-getAdapterState>bluetooth.getAdapterState</a> method:-->
+  使用 <a href="bluetooth.html#method-getAdapterState">bluetooth.getAdapterState</a> 方法获取蓝牙适配器的状态：
+</p>
+
+<pre>
+chrome.bluetooth.getAdapterState(function(adapter) {
+  console.log("适配器 " + adapter.address + "：" + adapter.name);
+});
+</pre>
+
+<h3 id="adapter_notifications"><!--@Adapter notifications-->适配器通知</h3>
+
+<p>
+  <!--@The <a href=/apps/bluetooth#event-onAdapterStateChanged>bluetooth.onAdapterStateChanged</a> event is sent
+  whenever the adapter state changes. This can be used, for example, to
+  determine when the adapter radio is powered on or off.-->
+  适配器状态更改时会产生 <a href="bluetooth.html#event-onAdapterStateChanged">bluetooth.onAdapterStateChanged</a>
+  事件。例如，该事件可以用来确定适配器天线是否开启。
+</p>
+
+<pre>
+var powered = false;
+chrome.bluetooth.getAdapterState(function(adapter) {
+  powered = adapter.powered;
+});
+
+chrome.bluetooth.onAdapterStateChanged.addListener(
+  function(adapter) {
+    if (adapter.powered != powered) {
+      powered = adapter.powered;
+      if (powered) {
+        console.log("适配器天线打开");
+      } else {
+        console.log("适配器天线关闭");
+      }
+    }
+  });
+</pre>
+
+<h2 id="device_info"><!--@Device information-->设备信息</h2>
+
+<h3 id="listing_devices"><!--@Listing known devices-->列举已知设备</h3>
+
+<p>
+  <!--@To get a list of the devices known to the Bluetooth adapter, use the
+  <a href=/apps/bluetooth#method-getDevices>bluetooth.getDevices</a> method:-->
+  使用 ($ref:bluetooth.getDevices) 方法获取蓝牙适配器已知的设备列表：
+</p>
+
+<pre>
+chrome.bluetooth.getDevices(function(devices) {
+  for (var i = 0; i &lt; devices.length; i++) {
+    console.log(devices[i].address);
+  }
+});
+</pre>
+
+<p>
+  <!--@All devices are returned, including paired devices and devices recently
+  discovered. It will not begin discovery of new devices (see
+  <a href="#discovery">Discovering nearby devices</a>).-->
+  返回的所有设备包括已配对的设备和最近发现的设备，该方法不会开始发现新设备的操作（参见<a
+  href="app_bluetooth.html#discovery">发现附近的设备</a>）。
+</p>
+
+<h3 id="device_notifications"><!--@Receiving device notifications-->接收设备通知</h3>
+
+<p>
+  <!--@Instead of repeatedly calling <a href=/apps/bluetooth#method-getDevices>bluetooth.getDevices</a>, you
+  can use the <a href=/apps/bluetooth#event-onDeviceAdded>bluetooth.onDeviceAdded</a>, <a href=/apps/bluetooth#event-onDeviceChanged>bluetooth.onDeviceChanged</a>
+  and <a href=/apps/bluetooth#event-onDeviceRemoved>bluetooth.onDeviceRemoved</a> events to receive notifications.-->
+  您不应该反复调用 <a href="bluetooth.html#method-getDevices">bluetooth.getDevices</a>，而应该使用
+  <a href="bluetooth.html#event-onDeviceAdded">bluetooth.onDeviceAdded</a>、<a href="bluetooth.html#event-onDeviceChanged">bluetooth.onDeviceChanged</a>
+  和 <a href="bluetooth.html#event-onDeviceRemoved">bluetooth.onDeviceRemoved</a> 事件接收通知。
+</p>
+
+<p>
+  <!--@The <a href=/apps/bluetooth#event-onDeviceAdded>bluetooth.onDeviceAdded</a> event is sent whenever a
+  device is discovered by the adapter or makes a connection to the adapter:-->
+  每当设备被适配器发现或连接到适配器时都会产生
+  <a href="bluetooth.html#event-onDeviceAdded">bluetooth.onDeviceAdded</a> 事件。
+</p>
+
+<pre>
+chrome.bluetooth.onDeviceAdded.addListener(function(device) {
+  console.log(device.address);
+});
+</pre>
+
+<p>
+  <!--@Adding a listener for this event does not begin discovery of devices
+  (see <a href="#discovery">Discovering nearby devices</a>).-->
+  为该事件添加监听器不会开始发现新设备的操作（参见<a
+  href="app_bluetooth.html#discovery">发现附近的设备</a>）。
+</p>
+
+<p>
+  <!--@Changes to devices, including previously discovered devices becoming paired,
+  are notified by the <a href=/apps/bluetooth#event-onDeviceChanged>bluetooth.onDeviceChanged</a> event:-->
+  设备更改，包括之前发现的设备进行配对，都会通过
+  <a href="bluetooth.html#event-onDeviceChanged">bluetooth.onDeviceChanged</a> 事件通知。
+</p>
+
+<pre>
+chrome.bluetooth.onDeviceChanged.addListener(function(device) {
+  console.log(device.address);
+});
+</pre>
+
+<p>
+  <!--@Finally the <a href=/apps/bluetooth#event-onDeviceRemoved>bluetooth.onDeviceRemoved</a> event is sent
+  whenever a paired device is removed from the system, or a discovered device
+  has not been seen recently:-->
+  最后每当配对的设备从系统中移除或发现的设备最近不在范围内时，就会产生
+  <a href="bluetooth.html#event-onDeviceRemoved">bluetooth.onDeviceRemoved</a> 事件。
+</p>
+
+<pre>
+chrome.bluetooth.onDeviceRemoved.addListener(function(device) {
+  console.log(device.address);
+});
+</pre>
+
+<h3 id="discovery"><!--@Discovering nearby devices-->发现附近的设备</h3>
+
+<p>
+  <!--@To begin discovery of nearby devices, use the
+  <a href=/apps/bluetooth#method-startDiscovery>bluetooth.startDiscovery</a> method. Discovery can be resource intensive
+  so you should call <a href=/apps/bluetooth#method-stopDiscovery>bluetooth.stopDiscovery</a> when done.-->
+  使用 <a href="bluetooth.html#method-startDiscovery">bluetooth.startDiscovery</a>
+  方法开始发现附近的设备。发现操作会消耗很多资源，所以完成后您应该调用
+  <a href="bluetooth.html#method-stopDiscovery">bluetooth.stopDiscovery</a>。
+</p>
+
+<p>
+  <!--@You should call <a href=/apps/bluetooth#method-startDiscovery>bluetooth.startDiscovery</a> whenever your
+  app needs to discover nearby devices. Do not make the call conditional on
+  the <code>discovering</code> property of <a href=/apps/bluetooth#type-AdapterState>bluetooth.AdapterState</a>. The
+  call will succeed even if another app is discovering nearby devices, and will
+  ensure the adapter continues to perform discovery after that other app has
+  stopped.-->
+  您的应用需要发现附近的设备时就可以调用
+  <a href="bluetooth.html#method-startDiscovery">bluetooth.startDiscovery</a>，不需要根据 <a href="bluetooth.html#type-AdapterState">bluetooth.AdapterState</a>
+  的 <code>discovering</code>
+  属性决定是否调用该方法。即使另一个应用也在发现附近的设备，调用也会成功，并确保另一个应用停止时适配器继续进行发现操作。
+</p>
+
+<p>
+  <!--@Information about each newly discovered device is received using the
+  <a href=/apps/bluetooth#event-onDeviceAdded>bluetooth.onDeviceAdded</a> event. For devices that have
+  already been discovered recently, or have been previously paired with or
+  connected to, the event will not be sent. Instead you should call
+  <a href=/apps/bluetooth#method-getDevices>bluetooth.getDevices</a> to obtain the current information,
+  and use the <a href=/apps/bluetooth#event-onDeviceChanged>bluetooth.onDeviceChanged</a> event to be notified of changes
+  to that information as a result of discovery.-->
+  每一个新发现设备的有关信息都通过 <a href="bluetooth.html#event-onDeviceAdded">bluetooth.onDeviceAdded</a>
+  事件接收，最近已经发现的设备或之前已经配对或连接的设备则不会产生该事件。您应该调用
+  <a href="bluetooth.html#method-getDevices">bluetooth.getDevices</a> 获取当前设备的信息，并使用
+  <a href="bluetooth.html#event-onDeviceChanged">bluetooth.onDeviceChanged</a> 事件接收发现操作中设备信息的更改。
+</p>
+
+<p>
+  <!--@Example:-->
+  示例：
+</p>
+
+<pre>
+var device_names = {};
+var updateDeviceName = function(device) {
+  device_names[device.address] = device.name;
+};
+var removeDeviceName = function(device) {
+  delete device_names[device.address];
+}
+
+// 添加监听器接收新发现的设备和已知设备的更新。
+chrome.bluetooth.onDeviceAdded.addListener(updateDeviceName);
+chrome.bluetooth.onDeviceChanged.addListener(updateDeviceName);
+chrome.bluetooth.onDeviceRemoved.addListener(removeDeviceName);
+
+// 设置好监听器后，获取上一次发现会话中找到的
+// 设备列表、当前活动的设备以及已配对的设备。
+chrome.bluetooth.getDevices(function(devices) {
+  for (var i = 0; i &lt; devices.length; i++) {
+    updateDeviceName(devices[i]);
+  }
+});
+
+// 现在开始发现过程。
+chrome.bluetooth.startDiscovery(function() {
+  // 30 秒后停止发现。
+  setTimeout(function() {
+    chrome.bluetooth.stopDiscovery(function() {});
+  }, 30000);
+});
+</pre>
+
+<p>
+  <!--@If the user turns off the Bluetooth radio, all discovery sessions will be
+  ended and not resumed automatically when the radio is switched on. If this
+  matters to your app, you should watch the
+  <a href=/apps/bluetooth#event-onAdapterStateChanged>bluetooth.onAdapterStateChanged</a> event. If the
+  <code>discovering</code> property changes to <code>false</code>, then your app
+  will need to call <a href=/apps/bluetooth#method-startDiscovery>bluetooth.startDiscovery</a> again to
+  resume. Be cautious of the resource intensive nature of discovery.-->
+  如果用户关闭了蓝牙天线，所有发现会话都会结束，天线再次开启时也不会自动恢复。如果这种情况会影响您的应用，您应该监听
+  <code>chrome.bluetooth.onAdapterStateChanged</code> 事件。如果
+  <code>discovering</code> 属性更改为 <code>false</code>，您的应用需要再次调用
+  <code>chrome.bluetooth.startDiscovery</code> 恢复。请注意发现操作会消耗很多资源。
+</p>
+
+<h3 id="identifying_devices"><!--@Identifying devices-->识别设备</h3>
+
+<p>
+  <!--@A number of different options are provided for identifying devices returned
+  by <a href=/apps/bluetooth#method-getDevices>bluetooth.getDevices</a> and the related events.-->
+  有多种方式可以识别 <a href="bluetooth.html#method-getDevices">bluetooth.getDevices</a>
+  和相关事件返回的设备。
+</p>
+
+<p>
+  <!--@If the device supports the Bluetooth
+  <a href="https://developer.bluetooth.org/TechnologyOverview/Pages/DI.aspx">Device ID specification</a>,
+  several properties are added to the Device object containing the fields
+  defined by that specification. Example:-->
+  如果设备支持蓝牙<a
+  href="https://developer.bluetooth.org/TechnologyOverview/Pages/DI.aspx">设备 ID
+  规范</a>，Device 对象中会包含该规范定义个几个字段。例如：
+</p>
+
+<pre>
+chrome.bluetooth.getDevices(function(devices) {
+  for (var i = 0; i &lt; devices.length; i++) {
+    if (devices[0].vendorIdSource != undefined) {
+      console.log(devices[0].address + ' = ' +
+                  devices[0].vendorIdSource + ':' +
+                  devices[0].vendorId.toString(16) + ':' +
+                  devices[0].productId.toString(16) + ':' +
+                  devices[0].deviceId.toString(16));
+    }
+  }
+});
+</pre>
+
+<p>
+  <!--@The Device ID specification is usually sufficient to identify a particular
+  model, and even revision, of a device from a vendor. Where it is not present,
+  you must instead rely on information about the class or type of the device,
+  optionally combined with the manufacturer prefix in the <code>address</code>.-->
+  设备 ID 规范通常足以识别同一厂商特定型号甚至特定版本的设备。如果不存在，您必须依赖设备类型的有关信息，可能再加上
+  <code>address</code> 中的制造商前缀。
+</p>
+
+<p>
+  <!--@Most Bluetooth devices provide Class of Device information as a bit-field
+  interpreted according to the
+  <a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/baseband">Baseband Assigned Numbers</a>
+  document. This bit-field is available in the <code>deviceClass</code>
+  property.-->
+  大部分蓝牙设备都会提供设备类型信息，以<a
+  href="https://www.bluetooth.org/zh-cn/specification/assigned-numbers/baseband">基带的分配编号</a>文档中描述的位域格式表示，可以通过 <code>deviceClass</code>
+  属性获取。
+</p>
+
+<pre>
+chrome.bluetooth.getDevices(function(devices) {
+  for (var i = 0; i &lt; devices.length; i++) {
+    if (devices[0].vendorIdSource != undefined) {
+      console.log(devices[0].address + ' = ' +
+                  devices[0].deviceClass.toString(16));
+    }
+  }
+});
+</pre>
+
+<p>
+  <!--@Parsing the field can be complex so for the most common device types Chrome
+  handles this for you and sets the <code>type</code> field. Where this is
+  not available, or insufficient for your needs, you'll need to parse the
+  <code>deviceClass</code> yourself.-->
+  分析该字段比较复杂，所以对大部分常见的设备类型，Chrome
+  浏览器都会为您处理，并设置 <code>type</code>
+  字段。然而如果它不可用或不能满足您的需要，您就需要自己分析<code>deviceClass</code>。
+</p>
+
+<pre>
+chrome.bluetooth.getDevices(function(devices) {
+  for (var i = 0; i &lt; devices.length; i++) {
+    if (devices[0].vendorIdSource != undefined) {
+      console.log(devices[0].address + ' = ' + devices[0].type);
+    }
+  }
+});
+</pre>
+
+<h2 id="using_rfcomm"><!--@Using RFCOMM and L2CAP-->使用 RFCOMM 和 L2CAP</h2>
+
+<p>
+  <!--@Chrome Apps may make connections to any device that supports RFCOMM or
+  L2CAP services. This includes the majority of classic Bluetooth devices on
+  the market.-->
+  Chrome 应用可以连接到支持 RFCOMM 或 L2CAP 服务的设备，包括市场上大部分主要的蓝牙设备。
+</p>
+
+<h3 id="connecting"><!--@Connecting to a socket-->连接到套接字</h3>
+
+<p>
+  <!--@In order to make a connection to a device you need three things. A socket
+  to make the connection with, created using <a href=/apps/bluetoothSocket#method-create>bluetoothSocket.create</a>;
+  the address of the device you wish to connect to, and the UUID of the
+  service itself.-->
+  为了连接到设备，您需要这三者：建立连接的套接字，使用
+  <a href="bluetoothSocket.html#method-create">bluetoothSocket.create</a> 创建；您希望连接的设备地址；服务本身的 UUID。
+</p>
+
+<p>
+  <!--@Before making the connection you should verify that the adapter is aware of
+  the device by using <a href=/apps/bluetooth#method-getDevice>bluetooth.getDevice</a> or the device
+  discovery APIs.-->
+  建立连接之前，您应该使用 <a href="bluetooth.html#method-getDevice">bluetooth.getDevice</a> 或设备发现 API
+  确认适配器已经检测到该设备。
+</p>
+
+<p>
+  <!--@The information necessary to establish the underlying connection, including
+  whether the RFCOMM or L2CAP protocol should be used and which channel or PSM,
+  is obtained using SDP discovery on the device.-->
+  建立下层连接所需的信息通过设备上的 SDP 发现获取，包括使用 RFCOMM 还是
+  L2CAP 协议以及使用的通道或 PSM。
+</p>
+
+<p>
+  <!--@Example:-->例如：
+</p>
+
+<pre>
+var uuid = '1105';
+var onConnectedCallback = function() {
+  if (chrome.runtime.lastError) {
+    console.log("连接失败：" + chrome.runtime.lastError.message);
+  } else {
+    // 此处为配置文件的实现。
+  }
+};
+
+chrome.bluetoothSocket.create(function(createInfo) {
+  chrome.bluetoothSocket.connect(createInfo.socketId,
+    device.address, uuid, onConnectedCallback);
+});
+</pre>
+
+<p>
+  <!--@Keep a handle to the socketId so that you can later send data
+  (<a href=/apps/bluetoothSocket#method-send>bluetoothSocket.send</a>) to this socket.-->
+  保存 socketId 的值，以便之后向该套接字发送数据（<a href="bluetoothSocket.html#method-send">bluetoothSocket.send</a>）。
+</p>
+
+<h3 id="receiving"><!--@Receiving from and sending to a socket-->接收和发送套接字数据</h3>
+
+<p>
+  <!--@Receiving data from and sending to a socket uses <code>ArrayBuffer</code>
+  objects. To learn about ArrayBuffers, check out the overview,
+  <a href="https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays">JavaScript typed arrays</a>,
+  and the tutorial,
+  <a href="http://updates.html5rocks.com/2012/06/How-to-convert-ArrayBuffer-to-and-from-String">How to convert ArrayBuffer to and from String</a>.-->
+  接收和发送套接字数据时使用 <code>ArrayBuffer</code> 对象，请参考
+<a href="https://developer.mozilla.org/en-US/docs/JavaScript_typed_arrays">JavaScript
+类型化数组</a>概述以及<a href="http://updates.html5rocks.com/2012/06/How-to-convert-ArrayBuffer-to-and-from-String">怎样在
+ArrayBuffer 和字符串之间转换</a>的教程了解 ArrayBuffer 的有关信息。
+</p>
+
+<p>
+  <!--@To send data you have in <code>arrayBuffer</code> use
+  <a href=/apps/bluetoothSocket#method-send>bluetoothSocket.send</a>:-->
+  使用 <a href="bluetoothSocket.html#method-send">bluetoothSocket.send</a> 发送 <code>arrayBuffer</code> 中的数据：
+</p>
+
+<pre>
+chrome.bluetoothSocket.send(socketId, arrayBuffer, function(bytes_sent) {
+  if (chrome.runtime.lastError) {
+    console.log("发送失败：" + chrome.runtime.lastError.message);
+  } else {
+    console.log("发送了 " + bytes_sent + " 字节")
+  }
+})
+</pre>
+
+<p>
+  <!--@In contrast to the method to send data, data is received in an event
+  (<a href=/apps/bluetoothSocket#event-onReceive>bluetoothSocket.onReceive</a>. Sockets are created unpaused (see
+  <a href=/apps/bluetoothSocket#method-setPaused>bluetoothSocket.setPaused</a>) so the listener for this event is
+  typically added between <a href=/apps/bluetoothSocket#method-create>bluetoothSocket.create</a> and
+  <a href=/apps/bluetoothSocket#method-connect>bluetoothSocket.connect</a>.-->
+  与发送数据的方法不同，接收数据是通过 <a href="bluetoothSocket.html#event-onReceive">bluetoothSocket.onReceive</a>
+  事件进行的。套接字创建时不处于暂停状态（参见
+  <a href="bluetoothSocket.html#method-setPaused">bluetoothSocket.setPaused</a>），所以该事件的监听器通常在
+  <a href="bluetoothSocket.html#method-create">bluetoothSocket.create</a> 和 <a href="bluetoothSocket.html#method-connect">bluetoothSocket.connect</a> 之间添加。
+</p>
+
+<pre>
+chrome.bluetoothSocket.onRecieve.addListener(function(receiveInfo) {
+  if (receiveInfo.socketId != socketId)
+    return;
+  // receiveInfo.data 为 ArrayBuffer 对象。
+});
+</pre>
+
+<h3 id="errors"><!--@Receiving socket errors and disconnection-->接收套接字错误，处理连接断开的情况</h3>
+
+<p>
+  <!--@To be notified of socket errors, including disconnection, add a listener to
+  the <a href=/apps/bluetoothSocket#event-onReceiveError>bluetoothSocket.onReceiveError</a> event.-->
+  在 <a href="bluetoothSocket.html#event-onReceiveError">bluetoothSocket.onReceiveError</a> 事件上添加监听器，接收套接字错误的通知，包括连接断开。
+</p>
+
+<pre>
+chrome.bluetoothSocket.onReceiveError.addListener(function(errorInfo) {
+  // errorInfo.error 中包含原因。
+  console.log(errorInfo.errorMessage);
+});
+</pre>
+
+<h3 id="disconnection"><!--@Disconnecting from a socket-->断开连接套接字</h3>
+
+<p>
+  <!--@To hang up the connection and disconnect the socket use
+  <a href=/apps/bluetoothSocket#method-disconnect>bluetoothSocket.disconnect</a>.-->
+  使用 <a href="bluetoothSocket.html#method-disconnect">bluetoothSocket.disconnect</a> 断开套接字的连接。
+</p>
+
+<pre>
+chrome.bluetoothSocket.disconnect(socketId);
+</pre>
+
+<h2 id="using_rfcomm"><!--@Publishing services-->发布服务</h2>
+
+<p>
+  <!--@In addition to making outbound connections to devices, Chrome Apps may
+  publish services that may be used by any device that supports RFCOMM or
+  L2CAP.-->
+  除了向设备发起传出连接外，Chrome 应用还可以发布服务，让支持 RFCOMM 或
+  L2CAP 的设备使用。
+</p>
+
+<h3 id="listening"><!--@Listening on a socket-->监听套接字</h3>
+
+<p>
+  <!--@Two types of published service are supported. RFCOMM is the most commonly
+  used and covers the majority of devices and profiles:-->
+  支持两种类型的发布服务，RFCOMM 是最常见的，覆盖了大部分设备和配置文件：
+</p>
+
+<pre>
+var uuid = '1105';
+chrome.bluetoothSocket.create(function(createInfo) {
+  chrome.bluetoothSocket.listenUsingRfcomm(createInfo.socketId,
+    uuid, onListenCallback);
+});
+</pre>
+
+<p>
+  <!--@L2CAP is the other and covers other device types and vendor-specific uses
+  such as firmware uploading.-->
+  L2CAP 是另一种方式，覆盖了其他设备类型以及制造商特定的用途，例如固件上传。
+</p>
+
+<pre>
+var uuid = '0b87367c-f188-47cd-bc20-a5f4f70973c6';
+chrome.bluetoothSocket.create(function(createInfo) {
+  chrome.bluetoothSocket.listenUsingL2cap(createInfo.socketId,
+    uuid, onListenCallback);
+});
+</pre>
+
+<p>
+  <!--@In both cases an optional <a href=/apps/bluetoothSocket#type-ListenOptions>bluetoothSocket.ListenOptions</a> may be
+  passed to allocate a specific channel or PSM. The callback indicates error
+  through <code>chrome.runtime.lastError</code> and success otherwise.
+  Keep a handle to the socketId so that you can later accept connections
+  (<a href=/apps/bluetoothSocket#event-onAccept>bluetoothSocket.onAccept</a>) from this socket.-->
+  这两种方式都能指定可选的
+  <a href="bluetoothSocket.html#type-ListenOptions">bluetoothSocket.ListenOptions</a>，分配某个通道或 PSM。回调函数通过
+  <code>chrome.runtime.lastError</code> 报告错误，否则操作成功。请保存
+  socketId 的值，以便之后接受该套接字的连接（<a href="bluetoothSocket.html#event-onAccept">bluetoothSocket.onAccept</a>）。
+</p>
+
+<h3 id="accepting"><!--@Accepting client connections-->接受客户端连接</h3>
+
+<p>
+  <!--@Client connections are accepted and passed to your application through the
+  <a href=/apps/bluetoothSocket#event-onAccept>bluetoothSocket.onAccept</a> event.-->
+  客户端连接通过 <a href="bluetoothSocket.html#event-onAccept">bluetoothSocket.onAccept</a> 事件接受并传递到您的应用中：
+</p>
+
+<pre>
+chrome.bluetoothSocket.onAccept.addListener(function(acceptInfo) {
+  if (info.socketId != serverSocketId)
+    return;
+
+  // 握手
+  chrome.bluetoothSocket.send(acceptInfo.clientSocketId,
+    data, onSendCallback);
+
+  // 接受的套接字一开始处于暂停状态，
+  // 首先设置 onReceive 监听器。
+  chrome.bluetoothSocket.onReceive.addListener(onReceive);
+  chrome.bluetoothSocket.setPaused(false);
+});
+</pre>
+
+<h3 id="stop-accepting"><!--@Stop accepting client connections-->停止接受客户端连接</h3>
+
+<p>
+  <!--@To stop accepting client connections and unpublish the service use
+  <a href=/apps/bluetoothSocket#method-disconnect>bluetoothSocket.disconnect</a>.-->
+  使用 <a href="bluetoothSocket.html#method-disconnect">bluetoothSocket.disconnect</a> 停止接受客户端连接，取消服务的发布。
+</p>
+
+<pre>
+chrome.bluetoothSocket.disconnect(serverSocketId);
+</pre>
+
+<h2 id="low-energy"><!--@Interacting with Low Energy devices-->与低耗能设备交互</h2>
+
+<p>
+  <!--@Bluetooth Low Energy or (Bluetooth Smart) is a wireless technology aimed at
+  reduced power consumption. The
+  <a href="bluetoothLowEnergy.html">Bluetooth Low Energy</a> API allows
+  applications to implement the central role in a LE connection to a
+  peripheral. The following sections describe how to discover,
+  connect to, and interact with Bluetooth Low Energy peripherals.-->
+  蓝牙低耗能（或蓝牙智能）是一种旨在降低功耗的无线技术，<a
+  href="bluetoothLowEnergy.html">蓝牙低耗能</a> API 允许应用程序实现外设 LE
+  连接的中心角色。以下几节描述如何发现、连接以及和蓝牙低能耗外设交互。
+</p>
+
+<h3 id="le-discovery"><!--@Discovering and connecting to peripherals-->发现并连接到外设</h3>
+
+<p>
+  <!--@As with traditional Bluetooth devices, LE peripherals can be discovered
+  using the methods described in <a href="#discovery">Discovering nearby devices
+  </a>. An LE device makes itself discoverable by sending data packets called
+  "Advertising Data" and the device is said to be in <em>advertising mode</em>.
+  The advertising data may contain UUIDs of services that are available on the
+  device. If present, these UUIDs will be accessible using the
+  <code>uuids</code> property of the corresponding <a href=/apps/bluetooth#type-Device>bluetooth.Device</a>
+  object.-->
+  与传统蓝牙设备类似，LE 外设也可以使用<a href="app_bluetooth.html#discovery"
+  >发现附近的设备</a>中描述的方法发现。LE 设备发送一种称为“通知数据“（Advertising
+  Data）的数据包使自身可以被发现，此时设备处于<em>通知模式</em>。通知数据可能包含设备上可用的服务
+  UUID，如果存在的话，这些 UUID 可以通过对应 <a href="bluetooth.html#type-Device">bluetooth.Device</a> 对象的
+  <code>uuids</code> 属性访问。
+</p>
+
+<p>
+  <!--@Once discovered, an LE device can be connected to by calling
+  <a href=/apps/bluetoothLowEnergy#method-connect>bluetoothLowEnergy.connect</a> so that the application can interact with
+  its services:-->
+  发现设备后，可以调用 <a href="bluetoothLowEnergy.html#method-connect">bluetoothLowEnergy.connect</a> 连接到 LE
+  设备，应用程序就能与它的服务交互了：
+</p>
+
+<pre>
+chrome.bluetooth.onDeviceAdded.addListener(function(device) {
+  var uuid = '0000180d-0000-1000-8000-00805f9b34fb';
+  if (!device.uuids || device.uuids.indexOf(uuid) < 0)
+    return;
+
+  // 设备支持指定 UUID 的服务。
+  chrome.bluetoothLowEnergy.connect(device.address, function () {
+    if (chrome.runtime.lastError) {
+      console.log('无法连接：' + chrome.runtime.lastError.message);
+      return;
+    }
+
+    // 已连接！与设备交互……
+    ...
+  });
+});
+</pre>
+
+<p>
+  <!--@Once connected, the <code>connected</code> property of the corresponding
+  <a href=/apps/bluetooth#type-Device>bluetooth.Device</a> object will have the value <code>true</code>. Calling
+  <a href=/apps/bluetoothLowEnergy#method-connect>bluetoothLowEnergy.connect</a> establishes a claim by the application on
+  the physical connection to the device. A physical connection to the device
+  can exist without ever calling <a href=/apps/bluetoothLowEnergy#method-connect>bluetoothLowEnergy.connect</a> (for example
+  due to another application). In this case, while your application can still
+  interact with the services of the device, it should always call
+  <a href=/apps/bluetoothLowEnergy#method-connect>bluetoothLowEnergy.connect</a> to prevent another application from
+  disconnecting the physical link.-->
+  连接完成后，对应 <a href="bluetooth.html#type-Device">bluetooth.Device</a> 对象的 <code>connected</code>
+  属性就变为 <code>true</code>。调用 <a href="bluetoothLowEnergy.html#method-connect">bluetoothLowEnergy.connect</a>
+  使应用程序占有设备的物理连接。还未调用 <a href="bluetoothLowEnergy.html#method-connect">bluetoothLowEnergy.connect</a>
+  时设备的物理连接也可以存在（例如由于其他应用程序），在这种情况下，尽管您的应用程序仍然可以与设备的服务交互，它还是应该调用
+  <a href="bluetoothLowEnergy.html#method-connect">bluetoothLowEnergy.connect</a> 以免其他应用程序断开物理连接。
+</p>
+
+<p>
+  <!--@Once your application no longer needs to be connected, it can remove its
+  claim on the connection by calling <a href=/apps/bluetoothLowEnergy#method-disconnect>bluetoothLowEnergy.disconnect</a>:-->
+  一旦您的应用程序不再需要连接，只要调用 <a href="bluetoothLowEnergy.html#method-disconnect">bluetoothLowEnergy.disconnect</a>
+  就能取消对连接的占有：
+</p>
+
+<pre>
+chrome.bluetoothLowEnergy.disconnect(deviceAddress);
+</pre>
+
+<p>
+  <!--@Note that this won't necessarily destroy the physical link to the device, as
+  there may be other applications who have active connections to the device.
+  Sometimes the device might become disconnected due to reasons that are beyond
+  the control of the application (e.g. if the device disappears or gets
+  explicitly disconnected by the user through utilities of the operating
+  system). Your application should observe the <a href=/apps/bluetooth#event-onDeviceChanged>bluetooth.onDeviceChanged</a>
+  event to get notified of changes to the connection and reconnect if necessary.-->
+  注意，该操作不一定会撤销设备的物理连接，可能还有其他应用程序拥有设备的活动连接。有时候设备还可能因为应用程序无法控制的原因（例如设备消失或者用户通过操作系统的实用程序手动断开连接）而断开连接。您的应用程序应该监听
+  <a href="bluetooth.html#event-onDeviceChanged">bluetooth.onDeviceChanged</a> 事件，获得连接更改的通知，并在必要时重新连接。
+</p>
+
+<p>
+  <!--@Once connected, the device that is running Chrome will be in the
+  so called <em>central role</em>, while the remote device is said to be in the
+  <em>peripheral role</em>. At this point, your application can interact with
+  the services on the device using the methods described in the following
+  section. <em>Note:</em> The APIs currently do not support acting as a LE
+  peripheral; apps can only implement the central role.-->
+  连接完成后，运行 Chrome 浏览器的设备就处于<em>中心角色</em>，而远程设备则处于<em>外设角色</em>。在这一刻，您的应用程序就能通过下面描述的方法与设备上的服务交互。<em>注：</em>目前这些 API 还不支持以 LE 外设的角色表现，应用只能实现中心角色。
+</p>
+
+<h3 id="gatt"><!--@Services, Characteristics, and Descriptors-->服务、特征和描述符</h3>
+
+<p>
+<!--@Bluetooth Low Energy is based on a simple request-response protocol called the
+<em>Attribute Protocol</em> (ATT). Using ATT, a central device interacts with
+the so called <em>attributes</em> on a peripheral device by conforming to a
+special Bluetooth profile called the <em>Generic Attribute Profile</em> (GATT).
+GATT defines the following high level concepts:-->
+蓝牙低耗能设备基于一种简单的请求—响应协议，称为<em>属性协议</em>（Attribute
+Protocol，ATT）。通过 ATT，中心设备遵循一种特殊的蓝牙配置文件，称为<em>通用属性配置文件</em>（Gereric Attribute Profile，GATT），与外围设备上的<em>属性</em>交互。GATT 定义了以下高层概念：
+</p>
+
+<ul style="list-style-type: none;">
+  <li>
+    <span style="font-weight: bold;"><!--@Service:-->服务：</span><!--@ A GATT service
+    represents a collection of data and associated behaviors to accomplish a
+    particular function of a device. For example, a heart rate monitor will
+    typically have at least one "Heart Rate Service". Information about a
+    GATT service is contained in a <a href=/apps/bluetoothLowEnergy#type-Service>bluetoothLowEnergy.Service</a> object.-->GATT
+    服务代表了一系列数据及其相关联的行为，以便实现设备的某种功能。例如，心率监视器通常包含至少一种“心率服务”。GATT 服务的有关信息包含在 <a href="bluetoothLowEnergy.html#type-Service">bluetoothLowEnergy.Service</a> 对象中。
+  </li>
+  <li>
+    <span style="font-weight: bold;"><!--@Characteristic:-->特征：</span><!--@ A GATT
+    characteristic is a basic data element used to construct a GATT service,
+    containing a value along with properties that define how that value can
+    be accessed. For example, the "Heart Rate Service" has the "Heart Rate
+    Measurement" characteristic, which is used to obtain the value of the
+    user's heart rate. Information about a GATT characteristic is contained
+    in a <a href=/apps/bluetoothLowEnergy#type-Characteristic>bluetoothLowEnergy.Characteristic</a> object.-->GATT
+    特征是一种构成 GATT 服务的基本数据元素，包含值以及定义如何访问值的属性。例如，“心率服务”有“心率测试”特征，用于获取用户的心率值。GATT 特征的有关信息包含在 <a href="bluetoothLowEnergy.html#type-Characteristic">bluetoothLowEnergy.Characteristic</a> 对象中。
+  </li>
+  <li>
+    <span style="font-weight: bold;"><!--@Descriptor:-->描述符：</span><!--@ A GATT characteristic
+    descriptor contains further information about a characteristic. Information
+    about a GATT characteristic descriptor is contained in a
+    <a href=/apps/bluetoothLowEnergy#type-Descriptor>bluetoothLowEnergy.Descriptor</a> object.-->GATT
+    特征描述符包含与特征有关的更多信息，GATT 特征描述符的有关信息包含在
+    <a href="bluetoothLowEnergy.html#type-Descriptor">bluetoothLowEnergy.Descriptor</a> 对象中。
+  </li>
+</ul>
+
+<p>
+  <!--@The <a href="bluetoothLowEnergy.html">Bluetooth Low Energy</a> API allows
+  applications to find information about a device's services, characteristics,
+  and descriptors by calling <a href=/apps/bluetoothLowEnergy#method-getServices>bluetoothLowEnergy.getServices</a>,
+  <a href=/apps/bluetoothLowEnergy#method-getCharacteristics>bluetoothLowEnergy.getCharacteristics</a>, and
+  <a href=/apps/bluetoothLowEnergy#method-getDescriptors>bluetoothLowEnergy.getDescriptors</a>. Apps can filter through services,
+  characteristics, and descriptors by comparing their <code>uuid</code> field
+  to the desired GATT UUID:-->
+  <a href="bluetoothLowEnergy.html">蓝牙低耗能</a> API 允许应用程序获取设备服务、特征和描述符的有关信息，只要分别调用
+  <a href="bluetoothLowEnergy.html#method-getServices">bluetoothLowEnergy.getServices</a>、<a href="bluetoothLowEnergy.html#method-getCharacteristics">bluetoothLowEnergy.getCharacteristics</a>
+  和 <a href="bluetoothLowEnergy.html#method-getDescriptors">bluetoothLowEnergy.getDescriptors</a> 即可。应用可以根据
+  <code>uuid</code> 字段是否匹配期望的 GATT UUID 过滤服务、特征和描述符。
+</p>
+
+<pre>
+chrome.bluetoothLowEnergy.getServices(deviceAddress, function(services) {
+  ...
+  for (var i = 0; i < services.length; i++) {
+    if (services[i].uuid == HEART_RATE_SERVICE_UUID) {
+      heartRateService = services[i];
+      break;
+    }
+  }
+  ...
+});
+</pre>
+
+<p>
+  <!--@Each service, characteristic, and descriptor accessible through the API is
+  assigned a unique instance identifier, which can be obtained using the
+  <code>instanceId</code> field. This instance ID can be used to identify a
+  GATT object and to perform specific operations on it:-->
+  通过该 API 访问的每一项服务、特征和描述符都有唯一的实例标识符，可以通过
+  <code>instanceId</code> 字段获取。实例标识符可用于标志 GATT 对象，并对它进行具体的操作：
+</p>
+
+<pre>
+chrome.bluetoothLowEnergy.getCharacteristics(heartRateService.instanceId,
+                                             function(chracteristics) {
+  ...
+  for (var i = 0; i < characteristics.length; i++) {
+    if (characteristics[i].uuid == HEART_RATE_MEASUREMENT_UUID) {
+      measurementChar = characteristics[i];
+      break;
+    }
+  }
+  ...
+  chrome.bluetoothLowEnergy.getDescriptors(measurementChar.instanceId,
+                                           function(descriptors) {
+    ...
+  });
+});
+</pre>
+
+<h3 id="service-events"><!--@Service events-->服务事件</h3>
+
+<p>
+  <!--@Once a device is connected, Chrome will discover its services. As each service
+  is discovered and removed, the application will receive the
+  <a href=/apps/bluetoothLowEnergy#event-onServiceAdded>bluetoothLowEnergy.onServiceAdded</a> and
+  <a href=/apps/bluetoothLowEnergy#event-onServiceRemoved>bluetoothLowEnergy.onServiceRemoved</a> events:-->
+  设备连接后，Chrome 浏览器会发现它的服务。服务发现和移除时应用程序分别会接收到
+<a href="bluetoothLowEnergy.html#event-onServiceAdded">bluetoothLowEnergy.onServiceAdded</a> 和
+<a href="bluetoothLowEnergy.html#event-onServiceRemoved">bluetoothLowEnergy.onServiceRemoved</a> 事件：
+</p>
+
+<pre>
+  var initializeService = function(service) {
+    if (!service) {
+      console.log('没有选定的服务！');
+      // 重置用户界面等。
+      ...
+      return;
+    }
+
+    myService = service;
+
+    // 获取所有特征和描述符，并启动应用。
+    ...
+  };
+
+  chrome.bluetoothLowEnergy.onServiceAdded.addListener(function(service) {
+    if (service.uuid == MY_SERVICE_UUID)
+      initializeService(service);
+  });
+
+  chrome.bluetoothLowEnergy.onServiceRemoved.addListener(function(service) {
+    if (service.instanceId == myService.instanceId)
+      initializeService(null);
+  });
+</pre>
+
+<p>
+  <!--@Chrome discovers all characteristics and descriptors of a service
+  asynchronously. This means that, at the time a
+  <a href=/apps/bluetoothLowEnergy#event-onServiceAdded>bluetoothLowEnergy.onServiceAdded</a> event is sent to the app, not all
+  characteristics of a service may have been discovered yet. Each time a
+  characteristic or a descriptor is added through discovery, the app will
+  receive the <a href=/apps/bluetoothLowEnergy#event-onServiceChanged>bluetoothLowEnergy.onServiceChanged</a> event. This event will
+  also be sent if a notification is received from the remote device telling
+  Chrome that the service definition itself has changed:-->
+  Chrome 浏览器会在后台发现服务的所有特征和描述符，也就是说
+  <a href="bluetoothLowEnergy.html#event-onServiceAdded">bluetoothLowEnergy.onServiceAdded</a>
+  事件发送给应用时，服务的一些特征可能还没有发现。每一次通过发现操作添加特征或描述符时，应用都会收到
+  <a href="bluetoothLowEnergy.html#event-onServiceChanged">bluetoothLowEnergy.onServiceChanged</a> 事件。如果从远程设备收到通知，告知
+  Chrome 浏览器服务定义本身已更改的话也会发送该事件。
+</p>
+
+<pre>
+  chrome.bluetoothLowEnergy.onServiceChanged.addListener(function(service) {
+    if (service.instanceId != myService.instanceId)
+      return;
+
+    // 获取特征。
+    chrome.bluetoothLowEnergy.getCharacteristics(service.instanceId,
+                                                 function(result) {
+      ...
+      if (result.length == 0) {
+        console.log('特征还未发现。');
+        return;
+      }
+
+      for (var i = 0; i < result.length; i++) {
+        if (result[i].uuid == MY_CHARACTERISTIC_UUID) {
+          myChar = result[i];
+          break;
+        }
+
+        if (!myChar) {
+          console.log('相关的特征还未发现。');
+          return;
+        }
+        ...
+      }
+    });
+  });
+</pre>
+
+<h3 id="gatt-read-write"><!--@Reading and writing a characteristic's value-->读取和写入特征值</h3>
+
+<p>
+  <!--@A GATT characteristic encodes one aspect of its service. A central app reads,
+  acts on, and modifies the state of a peripheral's service by operating on a
+  characteristic's value. The characteristic value is a sequence of bytes and
+  its meaning is defined by the high-level specification that defines a certain
+  characteristic. For example, the value of the <em>Heart Rate Measurement</em>
+  characteristic encodes the user's heart rate and the total amount of calories
+  they burned, while the <em>Body Sensor Location</em> characteristic encodes
+  where in the body the heart rate sensor should be worn.-->
+  GATT 特征编码服务的某一方面。中心应用通过对特征值的操作读取、修改外设服务的状态，并根据它作出不同的反应。特征值为字节序列，其含义由定义某一特征的高层规范指定。例如，<em>心率测试</em>特征的值表示用户的心率以及消耗的热量，而<em>体传感器位置</em>特征则表示心率传感器应该穿戴在身体的哪个部位。
+</p>
+
+<p>
+  <!--@Chrome provides the <a href=/apps/bluetoothLowEnergy#method-readCharacteristicValue>bluetoothLowEnergy.readCharacteristicValue</a> method
+  to read the value of a characteristic:-->
+  Chrome 浏览器提供了 <a href="bluetoothLowEnergy.html#method-readCharacteristicValue">bluetoothLowEnergy.readCharacteristicValue</a>
+  方法读取特征值：
+</p>
+
+<pre>
+chrome.bluetoothLowEnergy.readCharacteristicValue(chrc.instanceId,
+                                                  function(result) {
+  if (chrome.runtime.lastError) {
+    console.log('无法读取值：' + chrome.runtime.lastError.message);
+    return;
+  }
+
+  var bytes = new Uint8Array(result.value);
+
+  // 对字节进行处理。
+  ...
+});
+</pre>
+
+<p>
+  <!--@Some characteristics are writable, especially those that behave as "Control
+  Points", where writing the value has side effects. For example, the <em>Heart
+  Rate Control Point</em> characteristic is used to tell a heart rate sensor to
+  reset its count of total calories burned and only supports writes. To achieve
+  this, Chrome provides the <a href=/apps/bluetoothLowEnergy#method-writeCharacteristicValue>bluetoothLowEnergy.writeCharacteristicValue</a>
+  method:-->
+  一些特征是可写的，尤其是表现为“控制点”的那些，值的写入有副作用。例如，<em>心率控制点</em>特征用于告知心率传感器重置消耗的总热量，只支持写入。为了实现这一点，Chrome 浏览器提供了 <a href="bluetoothLowEnergy.html#method-writeCharacteristicValue">bluetoothLowEnergy.writeCharacteristicValue</a> 方法：
+</p>
+
+<pre>
+var myBytes = new Uint8Array([ ... ]);
+chrome.bluetoothLowEnergy.writeCharacteristicValue(chrc.instanceId,
+                                                   myBytes.buffer,
+                                                   function() {
+  if (chrome.runtime.lastError) {
+    console.log('无法写入值。' +
+                chrome.runtime.lastError.message);
+    return;
+  }
+
+  // 值已经写入。
+});
+</pre>
+
+<p>
+  <!--@Characteristic descriptors behave the same way and can be readable and/or
+  writable. Chrome provides the <a href=/apps/bluetoothLowEnergy#method-readDescriptorValue>bluetoothLowEnergy.readDescriptorValue</a>
+  and <a href=/apps/bluetoothLowEnergy#method-writeDescriptorValue>bluetoothLowEnergy.writeDescriptorValue</a> methods to read and write
+  the value of a descriptor.-->
+  特征值的描述符与之类似，可以是可读和/或可写的。Chrome 浏览器提供了
+  <a href="bluetoothLowEnergy.html#method-readDescriptorValue">bluetoothLowEnergy.readDescriptorValue</a> 和
+  <a href="bluetoothLowEnergy.html#method-writeDescriptorValue">bluetoothLowEnergy.writeDescriptorValue</a> 方法读取和写入描述符的值。
+</p>
+
+<p>
+  <!--@To check if a characteristic supports reads or writes, an application can
+  check the <code>properties</code> field of a
+  <a href=/apps/bluetoothLowEnergy#type-Characteristic>bluetoothLowEnergy.Characteristic</a> object. While this field does not
+  contain information about the security requirements to access a value, it does
+  describe which value operation the characteristic supports in general.-->
+  要确认特征是否支持读或写，应用程序可以检查 <a href="bluetoothLowEnergy.html#type-Characteristic">bluetoothLowEnergy.Characteristic</a>
+  对象的 <code>properties</code> 字段。尽管该字段不包含访问值的安全要求相关信息，但它确实总体描述了特征支持的值操作。
+</p>
+
+<h3 id="gatt-notifications"><!--@Handling value notifications-->处理值通知</h3>
+
+<p>
+  <!--@Some characteristics make their value known using notifications or
+  indications. For example the <em>Heart Rate Measurement</em> characteristic is
+  neither readable nor writable but sends updates on its current value at
+  regular intervals. Applications can listen to these notifications using the
+  <a href=/apps/bluetoothLowEnergy#event-onCharacteristicValueChanged>bluetoothLowEnergy.onCharacteristicValueChanged</a> event.-->
+  一些特征可能会使用通知或指示告知它的值。例如，<em>心率测试</em>特征既不可读，也不可写，但是会定期发送当前值的更新。应用程序可以使用 <a href="bluetoothLowEnergy.html#event-onCharacteristicValueChanged">bluetoothLowEnergy.onCharacteristicValueChanged</a> 事件监听这些通知。
+</p>
+
+<pre>
+  chrome.bluetoothLowEnergy.onCharacteristicValueChanged.addListener(
+      function(chrc) {
+    if (chrc.instanceId != myCharId)
+      return;
+
+    var bytes = new Uint8Array(chrc.value);
+
+    // 对字节进行处理。
+    ...
+  });
+</pre>
+
+<p>
+  <!--@Even if a characteristic supports notifications/indications, they aren't
+  enabled by default. An application should call the
+  <a href=/apps/bluetoothLowEnergy#method-startCharacteristicNotifications>bluetoothLowEnergy.startCharacteristicNotifications</a> and
+  <a href=/apps/bluetoothLowEnergy#method-stopCharacteristicNotifications>bluetoothLowEnergy.stopCharacteristicNotifications</a> methods to start or
+  stop receiving the <a href=/apps/bluetoothLowEnergy#event-onCharacteristicValueChanged>bluetoothLowEnergy.onCharacteristicValueChanged</a>
+  event.-->
+  即使特征支持通知/指示，默认情况下并没有启用。应用程序应该调用
+<a href="bluetoothLowEnergy.html#method-startCharacteristicNotifications">bluetoothLowEnergy.startCharacteristicNotifications</a> 和
+<a href="bluetoothLowEnergy.html#method-stopCharacteristicNotifications">bluetoothLowEnergy.stopCharacteristicNotifications</a>
+方法开始或停止接收 <a href="bluetoothLowEnergy.html#event-onCharacteristicValueChanged">bluetoothLowEnergy.onCharacteristicValueChanged</a>
+事件。
+</p>
+
+<pre>
+  // 开始接收特征值通知。
+  var notifying = false;
+  chrome.bluetoothLowEnergy.startCharacteristicNotifications(chrc.instanceId,
+                                                             function() {
+    if (chrome.runtime.lastError) {
+      console.log('无法启用通知：' +
+                  chrome.runtime.lastError.message);
+      return;
+    }
+
+    notifying = true;
+  });
+
+  ...
+
+  // 不再希望收到该特征的通知。
+  if (notifying) {
+    chrome.bluetoothLowEnergy.stopCharacteristicNotifications(
+        chrc.instanceId);
+  }
+</pre>
+
+<p>
+  <!--@Once notifications are started, the application will receive the
+  <a href=/apps/bluetoothLowEnergy#event-onCharacteristicValueChanged>bluetoothLowEnergy.onCharacteristicValueChanged</a> every time a
+  notification or indication is received from the characteristic. If the
+  characteristic supports reads, then this event will also be sent after a
+  successful call to <a href=/apps/bluetoothLowEnergy#method-readCharacteristicValue>bluetoothLowEnergy.readCharacteristicValue</a>. This
+  allows apps to unify the control flow of a value update triggered through a
+  read request and notifications:-->
+  一旦启用通知，每次从特征接收到通知或指示时，应用程序都会接收到
+<a href="bluetoothLowEnergy.html#event-onCharacteristicValueChanged">bluetoothLowEnergy.onCharacteristicValueChanged</a>。如果特征支持读取，成功调用
+<a href="bluetoothLowEnergy.html#method-readCharacteristicValue">bluetoothLowEnergy.readCharacteristicValue</a> 后也会发送该事件。这样就能使应用统一值更新的控制流程，无论是通过读取请求还是通知触发：
+</p>
+
+<pre>
+  chrome.bluetoothLowEnergy.onCharacteristicValueChanged.addListener(
+      function(chrc) {
+    // 处理值。
+    ...
+  });
+
+  chrome.bluetoothLowEnergy.startCharacteristicNotifications(chrc.instanceId,
+                                                             function() {
+    // 通知开始，读取初始值。
+    chrome.bluetoothLowEnergy.readCharacteristicValue(chrc.instanceId,
+                                                      function(result) {
+      ...
+      // 不需要做什么，因为 onCharacteristicValueChanged 会处理。
+    });
+  });
+</pre>
+
+<p>
+  <!--@If a characteristic supports notifications, its <code>properties</code> field
+  will contain either the <code>"notify"</code> or <code>"indicate"</code>
+  property.-->
+  如果特征支持通知，它的 <code>properties</code> 字段会包含 <code>"notify"</code>
+  或 <code>"indicate"</code> 属性。
+</p>
+
+<p>
+  <span style="font-weight: bold;"><!--@NOTE:-->注意：</span><!--@ If a characteristic supports
+  notifications/indications, it will have the "Client Characteristic
+  Configuration" descriptor to enable/disable notifications. Chrome does not
+  permit apps to write to this descriptor. Apps should instead use the
+  <a href=/apps/bluetoothLowEnergy#method-startCharacteristicNotifications>bluetoothLowEnergy.startCharacteristicNotifications</a> and
+  <a href=/apps/bluetoothLowEnergy#method-stopCharacteristicNotifications>bluetoothLowEnergy.stopCharacteristicNotifications</a> methods to control
+  notification behavior.-->如果特征支持通知/指示，它会包含“客户端特征配置”描述符，用于启用/禁用通知。Chrome 浏览器不允许应用写入该描述符，应用应该使用
+<a href="bluetoothLowEnergy.html#method-startCharacteristicNotifications">bluetoothLowEnergy.startCharacteristicNotifications</a> 和
+<a href="bluetoothLowEnergy.html#method-stopCharacteristicNotifications">bluetoothLowEnergy.stopCharacteristicNotifications</a> 方法控制通知行为。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">使用低级系统服务</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="app_usb.html">USB</a>
+                        </li>
+                        <li>
+                          <a href="app_serial.html">串行端口</a>
+                        </li>
+                        <li>
+                          <a href="app_network.html">网络通信</a>
+                        </li>
+                        <li>
+                          <a href="app_bluetooth.html" class="active">蓝牙</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_bluetooth.html#manifest"
+          >清单文件的要求</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_bluetooth.html#adapter_info"
+          >适配器信息</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_bluetooth.html#adapter_state"
+                     >获取适配器状态</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#adapter_notifications"
+                     >适配器通知</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_bluetooth.html#device_info"
+          >设备信息</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_bluetooth.html#listing_devices"
+                     >列举已知设备</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#device_notifications"
+                     >接收设备通知</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#discovery"
+                     >发现附近的设备</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#identifying_devices"
+                     >识别设备</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_bluetooth.html#using_rfcomm"
+          >使用 RFCOMM 和 L2CAP</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_bluetooth.html#connecting"
+                     >连接到套接字</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#receiving"
+                     >接收和发送套接字数据</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#errors"
+                     >接收套接字错误，处理连接断开的情况</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#disconnection"
+                     >断开连接套接字</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_bluetooth.html#using_rfcomm"
+          >发布服务</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_bluetooth.html#listening"
+                     >监听套接字</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#accepting"
+                     >接受客户端连接</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#stop-accepting"
+                     >停止接受客户端连接</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_bluetooth.html#low-energy"
+          >与低耗能设备交互</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_bluetooth.html#le-discovery"
+                     >发现并连接到外设</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#gatt"
+                     >服务、特征和描述符</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#service-events"
+                     >服务事件</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#gatt-read-write"
+                     >读取和写入特征值</a>
+              </li>
+              <li><a data-list-item href="app_bluetooth.html#gatt-notifications"
+                     >处理值通知</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

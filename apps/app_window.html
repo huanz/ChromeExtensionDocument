@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.app.window - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_window.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.app.window</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.app.window</code> API to create windows. Windows
+             have an optional frame with title bar and size controls. They are not
+             associated with any Chrome browser windows. See the <a
+             href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/window-state">
+             Window State Sample</a> for a demonstration of these options.-->
+             使用 <code>chrome.app.window</code> API
+             创建窗口。窗口可以有框架，包含标题栏和大小控件，它们不和任何
+             Chrome 浏览器窗口关联。有关这些选项的演示，请参见 <a
+             href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/window-state"
+             >Window State 示例</a>。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="app_window.html#type-ContentBounds">ContentBounds</a></td></tr>
+          <tr><td><a href="app_window.html#type-BoundsSpecification">BoundsSpecification</a></td></tr>
+          <tr><td><a href="app_window.html#type-Bounds">Bounds</a></td></tr>
+          <tr><td><a href="app_window.html#type-FrameOptions">FrameOptions</a></td></tr>
+          <tr><td><a href="app_window.html#type-CreateWindowOptions">CreateWindowOptions</a></td></tr>
+          <tr><td><a href="app_window.html#type-AppWindow">AppWindow</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="app_window.html#method-create">create</a> &minus;
+            <code class="prettyprint">
+            chrome.app.window.create(<span>string url</span>, <span class="optional">    CreateWindowOptions options</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="app_window.html#method-current">current</a> &minus;
+            <code class="prettyprint">
+                AppWindow
+            chrome.app.window.current()
+            </code>
+          </td></tr>
+        <tr><td><a href="app_window.html#method-getAll">getAll</a> &minus;
+            <code class="prettyprint">
+            array of     <a href="app_window.html#type-AppWindow">AppWindow</a>
+            chrome.app.window.getAll()
+            </code>
+          </td></tr>
+        <tr><td><a href="app_window.html#method-get">get</a> &minus;
+            <code class="prettyprint">
+                AppWindow
+            chrome.app.window.get(<span>string id</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="app_window.html#event-onBoundsChanged">onBoundsChanged</a></td></tr>
+          <tr><td><a href="app_window.html#event-onClosed">onClosed</a></td></tr>
+          <tr><td><a href="app_window.html#event-onFullscreened">onFullscreened</a></td></tr>
+          <tr><td><a href="app_window.html#event-onMaximized">onMaximized</a></td></tr>
+          <tr><td><a href="app_window.html#event-onMinimized">onMinimized</a></td></tr>
+          <tr><td><a href="app_window.html#event-onRestored">onRestored</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-ContentBounds">ContentBounds</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="ContentBounds-properties">属性</th></tr>
+                  <tr id="property-ContentBounds-left">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        left</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-ContentBounds-top">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        top</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-ContentBounds-width">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        width</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-ContentBounds-height">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        height</td>
+                    <td>
+                    
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-BoundsSpecification">BoundsSpecification</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="BoundsSpecification-properties">属性</th></tr>
+                  <tr id="property-BoundsSpecification-left">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        left</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The X coordinate of the content or window.--> 内容或窗口的 X 坐标。
+                    </p></td>
+                  </tr><tr id="property-BoundsSpecification-top">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        top</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The Y coordinate of the content or window.--> 内容或窗口的 Y 坐标。
+                    </p></td>
+                  </tr><tr id="property-BoundsSpecification-width">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        width</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The width of the content or window.--> 内容或窗口的宽度。
+                    </p></td>
+                  </tr><tr id="property-BoundsSpecification-height">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        height</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The height of the content or window.--> 内容或窗口的高度。
+                    </p></td>
+                  </tr><tr id="property-BoundsSpecification-minWidth">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        minWidth</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The minimum width of the content or window.--> 内容或窗口的最小宽度。
+                    </p></td>
+                  </tr><tr id="property-BoundsSpecification-minHeight">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        minHeight</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The minimum height of the content or window.--> 内容或窗口的最小高度。
+                    </p></td>
+                  </tr><tr id="property-BoundsSpecification-maxWidth">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxWidth</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The maximum width of the content or window.--> 内容或窗口的最大宽度。
+                    </p></td>
+                  </tr><tr id="property-BoundsSpecification-maxHeight">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxHeight</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The maximum height of the content or window.--> 内容或窗口的最大高度。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-Bounds">Bounds</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="Bounds-properties">属性</th></tr>
+                  <tr id="property-Bounds-left">
+                    <td>integer</td>
+                    <td>
+                        left</td>
+                    <td>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current X coordinate of the content or window.--> 该属性可用来获取或设置内容或窗口当前的 X 坐标。
+                    </p></td>
+                  </tr><tr id="property-Bounds-top">
+                    <td>integer</td>
+                    <td>
+                        top</td>
+                    <td>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current Y coordinate of the content or window.--> 该属性可用来获取或设置内容或窗口当前的 Y 坐标。
+                    </p></td>
+                  </tr><tr id="property-Bounds-width">
+                    <td>integer</td>
+                    <td>
+                        width</td>
+                    <td>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current width of the content or window.--> 该属性可用来获取或设置内容或窗口的当前宽度。
+                    </p></td>
+                  </tr><tr id="property-Bounds-height">
+                    <td>integer</td>
+                    <td>
+                        height</td>
+                    <td>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current height of the content or window.--> 该属性可用来获取或设置内容或窗口的当前高度。
+                    </p></td>
+                  </tr><tr id="property-Bounds-minWidth">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        minWidth</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current minimum width of the content or window. A value of <code>null</code> indicates 'unspecified'.--> 该属性可用来获取或设置内容或窗口当前的最小宽度，<code>null</code> 表示“未指定”。
+                    </p></td>
+                  </tr><tr id="property-Bounds-minHeight">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        minHeight</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current minimum height of the content or window. A value of <code>null</code> indicates 'unspecified'.--> 该属性可用来获取或设置内容或窗口当前的最小高度，<code>null</code> 表示“未指定”。
+                    </p></td>
+                  </tr><tr id="property-Bounds-maxWidth">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxWidth</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current maximum width of the content or window. A value of <code>null</code> indicates 'unspecified'.--> 该属性可用来获取或设置内容或窗口当前的最大宽度，<code>null</code> 表示“未指定”。
+                    </p></td>
+                  </tr><tr id="property-Bounds-maxHeight">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxHeight</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@This property can be used to read or write the current maximum height of the content or window. A value of <code>null</code> indicates 'unspecified'.--> 该属性可用来获取或设置内容或窗口当前的最大高度，<code>null</code> 表示“未指定”。
+                    </p></td>
+                  </tr><tr id="property-Bounds-setPosition">
+                    <td>function</td>
+                    <td>
+                        setPosition</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Set the left and top position of the content or window.--> 设置内容或窗口的位置。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-setPosition-left">
+                          <td>integer</td>
+                          <td>
+                              left</td>
+                          <td>
+                          
+                          </td>
+                        </tr><tr id="property-setPosition-top">
+                          <td>integer</td>
+                          <td>
+                              top</td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-Bounds-setSize">
+                    <td>function</td>
+                    <td>
+                        setSize</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Set the width and height of the content or window.--> 设置内容或窗口的宽度和高度。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-setSize-width">
+                          <td>integer</td>
+                          <td>
+                              width</td>
+                          <td>
+                          
+                          </td>
+                        </tr><tr id="property-setSize-height">
+                          <td>integer</td>
+                          <td>
+                              height</td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-Bounds-setMinimumSize">
+                    <td>function</td>
+                    <td>
+                        setMinimumSize</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Set the minimum size constraints of the content or window. The minimum width or height can be set to <code>null</code> to remove the constraint. A value of <code>undefined</code> will leave a constraint unchanged.--> 设置内容或窗口的最小大小约束，最小宽度或高度可以设置为 <code>null</code> 解除约束，<code>undefined</code> 值保持约束不变。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-setMinimumSize-minWidth">
+                          <td>integer</td>
+                          <td>
+                              minWidth</td>
+                          <td>
+                          
+                          </td>
+                        </tr><tr id="property-setMinimumSize-minHeight">
+                          <td>integer</td>
+                          <td>
+                              minHeight</td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-Bounds-setMaximumSize">
+                    <td>function</td>
+                    <td>
+                        setMaximumSize</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Set the maximum size constraints of the content or window. The maximum width or height can be set to <code>null</code> to remove the constraint. A value of <code>undefined</code> will leave a constraint unchanged.--> 设置内容或窗口的最大大小约束，最小宽度或高度可以设置为 <code>null</code> 解除约束，<code>undefined</code> 值保持约束不变。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-setMaximumSize-maxWidth">
+                          <td>integer</td>
+                          <td>
+                              maxWidth</td>
+                          <td>
+                          
+                          </td>
+                        </tr><tr id="property-setMaximumSize-maxHeight">
+                          <td>integer</td>
+                          <td>
+                              maxHeight</td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-FrameOptions">FrameOptions</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="FrameOptions-properties">属性</th></tr>
+                  <tr id="property-FrameOptions-type">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        type</td>
+                    <td>
+                    
+                    <p>
+                      <p><!--@Frame type: <code>none</code> or <code>chrome</code> (defaults to <code>chrome</code>).--> 边框类型：<code>none</code> 或 <code>chrome</code>（默认为 <code>chrome</code>）。</p><p><!--@For <code>none</code>, the <code>-webkit-app-region</code> CSS property can be used to apply draggability to the app's window.--> 如果使用 <code>none</code>，CSS 属性 <code>-webkit-app-region</code> 使应用窗口可以拖放。</p><p><!--@<code>-webkit-app-region: drag</code> can be used to mark regions draggable. <code>no-drag</code> can be used to disable this style on nested elements.--><code>-webkit-app-region: drag</code> 用于将区域标记为可拖放，<code>no-drag</code> 用于禁用嵌套元素上的这一样式。</p>
+                    </p></td>
+                  </tr><tr id="property-FrameOptions-color">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        color</td>
+                    <td>
+                    
+                    <p>
+                      <p><!--@Allows the frame color to be set. Frame coloring is only available if the frame type is <code>chrome</code>.--> 允许设置边框颜色，只有边框类型为 <code>chrome</code> 时才能设置边框颜色。</p><p><!--@Frame coloring is new in Chrome 36.--> 边框颜色在 Chrome 36 中新增。</p>
+                    </p></td>
+                  </tr><tr id="property-FrameOptions-activeColor">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        activeColor</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 36<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <p><!--@Allows the frame color of the window when active to be set. Frame coloring is only available if the frame type is <code>chrome</code>.--> 允许设置窗口处于活动状态时的边框颜色，只有当边框类型为 <code>chrome</code> 时才能设置边框颜色。</p><p><!--@Frame coloring is only available if the frame type is <code>chrome</code>.</p><p>Frame coloring is new in Chrome 36.--> 边框颜色在 Chrome 36 中新增。</p>
+                    </p></td>
+                  </tr><tr id="property-FrameOptions-inactiveColor">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        inactiveColor</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 36<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <p><!--@Allows the frame color of the window when inactive to be set differently to the active color. Frame coloring is only available if the frame type is <code>chrome</code>.--> 允许设置窗口处于不活动状态时的边框颜色，只有当边框类型为 <code>chrome</p><p><!--@<code>inactiveColor</code> must be used in conjunction with <code> color</code>.--> </code> 时才能设置边框颜色。<code>inactiveColor</code> 必须和 <code>color</code> 同时使用。</p><p><!--@Frame coloring is new in Chrome 36.--> 边框颜色在 Chrome 36 中新增。</p>
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-CreateWindowOptions">CreateWindowOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="CreateWindowOptions-properties">属性</th></tr>
+                  <tr id="property-CreateWindowOptions-id">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Id to identify the window. This will be used to remember the size and position of the window and restore that geometry when a window with the same id is later opened. If a window with a given id is created while another window with the same id already exists, the currently opened window will be focused instead of creating a new window.--> 用于标识窗口的标识符，会用来记住窗口的大小与位置，当同一标识符的窗口再次打开时恢复原来的尺寸。如果创建窗口时另一个具有同样标识符的窗口已经存在，当前打开的窗口将获得焦点，而不会创建新窗口。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-innerBounds">
+                    <td>    <a href="app_window.html#type-BoundsSpecification">BoundsSpecification</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        innerBounds</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <p><!--@Used to specify the initial position, initial size and constraints of the window's content (excluding window decorations). If an <code>id</code> is also specified and a window with a matching <code>id</code> has been shown before, the remembered bounds will be used instead.--> 用于指定窗口内容（不包括窗口装饰部分）的初始位置、初始大小和约束。如果还指定了 <code>id</code> 并且之前显示过匹配 <code>id</code> 的窗口，则使用记录下来的位置和大小。</p><p><!--@Note that the padding between the inner and outer bounds is determined by the OS. Therefore setting the same bounds property for both the <code>innerBounds</code> and <code>outerBounds</code> will result in an error.--> 注意，窗口内外边框之间的距离由操作系统决定，所以 <code>innerBounds</code> 和 <code>outerBounds</code> 设置同样的属性值会导致错误。</p><p><!--@This property is new in Chrome 36.--> 该属性在 Chrome 36 中新增。</p>
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-outerBounds">
+                    <td>    <a href="app_window.html#type-BoundsSpecification">BoundsSpecification</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        outerBounds</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <p><!--@Used to specify the initial position, initial size and constraints of the window (including window decorations such as the title bar and frame). If an <code>id</code> is also specified and a window with a matching <code>id</code> has been shown before, the remembered bounds will be used instead.--> 用于指定窗口（包括窗口装饰部分，如标题栏和边框）的初始位置、初始大小和约束。如果还指定了 <code>id</code> 并且之前显示过匹配 <code>id</code> 的窗口，则使用记录下来的位置和大小。</p><p><!--@Note that the padding between the inner and outer bounds is determined by the OS. Therefore setting the same bounds property for both the <code>innerBounds</code> and <code>outerBounds</code> will result in an error.--> 注意，窗口内外边框之间的距离由操作系统决定，所以 <code>innerBounds</code> 和 <code>outerBounds</code> 设置同样的属性值会导致错误。</p><p><!--@This property is new in Chrome 36.--> 该属性在 Chrome 36 中新增。</p>
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-minWidth">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        minWidth</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 36<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 innerBounds 或 outerBounds。
+                    </p>
+                    
+                    <p>
+                      <!--@Minimum width of the window.--> 窗口的最小宽度。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-minHeight">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        minHeight</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 36<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 innerBounds 或 outerBounds。
+                    </p>
+                    
+                    <p>
+                      <!--@Minimum height of the window.--> 窗口的最小高度。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-maxWidth">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxWidth</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 36<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 innerBounds 或 outerBounds。
+                    </p>
+                    
+                    <p>
+                      <!--@Maximum width of the window.--> 窗口的最大宽度。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-maxHeight">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxHeight</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 36<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 innerBounds 或 outerBounds。
+                    </p>
+                    
+                    <p>
+                      <!--@Maximum height of the window.--> 窗口的最大高度。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-frame">
+                    <td>string or     <a href="app_window.html#type-FrameOptions">FrameOptions</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        frame</td>
+                    <td>
+                    
+                    <p>
+                      <p><!--@Frame type: <code>none</code> or <code>chrome</code> (defaults to <code>chrome</code>). For <code>none</code>, the <code>-webkit-app-region</code> CSS property can be used to apply draggability to the app's window. <code>-webkit-app-region: drag</code> can be used to mark regions draggable. <code>no-drag</code> can be used to disable this style on nested elements.--> 框架类型：'none' 或 'chrome'（默认为 'chrome'）。如果使用 'none'，可以通过 CSS 属性 <code>-webkit-app-region</code> 设置应用窗口的拖放特性。<code>-webkit-app-region: drag</code> 可以将区域标志为可拖放的，而 <code>no-drag</code> 可以用来在嵌套元素上禁用该样式。</p><p><!--@Use of <code>FrameOptions</code> is new in M36.--> 在 Chrome 36 或更高版本中可以使用 FrameOptions 对象。</p>
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-bounds">
+                    <td>    <a href="app_window.html#type-ContentBounds">ContentBounds</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        bounds</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 36<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 innerBounds 或 outerBounds。
+                    </p>
+                    
+                    <p>
+                      <!--@Size and position of the content in the window (excluding the titlebar). If an id is also specified and a window with a matching id has been shown before, the remembered bounds of the window will be used instead.--> 窗口中内容的大小与位置（不包括标题栏）。如果同时指定了 id，并且以前显示过匹配标识符的窗口，则会使用记录下来的窗口大小与位置。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-alphaEnabled">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        alphaEnabled</td>
+                    <td>
+                    <p class="availability">
+                      <strong><!--@Not fully implemented-->尚未完全实现</strong><!--@.
+                       You must build Chromium from source to try this API.
+                      
+                       -->，您必须通过源代码建立 Chromium 才能尝试该 API。<a href="http://www.chromium.org/developers"><!--@Learn more-->了解更多内容</a><!--@.-->
+                    </p>
+                    
+                    <p>
+                      <!--@Enable window background transparency. Only supported in ash. Requires app.window.alpha API permission.--> 启用窗口背景透明，仅在 ash 中支持，需要 app.window.alpha 权限。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-state">
+                    <td>enum of <code>"normal"</code>, <code>"fullscreen"</code>, <code>"maximized"</code>, or <code>"minimized"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        state</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@The initial state of the window, allowing it to be created already fullscreen, maximized, or minimized. Defaults to 'normal'.--> 窗口的初始状态，允许使它在创建时就全屏、最大化或最小化。默认为 'normal'（正常）。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-hidden">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        hidden</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 24<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@If true, the window will be created in a hidden state. Call show() on the window to show it once it has been created. Defaults to false.--> 如果为 true，该窗口创建后将处于隐藏状态，创建之后在该窗口上调用 show() 可以显示它。默认为 false。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-resizable">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        resizable</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 27<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@If true, the window will be resizable by the user. Defaults to true.--> 如果为 true 的话，用户可以调整窗口的大小。默认为 true。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-singleton">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        singleton</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 34<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        --><!--@Multiple windows with the same id is no longer supported.-->不再支持具有相同标志的多个窗口。
+                    </p>
+                    
+                    <p>
+                      <!--@By default if you specify an id for the window, the window will only be created if another window with the same id doesn't already exist. If a window with the same id already exists that window is activated instead. If you do want to create multiple windows with the same id, you can set this property to false.--> 默认情况下，如果您指定了窗口的标识符，只有当另一个具有相同标识符的窗口不存在时才会创建。如果另一个具有相同标识符的窗口存在，则它将变为活动窗口。如果您确实需要创建多个相同标识符的窗口，您可以将该属性设置为 false。
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-alwaysOnTop">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        alwaysOnTop</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <p><!--@If true, the window will stay above most other windows. If there are multiple windows of this kind, the currently focused window will be in the foreground. Requires the <code>"alwaysOnTopWindows"</code> permission. Defaults to false.--> 如果为 true，窗口会保持在其他大部分窗口之上。如果有多个这样的窗口，当前具有焦点的窗口会在前台。需要 <code>"alwaysOnTopWindows"</code> 权限，默认为 false。</p><p><!--@Call <code>setAlwaysOnTop()</code> on the window to change this property after creation.--> 创建窗口后调用 <code>setAlwaysOnTop</code> 修改该属性。</p>
+                    </p></td>
+                  </tr><tr id="property-CreateWindowOptions-focused">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        focused</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@If true, the window will be focused when created. Defaults to true.--> 如果为 true，窗口创建时具有焦点。默认为 true。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-AppWindow">AppWindow</h3>
+              <table>
+                  <tr><th colspan="3" id="AppWindow-properties">属性</th></tr>
+                  <tr id="property-AppWindow-focus">
+                    <td>function</td>
+                    <td>
+                        focus</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Focus the window.--> 使窗口拥有焦点。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-fullscreen">
+                    <td>function</td>
+                    <td>
+                        fullscreen</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <p><!--@Fullscreens the window.--> 使窗口进入全屏状态。</p><p><!--@The user will be able to restore the window by pressing ESC. An application can prevent the fullscreen state to be left when ESC is pressed by requesting the <b>overrideEscFullscreen</b> permission and canceling the event by calling .preventDefault(), like this:--> 用户可以按下 Esc 键恢复窗口。如果应用请求 <b>overrideEscFullscreen</b> 权限，并调用 .preventDefault() 取消事件，就能避免离开全屏状态，如下所示：</p><p><code>window.onKeyDown = function(e) { if (e.keyCode == 27 /* ESC */) { e.preventDefault(); } };</code></p>
+                    </p></td>
+                  </tr><tr id="property-AppWindow-isFullscreen">
+                    <td>function</td>
+                    <td>
+                        isFullscreen</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 27<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Is the window fullscreen?--> 窗口是否处于全屏状态。
+                    </p>	
+                      <br/><!--@Returns-->返回值为 <span class="property">	
+                        boolean<!--@.--> 类型。
+                      </span>
+                    </td>
+                  </tr><tr id="property-AppWindow-minimize">
+                    <td>function</td>
+                    <td>
+                        minimize</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Minimize the window.--> 最小化窗口。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-isMinimized">
+                    <td>function</td>
+                    <td>
+                        isMinimized</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Is the window minimized?--> 窗口是否最小化。
+                    </p>	
+                      <br/><!--@Returns-->返回值为 <span class="property">	
+                        boolean<!--@.--> 类型。
+                      </span>
+                    </td>
+                  </tr><tr id="property-AppWindow-maximize">
+                    <td>function</td>
+                    <td>
+                        maximize</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Maximize the window.--> 最大化窗口。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-isMaximized">
+                    <td>function</td>
+                    <td>
+                        isMaximized</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Is the window maximized?--> 窗口是否最大化。
+                    </p>	
+                      <br/><!--@Returns-->返回值为 <span class="property">	
+                        boolean<!--@.--> 类型。
+                      </span>
+                    </td>
+                  </tr><tr id="property-AppWindow-restore">
+                    <td>function</td>
+                    <td>
+                        restore</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Restore the window, exiting a maximized, minimized, or fullscreen state.--> 从最大化、最小化或全屏状态恢复窗口。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-moveTo">
+                    <td>function</td>
+                    <td>
+                        moveTo</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Move the window to the position (|left|, |top|).--> 将窗口移到指定位置（<code>left</code>、<code>top</code>）。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-moveTo-left">
+                          <td>integer</td>
+                          <td>
+                              left</td>
+                          <td>
+                          <p class="availability">
+                            <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                          </p>
+                          
+                          </td>
+                        </tr><tr id="property-moveTo-top">
+                          <td>integer</td>
+                          <td>
+                              top</td>
+                          <td>
+                          <p class="availability">
+                            <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                          </p>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-AppWindow-resizeTo">
+                    <td>function</td>
+                    <td>
+                        resizeTo</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Resize the window to |width|x|height| pixels in size.--> 将窗口大小调整为 <code>width</code> × <code>height</code> 像素。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-resizeTo-width">
+                          <td>integer</td>
+                          <td>
+                              width</td>
+                          <td>
+                          
+                          </td>
+                        </tr><tr id="property-resizeTo-height">
+                          <td>integer</td>
+                          <td>
+                              height</td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-AppWindow-drawAttention">
+                    <td>function</td>
+                    <td>
+                        drawAttention</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 24<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Draw attention to the window.--> 吸引用户注意该窗口。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-clearAttention">
+                    <td>function</td>
+                    <td>
+                        clearAttention</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 24<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Clear attention to the window.--> 取消对窗口的吸引。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-close">
+                    <td>function</td>
+                    <td>
+                        close</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 24<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Close the window.--> 关闭窗口。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-show">
+                    <td>function</td>
+                    <td>
+                        show</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 24<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Show the window. Does nothing if the window is already visible. Focus the window if |focused| is set to true or omitted.--> 显示窗口，如果窗口已经可见则什么都不做。如果 <code>focused</code> 设置为 true 或省略则使窗口获得焦点。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-show-focused">
+                          <td>boolean</td>
+                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                              focused</td>
+                          <td>
+                          <p class="availability">
+                            <!--@Since-->从 Chrome 34<!--@.--> 开始支持。
+                          </p>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-AppWindow-hide">
+                    <td>function</td>
+                    <td>
+                        hide</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 24<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Hide the window. Does nothing if the window is already hidden.--> 隐藏窗口，如果窗口已经可见则什么都不做。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-getBounds">
+                    <td>function</td>
+                    <td>
+                        getBounds</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 36<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 innerBounds 或 outerBounds。
+                    </p>
+                    
+                    <p>
+                      <!--@Get the window's inner bounds as a <a href=/apps/app.window#type-ContentBounds>ContentBounds</a> object.--> 获取窗口内部的大小与位置，以 <a href="app_window.html#type-ContentBounds">ContentBounds</a> 对象表示。
+                    </p>	
+                      <br/><!--@Returns-->返回值为 <span class="property">	
+                            <a href="app_window.html#type-ContentBounds">ContentBounds</a><!--@.--> 类型。
+                      </span>
+                    </td>
+                  </tr><tr id="property-AppWindow-setBounds">
+                    <td>function</td>
+                    <td>
+                        setBounds</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 36<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 innerBounds 或 outerBounds。
+                    </p>
+                    
+                    <p>
+                      <!--@Set the window's inner bounds.--> 设置窗口内部的大小与位置。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-setBounds-bounds">
+                          <td>    <a href="app_window.html#type-ContentBounds">ContentBounds</a></td>
+                          <td>
+                              bounds</td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-AppWindow-isAlwaysOnTop">
+                    <td>function</td>
+                    <td>
+                        isAlwaysOnTop</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Is the window always on top?--> 窗口是否前端显示。
+                    </p>	
+                      <br/><!--@Returns-->返回值为 <span class="property">	
+                        boolean<!--@.--> 类型。
+                      </span>
+                    </td>
+                  </tr><tr id="property-AppWindow-setAlwaysOnTop">
+                    <td>function</td>
+                    <td>
+                        setAlwaysOnTop</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@Set whether the window should stay above most other windows. Requires the <code>"alwaysOnTopWindows"</code> permission.--> 设置窗口是否应该前端显示。需要 <code>"alwaysOnTopWindows"</code> 权限。
+                    </p>  <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                        <tr id="property-setAlwaysOnTop-alwaysOnTop">
+                          <td>boolean</td>
+                          <td>
+                              alwaysOnTop</td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr><tr id="property-AppWindow-contentWindow">
+                    <td>Window</td>
+                    <td>
+                        contentWindow</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The JavaScript 'window' object for the created child.--> 已创建子窗口的 JavaScript window 对象。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-id">
+                    <td>string</td>
+                    <td>
+                        id</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@The id the window was created with.--> 创建窗口时指定的标识符。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-innerBounds">
+                    <td>    <a href="app_window.html#type-Bounds">Bounds</a></td>
+                    <td>
+                        innerBounds</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@The position, size and constraints of the window's content, which does not include window decorations. This property is new in Chrome 36.--> 窗口内容的位置、大小和约束，不包括窗口边框。该属性在 Chrome 36 中新增。
+                    </p></td>
+                  </tr><tr id="property-AppWindow-outerBounds">
+                    <td>    <a href="app_window.html#type-Bounds">Bounds</a></td>
+                    <td>
+                        outerBounds</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      <!--@The position, size and constraints of the window, which includes window decorations, such as the title bar and frame. This property is new in Chrome 36.--> 窗口的位置、大小和约束，包括窗口标题栏和边框。该属性在 Chrome 36 中新增。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-create"
+                  >create
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.app.window.create(<span>string url</span>, <span class="optional">    <a href="app_window.html#type-CreateWindowOptions">CreateWindowOptions</a> options</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p><!--@The size and position of a window can be specified in a number of different ways. The most simple option is not specifying anything at all, in which case a default size and platform dependent position will be used.--> 窗口的大小与位置可以以几种不同的方式指定。最简单的选择是什么都不指定，这种情况下会使用默认大小与平台相关的位置。</p><p><!--@To set the position, size and constraints of the window, use the <code>innerBounds</code> or <code>outerBounds</code> properties. Inner bounds do not include window decorations. Outer bounds include the window's title bar and frame. Note that the padding between the inner and outer bounds is determined by the OS. Therefore setting the same property for both inner and outer bounds is considered an error (for example, setting both <code>innerBounds.left</code> and <code>outerBounds.left</code>).--> 要设置窗口的位置、大小和约束，您可以使用 <code>innerBounds</code> 或 <code>outerBounds</code> 属性。<code>innerBounds</code> 不包括窗口的装饰部分，而 <code>outerBounds</code> 包括窗口的标题栏和边框。注意，内界与外界之间的填充部分由操作系统决定，所以同时设置内外界是错误的（例如同时设置 <code>innerBounds.left</code> 和 <code>outerBounds.left</code> ）。</p><p><!--@To automatically remember the positions of windows you can give them ids. If a window has an id, This id is used to remember the size and position of the window whenever it is moved or resized. This size and position is then used instead of the specified bounds on subsequent opening of a window with the same id. If you need to open a window with an id at a location other than the remembered default, you can create it hidden, move it to the desired location, then show it.--> 如果要自动记录窗口的位置，您可以为它们提供标识符。如果窗口有标识符，该标识符将在窗口移动或调整大小时用于记录它的大小和位置。以后打开具有同样标识符的窗口时使用记录的大小和位置，而不是指定的大小和位置。如果您需要打开一个具有标识符的窗口，并且使用不同于记录的默认位置，您可以使它创建时隐藏，将它移动到期望的位置，然后显示它。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-create-url">
+                      <td>string</td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-create-options">
+                      <td>    <a href="app_window.html#type-CreateWindowOptions">CreateWindowOptions</a></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-create-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <p><!--@Called in the creating window (parent) before the load event is called in the created window (child). The parent can set fields or functions on the child usable from onload. E.g. background.js:--> 在已创建窗口（子窗口）的 load 事件产生前在父窗口中调用，父窗口可以设置子窗口中的字段或函数，以便在 onload 中使用。例如：background.js：</p><p><code>function(createdWindow) { createdWindow.contentWindow.foo = function () { }; };</code></p><p>window.js:</p><p><code>window.onload = function () { foo(); }</code></p>
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(AppWindow createdWindow) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-createdWindow">
+                              <td>AppWindow</td>
+                              <td>
+                                  createdWindow</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-current"
+                  >current
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+                  <a href="app_window.html#type-AppWindow">AppWindow</a>
+              chrome.app.window.current()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Returns an <a href=/apps/app.window#type-AppWindow>AppWindow</a> object for the current script context (ie JavaScript 'window' object). This can also be called on a handle to a script context for another page, for example: otherWindow.chrome.app.window.current().--> 返回当前脚本上下文（即 JavaScript window 对象）的 <a href="app_window.html#type-AppWindow">AppWindow</a> 对象。这也可以在另一个页面的脚本上下文句柄上调用，例如 otherWindow.chrome.app.window.current()。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getAll"
+                  >getAll
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              array of     <a href="app_window.html#type-AppWindow">AppWindow</a>
+              chrome.app.window.getAll()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Gets an array of all currently created app windows. This method is new in Chrome 33.--> 获取所有当前创建的应用窗口数组。该方法在 Chrome 33 中新增。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-get"
+                  >get
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+                  <a href="app_window.html#type-AppWindow">AppWindow</a>
+              chrome.app.window.get(<span>string id</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Gets an <a href=/apps/app.window#type-AppWindow>AppWindow</a> with the given id. If no window with the given id exists null is returned. This method is new in Chrome 33.--> 获取指定标识符的 <a href="app_window.html#type-AppWindow">AppWindow</a> 对象，如果没有指定标识符的窗口则返回 null。该方法在 Chrome 33 中新增。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-get-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onBoundsChanged">onBoundsChanged</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Fired when the window is resized.--> 当窗口改变大小时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.app.window.onBoundsChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onBoundsChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onClosed">onClosed</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Fired when the window is closed. Note, this should be listened to from a window other than the window being closed, for example from the background page. This is because the window being closed will be in the process of being torn down when the event is fired, which means not all APIs in the window's script context will be functional.--> 当窗口关闭时产生。注意，您应该在正在关闭的窗口之外的其他窗口监听该事件，例如在后台网页中。因为窗口关闭并产生该事件时正处于销毁的过程中，并不是所有 API 在窗口的脚本上下文中都能正常工作。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.app.window.onClosed.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onClosed-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onFullscreened">onFullscreened</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 27<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Fired when the window is fullscreened.--> 窗口全屏时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.app.window.onFullscreened.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onFullscreened-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onMaximized">onMaximized</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Fired when the window is maximized.--> 当窗口最大化时产生。 Fired when the window is maximized.
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.app.window.onMaximized.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onMaximized-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onMinimized">onMinimized</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Fired when the window is minimized.--> 当窗口最小化时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.app.window.onMinimized.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onMinimized-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onRestored">onRestored</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Fired when the window is restored from being minimized or maximized.--> 当窗口从最小化或最大化的状态恢复时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.app.window.onRestored.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onRestored-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

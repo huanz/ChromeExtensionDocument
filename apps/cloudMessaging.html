@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>Google 云消息服务 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="cloudMessaging.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<meta name="doc-family" content="apps">
+<h1 id="gcm"><!--@Google Cloud Messaging-->Google 云消息服务</h1>
+
+<p><!--@Google Cloud Messaging (GCM) is a service for both Android-powered device and
+Chrome instances to send and receive message data from servers.
+The <a href="gcm">chrome.gcm API</a> allows the Chrome apps or extensions
+to access the GCM service for the signed-in Chrome users.
+The service works even if an app or extension isn't currently running.
+For example, calendar updates could be pushed
+to users even when their calendar app isn't open. -->
+Google 云消息服务（GCM）是一项用于 Android 设备和 Chrome
+应用的服务，可以向服务器发送和接收数据。<a href="gcm.html">chrome.gcm
+API</a> 允许 Chrome 应用或扩展程序以 Chrome 中登录用户的身份访问 GCM
+服务。即使应用或扩展程序不在运行时该服务也能正常工作，例如即使日历应用没有打开，日历更新也可以推送至用户。
+</p>
+
+<p><!--@To use both API and service, you must agree to the <a href="https://developers.google.com/terms/">Google APIs Terms of
+Service</a> and <a href="https://developers.google.com/cloud/terms/">Google Cloud Platform Terms
+of Service</a>.-->
+要使用这一 API 和服务，您必须同意
+<a href="https://developers.google.com/terms/">Google API 服务条款</a>和
+<a href="https://developers.google.com/cloud/terms/">Google Cloud
+平台服务条款</a>。
+</p>
+
+<p><!--@This document describes how to set up and use GCM. For additional information
+see the reference documentation for the <a href="gcm">GCM Chrome API</a> and
+the <a href="http://developer.android.com/google/gcm/index.html">GCM Service</a>. To get
+help with GCM or to give us feedback, please see
+<a href="#feedback">Feedback</a>.-->
+该文档描述了设置和使用 GCM 的方法，有关更多信息，请参见
+<a href="gcm.html">GCM Chrome API</a> 的参考文档和
+<a href="https://developer.android.com/google/gcm/index.html">GCM
+服务</a>。要想获取关于 GCM 的帮助或者给我们反馈，请参见<a
+href="cloudMessaging.html#feedback">反馈</a>。
+</p>
+
+<p class="note"><strong>API <!--@Samples-->示例</strong><!--@: Want to play with the code? Check out the-->：想要试试这些代码吗？请参见
+<a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/gcm-notifications">gcm-notifications</a>
+<!--@sample.-->示例。</p>
+
+<h2 id="enable_gcm"><!--@Enable GCM-->启用 GCM</h2>
+
+<p><!--@To use GCM for your app or extension, do the following:-->
+要想在您的应用或扩展程序中使用 GCM，请按照下列步骤操作：
+</p>
+
+<ol>
+<li><!--@Upload your app or extension client to the <a href="https://developers.google.com/chrome/web-store/docs/publish">Chrome Web
+Store</a>.-->
+将您的应用或扩展程序客户端上传至
+<a href="https://developers.google.com/chrome/web-store/docs/publish">Chrome
+网上应用店</a>。
+</li>
+<li><!--@A user installs your app or extension.-->用户安装了您的应用或扩展程序。</li>
+<li><!--@Your app or extension client requests a registration ID using <a href=/apps/gcm#method-register>gcm.register</a>
+function and sends this ID to your server together with information
+identifying the user. For more details, please see <a href="#obtain_registration_id">Obtain registration
+ID</a>.-->
+您的应用或扩展程序客户端使用 <a href="gcm.html#method-register">gcm.register</a>
+函数请求注册标识符，并将该标识符连同用户标识信息一起发送至您的服务器。有关更多详情，请参见<a
+href="cloudMessaging.html#obtain_registration_id">获取注册标识符</a>。
+</li>
+</ol>
+
+<h2 id="receive_a_message"><!--@Receive a message-->接收消息</h2>
+
+<p><!--@At a glance, receiving a message works like this:-->粗略看来，接收消息的方式如下：</p>
+
+<ol>
+<li><!--@Your app or extension client should register a handler to receive the
+<a href=/apps/gcm#event-onMessage>gcm.onMessage</a> event.-->
+您的应用或扩展程序客户端应该注册处理程序，接收 <a href="gcm.html#event-onMessage">gcm.onMessage</a> 事件。
+</li>
+<li><!--@When your server sends a message to the user, it specifies all of the
+registration IDs that are related to that user and passes the message to the
+GCM service.-->
+当您的服务器向用户发送消息时，需要指定与用户相关的所有注册标识符，并将消息传递给
+GCM 服务。
+</li>
+<li><!--@GCM servers route the message to all instances of Chrome running apps or
+extensions with one of the registration IDs.-->
+GCM 服务器将消息转发至运行应用或扩展程序并具有指定注册标识符的所有 Chrome
+实例。
+</li>
+<li><!--@When the message arrives on the client, Chrome starts the app or extension,
+if it is not already running, and calls the registered handler to process the
+message.-->
+消息到达客户端时，Chrome
+浏览器启动应用或扩展程序（如果不在运行的话），并调用注册的处理程序处理消息。
+</li>
+</ol>
+
+<p><!--@For more details, please see <a href="#receive_messages">Receive messages</a>.-->
+有关更多详情，请参见<a href="cloudMessaging.html#receive_messages">接收消息</a>。
+</p>
+
+<h2 id="send_a_message"><!--@Send a message-->发送消息</h2>
+
+<p><!--@At a glance, sending a message works like this:-->粗略看来，发送消息的方式如下：</p>
+
+<ol>
+<li><!--@Your app or extension generates a unique message ID, so that it is possible
+to find out which message failed to be queued or delivered.-->
+您的应用或扩展程序生成一个唯一的消息标识符，这样可以找出哪些消息不能放入队列或传递。
+</li>
+<li><!--@Your app or extension calls <a href=/apps/gcm#method-send>gcm.send</a> function with an object containing
+message ID, destination ID that identifies the server, and data that consist
+of a list of key value pairs. In this step you can also provide an optional
+time-to-live for the message.-->
+您的应用或扩展程序调用 <a href="gcm.html#method-send">gcm.send</a> 函数，传递一个对象，其中包含消息标识符、标志服务器的目标标识符以及由键值对列表组成的数据。在这一步中，您还可以提供可选的消息保留时间。
+</li>
+<li><!--@The callback passed to <a href=/apps/gcm#method-send>gcm.send</a> function will be called to notify the
+result. Your app or extension should check <a href=/apps/runtime#property-lastError>runtime.lastError</a> to find out if
+the message has been successfully queued for delivery. Please refer to <a href="#error_reference">Error
+reference</a> for possible error codes that could be
+returned.-->
+传递给 <a href="gcm.html#method-send">gcm.send</a> 函数的回调函数用来提供结果，您的应用或扩展程序应该检查
+<a href="runtime.html#property-lastError">runtime.lastError</a>
+判断消息是否成功放入队列等待投递。有关可能返回的错误代码，请参见<a
+href="cloudMessaging.html#error_reference">错误参考</a>。
+</li>
+<li><!--@In cases that the queued message could not be delivered to the GCM server,
+like network error, a <a href=/apps/gcm#event-onSendError>gcm.onSendError</a> event will be fired. Your app or
+extension can listen to this event and react to it, e.g. by trying to resend
+the message. Please refer to <a href="#error_reference">Error reference</a> for
+possible error codes that could be returned.-->
+如果放入队列的消息由于 GCM 服务器（如网络错误）而无法投递，则会产生
+<a href="gcm.html#event-onSendError">gcm.onSendError</a>
+事件。您的应用或扩展程序可以监听该事件并作出反应，例如尝试再次发送消息。有关可能返回的错误代码，请参见<a
+href="cloudMessaging.html#error_reference">错误参考</a>。
+</li>
+</ol>
+
+<p><!--@For more details, please see <a href="#send_messages">Send messages</a>.-->
+有关更多详情，请参见<a href="cloudMessaging.html#send_messages">发送消息</a>。
+</p>
+
+<p class="note"><strong><!--@Display messages in rich notifications format:-->以丰富的通知显示消息：</strong><br>
+<!--@GCM and rich notifications API are a natural fit;
+Use GCM to send and receive message data; use rich notifications to display
+the data in the user's system tray
+(see <a href="inform_users">Keep Users Informed</a>).-->
+GCM 和丰富的通知 API 是最好的搭档，使用 GCM
+发送和接收消息数据，使用丰富的通知在用户的系统托盘中显示数据（请参见<a
+href="inform_users.html">随时通知用户</a>）。
+</p>
+
+<h2 id="set_up_project"><!--@Set up project-->设置项目</h2>
+
+<h3 id="create_google_api_project"><!--@Create Google API project-->创建
+Google API 项目</h3>
+
+<ol>
+<li><!--@Login to the <a href="https://cloud.google.com/console/project">Google Developers
+Console</a> using the same Google Account that you will use to upload your app or extension.-->
+使用您上传应用或扩展程序的同一个 Google 账户登录
+<a href="https://cloud.google.com/console/project">Google
+开发者控制台</a>。
+</li>
+<li><!--@If you haven't created an API project yet, click <strong>Create Project</strong>.-->
+如果您还没有创建 API 项目，请单击 <strong>Create Project</strong>（创建项目）。
+</li>
+<li><!--@Supply a project name and click <strong>Create</strong>.-->
+输入项目名称并单击 <strong>Create</strong>（创建）。
+</li>
+<li><!--@Once the project has been created, a page appears that displays your project
+number. For example, <strong>Project Number: 670330094152</strong>.-->
+项目创建后，出现的网页中会显示您的项目编号，例如
+<strong>Project Number: 670330094152</strong>。
+</li>
+<li><!--@Copy down your project number. You will use it later on as the GCM sender ID.-->
+复制并记下您的项目编号，以后您将使用它作为 GCM 发送方标识符。
+</li>
+</ol>
+
+<h3 id="enable_the_gcm_service"><!--@Enable the GCM service-->启用 GCM 服务</h3>
+
+<ol>
+<li><!--@In the sidebar on the left, select <strong>APIs &amp; auth</strong>.-->
+在左边的侧边栏中选择 <strong>APIs &amp; auth</strong>（API 与认证）。
+</li>
+<li><!--@In the displayed list of APIs, turn the <strong>Google Cloud Messaging for
+Android</strong> toggle to ON.-->
+在显示的 API 列表中，将 <strong>Google Cloud Messaging for Android</strong>
+切换至 ON（开启）状态。
+</li>
+</ol>
+
+<h2 id="set_up_chrome_app_or_extension"><!--@Set up Chrome App or Extension-->设置 Chrome 应用或扩展程序</h2>
+
+<h3 id="add_permission_to_manifest"><!--@Add permission to manifest-->在清单文件中添加权限</h3>
+
+<p><!--@To use the gcm service, you must declare the <code>gcm</code> permission in
+<code>manifest.json</code>.-->
+您必须在 <code>manifest.json</code> 中声明 <code>gcm</code> 权限才能使用
+GCM 服务。
+</p>
+
+<pre data-filename="manifest.json"><code>
+"permissions": [
+  "gcm", "storage", ...
+]
+</code></pre>
+
+<p><!--@Please note that the <code>storage</code> permission is also provided here because the
+sample codes below needs to persist some data via the
+<a href="storage">chrome.storage</a> API.-->
+请注意，由于下列示例代码需要通过 <a href="storage.html">chrome.storage</a>
+API 保存一些数据，所以还提供了 <code>storage</code> 权限。
+</p>
+
+<h2 id="write_chrome_app_or_extension"><!--@Write Chrome App or Extension-->编写 Chrome 应用或扩展程序</h2>
+
+<h3 id="obtain_registration_id"><!--@Obtain registration ID-->获取注册标识符</h3>
+
+<p><!--@Your app or extension needs to register with GCM servers before it can receive
+messages. When an app or extension registers, it receives a registration ID.
+This is achieved by calling <a href=/apps/gcm#method-register>gcm.register</a> and specifying a list of senders
+identified by project numbers from Google Developers Console. Your app or
+extension should pass a callback function to verify that the registration was
+successful. If successful, the received registration ID should be sent back to
+your application server in a secure way, for example, via https. Otherwise, your
+app or extension should handle the error identified by
+<code>chrome.runtime.lastError</code> and retry later.-->
+您的应用或扩展程序接收消息之前，需要与 GCM
+服务器注册。应用或扩展程序注册时，获得一个注册标识符。这一步通过
+<a href="gcm.html#method-register">gcm.register</a> 调用实现，同时还需要指定发送方标识符，即 Google
+开发者控制台中的项目编号。您的应用或扩展程序应该传递一个回调函数，以便确认注册成功。如果成功的话，获得的注册标识符应该以安全的方式（例如使用
+https）发回您的应用程序服务器。否则，您的应用或扩展程序应该处理
+<code>chrome.runtime.lastError</code> 中指明的错误并在一段时间后重试。
+</p>
+
+<p><!--@If your app or extension wishes to receive messages from the different senders,
+it can call <a href=/apps/gcm#method-register>gcm.register</a> again with the new sender list and the new
+registration ID will be returned.-->
+如果您的应用或扩展程序希望从不同的发送方接收消息，它可以再次调用
+<a href="gcm.html#method-register">gcm.register</a> 并提供新的发送方列表，返回新的注册标识符。
+</p>
+
+<pre data-filename="background.js"><code>
+function registerCallback(registrationId) {
+  if (chrome.runtime.lastError) {
+    // 注册失败时处理错误并在一段时间后重试。
+    return;
+  }
+
+  // 将注册标识符发送至您的应用程序服务器。
+  sendRegistrationId(function(succeed) {
+    // 您的服务器接收到注册标识符后，设置标志，
+    // 这样下次应用启动时就不会重新注册。
+    if (succeed)
+      chrome.storage.local.set({registered: true});
+  });
+}
+
+function sendRegistrationId(callback) {
+  // 以安全的方式将注册标识符发送至您的应用程序服务器。
+}
+
+chrome.runtime.onStartup.addListener(function() {
+  chrome.storage.local.get("registered", function(result) {
+    // 如果已经注册则取消操作。
+    if (result["registered"])
+      return;
+
+    // 最多允许 100 个发送方。
+    var senderIds = ["Your-Sender-ID"];
+    chrome.gcm.register(senderIds, registerCallback);
+  });
+});
+</code></pre>
+
+<p><!--@If your app or extension is installed in different profiles and/or in different
+Chrome instances, each of them will receive a different registration ID.-->
+如果您的应用或扩展程序在不同的配置文件和/或不同的 Chrome
+实例中安装，其中的每一个都会获得不同的注册标识符。
+</p>
+
+<p><!--@Your app or extension could call <a href=/apps/gcm#method-unregister>gcm.unregister</a> to revoke the registration ID.
+The unregistration should only be done in rare cases, such as if your app or
+extension does not want to receive further messages, or the registration ID is
+suspected to be compromised.-->
+您的应用或扩展程序可以调用 <a href="gcm.html#method-unregister">gcm.unregister</a>
+撤销注册标识符。只有在罕见的情况下才应该撤销注册，例如如果您的应用或扩展程序不希望继续接收消息，或者注册标识符可能遭到攻击。</p>
+
+<pre data-filename="background.js"><code>
+function unregisterCallback() {
+  if (chrome.runtime.lastError) {
+    // 取消注册失败时，处理错误并且
+    // 过一段时间后重试。
+    return;
+  }
+}
+
+chrome.gcm.unregister(unregisterCallback);
+</code></pre>
+
+<p><!--@Your app or extension is automatically unregistered from the GCM service when a
+user uninstalls it.-->
+用户卸载您的应用或扩展程序时会自动取消 GCM 服务的注册。
+</p>
+
+<h3 id="receive_messages"><!--@Receive messages-->接收消息</h3>
+
+<p><!--@When your server sends a message to the user, it specifies all of the
+registration IDs that are related to that user and passes the message to the GCM
+service. GCM servers route the message to all instances of Chrome running apps
+or extensions with one of the registration IDs. If your app or extension has
+been installed in more than one profiles in a single Chrome instance, all of
+them can receive messages independently based on their unique registration IDs.-->
+当您的服务器向用户发送消息时，它需要指定有关用户的所有注册标识符，并将消息传递给
+GCM 服务。GCM 服务器将消息转发至运行应用或扩展程序并具有指定注册标识符的所有
+Chrome 实例。如果您的应用或扩展程序在单一 Chrome
+实例的不同配置文件中安装，它们都能基于各自唯一的注册标识符独立地接收消息。
+</p>
+
+<p><!--@Messages from the server are delivered via the <a href=/apps/gcm#event-onMessage>gcm.onMessage</a> event. Your app
+or extension must register a handler to receive this event.-->
+来自服务器的消息通过 <a href="gcm.html#event-onMessage">gcm.onMessage</a>
+事件传递，您的应用或扩展程序必须注册处理程序接收该事件。
+</p>
+
+<pre data-filename="background.js"><code>
+chrome.gcm.onMessage.addListener(function(message) {
+  // 消息是一个对象，由键值对组成。
+});
+</code></pre>
+
+<p><!--@As long as Chrome is running, even if the extension or app is not running, it is
+woken up to deliver a message.-->
+只要 Chrome
+浏览器还在运行，即使扩展程序或应用不在运行，它也会被唤醒以便投递消息。
+</p>
+
+<h3 id="send_messages"><!--@Send messages-->发送消息</h3>
+
+<p><!--@To send messages upstream, your app or extension should call <a href=/apps/gcm#method-send>gcm.send</a> with an
+object containing:-->
+要发送消息，您的应用或扩展程序应该调用
+<a href="gcm.html#method-send">gcm.send</a>，并传递一个包含如下信息的对象：
+</p>
+
+<ul>
+<li><!--@Message ID that identifies the message when it fails to be queued or
+delivered. The message ID can be any kind of string. However, it is
+recommended to stay unique across the lifetime of your app or extension, even
+after it restarts. If you use the same message ID, there may be a chance that
+the previous message gets overridden. If an auto-increment counter is used to
+create the message ID, your app or extension should persist the counter value
+via <a href="storage">chrome.storage</a> API and restore it when the app
+reloads.-->
+消息标识符，在放入队列或投递失败时标志消息。消息标识符可以是任何字符串，但是建议在您的应用或扩展程序的整个生命周期内确保它的唯一性，即使在重新启动后。如果您使用相同的消息标识符，之前的消息有可能被覆盖。如果使用自增计数器创建消息标识符，您的应用或扩展程序应该使用
+<a href="storage.html">chrome.storage</a> API
+保存计数器值，并在应用重新载入时恢复它。
+</li>
+<li><!--@Destination ID that identifies the server. This is the project number from the
+Google Developers Console plus the suffix "@gcm.googleapis.com".-->
+目标标识符，标识服务器，即 Google 开发者控制台中的项目编号加上
+"@gcm.googleapis.com" 后缀。
+</li>
+<li><!--@Data that consist of a list of string-to-string key value pairs (up to 4KB
+total).-->
+由字符串-字符串键值对列表组成（总计不超过 4KB）。
+</li>
+<li><!--@Time-to-live (TTL, optional). This property value must be a duration from 0 to
+2,419,200 seconds (4 weeks) and it corresponds to the maximum period of time
+for which GCM will store and try to deliver the message. If this property is
+not set, it is default to the maximum value. When a TTL is set to 0, GCM will
+try to deliver the message immediately. If the immediate effort fails, the
+message will be discarded.-->
+留存时间（TTL，可选）。该属性值必须在 0～2,419,200 秒（4
+周）之间，对应于 GCM
+存储并尝试投递消息的最长时间。如果没有设置该属性则默认为最大值。如果 TTL
+设置为 0，GCM 立即尝试投递消息，如果投递失败则丢弃该消息。
+</li>
+</ul>
+
+<p><!--@When the callback passed in <a href=/apps/gcm#method-send>gcm.send</a> is called without runtime error, it does
+not mean that the message was already delivered to the GCM server. Rather, it
+means that it was queued for delivery. If the message fails to reach the
+destination within the specified TTL period, for example due to network error,
+the <a href=/apps/gcm#event-onSendError>gcm.onSendError</a> will be fired.-->
+<a href="gcm.html#method-send">gcm.send</a> 中的回调函数调用时如果没有运行时错误，这并不意味着消息已经投递到
+GCM 服务器，而是它已经放入队列等待投递。如果消息无法在指定的 TTL
+时间内到达目标，例如由于网络错误，则产生 <a href="gcm.html#event-onSendError">gcm.onSendError</a> 事件。
+</p>
+
+<pre data-filename="background.js"><code>
+// 在此处使用您自己的发送方标识符，即 Google 开发者
+// 控制台中获得的项目编号。
+var senderId = "Your-Sender-ID";
+
+// 确保消息标识符在您的应用的整个生命周期内唯一。实现
+// 这一点的一种方式就是使用自增计数器，并将计数值保存
+// 在本地存储中。
+
+// 消息标识符通过本地存储保存和恢复。
+var messageId = 0;
+chrome.storage.local.get("messageId", function(result) {
+  if (chrome.runtime.lastError)
+    return;
+  messageId = parseInt(result["messageId"]);
+  if (isNaN(messageId))
+    messageId = 0;
+});
+
+// 设置事件监听器，处理发送错误。
+chrome.gcm.onSendError.addListener(sendError);
+
+// 返回新的标识符标识消息。
+function getMessageId() {
+  messageId++;
+  chrome.storage.local.set({messageId: messageId});
+  return messageId.toString();
+}
+
+function sendMessage() {
+  var message = {
+    messageId: getMessageId(),
+    destinationId: senderId + "@gcm.googleapis.com",
+    timeToLive: 86400,    // 1 天
+    data: {
+      "key1": "value1",
+      "key2": "value2"
+    }
+  };
+  chrome.gcm.send(message, function(messageId) {
+    if (chrome.runtime.lastError) {
+      // 发生了一些错误，妥善处理或者再次发送。
+      return;
+    }
+
+    // 消息已接受，准备投递。如果消息无法到达目标
+    // 则产生 onSendError 事件。
+  });
+}
+
+function sendError(error) {
+  console.log("无法发送消息 " + error.messageId +
+      "：" + error.errorMessage);
+}
+</code></pre>
+
+<h3 id="messages_deleted_event"><!--@Messages deleted event-->消息删除事件</h3>
+
+<p><!--@GCM will store up to 100 non-collapsible messages. After that, all messages are
+discarded from GCM, and an event <a href=/apps/gcm#event-onMessagesDeleted>gcm.onMessagesDeleted</a> will be fired, which
+tells the client that it falls behind. Your app or extension should respond by
+syncing with your application server to recover the discarded messages.-->
+GCM 最多存储 100 条不可折叠的消息，在此之后，所有消息都会被 GCM 丢弃，并产生
+<a href="gcm.html#event-onMessagesDeleted">gcm.onMessagesDeleted</a>
+事件，告诉客户端消息滞后了。您的应用或扩展程序应该响应该事件，并与应用程序服务器同步，恢复丢弃的消息。
+</p>
+
+<pre data-filename="background.js"><code>
+chrome.gcm.onMessagesDeleted.addListener(messagesDeleted);
+
+function messagesDeleted() {
+  // 所有消息被 GCM 丢弃，与应用程序服务器同步，
+  // 从这种情况下恢复正常。
+}
+</code></pre>
+
+<h3 id="collapsible_messages"><!--@Collapsible messages-->可折叠的消息</h3>
+
+<p><!--@GCM messages are often a tickle, telling the app or extension to contact the
+server for fresh data. In GCM, it's possible to create collapsible messages for
+this situation, wherein new messages replace older ones. When a collapse key is
+provided and multiple messages are queued up in the GCM servers for the same
+user, only the last one with any given collapse key is delivered to your app or
+extension. As a result the <code>message</code> object passed to the <a href=/apps/gcm#event-onMessage>gcm.onMessage</a> event
+will contain a <code>collapseKey</code>field. For more details about sending collapsible
+messages, please refer to <a href="http://developer.android.com/google/gcm/adv.html#collapsible">GCM Advance
+Topics</a>.-->
+GCM 消息通常很简单，只是告诉应用或扩展程序从服务器获取新数据。这种情况下可以在
+GCM 中创建可折叠的消息，使新消息替代旧消息。当您提供了折叠键后，如果同一用户
+的多条消息放入 GCM
+服务器队列中，只有包含指定折叠键的最后一条消息才会传递到您的应用或扩展程序。这样传递给
+<a href="gcm.html#event-onMessage">gcm.onMessage</a> 事件的 <code>message</code> 对象包含 <code>collapseKey</code>
+字段。有关发送可折叠消息的更多详情，请参见
+<a href="https://developer.android.com/google/gcm/adv.html#collapsible">GCM
+高级主题</a>。
+</p>
+
+<h2 id="publish_your_app"><!--@Publish your app-->发布您的应用</h2>
+
+<p><!--@To use the GCM service, you must publish your app in the <a href="https://developers.google.com/chrome/web-store/docs/publish">Chrome Web
+Store</a>.-->
+要想使用 GCM 服务，您必须在
+<a href="https://developers.google.com/chrome/web-store/docs/publish">Chrome
+网上应用店</a>中发布您的应用。
+</p>
+
+<h2 id="error_reference"><!--@Error reference-->错误参考</h2>
+
+<p><!--@An error could occur when a gcm API function is called. Your app or extension
+should check <a href=/apps/runtime#property-lastError>runtime.lastError</a> for more information in your callback. The
+error code will also be passed as a parameter to <a href=/apps/gcm#event-onSendError>gcm.onSendError</a> event.-->
+调用 GCM API 函数时可能会发生错误，您的应用或扩展程序应该在回调函数中检查
+<a href="runtime.html#property-lastError">runtime.lastError</a> 获取更多信息，错误代码还会作为参数传递给
+<a href="gcm.html#event-onSendError">gcm.onSendError</a> 事件。
+</p>
+
+<p><!--@Here's a brief summary of the gcm errors:-->
+如下是 GCM 错误的简要概述：
+</p>
+
+<ul>
+<li><strong>Function was called with invalid parameters</strong><!--@: this could happen when gcm
+functions are called with bad parameters.-->（调用函数时传递的参数无效）：GCM
+函数调用时传递不正确的参数时就会发生该错误。</li>
+<li><strong>Profile was not signed in</strong><!--@: this could happen when gcm functions are called
+from a profile that was not signed in.-->（配置文件未登录）：GCM
+函数在未登录的配置文件中调用时就会发生该错误。</li>
+<li><strong>Asynchronous operation is pending</strong><!--@: this could happen when certain gcm
+function is called again without waiting for the callback passed in previous
+function to be called.-->（异步操作待定）：如果之前传递的回调函数还未调用时就再次调用某些
+GCM 函数则会发生该错误。</li>
+<li><strong>Network error occurred</strong><!--@: this could happen when GCM server fails to reach
+due to network problem, like losing Internet connection.-->（发生网络错误）：由于网络问题（例如 Internet 连接断开）无法连接到 GCM
+服务器时就会发生该错误。</li>
+<li><strong>Server error occurred</strong><!--@: this could happen when GCM server fails to reach
+due to server problem, like server busy.-->（发生服务器错误）：由于服务器问题（例如服务器忙）无法连接到
+GCM 服务器时就会发生该错误。</li>
+<li><strong>Time-to-live exceeded</strong><!--@: this could happen when a message could not be
+delivered within the specific time-to-live period.-->（超过留存期）：如果不能在指定的留存期内投递消息就会产生该错误。</li>
+<li><strong>Unknown error occurred</strong><!--@: this could happen due to any other internal
+errors.-->（发生未知错误）：任何其他内部错误都可能发生该错误。</li>
+</ul>
+
+<h2 id="feedback"><!--@Feedback-->反馈</h2>
+
+<p><!--@You can provide feedback about Google Cloud Messaging and the
+<a href="gcm">chrome.gcm API</a> through
+the Google Group <a href="https://groups.google.com/forum/#!forum/gcm-for-chrome-feedback">GCM for Chrome
+Feedback</a>.
+Use this group to ask for help, file bug reports, and request features.-->
+您可以通过 <a
+href="https://groups.google.com/forum/#!forum/gcm-for-chrome-feedback">GCM
+for Chrome Feedback</a> Google 网上论坛提供关于 Google 云消息服务及
+<a href="gcm.html">chrome.gcm API</a> 的反馈，您可以使用论坛寻求帮助、报告问题、请求特性。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">在云端开发</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="offline_apps.html">首先考虑离线</a>
+                        </li>
+                        <li>
+                          <a href="app_external.html">处理外部内容</a>
+                        </li>
+                        <li>
+                          <a href="app_storage.html">保存数据</a>
+                        </li>
+                        <li>
+                          <a href="inform_users.html">随时通知用户</a>
+                        </li>
+                        <li>
+                          <a href="cloudMessaging.html" class="active">云消息服务</a>
+                        </li>
+                        <li>
+                          <a href="richNotifications.html">丰富的通知</a>
+                        </li>
+                        <li>
+                          <a href="app_identity.html">用户认证</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#enable_gcm"
+          >启用 GCM</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#receive_a_message"
+          >接收消息</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#send_a_message"
+          >发送消息</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#set_up_project"
+          >设置项目</a>
+          <ol class="toc">
+              <li><a data-list-item href="cloudMessaging.html#create_google_api_project"
+                     >创建Google API 项目</a>
+              </li>
+              <li><a data-list-item href="cloudMessaging.html#enable_the_gcm_service"
+                     >启用 GCM 服务</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#set_up_chrome_app_or_extension"
+          >设置 Chrome 应用或扩展程序</a>
+          <ol class="toc">
+              <li><a data-list-item href="cloudMessaging.html#add_permission_to_manifest"
+                     >在清单文件中添加权限</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#write_chrome_app_or_extension"
+          >编写 Chrome 应用或扩展程序</a>
+          <ol class="toc">
+              <li><a data-list-item href="cloudMessaging.html#obtain_registration_id"
+                     >获取注册标识符</a>
+              </li>
+              <li><a data-list-item href="cloudMessaging.html#receive_messages"
+                     >接收消息</a>
+              </li>
+              <li><a data-list-item href="cloudMessaging.html#send_messages"
+                     >发送消息</a>
+              </li>
+              <li><a data-list-item href="cloudMessaging.html#messages_deleted_event"
+                     >消息删除事件</a>
+              </li>
+              <li><a data-list-item href="cloudMessaging.html#collapsible_messages"
+                     >可折叠的消息</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#publish_your_app"
+          >发布您的应用</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#error_reference"
+          >错误参考</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="cloudMessaging.html#feedback"
+          >反馈</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

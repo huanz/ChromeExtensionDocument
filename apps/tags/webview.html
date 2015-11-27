@@ -1,0 +1,3032 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>webview 标签 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="webview.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>&lt;webview&gt; 标签</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>webview</code> 标签主动通过网络加载网上的活动内容，并将它嵌入在您的 Chrome 应用中。您的应用可以控制 <code>webview</code> 的外观，与网上内容交互，在嵌入的网页中进行导航，响应其中发生的错误事件等等。（请参见<a href="webview.html#usage">用法</a>）。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "webview"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="usage"><!--@Usage-->用法</h2>
+      
+      <p>
+      <!--@Use the <code>webview</code> tag to embed 'guest' content
+      (such as web pages) in your Chrome App.
+      The guest content is contained within the <code>webview</code> container;
+      an embedder page within your Chrome App controls
+      how the guest content is laid out and rendered.-->
+      使用 <code>webview</code>
+      标签在您的 Chrome 应用中嵌入“来宾”内容（例如网页）。来宾内容包含在
+      <code>webview</code>
+      容器中，您的 Chrome 应用中的嵌入者网页控制来宾内容的布局和渲染方式。
+      </p>
+      
+      <p>
+      <!--@Different from the <code>iframe</code>,
+      the <code>webview</code>
+      runs in a separate process than your app;
+      it doesn't have the same permissions as your app and
+      all interactions between your app and embedded content will be asynchronous.
+      This keeps your app safe from the embedded content.-->
+      与 <code>iframe</code> 不同，<code>webview</code>
+      在单独的进程中运行，而不是在您的应用中。它并不拥有您的应用具有的权限，而且您的应用和嵌入内容之间的交互都是异步的，这样可以确保您的应用的安全，不受嵌入内容的影响。
+      </p>
+      </p>
+      
+      <h2 id="example"><!--@Example-->例子</h2>
+      
+      <p>
+      <!--@To embed a web page in your app,
+      add the <code>webview</code> tag to your app's embedder page
+      (this is the app page that will display the guest content).
+      In its simplest form,
+      the <code>webview</code> tag includes the <code>src</code> of the web page
+      and css styles that control the appearance of the <code>webview</code> container:-->
+      要想在您的应用中嵌入网页，请在您的应用的嵌入者页面（即显示来宾内容的应用页面）中添加
+      <code>webview</code> 标签。<code>webview</code> 标签最简单的形式包括网页的
+      <code>src</code>（来源）以及控制 <code>webview</code> 容器外观的 CSS 样式：
+      </p>
+      </p>
+      
+      <pre>&lt;webview id="foo" src="http://www.google.com/" style="width:640px; height:480px">&lt;/webview></pre>
+      
+      <p>
+      <!--@If you want to control the guest content in any way,
+      you can write JavaScript that listens for <a href="#events">webview events</a>
+      and responds to those events using the <a href="#methods">webview methods</a>.
+      Here's sample code in <code>app.js</code>
+      with two event listeners:
+      one that listens for the web page to start loading,
+      the other for the web page to stop loading,
+      and displays a "loading..." message during the load time:-->
+      如果您希望以任何方式控制来宾内容，您可以编写 JavaScript，监听
+      <a href="webview.html#events">webview 事件</a>，并使用
+      <a href="webview.html#methods">webview 方法</a>响应这些事件。如下是 <code>app.js</code>
+      中的示例代码，包含两个事件监听器：一个监听网页开始加载，另一个监听网页停止加载，并在加载的时候显示“正在加载...”消息：
+      </p>
+      
+      <pre>
+      onload = function() {
+        var webview = document.getElementById("foo");
+        var indicator = document.querySelector(".indicator");
+      
+        var loadstart = function() {
+          indicator.innerText = "正在加载...";
+        }
+        var loadstop = function() {
+          indicator.innerText = "";
+        }
+        webview.addEventListener("loadstart", loadstart);
+        webview.addEventListener("loadstop", loadstop);
+      }
+      </pre>
+      
+      <h2 id="tag"><!--@Tag attributes-->标签属性</h2>
+      
+      <h3 id="src">src</h3>
+        <div class="summary">
+          <pre>&lt;webview id="foo" <strong>src="http://www.google.com/"</strong> style="width:640px; height:480px">&lt;/webview></pre>
+        </div>
+        <div class="description">
+          <p>
+          <!--@Returns the visible URL.
+          Mirrors the logic in the browser's omnibox:
+          either returning a pending new navigation if initiated by the embedder page,
+          or the last committed navigation.
+          Writing to this attribute initiates top-level navigation.-->
+          返回可见的 URL，与浏览器多功能框的逻辑类似：如果嵌入者网页产生新的待定的导航则返回它，否则返回最后提交的导航。写入该属性将产生顶层导航。
+          </p>
+          <p>
+          <!--@Assigning <code>src</code> its own value will reload the current page.-->
+          将 <code>src</code> 设置为它本身的值会重新加载当前网页。
+          </p>
+          <p>
+          <!--@The <code>src</code> attribute can also accept data URLs, such as -->
+          <code>src</code> 属性也可以接受数据 URL，例如
+          <code>"data:text/plain,Hello, world!"</code><!--@.-->。
+        </div>
+      
+      <h3 id="partition">partition</h3>
+        <div class="summary">
+          <pre>&lt;webview id="foo" src="http://www.google.com/" style="width:640px; height:480px" <strong>partition="persist:googlepluswidgets"</strong>>&lt;/webview></pre>
+        </div>
+        <div class="description">
+          <p>
+          <!--@Storage partition ID used by the <code>webview</code> tag.
+          If the storage partition ID starts with <code>persist:</code>
+          (<code>partition="persist:googlepluswidgets"</code>),
+          the <code>webview</code> will use a persistent storage partition
+          available to all guests in the app
+          with the same storage partition ID.
+          If the ID is unset or if there is no <code>'persist':</code> prefix,
+          the <code>webview</code> will use an in-memory storage partition.
+          This value can only be modified before the first navigation,
+          since the storage partition of an active renderer process cannot change.
+          Subsequent attempts to modify the value will fail with a DOM exception.
+          By assigning the same partition ID,
+          multiple webviews can share the same storage partition.-->
+          <code>webview</code> 标签使用的存储分区标识符。如果存储分区标识符以
+          <code>persist:</code>
+          开始（<code>partition="persist:googlepluswidgets"</code>），<code>webview</code>
+          将使用持久存储分区，对于应用中具有相同存储分区标识符的所有来宾都可用。如果没有设置标识符或者没有
+          <code>persist:</code> 前缀，<code>webview</code>
+          将使用内存中的存储分区。只有在第一次导航开始前才能修改该属性值，因为活动渲染器进程的存储分区不能更改。如果之后尝试修改这一值将会失败，并产生
+          DOM 异常。指定同一个分区标识符，多个 webview 可以共享同一个存储分区。
+          </p>
+          <p class="note">
+          <strong><!--@Exception thrown:-->可能产生的异常：</strong>
+          <!--@The partition attribute must be valid for navigation to proceed.
+          In the case of an invalid partition, such as <code>partition="persist:"</code>,
+          the <a href="#src">src attribute</a> cannot be set and an exception is thrown.-->
+          partition 属性必须有效，导航才能继续。如果指定了无效分区，例如
+          <code>partition="persist:"</code>，您就无法设置
+          <a href="webview.html#src">src 属性</a>，并且还会产生异常。
+          </p>
+        </div>
+      
+      <h3 id="autosize">autosize</h3>
+        <div class="summary">
+          <pre>&lt;webview id="foo" src="http://www.google.com/" style="width:640px; height:480px" <strong>autosize="on" minwidth="576" minheight="432"</strong>>&lt;/webview></pre>
+        </div>
+        <div class="description">
+          <p>
+          <!--@If "on", the <code>webview</code> will container will automatically resize within the bounds specified
+          by the attributes <code>minwidth</code>, <code>minheight</code>,
+          <code>maxwidth</code>, and <code>maxheight</code>.
+          These contraints do not impact the <code>webview</code> UNLESS <code>autosize</code> is enabled.
+          When autosize is enabled, the <code>webview</code> container size cannot be less than the minimum values
+          or greater than the maximum.-->
+          如果为 "on"，<code>webview</code> 容器会在 <code>minwidth</code>、<code
+          >minheight</code>、<code>maxwidth</code> 和 <code>maxheight</code>
+          属性指定的范围内自动调整大小，<b>只有</b>启用 <code>autosize</code>
+          时这些属性才会影响 <code>webview</code>。启用自动调整大小后，<code
+          >webview</code> 容器的大小不能小于最小值或大于最大值。
+          </p>
+        </div>
+      
+      <h3 id="name">name</h3>
+        <div class="summary">
+          <pre>&lt;webview src="https://www.google.com/" <strong>name="google-view"</strong>>&lt;/webview></pre>
+        </div>
+        <div class="description">
+          <p>
+          <!--@This sets the guest content's <code>window.name</code> object.-->
+          该属性设置来宾内容的 <code>window.name</code> 对象。
+          </p>
+        </div>
+      
+      <h2 id="local_resources"><!--@Accessing packaged resources-->访问打包的资源</h2>
+      
+      <p>
+      <!--@By default, webviews are prevented from loading any resources packaged with
+      the app. However, <a href="#partition">webview partitions</a> may be granted
+      access to these resources via a <code>webview.partitions</code> section in
+      the app manifest. Partitions may be granted access to a set of files by
+      matching partition name patterns with file name patterns. Both sorts of
+      patterns may contain the <code>*</code> wildcard.-->
+      默认情况下，WebView 不能加载与应用一起打包的资源。但是可以通过 <a
+      href="webview.html#partition">WebView 分区</a>授予这些资源的访问权限，只要在应用的清单文件中指定
+      <code>webview.partitions</code> 部分。根据分区名称表达式与文件名表达式的匹配，授予分区访问一部分文件的权限。这两种匹配表达式都可以包含 <code>*</code>
+      通配符。
+      </p>
+      
+      <p>
+      <!--@Consider the following <code>manifest.json</code> snippet:-->
+      考虑如下 <code>manifest.json</code> 片段：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        "permissions": [
+          "webview"
+        ],
+        <strong>"webview": {
+          "partitions": [
+            // 在这个例子中，所有 &lt;webview partition="static"&gt; 或
+            // &lt;webview partition="persist:static"&gt; 都能访问
+            // header.html、footer.html 和 static.png。
+            {
+              "name": "static",
+              "accessible_resources": ["header.html", "footer.html", "static.png"]
+            },
+            // 此外，分区名称以“trusted”开头的 WebView（例如 "trusted-foo"、
+            // "persist:trusted-bar"）都能访问以“local_”开头的 .html 文件以及
+            // .png 和 .js 文件。
+            {
+              "name": "trusted*",
+              "accessible_resources": ["local_*.html", "*.png", "*.js"]
+            }
+            // 另外，所有 &lt;webview partition="trusted-audio"&gt; 或
+            // &lt;webview partition="persist:trusted-audio"&gt; 都能访问
+            // .mp3 文件。注意，还包括“local_*.html”、“*.png”、“*.js”，
+            // 因为 "trusted-audio" 也匹配 "trusted*" 表达式。
+            {
+              "name": "trusted-audio",
+              "accessible_resources": ["*.mp3"]
+            }
+            // 其他分区中的 WebView 禁止访问打包资源。
+          ]
+        }</strong>
+      }
+      </pre>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="webview.html#type-ClearDataOptions">ClearDataOptions</a></td></tr>
+          <tr><td><a href="webview.html#type-ClearDataTypeSet">ClearDataTypeSet</a></td></tr>
+          <tr><td><a href="webview.html#type-InjectDetails">InjectDetails</a></td></tr>
+          <tr><td><a href="webview.html#type-ContentWindow">ContentWindow</a></td></tr>
+          <tr><td><a href="webview.html#type-DialogController">DialogController</a></td></tr>
+          <tr><td><a href="webview.html#type-FindCallbackResults">FindCallbackResults</a></td></tr>
+          <tr><td><a href="webview.html#type-FindOptions">FindOptions</a></td></tr>
+          <tr><td><a href="webview.html#type-NewWindow">NewWindow</a></td></tr>
+          <tr><td><a href="webview.html#type-MediaPermissionRequest">MediaPermissionRequest</a></td></tr>
+          <tr><td><a href="webview.html#type-GeolocationPermissionRequest">GeolocationPermissionRequest</a></td></tr>
+          <tr><td><a href="webview.html#type-PointerLockPermissionRequest">PointerLockPermissionRequest</a></td></tr>
+          <tr><td><a href="webview.html#type-DownloadPermissionRequest">DownloadPermissionRequest</a></td></tr>
+          <tr><td><a href="webview.html#type-FileSystemPermissionRequest">FileSystemPermissionRequest</a></td></tr>
+          <tr><td><a href="webview.html#type-LoadPluginPermissionRequest">LoadPluginPermissionRequest</a></td></tr>
+          <tr><td><a href="webview.html#type-SelectionRect">SelectionRect</a></td></tr>
+          <tr><td><a href="webview.html#type-WebRequestEventInteface">WebRequestEventInteface</a></td></tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="webview.html#property-contentWindow">contentWindow</a></td>
+          <tr><td><a href="webview.html#property-request">request</a></td>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="webview.html#method-back">back</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.back()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-canGoBack">canGoBack</a> &minus;
+            <code class="prettyprint">
+            boolean
+            &lt;webview&gt;.canGoBack()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-canGoForward">canGoForward</a> &minus;
+            <code class="prettyprint">
+            boolean
+            &lt;webview&gt;.canGoForward()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-clearData">clearData</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.clearData(<span>    ClearDataOptions options</span>, <span>    ClearDataTypeSet types</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-executeScript">executeScript</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.executeScript(<span>    InjectDetails details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-find">find</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.find(<span>string searchText</span>, <span class="optional">    FindOptions options</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-forward">forward</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.forward()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-getProcessId">getProcessId</a> &minus;
+            <code class="prettyprint">
+            integer
+            &lt;webview&gt;.getProcessId()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-getUserAgent">getUserAgent</a> &minus;
+            <code class="prettyprint">
+            string
+            &lt;webview&gt;.getUserAgent()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-getZoom">getZoom</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.getZoom(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-go">go</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.go(<span>integer relativeIndex</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-insertCSS">insertCSS</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.insertCSS(<span>    InjectDetails details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-isUserAgentOverridden">isUserAgentOverridden</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.isUserAgentOverridden()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-print">print</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.print()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-reload">reload</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.reload()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-setUserAgentOverride">setUserAgentOverride</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.setUserAgentOverride(<span>string userAgent</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-setZoom">setZoom</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.setZoom(<span>double zoomFactor</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-stop">stop</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.stop()
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-stopFinding">stopFinding</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.stopFinding(<span class="optional">enum of <code>"clear"</code>, <code>"keep"</code>, or <code>"activate"</code> action</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="webview.html#method-terminate">terminate</a> &minus;
+            <code class="prettyprint">
+            &lt;webview&gt;.terminate()
+            </code>
+          </td></tr>
+        <tr><th colspan="2">DOM <!--@Events-->事件</th></tr>
+          <tr><td><a href="webview.html#event-close">close</a></td></tr>
+          <tr><td><a href="webview.html#event-consolemessage">consolemessage</a></td></tr>
+          <tr><td><a href="webview.html#event-contentload">contentload</a></td></tr>
+          <tr><td><a href="webview.html#event-dialog">dialog</a></td></tr>
+          <tr><td><a href="webview.html#event-exit">exit</a></td></tr>
+          <tr><td><a href="webview.html#event-findupdate">findupdate</a></td></tr>
+          <tr><td><a href="webview.html#event-loadabort">loadabort</a></td></tr>
+          <tr><td><a href="webview.html#event-loadcommit">loadcommit</a></td></tr>
+          <tr><td><a href="webview.html#event-loadredirect">loadredirect</a></td></tr>
+          <tr><td><a href="webview.html#event-loadstart">loadstart</a></td></tr>
+          <tr><td><a href="webview.html#event-loadstop">loadstop</a></td></tr>
+          <tr><td><a href="webview.html#event-newwindow">newwindow</a></td></tr>
+          <tr><td><a href="webview.html#event-permissionrequest">permissionrequest</a></td></tr>
+          <tr><td><a href="webview.html#event-responsive">responsive</a></td></tr>
+          <tr><td><a href="webview.html#event-sizechanged">sizechanged</a></td></tr>
+          <tr><td><a href="webview.html#event-unresponsive">unresponsive</a></td></tr>
+          <tr><td><a href="webview.html#event-zoomchange">zoomchange</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-ClearDataOptions">ClearDataOptions</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>指定 <code>clearData</code> 应该清除哪些数据的选项。</dd>
+                  <tr><th colspan="3" id="ClearDataOptions-properties">属性</th></tr>
+                  <tr id="property-ClearDataOptions-since">
+                    <td>double</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        since</td>
+                    <td>
+                    
+                    <p>
+                      清除指定日期及指定日期后积累的数据，表示为 1970 年 1 月 1 日以来所经过的毫秒数（可以通过 JavaScript <code>Date</code> 对象的 getTime 方法访问）。如果未指定，默认为 <code>0</code>（删除所有浏览数据）。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ClearDataTypeSet">ClearDataTypeSet</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>数据类型的集合，未指定的属性认为是 <code>false</code>。</dd>
+                  <tr><th colspan="3" id="ClearDataTypeSet-properties">属性</th></tr>
+                  <tr id="property-ClearDataTypeSet-appcache">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        appcache</td>
+                    <td>
+                    
+                    <p>
+                      网站的应用程序缓存。
+                    </p></td>
+                  </tr><tr id="property-ClearDataTypeSet-cookies">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        cookies</td>
+                    <td>
+                    
+                    <p>
+                      分区的 Cookie。
+                    </p></td>
+                  </tr><tr id="property-ClearDataTypeSet-fileSystems">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        fileSystems</td>
+                    <td>
+                    
+                    <p>
+                      网站的文件系统。
+                    </p></td>
+                  </tr><tr id="property-ClearDataTypeSet-history">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        history</td>
+                    <td>
+                    
+                    <p>
+                      分区的历史记录。
+                    </p></td>
+                  </tr><tr id="property-ClearDataTypeSet-indexedDB">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        indexedDB</td>
+                    <td>
+                    
+                    <p>
+                      网站的 IndexedDB 数据。
+                    </p></td>
+                  </tr><tr id="property-ClearDataTypeSet-localStorage">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        localStorage</td>
+                    <td>
+                    
+                    <p>
+                      网站的本地存储数据。
+                    </p></td>
+                  </tr><tr id="property-ClearDataTypeSet-webSQL">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        webSQL</td>
+                    <td>
+                    
+                    <p>
+                      网站的 WebSQL 数据。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-InjectDetails">InjectDetails</h3>
+              <table>
+                <dd>要插入的脚本或 CSS 的详情，必须设置 code 或 file 中的某一个属性，但是不能同时设置。</dd>
+                  <tr><th colspan="3" id="InjectDetails-properties">属性</th></tr>
+                  <tr id="property-InjectDetails-code">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        code</td>
+                    <td>
+                    
+                    <p>
+                      要插入的 JavaScript 或 CSS 代码。<br><br><b>警告：</b><br>使用 <code>code</code> 参数时要特别小心，不恰当的使用可能会使您的应用遭到<a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC">跨站脚本</a>攻击。
+                    </p></td>
+                  </tr><tr id="property-InjectDetails-file">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        file</td>
+                    <td>
+                    
+                    <p>
+                      要插入的 JavaScript 或 CSS 文件。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ContentWindow">ContentWindow</h3>
+              <table>
+                <dd>来宾窗口的消息传递句柄。</dd>
+                  <tr><th colspan="3" id="ContentWindow-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-ContentWindow-postMessage"
+                        >postMessage
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    ContentWindow.postMessage(<span>any message</span>, <span>string targetOrigin</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        <p>只要嵌入内容显示的是来自目标来源的网页，就向嵌入的网页内容发送消息。网页加载完成后该方法才可用，您可以监听 <a href="webview.html#event-contentload">contentload</a> 事件并调用该方法。</p><p>来宾可以通过接收到的消息事件中的 <code>event.source</code> 向嵌入者发送回复。</p><p>该 API 与 <a href="https://developer.mozilla.org/en-US/docs/DOM/window.postMessage">HTML5 postMessage API</a> 等价，用于在网页间通信。嵌入者可以在自己的框架上添加 <code>message</code> 事件监听器来监听回复。</p>
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-postMessage-message">
+                            <td>any</td>
+                            <td>
+                                message</td>
+                            <td>
+                            
+                            <p>
+                              要发送至来宾的消息对象。
+                            </p></td>
+                          </tr>
+                          <tr id="property-postMessage-targetOrigin">
+                            <td>string</td>
+                            <td>
+                                targetOrigin</td>
+                            <td>
+                            
+                            <p>
+                              指定来宾窗口的来源，来源一致才会分发事件。
+                            </p></td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-DialogController">DialogController</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>附加到 <code>dialog</code> DOM 事件的接口。</dd>
+                  <tr><th colspan="3" id="DialogController-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-DialogController-ok"
+                        >ok
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    DialogController.ok(<span class="optional">string response</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        接受对话框，等价于在 <code>alert</code>、<code>confirm</code> 或 <code>prompt</code> 对话框中单击确定。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-ok-response">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                response</td>
+                            <td>
+                            
+                            <p>
+                              接受 <code>prompt</code> 对话框时的响应字符串。
+                            </p></td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-DialogController-cancel"
+                        >cancel
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    DialogController.cancel()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        拒绝对话框，等价于在 <code>confirm</code> 或 <code>prompt</code> 对话框中单击取消。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-FindCallbackResults">FindCallbackResults</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>包含查找请求的所有结果。</dd>
+                  <tr><th colspan="3" id="FindCallbackResults-properties">属性</th></tr>
+                  <tr id="property-FindCallbackResults-numberOfMatches">
+                    <td>integer</td>
+                    <td>
+                        numberOfMatches</td>
+                    <td>
+                    
+                    <p>
+                      <code>searchText</code> 在网页中的匹配次数。
+                    </p></td>
+                  </tr><tr id="property-FindCallbackResults-activeMatchOrdinal">
+                    <td>integer</td>
+                    <td>
+                        activeMatchOrdinal</td>
+                    <td>
+                    
+                    <p>
+                      当前匹配项的序号。
+                    </p></td>
+                  </tr><tr id="property-FindCallbackResults-selectionRect">
+                    <td>    <a href="webview.html#type-SelectionRect">SelectionRect</a></td>
+                    <td>
+                        selectionRect</td>
+                    <td>
+                    
+                    <p>
+                      以屏幕坐标表示当前匹配区域。
+                    </p></td>
+                  </tr><tr id="property-FindCallbackResults-canceled">
+                    <td>boolean</td>
+                    <td>
+                        canceled</td>
+                    <td>
+                    
+                    <p>
+                      表示本次查找请求是否已经取消。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-FindOptions">FindOptions</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>查找请求的选项。</dd>
+                  <tr><th colspan="3" id="FindOptions-properties">属性</th></tr>
+                  <tr id="property-FindOptions-backward">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        backward</td>
+                    <td>
+                    
+                    <p>
+                      以相反顺序查找的标志，默认值为 <code>false</code>。
+                    </p></td>
+                  </tr><tr id="property-FindOptions-matchCase">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        matchCase</td>
+                    <td>
+                    
+                    <p>
+                      匹配时区分大小写的标志，默认值为 <code>false</code>。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-NewWindow">NewWindow</h3>
+              <table>
+                <dd>附加到 <code>newwindow</code> DOM 事件的接口。</dd>
+                  <tr><th colspan="3" id="NewWindow-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-NewWindow-attach"
+                        >attach
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    NewWindow.attach(<span>object webview</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        将请求的目标网页附加到现有的 <code>webview</code> 元素。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-attach-webview">
+                            <td>object</td>
+                            <td>
+                                webview</td>
+                            <td>
+                            
+                            <p>
+                              目标网页附加至哪一个 <code>webview</code> 元素。
+                            </p></td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-NewWindow-discard"
+                        >discard
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    NewWindow.discard()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        取消打开新窗口的请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-MediaPermissionRequest">MediaPermissionRequest</h3>
+              <table>
+                <dd>code>media <a href="webview.html#event-permissionrequest">permissionrequest</a></code>（媒体权限请求）DOM 事件的 <code>request</code> 对象。</dd>
+                  <tr><th colspan="3" id="MediaPermissionRequest-properties">属性</th></tr>
+                  <tr id="property-MediaPermissionRequest-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      请求访问用户媒体的框架 URL。
+                    </p></td>
+                  </tr>
+                  <tr><th colspan="3" id="MediaPermissionRequest-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-MediaPermissionRequest-allow"
+                        >allow
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    MediaPermissionRequest.allow()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        允许权限请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-MediaPermissionRequest-deny"
+                        >deny
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    MediaPermissionRequest.deny()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        拒绝权限请求。如果没有调用 <code>allow</code>，这是默认行为。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-GeolocationPermissionRequest">GeolocationPermissionRequest</h3>
+              <table>
+                <dd><code>geolocation <a href="webview.html#event-permissionrequest">permissionrequest</a></code>（地理定位权限请求）DOM 事件的 <code>request</code> 对象。</dd>
+                  <tr><th colspan="3" id="GeolocationPermissionRequest-properties">属性</th></tr>
+                  <tr id="property-GeolocationPermissionRequest-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      请求访问地理位置数据的框架 URL。
+                    </p></td>
+                  </tr>
+                  <tr><th colspan="3" id="GeolocationPermissionRequest-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-GeolocationPermissionRequest-allow"
+                        >allow
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    GeolocationPermissionRequest.allow()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        允许权限请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-GeolocationPermissionRequest-deny"
+                        >deny
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    GeolocationPermissionRequest.deny()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        拒绝权限请求。如果没有调用 <code>allow</code>，这是默认行为。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-PointerLockPermissionRequest">PointerLockPermissionRequest</h3>
+              <table>
+                <dd><code>pointerLock <a href="webview.html#event-permissionrequest">permissionrequest</a></code>（指针锁定权限请求）DOM 事件的 <code>request</code> 对象。</dd>
+                  <tr><th colspan="3" id="PointerLockPermissionRequest-properties">属性</th></tr>
+                  <tr id="property-PointerLockPermissionRequest-userGesture">
+                    <td>boolean</td>
+                    <td>
+                        userGesture</td>
+                    <td>
+                    
+                    <p>
+                      指针锁定是否通过用户输入操作请求。
+                    </p></td>
+                  </tr><tr id="property-PointerLockPermissionRequest-lastUnlockedBySelf">
+                    <td>boolean</td>
+                    <td>
+                        lastUnlockedBySelf</td>
+                    <td>
+                    
+                    <p>
+                      请求的框架是否是最近锁定指针的客户端。
+                    </p></td>
+                  </tr><tr id="property-PointerLockPermissionRequest-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      请求指针锁定的框架 URL。
+                    </p></td>
+                  </tr>
+                  <tr><th colspan="3" id="PointerLockPermissionRequest-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-PointerLockPermissionRequest-allow"
+                        >allow
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    PointerLockPermissionRequest.allow()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        允许权限请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-PointerLockPermissionRequest-deny"
+                        >deny
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    PointerLockPermissionRequest.deny()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        拒绝权限请求。如果没有调用 <code>allow</code>，这是默认行为。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-DownloadPermissionRequest">DownloadPermissionRequest</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd><code>download <a href="webview.html#event-permissionrequest">permissionrequest</a></code>（下载权限请求）DOM 事件的 <code>request</code> 对象。</dd>
+                  <tr><th colspan="3" id="DownloadPermissionRequest-properties">属性</th></tr>
+                  <tr id="property-DownloadPermissionRequest-requestMethod">
+                    <td>string</td>
+                    <td>
+                        requestMethod</td>
+                    <td>
+                    
+                    <p>
+                      与下载请求相关联的 HTTP 请求类型（例如 <code>GET</code>）。
+                    </p></td>
+                  </tr><tr id="property-DownloadPermissionRequest-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      请求的下载 URL。
+                    </p></td>
+                  </tr>
+                  <tr><th colspan="3" id="DownloadPermissionRequest-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-DownloadPermissionRequest-allow"
+                        >allow
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    DownloadPermissionRequest.allow()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        允许权限请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-DownloadPermissionRequest-deny"
+                        >deny
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    DownloadPermissionRequest.deny()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        拒绝权限请求。如果没有调用 <code>allow</code>，这是默认行为。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-FileSystemPermissionRequest">FileSystemPermissionRequest</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 37<!--@.
+                 --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                -->目前为 <strong>Beta</strong> 分支。<!--@
+                
+                 --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+              </p>
+              <table>
+                <dd><code>filesystem <a href="webview.html#event-permissionrequest">permissionrequest</a></code>（文件系统权限请求）DOM 事件的 <code>request</code> 对象。</dd>
+                  <tr><th colspan="3" id="FileSystemPermissionRequest-properties">属性</th></tr>
+                  <tr id="property-FileSystemPermissionRequest-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      请求访问本地文件系统的框架 URL。
+                    </p></td>
+                  </tr>
+                  <tr><th colspan="3" id="FileSystemPermissionRequest-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-FileSystemPermissionRequest-allow"
+                        >allow
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    FileSystemPermissionRequest.allow()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        允许权限请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-FileSystemPermissionRequest-deny"
+                        >deny
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    FileSystemPermissionRequest.deny()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        拒绝权限请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-LoadPluginPermissionRequest">LoadPluginPermissionRequest</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd><code>loadplugin <a href="webview.html#event-permissionrequest">permissionrequest</a></code>（下载权限请求）DOM 事件的 <code>request</code> 对象。</dd>
+                  <tr><th colspan="3" id="LoadPluginPermissionRequest-properties">属性</th></tr>
+                  <tr id="property-LoadPluginPermissionRequest-identifier">
+                    <td>string</td>
+                    <td>
+                        identifier</td>
+                    <td>
+                    
+                    <p>
+                      插件的标识符字符串。
+                    </p></td>
+                  </tr><tr id="property-LoadPluginPermissionRequest-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      插件的显示名称。
+                    </p></td>
+                  </tr>
+                  <tr><th colspan="3" id="LoadPluginPermissionRequest-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-LoadPluginPermissionRequest-allow"
+                        >allow
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    LoadPluginPermissionRequest.allow()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        允许权限请求。如果没有调用 <code>deny</code>，这是默认行为。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-LoadPluginPermissionRequest-deny"
+                        >deny
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    LoadPluginPermissionRequest.deny()
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        拒绝权限请求。
+                      </p>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-SelectionRect">SelectionRect</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd><p>以屏幕坐标表示的矩形区域。</p><p>坐标是否包含在内的语义与数组类似，即 <code>(left, top)</code> 坐标认为包含在矩形区域内，而 <code>(left + width, top)</code> 则不包含在内。</p></dd>
+                  <tr><th colspan="3" id="SelectionRect-properties">属性</th></tr>
+                  <tr id="property-SelectionRect-left">
+                    <td>integer</td>
+                    <td>
+                        left</td>
+                    <td>
+                    
+                    <p>
+                      屏幕左侧与矩形区域左侧之间的距离。
+                    </p></td>
+                  </tr><tr id="property-SelectionRect-top">
+                    <td>integer</td>
+                    <td>
+                        top</td>
+                    <td>
+                    
+                    <p>
+                      屏幕上侧与矩形区域上侧之间的距离。
+                    </p></td>
+                  </tr><tr id="property-SelectionRect-width">
+                    <td>integer</td>
+                    <td>
+                        width</td>
+                    <td>
+                    
+                    <p>
+                      矩形区域的宽度。
+                    </p></td>
+                  </tr><tr id="property-SelectionRect-height">
+                    <td>integer</td>
+                    <td>
+                        height</td>
+                    <td>
+                    
+                    <p>
+                      矩形区域的高度。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-WebRequestEventInteface">WebRequestEventInteface</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>使您访问来宾网页上网络请求事件的接口，有关网络请求生命周期以及相关概念的详情，请参见 <a href="../../extensions/webRequest.html">chrome.webRequest</a> 扩展程序 API。<p>为了演示用法上与扩展程序网络请求 API 的区别，考虑以下例子，阻止来宾请求所有匹配 <code>*://www.evil.com/*</code> 的 URL：</p><pre>webview.request.onBeforeRequest.addListener(  function(details) { return {cancel: true}; },  {urls: ["*://www.evil.com/*"]},  ["blocking"]);</pre><p>此外，该接口的 <code>onRequest</code> 和 <code>onMessage</code> 事件还支持声明式网络请求事件，有关 API 详情请参见 <a href="../../extensions/declarativeWebRequest.html">declarativeWebRequest</a>。</p>注意：声明式 webview 网络请求的条件和操作应该由对应的 <code>chrome.webViewRequest.*</code> 对象构造，以下示例代码以声明式的方式阻止 <code>myWebView</code> 中所有发送给 <code>"example.com"</code> 的请求：</p><pre>var rule = {  conditions: [    new chrome.webViewRequest.RequestMatcher({ url: { hostSuffix: 'example.com' } })  ],  actions: [ new chrome.webViewRequest.CancelRequest() ]};myWebview.request.onRequest.addRules([rule]);</pre></dd>
+              </table>
+            </div>
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">      <a href="webview.html#type-ContentWindow">ContentWindow</a></span></td>
+              <td><code id="property-contentWindow">&lt;webview&gt;.contentWindow</code></td>
+              <td>
+                  可以用来向来宾网页发送消息的对象引用。
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">      <a href="webview.html#type-WebRequestEventInteface">WebRequestEventInteface</a></span></td>
+              <td><code id="property-request">&lt;webview&gt;.request</code></td>
+              <td>
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                  使您访问来宾网页上网络请求事件的接口。
+              </td>
+            </tr>
+          </table>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-back"
+                  >back
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.back()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  如果可能的话，后退导航至历史记录中的前一项，等价于 <code>go(-1)</code>。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-canGoBack"
+                  >canGoBack
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              boolean
+              &lt;webview&gt;.canGoBack()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  表示能否后退导航历史记录。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-canGoForward"
+                  >canGoForward
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              boolean
+              &lt;webview&gt;.canGoForward()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  表示能否前进导航历史记录。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-clearData"
+                  >clearData
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.clearData(<span>    <a href="webview.html#type-ClearDataOptions">ClearDataOptions</a> options</span>, <span>    <a href="webview.html#type-ClearDataTypeSet">ClearDataTypeSet</a> types</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <p>清除 <code>webview</code> 分区中的浏览数据。</p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-clearData-options">
+                      <td>    <a href="webview.html#type-ClearDataOptions">ClearDataOptions</a></td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        指定清除哪些数据的选项。
+                      </p></td>
+                    </tr>
+                    <tr id="property-clearData-types">
+                      <td>    <a href="webview.html#type-ClearDataTypeSet">ClearDataTypeSet</a></td>
+                      <td>
+                          types</td>
+                      <td>
+                      
+                      <p>
+                        要清除的数据类型。
+                      </p></td>
+                    </tr>
+                    <tr id="property-clearData-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        数据成功清除后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-executeScript"
+                  >executeScript
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.executeScript(<span>    <a href="webview.html#type-InjectDetails">InjectDetails</a> details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <p>向来宾网页插入 JavaScript 代码。</p><p>以下示例代码使用脚本插入的方式将来宾网页的背景颜色设置为红色：</p><pre>webview.executeScript({ code: "document.body.style.backgroundColor = 'red'" });</pre>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-executeScript-details">
+                      <td>    <a href="webview.html#type-InjectDetails">InjectDetails</a></td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        要运行的脚本详情。
+                      </p></td>
+                    </tr>
+                    <tr id="property-executeScript-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        所有 JavaScript 执行弯后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of any result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>array of any</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  result</td>
+                              <td>
+                              
+                              <p>
+                                插入的每一个框架中脚本的结果。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-find"
+                  >find
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.find(<span>string searchText</span>, <span class="optional">    <a href="webview.html#type-FindOptions">FindOptions</a> options</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                </p>
+                <p>
+                  开始在网页中查找的请求。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-find-searchText">
+                      <td>string</td>
+                      <td>
+                          searchText</td>
+                      <td>
+                      
+                      <p>
+                        需要在网页中查找的字符串。
+                      </p></td>
+                    </tr>
+                    <tr id="property-find-options">
+                      <td>    <a href="webview.html#type-FindOptions">FindOptions</a></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        查找请求的选项。
+                      </p></td>
+                    </tr>
+                    <tr id="property-find-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        本次查找请求的所有结果都返回后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="webview.html#type-FindCallbackResults">FindCallbackResults</a> results) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-results">
+                              <td>    <a href="webview.html#type-FindCallbackResults">FindCallbackResults</a></td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  results</td>
+                              <td>
+                              
+                              <p>
+                                包含本次查找请求的所有结果。如果回调函数体中未使用 <code>results</code> 则可以省略，例如如果回调函数只是用来检测查找请求什么时候完成。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-forward"
+                  >forward
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.forward()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  如果可能的话，前进导航至历史记录中的前一项，等价于 <code>go(1)</code>。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getProcessId"
+                  >getProcessId
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              integer
+              &lt;webview&gt;.getProcessId()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  返回来宾网页当前进程所对应的 Chrome 浏览器内部进程标识符，允许嵌入者了解终止该进程会影响多少来宾。只有两个来宾属于同一应用并且具有相同的<a href="webview.html#partition">存储分区标识符</a>时，它们才会共用同一个进程。该调用是同步的，返回嵌入者缓存中的当前进程标识符，这一进程标识符与操作系统的进程标识符不同。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getUserAgent"
+                  >getUserAgent
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              string
+              &lt;webview&gt;.getUserAgent()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  返回由 webview 来宾网页请求使用的用户代理字符串。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getZoom"
+                  >getZoom
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.getZoom(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 36<!--@.--> 开始支持。
+                </p>
+                <p>
+                  获取当前缩放比例。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getZoom-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        获取当前缩放比例后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(double zoomFactor) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-zoomFactor">
+                              <td>double</td>
+                              <td>
+                                  zoomFactor</td>
+                              <td>
+                              
+                              <p>
+                                当前缩放比例。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-go"
+                  >go
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.go(<span>integer relativeIndex</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  通过相对于当前导航的历史记录索引导航至历史记录中的某一项。如果请求的导航不可能完成，该方法没有任何效果。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-go-relativeIndex">
+                      <td>integer</td>
+                      <td>
+                          relativeIndex</td>
+                      <td>
+                      
+                      <p>
+                        webview 应该导航至的相对历史记录索引。例如，<code>2</code> 会前进导航两个历史记录项（如果可能的话），<code>-3</code> 会后退导航三次。
+                      </p></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-insertCSS"
+                  >insertCSS
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.insertCSS(<span>    <a href="webview.html#type-InjectDetails">InjectDetails</a> details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  在来宾网页中嵌入 CSS。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-insertCSS-details">
+                      <td>    <a href="webview.html#type-InjectDetails">InjectDetails</a></td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        要嵌入的 CSS 详情。
+                      </p></td>
+                    </tr>
+                    <tr id="property-insertCSS-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        CSS 嵌入后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-isUserAgentOverridden"
+                  >isUserAgentOverridden
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.isUserAgentOverridden()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  指示 webview 的用户代理字符串是否由 <a href="webview.html#method-setUserAgentOverride">webviewTag.setUserAgentOverride</a> 覆盖。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-print"
+                  >print
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.print()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 38<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                  -->目前为 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  打印 WebView 的内容，等价于在 WebView 中调用 JavaScript print 函数。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-reload"
+                  >reload
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.reload()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  重新加载当前的顶层网页。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setUserAgentOverride"
+                  >setUserAgentOverride
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.setUserAgentOverride(<span>string userAgent</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  覆盖由 webview 来宾网页请求使用的用户代理字符串。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setUserAgentOverride-userAgent">
+                      <td>string</td>
+                      <td>
+                          userAgent</td>
+                      <td>
+                      
+                      <p>
+                        要使用的用户代理字符串。
+                      </p></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setZoom"
+                  >setZoom
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.setZoom(<span>double zoomFactor</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 36<!--@.--> 开始支持。
+                </p>
+                <p>
+                  更改网页的当前缩放比例。同样网页来源的缩放比例会保存下来，即使导航之后仍然继续使用。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setZoom-zoomFactor">
+                      <td>double</td>
+                      <td>
+                          zoomFactor</td>
+                      <td>
+                      
+                      <p>
+                        新的缩放比例。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setZoom-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        网页缩放后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-stop"
+                  >stop
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.stop()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  停止加载当期 &lt;webview> 导航（如果正在进行的话）。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-stopFinding"
+                  >stopFinding
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.stopFinding(<span class="optional">enum of <code>"clear"</code>, <code>"keep"</code>, or <code>"activate"</code> action</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 35<!--@.--> 开始支持。
+                </p>
+                <p>
+                  结束当前的查找会话（清除所有高亮标记），并取消所有正在进行的查找请求。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-stopFinding-action">
+                      <td>enum of <code>"clear"</code>, <code>"keep"</code>, or <code>"activate"</code></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          action</td>
+                      <td>
+                      
+                      <p>
+                        决定查找会话结束后如何处理目前匹配的内容。<code>clear</code> 清除当前匹配内容上的高亮，<code>keep</code> 保留当前匹配内容的高亮状态，<code>activate</code> 保留当前匹配内容的高亮状态，并模拟用户单击匹配内容。默认的操作是 <code>keep</code>（保留）。
+                      </p></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-terminate"
+                  >terminate
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              &lt;webview&gt;.terminate()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  强制终止来宾网页的渲染进程，这样可能会影响当前应用中共享同一个进程的多个 <code>webview</code> 标签，但不会影响其他应用中的 <code>webview</code> 标签。
+                </p>
+              </div>
+            </div>
+          <h2 id="dom_events">DOM <!--@Events-->事件</h2>
+          <dd>
+            <!--@Listeners can be added for these events using the standard -->
+            这些事件可以使用标准
+            HTML
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener">addEventListener</a>
+            API<!--@. Listeners receive a custom <code>Event</code> object which can have
+            additional properties as listed with each event.-->
+            添加监听器，监听器接收一个自定义的 <code>Event</code>
+            对象，可以包含附加属性，它们会在每一个事件中列出来。
+          </dd>
+            <div>
+              <h3 id="event-close">close</h3>
+              <div class="description">
+            <p>
+                  来宾窗口尝试将自己关闭时产生。<p>以下例子在来宾尝试关闭自己时将 webview 导航至 <code>about:blank</code>。</p><pre>webview.addEventListener('close', function() {  webview.src = 'about:blank';});</pre>
+                </p>  </div>
+            </div>
+            <div>
+              <h3 id="event-consolemessage">consolemessage</h3>
+              <div class="description">
+            <p>
+                  来宾窗口记录控制台消息时产生。<p>以下例子将所有日志消息转发至嵌入者的控制台，忽略日志级别和其他属性。</p><pre>webview.addEventListener('consolemessage', function(e) {  console.log('来宾网页记录了一条消息：', e.message);});</pre>
+                </p>      <tr id="property-consolemessage-level">
+                    <td>integer</td>
+                    <td>
+                        level</td>
+                    <td>
+                    
+                    <p>
+                      日志消息的严重性级别，从 0 到 4。
+                    </p></td>
+                  </tr><tr id="property-consolemessage-message">
+                    <td>string</td>
+                    <td>
+                        message</td>
+                    <td>
+                    
+                    <p>
+                      日志消息的内容。
+                    </p></td>
+                  </tr><tr id="property-consolemessage-line">
+                    <td>integer</td>
+                    <td>
+                        line</td>
+                    <td>
+                    
+                    <p>
+                      消息来源行号。
+                    </p></td>
+                  </tr><tr id="property-consolemessage-sourceId">
+                    <td>string</td>
+                    <td>
+                        sourceId</td>
+                    <td>
+                    
+                    <p>
+                      表示记录消息的资源的字符串。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-contentload">contentload</h3>
+              <div class="description">
+            <p>
+                  来宾窗口产生 <code>load</code> 事件时产生，即新文档加载之后，<em>不包括</em>当前文档内部的网页导航或异步资源加载。<p>以下例子在网页加载后修改来宾 <code>body</code> 元素的默认字体大小</p><pre>webview.addEventListener('contentload', function() {  webview.executeScript({ code: 'document.body.style.fontSize = "42px"' });});</pre>
+                </p>  </div>
+            </div>
+            <div>
+              <h3 id="event-dialog">dialog</h3>
+              <div class="description">
+            <p>
+                  来宾窗口通过 <code>window.alert</code>、<code>window.confirm</code> 或 <code>window.prompt</code> 尝试打开有模式对话框时产生。<p>处理该事件时会阻塞来宾进程，直到每一个事件监听器都返回或 <code>dialog</code> 对象不可访问（如果调用了 <code>preventDefault()</code>）。</p><p>默认行为是取消对话框。</p>
+                </p>      <tr id="property-dialog-messageType">
+                    <td>enum of <code>"alert"</code>, <code>"confirm"</code>, or <code>"prompt"</code></td>
+                    <td>
+                        messageType</td>
+                    <td>
+                    
+                    <p>
+                      来宾请求的有模式对话框类型。
+                    </p></td>
+                  </tr><tr id="property-dialog-messageText">
+                    <td>string</td>
+                    <td>
+                        messageText</td>
+                    <td>
+                    
+                    <p>
+                      来宾希望在有模式对话框中显示的字符串。
+                    </p></td>
+                  </tr><tr id="property-dialog-dialog">
+                    <td>    <a href="webview.html#type-DialogController">DialogController</a></td>
+                    <td>
+                        dialog</td>
+                    <td>
+                    
+                    <p>
+                      用于响应来宾的有模式对话框请求的接口。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-exit">exit</h3>
+              <div class="description">
+            <p>
+                  渲染来宾网页内容的进程退出时产生。<p>以下例子在来宾网页崩溃时显示告别消息：</p><pre>webview.addEventListener('exit', function(e) {  if (e.reason === 'crash') {    webview.src = 'data:text/plain,再见！';  }});</pre>
+                </p>      <tr id="property-exit-processID">
+                    <td>integer</td>
+                    <td>
+                        processID</td>
+                    <td>
+                    
+                    <p>
+                      退出的进程对应的 Chrome 浏览器内部标识符。
+                    </p></td>
+                  </tr><tr id="property-exit-reason">
+                    <td>enum of <code>"normal"</code>, <code>"abnormal"</code>, <code>"crash"</code>, or <code>"kill"</code></td>
+                    <td>
+                        reason</td>
+                    <td>
+                    
+                    <p>
+                      表示退出原因的字符串。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-findupdate">findupdate</h3>
+              <div class="description">
+            <p>
+                  活动查找请求有新的查找结果可用时产生，随着匹配项被找到，一次查找请求可能会多次产生该事件。
+                </p>      <tr id="property-findupdate-searchText">
+                    <td>string</td>
+                    <td>
+                        searchText</td>
+                    <td>
+                    
+                    <p>
+                      在网页中搜索的字符串。
+                    </p></td>
+                  </tr><tr id="property-findupdate-numberOfMatches">
+                    <td>integer</td>
+                    <td>
+                        numberOfMatches</td>
+                    <td>
+                    
+                    <p>
+                      目前为止在网页中找到的 <code>searchText</code> 数目。
+                    </p></td>
+                  </tr><tr id="property-findupdate-activeMatchOrdinal">
+                    <td>integer</td>
+                    <td>
+                        activeMatchOrdinal</td>
+                    <td>
+                    
+                    <p>
+                      当前匹配内容的序号，如果找到的话，找到之前则一直为 <code>0</code>。
+                    </p></td>
+                  </tr><tr id="property-findupdate-selectionRect">
+                    <td>    <a href="webview.html#type-SelectionRect">SelectionRect</a></td>
+                    <td>
+                        selectionRect</td>
+                    <td>
+                    
+                    <p>
+                      以屏幕坐标表示当前匹配内容所在区域（如果找到的话）。
+                    </p></td>
+                  </tr><tr id="property-findupdate-canceled">
+                    <td>boolean</td>
+                    <td>
+                        canceled</td>
+                    <td>
+                    
+                    <p>
+                      表示查找请求是否已经取消。
+                    </p></td>
+                  </tr><tr id="property-findupdate-finalUpdate">
+                    <td>string</td>
+                    <td>
+                        finalUpdate</td>
+                    <td>
+                    
+                    <p>
+                      表示所有查找请求是否都已经完成，不会再产生 <code>findupdate</code> 事件，除非再次发出查找请求。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-loadabort">loadabort</h3>
+              <div class="description">
+            <p>
+                  顶层加载未提交就终止时产生。<p class="note"><strong>注：</strong>资源加载终止后，最终 <code>loadabort</code> 事件产生之后还会产生<code>loadstop</code> 事件，即使上一次 <code>loadstop</code> 事件（如果有的话）以来所有提交的加载都被终止。
+                </p>      <tr id="property-loadabort-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      请求的 URL。
+                    </p></td>
+                  </tr><tr id="property-loadabort-isTopLevel">
+                    <td>boolean</td>
+                    <td>
+                        isTopLevel</td>
+                    <td>
+                    
+                    <p>
+                      本次加载是在顶层还是子框架中。
+                    </p></td>
+                  </tr><tr id="property-loadabort-reason">
+                    <td>enum of <code>"networkError"</code>, <code>"download"</code>, <code>"canceled"</code>, <code>"sslError"</code>, or <code>"safeBrowsingError"</code></td>
+                    <td>
+                        reason</td>
+                    <td>
+                    
+                    <p>
+                      表示终止类型的字符串。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-loadcommit">loadcommit</h3>
+              <div class="description">
+            <p>
+                  加载提交后产生，包括当前文档内的导航以及子框架的文档级加载，<em>但不</em>包括异步资源加载。
+                </p>      <tr id="property-loadcommit-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      提交的 URL。
+                    </p></td>
+                  </tr><tr id="property-loadcommit-isTopLevel">
+                    <td>boolean</td>
+                    <td>
+                        isTopLevel</td>
+                    <td>
+                    
+                    <p>
+                      本次加载是在顶层还是子框架中。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-loadredirect">loadredirect</h3>
+              <div class="description">
+            <p>
+                  顶层加载请求重定向至另一个 URL 时产生。
+                </p>      <tr id="property-loadredirect-oldUrl">
+                    <td>string</td>
+                    <td>
+                        oldUrl</td>
+                    <td>
+                    
+                    <p>
+                      重定向前的请求 URL。
+                    </p></td>
+                  </tr><tr id="property-loadredirect-newUrl">
+                    <td>string</td>
+                    <td>
+                        newUrl</td>
+                    <td>
+                    
+                    <p>
+                      重定向后的 URL。
+                    </p></td>
+                  </tr><tr id="property-loadredirect-isTopLevel">
+                    <td>boolean</td>
+                    <td>
+                        isTopLevel</td>
+                    <td>
+                    
+                    <p>
+                      重定向是在顶层还是子框架中发生。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-loadstart">loadstart</h3>
+              <div class="description">
+            <p>
+                  开始加载时产生。
+                </p>      <tr id="property-loadstart-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      请求的 URL。
+                    </p></td>
+                  </tr><tr id="property-loadstart-isTopLevel">
+                    <td>boolean</td>
+                    <td>
+                        isTopLevel</td>
+                    <td>
+                    
+                    <p>
+                      本次加载是在顶层还是子框架中。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-loadstop">loadstop</h3>
+              <div class="description">
+            <p>
+                  来宾网页中的所有框架级加载操作（包括所有子框架）完成后产生，包括当前文档内的导航以及子框架的文档级加载，<em>但不</em>包括异步资源加载。每当文档级加载的数量从一（或更多）过渡到零时就会产生该事件。例如，如果网页已经加载完成（即产生了一次 <code>loadstop</code> 事件），并创建了一个新的嵌套框架，加载某个网页，嵌套框架的网页加载完成时就会产生第二个 <code>loadstop</code> 事件。加载广告的网页中经常会观察到这样的模式。<p class="note"><strong>注：</strong>已提交的加载终止后，<code>loadabort</code> 事件产生后最终还会产生<code>loadstop</code> 事件，即使上一次 <code>loadstop</code> 事件（如果有的话）以来所有提交的加载都被终止。
+                </p>  </div>
+            </div>
+            <div>
+              <h3 id="event-newwindow">newwindow</h3>
+              <div class="description">
+            <p>
+                  来宾网页尝试打开新的浏览器窗口时产生。<p>以下例子在嵌入者中为每一个请求的新窗口创建新的 <code>webview</code> 并开始导航：</p><pre>webview.addEventListener('newwindow', function(e) {  var newWebview = document.createElement('webview');  document.body.appendChild(newWebview);  e.window.attach(newWebview);});</pre>
+                </p>      <tr id="property-newwindow-window">
+                    <td>    <a href="webview.html#type-NewWindow">NewWindow</a></td>
+                    <td>
+                        window</td>
+                    <td>
+                    
+                    <p>
+                      可以用来将请求的目标网页附加至现有的 <code>webview</code> 元素或显式取消请求的接口。
+                    </p></td>
+                  </tr><tr id="property-newwindow-targetUrl">
+                    <td>string</td>
+                    <td>
+                        targetUrl</td>
+                    <td>
+                    
+                    <p>
+                      请求打开新窗口的目标 URL。
+                    </p></td>
+                  </tr><tr id="property-newwindow-initialWidth">
+                    <td>double</td>
+                    <td>
+                        initialWidth</td>
+                    <td>
+                    
+                    <p>
+                      请求打开的新窗口的初始宽度。
+                    </p></td>
+                  </tr><tr id="property-newwindow-initialHeight">
+                    <td>double</td>
+                    <td>
+                        initialHeight</td>
+                    <td>
+                    
+                    <p>
+                      请求打开的新窗口的初始高度。
+                    </p></td>
+                  </tr><tr id="property-newwindow-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      请求打开的新窗口名称。
+                    </p></td>
+                  </tr><tr id="property-newwindow-windowOpenDisposition">
+                    <td>enum of <code>"ignore"</code>, <code>"save_to_disk"</code>, <code>"current_tab"</code>, <code>"new_background_tab"</code>, <code>"new_foreground_tab"</code>, <code>"new_window"</code>, or <code>"new_popup"</code></td>
+                    <td>
+                        windowOpenDisposition</td>
+                    <td>
+                    
+                    <p>
+                      请求打开新窗口的方式。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-permissionrequest">permissionrequest</h3>
+              <div class="description">
+            <p>
+                  来宾网页需要向嵌入者请求特殊权限时产生。<p>以下例子授予来宾网页访问 <code>webkitGetUserMedia</code> API 的权限。注意，使用该例子的应用本身必须指定 <code>audioCapture</code> 和/或 <code>videoCapture</code> 清单文件权限：</p><pre>webview.addEventListener('permissionrequest', function(e) {  if (e.permission === 'media') {    e.request.allow();  }});</pre>
+                </p>      <tr id="property-permissionrequest-permission">
+                    <td>enum of <code>"media"</code>, <code>"geolocation"</code>, <code>"pointerLock"</code>, <code>"download"</code>, <code>"loadplugin"</code>, or <code>"filesystem"</code></td>
+                    <td>
+                        permission</td>
+                    <td>
+                    
+                    <p>
+                      请求的权限类型。
+                    </p></td>
+                  </tr><tr id="property-permissionrequest-requestId">
+                    <td>integer</td>
+                    <td>
+                        requestId</td>
+                    <td>
+                    
+                    <p>
+                      标志来宾的这一请求的数。
+                    </p></td>
+                  </tr><tr id="property-permissionrequest-request">
+                    <td>object</td>
+                    <td>
+                        request</td>
+                    <td>
+                    
+                    <p>
+                      包含请求权限详情的对象，取决于请求的权限类型，可能为 <a href="webview.html#type-MediaPermissionRequest">webviewTag.MediaPermissionRequest</a>、<a href="webview.html#type-GeolocationPermissionRequest">webviewTag.GeolocationPermissionRequest</a>、<a href="webview.html#type-PointerLockPermissionRequest">webviewTag.PointerLockPermissionRequest</a>、<a href="webview.html#type-DownloadPermissionRequest">webviewTag.DownloadPermissionRequest</a> 或 <a href="webview.html#type-LoadPluginPermissionRequest">webviewTag.LoadPluginPermissionRequest</a> 对象。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-responsive">responsive</h3>
+              <div class="description">
+            <p>
+                  渲染来宾网页内容的进程失去响应后再恢复响应时产生。<p>以下例子在 <code>webview</code> 失去响应时淡出，恢复响应时淡入：</p><pre>webview.style.webkitTransition = 'opacity 250ms';webview.addEventListener('unresponsive', function() {  webview.style.opacity = '0.5';});webview.addEventListener('responsive', function() {  webview.style.opacity = '1';});</pre>
+                </p>      <tr id="property-responsive-processID">
+                    <td>integer</td>
+                    <td>
+                        processID</td>
+                    <td>
+                    
+                    <p>
+                      恢复响应的进程所对应的 Chrome 浏览器内部标识符。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-sizechanged">sizechanged</h3>
+              <div class="description">
+            <p>
+                  嵌入的网页内容大小更改时产生，只有在启用 <code>autosize</code> 时才会产生。
+                </p>      <tr id="property-sizechanged-oldWidth">
+                    <td>double</td>
+                    <td>
+                        oldWidth</td>
+                    <td>
+                    
+                    <p>
+                      嵌入的网页内容原来的宽度。
+                    </p></td>
+                  </tr><tr id="property-sizechanged-oldHeight">
+                    <td>double</td>
+                    <td>
+                        oldHeight</td>
+                    <td>
+                    
+                    <p>
+                      嵌入的网页内容原来的高度。
+                    </p></td>
+                  </tr><tr id="property-sizechanged-newWidth">
+                    <td>double</td>
+                    <td>
+                        newWidth</td>
+                    <td>
+                    
+                    <p>
+                      嵌入的网页内容的新宽度。
+                    </p></td>
+                  </tr><tr id="property-sizechanged-newHeight">
+                    <td>double</td>
+                    <td>
+                        newHeight</td>
+                    <td>
+                    
+                    <p>
+                      嵌入的网页内容的新高度。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-unresponsive">unresponsive</h3>
+              <div class="description">
+            <p>
+                  渲染来宾网页内容的进程失去响应时产生，如果来宾恢复响应，则会产生与之对应的 responsive 事件。
+                </p>      <tr id="property-unresponsive-processID">
+                    <td>integer</td>
+                    <td>
+                        processID</td>
+                    <td>
+                    
+                    <p>
+                      失去响应的进程所对应的 Chrome 浏览器内部标识符。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-zoomchange">zoomchange</h3>
+              <div class="description">
+            <p>
+                  网页缩放比例更改时产生。
+                </p>      <tr id="property-zoomchange-oldZoomFactor">
+                    <td>double</td>
+                    <td>
+                        oldZoomFactor</td>
+                    <td>
+                    
+                    <p>
+                      网页原来的缩放比例。
+                    </p></td>
+                  </tr><tr id="property-zoomchange-newZoomFactor">
+                    <td>double</td>
+                    <td>
+                        newZoomFactor</td>
+                    <td>
+                    
+                    <p>
+                      网页缩放之后的新缩放比例。
+                    </p></td>
+                  </tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../static/js/fatnav.js"></script>
+    <script src="../../static/js/article.js"></script>
+    <script src="../../static/js/prettify.js"></script>
+    <script src="../../static/js/search.js"></script>
+    <script src="../../static/js/site.js"></script>
+  </body>
+</html>

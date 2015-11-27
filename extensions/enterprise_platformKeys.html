@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.enterprise.platformKeys - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="enterprise_platformKeys.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<p class="warning">
+  <!--@This API is in beta. It is only available to Chrome users on the-->
+  该 API 还在 beta 测试中，仅对
+  <a href="https://www.google.com/landing/chrome/beta/">beta <!--@channel-->分支</a><!--@ and-->和
+  <a href="http://www.chromium.org/getting-involved/dev-channel">dev <!--@channel-->分支</a><!--@.-->的
+  Chrome 用户可用。
+</p>
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.enterprise.platformKeys</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.enterprise.platformKeys</code> API to generate
+             hardware-backed keys and to install certificates for these keys. The
+             certificates will be available to the platform and can, for example, be used
+             for TLS authentication and network access.-->
+             使用 <code>chrome.enterprise.platformKeys</code> API
+             生成由硬件产生的密钥，并为这些密钥安装证书。这些证书安装后可以在平台中使用，例如可用于 TLS 认证和网络访问。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 37<!--@.
+             --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+            -->目前为 <strong>Beta</strong> 分支。<!--@
+            
+             --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "enterprise.platformKeys"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <p class="note">
+      <strong><!--@Note: -->注意：</strong><!--@
+      This API is only available on Chrome OS and to
+      <a href="https://support.google.com/chrome/a/answer/1375694?hl=en">extensions pre-installed by policy</a>.-->该
+      API 仅在 Chrome OS 上可用，并且仅适用于<a
+      href="https://support.google.com/chrome/a/answer/1375694?hl=en">通过策略预先安装的扩展程序</a>。
+      </p>
+      
+      <h2 id="usage"><!--@Usage-->用法</h2>
+      
+      <!--@Typical usage of this API to enroll a client certificate follows these steps:-->
+      该 API 的典型用法涉及到客户端证书，遵循如下步骤：
+      <ul>
+        <li><!--@Get all available tokens using <a href=/extensions/enterprise.platformKeys#method-getTokens>enterprise.platformKeys.getTokens</a>.-->
+        使用 <a href="enterprise_platformKeys.html#method-getTokens">enterprise.platformKeys.getTokens</a> 获取所有可用令牌。
+        </li>
+        <li><!--@Find the Token with <code>id</code> equal <code>"user"</code>. Use this
+        Token subsequently.-->
+        找出 <code>id</code> 等于 <code>"user"</code> 的 Token 对象，接下来使用它。
+        </li>
+        <li><!--@Generate a key pair using the <code>generateKey</code> Token method
+        (defined in SubtleCrypto). This will return handle to the key.-->
+        通过令牌对象的 <code>generateKey</code> 方法（在 SubtleCrypto 中定义）生成密钥对，该方法会返回密钥句柄。
+        </li>
+        <li><!--@Export the public key using the <code>exportKey</code> Token method
+        (defined in SubtleCrypto).-->
+        通过令牌对象的 <code>exportKey</code> 方法（在 SubtleCrypto 中定义）导出公钥。
+        <li><!--@Create the signature of the certification request's data using the
+        <code>sign</code> Token method (defined in SubtleCrypto).-->
+        通过令牌对象的 <code>sign</code> 方法（在 SubtleCrypto 中定义）创建证书请求数据的签名。
+        </li>
+        <li><!--@Complete the certification request and send it to the certification
+        authority.-->
+        完成证书请求，并将它发送至证书权威机构。
+        </li>
+        <li><!--@If a certificate is received, import it using
+        <a href=/extensions/enterprise.platformKeys#method-importCertificate>enterprise.platformKeys.importCertificate</a>-->
+        如果接收到证书，使用 <a href="enterprise_platformKeys.html#method-importCertificate">enterprise.platformKeys.importCertificate</a>
+        导入。</li>
+      </ul>
+      
+      <p>
+      <!--@Here's an example that shows the major API interaction except the building and sending of the certification request:-->
+      下面的例子演示了主要的 API 交互过程，除了证书请求的建立和发送部分：
+      </p>
+      
+      <pre data-filename="background.js">
+      function getUserToken(callback) {
+        chrome.enterprise.platformKeys.getTokens(function(tokens) {
+          for (var i = 0; i < tokens.length; i++) {
+            if (tokens[i].id == "user") {
+              callback(tokens[i]);
+              return;
+            }
+          }
+          callback(undefined);
+        });
+      }
+      
+      function generateAndSign(userToken) {
+        var data = new Uint8Array([0, 5, 1, 2, 3, 4, 5, 6]);
+        var algorithm = {
+          name: "RSASSA-PKCS1-v1_5",
+          // RsaHashedKeyGenParams
+          modulusLength: 2048,
+          publicExponent:
+              new Uint8Array([0x01, 0x00, 0x01]),  // 等价于 65537
+          hash: {
+            name: "SHA-1",
+          }
+        };
+        var cachedKeyPair;
+        userToken.subtleCrypto.generateKey(algorithm, false, ["sign"])
+          .then(function(keyPair) {
+                  cachedKeyPair = keyPair;
+                  return userToken.subtleCrypto.exportKey("spki", keyPair.publicKey);
+                },
+                console.log.bind(console))
+          .then(function(publicKeySpki) {
+                  // 使用公钥建立证书请求。
+                  return userToken.subtleCrypto.sign(
+                      {name : "RSASSA-PKCS1-v1_5"}, cachedKeyPair.privateKey, data);
+                },
+                console.log.bind(console))
+          .then(function(signature) {
+                    // 根据 |signature| 完成证书请求，将请求发送至
+                    // CA，并调用 onClientCertificateReceived。
+                },
+                console.log.bind(console));
+      }
+      
+      function onClientCertificateReceived(userToken, certificate) {
+        chrome.enterprise.platformKeys.importCertificate(userToken.id, certificate);
+      }
+      
+      getUserToken(generateAndSign);
+      </pre>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="enterprise_platformKeys.html#type-Token">Token</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="enterprise_platformKeys.html#method-getTokens">getTokens</a> &minus;
+            <code class="prettyprint">
+            chrome.enterprise.platformKeys.getTokens(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="enterprise_platformKeys.html#method-getCertificates">getCertificates</a> &minus;
+            <code class="prettyprint">
+            chrome.enterprise.platformKeys.getCertificates(<span>string tokenId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="enterprise_platformKeys.html#method-importCertificate">importCertificate</a> &minus;
+            <code class="prettyprint">
+            chrome.enterprise.platformKeys.importCertificate(<span>string tokenId</span>, <span>ArrayBuffer certificate</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="enterprise_platformKeys.html#method-removeCertificate">removeCertificate</a> &minus;
+            <code class="prettyprint">
+            chrome.enterprise.platformKeys.removeCertificate(<span>string tokenId</span>, <span>ArrayBuffer certificate</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Token">Token</h3>
+              <table>
+                  <tr><th colspan="3" id="Token-properties">属性</th></tr>
+                  <tr id="property-Token-id">
+                    <td>string</td>
+                    <td>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Uniquely identifies this <code>Token</code>. <p>Static IDs are <code>"user"</code> and <code>"system"</code>, referring to the platform's user-specific and the system-wide hardware token, respectively. Any other tokens (with other identifiers) might be returned by <a href=/extensions/enterprise.platformKeys#method-getTokens>enterprise.platformKeys.getTokens</a>.</p>--> 唯一标志 <code>Token</code>。 <p>静态标识符包括 <code>"user"</code> 和 <code>"system"</code>，分别对应平台中特定用户和整个系统的硬件令牌，其他令牌（有不同的标识符）由 <a href="enterprise_platformKeys.html#method-getTokens">enterprise.platformKeys.getTokens</a> 返回。</p>
+                    </p></td>
+                  </tr><tr id="property-Token-subtleCrypto">
+                    <td>SubtleCrypto</td>
+                    <td>
+                        subtleCrypto</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Implements the WebCrypto's <a href="http://www.w3.org/TR/WebCryptoAPI/#subtlecrypto-interface">SubtleCrypto</a> interface. The cryptographic operations, including key generation, are hardware-backed. <p>Only non-extractable RSASSA-PKCS1-V1_5 keys with <code>modulusLength</code> up to 2048 can be generated. Each key can be used for signing data at most once.</p> <p>Keys generated on a specific <code>Token</code> cannot be used with any other Tokens, nor can they be used with <code>window.crypto.subtle</code>. Equally, <code>Key</code> objects created with <code>window.crypto.subtle</code> cannot be used with this interface.</p>--> 实现 WebCrypto 的 <a href="http://www.w3.org/TR/WebCryptoAPI/#subtlecrypto-interface">SubtleCrypto</a> 接口，其中的加密操作，包括密钥生成，都是由硬件进行的。 <p>只能生成 <code>modulusLength</code> 不超过 2048 的不可提取 RSASSA-PKCS1-V1_5 密钥，为数据签名时每个密钥只能使用一次。</p> <p>某个 <code>Token</code>（令牌）生成的密钥不能和其他令牌一起使用，也不能和 <code>window.crypto.subtle</code> 一起使用。同样的，<code>window.crypto.subtle</code> 创建的 <code>Key</code> 对象也不能和该接口一起使用。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getTokens"
+                  >getTokens
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.enterprise.platformKeys.getTokens(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Returns the available Tokens. In a regular user's session the list will always contain the user's token with <code>id</code> <code>"user"</code>. If a system-wide TPM token is available, the returned list will also contain the system-wide token with <code>id</code> <code>"system"</code>. The system-wide token will be the same for all sessions on this device (device in the sense of e.g. a Chromebook).--> 返回可用的令牌。在通常的用户会话中，返回的列表一定包含用户令牌，<code>id</code> 为 <code>"user"</code>。如果整个系统的 TPM 令牌可用，返回的列表还会包含整个系统的令牌，<code>id</code> 为 <code>"system"</code>。整个系统的令牌对该设备上的所有会话都相同（设备也就是 Chromebook）。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getTokens-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Invoked by <code>getTokens</code> with the list of available Tokens.--> 由 <code>getTokens</code> 调用，返回可用令牌。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="enterprise_platformKeys.html#type-Token">Token</a> tokens) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tokens">
+                              <td>array of     <a href="enterprise_platformKeys.html#type-Token">Token</a></td>
+                              <td>
+                                  tokens</td>
+                              <td>
+                              
+                              <p>
+                                <!--@The list of available tokens.--> 可用令牌的列表。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getCertificates"
+                  >getCertificates
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.enterprise.platformKeys.getCertificates(<span>string tokenId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Returns the list of all client certificates available from the given token. Can be used to check for the existence and expiration of client certificates that are usable for a certain authentication.--> 返回指定令牌中所有可用的客户端证书列表，可以用来检查某一次认证中客户端证书是否存在和过期。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getCertificates-tokenId">
+                      <td>string</td>
+                      <td>
+                          tokenId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of a Token returned by <code>getTokens</code>.--> 由 <code>getTokens</code> 返回的令牌标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getCertificates-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called back with the list of the available certificates.--> 调用时返回可用证书列表。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of ArrayBuffer certificates) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-certificates">
+                              <td>array of ArrayBuffer</td>
+                              <td>
+                                  certificates</td>
+                              <td>
+                              
+                              <p>
+                                <!--@The list of certificates, each in DER encoding of a X.509     certificate.--> 证书列表，全都为 X.509 证书以 DER 编码方式表示。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-importCertificate"
+                  >importCertificate
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.enterprise.platformKeys.importCertificate(<span>string tokenId</span>, <span>ArrayBuffer certificate</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Imports <code>certificate</code> to the given token if the certified key is already stored in this token. After a successful certification request, this function should be used to store the obtained certificate and to make it available to the operating system and browser for authentication.--> 将 <code>certificate</code>（证书）导入到指定令牌（如果证书密钥已经存储在该令牌中）。证书请求成功后，应该调用该函数存储获得的证书，以便使操作系统和浏览器可以利用它进行认证。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-importCertificate-tokenId">
+                      <td>string</td>
+                      <td>
+                          tokenId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of a Token returned by <code>getTokens</code>.--> <code>getTokens</code> 返回的令牌标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-importCertificate-certificate">
+                      <td>ArrayBuffer</td>
+                      <td>
+                          certificate</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The DER encoding of a X.509 certificate.--> 以 DER 编码方式表示的 X.509 证书。
+                      </p></td>
+                    </tr>
+                    <tr id="property-importCertificate-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called back when this operation is finished.--> 操作完成后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-removeCertificate"
+                  >removeCertificate
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.enterprise.platformKeys.removeCertificate(<span>string tokenId</span>, <span>ArrayBuffer certificate</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Removes <code>certificate</code> from the given token if present. Should be used to remove obsolete certificates so that they are not considered during authentication and do not clutter the certificate choice. Should be used to free storage in the certificate store.-->
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-removeCertificate-tokenId">
+                      <td>string</td>
+                      <td>
+                          tokenId</td>
+                      <td>
+                      
+                      <p>
+                        The id of a Token returned by <code>getTokens</code>. 从指定令牌中删除 <code>certificate</code>（证书）（如果存在的话），应该用于删除废弃的证书，因此在认证中不再考虑它们，而不会干扰证书的选择，还可以用于释放证书存储区的空间。
+                      </p></td>
+                    </tr>
+                    <tr id="property-removeCertificate-certificate">
+                      <td>ArrayBuffer</td>
+                      <td>
+                          certificate</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The DER encoding of a X.509 certificate.--> 以 DER 编码方式表示的 X.509 证书。
+                      </p></td>
+                    </tr>
+                    <tr id="property-removeCertificate-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called back when this operation is finished.--> 操作完成后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

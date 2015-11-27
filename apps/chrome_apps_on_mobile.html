@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>
+ 使用 Apache Cordova 在移动平台上运行 Chrome 应用 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="chrome_apps_on_mobile.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<meta name="doc-family" content="apps"> 
+
+ <!-- 
+   Warning: This document is auto-generated and should not be edited by hand. 
+   Please see https://github.com/MobileChromeApps/mobile-chrome-apps/tree/master/docs/htmlConvert.js 
+ --> 
+
+ <h1><!--@Run Chrome Apps on Mobile Using Apache Cordova-->
+ 使用 Apache Cordova 在移动平台上运行 Chrome 应用</h1>
+
+<p><em><strong><!--@The toolchain for running Chrome Apps on mobile is in early developer preview. Feel free to give us your feedback using the-->
+在移动设备上运行 Chrome 应用的工具包正处于早期的开发者预览阶段，
+欢迎您使用
+<a href="https://github.com/MobileChromeApps/mobile-chrome-apps/issues">Github <!--@issue tracker-->问题跟踪器</a><!--@, our-->、我们的 <a href="http://groups.google.com/a/chromium.org/group/chromium-apps/topics">Chrome <!--@Apps developer forum-->应用开发者论坛</a><!--@, on-->，或者在 <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">Stack Overflow</a><!--@, or our--> 或我们的 <a href="https://plus.google.com/+GoogleChromeDevelopers/">G+ <!--@Developers page-->开发者信息页</a><!--@.-->上提供反馈。</strong></em></p>
+
+<p><img alt="A Chrome App running on both desktop and mobile" src="../static/images/cca-desktop-and-mobile.jpg" /></p>
+
+<h2 id="overview"><!--@Overview-->概述</h2>
+
+<p><!--@You can run your <a href="http://developer.chrome.com/apps">Chrome Apps</a> on Android and iOS via a <a href="https://github.com/MobileChromeApps/mobile-chrome-apps">toolchain</a> based on <a href="http://cordova.apache.org">Apache Cordova</a>, an open source mobile development framework for building mobile apps with native capabilities using HTML, CSS and JavaScript.-->
+您可以在 Android  和 iOS 平台上通过一种基于
+<a href="http://cordova.apache.org">Apache Cordova</a>
+的<a href="https://github.com/MobileChromeApps/mobile-chrome-apps"
+>工具包</a>运行 <a href="about_apps.html">Chrome 应用</a>。Android Cordova
+是一种开源的移动开发框架，可以通过 HTML、CSS 和 JavaScript
+建立具有原生能力的移动应用。
+
+<p><!--@Apache Cordova wraps your application's web code with a native application shell and allows you to distribute your hybrid web app via Google Play and/or the Apple App Store. To use Apache Cordova with an existing Chrome App, you use the <code>cca</code> (<strong>c</strong> ordova <strong>c</strong> hrome <strong>a</strong> pp) command-line tool.-->
+Apache Cordova 将您的应用程序网页代码包含在原生应用程序外壳中，允许您通过
+Google Play 或 Apple App Store 发布混合网上应用。要想与现有的 Chrome
+应用搭配使用 Apache Cordova，您可以使用 <code>cca</code>（ <strong
+>c</strong>ordova <strong>c</strong>hrome <strong
+>a</strong>pp，Cordova Chrome 应用）命令行工具。
+</p>
+
+
+
+
+
+<h2 id="additional-resources"><!--@Additional resources-->其他资源</h2>
+
+<ul><li><p><!--@There are a few special considerations that you should keep in mind when developing with Cordova; we've listed them in the <a href="#special-considerations">considerations section</a>.-->
+使用 Cordova 开发时，有一些特别的注意事项需要您牢记，我们在<a
+href="chrome_apps_on_mobile.html#special-considerations-when-developing-with-cordova"
+>特别考虑</a>部分详细列举出来了。
+</p></li><li><p><!--@To view which Chrome APIs are supported on mobile, visit the <a href="https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/APIStatus.md">API Status</a> page.-->
+要想查看移动平台上支持哪些 Chrome API，请访问<a
+href="https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/APIStatus.md">API 状态</a>页面。
+</p></li><li><p><!--@To preview your Chrome App on an Android device without the toolchain, use the <a href="#chrome-apps-developer-tool-adt-for-android">Chrome Apps Developer Tool (ADT)</a>.-->
+如果您想在 Android 设备上预览您的 Chrome 应用，请使用
+<a href="chrome_apps_on_mobile.html#chrome-apps-developer-tool-adt-for-android">Chrome
+应用开发者工具（ADT）</a>。
+</p></li></ul>
+
+
+
+<p><!--@Let's get started.-->让我们开始吧。</p>
+
+<h2 id="step-1-install-your-development-tools"><!--@Step 1: Install your development tools-->第一步：安装开发工具</h2>
+
+<p><!--@The Chrome Apps for mobile toolchain can target iOS 6+ and Android 4.x+.-->
+用于移动平台的 Chrome 应用工具包支持 iOS 6+ 和 Android 4.x+。</p>
+
+<h3 id="development-dependencies-for-all-platforms"><!--@Development dependencies for all platforms-->所有平台上都需要的开发工具</h3>
+
+<ul><li><p><a href="http://nodejs.org">Node.js</a> <!--@version-->版本 0.10.0<!--@ (or higher) with-->（或更高），还需要 <code>npm</code><!--@ is required:-->：</p>
+<ul><li><strong>Windows</strong><!--@: Install Node.js using the installation executables downloadable from-->：从 <a href="http://nodejs.org">nodejs.org</a><!--@.--> 下载可执行文件安装 Node.js。</li>
+<li><p><strong>OS X</strong> <!--@or-->或 <strong>Linux</strong><!--@: Installation executables are also available from--> 用于安装的可执行文件也可以从 <a href="http://nodejs.org">nodejs.org</a><!--@. If you wish to avoid the need for root access, it may be more convenient to install via--> 获取。如果您不希望使用超级用户权限，可能通过 <a href="https://github.com/creationix/nvm">nvm</a><!--@. Example:--> 安装要更方便。例如：</p><pre><code>curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+source ~/.bash_profile || source ~/.profile || source ~/.bashrc
+nvm install 0.10
+nvm alias default 0.10</code></pre></li></ul></li></ul>
+
+<h3 id="targeting-android"><!--@Targeting Android-->Android 平台</h3>
+
+<p><!--@When developing an application for Android, you will also need to install:-->开发 Android 平台上的应用程序时，您还需要安装：</p>
+
+<ul><li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java JDK</a> 7<!--@ (or higher)-->（或更高版本）</li>
+<li><a href="http://developer.android.com/sdk/index.html">Android SDK</a> <!--@version-->版本 4.4.2<!--@ (or higher)-->（或更高）
+<ul><li><!--@Install the Android SDK and Android Developer Tools which come bundled with Android ADT Bundle.-->安装 Android ADT 包中附带的 Android
+SDK 和 Android 开发者工具。</li>
+<li><!--@Add-->将 <code>sdk/tools</code> <!--@and-->和 <code>sdk/platform-tools</code> 添加至 <a href="https://www.google.com/search?q=how+to+add+sdktools+to+path"><!--@to your--> PATH</a> <!--@environment variable. -->环境变量。</li>
+<li><strong>OS X</strong><!--@: The version of Eclipse that comes with the Android SDK requires JRE 6. If opening Eclipse.app does not prompt you to install JRE 6, get it through the Mac App Store.-->：Android SDK 中附带的 Eclipse
+需要 JRE 6。如果打开 Eclipse.app 时没有提示您安装 JRE 6 的话，请通过
+Mac App Store 获取它。</li>
+<li><strong>Linux</strong><!--@: The Android SDK requires 32 bit support libraries. On Ubuntu, get these via:-->：Android SDK 需要 32 位支持库，在
+Ubuntu 上可以通过 <code>apt-get install ia32-libs</code><!--@.--> 获取它们。</li>
+</ul></li>
+<li><a href="http://ant.apache.org/bindownload.cgi">Apache Ant</a>
+<ul><li><!--@Add-->将 <code>apache-ant-x.x.x/bin</code> 添加至 <a href="https://www.google.com/search?q=how+to+add+sdktools+to+path"><!--@to your--> PATH</a> <!--@environment variable.-->环境变量。</li></ul></li></ul>
+
+<h3 id="targeting-ios"><!--@Targeting iOS-->iOS 平台</h3>
+
+<p><!--@Please note that iOS development can only be done on OS X. In addition, you will need to install:-->请注意，iOS 开发只能在 OS X
+上完成。此外，您还需要安装：</p>
+
+<ul><li><a href="https://developer.apple.com/xcode/">Xcode</a> 5<!--@ (or higher) which includes the Xcode command line tools-->（或更高版本），包括
+Xcode 命令行工具</li>
+<li><a href="https://github.com/phonegap/ios-deploy">ios-deploy</a><!--@ (needed to deploy to an iOS device)-->（在 iOS 设备上部署时需要使用）
+<ul><li><code>npm install -g ios-deploy</code></li></ul></li>
+<li><a href="https://github.com/phonegap/ios-sim">ios-sim</a><!--@ (needed to deploy to iOS Simulator)-->（在 iOS 模拟器上部署时需要使用）
+<ul><li><code>npm install -g ios-sim</code></li></ul></li>
+<li><!--@Optional: Register as an iOS developer-->可选：注册为 iOS 开发者
+<ul><li><!--@This is necessary for testing on real devices and for submitting to the app store.-->在真实设备上测试以及提交至应用商店前需要做这一步。</li>
+<li><!--@You can skip registration if you only plan to use the iPhone/iPad simulators.-->如果您打算只用 iPhone/iPad 模拟器的话可以不注册。</li></ul></li></ul>
+
+<h3 id="install-the-cca-command-line-tool"><!--@Install the-->安装 <code>cca</code> <!--@command-line tool-->命令行工具</h3>
+
+<p><!--@Install-->通过 npm 安装 <code>cca</code><!--@ via npm:-->：</p>
+
+<pre><code>npm install -g cca</code></pre>
+
+<p><!--@To update the toolchain later with new releases: -->今后如果要将工具包更新至新版本的话：<code>npm update -g cca</code><!--@.-->。</p>
+
+<p><!--@Confirm that everything is installed correctly by running this command from the command line:-->在命令行中运行以下命令确认一切都已经安装妥当：</p>
+
+<pre><code>cca checkenv</code></pre>
+
+<p><!--@You will see the version number of-->您应该能看到 <code>cca</code> <!--@outputted and confirmation about your Android or iOS SDK installation.-->显示的版本号以及 Android 或 iOS SDK 安装的确认信息。</p>
+
+
+
+<h2 id="step-2-create-a-project"><!--@Step 2: Create a project-->第二步：创建项目</h2>
+
+<p><!--@To create a default mobile Chrome App project in a directory named <code>YourApp</code> run:-->运行以下命令在名为 <code>YourApp</code>
+的目录中创建默认的移动 Chrome 应用项目：</p>
+
+<pre><code>cca create YourApp</code></pre>
+
+<p><!--@If you have already built a Chrome App and wish to port it to a mobile platform, you can use the <code>--link-to</code> flag to create a <em>symlink</em> to it:-->
+如果您已经建立了一个 Chrome 应用，希望将它移植到移动平台，您可以使用
+<code>--link-to</code> 标志创建<em>符号链接</em>指向它：
+</p>
+
+<pre><code>cca create YourApp --link-to=path/to/manifest.json</code></pre>
+
+<p><!--@If you instead wish to <em>copy</em> your existing Chrome App files, you can use the <code>--copy-from</code> flag:-->
+如果您希望<em>复制</em>现有的 Chrome 应用文件，您可以使用
+<code>--copy-from</code> 标志：
+</p>
+
+<pre><code>cca create YourApp --copy-from=path/to/manifest.json</code></pre>
+
+<p><!--@Don't have your own Chrome App yet? Try one of the many-->没有自己的
+Chrome 应用吗？试一试<a href="https://github.com/GoogleChrome/chrome-app-samples#mobile-support"><!--@sample Chrome Apps with mobile support-->支持移动平台的 Chrome 应用示例</a><!--@.-->。</p>
+
+
+
+<h2 id="step-3-develop"><!--@Step 3: Develop-->第三步：开发</h2>
+
+<p><!--@You can build and run your application in two ways:-->您可以通过两种方式建立和运行应用程序：</p>
+
+<ul><li><!--@Option A: From the command line, using the <code>cca</code> tool, or-->方式 1：在命令行中使用 <code>cca</code> 工具或</li>
+<li><!--@Option B: By using an IDE, like Eclipse or Xcode. The use of an IDE is entirely optional (but often useful) to assist with launching, configuring, and debugging your hybrid mobile application.-->方式 2：使用 IDE，例如
+Eclipse 或 Xcode。IDE 的使用是可选的（但是一般很有用），可以帮您运行、配置和调试混合移动应用。</li></ul>
+
+<h3 id="option-a-develop-and-build-using-the-command-line"><!--@Option A: Develop and build using the command line-->方式 1：使用命令行开发和建立</h3>
+
+<p><!--@From the root of your <code>cca</code>-generated project folder:-->
+在 <code>cca</code> 生成的项目根目录中：</p>
+
+<h4>Android</h4>
+
+<ul><li><!--@To run your app on the Android Emulator: -->在 Android
+模拟器上运行您的应用：<code>cca emulate android</code>
+<ul><li><!--@Note: This requires that you've set up an emulator. You can run-->
+注意：您需要先安装一个模拟器。您可以运行 <code>android avd</code> <!--@to set this up. Download additional emulator images by running-->安装它，运行 <code>android</code><!--@. To make the intel images run faster, install-->
+可以下载其他模拟器镜像文件。为了让 Intel 镜像运行得更快，请安装
+<a href="http://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager/">Intel<!--@'s--> HAXM</a><!--@.-->。</li></ul></li>
+<li><!--@To run your app on a connected Android device: -->在连接好的
+Android 设备上运行您的应用：<code>cca run android</code></li></ul>
+
+<h4>iOS</h4>
+
+<ul><li><!--@To run your app on the iOS Simulator: -->在
+iOS 模拟器上运行您的应用：<code>cca emulate ios</code></li>
+<li><!--@To run your app on a connected iOS device: -->在连接好的
+iOS 设备上运行您的应用：<code>cca run ios</code>
+<ul><li><!--@Note: This requires that you've set up a-->注意：您需要先为您的设备设置
+<a href="http://stackoverflow.com/questions/3362652/what-is-a-provisioning-profile-used-for-when-developing-iphone-applications">Provisioning Profile</a><!--@ for your device.-->。</li></ul></li></ul>
+
+<h3 id="option-b-develop-and-build-using-an-ide"><!--@Option B: Develop and build using an IDE-->方式 2：使用 IDE 开发和建立</h3>
+
+<h4>Android</h4>
+
+<ol><li><!--@In Eclipse, select-->在 Eclpise 中选择 <code>File</code> -&gt; <code>Import</code><!--@.-->。</li>
+<li><!--@Choose-->选择 <code>Android</code> &gt; <code>Existing Android Code Into Workspace</code><!--@.-->。</li>
+<li><!--@Import from the path you just created with-->从刚才使用 <code>cca</code><!--@.--> 创建的路径导入。
+<ul><li><!--@You should expect to have two projects to import, one of which is-->应该导入了两个项目，其中一个是 <code>*-CordovaLib</code><!--@.-->。</li></ul></li>
+<li><!--@Click the Play button to run your app.-->单击 Play 按钮运行您的应用。
+<ul><li><!--@You will need to create a Run Configuration (as with all Java applications).  You <em>usually</em> get prompted for this the first time automatically.-->您需要先创建运行配置（Run Configuration）（与所有 Java
+应用程序一样），<em>通常</em>第一次运行时会自动提示您。</li>
+<li><!--@You will need to manage your devices/emulators the first time as well.-->第一次运行时您还需要管理您的设备/模拟器。</li></ul></li></ol>
+
+<h4>iOS</h4>
+
+<ol><li><p><!--@Open the project in Xcode by typing the following in a terminal window:-->在终端窗口中输入以下命令在 Xcode 中打开项目：</p>
+<pre><code>cd YourApp
+open platforms/ios/*.xcodeproj</code></pre></li>
+<li><p><!--@Make sure you are building the right target.-->确保建立时选择的是正确的目标。</p>
+<p><!--@In the top left (beside Run and Stop buttons), there is a dropdown to select target project and device. Ensure that-->在左上角（Run 和 Stop
+按钮）旁有一个下拉框可以选择目标项目和设备，确保选择的是 <code>YourApp</code> <!--@is selected and not-->而不是 <code>CordovaLib</code><!--@. -->。</p></li>
+<li><p><!--@Click the Play button.-->单击 Play 按钮。</p></li></ol>
+
+<h3 id="making-changes-to-your-app-source-code"><!--@Making changes to your app source code-->修改应用的源代码</h3>
+
+<p><!--@Your HTML, CSS, and JavaScript files live within the <code>www</code> directory of your cca project folder.-->您的 HTML、CSS 和 JavaScript
+文件在 cca 项目文件夹里的 <code>www</code> 目录中。</p>
+
+<p><strong><!--@Important-->重要提示：</strong><!--@: After making changes to-->修改 <code>www/</code><!--@, you must run--> 后，您必须运行 <code>cca prepare</code> <!--@before deploying your application.  If you are running-->然后再部署您的应用程序。如果您在命令行中运行 <code>cca build</code><!--@, -->、<code>cca run</code><!--@, or--> 或 <code>cca emulate</code><!--@ from the command line, the prepare step is done automatically.  If you are developing using Eclipse/XCode, you must run-->，准备步骤会自动完成。如果您使用
+Eclipse/Xcode 开发，您必须手工运行 <code>cca prepare</code><!--@ manually.-->。</p>
+
+<h3 id="debugging"><!--@Debugging-->调试</h3>
+
+<p><!--@You can debug your Chrome App on mobile the same way that you-->调试移动平台上 Chrome 应用与<a href="https://github.com/phonegap/phonegap/wiki/Debugging-in-PhoneGap"><!--@debug-->调试 Cordova <!--@applications-->应用程序</a><!--@.-->的方法是一样的。</p>
+
+
+
+<h2 id="step-4-next-steps"><!--@Step 4: Next Steps-->第四步：后续步骤</h2>
+
+<p><!--@Now that you have a working mobile Chrome App, there are lots of ways to improve the experience on mobile devices.-->您的移动 Chrome
+应用正常工作以后，还有很多方法可以提升移动设备上的体验。</p>
+
+<h3 id="mobile-manifest"><!--@Mobile Manifest-->移动清单文件</h3>
+
+<p><!--@There are certain Chrome App settings that only apply to mobile platforms.  We have created a <code>www/manifest.mobile.json</code> file to contain these, and the specific values are referenced throughout the plugin documentation and this guide.-->
+某些 Chrome 应用设置只适用于移动平台。我们创建了一个
+<code>www/manifest.mobile.json</code>
+文件，包含这些设置，具体的值在插件文档和该指南中进行了说明。
+</p>
+
+<p><!--@You should adjust the values here accordingly.-->您可以根据需要修改这些值。</p>
+
+<h3 id="icons"><!--@Icons-->图标</h3>
+
+<p><!--@Mobile apps need a few more icon resolutions than desktop Chrome Apps.-->与桌面版 Chrome 应用相比，移动应用需要更多不同分辨率的图标。</p>
+
+<p><!--@For Android, these sizes are needed:-->Android 上需要这些大小：</p>
+
+<ul><li>36px、48px、78px、96px</li></ul>
+
+<p><!--@For iOS apps, the required sizes differ depending on whether you support -->对于 iOS 应用来说，需要哪些大小的图标取决于您要支持
+<a href="https://developer.apple.com/library/ios/qa/qa1686/_index.html">iOS 6</a> <!--@vs -->还是
+<a href="https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/IconMatrix.html">iOS 7</a><!--@. The minimum number of icons required are:-->，至少需要以下这些图标：</p>
+
+<ul><li><strong>iOS 6</strong>：57px、72px、114px、144px</li><li><strong>iOS 7</strong>：72px、120px、152px</li></ul>
+
+<p><!--@A complete icon list would look like this in your <code>manifest.json</code> file:-->
+您的 <code>manifest.json</code> 文件中包含的完整图标列表如下所示：
+</p>
+
+<pre><code>"icons": {
+  "16": "assets/icons/icon16.png",
+  "36": "assets/icons/icon36.png",
+  "48": "assets/icons/icon48.png",
+  "57": "assets/icons/icon57.png",
+  "72": "assets/icons/icon72.png",
+  "78": "assets/icons/icon78.png",
+  "96": "assets/icons/icon96.png",
+  "114": "assets/icons/icon114.png",
+  "120": "assets/icons/icon120.png",
+  "128": "assets/icons/icon128.png",
+  "144": "assets/icons/icon144.png",
+  "152": "assets/icons/icon152.png"
+}</code></pre>
+
+<p><!--@The icons will be copied to the appropriate places for each platform every time you run-->每次运行 <code>cca prepare</code><!--@.-->
+时，这些图标都会复制到每一平台对应的合适位置。</p>
+
+<h3 id="splash-screens"><!--@Splash Screens-->欢迎屏幕</h3>
+
+<p><!--@Apps on iOS show a brief splash screen as the app is loading. A set of default Cordova splash screens are included in-->iOS
+上的应用加载时显示简短的欢迎屏幕，Cordova 默认的欢迎屏幕包含在 <code>platforms/ios/[AppName]/Resources/splash</code><!--@.  --> 中。</p>
+
+<p><!--@The sizes needed are:-->需要的大小包括：</p>
+
+<ul><li>320px x 480px + 2x</li><li>768px x 1024px + 2x<!--@ (iPad portrait)-->（iPad 竖屏）</li><li>1024px x 768px + 2x<!--@ (iPad landscape)-->（iPad 横屏）</li><li>640px x 1146px</li></ul>
+
+<p><!--@Splash screen images are not currently modified by-->目前 <code>cca</code><!--@.-->
+不会修改欢迎屏幕的图片。</p>
+
+
+
+<h2 id="step-5-publish"><!--@Step 5: Publish-->第五步：发布</h2>
+
+<p><!--@In your project's <code>platforms</code> directory, you have two complete native projects: one for Android, and one for iOS. You can build release versions of these projects and publish them to Google Play or to the iOS App Store.-->在项目的 <code>platforms</code> 目录中，您有两个完整的原生项目：一个是
+Android 的，另一个是 iOS 的。您可以建立这些项目的发行版本，并将它们发布至
+Google Play 或 iOS App Store。</p>
+
+<h3 id="publish-to-the-play-store"><!--@Publish to the Play Store-->发布至
+Play 商店</h3>
+
+<p><!--@To publish your Android application to the Play Store:-->如果要将您的
+Android 应用程序发布至 Play 商店：</p>
+
+<ol><li><p><!--@Update the two Android version ids, then run-->更新两个
+Android 版本号，然后运行 <code>cca prepare</code><!--@:-->：</p>
+<ul><li><code>android:versionName</code> <!--@is set using the-->根据 <code>www/manifest.json</code> 中的 <code>version</code> <!--@key in <code>www/manifest.json</code> (this sets the version of your desktop packaged app, too).-->键设置（同时也设置了桌面版打包应用的版本）。</li>
+<li><p><code>android:versionCode</code> <!--@is set using the <code>versionCode</code> key in <code>www/manifest.mobile.js</code>.-->根据
+<code>www/manifest.mobile.json</code> 中的 <code>versionCode</code>
+键设置。</p></li></ul></li>
+<li><p><!--@Edit (or create)-->编辑或创建 <code>platforms/android/ant.properties</code> <!--@and set the-->并设置 <code>key.store</code> <!--@and-->和 <code>key.alias</code> <!--@properties (as explained -->属性（根据
+<a href="https://developer.android.com/tools/building/building-cmdline.html#ReleaseMode"><!--@in the Android developer docs-->Android 开发者文档</a><!--@).-->所述）。</p></li>
+<li><p><!--@Build your project:-->建立您的项目：</p><pre><code>./platforms/android/cordova/build --release</code></pre></li>
+<li><p><!--@Find your signed .apk located inside-->在 <code>platforms/android/ant-build/</code><!--@.--> 中可以找到经过签名的 .apk 文件。</p></li>
+<li><p><!--@Upload your signed application to the-->将签名后的应用程序上传至 <a href="https://play.google.com/apps/publish">Google Play <!--@developer console-->开发者控制台</a><!--@.-->。</p></li></ol>
+
+<h3 id="publish-to-the-ios-app-store"><!--@Publish to the-->发布至 iOS App Store</h3>
+
+<ol><li><p><!--@Update the app version by setting the <code>CFBundleVersion</code> key in <code>www/manifest.mobile.js</code>, then run <code>cca prepare</code>.-->在 <code>www/manifest.mobile.js</code> 中设置
+<code>CFBundleVersion</code> 更新应用版本，然后运行
+<code>cca prepare</code>。</p></li>
+<li><p><!--@Open the Xcode project file found under your-->打开 <code>platforms/ios</code> <!--@directory:-->目录下的 Xcode 项目文件：</p>
+<p><!--@open-->打开 platforms/ios/*.xcodeproj</p></li>
+<li><p><!--@Follow Apple's-->遵循 Apple 的<a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html"><!--@App Distribution Guide-->应用发布指南</a><!--@.-->。</p></li></ol>
+
+<h2 id="special-considerations"><!--@Special considerations-->特别考虑</h2>
+
+<p><!--@If you're new to Chrome Apps, the biggest gotcha is that some <a href="http://developer.chrome.com/apps/app_deprecated">web features are disabled</a>. However, several of these do currently work within Cordova.-->
+如果您刚开始开发 Chrome 应用，最需要注意的地方就是某些<a
+href="app_deprecated.html">网页特性禁用了</a>。但是，目前其中的一部分可以在
+Cordova 中使用。</p>
+
+<p><!--@A Chrome App may not work out of the box on mobile. Some common problems with porting to mobile:-->Chrome 应用不一定能直接在移动设备上运行，移植到移动设备时遇到的常见问题有：</p>
+
+<ul><li><!--@Layout issues with small screens, especially while in a portrait orientation.-->小屏幕上的布局问题，尤其是竖屏状态下。
+<ul><li><em><!--@Suggested fix:-->建议的解决方案：</em><!--@ Use-->使用
+<a href="http://www.html5rocks.com/en/mobile/mobifying/#toc-mediaqueries">CSS <!--@media queries-->媒体类型</a><!--@ to optimize your content for smaller screens.-->为小屏幕优化您的内容。</li></ul></li>
+<li><!--@Chrome App window sizes set via <a href="http://developer.chrome.com/apps/app_window.html">chrome.app.window</a> will be ignored, instead using the device's native dimensions.-->
+通过 <a href="app_window.html">chrome.app.window</a> 设置的 Chrome
+应用窗口大小将忽略，直接使用设备的原生尺寸。
+<ul><li><em><!--@Suggested fix:-->建议的解决方案：</em><!--@ Remove hard-coded window dimensions; design your app with different sizes in mind.-->去除硬编码的窗口大小，设计应用时考虑不同的大小。</li></ul></li>
+<li><!--@Small buttons and links will be hard to tap with a finger.-->小按钮和小链接很难用手指触摸。
+<ul><li><em><!--@Suggested fix:-->建议的解决方案：</em><!--@ Adjust your touch targets to be at least 44 x 44 points. -->调整触控目标，使其大小至少为 44 × 44 像素。</li></ul></li>
+<li><!--@Unexpected behavior when relying on mouse hover which does not exist on touch screens.-->触摸屏上不存在鼠标悬停，依赖这一点会导致意料之外的行为
+<ul><li><em><!--@Suggested fix:-->建议的解决方案：</em><!--@ In addition to hover, activate UI elements such as dropdowns and tooltips on tap.-->除了悬停以外，在触摸时激活用户界面元素，例如下拉框和工具提示。</li></ul></li>
+<li><!--@A 300ms tap delay.-->300 毫米的触摸延迟。
+<ul><li><em><!--@Suggested fix:-->建议的解决方案：</em><!--@ Use the-->使用
+<a href="https://github.com/ftlabs/fastclick"><!--@FastClick by FT Labs-->FT Labs 的 FastClick</a> JavaScript <!--@polyfill.-->Polyfill。</li>
+<li><!--@Read this-->有关一些背景信息，请阅读这篇 <a href="http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away">HTML5Rocks <!--@article-->文章</a><!--@ for some background info.-->。</li></ul></li></ul>
+
+<h3 id="supported-chrome-apis"><!--@Supported Chrome APIs-->支持的 Chrome API</h3>
+
+<p><!--@We've made many of the core Chrome APIs available to Chrome Apps for Mobile, including:-->许多核心 Chrome API 也可以在移动平台的 Chrome 应用中使用，包括：</p>
+
+<ul><li><a href="identity.html">identity</a><!--@ - sign-in users using OAuth2-->——通过 OAuth2 进行用户登录</li>
+<li><a href="https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/chrome-cordova/plugins/google.payments/README.md">payments</a><!--@ - sell virtual goods within your mobile app-->——在移动应用中销售虚拟商品</li>
+<li><a href="pushMessaging.html">pushMessaging</a><!--@ - push messages to your app from your server-->——从您的服务器向应用推送消息</li>
+<li><a href="socket.html">socket</a><!--@ - send and receive data over the network using TCP and UDP-->——通过网络使用 TCP 和 UDP 发送和接收数据</li>
+<li><a href="notifications.html">notifications</a><!--@ (Android only) - send rich notifications from your mobile app-->（仅用于 Android）——从您的移动应用发送丰富的通知</li>
+<li><a href="storage.html">storage</a><!--@ - store and retrieve key-value data locally-->——在本地存储和获取键-值数据</li>
+<li><a href="syncFileSystem.html">syncFileSystem</a><!--@ - store and retrieve files backed by Google Drive-->——存储和获取 Google 网络硬盘中的文件</li>
+<li><a href="alarms.html">alarms</a><!--@ - run tasks periodically-->——周期性地运行任务</li>
+<li><a href="idle.html">idle</a><!--@ -  detect when the machine's idle state changes-->——检测计算机空闲状态的更改</li>
+<li><a href="power.html">power</a><!--@ - override the system's power management features-->——修改系统的电源管理特性</li></ul>
+
+<p><!--@However, not all Chrome JavaScript APIs are implemented. And not all Chrome Desktop features are available on mobile:-->但是并不是所有的
+Chrome JavaScript API 都实现了，而且并不是所有 Chrome
+桌面版的特性都在移动平台上可用：</p>
+
+<ul><li><!--@no-->没有 <code>&lt;webview&gt;</code> <!--@tag-->标签</li>
+<li><!--@no-->没有 IndexedDB</li>
+<li><!--@no-->没有 getUserMedia()</li>
+<li><!--@no-->没有 NaCl</li></ul>
+
+<p><!--@You can track progress from our-->您可以在我们的
+<a href="https://github.com/MobileChromeApps/mobile-chrome-apps/blob/master/docs/APIStatus.md">API <!--@Status-->状态</a><!--@ page.-->网页上跟踪 API 的支持。</p>
+
+
+
+<h2 id="chrome-apps-developer-tool">Chrome <!--@Apps Developer Tool-->应用开发者工具</h2>
+
+<p><!--@The Chrome Apps Developer Tool (ADT) for Android is a standalone Android app that allows you to download and run a Chrome App without setting up the development toolchain as described above. Use the Chrome ADT when you want to quickly preview an existing Chrome App (already packaged as a .crx) on your Android device.-->
+用于 Android 的 Chrome 应用开发工具（ADT）是一个独立的 Android
+应用，允许您下载并运行 Chrome
+应用，而不用像前面描述的那样安装开发工具包。如果您希望快速预览现有的 Chrome
+应用（已经打包为 .crx）在您的 Android 设备上运行时是什么样的，请使用 Chrome
+ADT。
+</p>
+
+<p><!--@The Chrome ADT for Android is currently in a pre-alpha release. To try it out, view the <a href="https://github.com/MobileChromeApps/harness/releases/">ChromeADT.apk release notes</a> for installation and usage instructions.-->
+用于 Android 的 Chrome ADT 目前还处于 Alpha
+前的测试阶段，有关安装和使用方法，请参见 <a
+href="https://github.com/MobileChromeApps/harness/releases/">ChromeADT.apk
+发行说明</a>。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">发布应用</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="publish_app.html">发布您的应用</a>
+                        </li>
+                        <li>
+                          <a href="chrome_apps_on_mobile.html" class="active">在移动设备上运行 Chrome 应用</a>
+                        </li>
+                        <li>
+                          <a href="google_wallet.html">通过应用获利</a>
+                        </li>
+                        <li>
+                          <a href="https://developer.chrome.com/webstore/one_time_payments">一次性付款</a>
+                        </li>
+                        <li>
+                          <a href="analytics.html">Analytics（分析）</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#overview"
+          >概述</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#additional-resources"
+          >其他资源</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#step-1-install-your-development-tools"
+          >第一步：安装开发工具</a>
+          <ol class="toc">
+              <li><a data-list-item href="chrome_apps_on_mobile.html#development-dependencies-for-all-platforms"
+                     >所有平台上都需要的开发工具</a>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#targeting-android"
+                     >Android 平台</a>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#targeting-ios"
+                     >iOS 平台</a>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#install-the-cca-command-line-tool"
+                     >安装 cca 命令行工具</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#step-2-create-a-project"
+          >第二步：创建项目</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#step-3-develop"
+          >第三步：开发</a>
+          <ol class="toc">
+              <li><a data-list-item href="chrome_apps_on_mobile.html#option-a-develop-and-build-using-the-command-line"
+                     >方式 1：使用命令行开发和建立</a>
+                  <ol class="toc">
+                      <li><a data-list-item href="chrome_apps_on_mobile.html#"
+                             >Android</a></li>
+                      <li><a data-list-item href="chrome_apps_on_mobile.html#"
+                             >iOS</a></li>
+                  </ol>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#option-b-develop-and-build-using-an-ide"
+                     >方式 2：使用 IDE 开发和建立</a>
+                  <ol class="toc">
+                      <li><a data-list-item href="chrome_apps_on_mobile.html#"
+                             >Android</a></li>
+                      <li><a data-list-item href="chrome_apps_on_mobile.html#"
+                             >iOS</a></li>
+                  </ol>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#making-changes-to-your-app-source-code"
+                     >修改应用的源代码</a>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#debugging"
+                     >调试</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#step-4-next-steps"
+          >第四步：后续步骤</a>
+          <ol class="toc">
+              <li><a data-list-item href="chrome_apps_on_mobile.html#mobile-manifest"
+                     >移动清单文件</a>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#icons"
+                     >图标</a>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#splash-screens"
+                     >欢迎屏幕</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#step-5-publish"
+          >第五步：发布</a>
+          <ol class="toc">
+              <li><a data-list-item href="chrome_apps_on_mobile.html#publish-to-the-play-store"
+                     >发布至Play 商店</a>
+              </li>
+              <li><a data-list-item href="chrome_apps_on_mobile.html#publish-to-the-ios-app-store"
+                     >发布至 iOS App Store</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#special-considerations"
+          >特别考虑</a>
+          <ol class="toc">
+              <li><a data-list-item href="chrome_apps_on_mobile.html#supported-chrome-apis"
+                     >支持的 Chrome API</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="chrome_apps_on_mobile.html#chrome-apps-developer-tool"
+          >Chrome 应用开发者工具</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

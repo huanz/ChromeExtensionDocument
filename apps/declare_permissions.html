@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>声明权限 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="declare_permissions.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Declare Permissions-->声明权限</h1>
+
+<p>
+<!--@To use most chrome.* APIs,
+your extension or app must declare its intent in the
+"permissions" field of the
+<a href="manifest">manifest</a>.
+Each permission can be either one of a list of known strings
+(such as "geolocation")
+or a <a href="match_patterns">match pattern</a>
+that gives access to one or more hosts.
+Permissions help to limit damage
+if your extension or app is compromised by malware.
+Some permissions are also displayed to users before installation,
+as detailed in
+<a href="permission_warnings">Permission Warnings</a>.-->
+要使用大多数 chrome.* API，您的扩展程序或应用程序必须在<a href="manifest.html">清单文件</a>的
+"permissions"
+字段中声明它的意图。每一个权限既可以是已知字符串列表中的某一个（例如
+"geolocation"），也可以是授予访问一个或多个主机权限的<a href="match_patterns.html">匹配表达式</a>。权限可以帮助您在扩展程序或应用程序受到攻击时尽可能减小损失，某些权限也会在安装前向用户显示，这些将在<a href="permission_warnings.html">权限警告</a>中详细描述。
+</p>
+
+<p>
+<!--@If an API requires you to declare a permission in the manifest,
+then its documentation tells you how to do so.
+For example,
+the <a href="storage">Storage</a> page
+shows you how to
+declare the "storage" permission.-->
+如果某个 API
+需要您在清单文件中声明某个权限，它的文档会告诉你如何去做，例如<a
+href="storage.html">存储 API</a>
+网页会向您演示如何声明 "storage" 权限。
+</p>
+
+<p id="manifest">
+<!--@Here's an example of the permissions part of a manifest file:-->
+如下是一个清单文件中权限部分的例子：
+</p>
+
+<pre data-filename="manifest.json">
+
+"permissions": [
+  "serial",
+  "storage",
+  "videoCapture"
+],
+</pre>
+
+<p>
+<!--@The following table lists the currently available permissions:-->
+下表列出了当前可用的权限。
+</p>
+
+<table>
+  <tr>
+    <th><!--@Permission-->权限</th>
+    <th><!--@Description-->描述</th>
+  </tr>
+  <tr id="alarms">
+    <td>
+      <code>"alarms"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="alarms">chrome.alarms</a> API.-->
+      使您的应用能够访问 <a href="alarms.html">chrome.alarms</a> API。
+    </td>
+  </tr>
+  <tr id="audio">
+    <td>
+      <code>"audio"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="audio">chrome.audio</a> API.-->
+      使您的应用能够访问 <a href="audio.html">chrome.audio</a> API。
+    </td>
+  </tr>
+  <tr id="audioCapture">
+    <td>
+      <code>"audioCapture"</code>
+    </td>
+    <td>
+      <!--@Requests that the app be granted permissions to capture audio directly from the user's Microphone via the <a href="http://dev.w3.org/2011/webrtc/editor/getusermedia.html">getUserMedia</a> API.-->
+      请求授予应用权限，以便通过 <a
+      href="http://dev.w3.org/2011/webrtc/editor/getusermedia.html"
+      >getUserMedia</a> API 直接从用户的麦克风捕获音频。
+    </td>
+  </tr>
+  <tr id="browser">
+    <td>
+      <code>"browser"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="browser">chrome.browser</a> API.-->
+      使您的应用能够访问 <a href="browser.html">chrome.browser</a> API。
+    </td>
+  </tr>
+  <tr id="clipboardRead">
+    <td>
+      <code>"clipboardRead"</code>
+    </td>
+    <td>
+      <!--@Required if the extension or app uses <code>document.execCommand('paste')</code>.-->
+      如果扩展程序或应用使用 <code>document.execCommand('paste')</code>
+      则必须指定。
+    </td>
+  </tr>
+  <tr id="clipboardWrite">
+    <td>
+      <code>"clipboardWrite"</code>
+    </td>
+    <td>
+      <!--@Indicates the extension or app uses <code>document.execCommand('copy')</code> or <code>document.execCommand('cut')</code>. This permission is <b>required for hosted apps</b>; it's recommended for extensions and packaged apps.-->
+      表示扩展程序或应用可以使用 <code>document.execCommand('copy')</code> 或
+      <code>document.execCommand('cut')</code>。<b
+      >托管应用必须</b>指定该权限，建议扩展程序和打包应用也指定该权限。
+          </td>
+  </tr>
+  <tr id="contextMenus">
+    <td>
+      <code>"contextMenus"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="contextMenus">chrome.contextMenus</a> API.-->
+      使您的应用能够访问 <a href="contextMenus.html">chrome.contextMenus</a> API。
+    </td>
+  </tr>
+  <tr id="copresence">
+    <td>
+      <code>"copresence"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="copresence">chrome.copresence</a> API.-->
+      使您的应用能够访问 <a href="copresence.html">chrome.copresence</a> API。
+    </td>
+  </tr>
+  <tr id="desktopCapture">
+    <td>
+      <code>"desktopCapture"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="desktopCapture">chrome.desktopCapture</a> API.-->
+      使您的应用能够访问 <a href="../extensions/desktopCapture.html">chrome.desktopCapture</a> API。
+    </td>
+  </tr>
+  <tr id="diagnostics">
+    <td>
+      <code>"diagnostics"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="diagnostics">chrome.diagnostics</a> API.-->
+      使您的应用能够访问 <a href="diagnostics.html">chrome.diagnostics</a> API。
+    </td>
+  </tr>
+  <tr id="dns">
+    <td>
+      <code>"dns"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="dns">chrome.dns</a> API.-->
+      使您的应用能够访问 <a href="dns.html">chrome.dns</a> API。
+    </td>
+  </tr>
+  <tr id="experimental">
+    <td>
+      <code>"experimental"</code>
+    </td>
+    <td>
+      <!--@Required if the extension or app uses any <a href="experimental">chrome.experimental.* APIs</a>.-->
+      如果扩展程序或应用使用 <a href="experimental.html">chrome.experimental.*
+      API</a> 则必须指定。
+    </td>
+  </tr>
+  <tr id="fileBrowserHandler">
+    <td>
+      <code>"fileBrowserHandler"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="fileBrowserHandler">chrome.fileBrowserHandler</a> API.-->
+      使您的应用能够访问 <a href="../extensions/fileBrowserHandler.html">chrome.fileBrowserHandler</a> API。
+    </td>
+  </tr>
+  <tr id="fileSystem">
+    <td>
+      <code>"fileSystem"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="fileSystem">chrome.fileSystem</a> API.-->
+      使您的应用能够访问 <a href="fileSystem.html">chrome.fileSystem</a> API。
+    </td>
+  </tr>
+  <tr id="fileSystemProvider">
+    <td>
+      <code>"fileSystemProvider"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="fileSystemProvider">chrome.fileSystemProvider</a> API.-->
+      使您的应用能够访问 <a href="fileSystemProvider.html">chrome.fileSystemProvider</a> API。
+    </td>
+  </tr>
+  <tr id="gcm">
+    <td>
+      <code>"gcm"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="gcm">chrome.gcm</a> API.-->
+      使您的应用能够访问 <a href="gcm.html">chrome.gcm</a> API。
+    </td>
+  </tr>
+  <tr id="geolocation">
+    <td>
+      <code>"geolocation"</code>
+    </td>
+    <td>
+      <!--@Allows the extension or app to use the proposed HTML5 <a href="http://dev.w3.org/geo/api/spec-source.html">geolocation API</a> without prompting the user for permission.-->
+      允许扩展程序或应用使用提议的 HTML5 <a
+      href="http://dev.w3.org/geo/api/spec-source.html">地理定位
+      API</a> 而不需要提示用户权限。
+    </td>
+  </tr>
+  <tr id="hid">
+    <td>
+      <code>"hid"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="hid">chrome.hid</a> API.-->
+      使您的应用能够访问 <a href="hid.html">chrome.hid</a> API。
+    </td>
+  </tr>
+  <tr id="identity">
+    <td>
+      <code>"identity"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="identity">chrome.identity</a> API.-->
+      使您的应用能够访问 <a href="identity.html">chrome.identity</a> API。
+    </td>
+  </tr>
+  <tr id="idle">
+    <td>
+      <code>"idle"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="idle">chrome.idle</a> API.-->
+      使您的应用能够访问 <a href="idle.html">chrome.idle</a> API。
+    </td>
+  </tr>
+  <tr id="infobars">
+    <td>
+      <code>"infobars"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="infobars">chrome.infobars</a> API.-->
+      使您的应用能够访问 <a href="../extensions/infobars.html">chrome.infobars</a> API。
+    </td>
+  </tr>
+  <tr id="location">
+    <td>
+      <code>"location"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="location">chrome.location</a> API.-->
+      使您的应用能够访问 <a href="location.html">chrome.location</a> API。
+    </td>
+  </tr>
+  <tr id="mediaGalleries">
+    <td>
+      <code>"mediaGalleries"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="mediaGalleries">chrome.mediaGalleries</a> API.-->
+      使您的应用能够访问 <a href="mediaGalleries.html">chrome.mediaGalleries</a> API。
+    </td>
+  </tr>
+  <tr id="nativeMessaging">
+    <td>
+      <code>"nativeMessaging"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="messaging.html#native-messaging">native messaging API</a>.-->
+      使您的应用能够访问<a
+      href="messaging.html#native-messaging">原生消息通信 API</a>。
+    </td>
+  </tr>
+  <tr id="notificationProvider">
+    <td>
+      <code>"notificationProvider"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="notificationProvider">chrome.notificationProvider</a> API.-->
+      使您的应用能够访问 <a href="notificationProvider.html">chrome.notificationProvider</a> API。
+    </td>
+  </tr>
+  <tr id="notifications">
+    <td>
+      <code>"notifications"</code>
+    </td>
+    <td>
+      <!--@Allows the extension to use the proposed HTML5 <a href="http://www.chromium.org/developers/design-documents/desktop-notifications/api-specification">notification API</a> without calling permission methods (such as <code>checkPermission()</code>). For more information see <a href="desktop_notifications">Desktop Notifications</a>.-->
+      允许扩展程序使用提议的 HTML5 <a
+      href="http://www.chromium.org/developers/design-documents/desktop-notifications/api-specification">通知
+      API</a> 而不用调用权限方法（例如 <code
+      >checkPermission()</code>）。有关更多信息，请参见<a
+      href="desktop_notifications.html">桌面通知</a>。
+    </td>
+  </tr>
+  <tr id="pointerLock">
+    <td>
+      <code>"pointerLock"</code>
+    </td>
+    <td>
+      <!--@Required to use <a href="http://www.w3.org/TR/pointerlock/">Pointer Lock</a> via calls to <code>requestPointerLock</code> or Pepper's <a href="https://developers.google.com/native-client/peppercpp/classpp_1_1_mouse_lock">Mouse Lock API</a>. See <a href="api_other">Other APIs</a> for behavior differences.-->
+      如果通过 <code>requestPointerLock</code> 或 Pepper 的<a
+      href="https://developers.google.com/native-client/peppercpp/classpp_1_1_mouse_lock"
+      >鼠标锁定 API</a>使用<a href="http://www.w3.org/TR/pointerlock/"
+      >指针锁定</a>功能则必须指定。有关行为上的差异请参见<a href="api_other.html"
+      >其他 API</a>。
+    </td>
+  </tr>
+  <tr id="power">
+    <td>
+      <code>"power"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="power">chrome.power</a> API.-->
+      使您的应用能够访问 <a href="power.html">chrome.power</a> API。
+    </td>
+  </tr>
+  <tr id="pushMessaging">
+    <td>
+      <code>"pushMessaging"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="pushMessaging">chrome.pushMessaging</a> API.-->
+      使您的应用能够访问 <a href="pushMessaging.html">chrome.pushMessaging</a> API。
+    </td>
+  </tr>
+  <tr id="serial">
+    <td>
+      <code>"serial"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="serial">chrome.serial</a> API.-->
+      使您的应用能够访问 <a href="serial.html">chrome.serial</a> API。
+    </td>
+  </tr>
+  <tr id="signedInDevices">
+    <td>
+      <code>"signedInDevices"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="signedInDevices">chrome.signedInDevices</a> API.-->
+      使您的应用能够访问 <a href="../extensions/signedInDevices.html">chrome.signedInDevices</a> API。
+    </td>
+  </tr>
+  <tr id="socket">
+    <td>
+      <code>"socket"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="socket">chrome.socket</a> API.-->
+      使您的应用能够访问 <a href="socket.html">chrome.socket</a> API。
+    </td>
+  </tr>
+  <tr id="storage">
+    <td>
+      <code>"storage"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="storage">chrome.storage</a> API.-->
+      使您的应用能够访问 <a href="storage.html">chrome.storage</a> API。
+    </td>
+  </tr>
+  <tr id="syncFileSystem">
+    <td>
+      <code>"syncFileSystem"</code>
+    </td>
+    <td>
+      <!--@Required if the app uses the <a href="syncFileSystem">chrome.syncFileSystem</a> API to save and synchronize data on Google Drive.-->
+      如果应用使用 <a href="syncFileSystem.html">chrome.syncFileSystem</a> API 在
+      Google 云端硬盘上保存和同步数据则必须指定。
+    </td>
+  </tr>
+  <tr id="system.cpu">
+    <td>
+      <code>"system.cpu"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="system.cpu">chrome.system.cpu</a> API.-->
+      使您的应用能够访问 <a href="system_cpu.html">chrome.system.cpu</a> API。
+    </td>
+  </tr>
+  <tr id="system.display">
+    <td>
+      <code>"system.display"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="system.display">chrome.system.display</a> API.-->
+      使您的应用能够访问 <a href="system_display.html">chrome.system.display</a> API。
+    </td>
+  </tr>
+  <tr id="system.memory">
+    <td>
+      <code>"system.memory"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="system.memory">chrome.system.memory</a> API.-->
+      使您的应用能够访问 <a href="system_memory.html">chrome.system.memory</a> API。
+    </td>
+  </tr>
+  <tr id="system.network">
+    <td>
+      <code>"system.network"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="system.network">chrome.system.network</a> API.-->
+      使您的应用能够访问 <a href="system_network.html">chrome.system.network</a> API。
+    </td>
+  </tr>
+  <tr id="system.storage">
+    <td>
+      <code>"system.storage"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="system.storage">chrome.system.storage</a> API.-->
+      使您的应用能够访问 <a href="system_storage.html">chrome.system.storage</a> API。
+    </td>
+  </tr>
+  <tr id="tts">
+    <td>
+      <code>"tts"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="tts">chrome.tts</a> API.-->
+      使您的应用能够访问 <a href="tts.html">chrome.tts</a> API。
+    </td>
+  </tr>
+  <tr id="unlimitedStorage">
+    <td>
+      <code>"unlimitedStorage"</code>
+    </td>
+    <td>
+      <!--@Provides an unlimited quota for storing HTML5 client-side data, such as databases and local storage files. Without this permission, the extension or app is limited to 5 MB of local storage.-->
+      提供无限的存储空间，保存 HTML5
+      客户端数据，例如数据库以及本地存储文件。如果没有这一权限，扩展程序或应用的本地存储将限制在
+      5 MB 以内。
+      
+      <p class="note">
+      <b><!--@Note:-->注意：</b><!--@ This permission applies only to Web SQL Database and application cache (see issue <a href="http://crbug.com/58985">58985</a>). Also, it doesn't currently work with wildcard subdomains such as <code>http://*.example.com</code>.
+      -->该权限仅应用于网络 SQL 数据库以及应用程序缓存（参见问题 <a
+      href="http://crbug.com/58985"
+      >58985</a>）。另外，当前还不能和包含通配符的子域名一起使用，例如
+      <code>http://*.example.com</code>。
+      
+      </p>
+    </td>
+  </tr>
+  <tr id="usb">
+    <td>
+      <code>"usb"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="usb">chrome.usb</a> API.-->
+      使您的应用能够访问 <a href="usb.html">chrome.usb</a> API。
+    </td>
+  </tr>
+  <tr id="videoCapture">
+    <td>
+      <code>"videoCapture"</code>
+    </td>
+    <td>
+      <!--@Requests that the app be granted permissions to capture video directly from the user's Web Cam via the <a href="http://dev.w3.org/2011/webrtc/editor/getusermedia.html">getUserMedia</a> API.-->
+      请求授予应用权限，以便通过 <a
+      href="http://dev.w3.org/2011/webrtc/editor/getusermedia.html"
+      >getUserMedia</a> API 直接从用户的网络摄像头捕获视频。
+    </td>
+  </tr>
+  <tr id="wallpaper">
+    <td>
+      <code>"wallpaper"</code>
+    </td>
+    <td>
+      <!--@Gives your app access to the <a href="wallpaper">chrome.wallpaper</a> API.-->
+      使您的应用能够访问 <a href="wallpaper.html">chrome.wallpaper</a> API。
+    </td>
+  </tr>
+  <tr id="webview">
+    <td>
+      <code>"webview"</code>
+    </td>
+    <td>
+      <!--@Required if the app uses the <a href="webview_tag">Webview Tag</a> to embed live content from the web in the packaged app.-->
+      如果应用使用 <a href="tags/webview.html">Webview 标签</a>
+      在打包应用中嵌入网上的活动内容则必须指定。
+    </td>
+  </tr>
+</table>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+      <ol class="toc">
+      </ol>
+      </section>
+      <section id="toc">
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

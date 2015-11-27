@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.serial - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="serial.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.serial</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.serial</code> API to read from and write to a device
+             connected to a serial port.-->
+             使用 <code>chrome.serial</code> API 读取和写入连接到串行端口的设备。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "serial"
+                    </span>
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="app_usb.html">
+            访问硬件设备
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="serial.html#type-DataBits">DataBits</a></td></tr>
+          <tr><td><a href="serial.html#type-ParityBit">ParityBit</a></td></tr>
+          <tr><td><a href="serial.html#type-StopBits">StopBits</a></td></tr>
+          <tr><td><a href="serial.html#type-ConnectionOptions">ConnectionOptions</a></td></tr>
+          <tr><td><a href="serial.html#type-ConnectionInfo">ConnectionInfo</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="serial.html#method-getDevices">getDevices</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.getDevices(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-connect">connect</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.connect(<span>string path</span>, <span class="optional">    ConnectionOptions options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-update">update</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.update(<span>integer connectionId</span>, <span>    ConnectionOptions options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-disconnect">disconnect</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.disconnect(<span>integer connectionId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-setPaused">setPaused</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.setPaused(<span>integer connectionId</span>, <span>boolean paused</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-getInfo">getInfo</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.getInfo(<span>integer connectionId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-getConnections">getConnections</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.getConnections(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-send">send</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.send(<span>integer connectionId</span>, <span>ArrayBuffer data</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-flush">flush</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.flush(<span>integer connectionId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-getControlSignals">getControlSignals</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.getControlSignals(<span>integer connectionId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="serial.html#method-setControlSignals">setControlSignals</a> &minus;
+            <code class="prettyprint">
+            chrome.serial.setControlSignals(<span>integer connectionId</span>, <span>object signals</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="serial.html#event-onReceive">onReceive</a></td></tr>
+          <tr><td><a href="serial.html#event-onReceiveError">onReceiveError</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-DataBits">DataBits</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"seven"</code>, 
+                  or <code>"eight"</code>
+                </td></tr>
+                <dd></dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ParityBit">ParityBit</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+              </p>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"no"</code>, 
+                  <code>"odd"</code>, 
+                  or <code>"even"</code>
+                </td></tr>
+                <dd></dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-StopBits">StopBits</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"one"</code>, 
+                  or <code>"two"</code>
+                </td></tr>
+                <dd></dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ConnectionOptions">ConnectionOptions</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="ConnectionOptions-properties">属性</th></tr>
+                  <tr id="property-ConnectionOptions-persistent">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        persistent</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Flag indicating whether or not the connection should be left open when the application is suspended (see <a href="http://developer.chrome.com/apps/app_lifecycle">Manage App Lifecycle</a>). The default value is "false." When the application is loaded, any serial connections previously opened with persistent=true can be fetched with <code>getConnections</code>.--> 应用关闭时连接是否应该保持打开状态（参见<a href="app_lifecycle.html">Chrome 应用的生命周期</a>），默认值为 <code>false</code>。应用加载时，之前使用 <code>persistent: true</code> 打开的串口连接可以通过 <code>getConnections</code> 获取。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-name">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      <!--@An application-defined string to associate with the connection.--> 与连接相关联的字符串，由应用定义。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-bufferSize">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        bufferSize</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The size of the buffer used to receive data. The default value is 4096.--> 用于接收数据的缓冲区大小，默认值为 4096。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-bitrate">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        bitrate</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The requested bitrate of the connection to be opened. For compatibility with the widest range of hardware, this number should match one of commonly-available bitrates, such as 110, 300, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200. There is no guarantee, of course, that the device connected to the serial port will support the requested bitrate, even if the port itself supports that bitrate. <code>9600</code> will be passed by default.--> 打开连接时请求的比特率。为了尽可能地与各种硬件兼容，该数值应该匹配常用的比特率，例如 110、300、1200、2400、4800、9600、14400、19200、38400、57600、115200。当然，不能保证连接到串行端口的设备能支持请求的比特率，即使端口本身支持该比特率。默认为 <code>9600</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-dataBits">
+                    <td>    <a href="serial.html#type-DataBits">DataBits</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        dataBits</td>
+                    <td>
+                    
+                    <p>
+                      <!--@<code>"eight"</code> will be passed by default.--> 默认为 <code>"eight"</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-parityBit">
+                    <td>    <a href="serial.html#type-ParityBit">ParityBit</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        parityBit</td>
+                    <td>
+                    
+                    <p>
+                      <!--@<code>"no"</code> will be passed by default.--> 默认为 <code>"no"</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-stopBits">
+                    <td>    <a href="serial.html#type-StopBits">StopBits</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        stopBits</td>
+                    <td>
+                    
+                    <p>
+                      <!--@<code>"one"</code> will be passed by default.--> 默认为 <code>"one"</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-ctsFlowControl">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        ctsFlowControl</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Flag indicating whether or not to enable RTS/CTS hardware flow control. Defaults to false.--> 是否启用 RTS/CTS 硬件流控制，默认为 false。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-receiveTimeout">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        receiveTimeout</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The maximum amount of time (in milliseconds) to wait for new data before raising an <code>onReceiveError</code> event with a "timeout" error. If zero, receive timeout errors will not be raised for the connection. Defaults to 0.--> 产生 "timeout"（超时）错误的 <code>onReceiveError</code> 事件前等待新数据的最长时间（以毫秒为单位）。如果为零，该连接不会产生接收超时错误。默认为 0。
+                    </p></td>
+                  </tr><tr id="property-ConnectionOptions-sendTimeout">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        sendTimeout</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The maximum amount of time (in milliseconds) to wait for a <code>send</code> operation to complete before calling the callback with a "timeout" error. If zero, send timeout errors will not be triggered. Defaults to 0.--> 调用回调函数产生 "timeout"（超时）错误前等待 <code>send</code>（发送）操作完成的最长时间（以毫秒为单位）。如果为零，不会产生发送超时错误。默认为 0。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ConnectionInfo">ConnectionInfo</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+              </p>
+              <table>
+                  <tr><th colspan="3" id="ConnectionInfo-properties">属性</th></tr>
+                  <tr id="property-ConnectionInfo-connectionId">
+                    <td>integer</td>
+                    <td>
+                        connectionId</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The id of the serial port connection.--> 串行端口连接标识符。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-paused">
+                    <td>boolean</td>
+                    <td>
+                        paused</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Flag indicating whether the connection is blocked from firing onReceive events.--> 是否阻止连接产生 onReceive 事件。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-persistent">
+                    <td>boolean</td>
+                    <td>
+                        persistent</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.persistent</code>--> 参见 <code>ConnectionOptions.persistent</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.name</code>--> 参见 <code>ConnectionOptions.name</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-bufferSize">
+                    <td>integer</td>
+                    <td>
+                        bufferSize</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.bufferSize</code>--> 参见 <code>ConnectionOptions.bufferSize</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-receiveTimeout">
+                    <td>integer</td>
+                    <td>
+                        receiveTimeout</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.receiveTimeout</code>--> 参见 <code>ConnectionOptions.receiveTimeout</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-sendTimeout">
+                    <td>integer</td>
+                    <td>
+                        sendTimeout</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.sendTimeout</code>--> 参见 <code>ConnectionOptions.sendTimeout</code>。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-bitrate">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        bitrate</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.bitrate</code>. This field may be omitted or inaccurate if a non-standard bitrate is in use, or if an error occurred while querying the underlying device.--> 参见 <code>ConnectionOptions.bitrate</code>。如果使用了非标准的比特率或者查询下层设备时产生错误，该字段可能不精确或省略。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-dataBits">
+                    <td>    <a href="serial.html#type-DataBits">DataBits</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        dataBits</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.dataBits</code>. This field may be omitted if an error occurred while querying the underlying device.--> 参见 <code>ConnectionOptions.dataBits</code>，如果查询下层设备时产生错误，该字段可能会省略。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-parityBit">
+                    <td>    <a href="serial.html#type-ParityBit">ParityBit</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        parityBit</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.parityBit</code>. This field may be omitted if an error occurred while querying the underlying device.--> 参见 <code>ConnectionOptions.parityBit</code>，如果查询下层设备时产生错误，该字段可能会省略。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-stopBits">
+                    <td>    <a href="serial.html#type-StopBits">StopBits</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        stopBits</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.stopBits</code>. This field may be omitted if an error occurred while querying the underlying device.--> 参见 <code>ConnectionOptions.stopBits</code>，如果查询下层设备时产生错误，该字段可能会省略。
+                    </p></td>
+                  </tr><tr id="property-ConnectionInfo-ctsFlowControl">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        ctsFlowControl</td>
+                    <td>
+                    
+                    <p>
+                      <!--@See <code>ConnectionOptions.ctsFlowControl</code>. This field may be omitted if an error occurred while querying the underlying device.--> 参见 <code>ConnectionOptions.ctsFlowControl</code>，如果查询下层设备时产生错误，该字段可能会省略。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getDevices"
+                  >getDevices
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.getDevices(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Returns information about available serial devices on the system. The list is regenerated each time this method is called.--> 返回系统中可用串行设备的有关信息，每次调用该方法时都会重新生成该列表。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getDevices-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called with the list of <code>DeviceInfo</code> objects.--> 调用时传递 <code>DeviceInfo</code> 对象列表。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of object ports) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-ports">
+                              <td>array of object</td>
+                              <td>
+                                  ports</td>
+                              <td>
+                              
+                                <h4 title=""><!--@Properties of each object-->每一个对象的属性</h4>
+                                <dl>
+                                  <div>
+                                    <table>
+                                        <tr id="property-portsType-path">
+                                          <td>string</td>
+                                          <td>
+                                              path</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The device's system path. This should be passed as the <code>path</code> argument to <code>chrome.serial.connect</code> in order to connect to this device.--> 设备的系统路径，应该传递给 <code>chrome.serial.connect</code> 的 <code>path</code> 参数，以便连接到该设备。
+                                          </p></td>
+                                        </tr><tr id="property-portsType-vendorId">
+                                          <td>integer</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              vendorId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@A PCI or USB vendor ID if one can be determined for the underlying device.--> PCI 或 USB 制造商标识符（如果可以从底层设备获取）。
+                                          </p></td>
+                                        </tr><tr id="property-portsType-productId">
+                                          <td>integer</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              productId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@A USB product ID if one can be determined for the underlying device.--> USB 产品标识符（如果可以从底层设备获取）。
+                                          </p></td>
+                                        </tr><tr id="property-portsType-displayName">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              displayName</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@A human-readable display name for the underlying device if one can be queried from the host driver.--> 底层设备的可读显示名称（如果可以从宿主设备获取）。
+                                          </p></td>
+                                        </tr>
+                                    </table>
+                                  </div>
+                                </dl>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-connect"
+                  >connect
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.connect(<span>string path</span>, <span class="optional">    <a href="serial.html#type-ConnectionOptions">ConnectionOptions</a> options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Connects to a given serial port.--> 连接到指定的串行端口。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-connect-path">
+                      <td>string</td>
+                      <td>
+                          path</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The system path of the serial port to open.--> 要打开的串行端口的系统路径。
+                      </p></td>
+                    </tr>
+                    <tr id="property-connect-options">
+                      <td>    <a href="serial.html#type-ConnectionOptions">ConnectionOptions</a></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Port configuration options.--> 端口配置选项。
+                      </p></td>
+                    </tr>
+                    <tr id="property-connect-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the connection has been opened.--> 连接打开后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="serial.html#type-ConnectionInfo">ConnectionInfo</a> connectionInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-connectionInfo">
+                              <td>    <a href="serial.html#type-ConnectionInfo">ConnectionInfo</a></td>
+                              <td>
+                                  connectionInfo</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-update"
+                  >update
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.update(<span>integer connectionId</span>, <span>    <a href="serial.html#type-ConnectionOptions">ConnectionOptions</a> options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Update the option settings on an open serial port connection.--> 更新打开的串行端口连接的选项设置。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-update-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of the opened connection.--> 打开的连接的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-update-options">
+                      <td>    <a href="serial.html#type-ConnectionOptions">ConnectionOptions</a></td>
+                      <td>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Port configuration options.--> 端口配置选项。
+                      </p></td>
+                    </tr>
+                    <tr id="property-update-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the configuation has completed.--> 配置完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>boolean</td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-disconnect"
+                  >disconnect
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.disconnect(<span>integer connectionId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Disconnects from a serial port.--> 断开串行端口连接。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-disconnect-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of the opened connection.--> 打开的连接的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-disconnect-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the connection has been closed.--> 连接关闭后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>boolean</td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setPaused"
+                  >setPaused
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.setPaused(<span>integer connectionId</span>, <span>boolean paused</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Pauses or unpauses an open connection.--> 暂停打开的连接，或取消暂停。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setPaused-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of the opened connection.--> 打开的连接的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setPaused-paused">
+                      <td>boolean</td>
+                      <td>
+                          paused</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Flag to indicate whether to pause or unpause.--> 暂停还是取消暂停。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setPaused-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the connection has been successfully paused or              unpaused.--> 连接暂停或取消暂停成功后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getInfo"
+                  >getInfo
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.getInfo(<span>integer connectionId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Retrieves the state of a given connection.--> 获取指定连接的状态。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getInfo-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of the opened connection.--> 打开的连接的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getInfo-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called with connection state information when available.--> 连接状态信息可用时调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="serial.html#type-ConnectionInfo">ConnectionInfo</a> connectionInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-connectionInfo">
+                              <td>    <a href="serial.html#type-ConnectionInfo">ConnectionInfo</a></td>
+                              <td>
+                                  connectionInfo</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getConnections"
+                  >getConnections
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.getConnections(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Retrieves the list of currently opened serial port connections owned by the application.--> 获取当前应用拥有并打开的串行端口连接列表。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getConnections-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called with the list of connections when available.--> 连接列表可用时调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="serial.html#type-ConnectionInfo">ConnectionInfo</a> connectionInfos) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-connectionInfos">
+                              <td>array of     <a href="serial.html#type-ConnectionInfo">ConnectionInfo</a></td>
+                              <td>
+                                  connectionInfos</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-send"
+                  >send
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.send(<span>integer connectionId</span>, <span>ArrayBuffer data</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+                <p>
+                  <!--@Writes data to the given connection.--> 向指定连接写入数据。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-send-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of the connection.--> 连接标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-send-data">
+                      <td>ArrayBuffer</td>
+                      <td>
+                          data</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The data to send.--> 要发送的数据。
+                      </p></td>
+                    </tr>
+                    <tr id="property-send-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the operation has completed.--> 操作完成时调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object sendInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-sendInfo">
+                              <td>object</td>
+                              <td>
+                                  sendInfo</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-sendInfo-bytesSent">
+                                    <td>integer</td>
+                                    <td>
+                                        bytesSent</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The number of bytes sent.--> 发送的字节数。
+                                    </p></td>
+                                  </tr><tr id="property-sendInfo-error">
+                                    <td>enum of <code>"disconnected"</code>, <code>"pending"</code>, <code>"timeout"</code>, or <code>"system_error"</code></td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        error</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@An error code if an error occurred.--> 如果发生错误则为错误代码。
+                                    </p>    <dl>
+                                          <dt>disconnected</dt>
+                                          <dd>
+                                            <!--@The connection was disconnected.--> 连接已断开。
+                                          </dd>
+                                        </dl>
+                                        <dl>
+                                          <dt>pending</dt>
+                                          <dd>
+                                            <!--@A send was already pending.--> 发送操作正在进行。
+                                          </dd>
+                                        </dl>
+                                        <dl>
+                                          <dt>timeout</dt>
+                                          <dd>
+                                            <!--@The send timed out.--> 发送操作超时。
+                                          </dd>
+                                        </dl>
+                                        <dl>
+                                          <dt>system_error</dt>
+                                          <dd>
+                                            <!--@A system error occurred and the connection may be unrecoverable.--> 发生系统错误，连接可能无法恢复。
+                                          </dd>
+                                        </dl>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-flush"
+                  >flush
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.flush(<span>integer connectionId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Flushes all bytes in the given connection's input and output buffers.--> 清洗指定连接输入输出缓存中的所有内容。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-flush-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-flush-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>boolean</td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getControlSignals"
+                  >getControlSignals
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.getControlSignals(<span>integer connectionId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Retrieves the state of control signals on a given connection.--> 获取指定连接上控制信号的状态。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getControlSignals-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of the connection.--> 连接标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getControlSignals-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the control signals are available.--> 控制信号可用时调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object signals) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-signals">
+                              <td>object</td>
+                              <td>
+                                  signals</td>
+                              <td>
+                              
+                                <table class="innerTable">
+                                  <tr id="property-signals-dcd">
+                                    <td>boolean</td>
+                                    <td>
+                                        dcd</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@DCD (Data Carrier Detect) or RLSD (Receive Line Signal/ Detect).--> DCD（数据载波检测）或 RLSD（接收线信号检出）。
+                                    </p></td>
+                                  </tr><tr id="property-signals-cts">
+                                    <td>boolean</td>
+                                    <td>
+                                        cts</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@CTS (Clear To Send).--> 清除发送。
+                                    </p></td>
+                                  </tr><tr id="property-signals-ri">
+                                    <td>boolean</td>
+                                    <td>
+                                        ri</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@RI (Ring Indicator).--> 振铃指示。
+                                    </p></td>
+                                  </tr><tr id="property-signals-dsr">
+                                    <td>boolean</td>
+                                    <td>
+                                        dsr</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@DSR (Data Set Ready).--> 数据装置就绪。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setControlSignals"
+                  >setControlSignals
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.serial.setControlSignals(<span>integer connectionId</span>, <span>object signals</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Sets the state of control signals on a given connection.--> 设置指定连接上控制信号的状态。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setControlSignals-connectionId">
+                      <td>integer</td>
+                      <td>
+                          connectionId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The id of the connection.--> 连接标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setControlSignals-signals">
+                      <td>object</td>
+                      <td>
+                          signals</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        <!--@The set of signal changes to send to the device.--> 要向设备发送的信号变化。
+                      </p>  <table class="innerTable">
+                          <tr id="property-signals-dtr">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                dtr</td>
+                            <td>
+                            
+                            <p>
+                              <!--@DTR (Data Terminal Ready).--> DTR（数据终端就绪）。
+                            </p></td>
+                          </tr><tr id="property-signals-rts">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                rts</td>
+                            <td>
+                            
+                            <p>
+                              <!--@RTS (Request To Send).--> RTS（请求发送）。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-setControlSignals-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called once the control signals have been set.--> 控制信号设置后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>boolean</td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onReceive">onReceive</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Event raised when data has been read from the connection.--> 数据从连接读取时产生该事件。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.serial.onReceive.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReceive-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReceive-info">
+                                    <td>object</td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@Event data.--> 事件数据。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-info-connectionId">
+                                          <td>integer</td>
+                                          <td>
+                                              connectionId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The connection identifier.--> 连接标识符。
+                                          </p></td>
+                                        </tr><tr id="property-info-data">
+                                          <td>ArrayBuffer</td>
+                                          <td>
+                                              data</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The data received.--> 接收的数据。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onReceiveError">onReceiveError</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 33<!--@.--> 开始支持。
+                </p>
+            <p>
+                  <!--@Event raised when an error occurred while the runtime was waiting for data on the serial port. Once this event is raised, the connection may be set to <code>paused</code>. A <code>"timeout"</code> error does not pause the connection.--> 运行时等待串行端口上的数据时如果发生错误，则产生该事件。产生该事件后，连接状态将设置为 <code>paused</code>（暂停）。<code>"timeout"</code>（超时）错误不会暂停连接。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.serial.onReceiveError.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReceiveError-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReceiveError-info">
+                                    <td>object</td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-info-connectionId">
+                                          <td>integer</td>
+                                          <td>
+                                              connectionId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The connection identifier.--> 连接标识符。
+                                          </p></td>
+                                        </tr><tr id="property-info-error">
+                                          <td>enum of <code>"disconnected"</code>, <code>"timeout"</code>, <code>"device_lost"</code>, or <code>"system_error"</code></td>
+                                          <td>
+                                              error</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@An error code indicating what went wrong.--> 表示错误信息的错误代码。
+                                          </p>    <dl>
+                                                <dt>disconnected</dt>
+                                                <dd>
+                                                  <!--@The connection was disconnected.--> 连接已断开。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>timeout</dt>
+                                                <dd>
+                                                  <!--@No data has been received for <code>receiveTimeout</code> milliseconds.--> 经过 <code>receiveTimeout</code> 毫秒后仍然未接收到数据。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>device_lost</dt>
+                                                <dd>
+                                                  <!--@The device was most likely disconnected from the host.--> 设备可能已经从主机断开。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>system_error</dt>
+                                                <dd>
+                                                  <!--@A system error occurred and the connection may be unrecoverable.--> 发生系统错误，连接可能无法恢复。
+                                                </dd>
+                                              </dl>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

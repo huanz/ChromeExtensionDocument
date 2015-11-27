@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>Chrome 应用的生命周期 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_lifecycle.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<meta name="doc-family" content="apps">
+<h1>Chrome <!--@App Lifecycle-->应用的生命周期</h1>
+
+
+<p>
+<!--@The app runtime and event page are responsible
+for managing the app lifecycle.
+The app runtime manages app installation,
+controls the event page,
+and can shutdown the app at anytime.
+The event page listens out for events from the app runtime
+and manages what gets launched and how.-->
+应用运行时环境与事件页面用于管理应用的生命周期。应用运行时环境管理应用的安装，控制事件页面，并且能够在任何时候关闭应用。事件页面监听来自应用运行时环境的事件，并管理运行的内容与方式。
+</p>
+
+<h2 id="lifecycle"><!--@How the lifecycle works-->生命周期的工作方式</h2>
+
+<p>
+<!--@The app runtime loads the event page
+from a user's desktop and
+the <code>onLaunch()</code> event is fired.
+This event tells the event page what windows
+to launch and their dimensions.
+The lifecycle diagram here isn't the nicest to look at,
+but it's practical (and we will make it nicer soon).-->
+应用程序运行时环境从用户的桌面加载事件页面，并产生
+<code>onLaunched()</code>
+事件。该事件告诉事件页面要打开的窗口及其大小。生命周期示意图不太好看，但是很实际（我们很快就会让它变得更好看）。
+</p>
+
+<img src="../static/images/applifecycle.png"
+     width="444"
+     height="329"
+     alt="how app lifecycle works">
+
+<p>
+<!--@When the event page has no executing JavaScript,
+no pending callbacks, and no open windows,
+the runtime unloads the event page and closes the app.
+Before unloading the event page,
+the <code>onSuspend()</code> event is fired.
+This gives the event page opportunity
+to do simple clean-up tasks
+before the app is closed.-->
+当事件页面不执行
+JavaScript，没有未决的回调函数，也没有打开的窗口时，运行时环境会卸载事件页面，并关闭应用。在卸载事件页面之前，将产生
+<code>onSuspend()</code>
+事件，这样使事件页面有机会在应用关闭之前做一些简单的清理任务。
+</p>
+
+<h2 id="eventpage"><!--@Create event page and windows-->创建事件页面和窗口</h2>
+
+<p>
+<!--@All apps must have an event page.
+This page contains the top-level logic of the application
+with none of its own UI and is responsible
+for creating the windows for all other app pages.-->
+所有应用都必须有一个事件页面，该页面包含了应用的顶层逻辑，但没有任何自己的用户界面，用于为所有其他应用页面创建窗口。
+</p>
+
+<h3 id="create_event_page"><!--@Create event page-->创建事件页面</h3>
+
+<p>
+<!--@To create the event page,
+include the "background" field in the app manifest
+and include the <code>background.js</code> in the scripts array.
+Any library scripts used by the event page need to be added
+to the "background" field first:-->
+要创建事件页面，在应用程序的清单文件中包含 "background" 字段，并将
+<code>background.js</code>
+包含在脚本（"scripts"）数组中。事件页面使用的所有库脚本需要首先加入
+"backrgound" 字段：
+</p>
+
+<pre data-filename="manifest.json">
+"background": {
+  "scripts": [
+    "foo.js",
+    "background.js"
+  ]
+}
+</pre>
+
+<p>
+<!--@Your event page must include the <code>onLaunched()</code> function.
+This function is called
+when your application is launched in any way:-->
+您的事件页面必须包含 <code>onLaunched()</code>
+函数，当您的应用以任何方式执行时会调用该函数：
+</p>
+
+<pre data-filename="background.js">
+chrome.app.runtime.onLaunched.addListener(function() {
+  // 告诉您的应用执行的内容与方式。
+});
+</pre>
+
+<h3 id="create_windows"><!--@Create windows-->创建窗口</h3>
+
+<p>
+<!--@An event page may create one or more windows at its discretion.
+By default, these windows are created with a script connection
+to the event page and are directly scriptable by the event page.-->
+事件页面可以创建一个或多个指定大小的窗口。默认情况下，这些创建的窗口与事件页面之间有脚本连接，并且可以直接由事件页面调用。
+</p>
+
+<p>
+<!--@Windows in Chrome Apps are not associated with any Chrome browser 
+windows. They have an optional frame with title bar and size controls, 
+and a recommended window ID.
+Windows without IDs will not restore to their size and location after restart.-->
+Chrome 应用的窗口不和任何 Chrome
+浏览器窗口关联，它们可以具有可选的框架，包含标题栏和大小控件。建议您指定窗口标识符，没有标识符的窗口在重新启动后不能恢复到原来的大小与位置。
+</p>
+
+<p><!--@Here's a sample window created from <code>background.js</code>:-->
+如下是在 <code>backrgound.js</code> 中创建窗口的示例：
+</p>
+
+<pre data-filename="background.js">
+chrome.app.runtime.onLaunched.addListener(function() {
+  chrome.app.window.create('main.html', {
+    id: 'MyWindowID',
+    bounds: {
+      width: 800,
+      height: 600,
+      left: 100,
+      top: 100
+    },
+    minWidth: 800,
+    minHeight: 600
+  });
+});
+</pre>
+
+<h3 id="launch_data"><!--@Including Launch Data-->包含执行数据</h3>
+
+<p>
+<!--@Depending on how your app is launched,
+you may need to handle launch data
+in your event page.
+By default, there is no launch data
+when the app is started by the app launcher.
+For apps that have file handlers,
+you need to handle the
+<code>launchData.items</code> parameter to allow
+them to be launched with files.-->
+取决于您的应用的执行方式，您可能需要在事件页面中包含执行数据。默认情况下，应用启动器启动应用时没有执行数据。对于包含文件处理程序的应用，您需要处理
+<code>launchData.items</code> 参数允许它们与文件一起执行。
+</p>
+
+<h2 id="runtime"><!--@Listening for app runtime events-->监听应用的运行时事件</h2>
+
+<p>
+<!--@The app runtime controls the app installs, updates, and uninstalls.
+You don't need to do anything to set up the app runtime,
+but your event page can listen out for the <code>onInstalled()</code> event
+to store local settings and the
+<code>onSuspend()</code> event to do simple clean-up tasks
+before the event page is unloaded.-->
+应用运行时环境控制应用的安装、更新与卸载。您不需要做任何事情来设置应用运行时环境，但是您的事件页面可以监听
+<code>onInstalled()</code> 事件来储存本地设置，监听
+<code>onSuspend()</code> 事件在事件页面卸载前做一些简单的清理任务。
+</p>
+
+<h3 id="local_settings"><!--@Storing local settings-->储存本地设置</h3>
+
+<p>
+<!--@<code>chrome.runtime.onInstalled()</code>
+is called when your app has first been installed,
+or when it has been updated.
+Any time this function is called,
+the <code>onInstalled</code> event is fired.
+The event page can listen for this event and use the
+<a href="storage">Storage API</a>
+to store and update local settings
+(see also <a href="app_storage#options">Storage options</a>).-->
+当您的应用程序首次安装或者更新时将调用
+<code>chrome.runtime.onInstalled()</code>，每次调用该函数时将产生
+<code>onInstalled</code>
+事件。事件页面可以监听该事件，并使用<a href="storage.html">存储 API</a>
+储存和更新本地设置（同时请参见<a href="app_storage.html#options">存储选项</a>）。
+</p>
+
+<pre data-filename="background.js">
+chrome.runtime.onInstalled.addListener(function() {
+  chrome.storage.local.set(object items, function callback);
+});
+</pre>
+
+<h3 id="preventing_loss"><!--@Preventing data loss-->防止数据丢失</h3>
+
+<p>
+<!--@Users can uninstall your app at any time.
+When uninstalled,
+no executing code or private data is left behind.
+This can lead to data loss
+since the users may be uninstalling an app
+that has locally edited, unsynchronized data.
+You should stash data to prevent data loss.-->
+用户可以在任何时候卸载您的应用，卸载后不会留下任何可执行代码或私有数据。这样可能会导致数据丢失，因为用户正在卸载的应用可能包含本地编辑过但尚未同步的数据，您应该储存数据以免数据丢失。
+</p>
+
+<p>
+<!--@At a minimum,
+you should store user settings
+so that if users reinstall your app,
+their information is still available for reuse.
+Using the Storage API
+(<a href=/apps/storage#property-sync>storage.sync</a>),
+user data can be automatically synced
+with Chrome sync.-->
+至少，您应该存储用户设置，以便用户重新安装您的应用后，它们的信息仍然可以重新使用。使用存储
+API（<a href="storage.html#property-sync">storage.sync</a>），用户数据可以自动通过 Chrome 浏览器的同步功能同步。
+</p>
+
+<h3 id="clean-up"><!--@Clean-up before app closes-->应用关闭前的清理</h3>
+
+<p>
+<!--@The app runtime sends the <code>onSuspend()</code>
+event to the event page before unloading it.
+Your event page can listen out for this event and
+do clean-up tasks before the app closes.-->
+应用运行时环境在卸载前会向事件页面发送 <code>onSuspend()</code>
+事件，您的事件页面可以监听该事件并在应用关闭前做清理任务。
+</p>
+
+<p>
+<!--@Once this event is fired,
+the app runtime starts the process of closing the app:
+all events stop firing and
+JavaScript execution is halted.
+Any asynchronous operations started
+while handling this event are not guaranteed to complete.
+Keep the clean-up tasks synchronous and simple.-->
+一旦产生了该事件，应用运行时环境就开始了应用关闭的过程。所有事件不再产生，JavaScript
+执行将停止。处理这一事件时开始的任何异步操作都不能保证完整。请保持清理任务同步而且简单：
+</p>
+
+<pre data-filename="background.js">
+chrome.runtime.onSuspend.addListener(function() {
+  // 做一些简单的清理任务。
+});
+</pre>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">了解基础知识</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="about_apps.html">什么是 Chrome 应用？</a>
+                        </li>
+                        <li>
+                          <a href="first_app.html">创建第一个应用</a>
+                        </li>
+                        <li>
+                          <a href="app_architecture.html">应用的架构</a>
+                        </li>
+                        <li>
+                          <a href="app_lifecycle.html" class="active">应用的生命周期</a>
+                        </li>
+                        <li>
+                          <a href="contentSecurityPolicy.html">内容安全策略</a>
+                        </li>
+                        <li>
+                          <a href="app_codelab1_setup.html">通过代码实验室学习</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_lifecycle.html#lifecycle"
+          >生命周期的工作方式</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_lifecycle.html#eventpage"
+          >创建事件页面和窗口</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_lifecycle.html#create_event_page"
+                     >创建事件页面</a>
+              </li>
+              <li><a data-list-item href="app_lifecycle.html#create_windows"
+                     >创建窗口</a>
+              </li>
+              <li><a data-list-item href="app_lifecycle.html#launch_data"
+                     >包含执行数据</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_lifecycle.html#runtime"
+          >监听应用的运行时事件</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_lifecycle.html#local_settings"
+                     >储存本地设置</a>
+              </li>
+              <li><a data-list-item href="app_lifecycle.html#preventing_loss"
+                     >防止数据丢失</a>
+              </li>
+              <li><a data-list-item href="app_lifecycle.html#clean-up"
+                     >应用关闭前的清理</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

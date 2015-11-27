@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>用于数字商品的 Google 电子钱包 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="google_wallet.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Google Wallet for Digital Goods-->用于数字商品的 Google 电子钱包</h1>
+
+<table class="intro">
+  <tr>
+    <td><strong><!--@Description:-->描述：</strong></td>
+    <td><!--@Use Google Wallet for digital goods to sell digital and virtual goods within a Chrome app.-->使用用于数字商品的 Google 电子钱包在
+    Chrome 应用中销售数字虚拟商品。
+</td>
+  </tr>
+  <tr>
+    <td><strong><!--@Availability:-->可用版本：</strong></td>
+    <td>Chrome 29</td>
+  </tr>
+  <tr>
+    <td><strong><!--@Sample:-->示例：</strong></td>
+    <td><a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/in-app-payments">in-app-payments</a></td>
+  </tr>
+  <tr>
+    <td><strong><!--@Learn more:-->了解更多：</strong></td>
+    <td>
+    <a href="https://support.google.com/chrome_webstore/answer/1053354">Google <!--@Wallet-->电子钱包</a><br>
+    <a href="https://developers.google.com/commerce/wallet/digital/docs/"><!--@Google Wallet for Digital Goods-->用于数字商品的 Google 电子钱包</a><br>
+    <a href="https://www.youtube.com/watch?v=Z3jryGggMCs"><!--@How-to Video-->视频教程</a></td>
+  </tr>
+</table>
+
+<h2 id="overview"><!--@Overview-->概述</h2>
+
+<p>
+<!--@You can use Google Wallet for digital goods to sell digital and virtual goods within your app.
+The Google Wallet for digital goods client app, which is embedded in Chrome, communicates with the
+<a href="https://support.google.com/chrome_webstore/answer/1053354">Google Wallet</a>
+servers and handles all the required checkout details, so your app does not have to process any financial transactions.
+Google Wallet for digital goods requires you to package a JavaScript file, 
+<a href="https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js">buy.js</a>,
+with your app to trigger the purchase flow.-->
+您可以使用用于数字商品的 Google 电子钱包在您的应用中销售数字虚拟商品。当您使用应用内付款服务时，内嵌在
+Chrome 浏览器中的用于数字商品的 Google 电子钱包会和
+<a href="https://support.google.com/chrome_webstore/answer/1053354">Google
+电子钱包</a>的服务器通信，并处理所有必要的交易细节，这样您的应用就不需要处理任何金融交易。用于数字商品的
+Google 电子钱包需要您将一个 JavaScript 文件
+<a href="https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js">buy.js</a>
+与您的应用一起打包，以便触发购买流程。
+</p>
+
+<h2 id="flow"><!--@Purchase flow-->购买流程</h2>
+
+<p>
+<!--@When a customer clicks a "Buy" button in your app to make a purchase, Google Wallet for digital goods displays a payment processing window
+on top of your application window:-->
+当顾客在您的应用中单击“购买”按钮开始购买时，用于数字商品的 Google 电子钱包会在您的应用窗口上显示付款处理窗口。
+</p>
+
+<img src="../static/images/wallet-review.png"
+     width="694"
+     alt="screenshot: Google Wallet review dialog">
+
+<p>
+<!--@When the user clicks the "Buy" button in the payment processing window, the Google Wallet server processes the payment
+and displays a purchase confirmation dialog to the user, as shown below.
+The success or failure callback in your app is invoked appropriately.-->
+用户点击付款处理窗口中的“购买”按钮后，Google
+电子钱包服务器会处理付款，并向用户显示购买确认对话框，如下所示，同时调用您的应用中相应的成功或失败回调函数。
+</p>
+
+<img src="../static/images/wallet-confirmation.png"
+     width="694"
+     alt="screenshot: Google Wallet confirmation dialog">
+
+<p>
+<!--@If the user is not signed up for Google Wallet, Google Wallet for digital goods takes the user through the sign-up flow:-->
+如果用户还没有注册 Google 电子钱包，用于数字商品的 Google 电子钱包会引导用户进入注册流程：
+</p>
+
+<img src="../static/images/wallet-set-up.png"
+     width="694"
+     alt="screenshot: Google Wallet set up dialog">
+
+<h2 id="sample-code"><!--@Sample code-->示例代码</h2>
+
+<p>
+<!--@The following code snippet illustrates how to initiate the purchase flow in an app.
+The parameters for the <code>buy()</code> method are described below.-->
+以下代码片段演示如何在应用内开始购买流程。<code>buy()</code>
+方法的参数将在后面描述。
+</p>
+
+<pre>
+google.payments.inapp.buy({
+  parameters: {},
+  jwt: 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxNDIwNDk' +
+       '1MzA5NDM1MjE2ODU3MSIsImF1ZCI6Ikdvb2dsZSI' +
+       'sInR5cCI6Imdvb2dsZS9wYXltZW50cy9pbmFwcC9' +
+       'zdWJzY3JpcHRpb24vdjEiLCJpYXQiOjEzNTg0NTc' +
+       'yNjksImV4cCI6MjM1ODQxMjMzNDMsInJlcXVlc3Q' +
+       'iOnsiaW5pdGlhbFBheW1lbnQiOnsicHJpY2UiOiI' +
+       'xMC41MCIsImN1cnJlbmN5Q29kZSI6IlVTRCIsInB' +
+       'heW1lbnRUeXBlIjoicHJvcmF0ZWQifSwicmVjdXJ' +
+       'yZW5jZSI6eyJwcmljZSI6IjQuOTkiLCJjdXJyZW5' +
+       'jeUNvZGUiOiJVU0QiLCJzdGFydERhdGUiOiIxMzU' +
+       '4NDYzMjY5IiwiZnJlcXVlbmN5IjoibW9udGhseSI' +
+       'sIm51bVJlY3VycmVuY2VzIjoiMTIifSwibmFtZSI' +
+       '6IlBpZWNlIG9mIENha2UiLCJkZXNjcmlwdGlvbiI' +
+       '6IkEgZGVsaWNpb3VzIHBpZWNlIG9mIHZpcnR1YWw' +
+       'gY2FrZSIsInNlbGxlckRhdGEiOiJZb3VyIERhdGE' +
+       'gSGVyZSJ9fQ.sXd39R7MNNfDFa-jnlTNu2C2te-_' +
+       'x9--87Phfdr5GrE',
+  success: logSuccess,
+  failure: logFailure
+});
+</pre>
+
+<h2 id="how-to"><!--@How to use Google Wallet for digital goods-->如何使用用于数字商品的 Google 电子钱包</h2>
+
+<p><!--@Using Google Wallet for digital goods in a Chrome App is similar to using the
+<a href="https://developers.google.com/commerce/wallet/digital/docs/">Google Wallet for digital goods API</a> in a web site.
+The integration steps below are based on the
+<a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial">Google Wallet for digital goods tutorial</a>,
+but there are a few key differences for apps. These differences are summarized below and described in detail in the
+integration steps.-->
+在 Chrome 应用中使用用于数字商品的 Google 电子钱包与在网站中使用<a href="https://developers.google.com/commerce/wallet/digital/docs/">用于数字商品的
+Google 电子钱包 API</a> 类似，以下的总步骤基于<a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial">用于数字商品的
+Google 电子钱包教程</a>，但是对于应用来说有几个关键的区别。这些区别将在后面总结，并在总步骤中详细描述。
+</p>
+
+<ul>
+  <li><!--@You can use pre-generated JSON Web Tokens (JWTs) in your app, rather than using a server to generate the tokens.-->
+      您可以在您的应用中使用预先生成的 JSON Web
+      令牌（JWT），而不是使用服务器生成令牌。
+  </li>
+
+  <li><!--@You must package the-->您必须将 <a href="https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js">buy.js</a>
+  <!--@library with your app, and load the library from its location in your package.-->
+  库与您的应用一起打包，并从您包中的位置载入该库。
+ </li>
+
+  <li><!--@You must call the <code>buy()</code> method with an extra parameter called <code>parameters</code>.-->
+      调用 <code>buy()</code> 方法时您必须传递一个额外的参数，称为
+      <code>parameters</code>。
+  </li>
+
+  <li><!--@The UI to process payments is displayed in a separate window on top of your application window, rather than in an iframe.-->
+      继续付款的用户界面显示在您的应用之上的一个单独的窗口中，而不是在
+      iframe 中。
+  </li>
+</ul>
+
+<p><!--@Follow these steps to use Google Wallet for digital goods in your app:-->遵循这些步骤，在您的应用中使用用于数字商品的 Google 电子钱包：</p>
+
+<ol>
+  <li><a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial#1"><!--@Generate a JSON Web Token (JWT) for each item to be purchased.-->为需要出售的每一个项目生成一个 JSON Web 令牌（JWT）。</a>
+    <div class="indent-small">
+      <!--@You can generate JWTs using a server, or you can pre-generate JWTs for use in your app.-->
+      您可以使用服务器生成 JWT，也可以预先生成 JWT，在您的应用中使用。
+      <p class="warning">
+      <!--@Note: If you use pre-generated JWTs, you should generate the JWTs outside of your app, and include
+      the generated tokens in your app.
+      <strong>NEVER</strong> include the Seller secret you use to generate tokens in your app.
+      If you need to generate JWTs dynamically, you should use a server.-->
+      注意：如果您使用预先生成的 JWT，您应该在您的应用外生成
+      JWT，并在您的应用中包含生成的令牌。<strong>千万不要</strong>在您的应用中包含用于生成令牌的销售者密钥。如果您需要动态生成
+      JWT，您应该使用服务器。
+      </p>
+    </div>
+  </li>
+
+  <li><!--@Include-->在您的应用中包含 <a href="https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js">buy.js</a><!--@ in your app.-->。
+    <div class="indent-small">
+      <!--@Due to the security restrictions in the
+      -->由于 Chrome 应用<a href="contentSecurityPolicy.html"><!--@Content Security Policy-->内容安全策略</a><!--@ for Chrome Apps,
+      you cannot include the -->
+      的安全性限制，您不能从外部位置包含
+      <a href="https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js">buy.js</a>
+      <!--@library from an external location. Instead, you must package the library with your app, and load it from the packaged location.-->
+      库，而是要将库与您的应用一起打包，并从打包的位置载入。
+    </div>
+  </li>
+
+  <li><a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial#3"><!--@Create success and failure callback handlers.-->创建成功和失败回调处理程序。</a>
+    <div class="indent-small">
+      <!--@Success and failure callback handlers let your app react to the purchase flow's completion.-->
+      成功和失败回调处理程序使您的应用能够对购买流程的完成情况作出反应。
+    </div>
+  </li>
+
+  <li><a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial#4"><!--@Call-->调用 buy()<!--@.-->。</a>
+    <div class="indent-small">
+      <!--@When a customer clicks a "Buy" button in your app, call <code>buy()</code> to initiate the purchase flow.-->
+      当顾客在您的应用中单击“购买”按钮时，调用 <code>buy()</code>
+      开始购买流程。
+      <p>
+      <!--@For Apps, you must call <code>buy()</code> with an extra parameter called <code>parameters</code>.
+      This parameter currently has one field, <code>env</code>, which specifies the environment in which to process a payment.
+      You can set this field to either <code>prod</code> (production server that accepts real credit cards), or
+      <code>sandbox</code> (test server that accepts test credit cards to simulate transactions).
+      The default setting is <code>sandbox</code>.-->
+      对于应用来说，您在调用 <code>buy()</code>
+      时，必须传递一个额外参数，称为
+      <code>parameters</code>。该参数当前包含一个字段
+      <code>env</code>，指定处理付款的环境。您可以将该字段设置为
+      <code>prod</code>（接受真实信用卡的产品服务器）或
+      <code>sandbox</code>（接受测试信用卡并模拟交易的测试服务器）。默认设置为
+      <code>sandbox</code>。
+      </p>
+    </div>
+  </li>
+
+  <li><!--@(Optional) -->（可选）<a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial#5"><!--@Acknowledge purchase notification.-->发出购买通知。</a>
+    <div class="indent-small">
+      <!--@You can specify a postback URL to make sure that the customer has paid for an item.-->
+      您可以指定一个回传 URL，确保顾客已经为某个项目付费。
+    </div>
+  </li>
+
+  <li><a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial#6"><!--@Get set up as a seller on Google Wallet.-->在 Google 电子钱包中注册为销售者。</a>
+    <div class="indent-small">
+      <!--@You must sign up for Google Wallet in order to use Google Wallet for digital goods.-->
+      您必须注册 Google 电子钱包才能使用用于数字商品的 Google 电子钱包。
+    </div>
+  </li>
+
+  <li><a href="https://developers.google.com/commerce/wallet/digital/docs/tutorial#7"><!--@Switch to the production server.-->切换到产品服务器。</a>
+    <div class="indent-small">
+      <!--@Switch from the sandbox server to the production server and test your app using real credit cards.-->
+      从测试服务器切换到产品服务器，使用真实的信用卡测试您的应用。
+    </div>
+  </li>
+</ol>
+
+<h2 id="recurring"><!--@Recurring billing-->多次付费</h2>
+
+<p><!--@Google Wallet for digital goods supports automated recurring billing. To set up recurring billing, follow the
+instructions for setting up
+<a href="https://developers.google.com/commerce/wallet/digital/docs/subscriptions">subscriptions</a>
+for the Google Wallet for digital goods API,
+but note again the differences described above (you can use pre-generated JWT tokens;
+you must package <a href="https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js">buy.js</a>
+with your app; and you must specify an additional parameter in the call to <code>buy()</code>).-->
+用于数字商品的 Google
+电子钱包支持自动多次付费。要设置多次付费，遵循用于数字商品的
+Google 电子钱包 API
+中设置<a href="https://developers.google.com/commerce/wallet/digital/docs/subscriptions">订阅</a>的说明，但是一定要注意上面描述的区别（您可以使用预先生成的令牌，您必须将
+<a href="https://raw.github.com/GoogleChrome/chrome-app-samples/master/in-app-payments/buy.js">buy.js</a>
+与您的应用一起打包，您在调用 <code>buy()</code> 时必须指定一个额外的参数）。
+
+<h2 id="sample-app"><!--@Sample app-->示例应用</h2>
+
+<p>
+<!--@For a simple app that demonstrates how to use Google Wallet for digital goods, see:-->
+有关演示如何使用用于数字商品的 Google 电子钱包的简单应用，请参见：
+</p>
+
+</ul>
+  <li><a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/in-app-payments"><!--@source code-->源代码</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/moldiohggmfllblgmikpeoagipenlcae"><!--@published app-->已发布的应用</a><!--@ (requires Chrome 29 or higher)-->（需要 Chrome 29 或更高版本）</li>
+</ul>
+
+<p>
+<!--@You can install and run the published app from the Chrome Web Store to try out the in-app payment purchase flow.
+The app has options to use either the production server or the sandbox server. When testing with the sandbox server,
+use these <a href="https://developers.google.com/commerce/wallet/digital/docs/testing">test credit card numbers</a>,
+which pass basic checks by the Google Wallet for digital goods system.-->
+您可以从 Chrome
+网上应用店安装和运行已发布的应用，测试应用内付款的流程。应用包含使用产品服务器还是测试服务器的选项。使用测试服务器测试时，请使用这些<a href="https://developers.google.com/commerce/wallet/digital/docs/testing">测试信用卡的编号</a>，这样就能通过用于数字商品的
+Google 电子钱包系统的基本检查。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">发布应用</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="publish_app.html">发布您的应用</a>
+                        </li>
+                        <li>
+                          <a href="chrome_apps_on_mobile.html">在移动设备上运行 Chrome 应用</a>
+                        </li>
+                        <li>
+                          <a href="google_wallet.html" class="active">通过应用获利</a>
+                        </li>
+                        <li>
+                          <a href="https://developer.chrome.com/webstore/one_time_payments">一次性付款</a>
+                        </li>
+                        <li>
+                          <a href="analytics.html">Analytics（分析）</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="google_wallet.html#overview"
+          >概述</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="google_wallet.html#flow"
+          >购买流程</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="google_wallet.html#sample-code"
+          >示例代码</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="google_wallet.html#how-to"
+          >如何使用用于数字商品的 Google 电子钱包</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="google_wallet.html#recurring"
+          >多次付费</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="google_wallet.html#sample-app"
+          >示例应用</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>其他部署方式 - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="external_extensions.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Other Deployment Options-->其他部署方式</h1>
+
+<p>
+<!--@Usually, users install their own extensions.
+But sometimes you might want an extension
+to be installed automatically.
+Here are two typical cases:-->
+通常，用户自己安装扩展程序。然而有时候您可能希望扩展程序自动安装，如下是两个典型案例：
+</p>
+
+<ul>
+  <li>
+    <!--@An extension is associated with some other software,
+    and the extension should be installed
+    whenever the user installs that other software.
+    The extension could also be uninstalled
+    when the user removes that other software.-->
+    扩展程序与其他软件有联系，并且用户安装软件时也应该同时安装扩展程序，在用户卸载软件时扩展程序也应该同时被卸载。
+  </li>
+  <li>
+    <!--@A network admin wants to install the same extensions
+    throughout the company.-->
+    网络管理员希望在整个公司安装同样的扩展程序。
+  </li>
+</ul>
+
+<p>
+<!--@An extension that's installed automatically is known as an
+<em>external extension</em>.
+Google Chrome supports two ways of
+installing external extensions:-->
+自动安装的扩展程序称为<em>外部扩展程序</em>。Google Chrome
+浏览器支持两种安装外部扩展程序的方式：
+</p>
+
+<ul>
+  <li> <!--@Using a preferences JSON file (Mac OS X and Linux only)-->使用首选项 JSON 文件（仅用于 Mac OS X 和 Linux）</li>
+  <li> <!--@Using the Windows registry (Windows only)-->使用 Windows 注册表（仅用于 Windows） </li>
+</ul>
+
+<p>
+<!--@Both ways support installing an extension hosted at an
+<code>update_URL</code>.
+In the Windows registry,
+the <code>update_URL</code> must point to the Chrome Web Store
+where the extension is hosted.-->
+这两种方式都支持安装托管在<a href="autoupdate.html#update_url">更新
+URL</a> 上的扩展程序。在 Windows 注册表中，<code>update_url</code>
+必须指向 Chrome 网上应用店中扩展程序的所在位置。
+</p>
+
+<p>
+<!--@In the preferences file,
+it can point to your own server where you are hosting the extension
+(see <a href="autoupdate#update_url">autoupdating</a>).
+The preferences JSON file also supports installing
+an extension from a <code>.crx</code> extension
+file on the user's computer
+(see <a href="hosting">hosting</a>).-->
+在首选项文件中，它可以指向您自己托管扩展程序的服务器（参见<a
+href="autoupdate.html#update_url">自动更新</a>），首选项 JSON
+文件还支持通过用户计算机上的 <code>.crx</code> 文件安装扩展程序（参见<a
+href="hosting.html">托管</a>）。
+</p>
+
+
+<p class="note">
+<b><!--@Install extensions from your website:-->从您的网站安装扩展程序：</b><!--@
+The safest option for your users is to publish your extension
+in the Chrome Web Store.
+Instead of hosting your own extension,
+publish it in the store, and link to the store install using
+<a href="https://developers.google.com/chrome/web-store/docs/inline_installation">inline installation</a>.-->对于您的用户来说，最安全的选择就是将您的扩展程序发布到
+Chrome 网上应用店。不是自己托管扩展程序，而是在网上应用店中发布，并通过<a
+href="https://developers.google.com/chrome/web-store/docs/inline_installation"
+>内嵌安装</a>链接到网上应用店进行安装。
+</p>
+
+<h2 id="prereqs"><!--@Before you begin-->在您开始前</h2>
+
+<p>
+<!--@First, <a href="/webstore/publish">publish</a>
+the extension in the Chrome Web Store,
+or package a <a href="packaging"><code>.crx</code> file</a>
+and make sure that it installs successfully.-->
+首先，在网上应用店<a
+href="https://developer.chrome.com/webstore/publish">发布扩展程序或<a
+href="packaging.html">打包</a>为 <code>.crx</code> 文件并确保它能够成功安装。
+</p>
+
+
+<p class="warning">
+<b><!--@Windows installs must come from Chrome Web Store:-->在
+Windows 中必须从 Chrome 网上应用店安装扩展程序：</b><br>
+<!--@As of Chrome 33,
+no external installs are allowed from a path to a local <code>.crx</code>
+(see <a href="http://blog.chromium.org/2013/11/protecting-windows-users-from-malicious.html">Protecting Windows users from malicious extensions</a>).-->
+从 Chrome 33 开始，不再允许从本地 <code>.crx</code>
+路径安装外部扩展程序（参见<a
+href="http://blog.chromium.org/2013/11/protecting-windows-users-from-malicious.html"
+>Protecting Windows users from malicious extensions（保护 Windows
+用户，避免恶意扩展程序）</a>）。
+</p>
+
+<p>
+<!--@If installing from an
+ <a href="autoupdate#update_url">update URL</a>, ensure that the extension
+is properly <a href="hosting">hosted</a>.-->
+如果从<a href="autoupdate.html#update_url">更新
+URL</a>安装，请确保扩展程序已正确<a href="hosting.html">托管</a>。
+</p>
+
+<p>
+<!--@Before you edit the preferences file or the registry,
+make a note of the following:-->
+编辑首选项文件或者注册表前，请先记录以下内容：
+</p>
+
+<ul>
+ <li> <!--@The intended <b>location</b> of the extension's <code>.crx</code> file,
+        or the update URL from which it is served -->
+  打算存放扩展程序 <code>.crx</code> 文件的<b>位置</b>，或者托管扩展程序的更新 URL。
+ </li>
+ <li> <!--@The extension's <b>version</b>
+  (from the manifest file or the <b>chrome://extensions</b> page) -->
+  扩展程序的<b>版本</b>（来自清单文件或者
+  <b>chrome://extensions</b> 页面）
+ </li>
+ <li> <!--@The extension's <b>ID</b>
+   (from the <b>chrome://extensions</b> page
+   when you've loaded the packed extension)-->
+   扩展程序的<b>标识符</b>（加载已打包的扩展程序后可以从
+   <b>chrome://extensions</b> 页面获得）
+ </li>
+</ul>
+
+<p>
+<!--@The following examples assume the version is <code>1.0</code>
+and the ID is <code>aaaaaaaaaabbbbbbbbbbcccccccccc</code>.-->
+以下例子假定版本为 <code>1.0</code>，标识符为
+<code>aaaaaaaaaabbbbbbbbbbcccccccccc</code>。
+</p>
+
+<h2 id="preferences"><!--@Using a preferences file-->使用首选项文件</h2>
+
+<br>
+
+<p class="note">
+<b><!--@Mac OS X and Linux only:-->仅用于 Mac OS X 和 Linux：</b><!--@
+Do not use the preferences file for Windows.
+Use <a href="#registry">Windows registry</a> instead.-->不要在 Windows
+中使用首选项文件，而应该使用 <a href="external_extensions.html#registry">Windows 注册表</a>。
+</p>
+
+<ol>
+<li><!--@If you are installing from a file, make the <code>.crx</code> extension
+file available to the machine you want to install the extension on.
+(Copy it to a local directory or to a network share for example,
+<code>\\server\share\extension.crx</code>
+or <code>/home/share/extension.crx</code>.)-->
+如果您从文件安装，确保 <code>.crx</code>
+扩展程序文件在您需要安装扩展程序的计算机上可用。（将它复制到本地目录或者网络共享，例如
+<code>\\server\share\extension.crx</code>
+或 <code>/home/share/extension.crx</code>。）
+</li>
+
+<li><!--@Create a file with the following name in one of the folders listed below:
+  <code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code> where the file name (without the extension)
+  corresponds to your extension's ID.
+  The location depends on the operating system.-->
+  在下面列出的某一个文件夹中创建以下名称的文件：<code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code>，其中文件名（不包括扩展名）对应于您的扩展程序标志符。文件的位置取决于操作系统。
+  <dl>
+  <dt> Mac OS X<!--@:-->：</dt>
+    <dd><!--@For a specific user: -->用于某个特定用户：<code>~USERNAME/Library/Application Support/Google/Chrome/External Extensions/</code><br>
+        <!--@For all users: -->用于所有用户：<code>/Library/Application Support/Google/Chrome/External Extensions/</code>
+    <p><!--@The external extension file for all users is read only if every directory in the path is owned by the user <code>root</code>, has the group <code>admin</code> or <code>wheel</code>, and is not world writable.  The path must also be free of symbolic links.  These restrictions prevent an unprivileged user from causing extensions to be installed for all users.  See <a href="#troubleshooting">troubleshooting</a> for details.-->
+    只有路径中每一个目录的所有者都是 <code>root</code>，属于
+    <code>admin</code> 或 <code>wheel</code>组，并且不是所有人都具有写入权限，才会读取用于所有用户的外部扩展程序文件。另外，路径还不能包含符号链接。这些限制确保未授权的用户不能使扩展程序为所有用户安装。有关详情请参见<a href="external_extensions.html#troubleshooting">疑难解答</a>。
+    </p>
+    <p class="note">
+    <b><!--@Note:-->注意：</b><!--@ The above path for all users was added in Chrome 16.  Prior versions used a different path:-->以上用于所有用户的路径在 Chrome 16 中添加，之前的版本使用另一个路径：<br/>
+     <code>/Applications/Google Chrome.app/Contents/Extensions/</code><!--@
+     This path was deprecated in version 17.  Support was removed in version 20.  Use one of the paths above instead.-->，该路径在版本 17 中弃用，在版本 20 中不再支持。请使用以上列出的某一个路径。</p>
+  </dd>
+
+  <dt> Linux<!--@:-->： </dt>
+    <dd> <code>/opt/google/chrome/extensions/</code> <br>
+    </dd>
+    <dd> <code>/usr/share/google-chrome/extensions/</code> <br>
+    <b><!--@Note:-->注意：</b><!--@ Use <code>chmod</code> if necessary
+    to make sure that the <code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code> files
+    are world-readable.-->如果有必要的话使用
+    <code>chmod</code> 确保所有人都能读取
+    <code>extensions/aaaaaaaaaabbbbbbbbbbcccccccccc.json</code>。
+    </dd>
+  </dl>
+</li>
+
+<li><!--@If you are installing from a file, specify the extension's location and version with fields
+named "external_crx" and "external_version" in the file created above.-->
+如果您从文件安装的话，通过
+"external_crx" 与
+"external_version"
+字段在以上创建的文件中指定扩展程序的位置与版本。
+<p>
+<!--@Example:-->例如：
+<pre>
+  {
+    "external_crx": "/home/share/extension.crx",
+    "external_version": "1.0"
+  }
+</pre>
+</p>
+<p class="note">
+<b><!--@Note:-->注意：</b><!--@
+You need to escape
+each <code>\</code> character in the location.
+For example,-->
+在指定的位置中您必须为所有 <code>\</code> 字符转义。例如，
+<code>\\server\share\extension.crx</code> <!--@would be-->应该是
+<code>"\\\\server\\share\\extension.crx"</code><!--@.-->。
+</p>
+<p>
+<p>
+<!--@If you are installing from an update URL, specify the extension's update URL
+with field name "external_update_url".-->
+如果您从更新 URL 安装，请在名为
+"external_update_url" 的字段中指定扩展程序的更新 URL。
+</p>
+<!--@Example:-->例如：
+<pre>{
+  "external_update_url": "http://myhost.com/mytestextension/updates.xml"
+}</pre>
+<p>
+<!--@If you would like to install extension only for some browser locales,
+you can list supported locales in field name "supported_locale". Locale may
+specify parent locale like "en", in this case the extension will be
+installed for all English locales like "en-US", "en-GB", etc.
+If another browser locale is selected that is not supported by the extension,
+the external extensions will be uninstalled. If "supported_locales" list
+is missing, the extension will be installed for any locale.-->
+如果您只需要为某些浏览器语言安装扩展程序，您可以在名为
+"supported_locales"
+的字段中列出支持的语言。可以指定诸如 "en"
+之类的语言，这样扩展程序将为所有像 "en-US"、"en-GB"
+等这样的英语语言安装。选择了扩展程序不支持的另一种语言，外部扩展程序将会被卸载。如果没有
+"supported_locales" 列表，扩展程序将为所有语言安装。
+</p>
+<!--@Example:-->例如：
+<pre>{
+  "external_update_url": "http://myhost.com/mytestextension/updates.xml",
+  "supported_locales": [ "en", "fr", "de" ]
+}</pre>
+</li>
+<li><!--@Save the JSON file.-->保存 JSON 文件。</li>
+<li><!--@Launch Google Chrome and go to <b>chrome://extensions</b>;
+you should see the extension listed.-->
+运行 Google Chrome 浏览器，并进入
+<b>chrome://extensions</b>，您应该会看到列出的扩展程序。
+</li>
+</ol>
+
+<p class="note">
+<b><!--@Note:-->注意：</b><!--@
+Previous versions of Google Chrome used an
+<code>external_extensions.json</code> file to specify which extensions to
+install. This file has been deprecated in favor of individual <code>.json</code>
+files, one per extension.-->以前版本的 Google Chrome 浏览器使用
+<code>external_extensions.json</code>
+文件指定要安装哪些扩展程序，这种方式已弃用，您应该为每一个扩展程序使用单独的
+<code>.json</code> 文件。
+</p>
+
+<h3 id="troubleshooting"><!--@Troubleshooting Mac OS permissions problems-->Mac OS 权限问题疑难解答</h3>
+
+<p><!--@On Mac OS, the external extensions files for all users are only read if file system permissions prevent unprivileged users from changing it.  If you do not see external extensions installed when Chrome is launched, there may be a permissions problem with the external extensions preferences files.  To see if this is the problem, follow these steps:-->
+在 Mac OS
+中，只有系统权限阻止未授权的用户更改它时，才会读取外部扩展程序文件。如果
+Chrome
+浏览器运行后您没有看见已安装的外部扩展程序文件，可能是因为外部扩展程序的首选项文件有权限问题。要确定是否是这一问题，请遵循如下步骤：
+</p>
+
+<ol>
+  <li> <!--@Launch the Console program.  You can find it under /Applications/Utilities/Console.-->运行控制台程序。您可以在应用程序/实用工具/控制台找到它。 </li>
+  <li> <!--@If the leftmost icon in the Console says "Show Log List", click that icon.  A second column appears at the left.-->如果控制台最左边的图标为“显示日志列表”，单击该图标，左侧会出现新的一列。 </li>
+  <li> <!--@Click "Console Messages" in the left pane.-->单击左侧窗格中的“控制台消息”。 </li>
+  <li> <!--@Search for the string <b>Can not read external extensions</b>.  If there is a problem reading the external extensions files, you will see an error message.  Look for another error message directly above it, which should explain the issue.  For example, if you see the following error:
+     "Path /Library/Application Support/Google/Chrome is owned by the wrong group", you need to use <code>chgrp</code> or the Finder's Get Info dialog to change the directory's group owner to the Administrator group.-->
+     搜索<b>无法读取外部扩展程序（Can not read external
+     extensions）</b>这一字符串。如果读取外部扩展程序文件过程中发生问题，您将会找到错误消息。寻找直接在它上方的另一个错误消息，它应该会描述这一问题。例如，如果您看到了如下错误：“路径 /Library/Application Support/Google/Chrome 的所有者不正确”（Path /Library/Application Support/Google/Chrome is owned by the wrong group），您需要使用
+     <code>chgrp</code> 或 Finder 的信息对话框将目录的所有者更改为管理员组。
+  </li>
+  <li> <!--@After fixing the issue, relaunch Chrome.  Test that the external extension is now installed.  It is possible that one permissions error keeps Chrome from detecting a second error.  If the external extension was not installed, repeat these steps until you do not see an error in the Console application.-->
+  修复这一问题后，重新启动 Chrome
+  浏览器，看看外部扩展程序现在是否安装。一个权限错误可能会使 Chrome
+  浏览器不能检测到第二个错误。如果外部扩展程序还没有安装，重复这些步骤，直到您在控制台应用程序中看不到错误。
+</ol>
+
+<h2 id="registry"><!--@Using the Windows registry-->使用 Windows 注册表</h2>
+
+<ol>
+<li><!--@Find or create the following key in the
+registry:-->
+在注册表中寻找或创建如下键：
+<ul>
+  <li> <!--@32-bit Windows: -->32 位 Windows：<code>HKEY_LOCAL_MACHINE\Software\Google\Chrome\Extensions</code> </li>
+  <li> <!--@64-bit Windows: -->64 位 Windows：<code>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Google\Chrome\Extensions</code> </li>
+</ul>
+</li>
+
+<li><!--@Create a new key (folder)
+under the <b>Extensions</b> key with the
+same name as the ID of your extension
+(for example, <code>aaaaaaaaaabbbbbbbbbbcccccccccc</code>).-->
+在 <b>Extensions</b> 键下创建一个新键（文件夹），名称与您的扩展程序标识符相同（例如，<code>aaaaaaaaaabbbbbbbbbbcccccccccc</code>）。
+</li>
+<li><!--@In your extension key,
+create a property, "update_url", and set it to the value:
+"https://clients2.google.com/service/update2/crx"
+(this points to your extension's crx in the Chrome Web Store):-->
+在您的扩展程序键中创建 <code>update_url</code> 属性，并设置为如下值：<code
+>"https://clients2.google.com/service/update2/crx"</code>（指向 Chrome
+网上应用店中您的扩展程序的 crx 文件）。
+<pre>{
+  "update_url": "https://clients2.google.com/service/update2/crx"
+}</pre>
+</li>
+<li><!--@Launch the browser and go to
+<b>chrome://extensions</b>; you should
+see the extension listed.-->
+运行浏览器，并进入 <b>chrome://extensions</b>，您应该看到列出的扩展程序。
+</li>
+</ol>
+
+<h2 id="updating"><!--@Updating and uninstalling-->更新和卸载</h2>
+
+<p><!--@Google Chrome scans the metadata entries
+in the preferences and registry
+each time the browser starts, and makes
+any necessary changes to the installed
+external extensions. -->
+Google Chrome
+浏览器在每一次启动时扫描首选项文件中的元数据项以及注册表，对已安装的外部扩展程序做出必要的更改。
+</p>
+
+<p><!--@To update your extension to a new version,
+update the file, and then update the version
+in the preferences or registry. -->
+要将您的扩展程序更新到新的版本，请更新相应的文件，并更新首选项文件或注册表中的版本。
+</p>
+
+<p><!--@To uninstall your extension
+(for example, if your software is uninstalled),
+remove your preference file (aaaaaaaaaabbbbbbbbbbcccccccccc.json)
+or the metadata from the registry. -->
+要卸载您的扩展程序（例如，如果您的软件卸载了），请删除首选项文件（aaaaaaaaaabbbbbbbbbbcccccccccc.json）或者从注册表中删除元数据。
+</p>
+
+<h2 id="faq"><!--@FAQ-->常见问题</h2>
+
+<p>
+<!--@This section answers common questions about external extensions.-->
+这一部分回答有关外部扩展程序的常见问题。
+</p>
+
+<p><b><!--@Will the methodology for allowing a “pre-install” still be supported
+by Google Chrome from M33 onwards?-->允许“预装”扩展程序的方法从
+Google Chrome 33 开始是否仍然支持？</b></p>
+<p><!--@Yes, but only as an install from a Chrome Web Store
+<code>update_URL</code>,
+not from a local file path.-->
+仍然支持，但是只能从 Chrome 网上应用店的 <code>update_url</code>
+安装，而不允许本地文件路径。</p> 
+
+<p><b><!--@Can I specify a URL as a path to the external extension?-->我能否将 URL 指定为指向外部扩展程序的路径？</b> </p>
+<p><!--@Yes, use the <a href="#preferences">preferences JSON</a> file
+for Mac OS X and Linux; the <a href="#registry">registry</a> for Windows.
+The extension must be hosted as explained in
+<a href="hosting">hosting</a>.
+In the preferences file,
+use the "external_update_url" property to point to an
+<a href="autoupdate#update_manifest">update manifest</a> that has the URL for your
+extension.
+In the Windows registry,
+use the "update_url" property.-->
+可以，在 Mac OS X 和 Linux 下使用<a href="external_extensions.html#preferences">首选项 JSON</a>
+文件，在 Windows 下使用<a href="external_extensions.html#registry">注册表</a>。扩展程序必须按照<a
+href="hosting.html">托管</a>部分描述的那样正确托管。在首选项文件中，使用
+"external_update_url"
+属性指向<a href="autoupdate.html#update_manifest">更新清单</a>，包含您的扩展程序的 URL；在 Windows 注册表中，则使用 <code>update_url</code> 属性。
+</p>
+
+<p><b><!--@What are some common mistakes when installing with the preferences
+file?-->使用首选项文件安装时的常见问题有哪些？</b></p>
+<ul>
+  <li>
+    <!--@Not specifying the same id/version
+    as the one listed in the-->指定的标识符、版本与 <code>.crx</code>
+    文件中不同
+  </li>
+  <li>
+    <!--@The .json file (<code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code>) is in
+    the wrong location or the ID specified does not match the extension ID.-->
+    .json
+    文件（<code>aaaaaaaaaabbbbbbbbbbcccccccccc.json</code>）的位置不正确
+  <li>
+    <!--@Syntax error in JSON file
+    (forgetting to separate entries with comma or
+    leaving a trailing comma somewhere) -->
+    JSON 文件中有语法错误（忘记用逗号分隔项目或者某处遗漏行尾的逗号）
+  </li>
+  <li>
+    <!--@JSON file entry points to the wrong path
+    to the <code>.crx</code> (or path specified but no filename) -->
+    JSON 文件项指向的 <code>.crx</code> 路径不正确（或者指定的路径不包含文件名）
+  </li>
+  <li>
+    <!--@Backslashes in UNC path not escaped
+    (for example, <code>"\\server\share\file"</code> is wrong;
+    it should be <code>"\\\\server\\share\\extension"</code>) -->
+    UNC 路径中的反斜杠没有转义（例如，<code>"\\server\share\file"</code>
+    是错误的，应该是 <code>"\\\\server\\share\\extension"</code>）
+  </li>
+  <li>
+    <!--@Permissions problems on a network share-->网络共享的权限问题 </li>
+</ul>
+
+<p><b><!--@What are some common mistakes when installing with the registry?-->使用注册表安装时的常见问题有哪些？</b> </p>
+<ul>
+  <li>
+    <!--@Not specifying the same id/version
+    as the one listed in the-->指定的标识符、版本与 Chrome <!--@Web Store-->
+    网上应用店中不同
+  </li>
+  <li><!--@Key created in the wrong location in the registry-->
+    键在注册表中创建的位置不对
+  </li>
+  <li><!--@Registry entry points to the wrong path
+to the <code>.crx</code> file in the Chrome Web Store-->
+    注册表项指向的 Chrome 网上应用店 <code>.crx</code> 文件路径不正确
+  </li>
+  <li><!--@Permissions problems on a network share-->网络共享的权限问题 </li>
+</ul>
+
+<p><b><!--@How do I update my native binaries and extension in-step?-->我应该如何一步到位更新原生二进制文件和扩展程序？</b></p>
+<p><!--@Previously when off-store extensions were supported,
+it was possible to have the native binaries and the extension be updated in lock step.
+However, extensions hosted on the Chrome Web Store are updated
+via the Chrome update mechanism which developers do not control.
+Extension developers should be careful about updating extensions
+that have a dependency on the native binary
+(for example, legacy extensions using <a href="npapi">NPAPI</a>).-->
+以前支持网上应用店以外的扩展程序时，可以一次性更新原生二进制文件和扩展程序。而现在，Chrome
+网上应用店中托管的扩展程序通过 Chrome
+浏览器的更新机制更新，开发者并不能控制。扩展程序开发者在更新依赖于原生二进制文件的扩展程序（例如使用
+<a href="npapi.html">NPAPI</a> 的旧式扩展程序）时要特别注意。
+</p>
+
+<p><b><!--@What if the user uninstalls the extension?-->如果用户卸载了扩展程序怎么办？</b> </p>
+<p><!--@If the user uninstalls the extension through the UI, it will no
+longer be installed or updated on each startup. In other words, the
+external extension is blacklisted. -->
+如果用户通过用户界面卸载了扩展程序，在启动时将不会再安装或更新这一扩展程序。换句话说，这一扩展程序进入了黑名单。
+</p>
+
+<p><b><!--@How do I get off the blacklist?-->我应该如何从黑名单中去掉我的扩展程序？</b> </p>
+<p><!--@If the user uninstalls your extension, you should respect that
+decision. However, if you (the developer) accidentally uninstalled
+your extension through the UI,
+you can remove the blacklist tag
+by installing the extension normally
+through the UI, and then uninstalling it. -->
+如果用户卸载了您的扩展程序，您应该尊重这一决定。然而，如果您（开发者）意外地通过用户界面卸载了您的扩展程序，您可以通过用户界面正常安装扩展程序，然后卸载，移除黑名单标记。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">发布扩展程序</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="hosting.html">托管</a>
+                        </li>
+                        <li>
+                          <a href="packaging.html">打包</a>
+                        </li>
+                        <li>
+                          <a href="https://developer.chrome.com/webstore/one_time_payments">一次性付款</a>
+                        </li>
+                        <li>
+                          <a href="autoupdate.html">自动更新</a>
+                        </li>
+                        <li>
+                          <a href="external_extensions.html" class="active">其他部署选项</a>
+                        </li>
+                        <li>
+                          <a href="tut_analytics.html">Google Analytics（分析）</a>
+                        </li>
+                        <li>
+                          <a href="themes.html">发布主题</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="external_extensions.html#prereqs"
+          >在您开始前</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="external_extensions.html#preferences"
+          >使用首选项文件</a>
+          <ol class="toc">
+              <li><a data-list-item href="external_extensions.html#troubleshooting"
+                     >Mac OS 权限问题疑难解答</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="external_extensions.html#registry"
+          >使用 Windows 注册表</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="external_extensions.html#updating"
+          >更新和卸载</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="external_extensions.html#faq"
+          >常见问题</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

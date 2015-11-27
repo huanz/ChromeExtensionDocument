@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.bluetoothSocket - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="bluetoothSocket.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<p class="warning">
+  <!--@This API is in beta. It is only available to Chrome users on the-->
+  该 API 还在 beta 测试中，仅对
+  <a href="https://www.google.com/landing/chrome/beta/">beta <!--@channel-->分支</a><!--@ and-->和
+  <a href="http://www.chromium.org/getting-involved/dev-channel">dev <!--@channel-->分支</a><!--@.-->的
+  Chrome 用户可用。
+</p>
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.bluetoothSocket</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+             <!--@Use the <code>chrome.bluetoothSocket</code> API to send and receive data
+             to Bluetooth devices using RFCOMM and L2CAP connections.-->
+             使用 <code>chrome.bluetoothSocket</code> API 通过 RFCOMM 和 L2CAP
+             连接向蓝牙设备接收和发送数据。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 37<!--@.
+             --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+            -->目前为 <strong>Beta</strong> 分支。<!--@
+            
+             --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">清单文件<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "bluetooth": {...}
+                    </span>
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="app_bluetooth.html">
+            蓝牙
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="bluetoothSocket.html#type-SocketProperties">SocketProperties</a></td></tr>
+          <tr><td><a href="bluetoothSocket.html#type-ListenOptions">ListenOptions</a></td></tr>
+          <tr><td><a href="bluetoothSocket.html#type-SocketInfo">SocketInfo</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="bluetoothSocket.html#method-create">create</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.create(<span class="optional">    SocketProperties properties</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-update">update</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.update(<span>integer socketId</span>, <span>    SocketProperties properties</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-setPaused">setPaused</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.setPaused(<span>integer socketId</span>, <span>boolean paused</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-listenUsingRfcomm">listenUsingRfcomm</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.listenUsingRfcomm(<span>integer socketId</span>, <span>string uuid</span>, <span class="optional">    ListenOptions options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-listenUsingL2cap">listenUsingL2cap</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.listenUsingL2cap(<span>integer socketId</span>, <span>string uuid</span>, <span class="optional">    ListenOptions options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-connect">connect</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.connect(<span>integer socketId</span>, <span>string address</span>, <span>string uuid</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-disconnect">disconnect</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.disconnect(<span>integer socketId</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-close">close</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.close(<span>integer socketId</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-send">send</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.send(<span>integer socketId</span>, <span>ArrayBuffer data</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-getInfo">getInfo</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.getInfo(<span>integer socketId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="bluetoothSocket.html#method-getSockets">getSockets</a> &minus;
+            <code class="prettyprint">
+            chrome.bluetoothSocket.getSockets(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="bluetoothSocket.html#event-onAccept">onAccept</a></td></tr>
+          <tr><td><a href="bluetoothSocket.html#event-onAcceptError">onAcceptError</a></td></tr>
+          <tr><td><a href="bluetoothSocket.html#event-onReceive">onReceive</a></td></tr>
+          <tr><td><a href="bluetoothSocket.html#event-onReceiveError">onReceiveError</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-SocketProperties">SocketProperties</h3>
+              <table>
+                  <tr><th colspan="3" id="SocketProperties-properties">属性</th></tr>
+                  <tr id="property-SocketProperties-persistent">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        persistent</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Flag indicating whether the socket is left open when the event page of the application is unloaded (see <a href="http://developer.chrome.com/apps/app_lifecycle.html">Manage App Lifecycle</a>). The default value is <code>false.</code> When the application is loaded, any sockets previously opened with persistent=true can be fetched with $ref:getSockets.--> 应用的事件页面卸载（参见<a href="app_lifecycle.html" >管理应用的生命周期</a>）时是否使套接字保持打开状态，默认值为 <code>false</code>。应用加载后，之前使用 <code>persistent: true</code> 打开的套接字可以通过 <a href="bluetoothSocket.html#method-getSockets">getSockets</a> 获取。
+                    </p></td>
+                  </tr><tr id="property-SocketProperties-name">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      <!--@An application-defined string associated with the socket.--> 与套接字相关联的字符串，由应用定义。
+                    </p></td>
+                  </tr><tr id="property-SocketProperties-bufferSize">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        bufferSize</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The size of the buffer used to receive data. The default value is 4096.--> 用于接收数据的缓冲区大小，默认值为 4096。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ListenOptions">ListenOptions</h3>
+              <table>
+                  <tr><th colspan="3" id="ListenOptions-properties">属性</th></tr>
+                  <tr id="property-ListenOptions-channel">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        channel</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The RFCOMM Channel used by <code>listenUsingRfcomm</code>. If specified, this channel must not be previously in use or the method call will fail. When not specified, an unused channel will be automatically allocated.--> <code>listenUsingRfcomm</code> 使用的 RFCOMM 通道。如果指定了该属性，指定的通道不能处于使用中的状态，否则该方法的调用会失败。如果未指定，则自动分配未使用的通道。
+                    </p></td>
+                  </tr><tr id="property-ListenOptions-psm">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        psm</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The L2CAP PSM used by <code>listenUsingL2cap</code>. If specified, this PSM must not be previously in use or the method call with fail. When not specified, an unused PSM will be automatically allocated.--> <code>listenUsingL2cap</code> 使用的 L2CAP PSM。如果指定了该属性，指定的 PSM 不能处于使用中的状态，否则该方法的调用会失败。如果未指定，则自动分配未使用的 PSM。
+                    </p></td>
+                  </tr><tr id="property-ListenOptions-backlog">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        backlog</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Length of the socket's listen queue. The default value depends on the operating system's host subsystem.--> 套接字监听队列的长度，默认值取决于操作系统的主机子系统。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-SocketInfo">SocketInfo</h3>
+              <table>
+                  <tr><th colspan="3" id="SocketInfo-properties">属性</th></tr>
+                  <tr id="property-SocketInfo-socketId">
+                    <td>integer</td>
+                    <td>
+                        socketId</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The socket identifier.--> 套接字标识符。
+                    </p></td>
+                  </tr><tr id="property-SocketInfo-persistent">
+                    <td>boolean</td>
+                    <td>
+                        persistent</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Flag indicating if the socket remains open when the event page of the application is unloaded (see <code>SocketProperties.persistent</code>). The default value is "false".--> 应用关闭时（参见 <code>SocketProperties.persistent</code>）套接字是否保持打开状态。
+                    </p></td>
+                  </tr><tr id="property-SocketInfo-name">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Application-defined string associated with the socket.--> 与套接字相关联的字符串，由应用定义。
+                    </p></td>
+                  </tr><tr id="property-SocketInfo-bufferSize">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        bufferSize</td>
+                    <td>
+                    
+                    <p>
+                      <!--@The size of the buffer used to receive data. If no buffer size has been specified explictly, the value is not provided.--> 用于接收数据的缓冲区大小。如果没有明确指定缓冲区大小，则不提供该属性的值。
+                    </p></td>
+                  </tr><tr id="property-SocketInfo-paused">
+                    <td>boolean</td>
+                    <td>
+                        paused</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Flag indicating whether a connected socket blocks its peer from sending more data, or whether connection requests on a listening socket are dispatched through the <code>onAccept</code> event or queued up in the listen queue backlog. See <code>setPaused</code>. The default value is "false".--> 表示已连接的套接字是否阻止对方发送更多数据，或者正在监听的套接字上的连接请求是通过 <code>onAccept</code> 事件分发还是放入监听后备队列中。请参见 <code>setPaused</code>，默认值为 <code>false</code>。
+                    </p></td>
+                  </tr><tr id="property-SocketInfo-connected">
+                    <td>boolean</td>
+                    <td>
+                        connected</td>
+                    <td>
+                    
+                    <p>
+                      <!--@Flag indicating whether the socket is connected to a remote peer.--> 表示套接字是否已经连接到远程计算机。
+                    </p></td>
+                  </tr><tr id="property-SocketInfo-address">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        address</td>
+                    <td>
+                    
+                    <p>
+                      <!--@If the underlying socket is connected, contains the Bluetooth address of the device it is connected to.--> 如果下层套接字已连接，则包含连接设备的蓝牙地址。
+                    </p></td>
+                  </tr><tr id="property-SocketInfo-uuid">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        uuid</td>
+                    <td>
+                    
+                    <p>
+                      <!--@If the underlying socket is connected, contains information about the service UUID it is connected to, otherwise if the underlying socket is listening, contains information about the service UUID it is listening on.--> 如果下层套接字已连接，则包含连接的服务 UUID 相关信息；如果下层套接字处于监听状态，则包含正在监听的服务 UUID。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-create"
+                  >create
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.create(<span class="optional">    <a href="bluetoothSocket.html#type-SocketProperties">SocketProperties</a> properties</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Creates a Bluetooth socket.--> 创建蓝牙套接字。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-create-properties">
+                      <td>    <a href="bluetoothSocket.html#type-SocketProperties">SocketProperties</a></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          properties</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket properties (optional).--> 套接字属性（可选）。
+                      </p></td>
+                    </tr>
+                    <tr id="property-create-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the socket has been created.--> 套接字创建后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object createInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-createInfo">
+                              <td>object</td>
+                              <td>
+                                  createInfo</td>
+                              <td>
+                              
+                              <p>
+                                <!--@The result of the socket creation.--> 套接字创建的结果。
+                              </p>  <table class="innerTable">
+                                  <tr id="property-createInfo-socketId">
+                                    <td>integer</td>
+                                    <td>
+                                        socketId</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The ID of the newly created socket. Note that socket IDs created from this API are not compatible with socket IDs created from other APIs, such as the <code><a href=/apps/sockets.tcp>sockets.tcp</a></code> API.--> 新创建套接字的标识符。注意，该 API 中创建的套接字标识符和其他 API 中创建的套接字标识符不兼容，例如 <code><a href="sockets_tcp.html">sockets.tcp</a></code> API。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-update"
+                  >update
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.update(<span>integer socketId</span>, <span>    <a href="bluetoothSocket.html#type-SocketProperties">SocketProperties</a> properties</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Updates the socket properties.--> 更新套接字属性。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-update-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-update-properties">
+                      <td>    <a href="bluetoothSocket.html#type-SocketProperties">SocketProperties</a></td>
+                      <td>
+                          properties</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The properties to update.--> 要更新的属性。
+                      </p></td>
+                    </tr>
+                    <tr id="property-update-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the properties are updated.--> 属性更新后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setPaused"
+                  >setPaused
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.setPaused(<span>integer socketId</span>, <span>boolean paused</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Enables or disables a connected socket from receiving messages from its peer, or a listening socket from accepting new connections. The default value is "false". Pausing a connected socket is typically used by an application to throttle data sent by its peer. When a connected socket is paused, no <code>onReceive</code>event is raised. When a socket is connected and un-paused, <code>onReceive</code> events are raised again when messages are received. When a listening socket is paused, new connections are accepted until its backlog is full then additional connection requests are refused. <code>onAccept</code> events are raised only when the socket is un-paused.--> 允许或阻止已连接的套接字从对方接收消息，或者正在监听的套接字接受新连接，默认值为 <code>false</code>。应用通常使用暂停套接字的方式限制对方发送的数据。已连接的套接字暂停后不会产生 <code>onReceive</code> 事件，套接字已连接并且取消暂停时，接收到消息后就会产生 <code>onReceive</code> 事件。正在监听的套接字暂停后，还会接受新连接，直到后备队列已满，接下来其他连接请求就会被拒绝。只有套接字不处于暂停状态时才会产生 <code>onAccept</code> 事件。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setPaused-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-setPaused-paused">
+                      <td>boolean</td>
+                      <td>
+                          paused</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-setPaused-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Callback from the <code>setPaused</code> method.--> <code>setPaused</code> 方法的回调函数。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-listenUsingRfcomm"
+                  >listenUsingRfcomm
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.listenUsingRfcomm(<span>integer socketId</span>, <span>string uuid</span>, <span class="optional">    <a href="bluetoothSocket.html#type-ListenOptions">ListenOptions</a> options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Listen for connections using the RFCOMM protocol.--> 使用 RFCOMM 协议监听套接字。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-listenUsingRfcomm-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-listenUsingRfcomm-uuid">
+                      <td>string</td>
+                      <td>
+                          uuid</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Service UUID to listen on.--> 要监听的服务 UUID。
+                      </p></td>
+                    </tr>
+                    <tr id="property-listenUsingRfcomm-options">
+                      <td>    <a href="bluetoothSocket.html#type-ListenOptions">ListenOptions</a></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Optional additional options for the service.--> 该服务的其他可选选项。
+                      </p></td>
+                    </tr>
+                    <tr id="property-listenUsingRfcomm-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when listen operation completes.--> 监听操作完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-listenUsingL2cap"
+                  >listenUsingL2cap
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.listenUsingL2cap(<span>integer socketId</span>, <span>string uuid</span>, <span class="optional">    <a href="bluetoothSocket.html#type-ListenOptions">ListenOptions</a> options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Listen for connections using the L2CAP protocol.--> 使用 L2CAP 协议监听连接。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-listenUsingL2cap-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-listenUsingL2cap-uuid">
+                      <td>string</td>
+                      <td>
+                          uuid</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Service UUID to listen on.--> 要监听的服务 UUID。
+                      </p></td>
+                    </tr>
+                    <tr id="property-listenUsingL2cap-options">
+                      <td>    <a href="bluetoothSocket.html#type-ListenOptions">ListenOptions</a></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Optional additional options for the service.--> 该服务的其他可选选项。
+                      </p></td>
+                    </tr>
+                    <tr id="property-listenUsingL2cap-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when listen operation completes.--> 监听操作完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-connect"
+                  >connect
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.connect(<span>integer socketId</span>, <span>string address</span>, <span>string uuid</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-connect-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-connect-address">
+                      <td>string</td>
+                      <td>
+                          address</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The address of the Bluetooth device.--> 蓝牙设备地址。
+                      </p></td>
+                    </tr>
+                    <tr id="property-connect-uuid">
+                      <td>string</td>
+                      <td>
+                          uuid</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The UUID of the service to connect to.--> 要连接的服务 UUID。
+                      </p></td>
+                    </tr>
+                    <tr id="property-connect-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the connect attempt is complete.--> 连接尝试完成后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-disconnect"
+                  >disconnect
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.disconnect(<span>integer socketId</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Disconnects the socket. The socket identifier remains valid.--> 断开套接字的连接，套接字标识符仍然有效。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-disconnect-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-disconnect-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the disconnect attempt is complete.--> 断开连接的尝试完成后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-close"
+                  >close
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.close(<span>integer socketId</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Disconnects and destroys the socket. Each socket created should be closed after use. The socket id is no longer valid as soon at the function is called. However, the socket is guaranteed to be closed only when the callback is invoked.--> 断开连接并释放套接字，创建的所有套接字使用完之后都必须释放。一旦调用该函数，套接字标识符就不再有效。但是只有调用回调函数时，套接字才确保已经关闭。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-close-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-close-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the <code>close</code> operation completes.--> <code>close</code> 操作完成后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-send"
+                  >send
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.send(<span>integer socketId</span>, <span>ArrayBuffer data</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Sends data on the given Bluetooth socket.--> 在指定蓝牙套接字上发送数据。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-send-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-send-data">
+                      <td>ArrayBuffer</td>
+                      <td>
+                          data</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The data to send.--> 要发送的数据。
+                      </p></td>
+                    </tr>
+                    <tr id="property-send-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called with the number of bytes sent.--> 调用时传递发送的字节数。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(integer bytesSent) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-bytesSent">
+                              <td>integer</td>
+                              <td>
+                                  bytesSent</td>
+                              <td>
+                              
+                              <p>
+                                <!--@The number of bytes sent.--> 发送的字节数。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getInfo"
+                  >getInfo
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.getInfo(<span>integer socketId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Retrieves the state of the given socket.--> 获取指定套接字的状态。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getInfo-socketId">
+                      <td>integer</td>
+                      <td>
+                          socketId</td>
+                      <td>
+                      
+                      <p>
+                        <!--@The socket identifier.--> 套接字标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getInfo-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the socket state is available.--> 套接字状态可用时调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="bluetoothSocket.html#type-SocketInfo">SocketInfo</a> socketInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-socketInfo">
+                              <td>    <a href="bluetoothSocket.html#type-SocketInfo">SocketInfo</a></td>
+                              <td>
+                                  socketInfo</td>
+                              <td>
+                              
+                              <p>
+                                <!--@Object containing the socket information.--> 包含套接字信息的对象。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getSockets"
+                  >getSockets
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.bluetoothSocket.getSockets(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  <!--@Retrieves the list of currently opened sockets owned by the application.--> 获取应用拥有的当前打开的套接字列表。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getSockets-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        <!--@Called when the list of sockets is available.--> 套接字列表可用时调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="bluetoothSocket.html#type-SocketInfo">SocketInfo</a> sockets) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-sockets">
+                              <td>array of     <a href="bluetoothSocket.html#type-SocketInfo">SocketInfo</a></td>
+                              <td>
+                                  sockets</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onAccept">onAccept</h3>
+              <div class="description">
+            <p>
+                  <!--@Event raised when a connection has been established for a given socket.--> 某个套接字上建立连接时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.bluetoothSocket.onAccept.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onAccept-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onAccept-info">
+                                    <td>object</td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The event data.--> 事件数据。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-info-socketId">
+                                          <td>integer</td>
+                                          <td>
+                                              socketId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The server socket identifier.--> 服务器的套接字标识符。
+                                          </p></td>
+                                        </tr><tr id="property-info-clientSocketId">
+                                          <td>integer</td>
+                                          <td>
+                                              clientSocketId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The client socket identifier, i.e. the socket identifier of the newly established connection. This socket identifier should be used only with functions from the <code>chrome.bluetoothSocket</code> namespace. Note the client socket is initially paused and must be explictly un-paused by the application to start receiving data.--> 客户端的套接字标识符，即新建立的连接对应的套接字标识符，该套接字标识符只能在 <code>chrome.bluetoothSocket</code> 命名空间的函数中使用。注意，客户端套接字一开始处于暂停状态，应用必须显式取消暂停才能开始接收数据。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onAcceptError">onAcceptError</h3>
+              <div class="description">
+            <p>
+                  <!--@Event raised when a network error occurred while the runtime was waiting for new connections on the given socket. Once this event is raised, the socket is set to <code>paused</code> and no more <code>onAccept</code> events are raised for this socket.--> 运行时在某个套接字上等待新连接时如果发生网络错误则产生该事件。一旦产生了该事件，套接字将设置为暂停状态（<code>paused</code>），而且不会再产生 <code>onAccept</code> 事件。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.bluetoothSocket.onAcceptError.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onAcceptError-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onAcceptError-info">
+                                    <td>object</td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The event data.--> 事件数据。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-info-socketId">
+                                          <td>integer</td>
+                                          <td>
+                                              socketId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The server socket identifier.--> 服务器的套接字标识符。
+                                          </p></td>
+                                        </tr><tr id="property-info-errorMessage">
+                                          <td>string</td>
+                                          <td>
+                                              errorMessage</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The error message.--> 错误消息。
+                                          </p></td>
+                                        </tr><tr id="property-info-error">
+                                          <td>enum of <code>"system_error"</code>, or <code>"not_listening"</code></td>
+                                          <td>
+                                              error</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@An error code indicating what went wrong.--> 表示错误信息的错误码。
+                                          </p>    <dl>
+                                                <dt>system_error</dt>
+                                                <dd>
+                                                  <!--@A system error occurred and the connection may be unrecoverable.--> 发生系统错误，连接可能无法恢复。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>not_listening</dt>
+                                                <dd>
+                                                  <!--@The socket is not listening.--> 套接字未处于监听状态。
+                                                </dd>
+                                              </dl>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onReceive">onReceive</h3>
+              <div class="description">
+            <p>
+                  <!--@Event raised when data has been received for a given socket.--> 某个套接字上接收到数据时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.bluetoothSocket.onReceive.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReceive-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReceive-info">
+                                    <td>object</td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The event data.--> 事件数据。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-info-socketId">
+                                          <td>integer</td>
+                                          <td>
+                                              socketId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The socket identifier.--> 套接字标识符。
+                                          </p></td>
+                                        </tr><tr id="property-info-data">
+                                          <td>ArrayBuffer</td>
+                                          <td>
+                                              data</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The data received, with a maxium size of <code>bufferSize</code>.--> 接收到的数据，最大大小为 <code>bufferSize</code>。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onReceiveError">onReceiveError</h3>
+              <div class="description">
+            <p>
+                  <!--@Event raised when a network error occured while the runtime was waiting for data on the socket. Once this event is raised, the socket is set to <code>paused</code> and no more <code>onReceive</code> events are raised for this socket.--> 运行时等待该套接字上的数据时如果发生网络错误则产生该事件。一旦产生该事件后，套接字将设置为 <code>paused</code>（暂停）状态，不再产生 <code>onReceive</code> 事件。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.bluetoothSocket.onReceiveError.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReceiveError-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReceiveError-info">
+                                    <td>object</td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    <p>
+                                      <!--@The event data.--> 事件数据。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-info-socketId">
+                                          <td>integer</td>
+                                          <td>
+                                              socketId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The socket identifier.--> 套接字标识符。
+                                          </p></td>
+                                        </tr><tr id="property-info-errorMessage">
+                                          <td>string</td>
+                                          <td>
+                                              errorMessage</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@The error message.--> 错误消息。
+                                          </p></td>
+                                        </tr><tr id="property-info-error">
+                                          <td>enum of <code>"disconnected"</code>, <code>"system_error"</code>, or <code>"not_connected"</code></td>
+                                          <td>
+                                              error</td>
+                                          <td>
+                                          
+                                          <p>
+                                            <!--@An error code indicating what went wrong.--> 表示错误信息的错误码。
+                                          </p>    <dl>
+                                                <dt>disconnected</dt>
+                                                <dd>
+                                                  <!--@The connection was disconnected.--> 连接已经断开。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>system_error</dt>
+                                                <dd>
+                                                  <!--@A system error occurred and the connection may be unrecoverable.--> 发生系统错误，连接可能无法恢复。
+                                                </dd>
+                                              </dl>
+                                              <dl>
+                                                <dt>not_connected</dt>
+                                                <dd>
+                                                  <!--@The socket has not been connected.--> 套接字未连接。
+                                                </dd>
+                                              </dl>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

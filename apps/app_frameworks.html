@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>MVC 架构 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_frameworks.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1>MVC <!--@Architecture-->架构</h1>
+
+
+<p>
+<!--@As modern browsers become more powerful with rich features,
+building full-blown web applications in JavaScript is not only feasible,
+but increasingly popular.
+Based on
+<a href="http://httparchive.org/trends.php?s=intersection&minlabel=Jan+20+2011&maxlabel=Jan+15+2012">trends</a>
+on <a href="http://httparchive.org/">HTTP Archive</a>,
+deployed JavaScript code size has grown 45% over the course of the year.-->
+随着现代浏览器功能越来越强大，特性越来越丰富，用 JavaScript
+建立成熟的网络应用不仅仅是可行的，也越来越受到欢迎。根据
+<a href="http://httparchive.org/">HTTP Archive</a>
+的<a href="http://httparchive.org/trends.php?s=intersection&minlabel=Jan+20+2011&maxlabel=Jan+15+2012">趋势</a>，已部署的
+JavaScript 代码大小在一年内增长了 45%。
+</p>
+
+<img src="../static/images/jstransferrequests.png"
+     width="568"
+     height="292"
+     alt="JS transfer size and JS requests">
+
+<p>
+<!--@With JavaScript's popularity climbing,
+our client-side applications are much more complex than before.
+Application development requires collaboration from multiple developers.
+Writing <strong>maintainable</strong> and
+<strong>reusable</strong> code is crucial in the new web app era.
+The Chrome App, with its rich client-side features, is no exception. -->
+随着 JavaScript
+越来越流行，我们的客户端应用程序也比以前要复杂得多。应用程序开发需要许多开发者的合作，编写<strong>可维护</strong>、<strong>可重用</strong>的代码在新的网络应用时代显得至关重要，包含丰富客户端特性的
+Chrome 应用也不例外。
+</p>
+
+<p>
+<!--@Design patterns are important to write maintainable and reusable code.
+A pattern is a reusable solution that can be applied to commonly occurring problems in software design &mdash;
+in our case &mdash; writing Chrome Apps.
+We recommend that developers decouple the app
+into a series of independent components following the MVC pattern.-->
+设计模式对于编写可维护、可重用代码是十分重要的。模式是一种可重用的解决方案，适用于软件设计中经常遇到的问题——在我们的情况中即编写
+Chrome 应用。我们建议开发者将应用分解为一系列互相独立的组件，遵循 MVC 模式。
+</p>
+
+<p>
+<!--@In the last few years,
+a series of JavaScript MVC frameworks have been developed,
+such as-->
+最近几年，一系列 JavaScript 的 MVC 框架已经开发出来，例如
+<a href="http://backbonejs.org/">backbone.js</a><!--@, -->、<a href="http://emberjs.com/">ember.js</a><!--@, -->、<a href="http://angularjs.org/">AngularJS</a><!--@, -->、<a href="http://sencha.com/">Sencha</a><!--@, -->、<a href="http://www.kendoui.com/">Kendo UI</a><!--@, and more.
+While they all have their unique advantages, each one of them follows some form of MVC pattern
+with the goal of encouraging developers to write more structured JavaScript code.-->
+以及更多。尽管它们都有自己独特的优势，它们中的每一个都遵循某种形式的 MVC
+模式，并且以鼓励开发者编写结构更清晰的 JavaScript 代码为目标。
+</p>
+
+<h2 id="mvc">MVC <!--@pattern overview-->模式概述</h2>
+
+<p>
+<!--@MVC offers architectural benefits over standard JavaScript &mdash;
+it helps you write better organized, and therefore more maintainable code.
+This pattern has been used and extensively tested
+over multiple languages and generations of programmers.-->
+MVC 在标准 JavaScript
+之上提供了架构上的优势——它帮助您编写更有条理，因而更容易维护的代码。这一模式已经在多种语言及几代程序员下使用并经过广泛的测试。
+</p>
+
+<p>
+MVC <!--@is composed of three components:-->包含三个组成部分：
+</p>
+
+<img src="../static/images/mvc.png"
+     width="466"
+     height="303"
+     alt="model-view-controller">
+
+<h3 id="model"><!--@Model-->模型（Model）</h3>
+
+<p>
+<!--@Model is where the application’s data objects are stored.
+The model doesn’t know anything about views and controllers.
+When a model changes, typically it will notify its observers that a change has occurred.-->
+模型是应用程序数据对象存储的位置。模型并不了解有关视图与控制器的任何细节。当模型更改时，通常它会通知其监听者更改已发生。
+</p>
+
+<p>
+<!--@To understand this further, let’s use the Todo list app, a simple, one page web app that tracks your task list.-->
+要进一步理解它，让我们使用待办事项列表应用作为例子，它是一个简单的单页面应用，可以跟踪您的任务列表。
+</p>
+
+<br>
+
+<img src="../static/images/todos.png"
+     width="444"
+     height="366"
+     alt="model-view-controller">
+
+<p>
+<!--@The model here represents attributes associated
+with each todo item such as description and status.
+When a new todo item is created,
+it is stored in an instance of the model.-->
+这里模型就代表和每一件待办事项相关联的属性，例如描述与状态。当新的待办事项创建时，它将在模型的一个实例中储存。
+</p>
+
+<h3 id="view"><!--@View-->视图（View）</h3>
+
+<p>
+<!--@View is what's presented to the users and how users interact with the app.
+The view is made with HTML, CSS, JavaScript and often templates.
+This part of your Chrome App has access to the DOM.-->
+视图就是展现给用户的内容以及用户与应用交互的方式。视图使用
+HTML、CSS、JavaScript 实现，经常还会用到模板。您的 Chrome
+应用的这一部分能够访问 DOM。
+</p>
+
+<p>
+<!--@For example, in the above todo list web app,
+you can create a view that nicely presents the list of todo items to your users.
+Users can also enter a new todo item through some input format;
+however, the view doesn’t know how to update the model because that’s the controller’s job.-->
+例如，在以上的待办事项网络应用中，您可以创建一个视图，漂亮地向您的用户展现待办事项列表。用户也可以通过某些输入格式键入新的待办事项，然而视图并不知道如何更新模型，因为这是控制器的工作。
+</p>
+
+<h3 id="controller"><!--@Controller-->控制器（Controller）</h3>
+
+<p>
+<!--@The controller is the decision maker and the glue between the model and view.
+The controller updates the view when the model changes.
+It also adds event listeners to the view and
+updates the model when the user manipulates the view.-->
+控制器用来作出决定，同时也是模型与视图之间的桥梁。当模型更改时控制器更新视图，同时它向视图添加事件监听器，当用户操纵视图时更新模型。
+</p>
+
+<p>
+<!--@In the todo list web app,
+when the user checks an item as completed,
+the click is forwarded to the controller.
+The controller modifies the model to mark item as completed.
+If the data needs to be persistent, it also makes an async save to the server.
+In rich client-side web app development such as Chrome Apps,
+keeping the data persistent in local storage is also crucial.
+In this case, the controller also handles saving the data
+to the client-side storage such as <a href="app_storage">FileSystem API</a>.-->
+在待办事项网络应用中，当用户选中项目将它标记为已完成时，单击事件将转发至控制器。控制器修改模型，将项目标记为已完成。如果数据需要持久保存，它将同时向服务器发出一个异步保存的请求。在富客户端网络应用开发，例如 Chrome 应用中，保持数据在本地持久存储也是至关重要的。在这种情况下，控制器也要进行处理，将数据保存到客户端存储区，例如<a href="app_storage.html">文件系统 API</a>。
+</p>
+
+<p>
+<!--@There are a few variations of the MVC design pattern
+such as MVP (Model&ndash;View&ndash;Presenter)
+and MVVP(Model&ndash;View&ndash;ViewModel).
+Even with the so called MVC design pattern itself,
+there is some variation between the traditional MVC pattern
+vs the modern interpretation in various programming languages.
+For example, some MVC&ndash;based frameworks will have
+the view observe the changes in the models
+while others will let the controller handle the view update.
+This article is not focused on the comparison of various implementations
+but rather on the separation&ndash;of&ndash;concerns and
+it's importance in writing modern web apps.-->
+有一些 MVC 设计模式的变体，例如 MVP（模型——视图——呈现器）及
+MVVP（模型——视图——视图模型）。即使是所谓的 MVC 设计模式本身，在传统的 MVC
+模式与各种编程语言中的现代解释之间也有一些变化。例如，某些基于 MVC
+的框架会让视图监听模型中的更改，但是另一些会让控制器处理视图更新。该文章的重点不在比较各种实现，而是在于关注点分离及其对于编写现代网络应用的重要性。
+</p>
+
+<p>
+<!--@If you are interested in learning more,
+we recommend <a href="https://plus.google.com/u/0/115133653231679625609/posts">Addy Osmani's</a> online book: <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">Learning JavaScript Design Patterns</a>.-->
+如果您有兴趣了解更多，我们推荐
+<a href="https://plus.google.com/u/0/115133653231679625609/posts">Addy Osmani</a>
+的在线图书：<a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">学习 JavaScript 设计模式</a>（英文）。
+</p>
+
+<p>
+<!--@To summarize, the MVC pattern brings modularity
+to application developers and it enables:-->
+综上所述，MVC 模式给应用开发者带来了模块化并使以下几项成为可能：
+</p>
+
+<ul>
+	<li><!--@Reusable and extendable code.-->可重用与可扩展的代码</li>
+	<li><!--@Separation of view logic from business logic.-->事务逻辑与视图逻辑的分离</li>
+	<li><!--@Allow simultaneous work between developers who are responsible
+		for different components (such as UI layer and core logic).-->
+        允许负责不同组件（例如用户界面层与核心逻辑）的开发者同时工作。
+    </li>
+	<li><!--@Easier to maintain.-->更容易维护。</li>
+</ul>
+
+<h2 id="mvcpersistence">MVC <!--@persistence patterns-->持久存储模式</h2>
+
+<p>
+<!--@There are many different ways of implementing persistence
+with an MVC framework, each with different trade&ndash;offs.
+When writing Chrome Apps,
+choose the frameworks with MVC and persistence patterns
+that feel natural to you and fit you application needs.-->
+有许多不同的方式通过 MVC 框架实现持久存储，每一种都有不同的优缺点。当您编写
+Chrome 应用时，选择您觉得最自然并且最适合您的应用需要的 MVC
+与持久模式框架。
+</p>
+
+<h3 id="model_persistence"><!--@Model does its own persistence - ActiveRecord pattern-->模型自己进行持久存储——ActiveRecord 模式</h3>
+
+<p>
+<!--@Popular in both server&ndash;side frameworks like Ruby on Rails,
+and client-side frameworks like-->
+在诸如 Ruby on Rails 的服务器端框架以及诸如
+<a href="http://backbonejs.org">Backbone.js</a> <!--@and-->和
+<a href="http://emberjs.com/">ember.js</a><!--@,
+the ActiveRecord pattern places the responsibility
+for persistence on the model itself
+and is typically implemented via JSON API.-->
+之类的客户端框架中 ActiveRecord
+模式都很流行，它将持久存储的责任放在了模型自身上，通常通过
+JSON API 实现。
+</p>
+
+<p>
+<!--@A slightly different take from
+having a model handle the persistence
+is to introduce a separate concept of Store and Adapter API.
+Store, Model and
+Adapter (in some frameworks it is called Proxy)
+work hand by hand.
+Store is the repository that holds the loaded models,
+and it also provides functions such as creating,
+querying and filtering the model instances contained within it.-->
+与让模型处理持久存储有所区别的方式是引入单独的存储区与适配器 API
+的概念。存储区、模型与适配器（在某些框架中称为代理）同时工作。存储区是包含已加载模型的库，并提供诸如创建、查询及过滤包含在其中的模型实例的功能。
+</p>
+
+<p>
+<!--@An adapter, or a proxy, receives the requests from a store and
+translates them into appropriate actions to take
+against your persistent data layer
+(such as JSON API).
+This is interesting in the modern web app design
+because you often interact with more than one persistent data layer
+such as a remote server and browser’s local storage.
+Chrome Apps provides both
+<a href="storage">Chrome Storage API</a> and
+<a href="fileSystem">HTML 5 fileSystem API</a> for client side storage.-->
+适配器或代理从存储区接收请求，并将它转换为对您的持久数据层（例如
+JSON API）进行的适当操作。这种方式在现代网络应用设计中十分有意义，因为您经常与不止一个持久数据层交互，例如远程服务器与浏览器的本地存储区。Chrome
+应用为客户端存储提供了
+<a href="storage.html">Chrome 浏览器的存储 API</a>
+与
+<a href="fileSystem.html">HTML5 文件系统 API</a>。
+</p>
+
+<p><!--@Pros:-->优势：</p>
+
+<ul>
+	<li><!--@Simple to use and understand.-->使用简单，易于理解。</li>
+</ul>
+
+<p>
+<!--@Cons:-->缺点：
+</p>
+
+<ul>
+	<li><!--@Hard to test since the persistence layer is ‘baked’ into the object hierarchy.-->测试困难，因为持久存储层混合在对象架构内。</li>
+	<li><!--@Having different objects use different persistent stores is difficult
+		(for example, FileSystem APIs vs indexedDB vs server&ndash;side).-->
+        让不同的对象使用不同的持久存储区比较困难（例如文件系统
+        API、IndexedDB 与服务器端）。
+    </li>
+	<li><!--@Reusing Model in other applications may create conflicts,
+		such as sharing a single Customer class between two different views,
+		each view wanting to save to different places.-->
+        在其他应用程序中重用模型可能会带来冲突，例如在两个不同的视图中共享一个顾客类，每一个视图都希望保存到不同的位置。
+    </li>
+</ul>
+
+<h3 id="controller_persistence"><!--@Controller does persistence-->控制器进行持久存储</h3>
+
+<p>
+<!--@In this pattern, the controller holds a reference
+to both the model and a datastore
+and is responsible for keeping the model persisted.
+The controller responds to lifecycle events like Load, Save, Delete,
+and issues commands to the datastore to fetch or update the model. -->
+在这种模式中，控制器包含对模型与数据存储区的引用，并负责保持模型持久存储。控制器对诸如加载、保存、删除之类的生命周期事件作出响应，并向数据存储区发送命令以便获取或更新模型。
+</p>
+
+<p>
+<!--@Pros:-->优势：
+</p>
+
+<ul>
+	<li><!--@Easier to test, controller can be passed a mock datastore to write tests against.-->方便测试，可以向控制器传递一个伪数据存储区写入测试内容。</li>
+	<li><!--@The same model can be reused with multiple datastores just by constructing controllers with different datastores.-->
+    同样的模型可以与多个数据存储区重用，只要构造具有不同数据存储区的控制器。
+    </li>
+</ul>
+
+<p>
+<!--@Cons:-->
+缺点：
+</p>
+
+<ul>
+	<li><!--@Code can be more complex to maintain.-->代码维护起来可能会更复杂。</li>
+</ul>
+
+<h3 id="app_controller"><!--@AppController does persistence-->应用控制器进行持久存储</h3>
+
+<p>
+<!--@In some patterns, there is a supervising controller responsible
+for navigating between one MVC and another.
+The AppController decides, for example,
+that a ‘Back’ button moves the client from an editing screen
+(which contains MVC widgets/formats),
+to a settings screen.-->
+在某些模式中，有一个超级控制器，负责在一个 MVC
+与另一个之间导航。例如应用控制器决定“后退”按钮将客户端从编辑屏幕（包含
+MVC 小工具/格式）移动至设置屏幕。
+</p>
+
+<p>
+<!--@In the AppController pattern,
+the AppController responds to events
+and changes the app’s current screen by issuing a call
+to the datastore to load any models needed and
+constructing all of the matching views and controllers for that screen.-->
+在应用控制器模式中，应用控制器响应事件，并通过向数据存储区发出调用，加载所需的模型并构造所有匹配视图及控制器的方式更改应用的当前屏幕。
+</p>
+
+<p>
+<!--@Pros:-->
+优势：
+</p>
+
+<ul>
+	<li><!--@Moves persistence layer even higher up the stack where it can be easily changed.-->
+    将持久存储层移到更高的层次，这样更容易修改。
+    </li>
+	<li><!--@Doesn’t pollute lower level controllers like a DatePickerController with the need to know about persistence.-->
+    不会污染较低级的控制器，例如日期选择器控制器，使它需要了解持久存储。
+    </li>
+</ul>
+
+<p>
+<!--@Cons:-->
+缺点：
+</p>
+
+<ul>
+	<li><!--@Each ‘Page/Screen’ of the app now requires a lot of boilerplate to write or update: Model, View, Controller, AppController.-->
+    应用程序的每一个“页面/屏幕”现在都需要编写或更新大量公共代码：模型、视图、控制器、应用程序控制器。
+    </li>
+</ul>
+
+<h3 id="recommended"><!--@Recommended MVC frameworks-->推荐的 MVC 框架</h3>
+
+<p>
+<!--@MVC is crucial to designing Chrome Apps.
+We recommend the following <a href="contentSecurityPolicy">CSP&ndash;Compliant</a> MVC frameworks
+for writing secure and scalable Chrome Apps:-->
+MVC 对于设计 Chrome 应用是至关重要的。我们推荐如下<a href="contentSecurityPolicy.html">遵循
+CSP（内容安全策略）</a>的 MVC 框架，用于编写安全而且可伸缩的 Chrome
+应用：
+</p>
+
+<ul>
+  <li><a href="http://angularjs.org/">AngularJS</a>
+  （<a href="https://github.com/GoogleChrome/textdrive-app">Text Drive <!--@Reference App-->参考应用</a> 和 <a href="angular_framework.html"><!--@Build Apps with AngularJS tutorial-->用 AngularJS 建立应用的教程</a>）</li>
+  <li><a href="http://www.kendoui.com/">Kendo UI</a>
+  （<a href="https://github.com/GoogleChrome/kendo-photo-booth-app">Photo Booth <!--@Reference App-->参考应用</a>）</li>
+  <li><a href="http://www.sencha.com/">Sencha</a>
+  （<a href="https://github.com/GoogleChrome/sencha-video-player-app">Video Player <!--@Reference App-->参考应用</a> 和 <a href="sencha_framework.html"><!--@Build Apps with Sencha Ext JS tutorial-->用 Sencha Ext JS 建立应用程序的教程</a>）</li>
+</ul>
+
+<h2 id="resources"><!--@Useful resources-->有用的资源</h2>
+
+<h3 id="online"><!--@Online-->在线资源</h3>
+
+<ul>
+	<li><a href="http://www.html5rocks.com/">HTML5Rocks.com</a></li>
+	<li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/"><!--@Learning JavaScript Design Patterns-->学习 JavaScript 设计模式</a><!--@
+		(by Addy Osmani)-->（由 Addy Osmani 编写）</li>
+	<li><a href="http://addyosmani.github.com/todomvc/">TodoMVC</a></li>
+</ul>
+
+<h3 id="books"><!--@Books-->书籍</h3>
+
+<ul>
+	<li><a href="http://www.amazon.com/JavaScript-Web-Applications-Alex-MacCaw/dp/144930351X"><!--@JavaScript Web Applications-->基于 MVC 的 JavaScript Web 富应用开发</a><!--@
+		(By Alex MacCaw)-->（由 Alex MacCaw 编写）</li>
+	<li><a href="http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752/ref=pd_sim_b_2">JavaScript <!--@Patterns-->模式</a><!--@
+		(By Stoyan Stefonov)-->（由 Stoyan Stefonov 编写）</li>
+	<li><a href="http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680"><!--@Maintainable-->可维护的 JavaScript</a><!--@
+		(By Nicolas Z. Zakas)-->（由 Nicolas Z. Zakas 编写）</li>
+</ul>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">MVC 架构和框架</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="app_frameworks.html" class="active">关于 MVC 架构</a>
+                        </li>
+                        <li>
+                          <a href="angular_framework.html">使用 AngularJS 建立应用</a>
+                        </li>
+                        <li>
+                          <a href="sencha_framework.html">使用 SenchaJS 建立应用</a>
+                        </li>
+                        <li>
+                          <a href="game_engines.html">游戏引擎</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_frameworks.html#mvc"
+          >MVC 模式概述</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_frameworks.html#model"
+                     >模型（Model）</a>
+              </li>
+              <li><a data-list-item href="app_frameworks.html#view"
+                     >视图（View）</a>
+              </li>
+              <li><a data-list-item href="app_frameworks.html#controller"
+                     >控制器（Controller）</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_frameworks.html#mvcpersistence"
+          >MVC 持久存储模式</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_frameworks.html#model_persistence"
+                     >模型自己进行持久存储——ActiveRecord 模式</a>
+              </li>
+              <li><a data-list-item href="app_frameworks.html#controller_persistence"
+                     >控制器进行持久存储</a>
+              </li>
+              <li><a data-list-item href="app_frameworks.html#app_controller"
+                     >应用控制器进行持久存储</a>
+              </li>
+              <li><a data-list-item href="app_frameworks.html#recommended"
+                     >推荐的 MVC 框架</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_frameworks.html#resources"
+          >有用的资源</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_frameworks.html#online"
+                     >在线资源</a>
+              </li>
+              <li><a data-list-item href="app_frameworks.html#books"
+                     >书籍</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

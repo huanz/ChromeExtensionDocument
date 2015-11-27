@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>USB 设备 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_usb.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1>USB <!--@Devices-->设备</h1>
+
+<p>
+<!--@This document describes how to use the <a href="usb">USB API</a> to communicate
+with USB devices. Some devices are not accessible through the USB API
+(see the <a href="#caveats">Caveats</a> section below for details).
+Chrome Apps can also connect to <a href="serial">serial</a> and
+<a href="bluetooth">Bluetooth</a> devices.-->
+该文档描述如何使用 <a href="usb.html">USB API</a> 与 USB
+设备通信。一些设备不能通过 USB API 访问（有关详情请参见下面的<a
+href="app_usb.html#caveats">注意事项</a>部分），Chrome 应用还可以连接到<a
+href="serial.html">串行端口</a>与<a href="bluetooth.html">蓝牙</a>设备。
+</p>
+
+<p class="note">
+<b><!--@Samples:-->示例：</b><!--@ For examples that illustrate how Chrome Apps can connect to hardware devices, see the-->有关演示如何在
+Chrome 应用中连接到硬件设备的例子，请参见
+<a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/serial">serial</a><!--@,
+-->、<a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/servo">servo</a><!--@,
+-->、<a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/usb">usb</a><!--@, and-->
+和
+<a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/zephyr_hxm">zephyr_hxm
+<!--@Bluetooth-->蓝牙</a><!--@ samples.-->示例。
+</p>
+
+<p>
+<!--@  For background information about USB, see the official
+  <a href="http://www.usb.org/home">USB specifications</a>. <br/>
+  <a href="http://www.beyondlogic.org/usbnutshell/usb1.shtml">
+    <i>USB in a NutShell</i></a>
+  is a reasonable crash course that you may find helpful.-->
+有关 USB 的背景信息，请参见官方的
+<a href="http://www.usb.org/home">USB 规范</a>（英文）。<br>
+<a href="http://www.beyondlogic.org/usbnutshell/usb1.shtml">
+    <i>USB 简介</i></a>（英文）是一篇速成文章，可能对您有帮助。
+</p>
+
+<h2 id="manifest"><!--@Manifest requirement-->清单文件的要求</h2>
+
+<p><!--@The USB API requires the "usb" permission in the manifest file:-->
+USB API 要求清单文件中包含 "usb" 权限：
+</p>
+
+<pre data-filename="manifest.json">
+"permissions": [
+  "usb"
+]
+</pre>
+
+<p><!--@In addition, in order to prevent
+  <a href="http://en.wikipedia.org/wiki/Device_fingerprint">finger-printing</a>,
+  you must declare all the device types you want to access in the manifest file.
+  Each type of USB device corresponds to a vendor id/product id (VID/PID) pair.
+  You can use <a href=/apps/usb#method-getDevices>usb.getDevices</a> to enumerate devices by their VID/PID
+  pair.
+</p>
+<p>
+  You must declare the VID/PID pairs for each type of device you want to use
+  under the "usbDevices" permission in your app's manifest file, as shown in the
+  example below:-->
+此外，为了防止<a href="http://en.wikipedia.org/wiki/Device_fingerprint"
+>收集指纹信息</a>，您必须在清单文件中声明需要访问的所有设备类型。每一种 USB
+设备对应制造商标识符与产品标识符（VID/PID），您可以使用 <a href="usb.html#method-getDevices">usb.getDevices</a>
+根据 VID/PID 对枚举设备。
+</p>
+
+<pre data-filename="manifest.json">
+"permissions": [
+  "usbDevices": [
+    {
+      "vendorId": 123,
+      "productId": 456
+    }
+  ]
+]
+</pre>
+
+<p class="note"><!--@Note that only decimal numbers are allowed in JSON format.
+  You cannot use hexadecimal numbers in these fields.-->
+注意，JSON 格式中只允许十进制数，您不能在这些字段中使用十六进制数。
+</p>
+
+<h2 id="finding_device"><!--@Finding a device-->发现设备</h2>
+
+<p>
+<!--@  To determine whether one or more specific devices are connected to a user's
+  system, use the <a href=/apps/usb#method-getDevices>usb.getDevices</a> method:-->
+要确定一个或多个设备是否连接到用户的系统，请使用 <a href="usb.html#method-getDevices">usb.getDevices</a> 方法：
+</p>
+
+<pre>
+chrome.usb.getDevices(enumerateDevicesOptions, callback);
+</pre>
+
+<br/>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Parameter (type)-->参数（类型）</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>EnumerateDevicesOptions (object)</td>
+    <td><!--@An object specifying both a <code>vendorId</code> (long) and 
+      <code>productId</code> (long) used to find the correct type of device on
+      the bus. Your manifest must declare the <code>usbDevices</code> permission
+      section listing all the <code>vendorId</code> and <code>deviceId</code>
+      pairs your app wants to access.-->
+      指定 <code>vendorId</code> (long) 和 <code>productId</code> (long)
+      的对象，用来寻找总线上正确类型的设备。您必须在清单文件的
+      <code>usbDevices</code> 权限中列出您的应用需要访问的所有设备对应的
+      <code>vendorId</code> 和 <code>deviceId</code>。
+    </td>
+  </tr>
+  <tr>
+    <td>callback (function)</td>
+    </td>
+    <td><!--@Called when the device enumeration is finished. The callback will be
+      executed with one parameter, an array of <code>Device</code> objects with
+      three properties: <code>device</code>, <code>vendorId</code>,
+      <code>productId</code>. The device property is a stable identifier for a
+      connected device. It will not change until the device is unplugged. The
+      detail of the identifier is opaque and subject to change. Do not rely on
+      its current type. <br/>
+      If no devices are found, the array will be empty.-->
+      设备枚举完成后调用。执行回调函数时传递的参数为 <code>Device</code>
+      对象的数组，包含三个属性：<code>handle</code>、<code>vendorId</code>、<code>productId</code>。<code>device</code>
+      属性是已连接的设备对应的稳定标识符，在设备拔出之前不会更改。标识符的细节是不透明的，并且随时会更改，请不要依赖它目前的类型。<br>
+      如果没有找到设备，该数组为空。
+    </td>
+  </tr>
+</table>
+
+<p><!--@Example:-->
+例如：</p>
+
+<pre>
+function onDeviceFound(devices) {
+  this.devices=devices;
+  if (devices) {
+    if (devices.length > 0) {
+      console.log("发现设备："+devices.length);
+    } else {
+      console.log("找不到设备");
+    }
+  } else {
+    console.log("拒绝访问。");
+  }
+}
+
+chrome.usb.getDevices({"vendorId": vendorId, "productId": productId}, onDeviceFound);
+</pre>
+
+<h2 id="usb_open"><!--@Opening a device-->打开设备</h2>
+<p>
+<!--@Once the <code>Device</code> objects are returned, you can open a device using
+usb.openDevice to obtain a connection handle. You can only
+communicate with USB devices using connection handles.-->
+返回 <code>Device</code> 对象后，您就可以使用 <a href="usb.html#method-openDevice">usb.openDevice</a>
+打开设备并获取一个连接句柄。您必须通过连接句柄与 USB 设备通信。
+</p>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Property-->属性</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>device</td>
+    <td><!--@Object received in <a href=/apps/usb#method-getDevices>usb.getDevices</a> callback.-->
+      <a href="usb.html#method-getDevices">usb.getDevices</a> 回调函数中接收到的对象。
+    </td>
+  </tr>
+  <tr>
+    <td>data (arraybuffer)</td>
+    <td><!--@Contains the data sent by the device if the transfer was inbound.-->如果为传入传输，则包含设备发送的数据。</td>
+  </tr>
+</table>
+
+<p><!--@Example:-->例如：</p>
+
+<pre>
+var usbConnection = null;
+var onOpenCallback = function(connection) {
+  if (connection) {
+    usbConnection = connection;
+    console.log("设备已打开。");
+  } else {
+    console.log("无法打开设备。");
+  }
+};
+
+chrome.usb.openDevice(device, onOpenCallback);
+</pre>
+
+<p class="note">
+<!--@Not every device can be opened successfully. In general, operating systems
+lock down many types of USB interfaces (e.g. keyboards and mice, mass storage
+devices, webcams, etc.) and they cannot be claimed by user applications.
+On Linux (other than Chrome OS), once an interface of a device is locked down by
+the OS, the whole device is locked down (because all the interfaces shares the
+same device file), even if the other interfaces of the device can be used in
+theory. On Chrome OS, you can request access to unlocked interfaces using the
+<a href=/apps/usb#method-requestAccess>usb.requestAccess</a> method. If permitted, the permission broker will
+unlock the device file for you.-->
+并不是任何设备都能成功打开。通常操作系统会锁定许多类型的 USB
+设备（例如键盘和鼠标、大容量存储设备、网络摄像头等等），它们不能由用户应用程序占有。在
+Linux 中（除了
+Chrome OS），一旦设备的某一接口被操作系统锁定，即使该设备的其他接口理论上可以使用，整个设备都将锁定（因为所有接口共享同一设备文件）。在
+Chrome OS 中，您可以使用 <a href="usb.html#method-requestAccess">usb.requestAccess</a>
+方法请求访问解锁的设备。如果允许，权限控制器会为您解锁设备。
+</p>
+
+<p>
+<!--@To simplify the opening process, you can use the <a href=/apps/usb#method-findDevices>usb.findDevices</a>
+method, which enumerates, requests access, and opens devices in one call:-->
+为了简化打开设备的过程，您可以使用 <a href="usb.html#method-findDevices">usb.findDevices</a>
+方法，通过一次调用就能枚举、请求访问并打开设备：
+</p>
+
+<pre>
+chrome.usb.findDevices({"vendorId": vendorId, "productId": productId, "interfaceId": interfaceId}, callback);
+</pre>
+<p><!--@which is equivalent to:-->以上代码等价于：</p>
+<pre>
+chrome.usb.getDevices({"vendorId": vendorId, "productId": productId}, function (devices) {
+  if (!devices) {
+    console.log("无法枚举设备。");
+    callback();
+    return;
+  }
+  var connections = [], pendingAccessRequests = devices.length;
+  devices.forEach(function (device) {
+    chrome.usb.requestAccess(interfaceId, function () {
+      // 这里不需要检查错误，即使发生了错误也不会有什么问题。
+      // 您始终应该尝试打开设备。
+      chrome.usb.openDevices(device, function (connection) {
+        if (connection) connections.push(connection);
+        pendingAccessRequests--;
+        if (pendingAccessRequests == 0) {
+          callback(connections);
+        }
+      });
+    });
+  })
+});
+</pre>
+
+<h2 id="usb_transfers"><!--@USB transfers and receiving data from a device-->USB 传输以及从设备接收数据</h2>
+
+<p>
+<!--@  The USB protocol defines four types of transfers:
+  <a href="#control_transfers">control</a>,
+  <a href="#bulk_transfers">bulk</a>,
+  <a href="#isochronous_transfers">isochronous</a>
+  and <a href="#interrupt_transfers">interrupt</a>.
+  These transfers are described below.-->
+USB 协议定义了四种类型的传输：<a href="app_usb.html#control_transfers"
+>控制</a>、<a href="app_usb.html#bulk_transfers"
+>大块</a>、<a href="app_usb.html#isochronous_transfers"
+>同步</a>与<a href="app_usb.html#interrupt_transfers"
+>中断</a>。这些传输方式将在下面描述：
+</p>
+
+<p>
+<!--@  Transfers can occur in both directions: device-to-host (inbound), and
+  host-to-device (outbound). Due to the nature of the USB protocol,
+  both inbound and outbound messages must be initiated by the host (the
+  computer that runs the Chrome app).
+  For inbound (device-to-host) messages, the host (initiated by your JavaScript
+  code) sends a message flagged as "inbound" to the device.
+  The details of the message depend on the device, but usually will have
+  some identification of what you are requesting from it.
+  The device then responds with the requested data.
+  The device's response is handled by Chrome and delivered asynchronously to the
+  callback you specify in the transfer method.
+  An outbound (host-to-device) message is similar, but the response doesn't
+  contain data returned from the device.-->
+传输可以双向进行：设备到主机（传入）和主机到设备（传出）。根据 USB
+协议，传入与传出消息都必须由主机（运行 Chrome
+应用的计算机）发起。对于传入（设备到主机）消息，主机（由您的 JavaScript
+代码发起）向设备发送标记为“传入”的消息。消息的具体细节取决于设备，但是通常会以某种方式标识您请求的内容，然后设备以请求的数据响应。设备的响应由
+Chrome 浏览器处理，并异步地传递给您在传输方法中指定的回调函数。传出（主机到设备）消息与之类似，但是响应不包含从设备返回的数据。
+</p>
+
+<p>
+<!--@  For each message from the device, the specified callback will receive an event
+  object with the following properties:-->
+对于来自设备的每一条消息，指定的回调函数都会接收一个具有如下属性的事件对象：
+</p>
+
+<br>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Property-->属性</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>resultCode (integer)</td>
+    <td><!--@0 is success; other values indicate failure. An error string can be<br/>
+      read from <code>chrome.extension.lastError</code> when a failure is<br/>
+      indicated.-->
+      0 表示成功，其他值表示失败。表示失败时可以从
+      <code>chrome.extension.lastError</code>
+      读取错误字符串。
+    </td>
+  </tr>
+  <tr>
+    <td>data (arraybuffer)</td>
+    <td><!--@Contains the data sent by the device if the transfer was inbound.-->
+    如果是传入传输则包含设备发送的数据。
+    </td>
+  </tr>
+</table>
+
+<p><!--@Example:-->
+例如：
+</p>
+
+<pre>
+var onTransferCallback = function(event) {
+   if (event && event.resultCode === 0 && event.data) {
+     console.log("收到 " + event.data.byteLength + " 字节");
+   }
+};
+
+chrome.usb.bulkTransfer(connectionHandle, transferInfo, onTransferCallback);
+</pre>
+
+<h2 id="control_transfers"><!--@CONTROL transfers--><b>控制</b>传输</h2>
+
+<p><!--@Control transfers are generally used to send or receive configuration or
+  command parameters to a USB device. The controlTransfer method always sends
+  to/reads from endpoint 0, and no claimInterface is required.
+  The method is simple and receives three parameters:-->
+控制传输通常用来向 USB 设备发送或接收配置或命令参数。controlTransfer
+方法始终从端点 0 发送/读取，不需要调用
+claimInterface。该方法很简单，接收三个参数。
+</p>
+
+<pre>
+chrome.usb.controlTransfer(connectionHandle, transferInfo, transferCallback)
+</pre>
+
+<br>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Parameter (type)-->参数（类型）</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>connectionHandle</td>
+    <td><!--@Object received in <a href=/apps/usb#method-openDevice>usb.openDevice</a> callback.-->
+    <a href="usb.html#method-openDevice">usb.openDevice</a> 回调函数中接收的对象。
+    </td>
+  </tr>
+  <tr>
+    <td>transferInfo</td>
+    <td><!--@Parameter object with values from the table below. Check your USB
+      device protocol specification for details.-->
+      参数对象，包含来自下表的值。参考您的 USB 设备协议规范了解具体的值。
+    </td>
+  </tr>
+  <tr>
+    <td>transferCallback()</td>
+    <td><!--@Invoked when the transfer has completed.-->
+      传输完成时调用。
+    </td>
+  </tr>
+</table>
+
+<p>
+<!--@  Values for
+  <code>transferInfo</code>
+  object:-->
+<code>transferInfo</code> 对象的值：
+</p>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Value-->值</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>requestType (string)</td>
+    <td>"vendor"<!--@, -->、"standard"<!--@, -->、"class" <!--@or-->或 "reserved"<!--@.-->。</td>
+  </tr>
+  <tr>
+    <td>recipient (string)</td>
+    <td>"device"<!--@, -->、"interface"<!--@, -->、"endpoint" <!--@or-->或 "other"<!--@.-->。</td>
+  </tr>
+  <tr>
+    <td>direction (string)</td>
+    <td><!--@"in" or "out". The "in" direction is used to notify the device that<br/>
+        it should send information to the host. All communication on a USB<br/>
+        bus is host-initiated, so use an "in" transfer to allow a device to<br/>
+        send information back.-->
+      "in" 或 "out"。"in"（输入）方向用于通知设备应该向主机发送信息，USB
+      总线中的所有通信都是主机启动的，所以使用 "in" 传输允许设备发回信息。
+    </td>
+  </tr>
+  <tr>
+    <td>request (integer)</td>
+    <td><!--@Defined by your device's protocol.-->由您的设备协议定义。</td>
+  </tr>
+  <tr>
+    <td>value (integer)</td>
+    <td><!--@Defined by your device's protocol.-->由您的设备协议定义。</td>
+  </tr>
+  <tr>
+    <td>index (integer)</td>
+    <td><!--@Defined by your device's protocol.-->由您的设备协议定义。</td>
+  </tr>
+  <tr>
+    <td>length (integer)</td>
+    <td><!--@Only used when direction is "in". Notifies the device that this is
+      the amount of data the host is expecting in response.-->
+      只有当 direction 为 "in" 时才使用，通知设备主机期望的响应包含的数据量。
+    </td>
+  </tr>
+  <tr>
+    <td>data (arraybuffer)</td>
+    <td><!--@Defined by your device's protocol, required when direction is
+      "out".-->
+      由您的设备协议定义，当 direction 为 "out" 时必选。
+    </td>
+  </tr>
+</table>
+
+<p><!--@Example:-->
+例如：</p>
+
+<pre>
+var transferInfo = {
+  "requestType": "vendor",
+   "recipient": "device",
+  "direction": "out",
+  "request":  0x31,
+  "value": 120,
+  "index": 0,
+  // 注意，要使用 ArrayBuffer，而不是 TypedArray 本身
+  "data": new Uint8Array([4, 8, 15, 16, 23, 42]).buffer
+};
+chrome.usb.controlTransfer(connectionHandle, transferInfo, optionalCallback);
+</pre>
+
+<h2 id="isochronous_transfers"><!--@ISOCHRONOUS transfers--><b>同步</b>传输</h2>
+
+<p><!--@Isochronous transfers are the most complex type of USB transfer. They are
+  commonly used for streams of data, like video and sound. To initiate an
+  isochronous transfer (either inbound or outbound), you must use
+  the <a href=/apps/usb#method-isochronousTransfer>usb.isochronousTransfer</a> method:-->
+同步传输是最复杂的 USB
+传输类型，通常用于数据流，例如视频与声音。要开始同步传输（无论是传入还是传出），您必须使用
+<a href="usb.html#method-isochronousTransfer">usb.isochronousTransfer</a> 方法：
+</p>
+
+<pre>
+chrome.usb.isochronousTransfer(connectionHandle, isochronousTransferInfo, transferCallback)
+</pre>
+
+<br/>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Parameter-->参数</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>connectionHandle</td>
+    <td><!--@Object received in <a href=/apps/usb#method-openDevice>usb.openDevice</a> callback.-->
+    <a href="usb.html#method-openDevice">usb.openDevice</a> 回调函数中接收的对象。
+    </td>
+  </tr>
+  <tr>
+    <td>isochronousTransferInfo</td>
+    <td><!--@Parameter object with the values in the table below.-->
+      参数对象，包含来自下表的值。
+    </td>
+  </tr>
+  <tr>
+    <td>transferCallback()</td>
+    <td><!--@Invoked when the transfer has completed.-->
+      传输完成时调用。
+    </td>
+  </tr>
+</table>
+
+<p>
+<!--@  Values for
+  <code>isochronousTransferInfo</code>
+  object:-->
+用于 <code>isochronousTransferInfo</code> 对象的值：
+</p>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Value-->值</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>transferInfo (object)</td>
+    <td><!--@An object with the following attributes:-->
+      包含下列属性的参数对象：<br/>
+      <b>direction (string): </b><!--@"in" or "out".-->"in" 或 "out"。<br/> 
+      <b>endpoint (integer): </b><!--@defined by your device. Usually can be found by
+      looking at an USB instrospection tool, like <code>lsusb -v</code>-->由您的设备定义，通常可以通过
+      USB 检测工具找到，例如 <code>lsusb -v</code>。<br/>
+      <b>length (integer): </b><!--@only
+      used when direction is "in". Notifies the device that this is the amount
+      of data the host is expecting in response. -->只有当
+      direction 为 "in" 时才使用，通知设备主机期望的响应包含的数据量。
+      <br/>
+
+      <!--@Should be AT LEAST <code>packets</code> &times; <code>packetLength</code>.-->
+      <b>至少</b>应该是 <code>packets</code> &times; <code>packetLength</code>。
+      <br/>
+      <b>data (arraybuffer): </b><!--@defined by your device's protocol;
+      only used when direction is "out".-->
+      由您的设备协议定义，只有当 direction 为 "out" 时才使用。
+    </td>
+  </tr>
+  <tr>
+    <td>packets (integer)</td>
+    <td><!--@Total number of packets expected in this transfer.-->本次传输期望的数据包总数。</td>
+  </tr>
+  <tr>
+    <td>packetLength (integer)</td>
+    <td><!--@Expected length of each packet in this transfer.-->本次传输期望的每一个数据包的长度。</td>
+  </tr>
+</table>
+
+<p><!--@Example:-->
+例如：</p>
+
+<pre>
+var transferInfo = {
+  "direction": "in",
+  "endpoint": 1,
+  "length": 2560
+};
+
+var isoTransferInfo = {
+  "transferInfo": transferInfo,
+  "packets": 20,
+  "packetLength": 128
+};
+
+chrome.usb.isochronousTransfer(connectionHandle, isoTransferInfo, optionalCallback);
+</pre>
+
+<p class="note">
+  <b><!--@Notes:-->注意：</b><!--@ One isochronous transfer will contain
+  <code>isoTransferInfo.packets</code> packets of
+  <code>isoTransferInfo.packetLength</code> bytes.
+  If it is an inbound transfer (your code requested data from the device), the
+  <code>data</code> field in the onUsbEvent will be an ArrayBuffer of size
+  <code>transferInfo.length</code>. It is your duty to walk through this
+  ArrayBuffer and extract the different packets, each starting at a multiple of
+  <code>isoTransferInfo.packetLength</code> bytes. -->一次同步传输将包含
+  <code>isoTransferInfo.packets</code>个数据包，每个数据包
+  <code>isoTransferInfo.packetLength</code>
+  字节。如果是传入传输（您的代码向设备请求数据），onUsbEvent 中的
+  <code>data</code> 字段会是一个大小为 <code>transferInfo.length</code>
+  的数组缓冲区（ArrayBuffer）。您应当分析该数组缓冲区，并提取不同的数据包，每个数据包以
+  <code>isoTransferInfo.packetLength</code>
+  字节的整数倍开始。<br/>
+  <br/>
+  <!--@If you are expecting a stream of data from the device, remember that
+  you will have to send one "inbound" transfer for each transfer you expect
+  back. USB devices don't send transfers to the USB bus unless the host
+  explicitly requests them through "inbound" transfers.-->
+  如果您期望从设备接收到数据流，请牢记对于您期望返回的每一次传输您都必须发送一次“传入”传输。除非主机显式通过“传入”传输请求，USB
+    设备不会向总线发送传输。
+</p>
+
+<h2 id="bulk_transfers"><!--@BULK transfers--><b>大块</b>传输</h2>
+
+<p><!--@Bulk transfers are commonly used to transfer a large amount of
+  non-time-sensitive data in a reliable way.
+  <a href=/apps/usb#method-bulkTransfer>usb.bulkTransfer</a> has three parameters:-->
+大块传输是通常用于以可靠的方式传输大量数据的 USB
+传输类型。<a href="usb.html#method-bulkTransfer">usb.bulkTransfer</a> 方法包含三个参数：
+</p>
+
+<pre>
+chrome.usb.bulkTransfer(connectionHandle, transferInfo, transferCallback);
+</pre>
+
+<br>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Parameter-->参数</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>connectionHandle</td>
+    <td><!--@Object received in <a href=/apps/usb#method-openDevice>usb.openDevice</a> callback.-->
+      <a href="usb.html#method-openDevice">usb.openDevice</a> 回调函数中接收到的对象。
+    </td>
+  </tr>
+  <tr>
+    <td>transferInfo</td>
+    <td><!--@Parameter object with the values in the table below.-->
+      参数对象，包含来自下表的值。
+    </td>
+  </tr>
+  <tr>
+    <td>transferCallback</td>
+    <td><!--@Invoked when the transfer has completed.-->
+      传输完成时调用。
+    </td>
+  </tr>
+</table>
+
+<p>
+<!--@  Values for
+  <code>transferInfo</code>
+  object:-->
+<code>transferInfo</code> 对象的值：
+</p>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Value-->值</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>direction (string)</td>
+    <td>"in" <!--@or-->或 "out"<!--@.-->。</td>
+  </tr>
+  <tr>
+    <td>endpoint (integer)</td>
+    <td><!--@Defined by your device's protocol.-->由您的设备协议定义。</td>
+  </tr>
+  <tr>
+    <td>length (integer)</td>
+    <td><!--@Only used when direction is "in". Notifies the device that this is
+      the amount of data the host is expecting in response.-->
+      只有当 direction 为 "in" 时才使用，通知设备主机期望的响应包含的数据量。
+    </td>
+  </tr>
+  <tr>
+    <td>data (ArrayBuffer)</td>
+    <td><!--@Defined by your device's protocol; only used when direction is
+      "out".-->
+      由您的设备协议定义，只有当 direction 为 "out" 时才使用。
+    </td>
+  </tr>
+</table>
+
+<p><!--@Example:-->
+例如：
+</p>
+
+<pre>
+var transferInfo = {
+  "direction": "out",
+  "endpoint": 1,
+  "data": new Uint8Array([4, 8, 15, 16, 23, 42]).buffer
+};
+</pre>
+
+<h2 id="interrupt_transfers"><!--@INTERRUPT transfers--><b>中断</b>传输</h2>
+
+<p><!--@Interrupt transfers are used to small amount of time sensitive data.
+  Since all USB communication is initiated by the host, host code usually polls
+  the device periodically, sending interrupt IN transfers that will make the
+  device send data back if there is anything in the interrupt queue (maintained
+  by the device).
+  <a href=/apps/usb#method-interruptTransfer>usb.interruptTransfer</a> has three parameters:-->
+中断传输用于少量时间敏感的数据。由于所有 USB
+通信都由主机启动，主机代码通常会周期性地查询设备，发送中断输入传输，如果中断队列（由设备维护）不为空的话使设备发回数据。<a href="usb.html#method-interruptTransfer">usb.interruptTransfer</a>
+方法包含三个参数：
+</p>
+
+<pre>
+chrome.usb.interruptTransfer(connectionHandle, transferInfo, transferCallback);
+</pre>
+
+<br>
+
+<table class="simple">
+  <tr>
+    <th scope="col"><!--@Parameter-->参数</th>
+    <th scope="col"><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td>connectionHandle</td>
+    <td><!--@Object received in <a href=/apps/usb#method-openDevice>usb.openDevice</a> callback.-->
+    <a href="usb.html#method-openDevice">usb.openDevice</a> 的回调函数中接收到的对象。
+    </td>
+  </tr>
+  <tr>
+    <td>transferInfo</td>
+    <td><!--@Parameter object with the values in the table below.-->
+      参数对象，包含来自下表的值。
+    </td>
+  </tr>
+  <tr>
+    <td>transferCallback</td>
+    <td><!--@Invoked when the transfer has completed. Notice that this callback
+      doesn't contain the device's response. The purpose of the callback is
+      simply to notify your code that the asynchronous transfer requests has
+      been processed.-->
+      传输完成时调用。注意该回调函数并不包含设备的响应，回调函数的目的只是通知您的代码异步传输请求已处理。
+    </td>
+  </tr>
+</table>
+
+<p>
+<!--@  Values for <code>transferInfo</code> object:-->
+<code>transferInfo</code> 对象的值：
+</p>
+
+<table class="simple">
+<tr>
+  <th scope="col"><!--@Value-->值</th>
+  <th scope="col"><!--@Description-->描述</th>
+</tr>
+<tr>
+  <td>direction (string)</td>
+  <td><!--@"in" or "out".-->
+    "in" 或 "out"。
+  </td>
+</tr>
+<tr>
+  <td>endpoint (integer)</td>
+  <td><!--@Defined by your device's protocol.-->
+    由您的设备协议定义。
+  </td>
+</tr>
+<tr>
+  <td>length (integer)</td>
+  <td><!--@Only used when direction is "in". Notifies the device that this is
+    the amount of data the host is expecting in response.-->
+    只有当 direction 为 "in"
+    时才使用，通知设备主机期望的响应包含的数据量。
+  </td>
+</tr>
+<tr>
+  <td>data (ArrayBuffer)</td>
+  <td><!--@Defined by your device's protocol; only used when direction is
+    "out".-->
+    由您的设备协议定义，只有当 direction 为 "out" 时才使用。
+  </td>
+</tr>
+</table>
+
+<p><!--@Example:-->
+例如：</p>
+
+<pre>
+var transferInfo = {
+  "direction": "in",
+  "endpoint": 1,
+  "length": 2
+};
+chrome.usb.interruptTransfer(connectionHandle, transferInfo, optionalCallback);
+</pre>
+
+<h2 id="caveats"><!--@Caveats-->注意事项</h2>
+
+<p><!--@Not all devices can be accessed through the USB API. In general, devices
+  are not accessible because either the Operating System's kernel or a native
+  driver holds them off from user space code. Some examples are devices with
+  HID profiles on OSX systems, and USB pen drives.-->
+并不是所有设备都能通过 USB API
+访问。大体上，不能访问设备的原因包括操作系统内核或原生设备驱动程序阻止用户区代码访问，例如
+OSX 系统上包含 HID 配置文件的设备以及 USB 闪存盘。
+  </p>
+  
+<p>
+<!--@  On most Linux systems, USB devices are mapped with read-only permissions by
+  default. To open a device through this API, your user will need to have
+  write access to it too.
+  A simple solution is to set a udev rule. Create a file
+  <code>/etc/udev/rules.d/50-yourdevicename.rules</code>
+  with the following content:-->
+在大部分 Linux 系统上，USB 设备默认情况下以只读权限映射。要通过该 API
+打开设备，您的用户也需要写入权限。一种简单的解决办法是设置 udev
+规则。创建一个包含如下内容的文件：<code
+>/etc/udev/rules.d/50-<em>您的设备名称</em>.rules</code>：
+</p>
+
+<pre>
+SUBSYSTEM=="usb", ATTR{idVendor}=="[<em>您的设备名称</em>]", MODE="0664", GROUP="plugdev"
+</pre>
+
+<p>
+<!--@  Then, just restart the udev daemon: <code>service udev restart</code>.
+  You can check if device permissions are set correctly by following these
+  steps:-->
+  然后只要重新启动 udev 服务：<code>service udev restart</code>。您可以通过以下步骤检查权限是否正确设置：
+</p>
+
+<ul>
+  <li><!--@Run <code>lsusb</code> to find the bus and device numbers.-->
+    运行 <code>lsusb</code>，找到总线和设备编号。
+  </li>
+  <li><!--@Run <code>ls -al /dev/bus/usb/[bus]/[device]</code>. This file should be
+    owned by group "plugdev" and have group write permissions.-->
+    运行
+    <code>ls -al /dev/bus/usb/[bus]/[device]</code>。该文件应该由“plugdev”组所有，并拥有写入权限。
+  </li>
+</ul>
+
+<p><!--@Your app cannot do this automatically since this this procedure requires root
+access. We recommend that you provide instructions to end-users and link to the
+<a href="#caveats">Caveats</a> section on this page for an explanation.-->
+您的应用不能自动完成这一步，因为这一过程需要管理员权限。我们建议您向最终用户提供指南，并链接到该网页的<a
+href="app_usb.html#caveats">注意事项</a>部分作为解释。
+</p>
+
+<p><!--@On Chrome OS, simply call <a href=/apps/usb#method-requestAccess>usb.requestAccess</a>. The permission
+  broker does this for you.-->
+在 Chrome OS 中，您只需要调用
+<a href="usb.html#method-requestAccess">usb.requestAccess</a>，权限控制器会为您完成这一步。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">使用低级系统服务</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="app_usb.html" class="active">USB</a>
+                        </li>
+                        <li>
+                          <a href="app_serial.html">串行端口</a>
+                        </li>
+                        <li>
+                          <a href="app_network.html">网络通信</a>
+                        </li>
+                        <li>
+                          <a href="app_bluetooth.html">蓝牙</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_usb.html#manifest"
+          >清单文件的要求</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#finding_device"
+          >发现设备</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#usb_open"
+          >打开设备</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#usb_transfers"
+          >USB 传输以及从设备接收数据</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#control_transfers"
+          >控制传输</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#isochronous_transfers"
+          >同步传输</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#bulk_transfers"
+          >大块传输</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#interrupt_transfers"
+          >中断传输</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_usb.html#caveats"
+          >注意事项</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

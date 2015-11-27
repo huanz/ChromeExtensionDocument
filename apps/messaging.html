@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>消息传递 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="messaging.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Message Passing-->消息传递</h1>
+
+
+<p>
+<!--@Since content scripts run in the context of a web page and not the extension,
+they often need some way of communicating with the rest of the extension. For
+example, an RSS reader extension might use content scripts to detect the
+presence of an RSS feed on a page, then notify the background page in order to
+display a page action icon for that page.-->
+由于内容脚本在网页而不是扩展程序的环境中运行，它们通常需要某种方式与扩展程序的其余部分通信。例如，RSS 阅读器扩展程序可能使用内容脚本检测页面上是否存在 RSS 供稿，然后通知后台页面，为当前页面显示页面按钮图标。
+
+<p>
+<!--@Communication between extensions and their content scripts works by using
+message passing. Either side can listen for messages sent from the other end,
+and respond on the same channel. A message can contain any valid JSON object
+(null, boolean, number, string, array, or object). There is a simple API for
+<a href="#simple">one-time requests</a>
+and a more complex API that allows you to have
+<a href="#connect">long-lived connections</a>
+for exchanging multiple messages with a shared context. It is also possible to
+send a message to another extension if you know its ID, which is covered in
+the
+<a href="#external">cross-extension messages</a>
+section.-->
+扩展程序和内容脚本间的通信使用消息传递的方式。两边均可以监听另一边发来的消息，并通过同样的通道回应。消息可以包含任何有效的
+JSON 对象（null、boolean、number、string、array 或 object）。对于<a
+href="messaging.html#simple">一次性的请求</a>有一个简单的 API，同时也有更复杂的
+API，允许您通过<a href="messaging.html#connect"
+>长时间的连接</a>与共享的上下文交换多个消息。另外您也可以向另一个扩展程序发送消息，只要您知道它的标识符，这将在<a
+href="messaging.html#external">跨扩展程序消息传递</a>部分介绍。
+
+
+<h2 id="simple"><!--@Simple one-time requests-->简单的一次性请求</h2>
+<p>
+<!--@If you only need to send a single message to another part of your extension
+(and optionally get a response back), you should use the simplified
+<a href=/apps/runtime#method-sendMessage>runtime.sendMessage</a>
+.
+This lets you send a one-time JSON-serializable message from a
+content script to extension
+.
+An optional callback parameter allows you handle the response from the other
+side, if there is one.-->
+如果您只需要向您的扩展程序的另一部分发送一个简单消息（以及可选地获得回应），您应该使用比较简单的
+<a href="runtime.html#method-sendMessage">runtime.sendMessage</a>
+方法。这些方法允许您从内容脚本向扩展程序发送可通过 JSON
+序列化的消息，可选的 callback 参数允许您在需要的时候从另一边处理回应。
+
+<p>
+<!--@Sending a request from a content script looks like this:-->
+如下列代码所示从内容脚本中发送请求：
+<pre data-filename="contentscript.js">
+chrome.runtime.sendMessage({greeting: "您好"}, function(response) {
+  console.log(response.farewell);
+});
+</pre>
+
+<p>
+<!--@Sending a request from the extension to a content script looks very similar,
+except that you need to specify which tab to send it to. This example
+demonstrates sending a message to the content script in the selected tab.-->
+从扩展程序向内容脚本发送请求与上面类似，唯一的区别是您需要指定发送至哪一个标签页。这一例子演示如何向选定标签页中的内容脚本发送消息。
+<pre data-filename="background.html">
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+  chrome.tabs.sendMessage(tabs[0].id, {greeting: "您好"}, function(response) {
+    console.log(response.farewell);
+  });
+});
+</pre>
+
+<p>
+<!--@On the receiving end, you need to set up an
+<a href=/apps/runtime#event-onMessage>runtime.onMessage</a>
+event listener to handle the message. This looks the same from a content
+script or extension page.-->
+在接收端，您需要设置一个 <a href="runtime.html#event-onMessage">runtime.onMessage</a> 事件监听器来处理消息。
+<pre>
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    console.log(sender.tab ?
+                "来自内容脚本：" + sender.tab.url :
+                "来自扩展程序");
+    if (request.greeting == "您好")
+      sendResponse({farewell: "再见"});
+  });
+</pre>
+
+<p class="note">
+<b><!--@Note:-->注意：</b><!--@ If multiple pages are listening for onMessage events, only the
+first to call sendResponse() for a particular event will succeed in sending the
+response. All other responses to that event will be ignored.-->
+如果多个页面都监听 onMessage 事件，对于某一次事件只有第一次调用 sendResponse() 能成功发出回应，所有其他回应将被忽略。
+</p>
+
+
+<h2 id="connect"><!--@Long-lived connections-->长时间的连接</h2>
+<p>
+<!--@Sometimes it's useful to have a conversation that lasts longer than a single
+request and response. In this case, you can open a long-lived channel from
+your content script to an extension page
+using <a href=/apps/runtime#method-connect>runtime.connect</a>
+.
+The channel can optionally have a name, allowing you to distinguish between
+different types of connections.-->
+有时候需要长时间的对话，而不是一次请求和回应。在这种情况下，您可以使用
+<a href="runtime.html#method-connect">runtime.connect</a> 或 <a href="about_apps.html#type-connect">tabs.connect</a>
+从您的内容脚本建立到扩展程序的长时间连接。建立的通道可以有一个可选的名称，让您区分不同类型的连接。
+
+<p>
+<!--@One use case might be an automatic form fill extension. The content script
+could open a channel to the extension page for a particular login, and send a
+message to the extension for each input element on the page to request the
+form data to fill in. The shared connection allows the extension to keep
+shared state linking the several messages coming from the content script.-->
+使用长时间连接的一种可能的情形为自动填充表单的扩展程序。对于一次登录操作，内容脚本可以连接到扩展程序页面，每次页面上的输入元素需要填写表单数据时向扩展程序发送消息。共享的连接允许扩展程序保留来自内容脚本的不同消息之间的状态联系。
+
+<p>
+<!--@When establishing a connection, each end is given a
+<a href=/apps/runtime#type-Port>runtime.Port</a>
+object which is used for sending and receiving messages through that
+connection.-->
+建立连接时，两端都将获得一个 <a href="runtime.html#type-Port">runtime.Port</a>
+对象，用来通过建立的连接发送和接收消息。
+
+<p>
+<!--@Here is how you open a channel from a content script, and send and listen for
+messages:-->
+如下代码演示如何从内容脚本中建立连接，发送并监听消息：
+<pre data-filename="contentscript.js">
+var port = chrome.runtime.connect({name: "敲门"});
+port.postMessage({joke: "敲门"});
+port.onMessage.addListener(function(msg) {
+  if (msg.question == "是谁？")
+    port.postMessage({answer: "女士"});
+  else if (msg.question == "哪位女士？")
+    port.postMessage({answer: "Bovary 女士"});
+});
+</pre>
+
+
+<p>
+<!--@In order to handle incoming connections, you need to set up a
+<a href=/apps/runtime#event-onConnect>runtime.onConnect</a>
+event listener. This looks the same from a content script or an extension
+page. When another part of your extension calls "connect()", this event is
+fired, along with the
+<a href=/apps/runtime#type-Port>runtime.Port</a>
+object you can use to send and receive messages through the connection. Here's
+what it looks like to respond to incoming connections:-->
+为了处理传入连接，您需要设置一个 <a href="runtime.html#event-onConnect">runtime.onConnect</a>
+事件监听器。这一步无论在内容脚本还是扩展程序页面中都是一样的。当您的扩展程序的另一部分调用
+connect()
+时，会产生这一事件，同时传递您可以通过建立的连接发送和接受消息的
+<a href="runtime.html#type-Port">runtime.Port</a> 对象。如下代码演示如何回应传入连接：
+<pre>
+chrome.runtime.onConnect.addListener(function(port) {
+  console.assert(port.name == "敲门");
+  port.onMessage.addListener(function(msg) {
+    if (msg.joke == "敲门")
+      port.postMessage({question: "是谁？"});
+    else if (msg.answer == "女士")
+      port.postMessage({question: "哪位女士？"});
+    else if (msg.answer == "Bovary 女士")
+      port.postMessage({question: "我没听清楚。"});
+  });
+});
+</pre>
+
+<p>
+<!--@You may want to find out when a connection is closed, for example if you are
+maintaining separate state for each open port. For this you can listen to the
+<a href=/apps/runtime#property-Port-onDisconnect>runtime.Port.onDisconnect</a>
+event. This event is fired either when the other side of the channel manually
+calls
+<a href=/apps/runtime#property-Port-disconnect>runtime.Port.disconnect</a>, or when the page
+containing the port is unloaded (for example if the tab is navigated).
+onDisconnect is guaranteed to be fired only once for any given port.-->
+您可能想知道连接何时关闭，例如您需要为每一个打开的端口单独保留状态。这种情况下您可以监听
+<a href="runtime.html#property-Port-onDisconnect">runtime.Port.onDisconnect</a> 事件，当连接的另一端调用
+<a href="runtime.html#property-Port-disconnect">runtime.Port.disconnect</a> 或包含该端口的页面已结束（例如标签页转到了另一个页面）时，对于每一个端口确保都会发生一次该事件。
+
+
+<h2 id="external"><!--@Cross-extension messaging-->跨扩展程序消息传递</h2>
+<p>
+<!--@In addition to sending messages between different components in your
+extension, you can use the messaging API to communicate with other extensions.
+This lets you expose a public API that other extensions can take advantage of.-->
+除了在您的扩展程序的不同组成部分间发送消息以外，您也可以使用消息传递 API
+与其他扩展程序通信。这样您可以提供一个公共的 API，让其他扩展程序使用。
+
+<p>
+<!--@Listening for incoming requests and connections is similar to the internal
+case, except you use the
+<a href=/apps/runtime#event-onMessageExternal>runtime.onMessageExternal</a>
+or
+<a href=/apps/runtime#event-onConnectExternal>runtime.onConnectExternal</a>
+methods. Here's an example of each:-->
+监听传入的请求和连接与处理内部的消息类似，唯一的区别是您分别使用
+<a href="runtime.html#event-onMessageExternal">runtime.onMessageExternal</a> 和 <a href="runtime.html#event-onConnectExternal">runtime.onConnectExternal</a>
+事件。如下是分别处理这两个事件的例子：
+<pre>
+// 用于简单的请求：
+chrome.runtime.onMessageExternal.addListener(
+  function(request, sender, sendResponse) {
+    if (sender.id == blacklistedExtension)
+      return;  // 不允许这一扩展程序访问
+    else if (request.getTargetData)
+      sendResponse({targetData: targetData});
+    else if (request.activateLasers) {
+      var success = activateLasers();
+      sendResponse({activateLasers: success});
+    }
+  });
+
+// 用于长时间的连接：
+chrome.runtime.onConnectExternal.addListener(function(port) {
+  port.onMessage.addListener(function(msg) {
+    // 有关处理 onMessage 事件的示例请参见其他例子
+  });
+});
+</pre>
+
+<p>
+<!--@Likewise, sending a message to another extension is similar to sending one
+within your extension. The only difference is that you must pass the ID of the
+extension you want to communicate with. For example:-->
+同样，向另一个扩展程序发送消息与在您的扩展程序中发送消息类似，唯一的区别是您必须传递您需要与之通信的扩展程序的标识符。例如：
+<pre>
+// 我们需要与之通信的扩展程序的标识符。
+var laserExtensionId = "abcdefghijklmnoabcdefhijklmnoabc";
+
+// 发出一个简单请求：
+chrome.runtime.sendMessage(laserExtensionId, {getTargetData: true},
+  function(response) {
+    if (targetInRange(response.targetData))
+      chrome.runtime.sendMessage(laserExtensionId, {activateLasers: true});
+  });
+
+// 建立一个长时间的连接：
+var port = chrome.runtime.connect(laserExtensionId);
+port.postMessage(...);
+</pre>
+
+
+<h2 id="external-webpage"><!--@Sending messages from web pages-->从网页发送消息</h2>
+<p>
+<!--@Similar to <a href="#external">cross-extension messaging</a>,
+your app or extension can receive and
+respond to messages from regular web pages.
+To use this feature, you must first
+specify in your manifest.json which web sites you want to communicate with. For
+example:-->
+与<a href="messaging.html#external"
+>跨扩展程序消息传递</a>类似，您的应用或扩展程序可以接受并响应来自普通网页的消息。要使用该特性，您必须首先在您的
+manifest.json 中指定您希望与之通信的网站，例如：
+
+<pre data-filename="manifest.json">
+"externally_connectable": {
+  "matches": ["*://*.example.com/*"]
+}
+</pre>
+
+<p>
+<!--@This will expose the messaging API to any page which matches the URL patterns
+you specify. The URL pattern must contain at least a
+<a href="http://en.wikipedia.org/wiki/Second-level_domain">second-level domain</a>
+- that is, hostname
+patterns like "*", "*.com", "*.co.uk", and "*.appspot.com" are prohibited.
+From the web page, use the
+<a href=/apps/runtime#method-sendMessage>runtime.sendMessage</a>
+or
+<a href=/apps/runtime#method-connect>runtime.connect</a>
+APIs to send a message to a specific app or extension. For example:-->
+这样会将消息传递 API 提供给所有匹配您指定的 URL
+表达式的网页。URL 表达式必须至少包含一个<a
+href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E7%BA%A7%E5%9F%9F"
+>二级域名</a>，也就是说禁止使用类似于“*”、“*.com”、“*.co.uk”和“*.appspot.com”之类的主机名。在网页中，使用 <a href="runtime.html#method-sendMessage">runtime.sendMessage</a> 或 <a href="runtime.html#method-connect">runtime.connect</a> API 向指定应用或扩展程序发送消息。例如：
+<pre>
+// 我们希望与之通信的扩展程序标识符。
+var editorExtensionId = "abcdefghijklmnoabcdefhijklmnoabc";
+
+// 发送一个简单的请求：
+chrome.runtime.sendMessage(editorExtensionId, {openUrlInEditor: url},
+  function(response) {
+    if (!response.success)
+      handleError(url);
+  });
+</pre>
+
+<p>
+<!--@From your app or extension, you may listen to messages from web pages via the
+<a href=/apps/runtime#event-onMessageExternal>runtime.onMessageExternal</a>
+or
+<a href=/apps/runtime#event-onConnectExternal>runtime.onConnectExternal</a>
+APIs, similar to <a href="#external">cross-extension messaging</a>.
+Only the web page can initiate a connection.
+Here is an example:-->
+在您的应用或扩展程序中，您可以通过 <a href="runtime.html#event-onMessageExternal">runtime.onMessageExternal</a> 或
+<a href="runtime.html#event-onConnectExternal">runtime.onConnectExternal</a> API 监听来自网页的消息，与<a href="messaging.html#external"
+>跨扩展程序消息传递</a>类似。只有网页才能发起连接。如下是一个例子：
+
+<pre>
+chrome.runtime.onMessageExternal.addListener(
+  function(request, sender, sendResponse) {
+    if (sender.url == blacklistedWebsite)
+      return;  // 不允许该网页访问
+    if (request.openUrlInEditor)
+      openUrl(request.openUrlInEditor);
+  });
+</pre>
+
+
+<h2 id="native-messaging"><!--@Native messaging-->原生消息通信</h2>
+<p>
+<!--@Extensions can exchange messages with native applications. Native
+applications that support this feature must register a <em>native messaging
+host</em> that knows how to communicate with the extension. Chrome starts the
+host in a separate process and communicates with it using standard input and
+standard output streams.-->
+扩展程序可以与原生应用程序交换消息。支持该特性的原生应用程序必须注册一个了解如何与扩展程序通信的<em
+>原生消息宿主</em>，Chrome 浏览器将在单独的进程中启动宿主，并通过标准输入和标准输出流与之通信。
+
+<h3 id="native-messaging-host"><!--@Native messaging host-->原生消息通信宿主</h3>
+<p>
+<!--@In order to register a native messaging host the application must install a
+manifest file that defines the native messaging host configuration. Below is an
+example of the manifest file:-->
+为了注册一个原生消息通信宿主，应用程序必须安装一个清单文件，定义原生消息通信宿主的配置。如下是这一清单文件的例子：
+<pre data-filename="manifest.json">
+{
+  "name": "com.my_company.my_application",
+  "description": "我的应用程序",
+  "path": "C:\\Program Files\\My Application\\chrome_native_messaging_host.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://knldjmfmopnpolahpmmgbagdohdnhkik/"
+  ]
+}
+</pre>
+
+<p><!--@Native messaging host manifest file contains the following fields:-->
+消息通信宿主清单文件包含如下字段：
+<table class="simple">
+  <tr>
+    <th><!--@Name-->名称</th>
+    <th><!--@Description-->描述</th>
+  </tr>
+  <tr>
+    <td><code>name</code></td>
+    <td><!--@Name of the native messaging host. Clients pass this string to
+    <a href=/apps/runtime#method-connectNative>runtime.connectNative</a> or <a href=/apps/runtime#method-sendNativeMessage>runtime.sendNativeMessage</a>.-->
+    原生消息通信宿主的名称，客户端需要将该字符串传递给
+    <a href="runtime.html#method-connectNative">runtime.connectNative</a> 或 <a href="runtime.html#method-sendNativeMessage">runtime.sendNativeMessage</a>。
+    </td>
+  </tr>
+  <tr>
+    <td><code>description</code></td>
+    <td><!--@Short application description.-->应用程序的简短描述。</td>
+  </tr>
+  <tr>
+    <td><code>path</code></td>
+    <td><!--@Path to the native messaging host binary. On Linux and OSX the path must
+    be absolute. On Windows it can be relative to the directory in which the
+    manifest file is located.-->
+      原生消息通信宿主的二进制文件路径。在 Linux 和 OSX
+      上必须使用绝对路径，在 Windows
+      上可以使用相对于清单文件所在目录的路径。
+    </td>
+  </tr>
+  <tr>
+    <td><code>type</code></td>
+    <td><!--@Type of the interface used to communicate with the native messaging
+    host. Currently there is only one possible value for this parameter:
+    <code>stdio</code>. It indicates that Chrome should use <code>stdin</code>
+    and <code>stdout</code> to communicate with the host.-->
+    与原生消息通信宿主交流时所使用的接口类型。目前该参数只有一种可能的值：<code
+    >stdio</code>，它表示 Chrome 浏览器应该使用
+    <code>stdin</code>（标准输入）和
+    <code>stdout</code>（标准输出）与宿主通信。
+    </td>
+  </tr>
+  <tr>
+    <td><code>allowed_origins</code></td>
+    <td><!--@List of extensions that should have access to the native messaging host.-->
+    允许访问原生消息通信宿主的扩展程序列表。
+    </td>
+  </tr>
+</table>
+
+<p><!--@Location of the manifest file depends on the platform:-->
+清单文件的类型取决与平台：
+
+<dl>
+  <dt>Windows<!--@:-->：</dt>
+    <dd><!--@The manifest file can be located anywhere in the file system.
+     The application installer must create registry key-->
+     清单文件可以在文件系统中的任意位置，应用程序的安装程序必须创建如下注册表键
+     <code>HKEY_LOCAL_MACHINE\SOFTWARE\Google\Chrome\NativeMessagingHosts\<em>com.my_company.my_application</em></code>
+     <!--@or-->或
+     <code>HKEY_CURRENT_USER\SOFTWARE\Google\Chrome\NativeMessagingHosts\<em>com.my_company.my_application</em></code><!--@,
+     and set default value of that key to the full path to the manifest file.-->，并将键的默认值设置为清单文件的完整路径。
+    </dd>
+
+  <dt>OSX<!--@:-->：</dt>
+    <dd><!--@The manifest file must be placed at-->
+    清单文件必须位于
+    <code>/Library/Google/Chrome/NativeMessagingHosts/<em>com.my_company.my_application</em>.json</code><!--@,
+    or, for applications installed on user level,-->，对于在用户级别上安装的应用程序则是
+    <code>~/Library/Application Support/Google/Chrome/NativeMessagingHosts/<em>com.my_company.my_application</em>.json</code><!--@.-->。
+    </dd>
+
+  <dt>Linux<!--@:-->：</dt>
+    <dd><!--The manifest file must be placed at-->
+    清单文件必须位于
+    <code>/etc/opt/chrome/native-messaging-hosts/<em>com.my_company.my_application</em>.json</code><!--@,
+    or, for applications installed on user level,-->，对于在用户级别上安装的应用程序则是
+    <code>~/.config/google-chrome/NativeMessagingHosts/<em>com.my_company.my_application</em>.json</code><!--@.-->。
+    </dd>
+</dl>
+
+<p>
+<!--@Chrome starts each native messaging host in a separate process and communicates
+with it using standard input (<code>stdin</code>) and standard output
+(<code>stdout</code>). The same format is used to send messages in both
+directions: each message is serialized using JSON, UTF-8 encoded
+and is preceded with 32-bit message length in native byte order.-->
+Chrome 浏览器在单独的进程中启动每一个原生消息通信宿主，并使用标准输入（<code
+>stdin</code>）与标准输出（<code>stdout</code>）与之通信。向两个方向发送消息时使用相同的格式：每一条消息使用
+JSON 序列化，以 UTF-8 编码，并在前面附加 32 位的消息长度（使用本机字节顺序）。
+
+<p>
+<!--@When a messaging port is created using <a href=/apps/runtime#method-connectNative>runtime.connectNative</a> Chrome
+starts native messaging host process and keeps it running until the port is
+destroyed. On the other hand, when a message is sent using
+<a href=/apps/runtime#method-sendNativeMessage>runtime.sendNativeMessage</a>, without creating a messaging port, Chrome starts
+a new native messaging host process for each message. In that case the first
+message generated by the host process is handled as a response to the original
+request, i.e. Chrome will pass it to the response callback specified when
+<a href=/apps/runtime#method-sendNativeMessage>runtime.sendNativeMessage</a> is called. All other messages generated by the
+native messaging host in that case are ignored.-->
+使用 <a href="runtime.html#method-connectNative">runtime.connectNative</a> 创建消息传递端口时，Chrome
+浏览器会启动原生消息传递宿主进程，并让它一直运行，直到端口释放。如果消息是使用
+<a href="runtime.html#method-sendNativeMessage">runtime.sendNativeMessage</a> 发送，没有创建消息传递端口，Chrome
+浏览器会为每一条消息创建一个新的原生消息传递宿主进程。在这种情况下，宿主进程产生的第一条消息作为原始请求的响应处理，也就是说，Chrome
+浏览器会将它传递给调用 <a href="runtime.html#method-sendNativeMessage">runtime.sendNativeMessage</a>
+时指定的回调函数，而原生消息传递宿主产生的所有其他消息则会忽略。
+
+<h3 id="native-messaging-client"><!--@Connecting to a native application-->连接到原生应用程序</h3>
+<p>
+<!--@Sending and receiving messages to and from a native application is very similar
+to cross-extension messaging. The main difference is that
+<a href=/apps/runtime#method-connectNative>runtime.connectNative</a> is used instead of <a href=/apps/runtime#method-connect>runtime.connect</a>,
+and <a href=/apps/runtime#method-sendNativeMessage>runtime.sendNativeMessage</a> is used instead of <a href=/apps/runtime#method-sendMessage>runtime.sendMessage</a>.-->
+向原生应用程序发送和接收消息类似与跨扩展程序消息传递，主要的区别是用
+<a href="runtime.html#method-connectNative">runtime.connectNative</a> 代替 <a href="runtime.html#method-connect">runtime.connect</a>，用
+<a href="runtime.html#method-sendNativeMessage">runtime.sendNativeMessage</a> 代替 <a href="runtime.html#method-sendMessage">runtime.sendMessage</a>。
+<p>
+<!--@The Following example creates a <a href=/apps/runtime#type-Port>runtime.Port</a> object that's connected to native
+messaging host <code>com.my_company.my_application</code>, starts listening for
+messages from that port and sends one outgoing message:-->
+以下例子创建一个 <a href="runtime.html#type-Port">runtime.Port</a> 对象，连接到原生消息通信宿主
+<code>com.my_company.my_application</code>，开始监听来自该端口的消息，并发送一条消息：
+<pre>
+var port = chrome.runtime.connectNative('com.my_company.my_application');
+port.onMessage.addListener(function(msg) {
+  console.log("收到 " + msg);
+});
+port.onDisconnect.addListener(function() {
+  console.log("已断开");
+});
+port.postMessage({ text: "我的应用程序，您好！" });
+</pre>
+
+<p>
+<a href="runtime.html#method-sendNativeMessage">runtime.sendNativeMessage</a> <!--@can be used to send a message to native
+application without creating a port, e.g.:-->
+可以用来向原生应用程序发送消息，而不用创建端口。例如：
+<pre>
+chrome.runtime.sendNativeMessage('com.my_company.my_application',
+  { text: "您好" },
+  function(response) {
+    console.log("收到 " + response);
+  });
+</pre>
+
+<h2 id="security-considerations"><!--@Security considerations-->安全性考虑</h2>
+
+<p>
+<!--@When receiving a message from a content script or another extension, your
+background page should be careful not to fall victim to <a
+href="http://en.wikipedia.org/wiki/Cross-site_scripting">cross-site
+scripting</a>.  Specifically, avoid using dangerous APIs such as the
+below:-->
+当您从内容脚本或另一个扩展程序接收消息时，您的后台网页应该小心，以免遭到<a
+href="http://en.wikipedia.org/wiki/Cross-site_scripting">跨站脚本攻击</a>。特别地，避免使用下面这些危险的 API：
+</p>
+<pre data-filename="background.js">
+chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
+  // 警告！可能会执行恶意脚本！
+  var resp = eval("(" + response.farewell + ")");
+});
+</pre>
+<pre data-filename="background.js">
+chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
+  // 警告！可能会插入恶意脚本！
+  document.getElementById("resp").innerHTML = response.farewell;
+});
+</pre>
+<p>
+<!--@Instead, prefer safer APIs that do not run scripts:-->
+您应该首选不运行脚本的更安全的API：
+</p>
+<pre data-filename="background.js">
+chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
+  // JSON.parse 不会执行攻击者的脚本。
+  var resp = JSON.parse(response.farewell);
+});
+</pre>
+<pre data-filename="background.js">
+chrome.tabs.sendMessage(tab.id, {greeting: "hello"}, function(response) {
+  // innerText 不会让攻击者插入 HTML 元素。
+  document.getElementById("resp").innerText = response.farewell;
+});
+</pre>
+
+<h2 id="examples"><!--@Examples-->例子</h2>
+
+<p>
+<!--@You can find simple examples of communication via messages in the-->
+您可以在
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/messaging/">examples/api/messaging</a>
+-->目录中找到使用消息通信的简单例子，<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/nativeMessaging/">examples/api/nativeMessaging</a>
+<!--@contains an example application that uses native messaging.
+Also see the-->
+包含使用原生消息通信的示例应用程序，另外请参见
+<a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/howto/contentscript_xhr">contentscript_xhr</a> <!--@example,
+in which a content script and its parent extension exchange messages,
+so that the parent extension can perform
+cross-site requests on behalf of the content script.
+For more examples and for help in viewing the source code, see
+<a href="samples">Samples</a>.-->
+例子，在这个例子中内容脚本与所属扩展程序交换消息，以便扩展程序可以代表内容脚本发出跨站请求。有关更多例子以及查看源代码的帮助，请参见<a href="samples.html">示例</a>。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+      <ol class="toc">
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="messaging.html#simple"
+          >简单的一次性请求</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="messaging.html#connect"
+          >长时间的连接</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="messaging.html#external"
+          >跨扩展程序消息传递</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="messaging.html#external-webpage"
+          >从网页发送消息</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="messaging.html#native-messaging"
+          >原生消息通信</a>
+          <ol class="toc">
+              <li><a data-list-item href="messaging.html#native-messaging-host"
+                     >原生消息通信宿主</a>
+              </li>
+              <li><a data-list-item href="messaging.html#native-messaging-client"
+                     >连接到原生应用程序</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="messaging.html#security-considerations"
+          >安全性考虑</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="messaging.html#examples"
+          >例子</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

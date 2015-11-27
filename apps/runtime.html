@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.runtime - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="runtime.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.runtime</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.runtime</code> API 获取后台网页、返回清单文件详情、监听并响应应用或扩展程序生命周期内的事件，您还可以使用该 API 将相对路径的 URL 转换为完全限定的 URL。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">内容脚本<!--@:-->：</td>
+        <td>
+              支持
+            <!--@
+                --><a href="runtime.html#method-connect">connect</a><!--@
+              --><!--@
+                  --><!--@,-->、<!--@
+                --><!--@
+                --><a href="runtime.html#method-getManifest">getManifest</a><!--@
+              --><!--@
+                  --><!--@,-->、<!--@
+                --><!--@
+                --><a href="runtime.html#method-getURL">getURL</a><!--@
+              --><!--@
+                  --><!--@,-->、<!--@
+                --><!--@
+                --><a href="runtime.html#property-id">id</a><!--@
+              --><!--@
+                  --><!--@,-->、<!--@
+                --><!--@
+                --><a href="runtime.html#event-onConnect">onConnect</a><!--@
+              --><!--@
+                  --><!--@,-->、<!--@
+                --><!--@
+                --><a href="runtime.html#event-onMessage">onMessage</a><!--@
+              --><!--@
+                  --> <!--@and-->和 <!--@
+                --><!--@
+                --><a href="runtime.html#method-sendMessage">sendMessage</a><!--@
+              --><!--@ are supported.-->。<!--@
+            --><!--@
+            --><a href="../extensions/content_scripts.html"><!--@Learn more-->了解更多</a>
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="app_lifecycle.html">
+            管理应用的生命周期
+                    </a>
+            <br>
+            <a href="event_pages.html">
+            事件页面
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="runtime.html#type-Port">Port</a></td></tr>
+          <tr><td><a href="runtime.html#type-MessageSender">MessageSender</a></td></tr>
+          <tr><td><a href="runtime.html#type-PlatformInfo">PlatformInfo</a></td></tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="runtime.html#property-lastError">lastError</a></td>
+          <tr><td><a href="runtime.html#property-id">id</a></td>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="runtime.html#method-getBackgroundPage">getBackgroundPage</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.getBackgroundPage(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-getManifest">getManifest</a> &minus;
+            <code class="prettyprint">
+            object
+            chrome.runtime.getManifest()
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-getURL">getURL</a> &minus;
+            <code class="prettyprint">
+            string
+            chrome.runtime.getURL(<span>string path</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-setUninstallURL">setUninstallURL</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.setUninstallURL(<span>string url</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-reload">reload</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.reload()
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-requestUpdateCheck">requestUpdateCheck</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.requestUpdateCheck(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-restart">restart</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.restart()
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-connect">connect</a> &minus;
+            <code class="prettyprint">
+                Port
+            chrome.runtime.connect(<span class="optional">string extensionId</span>, <span class="optional">object connectInfo</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-connectNative">connectNative</a> &minus;
+            <code class="prettyprint">
+                Port
+            chrome.runtime.connectNative(<span>string application</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-sendMessage">sendMessage</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.sendMessage(<span class="optional">string extensionId</span>, <span>any message</span>, <span class="optional">object options</span>, <span class="optional">function responseCallback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-sendNativeMessage">sendNativeMessage</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.sendNativeMessage(<span>string application</span>, <span>object message</span>, <span class="optional">function responseCallback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-getPlatformInfo">getPlatformInfo</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.getPlatformInfo(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="runtime.html#method-getPackageDirectoryEntry">getPackageDirectoryEntry</a> &minus;
+            <code class="prettyprint">
+            chrome.runtime.getPackageDirectoryEntry(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="runtime.html#event-onStartup">onStartup</a></td></tr>
+          <tr><td><a href="runtime.html#event-onInstalled">onInstalled</a></td></tr>
+          <tr><td><a href="runtime.html#event-onSuspend">onSuspend</a></td></tr>
+          <tr><td><a href="runtime.html#event-onSuspendCanceled">onSuspendCanceled</a></td></tr>
+          <tr><td><a href="runtime.html#event-onUpdateAvailable">onUpdateAvailable</a></td></tr>
+          <tr><td><a href="runtime.html#event-onBrowserUpdateAvailable">onBrowserUpdateAvailable</a></td></tr>
+          <tr><td><a href="runtime.html#event-onConnect">onConnect</a></td></tr>
+          <tr><td><a href="runtime.html#event-onConnectExternal">onConnectExternal</a></td></tr>
+          <tr><td><a href="runtime.html#event-onMessage">onMessage</a></td></tr>
+          <tr><td><a href="runtime.html#event-onMessageExternal">onMessageExternal</a></td></tr>
+          <tr><td><a href="runtime.html#event-onRestartRequired">onRestartRequired</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Port">Port</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>允许与其他页面双向通信的对象。</dd>
+                  <tr><th colspan="3" id="Port-properties">属性</th></tr>
+                  <tr id="property-Port-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-Port-disconnect">
+                    <td>function</td>
+                    <td>
+                        disconnect</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-Port-onDisconnect">
+                    <td>    <a href="events.html#type-Event">events.Event</a></td>
+                    <td>
+                        onDisconnect</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-Port-onMessage">
+                    <td>    <a href="events.html#type-Event">events.Event</a></td>
+                    <td>
+                        onMessage</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-Port-postMessage">
+                    <td>function</td>
+                    <td>
+                        postMessage</td>
+                    <td>
+                    
+                    </td>
+                  </tr><tr id="property-Port-sender">
+                    <td>    <a href="runtime.html#type-MessageSender">MessageSender</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        sender</td>
+                    <td>
+                    
+                    <p>
+                      <b>只有</b>当端口传递给 onConnect/onConnectExternal 监听器时才会存在该属性。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-MessageSender">MessageSender</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>包含有关发送消息或请求的脚本上下文信息的对象。</dd>
+                  <tr><th colspan="3" id="MessageSender-properties">属性</th></tr>
+                  <tr id="property-MessageSender-id">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      打开连接的扩展程序或应用的标识符（如果有的话）。
+                    </p></td>
+                  </tr><tr id="property-MessageSender-url">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        url</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      打开连接的页面或框架 URL（如果有的话），<strong>只有</strong>当连接从标签页或内容脚本打开时才会存在这一属性。
+                    </p></td>
+                  </tr><tr id="property-MessageSender-tlsChannelId">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        tlsChannelId</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      如果扩展程序或应用请求该属性并且可用，则为打开连接的网页的 TLS 通道标识符。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-PlatformInfo">PlatformInfo</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 36<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>包含当前平台相关信息的对象。</dd>
+                  <tr><th colspan="3" id="PlatformInfo-properties">属性</th></tr>
+                  <tr id="property-PlatformInfo-os">
+                    <td>enum of <code>"mac"</code>, <code>"win"</code>, <code>"android"</code>, <code>"cros"</code>, <code>"linux"</code>, or <code>"openbsd"</code></td>
+                    <td>
+                        os</td>
+                    <td>
+                    
+                    <p>
+                      当前运行 Chrome 浏览器的操作系统。
+                    </p></td>
+                  </tr><tr id="property-PlatformInfo-arch">
+                    <td>enum of <code>"arm"</code>, <code>"x86-32"</code>, or <code>"x86-64"</code></td>
+                    <td>
+                        arch</td>
+                    <td>
+                    
+                    <p>
+                      计算机的处理器架构。
+                    </p></td>
+                  </tr><tr id="property-PlatformInfo-nacl_arch">
+                    <td>enum of <code>"arm"</code>, <code>"x86-32"</code>, or <code>"x86-64"</code></td>
+                    <td>
+                        nacl_arch</td>
+                    <td>
+                    
+                    <p>
+                      Native Client 架构，在某些平台上可能和 arch 不同。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">  object</span></td>
+              <td><code id="property-lastError">chrome.runtime.lastError</code></td>
+              <td>
+                  如果发生错误，在 API 方法的回调函数执行的过程中将会定义该属性。
+                <table class="innerTable">
+                <thead><th colspan="3"><!--@Properties-->属性</th></thead>
+                  <tr id="property-lastError-message">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        message</td>
+                    <td>
+                    
+                    <p>
+                      有关发生错误的详情。
+                    </p></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="type_name">  string</span></td>
+              <td><code id="property-id">chrome.runtime.id</code></td>
+              <td>
+                  扩展程序/应用的标识符。
+              </td>
+            </tr>
+          </table>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getBackgroundPage"
+                  >getBackgroundPage
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.getBackgroundPage(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获取当前扩展程序/应用中正在运行的后台网页的 JavaScript window 对象。如果后台网页是事件页面，系统会确保在调用回调函数前它已经加载。如果没有后台网页，将会设置错误信息。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getBackgroundPage-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(Window backgroundPage) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-backgroundPage">
+                              <td>Window</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  backgroundPage</td>
+                              <td>
+                              
+                              <p>
+                                后台页面的 JavaScript window 对象。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getManifest"
+                  >getManifest
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              object
+              chrome.runtime.getManifest()
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  从清单文件中返回有关应用或扩展程序的详情，返回的对象是完整<a href="manifest.html">清单文件</a>序列化的结果。
+                </p>
+                  <h4 title=""><!--@Returns-->返回值</h4>
+                  <div>
+                    <table>
+                      <dd>清单文件详情。</dd>
+                    </table>
+                  </div>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getURL"
+                  >getURL
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              string
+              chrome.runtime.getURL(<span>string path</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  将应用或扩展程序安装目录内的相对路径转换为完全限定的 URL。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getURL-path">
+                      <td>string</td>
+                      <td>
+                          path</td>
+                      <td>
+                      
+                      <p>
+                        指向应用或扩展程序内资源的路径，相对于它的安装目录。
+                      </p></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setUninstallURL"
+                  >setUninstallURL
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.setUninstallURL(<span>string url</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Dev</strong> channel only.
+                  -->仅用于 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  设置卸载时访问的 URL，可以用来清理服务器上的数据、进行分析以及实现调查。最多不能超过 255 个字符。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setUninstallURL-url">
+                      <td>string</td>
+                      <td>
+                          url</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 34<!--@.--> 开始支持。
+                      </p>
+                      
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-reload"
+                  >reload
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.reload()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                </p>
+                <p>
+                  重新加载应用或扩展程序。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-requestUpdateCheck"
+                  >requestUpdateCheck
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.requestUpdateCheck(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                </p>
+                <p>
+                  为当前应用/扩展程序请求检查更新。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-requestUpdateCheck-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(enum of <code>"throttled"</code>, <code>"no_update"</code>, or <code>"update_available"</code> status, object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-status">
+                              <td>enum of <code>"throttled"</code>, <code>"no_update"</code>, or <code>"update_available"</code></td>
+                              <td>
+                                  status</td>
+                              <td>
+                              
+                              <p>
+                                检查更新的结果。
+                              </p></td>
+                            </tr>
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  details</td>
+                              <td>
+                              
+                              <p>
+                                如果更新可用的话，包含有关可用更新的更多信息。
+                              </p>  <table class="innerTable">
+                                  <tr id="property-details-version">
+                                    <td>string</td>
+                                    <td>
+                                        version</td>
+                                    <td>
+                                    
+                                    <p>
+                                      可用更新的版本。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-restart"
+                  >restart
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.restart()
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                </p>
+                <p>
+                  如果应用在信息亭模式下运行，则重新启动 Chrome OS 设备，否则不进行任何操作。
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-connect"
+                  >connect
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+                  <a href="runtime.html#type-Port">Port</a>
+              chrome.runtime.connect(<span class="optional">string extensionId</span>, <span class="optional">object connectInfo</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+                <p>
+                  尝试连接到扩展程序/应用中的连接监听者（例如后台网页）或其他扩展程序/应用，该方法可用于内容脚本连接到所属扩展程序进程、应用/扩展程序之间的通信以及<a href="manifest/externally_connectable.html">与网页通信</a>。注意，该方法不能连接到内容脚本中的监听者，扩展程序可以通过 <a href="../extensions/tabs.html#method-connect">tabs.connect</a> 连接到嵌入至标签页中的内容脚本。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-connect-extensionId">
+                      <td>string</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          extensionId</td>
+                      <td>
+                      
+                      <p>
+                        您需要连接的扩展程序或应用的标识符，如果省略，则会尝试连接到您自己的扩展程序。如果使用<a href="manifest/externally_connectable.html">与网页通信</a>的方式从网页发送消息则必须指定该参数。
+                      </p></td>
+                    </tr>
+                    <tr id="property-connect-connectInfo">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          connectInfo</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-connectInfo-name">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                name</td>
+                            <td>
+                            
+                            <p>
+                              将传递给监听连接事件的扩展程序进程的 onConnect 事件。
+                            </p></td>
+                          </tr><tr id="property-connectInfo-includeTlsChannelId">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                includeTlsChannelId</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              TLS 通道标识符是否会传递至 onConnectExternal 事件。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-connectNative"
+                  >connectNative
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+                  <a href="runtime.html#type-Port">Port</a>
+              chrome.runtime.connectNative(<span>string application</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                </p>
+                <p>
+                  连接到计算机上的原生应用程序。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-connectNative-application">
+                      <td>string</td>
+                      <td>
+                          application</td>
+                      <td>
+                      
+                      <p>
+                        要连接的已注册应用程序名称。
+                      </p></td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-sendMessage"
+                  >sendMessage
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.sendMessage(<span class="optional">string extensionId</span>, <span>any message</span>, <span class="optional">object options</span>, <span class="optional">function responseCallback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+                <p>
+                  向您的扩展程序/应用或另一个扩展程序/应用中的其他事件监听者发送单个消息。与 <a href="runtime.html#method-connect">runtime.connect</a> 类似，但是只发送单个消息（可以有响应）。如果向您自己的扩展程序发送消息，每个网页中都会产生 <a href="runtime.html#event-onMessage">runtime.onMessage</a> 事件；如果发送至另一个扩展程序则产生 <a href="runtime.html#event-onMessageExternal">runtime.onMessageExternal</a> 事件。注意，扩展程序不能使用该方法向内容脚本发送消息。要向内容脚本发送消息，请使用 <a href="../extensions/tabs.html#method-sendMessage">tabs.sendMessage</a>。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-sendMessage-extensionId">
+                      <td>string</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          extensionId</td>
+                      <td>
+                      
+                      <p>
+                        您需要发送消息的扩展程序或应用的标识符，如果省略，消息就发送到您自己的扩展程序/应用。如果使用<a href="manifest/externally_connectable.html">与网页通信</a>的方式从网页发送消息则必须指定该参数。
+                      </p></td>
+                    </tr>
+                    <tr id="property-sendMessage-message">
+                      <td>any</td>
+                      <td>
+                          message</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-sendMessage-options">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 32<!--@.--> 开始支持。
+                      </p>
+                      
+                        <table class="innerTable">
+                          <tr id="property-options-includeTlsChannelId">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                includeTlsChannelId</td>
+                            <td>
+                            
+                            <p>
+                              TLS 通道标识符是否会传递至 onMessageExternal 事件。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-sendMessage-responseCallback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          responseCallback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>responseCallback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>responseCallback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(any response) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-responseCallback-response">
+                              <td>any</td>
+                              <td>
+                                  response</td>
+                              <td>
+                              
+                              <p>
+                                消息处理程序发送的 JSON 响应对象。如果连接到扩展程序的过程中发生错误，调用这一回调函数时将不传递参数，并将 <a href="runtime.html#property-lastError">runtime.lastError</a> 设为错误消息。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-sendNativeMessage"
+                  >sendNativeMessage
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.sendNativeMessage(<span>string application</span>, <span>object message</span>, <span class="optional">function responseCallback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                </p>
+                <p>
+                  向原生应用程序发送单个消息。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-sendNativeMessage-application">
+                      <td>string</td>
+                      <td>
+                          application</td>
+                      <td>
+                      
+                      <p>
+                        原生消息通信宿主的名称。
+                      </p></td>
+                    </tr>
+                    <tr id="property-sendNativeMessage-message">
+                      <td>object</td>
+                      <td>
+                          message</td>
+                      <td>
+                      
+                      <p>
+                        传递给原生消息通信宿主的消息。
+                      </p></td>
+                    </tr>
+                    <tr id="property-sendNativeMessage-responseCallback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          responseCallback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>responseCallback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>responseCallback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(any response) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-responseCallback-response">
+                              <td>any</td>
+                              <td>
+                                  response</td>
+                              <td>
+                              
+                              <p>
+                                原生消息宿主发送的响应消息。如果连接到原生消息宿主的过程中发生错误，调用回调函数时不会传递参数，同时 <a href="runtime.html#property-lastError">runtime.lastError</a> 将设置为错误消息。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getPlatformInfo"
+                  >getPlatformInfo
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.getPlatformInfo(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 29<!--@.--> 开始支持。
+                </p>
+                <p>
+                  返回有关当前平台的信息。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getPlatformInfo-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        调用时返回结果。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="runtime.html#type-PlatformInfo">PlatformInfo</a> platformInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-platformInfo">
+                              <td>    <a href="runtime.html#type-PlatformInfo">PlatformInfo</a></td>
+                              <td>
+                                  platformInfo</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getPackageDirectoryEntry"
+                  >getPackageDirectoryEntry
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.runtime.getPackageDirectoryEntry(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 29<!--@.--> 开始支持。
+                </p>
+                <p>
+                  返回包目录对应的 DirectoryEntry（目录项）。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getPackageDirectoryEntry-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(DirectoryEntry directoryEntry) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-directoryEntry">
+                              <td>DirectoryEntry</td>
+                              <td>
+                                  directoryEntry</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onStartup">onStartup</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当安装了该扩展程序的配置文件第一次启动时产生。即使扩展程序以“分离式”隐身模式运行，启动隐身配置文件时也不会产生该事件。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onStartup.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onStartup-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onInstalled">onInstalled</h3>
+              <div class="description">
+            <p>
+                  当扩展程序第一次安装、更新至新版本或 Chrome 浏览器更新至新版本时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onInstalled.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onInstalled-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onInstalled-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    <p class="availability">
+                                      <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+                                    </p>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-reason">
+                                          <td>enum of <code>"install"</code>, <code>"update"</code>, <code>"chrome_update"</code>, or <code>"shared_module_update"</code></td>
+                                          <td>
+                                              reason</td>
+                                          <td>
+                                          
+                                          <p>
+                                            分发这一事件的原因。
+                                          </p></td>
+                                        </tr><tr id="property-details-previousVersion">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              previousVersion</td>
+                                          <td>
+                                          
+                                          <p>
+                                            表示已更新扩展程序的前一个版本，只有当 reason 为 'update' 时才存在。
+                                          </p></td>
+                                        </tr><tr id="property-details-id">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              id</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 29<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            Indicates the ID of the imported shared module extension which updated. This is present only if 'reason' is 'shared_module_update'.
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onSuspend">onSuspend</h3>
+              <div class="description">
+            <p>
+                  在事件页面即将卸载前发送，这样扩展程序就有机会进行清理。注意，由于页面即将卸载，处理该事件时开始的任何异步操作都不能保证完成。如果卸载前事件页面产生了更多活动，将产生 onSuspendCanceled 事件，并且事件页面不会卸载。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onSuspend.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onSuspend-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onSuspendCanceled">onSuspendCanceled</h3>
+              <div class="description">
+            <p>
+                  在 onSuspend 之后发送，表示应用最终不会被卸载。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onSuspendCanceled.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onSuspendCanceled-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onUpdateAvailable">onUpdateAvailable</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当更新可用时产生，然而由于应用当前还在运行，不能立即安装。如果您什么都不做，更新将在后台网页下一次卸载时安装。如果您希望快点安装，您可以显式调用 <a href="runtime.html#method-reload">runtime.reload</a>。如果您的扩展程序使用的是持久存在的后台网页，后台网页始终不会卸载，所以除非您响应该事件并调用 chrome.runtime.reload()，否则只有等到 Chrome 浏览器下一次重新启动时更新才会安装。如果没有处理程序监听该事件，并且您的扩展程序使用持久的后台网页，那么实际行为就和您调用 chrome.runtime.reload() 响应该事件一样。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onUpdateAvailable.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onUpdateAvailable-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onUpdateAvailable-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                    <p>
+                                      可用更新的清单文件详情。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-details-version">
+                                          <td>string</td>
+                                          <td>
+                                              version</td>
+                                          <td>
+                                          
+                                          <p>
+                                            可用更新的版本号。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onBrowserUpdateAvailable">onBrowserUpdateAvailable</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                  --> 开始<strong>弃用</strong>。<!--@
+                    -->请使用 <a href="runtime.html#event-onRestartRequired">runtime.onRestartRequired</a>。
+                </p>
+            <p>
+                  当 Chrome 浏览器的更新可用，但是由于需要浏览器重新启动而没有立即安装时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onBrowserUpdateAvailable.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onBrowserUpdateAvailable-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onConnect">onConnect</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当连接从扩展程序进程或内容脚本中发起时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onConnect.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onConnect-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="runtime.html#type-Port">Port</a> port) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onConnect-port">
+                                    <td>    <a href="runtime.html#type-Port">Port</a></td>
+                                    <td>
+                                        port</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onConnectExternal">onConnectExternal</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当连接从另一个扩展程序发起时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onConnectExternal.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onConnectExternal-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="runtime.html#type-Port">Port</a> port) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onConnectExternal-port">
+                                    <td>    <a href="runtime.html#type-Port">Port</a></td>
+                                    <td>
+                                        port</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onMessage">onMessage</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当消息从扩展程序进程或者内容脚本中发送时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onMessage.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onMessage-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(any message,     <a href="runtime.html#type-MessageSender">MessageSender</a> sender, function sendResponse) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onMessage-message">
+                                    <td>any</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        message</td>
+                                    <td>
+                                    
+                                    <p>
+                                      调用脚本发送的消息。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onMessage-sender">
+                                    <td>    <a href="runtime.html#type-MessageSender">MessageSender</a></td>
+                                    <td>
+                                        sender</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onMessage-sendResponse">
+                                    <td>function</td>
+                                    <td>
+                                        sendResponse</td>
+                                    <td>
+                                    
+                                    <p>
+                                      当您产生响应时调用（最多一次）的函数，参数可以是任何可转化为 JSON 的对象。如果您在同一个文档中有一个以上的 <code>onMessage</code> 事件处理函数，只有其中一个可以发送响应。当事件处理函数返回时，该函数将失效，除非您在事件处理函数中返回 true，表示您希望通过异步方式发送响应（这样，与另一端之间的消息通道将会保持打开状态，直到调用了 <code>sendResponse</code>）。
+                                    </p>    <p>
+                                            <!--@The <em>sendResponse</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>sendResponse</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(any response) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-sendResponse-response">
+                                            <td>any</td>
+                                            <td>
+                                                response</td>
+                                            <td>
+                                            
+                                            <p>
+                                              要发送的 JSON 响应对象。
+                                            </p></td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+                    <h4 title="">监听器返回值</h4>
+                    <dl>
+                      <dt><span class="property">
+                        ( boolean )
+                      </span></dt>
+                      <dd>
+                      如果您需要在事件监听器返回后再调用 <code>sendResponse</code> 请在事件监听器中返回 true。
+                      </dd>
+                    </dl>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onMessageExternal">onMessageExternal</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当消息从另一个扩展程序/应用发送时产生。不能在内容脚本中使用。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onMessageExternal.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onMessageExternal-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(any message,     <a href="runtime.html#type-MessageSender">MessageSender</a> sender, function sendResponse) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onMessageExternal-message">
+                                    <td>any</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        message</td>
+                                    <td>
+                                    
+                                    <p>
+                                      调用脚本发送的消息。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onMessageExternal-sender">
+                                    <td>    <a href="runtime.html#type-MessageSender">MessageSender</a></td>
+                                    <td>
+                                        sender</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onMessageExternal-sendResponse">
+                                    <td>function</td>
+                                    <td>
+                                        sendResponse</td>
+                                    <td>
+                                    
+                                    <p>
+                                      当您产生响应时调用（最多一次）的函数，参数可以是任何可转化为 JSON 的对象。如果您在同一个文档中有一个以上的 <code>onMessage</code> 事件处理函数，只有其中一个可以发送响应。当事件处理函数返回时，该函数将失效，除非您在事件处理函数中返回 true，表示您希望通过异步方式发送响应（这样，与另一端之间的消息通道将会保持打开状态，直到调用了 <code>sendResponse</code>）。
+                                    </p>    <p>
+                                            <!--@The <em>sendResponse</em> parameter should be a function
+                                            that looks like this:-->
+                                            <em>sendResponse</em> 参数应该是一个如下形式的函数：
+                                        </p>
+                                      <code class="prettyprint">function(any response) <span class="subdued">{...}</span>;</code>
+                                        <table class="innerTable">
+                                          <tr id="property-sendResponse-response">
+                                            <td>any</td>
+                                            <td>
+                                                response</td>
+                                            <td>
+                                            
+                                            <p>
+                                              要发送的 JSON 响应对象。
+                                            </p></td>
+                                          </tr>
+                                        </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+                    <h4 title="">监听器返回值</h4>
+                    <dl>
+                      <dt><span class="property">
+                        ( boolean )
+                      </span></dt>
+                      <dd>
+                      如果您需要在事件监听器返回后再调用 <code>sendResponse</code> 请在事件监听器中返回 true。
+                      </dd>
+                    </dl>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onRestartRequired">onRestartRequired</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 29<!--@.--> 开始支持。
+                </p>
+            <p>
+                  应用或者运行它的设备需要重新启动时产生，应用应该尽早关闭所有窗口，以便开始重新启动。如果应用什么都不做，超过 24 小时的宽限期后会强制重新启动。目前，只有 Chrome OS 的 Kiosk 应用会产生该事件。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.runtime.onRestartRequired.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onRestartRequired-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(enum of <code>"app_update"</code>, <code>"os_update"</code>, or <code>"periodic"</code> reason) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onRestartRequired-reason">
+                                    <td>enum of <code>"app_update"</code>, <code>"os_update"</code>, or <code>"periodic"</code></td>
+                                    <td>
+                                        reason</td>
+                                    <td>
+                                    
+                                    <p>
+                                      产生该事件的原因。由于应用更新至新版本而需要重新启动时使用 'app_update'，由于浏览器/操作系统更新到新版本而需要重新启动时使用 'os_update'，当系统运行的时间超过企业策略中设置的允许值时使用 'periodic'。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

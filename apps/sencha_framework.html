@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>用 Sencha Ext JS 建立应用 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="sencha_framework.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<meta name="doc-family" content="apps">
+<h1><!--@Build Apps with Sencha Ext JS-->用 Sencha Ext JS 建立应用</h1>
+
+<p>
+<!--@The goal of this doc is to get you started
+on building Chrome Apps with the-->
+该文档的目的是使您初步了解如何使用
+<a href="http://www.sencha.com/products/extjs">Sencha Ext JS</a><!--@ framework.
+To achieve this goal,
+we will dive into a media player app built by Sencha.
+The <a href="https://github.com/GoogleChrome/sencha-video-player-app">source code</a>
+and <a href="http://senchaprosvcs.github.com/GooglePlayer/docs/output/#!/api">API Documentation</a> are available on GitHub.-->
+框架建立 Chrome 应用。要实现这一目的，我们将会深入讨论一个通过 Sencha
+建立的媒体播放器应用，<a href="https://github.com/GoogleChrome/sencha-video-player-app">源代码</a>与
+<a href="http://senchaprosvcs.github.com/GooglePlayer/docs/output/#!/api">API 文档</a>可以在在
+GitHub 上访问。
+</p>
+
+<p>
+<!--@This app discovers a user's available media servers,
+including media devices connected to the pc and
+software that manages media over the network. 
+Users can browse media, play over the network,
+or save offline.-->
+该应用程序搜索用户可用的媒体服务器，包括连接到 PC
+的媒体设备及通过网络管理媒体的软件。用户可以浏览媒体、通过网络播放或者离线保存。
+</p>
+
+<p><!--@Here are the key things you must do
+to build a media player app using Sencha Ext JS:-->
+如下是您使用 Sencha Ext JS 建立媒体播放器应用时必须做的几个关键步骤：
+</p>
+
+<ul>
+  <li><!--@Create manifest, <code>manifest.json</code>.-->
+  创建清单文件 <code>manifest.json</code>。
+  </li>
+  <li><!--@Create <a href="app_lifecycle#eventpage">event page</a>,
+    <code>background.js</code>.-->
+    创建<a href="app_lifecycle.html#eventpage">事件页面</a>
+    <code>background.js</code>。
+  </li>
+  <li><!--@<a href="app_external#sandboxing">Sandbox</a> app's logic.-->
+  用<a href="app_external.html#sandboxing">沙盒</a>屏蔽应用的逻辑。
+  </li>
+  <li><!--@Communicate between Chrome App and sandboxed files.-->
+  在 Chrome 应用与经过沙盒屏蔽的文件之间通信。
+  </li>
+  <li><!--@Discover media servers.-->搜索媒体服务器。</li>
+  <li><!--@Explore and play media.-->浏览与播放媒体。</li>
+  <li><!--@Save media offline.-->离线保存媒体。</li>
+</ul>
+
+<h2 id="first"><!--@Create manifest-->创建清单文件</h2>
+
+<p>
+<!--@All Chrome Apps require a
+<a href="manifest">manifest file</a>
+which contains the information Chrome needs to launch apps.
+As indicated in the manifest,
+the media player app is "offline_enabled";
+media assets can be saved locally,
+accessed and played regardless of connectivity.-->
+所有 Chrome 应用都需要一个清单文件，包含 Chrome
+浏览器执行应用时需要的信息。如<a href="manifest.html">清单文件</a>中所述，媒体播放器应用是
+"offline_enabled"（在离线状态下也能使用），媒体资源可以在本地保存、访问及播放，不管有没有网络连接。
+</p>
+
+<p>
+<!--@The "sandbox" field is used
+to sandbox the app's main logic in a unique origin.
+All sandboxed content is exempt from the Chrome App
+<a href="contentSecurityPolicy">Content Security Policy</a>,
+but cannot directly access the Chrome App APIs. 
+The manifest also includes the "socket" permission;
+the media player app uses the <a href="socket">socket API</a>
+to connect to a media server over the network.-->
+"sandbox"
+字段用来将应用的主要逻辑通过沙盒屏蔽在一个唯一的来源中，所有经过沙盒屏蔽的内容不受 Chrome 应用<a href="contentSecurityPolicy.html">内容安全策略</a>的限制，但也不能直接访问 Chrome 应用的
+API。清单文件还包含了 "socket"
+权限，因为媒体播放器应用使用<a href="socket.html">套接字 API</a>
+通过网络连接到媒体服务器。
+</p>
+
+<pre data-filename="manifest.json">
+{
+    "name": "Video Player",
+    "description": "Features network media discovery and playlist management",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "offline_enabled": true,
+    "app": {
+        "background": {
+            "scripts": [
+                "background.js"
+            ]
+        }
+    },
+    ...
+
+    "sandbox": {
+        "pages": ["sandbox.html"]
+    },
+    "permissions": [
+        "experimental",
+        "http://*/*",
+        "unlimitedStorage",
+        {
+            "socket": [
+                "tcp-connect",
+                "udp-send-to",
+                "udp-bind"
+            ]
+        }
+    ]
+}
+</pre>
+
+<h2 id="second"><!--@Create event page-->创建事件页面</h2>
+
+<p>
+<!--@All Chrome Apps require <code>background.js</code>
+to launch the application.
+The media player's main page, <code>index.html</code>,
+opens in a window with the specified dimensions:-->
+所有 Chrome 应用都需要 <code>background.js</code>
+来执行应用。媒体播放器的主页面 <code>index.html</code>
+将会在指定大小的窗口中打开：
+</p>
+
+<pre data-filename="background.js">
+chrome.app.runtime.onLaunched.addListener(function(launchData) {
+    var opt = {
+        width: 1000,
+        height: 700
+    };
+
+    chrome.app.window.create('index.html', opt, function (win) {
+        win.launchData = launchData;
+    });
+
+});
+</pre>
+
+<h2 id="three"><!--@Sandbox app's logic-->通过沙盒屏蔽应用的逻辑</h2>
+
+<p><!--@Chrome Apps run in a controlled environment
+that enforces a strict <a href="contentSecurityPolicy">Content Security Policy (CSP)</a>.
+The media player app needs some higher privileges to render the Ext JS components.
+To comply with CSP and execute the app logic,
+the app's main page, <code>index.html</code>, creates an iframe
+that acts as a sandbox environment:-->
+Chrome 应用程序在一个受控制的环境中运行，强制实施严格的<a href="contentSecurityPolicy.html"
+>内容安全策略（CSP）</a>，而媒体播放器应用需要某些更高的权限来渲染 Ext JS
+组件。为了遵循 CSP 的同时执行应用的逻辑，应用的主页面
+<code>index.html</code> 创建了一个 iframe，作为一个经过沙盒屏蔽的环境：
+
+<pre data-filename="index.html">
+&lt;iframe id="sandbox-frame" sandbox="allow-scripts" src="sandbox.html">&lt;/iframe>
+</pre>
+
+<p><!--@The--> iframe <!--@points to-->指向 <a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/sandbox.html">sandbox.html</a><!--@ which includes the files required for the Ext JS application:-->，包含了
+Ext JS 应用需要的文件：
+</p>
+
+<pre data-filename="sandbox.html">
+&lt;html&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="resources/css/app.css" /&gt;
+    &lt;script src="sdk/ext-all-dev.js"&gt;&lt;/script&gt;
+    &lt;script src="lib/ext/data/PostMessage.js"&gt;&lt;/script&gt;
+    &lt;script src="lib/ChromeProxy.js"&gt;&lt;/script&gt;
+    &lt;script src="app.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+<!--@The--> <a href="http://senchaprosvcs.github.com/GooglePlayer/docs/output/source/app.html#VP-Application">app.js</a> <!--@script executes all the Ext JS code and renders the media player views.
+Since this script is sandboxed, it cannot directly access the Chrome App APIs.
+Communication between <code>app.js</code> and non-sandboxed files is done using the
+<a href="https://developer.mozilla.org/en-US/docs/DOM/window.postMessage">HTML5 Post Message API</a>.-->
+脚本执行所有 Ext JS
+代码，并渲染媒体播放器的视图。由于该脚本经过沙盒屏蔽，它无法直接访问 Chrome
+应用的 API，但可以使用
+<a href="https://developer.mozilla.org/en-US/docs/DOM/window.postMessage">HTML5
+消息传递 API</a> 实现 <code>app.js</code> 与不经过沙盒屏蔽的文件间的通信。
+</p>
+
+<h2 id="four"><!--@Communicate between files-->在文件之间通信</h2>
+
+<p>
+<!--@In order for the media player app to access Chrome Apps APIs,
+like query the network for media servers, -->为了使媒体播放应用访问 Chrome
+应用的 API，例如查询网络上的媒体服务器，<code>app.js</code><!--@
+posts messages to -->
+向
+<a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/index.js">index.js</a><!--@.
+Unlike the sandboxed <code>app.js</code>,
+<code>index.js</code> can directly access the Chrome Apps APIs.-->
+传递消息。和经过沙盒屏蔽的 <code>app.js</code> 不同，<code>index.js</code>
+可以直接访问 Chrome 应用 API。
+</p>
+
+<p>
+<code>index.js</code> <!--@creates the iframe:-->获取框架：
+</p>
+
+<pre data-filename="index.js">
+var iframe = document.getElementById('sandbox-frame');
+
+iframeWindow = iframe.contentWindow;
+</pre>
+
+<p>
+<!--@And listens for messages from the sandboxed files:-->
+然后监听来自经过沙盒屏蔽的文件的消息：
+</p>
+
+<pre data-filename="index.js">
+window.addEventListener('message', function(e) {
+    var data= e.data,
+        key = data.key;
+
+    console.log('[index.js] Post Message received with key ' + key);
+
+    switch (key) {
+        case 'extension-baseurl':
+            extensionBaseUrl(data);
+            break;
+
+        case 'upnp-discover':
+            upnpDiscover(data);
+            break;
+
+        case 'upnp-browse':
+            upnpBrowse(data);
+            break;
+
+        case 'play-media':
+            playMedia(data);
+            break;
+
+        case 'download-media':
+            downloadMedia(data);
+            break;
+
+        case 'cancel-download':
+            cancelDownload(data);
+            break;
+
+        default:
+            console.log('[index.js] unidentified key for Post Message: "' + key + '"');
+    }
+}, false);
+</pre>
+
+<p>
+<!--@In the following example,
+<code>app.js</code> sends a message to <code>index.js</code>
+requesting the key 'extension-baseurl':-->
+在以下例子中，<code>app.js</code> 向 <code>index.js</code>
+发送消息，请求键为 'extension-baseurl'：
+</p>
+
+<pre data-filename="app.js">
+Ext.data.PostMessage.request({
+    key: 'extension-baseurl',
+    success: function(data) {
+        //...
+    }
+});
+</pre>
+
+<p>
+<code>index.js</code> <!--@receives the request, assigns the result,
+and replies by sending the Base URL back:-->
+接收请求，设置结果，通过发回基本 URL 的方式回复：
+</p>
+
+<pre data-filename="index.js">
+function extensionBaseUrl(data) {
+    data.result = chrome.extension.getURL('/');
+    iframeWindow.postMessage(data, '*');
+}
+</pre>
+
+<h2 id="five"><!--@Discover media servers-->搜索媒体服务器</h2>
+
+<p>
+<!--@There's a lot that goes into discovering media servers.
+At a high level, the discovery workflow is initiated
+by a user action to search for available media servers.
+The <a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/app/controller/MediaServers.js">MediaServer controller</a>
+posts a message to <code>index.js</code>;
+<code>index.js</code> listens for this message and when received,
+calls <a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/lib/Upnp.js">Upnp.js</a>.-->
+搜索媒体服务器涉及到许多细节。从较高的层次来看，搜索的工作流程由用户搜索可用媒体服务器的操作发起，<a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/app/controller/MediaServers.js"
+>媒体服务器控制器</a>向
+<code>index.js</code> 发送消息，<code>index.js</code> 监听该消息，收到时调用
+<a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/lib/Upnp.js">Upnp.js</a>。
+</p>
+
+<p>
+<!--@The <code>Upnp library</code> uses the Chrome App
+<a href="app_network">socket API</a>
+to connect the media player app with any discovered media servers
+and receive media data from the media server.
+<code>Upnp.js</code> also uses
+<a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/lib/soapclient.js">soapclient.js</a>
+to parse the media server data.
+The remainder of this section describes this workflow in more detail.-->
+<code>Upnp</code> 库使用 Chrome 应用的<a href="app_network.html">套接字
+API</a>
+将所有发现的媒体服务器连接到媒体播放器应用，并从媒体服务器接收媒体数据。<code>Upnp.js</code>
+还使用 <a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/lib/soapclient.js">soapclient.js</a>
+分析媒体服务器的数据。这一节剩下的内容更详细地描述这一工作流程。
+</p>
+
+<h3 id="post"><!--@Post message-->传递消息</h3>
+
+<p>
+<!--@When a user clicks the Media Servers button in the center of the media player app,
+<code>MediaServers.js</code> calls <code>discoverServers()</code>.
+This function first checks for any outstanding discovery requests,
+and if true, aborts them so the new request can be initiated.
+Next, the controller posts a message to <code>index.js</code>
+with a key upnp-discovery, and two callback listeners:-->
+当用户单击媒体播放器应用中央的媒体服务器按钮时，<code>MediaServers</code>
+调用 <code>discoverServers()</code>。该函数首先检查是否有正在进行的发现请求，如果有的话终止它们以便发起新的请求。接着，控制器向
+<code>index.js</code> 传递消息，键为
+upnp-discovery，并包含两个回调函数监听器：
+</p>
+
+<pre data-filename="MediaServers.js">
+me.activeDiscoverRequest = Ext.data.PostMessage.request({
+    key: 'upnp-discover',
+    success: function(data) {
+        var items = [];
+        delete me.activeDiscoverRequest;
+
+        if (serversGraph.isDestroyed) {
+            return;
+        }
+
+        mainBtn.isLoading = false;
+        mainBtn.removeCls('pop-in');
+        mainBtn.setIconCls('ico-server');
+        mainBtn.setText('Media Servers');
+
+        //add servers
+        Ext.each(data, function(server) {
+            var icon,
+                urlBase = server.urlBase;
+
+            if (urlBase) {
+                if (urlBase.substr(urlBase.length-1, 1) === '/'){
+                        urlBase = urlBase.substr(0, urlBase.length-1);
+                }
+            }
+
+            if (server.icons &amp;&amp; server.icons.length) {
+                if (server.icons[1]) {
+                    icon = server.icons[1].url;
+                }
+                else {
+                    icon = server.icons[0].url;
+                }
+
+                icon = urlBase + icon;
+            }
+
+            items.push({
+                itemId: server.id,
+                text: server.friendlyName,
+                icon: icon,
+                data: server
+            });
+        });
+
+        ...
+    },
+    failure: function() {
+        delete me.activeDiscoverRequest;
+                
+        if (serversGraph.isDestroyed) {
+            return;
+        }
+                
+        mainBtn.isLoading = false;
+        mainBtn.removeCls('pop-in');
+        mainBtn.setIconCls('ico-error');
+        mainBtn.setText('Error...click to retry');
+    }
+});
+</pre>
+
+<h3 id="call"><!--@Call-->调用 upnpDiscover()</h3>
+
+<p>
+<code>index.js</code> <!--@listens
+for the 'upnp-discover' message from <code>app.js</code>
+and responds by calling <code>upnpDiscover()</code>.
+When a media server is discovered,
+<code>index.js</code> extracts the media server domain from the parameters,
+saves the server locally, formats the media server data,
+and pushes the data to the <code>MediaServer</code> controller.-->
+监听来自 <code>app.js</code> 的 'upnp-discover' 消息，并通过调用
+<code>upnpDiscover()</code> 响应。当发现某个媒体服务器时，<code>index.js</code>
+从参数中提取媒体服务器的域名，在本地保存服务器，格式化媒体服务器数据，并将数据传递给 <code>MediaServer</code> 控制器。
+</p>
+
+<h3 id="parse"><!--@Parse media server data-->分析媒体服务器数据</h3>
+
+<p>
+<!--@When <code>Upnp.js</code> discovers a new media server,
+it then retrieves a description of the device
+and sends a Soaprequest to browse and parse the media server data;
+<code>soapclient.js</code> parses the media elements by tag name
+into a document.-->
+当 <code>Upnp.js</code> 发现新的媒体服务器时，它会获取设备的描述，并发出
+Soaprequest 浏览并分析媒体服务器数据，<code>soapclient.js</code>
+通过文档中的标签名称分析媒体元素。
+</p>
+
+<h3 id="connect"><!--@Connect to media server-->连接到媒体服务器</h3>
+
+<p>
+<code>Upnp.js</code> <!--@connects to discovered media servers
+and receives media data using the Chrome Apps socket API:-->
+连接到发现的媒体服务器，并使用 Chrome 应用的套接字 API 接收媒体数据：
+</p>
+
+<pre data-filename="Upnp.js">
+socket.create("udp", {}, function(info) {
+    var socketId = info.socketId;
+        
+    //bind locally
+    socket.bind(socketId, "0.0.0.0", 0, function(info) {
+            
+        //pack upnp message
+        var message = String.toBuffer(UPNP_MESSAGE);
+            
+        //broadcast to upnp
+        socket.sendTo(socketId, message, UPNP_ADDRESS, UPNP_PORT, function(info) {
+                
+            // Wait 1 second
+            setTimeout(function() {
+                    
+                //receive
+                socket.recvFrom(socketId, function(info) {
+
+                    //unpack message
+                    var data        = String.fromBuffer(info.data),
+                        servers     = [],
+                        locationReg = /^location:/i;
+                            
+                    //extract location info
+                    if (data) {
+                        data = data.split("\r\n");
+                            
+                        data.forEach(function(value) {
+                            if (locationReg.test(value)){
+                                servers.push(value.replace(locationReg, "").trim());
+                            }
+                        });
+                    }
+                            
+                    //success
+                    callback(servers);
+                });
+                    
+            }, 1000);
+        });
+    });
+});
+</pre>
+
+
+<h2 id="six"><!--@Explore and play media-->浏览和播放媒体</h2>
+
+<p>
+<!--@The-->
+<a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/app/controller/MediaExplorer.js">MediaExplorer <!--@controller-->控制器</a><!--@
+lists all the media files inside a media server folder
+and is responsible for updating the breadcrumb navigation
+in the media player app window.
+When a user selects a media file,
+the controller posts a message to <code>index.js</code>
+with the 'play-media' key:-->列出媒体服务器文件夹中的所有媒体文件，并负责更新媒体播放器应用窗口中的面包屑导航。当用户选中媒体文件时，控制器向
+<code>index.js</code> 传递消息，键为 'play-media'。
+</p>
+
+<pre data-filename="MediaExplorer.js">
+onFileDblClick: function(explorer, record) {
+    var serverPanel, node,
+        type    = record.get('type'),
+        url     = record.get('url'),
+        name    = record.get('name'),
+        serverId= record.get('serverId');
+            
+    if (type === 'audio' || type === 'video') {
+        Ext.data.PostMessage.request({
+            key     : 'play-media',
+            params  : {
+                url: url,
+                name: name,
+                type: type
+            }
+        });
+    }
+},
+</pre>
+
+<p>
+<code>index.js</code> <!--@listens for this post message and
+responds by calling <code>playMedia()</code>:-->
+监听传递过来的该消息，并通过调用 <code>playMedia()</code> 响应。
+</p>
+
+<pre data-filename="index.js">
+function playMedia(data) {
+    var type        = data.params.type,
+        url         = data.params.url,
+        playerCt    = document.getElementById('player-ct'),
+        audioBody   = document.getElementById('audio-body'),
+        videoBody   = document.getElementById('video-body'),
+        mediaEl     = playerCt.getElementsByTagName(type)[0],
+        mediaBody   = type === 'video' ? videoBody : audioBody,
+        isLocal     = false;
+
+    //save data
+    filePlaying = {
+        url : url,
+        type: type,
+        name: data.params.name
+    };
+
+    //hide body els
+    audioBody.style.display = 'none';
+    videoBody.style.display = 'none';
+
+    var animEnd = function(e) {
+
+        //show body el
+        mediaBody.style.display = '';
+
+        //play media
+        mediaEl.play();
+
+        //clear listeners
+        playerCt.removeEventListener( 'webkitTransitionEnd', animEnd, false );
+        animEnd = null;
+    };
+
+    //load media
+    mediaEl.src = url;
+    mediaEl.load();
+
+    //animate in player
+    playerCt.addEventListener( 'webkitTransitionEnd', animEnd, false );
+    playerCt.style.webkitTransform = "translateY(0)";
+
+    //reply postmessage
+    data.result = true;
+    sendMessage(data);
+}
+</pre>
+
+<h2 id="seven"><!--@Save media offline-->离线保存媒体</h2>
+
+<p>
+<!--@Most of the hard work to save media offline is done by the-->
+离线保存媒体的大部分繁重任务由
+<a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/lib/filer.js">filer.js <!--@library-->库</a><!--@.
+You can read more this library in-->来实现，您可以在
+<a href="http://ericbidelman.tumblr.com/post/14866798359/introducing-filer-js"><!--@Introducing -->filer.js 简介</a><!--@.-->中了解有关该库的更多内容。
+</p>
+
+<p>
+<!--@The process kicks off when a user selects one or more files
+and initiates the 'Take offline' action.
+The
+-->当用户选择一个或多个文件，并执行
+'Take offline'（离线保存）操作时，将开始这一过程。<a href="https://github.com/GoogleChrome/sencha-video-player-app/blob/master/app/controller/MediaExplorer.js">MediaExplorer <!--@controller-->控制器</a><!--@ posts a message to <code>index.js</code>
+with a key 'download-media'; <code>index.js</code> listens for this message
+and calls the <code>downloadMedia()</code> function
+to initiate the download process:-->向 <code>index.js</code> 传递消息，键为
+'download-media'。<code>index.js</code> 监听该消息并调用
+<code>downloadMedia()</code> 函数开始下载过程：
+</p>
+
+<pre data-filename="index.js">
+function downloadMedia(data) {
+        DownloadProcess.run(data.params.files, function() {
+            data.result = true;
+            sendMessage(data);
+        });
+    }
+</pre>
+
+<p>
+<!--@The <code>DownloadProcess</code> utility method creates an xhr request
+to get data from the media server and waits for completion status.
+This initiates the onload callback which checks the received content
+and saves the data locally using the <code>filer.js</code> function:-->
+<code>DownloadProcess</code> 实用方法创建 XHR
+请求从媒体服务器获取数据，并等待完成状态。然后调用 onload
+回调函数，检查接收到的内容并使用 <code>filer.js</code> 函数在本地保存数据：
+</p>
+
+<pre data-filename="filer.js">
+filer.write(
+    saveUrl,
+    {
+        data: Util.arrayBufferToBlob(fileArrayBuf),
+        type: contentType
+    },
+    function(fileEntry, fileWriter) {
+
+        console.log('file saved!');
+
+        //increment downloaded
+        me.completedFiles++;
+
+        //if reached the end, finalize the process
+        if (me.completedFiles === me.totalFiles) {
+
+            sendMessage({
+                key             : 'download-progresss',
+                totalFiles      : me.totalFiles,
+                completedFiles  : me.completedFiles
+            });
+
+            me.completedFiles = me.totalFiles = me.percentage = me.downloadedFiles = 0;
+            delete me.percentages;
+
+            //reload local
+            loadLocalFiles(callback);
+        }
+    },
+    function(e) {
+        console.log(e);
+    }
+);
+</pre>
+
+<p>
+<!--@When the download process is finished,
+<code>MediaExplorer</code> updates the media file list and the media player tree panel.-->
+下载过程完成后，<code>MediaExplorer</code>
+更新媒体文件列表以及媒体播放器的树窗格。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">MVC 架构和框架</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="app_frameworks.html">关于 MVC 架构</a>
+                        </li>
+                        <li>
+                          <a href="angular_framework.html">使用 AngularJS 建立应用</a>
+                        </li>
+                        <li>
+                          <a href="sencha_framework.html" class="active">使用 SenchaJS 建立应用</a>
+                        </li>
+                        <li>
+                          <a href="game_engines.html">游戏引擎</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="sencha_framework.html#first"
+          >创建清单文件</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="sencha_framework.html#second"
+          >创建事件页面</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="sencha_framework.html#three"
+          >通过沙盒屏蔽应用的逻辑</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="sencha_framework.html#four"
+          >在文件之间通信</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="sencha_framework.html#five"
+          >搜索媒体服务器</a>
+          <ol class="toc">
+              <li><a data-list-item href="sencha_framework.html#post"
+                     >传递消息</a>
+              </li>
+              <li><a data-list-item href="sencha_framework.html#call"
+                     >调用 upnpDiscover()</a>
+              </li>
+              <li><a data-list-item href="sencha_framework.html#parse"
+                     >分析媒体服务器数据</a>
+              </li>
+              <li><a data-list-item href="sencha_framework.html#connect"
+                     >连接到媒体服务器</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="sencha_framework.html#six"
+          >浏览和播放媒体</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="sencha_framework.html#seven"
+          >离线保存媒体</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.events - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="events.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.events</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            <code>chrome.events</code> 命名空间包含 API 分发事件使用的通用类型，以便在某些有意义的事情发生时通知您。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 21<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <p>
+      <!--@An <code>Event</code> is an object
+      that allows you to be notified
+      when something interesting happens.
+      Here's an example of using the
+      <code>chrome.alarms.onAlarm</code> event
+      to be notified whenever an alarm has elapsed:-->
+      当发生一些您感兴趣的事情时，<code>Event</code>
+      对象可以使您收到通知。如下是一个使用 <code>chrome.alarms.onAlarm</code>
+      事件的例子，每当定时器触发时就收到通知：
+      </p>
+      
+      <pre>
+      chrome.alarms.onAlarm.<b>addListener(function(</b>alarm<b>) {</b>
+        appendToLog('alarms.onAlarm --'
+                    + ' 名称：'          + alarm.name
+                    + ' 计划的时间：' + alarm.scheduledTime);
+      <b>});</b>
+      </pre>
+      
+      <p>
+      <!--@As the example shows,
+      you register for notification using <code>addListener()</code>.
+      The argument to <code>addListener()</code>
+      is always a function that you define to handle the event,
+      but the parameters to the function depend on
+      which event you're handling.
+      Checking the documentation for
+      <a href=/apps/alarms#event-onAlarm>alarms.onAlarm</a>,
+      you can see that the function has a single parameter:
+      an <a href=/apps/alarms#type-Alarm>alarms.Alarm</a> object
+      that has details about the elapsed alarm.-->
+      如这一例子所示，您使用 <code>addListener()</code>
+      注册来接收通知。<code>addListener()</code>
+      的参数总是一个您定义的处理事件的函数，但是函数的参数取决于您处理的事件。参考
+      <a href="alarms.html#event-onAlarm">alarms.onAlarm</a> 的文档，您会看到该函数有一个参数：包含已触发定时器的
+      <a href="alarms.html#type-Alarm">alarms.Alarm</a> 对象。
+      </p>
+      
+      <!--@Example APIs using Events:
+      <a href=/apps/alarms>alarms</a>,
+      <a href=/apps/app.runtime>app.runtime</a>,
+      <a href=/apps/app.window>app.window</a>,
+      <a href=/apps/i18n>i18n</a>,
+      <a href=/apps/identity>identity</a>,
+      <a href=/apps/runtime>runtime</a>.
+      Most <a href="api_index">chrome APIs</a> do.-->
+      使用事件的 API
+      有很多，例如：<a href="alarms.html">alarms</a>、<a href="app_runtime.html">app.runtime</a>、<a href="app_window.html">app.window</a>、<a href="i18n.html">i18n</a>、<a href="identity.html">identity</a>、<a href="runtime.html">runtime</a>，大部分
+      <a href="api_index.html">Chrome API</a> 都是如此。
+      
+          </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="events.html#type-Rule">Rule</a></td></tr>
+          <tr><td><a href="events.html#type-Event">Event</a></td></tr>
+          <tr><td><a href="events.html#type-UrlFilter">UrlFilter</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Rule">Rule</h3>
+              <table>
+                <dd>对用于处理事件的一条声明式规则的描述。</dd>
+                  <tr><th colspan="3" id="Rule-properties">属性</th></tr>
+                  <tr id="property-Rule-id">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      用于引用这一条规则的可选标志符。
+                    </p></td>
+                  </tr><tr id="property-Rule-tags">
+                    <td>array of string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        tags</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      标签可以用来注解规则，并针对一系列规则进行操作。
+                    </p></td>
+                  </tr><tr id="property-Rule-conditions">
+                    <td>array of any</td>
+                    <td>
+                        conditions</td>
+                    <td>
+                    
+                    <p>
+                      可以触发指定操作的条件列表。
+                    </p></td>
+                  </tr><tr id="property-Rule-actions">
+                    <td>array of any</td>
+                    <td>
+                        actions</td>
+                    <td>
+                    
+                    <p>
+                      任何一个条件满足时触发的操作列表。
+                    </p></td>
+                  </tr><tr id="property-Rule-priority">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        priority</td>
+                    <td>
+                    
+                    <p>
+                      该规则的优先级（可选），默认为 100。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-Event">Event</h3>
+              <table>
+                <dd>允许添加、删除 Chrome 浏览器事件监听器的对象。</dd>
+                  <tr><th colspan="3" id="Event-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-Event-addListener"
+                        >addListener
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    Event.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        为事件注册事件监听器的回调函数。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-addListener-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              事件发生时调用，该函数的参数取决于事件类型。
+                            </p>    <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-Event-removeListener"
+                        >removeListener
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    Event.removeListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        为事件取消注册事件监听器的回调函数。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-removeListener-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              要取消注册的监听器。
+                            </p>    <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-Event-hasListener"
+                        >hasListener
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    boolean
+                    Event.hasListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-hasListener-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              要测试注册状态的监听器。
+                            </p>    <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-Event-hasListeners"
+                        >hasListeners
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    boolean
+                    Event.hasListeners()
+                    </code>
+                    </div>
+                    <div class="description">
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-Event-addRules"
+                        >addRules
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    Event.addRules(<span>array of     <a href="events.html#type-Rule">Rule</a> rules</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        注册规则来处理事件。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-addRules-rules">
+                            <td>array of     <a href="events.html#type-Rule">Rule</a></td>
+                            <td>
+                                rules</td>
+                            <td>
+                            
+                            <p>
+                              要注册的规则，它们不会替换之前注册的规则。
+                            </p></td>
+                          </tr>
+                          <tr id="property-addRules-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              规则注册后调用。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(array of     <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-rules">
+                                    <td>array of     <a href="events.html#type-Rule">Rule</a></td>
+                                    <td>
+                                        rules</td>
+                                    <td>
+                                    
+                                    <p>
+                                      已注册的规则，可选参数将用默认值填充。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-Event-getRules"
+                        >getRules
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    Event.getRules(<span class="optional">array of string ruleIdentifiers</span>, <span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        返回当前注册的规则。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-getRules-ruleIdentifiers">
+                            <td>array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                ruleIdentifiers</td>
+                            <td>
+                            
+                            <p>
+                              如果传递了数组，只返回该数组中包含的标志符所对应的规则。
+                            </p></td>
+                          </tr>
+                          <tr id="property-getRules-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              调用时传递已注册的规则。
+                            </p>    <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(array of     <a href="events.html#type-Rule">Rule</a> rules) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-rules">
+                                    <td>array of     <a href="events.html#type-Rule">Rule</a></td>
+                                    <td>
+                                        rules</td>
+                                    <td>
+                                    
+                                    <p>
+                                      已注册的规则，可选参数将用默认值填充。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-Event-removeRules"
+                        >removeRules
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    Event.removeRules(<span class="optional">array of string ruleIdentifiers</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        取消注册当前已注册的规则。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-removeRules-ruleIdentifiers">
+                            <td>array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                ruleIdentifiers</td>
+                            <td>
+                            
+                            <p>
+                              如果传递了数组，只移除该数组中包含的标志符所对应的规则。
+                            </p></td>
+                          </tr>
+                          <tr id="property-removeRules-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              规则移除后调用。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-UrlFilter">UrlFilter</h3>
+              <table>
+                <dd>通过多种条件过滤 URL，参见<a href='events.html#filtered'>事件过滤</a>。所有条件都区分大小写。</dd>
+                  <tr><th colspan="3" id="UrlFilter-properties">属性</th></tr>
+                  <tr id="property-UrlFilter-hostContains">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        hostContains</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的主机名包含指定字符串则匹配。要测试主机名是否包含前缀 'foo'，请使用 hostContains: '.foo'，将匹配 'www.foobar.com' 和 'foo.com'，因为主机名前面会添加隐式的点。类似地，hostContains 可以用于匹配某一部分的后缀（'foo.'），或者精确匹配某一部分（'.foo.'）。最后一部分的后缀匹配和精确匹配需要单独用 hostSuffix 实现，因为主机名末尾不会添加隐式的点。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-hostEquals">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        hostEquals</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的主机名与指定字符串相等则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-hostPrefix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        hostPrefix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的主机名以指定字符串开始则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-hostSuffix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        hostSuffix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的主机名以指定字符串结尾则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-pathContains">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        pathContains</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的路径部分包含指定字符串则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-pathEquals">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        pathEquals</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的路径部分与指定字符串相等则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-pathPrefix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        pathPrefix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的路径部分以指定字符串开始则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-pathSuffix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        pathSuffix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的路径部分以指定字符串结尾则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-queryContains">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        queryContains</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的查询部分包含指定字符串则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-queryEquals">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        queryEquals</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的查询部分与指定字符串相等则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-queryPrefix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        queryPrefix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的查询部分以指定字符串开始则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-querySuffix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        querySuffix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 中的查询部分以指定字符串结尾则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-urlContains">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        urlContains</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL（不包括片段标识符）包含指定字符串则匹配。端口号如果匹配默认端口号则将从 URL 中去除。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-urlEquals">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        urlEquals</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL（没有片段标识符）与指定字符串相等则匹配。端口号如果匹配默认端口号则将从 URL 中去除。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-urlMatches">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        urlMatches</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      如果 URL（不包括片段标识符）匹配指定正则表达式则匹配。端口号如果匹配默认端口号则将从 URL 中去除。正则表达式使用 <a href="https://code.google.com/p/re2/wiki/Syntax">RE2 语法</a>。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-originAndPathMatches">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        originAndPathMatches</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 28<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      如果不包含查询部分和片段标识符的 URL 匹配指定的正则表达式则匹配。如果端口号匹配默认端口号，则会从 URL 中去除。正则表达式使用 <a href="https://code.google.com/p/re2/wiki/Syntax">RE2 语法</a>。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-urlPrefix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        urlPrefix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL（不包括片段标识符）以指定字符串开始则匹配。端口号如果匹配默认端口号则将从 URL 中去除。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-urlSuffix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        urlSuffix</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL（不包括片段标识符）以指定字符串结尾则匹配。端口号如果匹配默认端口号则将从 URL 中去除。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-schemes">
+                    <td>array of string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        schemes</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 的协议与数组中指定的任意一种协议相同则匹配。
+                    </p></td>
+                  </tr><tr id="property-UrlFilter-ports">
+                    <td>array of integer or array of integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        ports</td>
+                    <td>
+                    
+                    <p>
+                      如果 URL 的端口包含在指定的端口列表中则匹配。例如 [80, 443, [1000, 1200]] 匹配端口为 80、443 或者在 1000—2000 范围内的所有请求。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

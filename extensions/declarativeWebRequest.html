@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.declarativeWebRequest - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="declarativeWebRequest.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<p class="warning">
+  <!--@This API is in beta. It is only available to Chrome users on the-->
+  该 API 还在 beta 测试中，仅对
+  <a href="https://www.google.com/landing/chrome/beta/">beta <!--@channel-->分支</a><!--@ and-->和
+  <a href="http://www.chromium.org/getting-involved/dev-channel">dev <!--@channel-->分支</a><!--@.-->的
+  Chrome 用户可用。
+</p>
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.declarativeWebRequest</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            <em><strong>注意：</strong>该 API 目前无人维护，什么时候正式支持还没有具体的计划。</em>使用 <code>chrome.declarativeWebRequest</code> API 实时地拦截、阻止或修改请求，它比 <a href='webRequest.html'><code>chrome.webRequest</code> API</a> 要快得多，因为您注册的规则在浏览器中而不是 JavaScript 引擎中求值，这样就减少了来回延迟，效率更高。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@<strong>Beta</strong> and <strong>Dev</strong> channels only.
+            -->仅用于 <strong>Beta</strong> 和 <strong>Dev</strong> 分支。<!--@
+            
+             --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "declarativeWebRequest"
+                    </span>
+            <br>
+            <a href="declare_permissions.html#host-permissions">
+            主机权限
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      
+      <p>
+      <!--@You must declare the "declarativeWebRequest" permission in the
+      <a href="manifest">extension manifest</a> to use this API,
+      along with <a href="declare_permissions">host permissions</a>.-->
+      您必须在<a href="manifest.html">扩展程序的清单文件</a>中声明
+      "declarativeWebRequest" 权限和<a
+      href="declare_permissions.html">主机权限</a>才能使用这一
+      API。
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+      <b>  "permissions": [
+          "declarativeWebRequest",
+          "*://*/*"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <p>
+      <!--@Note that certain types of non-sensitive actions do not require host
+      permissions:-->
+      注意，某些类型的不敏感操作不需要主机权限：
+      <ul>
+        <li><code>CancelRequest</code>
+        <li><code>IgnoreRules</code>
+        <li><code>RedirectToEmptyDocument</code>
+        <li><code>RedirectToTransparentImage</code>
+      </ul>
+      </p>
+      <p>
+      对于您希望触发消息的网络请求，<!--@The --><code>SendMessageToExtension</code> <!--@action requires host permissions
+      for any hosts whose network requests you want to trigger a message.-->
+      操作要求对应主机的主机权限。
+      </p>
+      <p>
+      <!--@All other actions require host permissions to all URLs.-->
+      所有其他操作要求访问所有 URL 的主机权限。
+      </p>
+      <p>
+      <!--@As an example, if <code>"*://*.google.com/*"</code> is the only host permission an
+      extension has, than such an extension may set up a rule to-->
+      例如，如果扩展程序唯一拥有的主机权限是
+      <code>"*://*.google.com/*"</code>，这样的扩展程序可以设置如下规则：
+      <ul>
+        <li> <!--@cancel a request to "http://www.google.com" or "http://anything.else.com"-->
+        取消发送自“http://www.google.com”或“http://anything.else.com”的请求
+        <li> <!--@send a message when navigating to "http://www.google.com" but not to
+      "http://something.else.com"-->
+        导航至“http://www.google.com”时发送消息，但是导航至“http://something.else.com”时不能发送消息。
+      </ul>
+      <!--@The extension cannot set up a rule to redirect "http://www.google.com" to
+      "http://mail.google.com".-->
+      扩展程序不能设置规则，将“http://www.google.com”重定向至“http://mail.google.com”。
+      </p>
+      
+      <h2 id="rules"><!--@Rules-->规则</h2>
+      
+      <p>
+      <!--@The Declarative Web Request API follows the concepts of the <a
+        href="events#declarative">Declarative API</a>. You can register rules to
+      the <code>chrome.declarativeWebRequest.onRequest</code> event object.-->
+      声明式网络请求 API 遵循<a href="events.html#declarative">声明式 API</a>
+      的概念，您可以向 <code>chrome.declarativeWebRequest.onRequest</code>
+      事件对象注册规则。
+      </p>
+      
+      <p>
+      <!--@The Declarative Web Request API supports a single type of match criteria, the
+      <code>RequestMatcher</code>. The <code>RequestMatcher</code> matches network
+      requests if and only if all listed criteria are met. The following
+      <code>RequestMatcher</code> would match a network request when the user enters
+      "http://www.example.com" in the URL bar:-->
+      声明式网络请求API支持一种匹配条件的类型，即
+      <code>RequestMatcher</code>，当且仅当列出的所有条件都满足时
+      <code>RequestMatcher</code> 才会匹配网络请求。当用户在 URL
+      栏中输入“http://www.example.com”时如下的 <code>RequestMatcher</code>
+      将匹配这一网络请求：
+      </p>
+      
+      <pre>
+      var matcher = new chrome.declarativeWebRequest.RequestMatcher({
+        url: { hostSuffix: 'example.com', schemes: ['http'] },
+        resourceType: ['main_frame']
+        });
+      </pre>
+      
+      <p>
+      <!--@Requests to "https://www.example.com" would be rejected by the
+      <code>RequestMatcher</code> due to the scheme. Also all requests for an embedded
+      iframe would be rejected due to the <code>resourceType</code>.-->
+      向“https://www.example.com”发出的请求因为协议的原因不会被
+      <code>RequestMatcher</code> 匹配，并且由于
+      <code>resourceType</code>，所有内嵌框架的请求也不会匹配。
+      </p>
+      
+      <p class="note">
+      <strong><!--@Note:-->注意：</strong><!--@ All conditions and actions are created via a constructor
+      as shown in the example above.-->所有条件与操作都必须通过上述例子中所示的构造函数创建。
+      <p>
+      
+      <p>
+      <!--@In order to cancel all requests to "example.com", you can define a rule as
+      follows:-->
+      为了取消所有发送至“example.com”的请求，您可以定义如下规则：
+      </p>
+      <pre>
+      var rule = {
+        conditions: [
+          new chrome.declarativeWebRequest.RequestMatcher({
+            url: { hostSuffix: 'example.com' } })
+        ],
+        actions: [
+          new chrome.declarativeWebRequest.CancelRequest()
+        ]};
+      </pre>
+      
+      <p>
+      <!--@In order to cancel all requests to "example.com" and "foobar.com", you can add a
+      second condition, as each condition is sufficient to trigger all specified
+      actions:-->
+      为了取消发送至“example.com”以及“foobar.com”的所有请求，您可以添加第二个条件，因为每个条件都足以触发所有指定的操作：
+      </p>
+      <pre>
+      var rule2 = {
+        conditions: [
+          new chrome.declarativeWebRequest.RequestMatcher({
+            url: { hostSuffix: 'example.com' } }),
+          new chrome.declarativeWebRequest.RequestMatcher({
+            url: { hostSuffix: 'foobar.com' } })
+        ],
+        actions: [
+          new chrome.declarativeWebRequest.CancelRequest()
+        ]};
+      </pre>
+      
+      <p>
+      <!--@Register rules as follows:-->
+      如下所示注册规则：
+      </p>
+      <pre>
+      chrome.declarativeWebRequest.onRequest.addRules([rule2]);
+      </pre>
+      
+      <p class="note">
+      <strong><!--@Note:-->注意：</strong><!--@ You should always register or unregister rules in bulk rather than
+      individually because each of these operations recreates internal data
+      structures.  This re-creation is computationally expensive but facilitates a
+      very fast URL matching algorithm for hundreds of thousands of URLs. The
+      <a href="events#performance">Performance section</a> of the <a href=/extensions/events>Events</a> API provides further performance tips.-->您始终应该一次性批量注册或取消注册规则，而不是单独进行，因为每一次这样的操作都需要重新创建内部的数据结构，这一重新创建的过程需要大量的计算，但是可以利用一种极快的
+      URL 匹配算法，用于几十万个 URL。<a href="events.html">事件</a> API
+      的<a href="events.html#performance">性能部分</a>提供了进一步的性能提示。
+      </p>
+      
+      
+      <h2 id="evaluation"><!--@Evaluation of conditions and actions-->条件与操作的求值</h2>
+      
+      <p>
+      <!--@The Declarative Web Request API follows the
+      <a href="webRequest#life_cycle">Life cycle model for web requests</a> of
+      the <a href="webRequest">Web Request API</a>. This means that conditions
+      can only be tested at specific stages of a web request and, likewise, actions
+      can also only be executed at specific stages. The following tables list the
+      request stages that are compatible with conditions and actions.-->
+      声明式网络请求 API 遵循<a href="webRequest.html#life_cycle">网络请求 API
+      的生命周期模型</a>，这意味着条件只能在网络请求的特定阶段测试，同样地，操作也只能在特定阶段执行。下表列出了与条件和操作兼容的请求阶段。
+      </p>
+      
+      <p>
+      <table>
+        <tr>
+          <th colspan="5"><!--@Request stages during which condition attributes can be processed.-->能够处理条件属性的请求阶段：
+        </tr>
+        <tr>
+          <th><!--@Condition attribute-->条件属性
+          <th>onBeforeRequest
+          <th>onBeforeSendHeaders
+          <th>onHeadersReceived
+          <th>onAuthRequired
+        </tr>
+        <tr><td>url<td>✓<td>✓<td>✓<td>✓
+        <tr><td>resourceType<td>✓<td>✓<td>✓<td>✓
+        <tr><td>contentType<td><td><td>✓<td>
+        <tr><td>excludeContentType<td><td><td>✓<td>
+        <tr><td>responseHeaders<td><td><td>✓<td>
+        <tr><td>excludeResponseHeaders<td><td><td>✓<td>
+        <tr><td>requestHeaders<td><td>✓<td><td>
+        <tr><td>excludeRequestHeaders<td><td>✓<td><td>
+        <tr><td>thirdPartyForCookies<td>✓<td>✓<td>✓<td>✓
+        <tr>
+          <th colspan="5" style="padding-top:2em"><!--@Request stages during which actions can be executed.-->能够执行操作的请求阶段：
+        </tr>
+        <tr>
+          <th><!--@Event-->操作
+          <th>onBeforeRequest
+          <th>onBeforeSendHeaders
+          <th>onHeadersReceived
+          <th>onAuthRequired
+        </tr>
+        <tr><td>AddRequestCookie<td><td>✓<td><td>
+        <tr><td>AddResponseCookie<td><td><td>✓<td>
+        <tr><td>AddResponseHeader<td><td><td>✓<td>
+        <tr><td>CancelRequest<td>✓<td>✓<td>✓<td>✓
+        <tr><td>EditRequestCookie<td><td>✓<td><td>
+        <tr><td>EditResponseCookie<td><td><td>✓<td>
+        <tr><td>IgnoreRules<td>✓<td>✓<td>✓<td>✓
+        <tr><td>RedirectByRegEx<td>✓<td><td>✓<td>
+        <tr><td>RedirectRequest<td>✓<td><td>✓<td>
+        <tr><td>RedirectToEmptyDocument<td>✓<td><td>✓<td>
+        <tr><td>RedirectToTransparentImage<td>✓<td><td>✓<td>
+        <tr><td>RemoveRequestCookie<td><td>✓<td><td>
+        <tr><td>RemoveRequestHeader<td><td>✓<td><td>
+        <tr><td>RemoveResponseCookie<td><td><td>✓<td>
+        <tr><td>RemoveResponseHeader<td><td><td>✓<td>
+        <tr><td>SendMessageToExtension<td>✓<td>✓<td>✓<td>✓
+        <tr><td>SetRequestHeader<td><td>✓<td><td>
+      </table>
+      </p>
+      
+      <p>
+      <strong><!--@Note:-->注意：</strong><!--@ Applicable stages can be further constrained by using the
+      "stages" attribute.-->适用的阶段可以使用 "stages" 属性进一步地约束。
+      </p>
+      <p>
+      <strong><!--@Note:-->注：</strong><!--@ Redirects initiated by a redirect action use the original
+      request method for the redirect, with one exception: If the redirect is
+      initiated at the onHeadersReceived stage, then the redirect will be issued using
+      the GET method.-->重定向操作产生的重定向通常使用原来的请求方法，以下情况例外：如果在
+      onHeadersReceived 阶段产生了重定向，重定向请求将使用 GET 方法发出。
+      </p>
+      <p>
+      <strong><!--@Example:-->例如：</strong><!--@ It is possible to combine a
+      <code>new chrome.declarativeWebRequest.RequestMatcher({contentType: ["image/jpeg"]})</code>
+      condition with a <code>new chrome.declarativeWebRequest.CancelRequest()</code>
+      action because both of them can be evaluated in the onHeadersReceived stage.
+      It is, however, impossible to combine the request matcher with a
+      <code>new chrome.declarativeWebRequest.SetRequestHeader()</code>
+      because request headers cannot be set any more by the time the content type has been terminated.-->可以将
+      <code>new chrome.declarativeWebRequest.RequestMatcher({contentType: ["image/jpeg"]))</code>
+      条件与
+      <code>new chrome.declarativeWebRequest.CancelRequest()</code>
+      操作组合，因为它们都可以在 onHeadersReceived
+      阶段求值，然而不能将该请求匹配器与
+      <code>new chrome.declarativeWebRequest.SetRequestHeader()</code>
+      组合，因为内容类型确定后就不能再设置请求标头了。
+      </p>
+      
+      <h2 id="precedences"><!--@Using priorities to override rules-->使用优先级覆盖规则</h2>
+      
+      <p>
+      <!--@Rules can be associated with priorities as described in the
+      <a href="events#declarative">Events API</a>. This mechanism can be used
+      to express exceptions. The following example will block all requests to
+      images named "evil.jpg" except on the server "myserver.com".-->
+      规则中可以包含优先级，如<a href="events.html#declarative">事件 API</a>
+      中所述，这种机制可以用来表达例外。如下例子将阻止除了来自服务器
+      "myserver.com" 以外所有名称为 "evil.jpg" 的图片请求，。
+      </p>
+      
+      <pre>
+      var rule1 = {
+        priority: 100,
+        conditions: [
+          new chrome.declarativeWebRequest.RequestMatcher({
+              url: { pathEquals: 'evil.jpg' } })
+        ],
+        actions: [
+          new chrome.declarativeWebRequest.CancelRequest()
+        ]
+      };
+      var rule2 = {
+        priority: 1000,
+        conditions: [
+          new chrome.declarativeWebRequest.RequestMatcher({
+            url: { hostSuffix: '.myserver.com' } })
+        ],
+        actions: [
+          new chrome.declarativeWebRequest.IgnoreRules({
+            lowerPriorityThan: 1000 })
+        ]
+      };
+      chrome.declarativeWebRequest.onRequest.addRules([rule1, rule2]);
+      </pre>
+      
+      <p>
+      <!--@It is important to recognize that the <code>IgnoreRules</code> action is not
+      persisted across <a href="#evaluation">request stages</a>. All conditions of
+      all rules are evaluated at each stage of a web request. If an
+      <code>IgnoreRules</code> action is executed, it applies only to other actions
+      that are executed for the same web request in the same stage.-->
+      值得重视的是，<code>IgnoreRules</code>
+      操作并不会在<a href="declarativeWebRequest.html#evaluation">请求阶段</a>之间保留。所有规则的所有条件都在每一个网络请求阶段求值，如果执行了
+      <code>IgnoreRules</code>
+      操作，它仅应用于同一网络请求在同一阶段执行的其他操作。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-HeaderFilter">HeaderFilter</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RequestMatcher">RequestMatcher</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-CancelRequest">CancelRequest</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RedirectRequest">RedirectRequest</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RedirectToTransparentImage">RedirectToTransparentImage</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RedirectToEmptyDocument">RedirectToEmptyDocument</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RedirectByRegEx">RedirectByRegEx</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-SetRequestHeader">SetRequestHeader</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RemoveRequestHeader">RemoveRequestHeader</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-AddResponseHeader">AddResponseHeader</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RemoveResponseHeader">RemoveResponseHeader</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-IgnoreRules">IgnoreRules</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-SendMessageToExtension">SendMessageToExtension</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RequestCookie">RequestCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-ResponseCookie">ResponseCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-FilterResponseCookie">FilterResponseCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-AddRequestCookie">AddRequestCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-AddResponseCookie">AddResponseCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-EditRequestCookie">EditRequestCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-EditResponseCookie">EditResponseCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RemoveRequestCookie">RemoveRequestCookie</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#type-RemoveResponseCookie">RemoveResponseCookie</a></td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="declarativeWebRequest.html#event-onRequest">onRequest</a></td></tr>
+          <tr><td><a href="declarativeWebRequest.html#event-onMessage">onMessage</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-HeaderFilter">HeaderFilter</h3>
+              <table>
+                <dd>通过各种条件过滤请求标头，多个条件将同时求值。</dd>
+                  <tr><th colspan="3" id="HeaderFilter-properties">属性</th></tr>
+                  <tr id="property-HeaderFilter-namePrefix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        namePrefix</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的名称以指定字符串开头则匹配。
+                    </p></td>
+                  </tr><tr id="property-HeaderFilter-nameSuffix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        nameSuffix</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的名称以指定字符串结尾则匹配。
+                    </p></td>
+                  </tr><tr id="property-HeaderFilter-nameContains">
+                    <td>array of string or string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        nameContains</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的名称包含所有指定的字符串则匹配。
+                    </p></td>
+                  </tr><tr id="property-HeaderFilter-nameEquals">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        nameEquals</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的名称与指定字符串相同则匹配。
+                    </p></td>
+                  </tr><tr id="property-HeaderFilter-valuePrefix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        valuePrefix</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的值以指定字符串开头则匹配。
+                    </p></td>
+                  </tr><tr id="property-HeaderFilter-valueSuffix">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        valueSuffix</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的值以指定字符串结尾则匹配。
+                    </p></td>
+                  </tr><tr id="property-HeaderFilter-valueContains">
+                    <td>array of string or string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        valueContains</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的值包含所有指定的字符串则匹配。
+                    </p></td>
+                  </tr><tr id="property-HeaderFilter-valueEquals">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        valueEquals</td>
+                    <td>
+                    
+                    <p>
+                      如果标头的值与指定字符串相同则匹配。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RequestMatcher">RequestMatcher</h3>
+              <table>
+                <dd>通过各种条件匹配网络事件。</dd>
+                  <tr><th colspan="3" id="RequestMatcher-properties">属性</th></tr>
+                  <tr id="property-RequestMatcher-url">
+                    <td>    <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      如果请求所对应的 URL 满足 UrlFilter 的条件则匹配。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-firstPartyForCookiesUrl">
+                    <td>    <a href="events.html#type-UrlFilter">events.UrlFilter</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        firstPartyForCookiesUrl</td>
+                    <td>
+                    
+                    <p>
+                      如果请求的“第一方”URL 满足 UrlFilter 的条件则匹配，请求的“第一方”URL（如果存在的话）可能与请求的目标 URL 不同，描述的是相对于第三方 Cookie 检查的“第一方”。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-resourceType">
+                    <td>array of enum of <code>"main_frame"</code>, <code>"sub_frame"</code>, <code>"stylesheet"</code>, <code>"script"</code>, <code>"image"</code>, <code>"object"</code>, <code>"xmlhttprequest"</code>, or <code>"other"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        resourceType</td>
+                    <td>
+                    
+                    <p>
+                      如果请求的类型包含在列表中则匹配，不匹配指定的任何类型的请求将被过滤出去。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-contentType">
+                    <td>array of string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        contentType</td>
+                    <td>
+                    
+                    <p>
+                      如果响应的 MIME 媒体类型（来自 HTTP Content-Type 标头）包含在列表中则匹配。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-excludeContentType">
+                    <td>array of string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        excludeContentType</td>
+                    <td>
+                    
+                    <p>
+                      如果响应的 MIME 媒体类型（来自 HTTP Content-Type 标头）<em>没有</em>包含在列表中则匹配。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-requestHeaders">
+                    <td>array of     <a href="declarativeWebRequest.html#type-HeaderFilter">HeaderFilter</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        requestHeaders</td>
+                    <td>
+                    
+                    <p>
+                      如果某些请求标头匹配 HeaderFilter 中的某一个则匹配该请求。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-excludeRequestHeaders">
+                    <td>array of     <a href="declarativeWebRequest.html#type-HeaderFilter">HeaderFilter</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        excludeRequestHeaders</td>
+                    <td>
+                    
+                    <p>
+                      如果请求标头都不匹配任何一个 HeaderFilter 则匹配该请求。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-responseHeaders">
+                    <td>array of     <a href="declarativeWebRequest.html#type-HeaderFilter">HeaderFilter</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        responseHeaders</td>
+                    <td>
+                    
+                    <p>
+                      如果某些响应标头匹配 HeaderFilter 中的某一个则匹配该请求。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-excludeResponseHeaders">
+                    <td>array of     <a href="declarativeWebRequest.html#type-HeaderFilter">HeaderFilter</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        excludeResponseHeaders</td>
+                    <td>
+                    
+                    <p>
+                      如果响应标头都不匹配任何一个 HeaderFilter 则匹配该请求。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-thirdPartyForCookies">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        thirdPartyForCookies</td>
+                    <td>
+                    
+                    <p>
+                      如果设为 true，则匹配受第三方 Cookie 策略约束的请求；如果设为 false，则匹配所有其他请求。
+                    </p></td>
+                  </tr><tr id="property-RequestMatcher-stages">
+                    <td>array of enum of <code>"onBeforeRequest"</code>, <code>"onBeforeSendHeaders"</code>, <code>"onHeadersReceived"</code>, or <code>"onAuthRequired"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        stages</td>
+                    <td>
+                    
+                    <p>
+                      包含描述阶段的字符串列表，允许的值包括 'onBeforeRequest'、'onBeforeSendHeaders'、'onHeadersReceived'、'onAuthRequired'。如果该属性存在的话，它会将适用的阶段限制在这一列表中。注意整个条件只能在与所有属性兼容的阶段中适用。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-CancelRequest">CancelRequest</h3>
+              <table>
+                <dd>声明式事件操作，取消网络请求。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RedirectRequest">RedirectRequest</h3>
+              <table>
+                <dd>声明式事件操作，重定向网络请求。</dd>
+                  <tr><th colspan="3" id="RedirectRequest-properties">属性</th></tr>
+                  <tr id="property-RedirectRequest-redirectUrl">
+                    <td>string</td>
+                    <td>
+                        redirectUrl</td>
+                    <td>
+                    
+                    <p>
+                      请求重定向的目标。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RedirectToTransparentImage">RedirectToTransparentImage</h3>
+              <table>
+                <dd>声明式事件操作，将网络请求重定向至透明图片。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RedirectToEmptyDocument">RedirectToEmptyDocument</h3>
+              <table>
+                <dd>声明式事件操作，将网络请求重定向至空文档。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RedirectByRegEx">RedirectByRegEx</h3>
+              <table>
+                <dd>对 URL 应用正则表达式，重定向请求。正则表达式采用 <a href="http://code.google.com/p/re2/wiki/Syntax">RE2 语法</a>。</dd>
+                  <tr><th colspan="3" id="RedirectByRegEx-properties">属性</th></tr>
+                  <tr id="property-RedirectByRegEx-from">
+                    <td>string</td>
+                    <td>
+                        from</td>
+                    <td>
+                    
+                    <p>
+                      匹配表达式，可以包含捕获性分组。为了更接近 JavaScript 正则表达式，捕获性分组以 Perl 语法（$1、$2……），而不是 RE2 语法（\1、\2……）引用。
+                    </p></td>
+                  </tr><tr id="property-RedirectByRegEx-to">
+                    <td>string</td>
+                    <td>
+                        to</td>
+                    <td>
+                    
+                    <p>
+                      目标表达式。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-SetRequestHeader">SetRequestHeader</h3>
+              <table>
+                <dd>将指定名称的请求标头设置为指定值。如果指定名称的标头原来不存在，则会创建新的。标头名称的比较不区分大小写，且每个请求中每个请求标头名称只会出现一次。</dd>
+                  <tr><th colspan="3" id="SetRequestHeader-properties">属性</th></tr>
+                  <tr id="property-SetRequestHeader-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      HTTP 请求标头的名称。
+                    </p></td>
+                  </tr><tr id="property-SetRequestHeader-value">
+                    <td>string</td>
+                    <td>
+                        value</td>
+                    <td>
+                    
+                    <p>
+                      HTTP 请求标头的值。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RemoveRequestHeader">RemoveRequestHeader</h3>
+              <table>
+                <dd>移除指定名称的请求标头。不要在同一请求的同一标头名称上同时使用 SetRequestHeader 和 RemoveRequestHeader。每个请求中每个请求标头名称只会出现一次。</dd>
+                  <tr><th colspan="3" id="RemoveRequestHeader-properties">属性</th></tr>
+                  <tr id="property-RemoveRequestHeader-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      HTTP 请求标头的名称（不区分大小写）。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-AddResponseHeader">AddResponseHeader</h3>
+              <table>
+                <dd>向当前网络请求的响应中添加响应标头。由于多个响应标头可能会使用相同的名称，您需要首先删除然后再添加新的响应标头才能完成替换。</dd>
+                  <tr><th colspan="3" id="AddResponseHeader-properties">属性</th></tr>
+                  <tr id="property-AddResponseHeader-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      HTTP 响应标头的名称。
+                    </p></td>
+                  </tr><tr id="property-AddResponseHeader-value">
+                    <td>string</td>
+                    <td>
+                        value</td>
+                    <td>
+                    
+                    <p>
+                      HTTP 响应标头的值。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RemoveResponseHeader">RemoveResponseHeader</h3>
+              <table>
+                <dd>删除指定名称和值的所有响应标头。</dd>
+                  <tr><th colspan="3" id="RemoveResponseHeader-properties">属性</th></tr>
+                  <tr id="property-RemoveResponseHeader-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      HTTP 请求标头的名称（不区分大小写）。
+                    </p></td>
+                  </tr><tr id="property-RemoveResponseHeader-value">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        value</td>
+                    <td>
+                    
+                    <p>
+                      HTTP 响应标头的值（不区分大小写）。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-IgnoreRules">IgnoreRules</h3>
+              <table>
+                <dd>排除所有匹配指定条件的规则。</dd>
+                  <tr><th colspan="3" id="IgnoreRules-properties">属性</th></tr>
+                  <tr id="property-IgnoreRules-lowerPriorityThan">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        lowerPriorityThan</td>
+                    <td>
+                    
+                    <p>
+                      如果设置的话，将忽略优先级低于指定值的规则。这一界限不是持久的，它只会影响同一网络请求阶段的规则与它们对应的操作。
+                    </p></td>
+                  </tr><tr id="property-IgnoreRules-hasTag">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        hasTag</td>
+                    <td>
+                    
+                    <p>
+                      如果设置的话，包含指定标签的规则将被忽略。这一忽略不是持久的，它只影响同一网络请求阶段的规则及其操作。注意，规则按照优先级递减的顺序执行，该操作只会影响优先级低于当前规则的规则，具有相同优先级的规则可能会也可能不会被忽略。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-SendMessageToExtension">SendMessageToExtension</h3>
+              <table>
+                <dd>触发 <a href="declarativeWebRequest.html#event-onMessage">declarativeWebRequest.onMessage</a> 事件。</dd>
+                  <tr><th colspan="3" id="SendMessageToExtension-properties">属性</th></tr>
+                  <tr id="property-SendMessageToExtension-message">
+                    <td>string</td>
+                    <td>
+                        message</td>
+                    <td>
+                    
+                    <p>
+                      传递给事件处理函数的词典中 <code>message</code> 属性的值。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RequestCookie">RequestCookie</h3>
+              <table>
+                <dd>用于过滤或指定 HTTP 请求中的 Cookie。</dd>
+                  <tr><th colspan="3" id="RequestCookie-properties">属性</th></tr>
+                  <tr id="property-RequestCookie-name">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的名称。
+                    </p></td>
+                  </tr><tr id="property-RequestCookie-value">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        value</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的值，可以填充在双引号中。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ResponseCookie">ResponseCookie</h3>
+              <table>
+                <dd>用于指定 HTTP 响应中的 Cookie。</dd>
+                  <tr><th colspan="3" id="ResponseCookie-properties">属性</th></tr>
+                  <tr id="property-ResponseCookie-name">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的名称。
+                    </p></td>
+                  </tr><tr id="property-ResponseCookie-value">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        value</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的值，可以填充在双引号中。
+                    </p></td>
+                  </tr><tr id="property-ResponseCookie-expires">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        expires</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Expires 属性值。
+                    </p></td>
+                  </tr><tr id="property-ResponseCookie-maxAge">
+                    <td>double</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxAge</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Max-Age 属性值。
+                    </p></td>
+                  </tr><tr id="property-ResponseCookie-domain">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        domain</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Domain 属性值。
+                    </p></td>
+                  </tr><tr id="property-ResponseCookie-path">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        path</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Path 属性值。
+                    </p></td>
+                  </tr><tr id="property-ResponseCookie-secure">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        secure</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Secure 属性是否存在。
+                    </p></td>
+                  </tr><tr id="property-ResponseCookie-httpOnly">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        httpOnly</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 HttpOnly 属性是否存在。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-FilterResponseCookie">FilterResponseCookie</h3>
+              <table>
+                <dd>用于 HTTP 响应 Cookie 的过滤器。</dd>
+                  <tr><th colspan="3" id="FilterResponseCookie-properties">属性</th></tr>
+                  <tr id="property-FilterResponseCookie-name">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的名称。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-value">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        value</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的值，可以用双引号填充。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-expires">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        expires</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Expires 属性值。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-maxAge">
+                    <td>double</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        maxAge</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Max-Age 属性值。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-domain">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        domain</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Domain 属性值。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-path">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        path</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Path 属性值。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-secure">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        secure</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 Secure 属性是否存在。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-httpOnly">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        httpOnly</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的 HttpOnly 属性是否存在。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-ageUpperBound">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        ageUpperBound</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 生命周期的上界（包含）（以当前时间之后多少秒的形式指定），只有过期日期时间在区间 [现在, 现在 + ageUpperBound] 内的 Cookie 满足这一条件，会话 Cookie 以及过期时间在过去的 Cookie 不满足该过滤器的条件。Cookie 的生命周期通过 Cookie 的 'max-age' 或 'expires' 属性来计算，如果两者都指定则使用 'max-age' 来计算 Cookie 的生命周期。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-ageLowerBound">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        ageLowerBound</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 生命周期的下界（包含）（以当前时间之后多少秒的形式指定），只有过期日期时间在区间 [现在 + ageLowerBound, 现在] 内的 Cookie 满足这一条件，会话 Cookie 以及过期时间在过去的 Cookie 不满足该过滤器的条件。Cookie 的生命周期通过 Cookie 的 'max-age' 或 'expires' 属性来计算，如果两者都指定则使用 'max-age' 来计算 Cookie 的生命周期。
+                    </p></td>
+                  </tr><tr id="property-FilterResponseCookie-sessionCookie">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        sessionCookie</td>
+                    <td>
+                    
+                    <p>
+                      过滤会话 Cookie，会话 Cookie 没有 'max-age' 或 'expires' 属性指定的生命周期。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-AddRequestCookie">AddRequestCookie</h3>
+              <table>
+                <dd>向请求中添加或者覆盖（如果相同名称的 Cookie 已经存在）Cookie。注意，您应该首选 Cookie API，因为它在计算上开销更少。</dd>
+                  <tr><th colspan="3" id="AddRequestCookie-properties">属性</th></tr>
+                  <tr id="property-AddRequestCookie-cookie">
+                    <td>    <a href="declarativeWebRequest.html#type-RequestCookie">declarativeWebRequest.RequestCookie</a></td>
+                    <td>
+                        cookie</td>
+                    <td>
+                    
+                    <p>
+                      要添加至请求的 Cookie，所有字段都不能为 undefined。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-AddResponseCookie">AddResponseCookie</h3>
+              <table>
+                <dd>向响应中添加或者覆盖（如果相同名称的 Cookie 已经存在）Cookie。注意，您应该首选 Cookie API，因为它在计算上开销更少。</dd>
+                  <tr><th colspan="3" id="AddResponseCookie-properties">属性</th></tr>
+                  <tr id="property-AddResponseCookie-cookie">
+                    <td>    <a href="declarativeWebRequest.html#type-ResponseCookie">declarativeWebRequest.ResponseCookie</a></td>
+                    <td>
+                        cookie</td>
+                    <td>
+                    
+                    <p>
+                      要添加至响应的 Cookie，name 与 value 必须指定。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-EditRequestCookie">EditRequestCookie</h3>
+              <table>
+                <dd>编辑请求中的一个或多个 Cookie。注意，您应该首选 Cookie API，因为它在计算上开销更少。</dd>
+                  <tr><th colspan="3" id="EditRequestCookie-properties">属性</th></tr>
+                  <tr id="property-EditRequestCookie-filter">
+                    <td>    <a href="declarativeWebRequest.html#type-RequestCookie">declarativeWebRequest.RequestCookie</a></td>
+                    <td>
+                        filter</td>
+                    <td>
+                    
+                    <p>
+                      过滤要修改的 Cookie，所有空项都会忽略。
+                    </p></td>
+                  </tr><tr id="property-EditRequestCookie-modification">
+                    <td>    <a href="declarativeWebRequest.html#type-RequestCookie">declarativeWebRequest.RequestCookie</a></td>
+                    <td>
+                        modification</td>
+                    <td>
+                    
+                    <p>
+                      在匹配过滤器的 Cookie 中应该覆盖的属性，设置为空字符串的属性将移除。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-EditResponseCookie">EditResponseCookie</h3>
+              <table>
+                <dd>编辑响应中的一个或多个 Cookie。注意，您应该首选 Cookie API，因为它在计算上开销更少。</dd>
+                  <tr><th colspan="3" id="EditResponseCookie-properties">属性</th></tr>
+                  <tr id="property-EditResponseCookie-filter">
+                    <td>    <a href="declarativeWebRequest.html#type-FilterResponseCookie">declarativeWebRequest.FilterResponseCookie</a></td>
+                    <td>
+                        filter</td>
+                    <td>
+                    
+                    <p>
+                      过滤要修改的 Cookie，所有空项都会忽略。
+                    </p></td>
+                  </tr><tr id="property-EditResponseCookie-modification">
+                    <td>    <a href="declarativeWebRequest.html#type-ResponseCookie">declarativeWebRequest.ResponseCookie</a></td>
+                    <td>
+                        modification</td>
+                    <td>
+                    
+                    <p>
+                      在匹配过滤器的 Cookie 中应该覆盖的属性，设置为空字符串的属性将移除。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RemoveRequestCookie">RemoveRequestCookie</h3>
+              <table>
+                <dd>移除请求中的一个或多个 Cookie。注意，您应该首选 Cookie API，因为它在计算上开销更少。</dd>
+                  <tr><th colspan="3" id="RemoveRequestCookie-properties">属性</th></tr>
+                  <tr id="property-RemoveRequestCookie-filter">
+                    <td>    <a href="declarativeWebRequest.html#type-RequestCookie">declarativeWebRequest.RequestCookie</a></td>
+                    <td>
+                        filter</td>
+                    <td>
+                    
+                    <p>
+                      过滤要移除的 Cookie，所有空项都会忽略。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-RemoveResponseCookie">RemoveResponseCookie</h3>
+              <table>
+                <dd>移除响应中的一个或多个 Cookie。注意，您应该首选 Cookie API，因为它在计算上开销更少。</dd>
+                  <tr><th colspan="3" id="RemoveResponseCookie-properties">属性</th></tr>
+                  <tr id="property-RemoveResponseCookie-filter">
+                    <td>    <a href="declarativeWebRequest.html#type-FilterResponseCookie">declarativeWebRequest.FilterResponseCookie</a></td>
+                    <td>
+                        filter</td>
+                    <td>
+                    
+                    <p>
+                      过滤要移除的 Cookie，所有空项都会忽略。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onRequest">onRequest</h3>
+              <div class="description">
+                <p><!--@Provides the <a href="events#declarative">Declarative Event API</a>
+                consisting of <a href=/extensions/events#method-Event-addRules>addRules</a>,
+                <a href=/extensions/events#method-Event-removeRules>removeRules</a>, and <a href=/extensions/events#method-Event-getRules>getRules</a>.-->
+                提供<a href="events.html#declarative">声明式事件 API</a>，包括
+                <!-- NOTE: Trailing whitespace in the next line is important. The docs
+                server cannot resolve it without the space. -->
+                <a href="events.html#method-Event-addRules">addRules</a>、<a href="events.html#method-Event-removeRules">removeRules</a> 和 <a href="events.html#method-Event-getRules">getRules</a>。
+                </p>
+                <div class="summary">
+                  <code class="prettyprint">
+                  chrome.declarativeWebRequest.onRequest.addRules(<span>array of     <a href="events.html#type-Rule">Rule</a> rules</span>, <span class="optional">function callback</span>)
+                  </code>
+                  <code class="prettyprint">
+                  chrome.declarativeWebRequest.onRequest.removeRules(<span class="optional">array of string ruleIdentifiers</span>, <span class="optional">function callback</span>)
+                  </code>
+                  <code class="prettyprint">
+                  chrome.declarativeWebRequest.onRequest.getRules(<span class="optional">array of string ruleIdentifiers</span>, <span>function callback</span>)
+                  </code>
+                </div>
+                  <h4 title=""><!--@Supported conditions-->支持的条件</h4>
+                  <ul>
+                    <div><li><a href="declarativeWebRequest.html#type-RequestMatcher">declarativeWebRequest.RequestMatcher</a></li></div>
+                  </ul>
+                  <h4 title=""><!--@Supported actions-->支持的操作</h4>
+                  <ul>
+                    <div><li><a href="declarativeWebRequest.html#type-AddRequestCookie">declarativeWebRequest.AddRequestCookie</a></li></div><div><li><a href="declarativeWebRequest.html#type-AddResponseCookie">declarativeWebRequest.AddResponseCookie</a></li></div><div><li><a href="declarativeWebRequest.html#type-AddResponseHeader">declarativeWebRequest.AddResponseHeader</a></li></div><div><li><a href="declarativeWebRequest.html#type-CancelRequest">declarativeWebRequest.CancelRequest</a></li></div><div><li><a href="declarativeWebRequest.html#type-EditRequestCookie">declarativeWebRequest.EditRequestCookie</a></li></div><div><li><a href="declarativeWebRequest.html#type-EditResponseCookie">declarativeWebRequest.EditResponseCookie</a></li></div><div><li><a href="declarativeWebRequest.html#type-RedirectRequest">declarativeWebRequest.RedirectRequest</a></li></div><div><li><a href="declarativeWebRequest.html#type-RedirectToTransparentImage">declarativeWebRequest.RedirectToTransparentImage</a></li></div><div><li><a href="declarativeWebRequest.html#type-RedirectToEmptyDocument">declarativeWebRequest.RedirectToEmptyDocument</a></li></div><div><li><a href="declarativeWebRequest.html#type-RedirectByRegEx">declarativeWebRequest.RedirectByRegEx</a></li></div><div><li><a href="declarativeWebRequest.html#type-RemoveRequestCookie">declarativeWebRequest.RemoveRequestCookie</a></li></div><div><li><a href="declarativeWebRequest.html#type-RemoveResponseCookie">declarativeWebRequest.RemoveResponseCookie</a></li></div><div><li><a href="declarativeWebRequest.html#type-RemoveRequestHeader">declarativeWebRequest.RemoveRequestHeader</a></li></div><div><li><a href="declarativeWebRequest.html#type-RemoveResponseHeader">declarativeWebRequest.RemoveResponseHeader</a></li></div><div><li><a href="declarativeWebRequest.html#type-SetRequestHeader">declarativeWebRequest.SetRequestHeader</a></li></div><div><li><a href="declarativeWebRequest.html#type-SendMessageToExtension">declarativeWebRequest.SendMessageToExtension</a></li></div><div><li><a href="declarativeWebRequest.html#type-IgnoreRules">declarativeWebRequest.IgnoreRules</a></li></div>
+                  </ul>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onMessage">onMessage</h3>
+              <div class="description">
+            <p>
+                  当消息通过声明式网络请求 API 的 <a href="declarativeWebRequest.html#type-SendMessageToExtension">declarativeWebRequest.SendMessageToExtension</a> 操作发送时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.declarativeWebRequest.onMessage.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onMessage-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onMessage-details">
+                                    <td>object</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-details-message">
+                                          <td>string</td>
+                                          <td>
+                                              message</td>
+                                          <td>
+                                          
+                                          <p>
+                                            调用脚本发送的消息。
+                                          </p></td>
+                                        </tr><tr id="property-details-stage">
+                                          <td>enum of <code>"onBeforeRequest"</code>, <code>"onBeforeSendHeaders"</code>, <code>"onHeadersReceived"</code>, or <code>"onAuthRequired"</code></td>
+                                          <td>
+                                              stage</td>
+                                          <td>
+                                          
+                                          <p>
+                                            事件发生时网络请求所处的阶段。
+                                          </p></td>
+                                        </tr><tr id="property-details-requestId">
+                                          <td>string</td>
+                                          <td>
+                                              requestId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            请求标识符。请求标识符在浏览器会话中保证唯一，所以，它们可以用来联系同一请求的不同事件。
+                                          </p></td>
+                                        </tr><tr id="property-details-url">
+                                          <td>string</td>
+                                          <td>
+                                              url</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-details-method">
+                                          <td>string</td>
+                                          <td>
+                                              method</td>
+                                          <td>
+                                          
+                                          <p>
+                                            标准 HTTP 方法。
+                                          </p></td>
+                                        </tr><tr id="property-details-frameId">
+                                          <td>integer</td>
+                                          <td>
+                                              frameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            0 表示请求发生在主框架中，正数表示发出请求的子框架标识符。如果加载了（子）框架的文档（<code>type</code> 为 <code>"main_frame"</code> 或 <code>"sub_frame"</code>），<code>frameId</code> 指定该框架的标识符，而不是外层框架的标识符。框架标识符在标签页中保证唯一。
+                                          </p></td>
+                                        </tr><tr id="property-details-parentFrameId">
+                                          <td>integer</td>
+                                          <td>
+                                              parentFrameId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            包含发送请求框架的框架（即父框架）标识符，如果不存在父框架则为 -1。
+                                          </p></td>
+                                        </tr><tr id="property-details-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            产生请求的标签页标识符。如果请求与标签页无关则为 -1。
+                                          </p></td>
+                                        </tr><tr id="property-details-type">
+                                          <td>enum of <code>"main_frame"</code>, <code>"sub_frame"</code>, <code>"stylesheet"</code>, <code>"script"</code>, <code>"image"</code>, <code>"object"</code>, <code>"xmlhttprequest"</code>, or <code>"other"</code></td>
+                                          <td>
+                                              type</td>
+                                          <td>
+                                          
+                                          <p>
+                                            请求的资源将如何使用。
+                                          </p></td>
+                                        </tr><tr id="property-details-timeStamp">
+                                          <td>double</td>
+                                          <td>
+                                              timeStamp</td>
+                                          <td>
+                                          
+                                          <p>
+                                            该信号触发的时间，以 1970 年 1 月 1 日午夜开始所经过的毫秒数表示。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#event-page-example">Event Page Example</a></strong>
+          &ndash; Demonstrates usage and features of the event page
+      </li>
+          <li><strong><a href="samples.html#catifier">Catifier</a></strong>
+          &ndash; Moar cats!
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

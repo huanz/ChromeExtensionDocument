@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.management - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="management.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.management</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            <code>chrome.management</code> API 可以用来管理已经安装并且正在运行的扩展程序或应用，对于<a href='override.html'>替代</a>内建的“打开新的标签页”页面的扩展程序来说特别有用。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 8<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "management"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      
+      <p><!--@You must declare the "management" permission
+      in the <a href="manifest">extension manifest</a>
+      to use the management API.
+      For example:-->
+      您必须在<a href="manifest.html">扩展程序的清单文件</a>中声明
+      "management" 权限才能使用管理 API。例如：
+      </p>
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "management"
+        ]</b>,
+        ...
+      }</pre>
+      
+      <p>
+      <a href="management.html#method-getPermissionWarningsByManifest">management.getPermissionWarningsByManifest</a> <!--@and-->和
+      <a href="management.html#method-uninstallSelf">management.uninstallSelf</a> <!--@do not require the management permission-->
+      不需要 "management" 权限。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="management.html#type-IconInfo">IconInfo</a></td></tr>
+          <tr><td><a href="management.html#type-LaunchType">LaunchType</a></td></tr>
+          <tr><td><a href="management.html#type-ExtensionInfo">ExtensionInfo</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="management.html#method-getAll">getAll</a> &minus;
+            <code class="prettyprint">
+            chrome.management.getAll(<span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-get">get</a> &minus;
+            <code class="prettyprint">
+            chrome.management.get(<span>string id</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-getPermissionWarningsById">getPermissionWarningsById</a> &minus;
+            <code class="prettyprint">
+            chrome.management.getPermissionWarningsById(<span>string id</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-getPermissionWarningsByManifest">getPermissionWarningsByManifest</a> &minus;
+            <code class="prettyprint">
+            chrome.management.getPermissionWarningsByManifest(<span>string manifestStr</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-setEnabled">setEnabled</a> &minus;
+            <code class="prettyprint">
+            chrome.management.setEnabled(<span>string id</span>, <span>boolean enabled</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-uninstall">uninstall</a> &minus;
+            <code class="prettyprint">
+            chrome.management.uninstall(<span>string id</span>, <span class="optional">object options</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-uninstallSelf">uninstallSelf</a> &minus;
+            <code class="prettyprint">
+            chrome.management.uninstallSelf(<span class="optional">object options</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-launchApp">launchApp</a> &minus;
+            <code class="prettyprint">
+            chrome.management.launchApp(<span>string id</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-createAppShortcut">createAppShortcut</a> &minus;
+            <code class="prettyprint">
+            chrome.management.createAppShortcut(<span>string id</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-setLaunchType">setLaunchType</a> &minus;
+            <code class="prettyprint">
+            chrome.management.setLaunchType(<span>string id</span>, <span>    LaunchType launchType</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="management.html#method-generateAppForLink">generateAppForLink</a> &minus;
+            <code class="prettyprint">
+            chrome.management.generateAppForLink(<span>string url</span>, <span>string title</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="management.html#event-onInstalled">onInstalled</a></td></tr>
+          <tr><td><a href="management.html#event-onUninstalled">onUninstalled</a></td></tr>
+          <tr><td><a href="management.html#event-onEnabled">onEnabled</a></td></tr>
+          <tr><td><a href="management.html#event-onDisabled">onDisabled</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-IconInfo">IconInfo</h3>
+              <table>
+                <dd>属于扩展程序、应用或主题背景的图标的有关信息。</dd>
+                  <tr><th colspan="3" id="IconInfo-properties">属性</th></tr>
+                  <tr id="property-IconInfo-size">
+                    <td>integer</td>
+                    <td>
+                        size</td>
+                    <td>
+                    
+                    <p>
+                      代表图标宽度和高度的一个整数，可能的值包括（但不限于）128、48、24 和 16。
+                    </p></td>
+                  </tr><tr id="property-IconInfo-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      该图标图像的 URL。要显示一个灰度版本的图标（例如表示扩展程序已禁用），请在 URL 后附加 <code>?grayscale=true</code>。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-LaunchType">LaunchType</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 37<!--@.
+                 --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                -->目前为 <strong>Beta</strong> 分支。<!--@
+                
+                 --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+              </p>
+              <table>
+                <tr><th><!--@Enum-->枚举</th></tr>
+                <tr><td>
+                  <code>"OPEN_AS_REGULAR_TAB"</code>, 
+                  <code>"OPEN_AS_PINNED_TAB"</code>, 
+                  <code>"OPEN_AS_WINDOW"</code>, 
+                  or <code>"OPEN_FULL_SCREEN"</code>
+                </td></tr>
+                <dd>包含所有可能的应用启动类型。</dd>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ExtensionInfo">ExtensionInfo</h3>
+              <table>
+                <dd>已安装的扩展程序、应用或主题背景的有关信息。</dd>
+                  <tr><th colspan="3" id="ExtensionInfo-properties">属性</th></tr>
+                  <tr id="property-ExtensionInfo-id">
+                    <td>string</td>
+                    <td>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      扩展程序的唯一标识符。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      扩展程序、应用或主题背景的名称。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-shortName">
+                    <td>string</td>
+                    <td>
+                        shortName</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      扩展程序、应用或主题背景名称的简短版本。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-description">
+                    <td>string</td>
+                    <td>
+                        description</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      扩展程序、应用或主题背景的描述。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-version">
+                    <td>string</td>
+                    <td>
+                        version</td>
+                    <td>
+                    
+                    <p>
+                      扩展程序、应用或主题背景的<a href='manifest/version.html'>版本</a>。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-mayDisable">
+                    <td>boolean</td>
+                    <td>
+                        mayDisable</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 12<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      用户是否能禁用或卸载该扩展程序。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-enabled">
+                    <td>boolean</td>
+                    <td>
+                        enabled</td>
+                    <td>
+                    
+                    <p>
+                      该扩展程序当前是否已启用。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-disabledReason">
+                    <td>enum of <code>"unknown"</code>, or <code>"permissions_increase"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        disabledReason</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 17<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      项目被禁用的原因。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-isApp">
+                    <td>boolean</td>
+                    <td>
+                        isApp</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 <a href="management.html#property-ExtensionInfo-type">management.ExtensionInfo.type</a>。
+                    </p>
+                    
+                    <p>
+                      如果是应用则为 true。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-type">
+                    <td>enum of <code>"extension"</code>, <code>"hosted_app"</code>, <code>"packaged_app"</code>, <code>"legacy_packaged_app"</code>, or <code>"theme"</code></td>
+                    <td>
+                        type</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      该扩展程序、应用或主题背景的类型。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-appLaunchUrl">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        appLaunchUrl</td>
+                    <td>
+                    
+                    <p>
+                      用于执行的 URL（仅在应用中存在）。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-homepageUrl">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        homepageUrl</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 11<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      该扩展程序、应用或主题背景的主页 URL。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-updateUrl">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        updateUrl</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      该扩展程序、应用或主题背景的更新 URL。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-offlineEnabled">
+                    <td>boolean</td>
+                    <td>
+                        offlineEnabled</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 15<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      该扩展程序、应用或主题背景是否声明它具有离线支持。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-optionsUrl">
+                    <td>string</td>
+                    <td>
+                        optionsUrl</td>
+                    <td>
+                    
+                    <p>
+                      该项目的选项页面 URL（如果有的话）。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-icons">
+                    <td>array of     <a href="management.html#type-IconInfo">IconInfo</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        icons</td>
+                    <td>
+                    
+                    <p>
+                      图标信息列表。注意这只反映声明在清单文件中的信息，URL 指定的实际图像可能比声明的更大或更小，所以您引用这些图像时可能要考虑在 <img> 标签中显式使用 width 和 height 属性。有关更多细节，请参见<a href='manifest/icons.html'>清单文件：icons</a>。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-permissions">
+                    <td>array of string</td>
+                    <td>
+                        permissions</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      返回 API 权限列表。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-hostPermissions">
+                    <td>array of string</td>
+                    <td>
+                        hostPermissions</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      返回主机权限列表。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-installType">
+                    <td>enum of <code>"admin"</code>, <code>"development"</code>, <code>"normal"</code>, <code>"sideload"</code>, or <code>"other"</code></td>
+                    <td>
+                        installType</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      扩展程序是如何安装的，为下列值之一：<br><var>"admin"</var> 表示扩展程序由于管理策略而安装；<br><var>"development"</var> 表示扩展程序以未打包形式在开发者模式下加载；<br><var>"normal"</var> 表示扩展程序由 .crx 文件正常安装；<br><var>"sideload"</var> 表示扩展程序由计算机上的其他软件安装；<br><var>"other"</var> 表示扩展程序通过其他方式安装。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-launchType">
+                    <td>    <a href="management.html#type-LaunchType">LaunchType</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        launchType</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 37<!--@.
+                       --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                      -->目前为 <strong>Beta</strong> 分支。<!--@
+                      
+                       --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                    </p>
+                    
+                    <p>
+                      应用的启动类型（仅在应用中存在）。
+                    </p></td>
+                  </tr><tr id="property-ExtensionInfo-availableLaunchTypes">
+                    <td>array of     <a href="management.html#type-LaunchType">LaunchType</a></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        availableLaunchTypes</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 37<!--@.
+                       --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                      -->目前为 <strong>Beta</strong> 分支。<!--@
+                      
+                       --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                    </p>
+                    
+                    <p>
+                      注意：当前可用的启动类型（仅在应用中存在）。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getAll"
+                  >getAll
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.getAll(<span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  返回已安装的扩展程序和应用的信息列表。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAll-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="management.html#type-ExtensionInfo">ExtensionInfo</a> result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>array of     <a href="management.html#type-ExtensionInfo">ExtensionInfo</a></td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-get"
+                  >get
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.get(<span>string id</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                </p>
+                <p>
+                  返回已安装且具有指定标识符的扩展程序、应用或主题背景的有关信息。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-get-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      <p>
+                        来自 <a href="management.html#type-ExtensionInfo">management.ExtensionInfo</a> 项目的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-get-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a> result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a></td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getPermissionWarningsById"
+                  >getPermissionWarningsById
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.getPermissionWarningsById(<span>string id</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 15<!--@.--> 开始支持。
+                </p>
+                <p>
+                  返回指定扩展程序标识符所对应的<a href='permission_warnings.html'>权限警告</a>列表。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getPermissionWarningsById-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      <p>
+                        已安装的扩展程序的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getPermissionWarningsById-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of string permissionWarnings) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-permissionWarnings">
+                              <td>array of string</td>
+                              <td>
+                                  permissionWarnings</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getPermissionWarningsByManifest"
+                  >getPermissionWarningsByManifest
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.getPermissionWarningsByManifest(<span>string manifestStr</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 15<!--@.--> 开始支持。
+                </p>
+                <p>
+                  返回指定扩展程序清单文件字符串对应的<a href='permission_warnings.html'>权限警告</a>列表。注意，这一函数不需要在清单文件中请求 "management"（管理）权限就可以使用。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getPermissionWarningsByManifest-manifestStr">
+                      <td>string</td>
+                      <td>
+                          manifestStr</td>
+                      <td>
+                      
+                      <p>
+                        扩展程序清单文件的 JSON 字符串。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getPermissionWarningsByManifest-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of string permissionWarnings) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-permissionWarnings">
+                              <td>array of string</td>
+                              <td>
+                                  permissionWarnings</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setEnabled"
+                  >setEnabled
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.setEnabled(<span>string id</span>, <span>boolean enabled</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  启用或禁用一个应用或扩展程序。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setEnabled-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      <p>
+                        该参数应该为来自 <a href="management.html#type-ExtensionInfo">management.ExtensionInfo</a> 项目的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setEnabled-enabled">
+                      <td>boolean</td>
+                      <td>
+                          enabled</td>
+                      <td>
+                      
+                      <p>
+                        应该启用还是禁用该项目。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setEnabled-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-uninstall"
+                  >uninstall
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.uninstall(<span>string id</span>, <span class="optional">object options</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  卸载当前已安装的某个应用或扩展程序。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-uninstall-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      <p>
+                        该参数应该为来自 <a href="management.html#type-ExtensionInfo">management.ExtensionInfo</a> 项目的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-uninstall-options">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 21<!--@.--> 开始支持。
+                      </p>
+                      
+                        <table class="innerTable">
+                          <tr id="property-options-showConfirmDialog">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                showConfirmDialog</td>
+                            <td>
+                            
+                            <p>
+                              是否显示确认卸载对话框提示用户，如果是卸载自己则默认为 false，如果扩展程序卸载其他扩展程序，则忽略该参数，始终显示对话框。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-uninstall-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-uninstallSelf"
+                  >uninstallSelf
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.uninstallSelf(<span class="optional">object options</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+                <p>
+                  卸载调用该方法的扩展程序。注意，这一函数不需要在清单文件中请求 "management"（管理）权限就可以使用。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-uninstallSelf-options">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-options-showConfirmDialog">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                showConfirmDialog</td>
+                            <td>
+                            
+                            <p>
+                              是否显示确认卸载对话框提示用户，默认为 false。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-uninstallSelf-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-launchApp"
+                  >launchApp
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.launchApp(<span>string id</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  运行一个应用。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-launchApp-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      <p>
+                        应用的扩展程序标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-launchApp-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-createAppShortcut"
+                  >createAppShortcut
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.createAppShortcut(<span>string id</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 37<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                  -->目前为 <strong>Beta</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  显示选项，为应用创建快捷方式。在 Mac 中，只能创建打包应用的快捷方式。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-createAppShortcut-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 36<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        来自 <a href="management.html#type-ExtensionInfo">management.ExtensionInfo</a> 应用项目的 id 属性。
+                      </p></td>
+                    </tr>
+                    <tr id="property-createAppShortcut-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setLaunchType"
+                  >setLaunchType
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.setLaunchType(<span>string id</span>, <span>    <a href="management.html#type-LaunchType">LaunchType</a> launchType</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 37<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                  -->目前为 <strong>Beta</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  设置应用的启动类型。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setLaunchType-id">
+                      <td>string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      <p>
+                        该参数应该为 <a href="management.html#type-ExtensionInfo">management.ExtensionInfo</a> 应用项目中的 id 属性。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setLaunchType-launchType">
+                      <td>    <a href="management.html#type-LaunchType">LaunchType</a></td>
+                      <td>
+                          launchType</td>
+                      <td>
+                      
+                      <p>
+                        启动类型。请始终记得要确保指定的启动类型在 <a href="management.html#property-ExtensionInfo-availableLaunchTypes">ExtensionInfo.availableLaunchTypes</a> 中，因为可用的启动类型在不同的平台和配置上会有变化。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setLaunchType-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-generateAppForLink"
+                  >generateAppForLink
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.management.generateAppForLink(<span>string url</span>, <span>string title</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 37<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                  -->目前为 <strong>Beta</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  为 URL 生成应用，返回生成的书签应用。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-generateAppForLink-url">
+                      <td>string</td>
+                      <td>
+                          url</td>
+                      <td>
+                      
+                      <p>
+                        网页 URL，URL 的协议只能是“http”或“https”。
+                      </p></td>
+                    </tr>
+                    <tr id="property-generateAppForLink-title">
+                      <td>string</td>
+                      <td>
+                          title</td>
+                      <td>
+                      
+                      <p>
+                        生成的应用标题。
+                      </p></td>
+                    </tr>
+                    <tr id="property-generateAppForLink-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a> result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a></td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onInstalled">onInstalled</h3>
+              <div class="description">
+            <p>
+                  安装应用或扩展程序时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.management.onInstalled.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onInstalled-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a> info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onInstalled-info">
+                                    <td>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a></td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onUninstalled">onUninstalled</h3>
+              <div class="description">
+            <p>
+                  应用或扩展程序卸载时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.management.onUninstalled.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onUninstalled-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(string id) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onUninstalled-id">
+                                    <td>string</td>
+                                    <td>
+                                        id</td>
+                                    <td>
+                                    
+                                    <p>
+                                      卸载的扩展程序、应用或主题背景的标识符。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onEnabled">onEnabled</h3>
+              <div class="description">
+            <p>
+                  应用或扩展程序启用时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.management.onEnabled.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onEnabled-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a> info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onEnabled-info">
+                                    <td>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a></td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onDisabled">onDisabled</h3>
+              <div class="description">
+            <p>
+                  应用或扩展程序禁用时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.management.onDisabled.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onDisabled-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a> info) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onDisabled-info">
+                                    <td>    <a href="management.html#type-ExtensionInfo">ExtensionInfo</a></td>
+                                    <td>
+                                        info</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#app-launcher">App Launcher</a></strong>
+          &ndash; Get access to your apps in a browser action
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

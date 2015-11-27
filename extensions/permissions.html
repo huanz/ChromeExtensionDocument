@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.permissions - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="permissions.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.permissions</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.permissions</code> API 在运行时而不是安装时请求<a href='permissions.html#manifest'>声明的可选权限</a>，这样用户可以理解为什么需要这些权限，并且仅在必要时授予这些权限。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">了解更多<!--@:-->：</td>
+        <td>
+            <a href="declare_permissions.html">
+            声明权限
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="howto"> <!--@Implementing optional permissions-->实现可选权限 </h2>
+      
+      <h3 id="types">
+      <!--@Step 1: Decide which permissions are required and which are optional-->
+      第一步：确定哪些权限是必选的，哪些是可选的
+      </h3>
+      
+      <p>
+      <!--@An extension can declare both required and optional permissions. In general, you should:-->
+      扩展程序既可以声明必选权限，也可以声明可选权限。大体上说：
+      <ul>
+        <li><!--@Use required permissions when they are needed for your extension’s basic functionality.-->
+          扩展程序的基本功能需要某些权限时使用必选权限。
+        </li>
+        <li><!--@Use optional permissions when they are needed for optional features in your extension.-->
+          扩展程序的可选功能需要某些权限时使用可选权限。
+        </li>
+      </ul>
+      </p>
+      
+      <p>
+      <!--@Advantages of <em>required</em> permissions:-->
+      <em>必选</em>权限的优势：
+      <ul>
+        <li><strong><!--@Fewer prompts:-->提示较少：</strong><!--@
+            An extension can prompt the user once to accept all permissions.
+            -->扩展程序只需要提示用户一次，接受所有权限。</li>
+        <li><strong><!--@Simpler development:-->开发更容易：</strong><!--@
+            Required permissions are guaranteed to be present.
+            -->必选权限确保存在。</li>
+      </ul>
+      </p>
+      
+      <p>
+      <!--@Advantages of <em>optional</em> permissions:-->
+      <em>可选</em>权限的优势：
+      <ul>
+        <li><strong><!--@Better security:-->安全性更高：</strong><!--@
+            Extensions run with fewer permissions since users only enable permissions that are needed.
+            -->扩展程序以更少的权限运行，用户仅启用需要的权限。</li>
+        <li><strong><!--@Better information for users:-->可以向用户提供更多信息：</strong><!--@
+            An extension can explain why it needs a particular permission when the user enables the relevant feature.
+            -->当用户启用相关功能时，扩展程序可以解释为什么需要某种权限。</li>
+        <li><strong><!--@Easier upgrades:-->便于更新：</strong><!--@
+            When you upgrade your extension, Chrome will not disable it for your users if the upgrade adds optional rather than required permissions.
+            -->您的扩展程序更新时，如果更新版本添加了可选而不是必选权限，Chrome
+            浏览器不会为用户禁用它。</li>
+      </ul>
+      </p>
+      
+      <h3 id="manifest"> <!--@Step 2: Declare optional permissions in the manifest-->第二步：在清单文件中声明可选权限 </h3>
+      <p>
+        <!--@Declare optional permissions in your <a href="manifest">extension
+        manifest</a> with the <code>optional_permissions</code> key, using the
+        same format as the <a href="declare_permissions#manifest">permissions</a>
+        field:-->
+        和 <a href="declare_permissions.html">permissions</a> 字段使用相同的格式，使用
+        <code>optional_permissions</code> 键，在您的<a href="manifest.html">扩展程序的清单文件</a>中声明可选权限：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"optional_permissions": [ "tabs", "http://www.google.com/" ],</b>
+        ...
+      }
+      </pre>
+      
+      <p>
+      <!--@You can specify any of the following as optional
+      <a href="declare_permissions">permissions</a>:-->
+      您可以将下列任意权限指定为可选<a href="declare_permissions.html">权限</a>：
+      <ul>
+        <li><i><!--@host permissions-->主机权限</i></li>
+        <li>background</li>
+        <li>bookmarks</li>
+        <li>clipboardRead</li>
+        <li>clipboardWrite</li>
+        <li>contentSettings</li>
+        <li>contextMenus</li>
+        <li>cookies</li>
+        <li>debugger</li>
+        <li>history</li>
+        <li>idle</li>
+        <li>management</li>
+        <li>notifications</li>
+        <li>pageCapture</li>
+        <li>tabs</li>
+        <li>topSites</li>
+        <li>webNavigation</li>
+        <li>webRequest</li>
+        <li>webRequestBlocking</li>
+      </ul>
+      </p>
+      
+      <p><!--@If you want to request hosts that you only discover at runtime, include
+      <code>"http://*/"</code> and/or <code>"https://*/"</code> as an
+      <code>optional_permission</code>.  This lets you specify any origin in
+      <a href=/extensions/permissions#property-Permissions-origins>Permissions.origins</a> as long as it has a matching scheme.-->
+      如果您希望请求只能在运行时发现的主机，您可以在
+      <code>optional_permission</code> 中包含 <code>"http://*/"</code> 和/或
+      <code>"https://*/"</code>，这样就允许您在 <a href="permissions.html#property-Permissions-origins">Permissions.origins</a>
+      中指定任意来源，只要它具有匹配的协议。
+      </p>
+      
+      <h3 id="request"> <!--@Step 3: Request optional permissions-->第三步：请求可选权限 </h3>
+      <p>
+        <!--@Request the permissions from within a user gesture using-->
+        使用
+        <code>permissions.request()</code><!--@:-->
+        在用户操作下请求权限：
+      <pre>
+      document.querySelector('#my-button').addEventListener('click', function(event) {
+        // 权限必须在用户操作下请求，例如按钮单击的事件处理函数。
+        chrome.permissions.request({
+          permissions: ['tabs'],
+          origins: ['http://www.google.com/']
+        }, function(granted) {
+          // 如果用户授予了这些权限，则回调函数的参数为 true。
+          if (granted) {
+            doSomething();
+          } else {
+            doSomethingElse();
+          }
+        });
+      });
+      </pre>
+      </p>
+      
+      <p>
+        <!--@Chrome prompts the user if adding the permissions results in different
+        <a href="permission_warnings">warning messages</a> than the user has
+        already seen and accepted. For example, the previous code might result in
+        a prompt like this:-->
+        如果加入这些权限会导致与用户已经看见并接受的所不同的<a href="permission_warnings.html">权限警告</a>，Chrome
+        浏览器会提示用户。例如，上面的代码可能会导致如下提示：
+      </p>
+      
+      <p style="text-align: center">
+        <img src="../static/images/perms-optional.png"
+             alt="example permission confirmation prompt"
+             width="490" height="193">
+      </p>
+      
+      <h3 id="contains"> <!--@Step 4: Check the extension's current permissions-->第四步：检查扩展程序的当前权限 </h3>
+      <p>
+        <!--@To check whether your extension has a specific permission or set of
+        permissions, use <code>permission.contains()</code>:-->
+        要检查您的扩展程序是否拥有某个或某些权限，请使用
+        <code>permission.contains()</code>：
+      </p>
+      
+      <pre>
+      chrome.permissions.contains({
+        permissions: ['tabs'],
+        origins: ['http://www.google.com/']
+      }, function(result) {
+        if (result) {
+          // 扩展程序拥有这些权限。
+        } else {
+          // 扩展程序没有这些权限。
+        }
+      });
+      </pre>
+      
+      <h3 id="remove"> <!--@Step 5: Remove the permissions-->第五步：移除权限 </h3>
+      <p>
+        <!--@You should remove permissions when you no longer need them.
+        After a permission has been removed, calling
+        <code>permissions.request()</code> usually adds the permission back without
+        prompting the user.-->
+        您应该及时移除您不再需要的权限。在权限移除后，调用
+        <code>permissions.request()</code>
+        通常会再次添加权限而不再提示用户。
+      </p>
+      
+      <pre>
+      chrome.permissions.remove({
+        permissions: ['tabs'],
+        origins: ['http://www.google.com/']
+      }, function(removed) {
+        if (removed) {
+          // 权限已经移除。
+        } else {
+          // 权限没有移除（例如您试着移除必需的权限）
+        }
+      });
+      </pre>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="permissions.html#type-Permissions">Permissions</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="permissions.html#method-getAll">getAll</a> &minus;
+            <code class="prettyprint">
+            chrome.permissions.getAll(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="permissions.html#method-contains">contains</a> &minus;
+            <code class="prettyprint">
+            chrome.permissions.contains(<span>    Permissions permissions</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="permissions.html#method-request">request</a> &minus;
+            <code class="prettyprint">
+            chrome.permissions.request(<span>    Permissions permissions</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="permissions.html#method-remove">remove</a> &minus;
+            <code class="prettyprint">
+            chrome.permissions.remove(<span>    Permissions permissions</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="permissions.html#event-onAdded">onAdded</a></td></tr>
+          <tr><td><a href="permissions.html#event-onRemoved">onRemoved</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Permissions">Permissions</h3>
+              <table>
+                  <tr><th colspan="3" id="Permissions-properties">属性</th></tr>
+                  <tr id="property-Permissions-permissions">
+                    <td>array of string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        permissions</td>
+                    <td>
+                    
+                    <p>
+                      权限名称列表（不包括主机权限）。此处列出的所有权限都必须在清单文件的 <code>optional_permissions</code> 列表中出现。
+                    </p></td>
+                  </tr><tr id="property-Permissions-origins">
+                    <td>array of string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        origins</td>
+                    <td>
+                    
+                    <p>
+                      主机权限列表。此处列出的所有权限都必须为清单文件 <code>optional_permissions</code> 列表中出现的主机子集。例如，如果 <code>http://*.example.com/</code> 或 <code>http://*/</code> 包含在 <code>optional_permissions</code> 中，您可以请求 <code>http://help.example.com/</code> 来源。路径部分忽略。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-getAll"
+                  >getAll
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.permissions.getAll(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获得扩展程序当前拥有的所有权限。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAll-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-permissions">
+                              <td>    <a href="permissions.html#type-Permissions">Permissions</a></td>
+                              <td>
+                                  permissions</td>
+                              <td>
+                              
+                              <p>
+                                扩展程序的当前权限。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-contains"
+                  >contains
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.permissions.contains(<span>    <a href="permissions.html#type-Permissions">Permissions</a> permissions</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  检查扩展程序是否拥有指定权限。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-contains-permissions">
+                      <td>    <a href="permissions.html#type-Permissions">Permissions</a></td>
+                      <td>
+                          permissions</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-contains-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>boolean</td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              <p>
+                                如果扩展程序拥有指定权限则为 true。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-request"
+                  >request
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.permissions.request(<span>    <a href="permissions.html#type-Permissions">Permissions</a> permissions</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  请求访问指定的权限，这些权限必须已在清单文件中的 optional_permissions 字段中定义。如果请求权限过程中发生任何问题，将会设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-request-permissions">
+                      <td>    <a href="permissions.html#type-Permissions">Permissions</a></td>
+                      <td>
+                          permissions</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-request-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean granted) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-granted">
+                              <td>boolean</td>
+                              <td>
+                                  granted</td>
+                              <td>
+                              
+                              <p>
+                                如果用户授予了指定权限则为 true。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-remove"
+                  >remove
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.permissions.remove(<span>    <a href="permissions.html#type-Permissions">Permissions</a> permissions</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  移除指定权限的访问。如果移除权限过程中发生任何问题，将会设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-remove-permissions">
+                      <td>    <a href="permissions.html#type-Permissions">Permissions</a></td>
+                      <td>
+                          permissions</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-remove-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(boolean removed) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-removed">
+                              <td>boolean</td>
+                              <td>
+                                  removed</td>
+                              <td>
+                              
+                              <p>
+                                如果权限已移除则为 true。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onAdded">onAdded</h3>
+              <div class="description">
+            <p>
+                  扩展程序获得新权限时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.permissions.onAdded.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onAdded-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onAdded-permissions">
+                                    <td>    <a href="permissions.html#type-Permissions">Permissions</a></td>
+                                    <td>
+                                        permissions</td>
+                                    <td>
+                                    
+                                    <p>
+                                      新获得的权限。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onRemoved">onRemoved</h3>
+              <div class="description">
+            <p>
+                  对权限的访问从扩展程序移除时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.permissions.onRemoved.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onRemoved-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="permissions.html#type-Permissions">Permissions</a> permissions) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onRemoved-permissions">
+                                    <td>    <a href="permissions.html#type-Permissions">Permissions</a></td>
+                                    <td>
+                                        permissions</td>
+                                    <td>
+                                    
+                                    <p>
+                                      已移除的权限。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#download-manager-button">Download Manager Button</a></strong>
+          &ndash; Browser Action Download Manager User Interface for Google Chrome
+      </li>
+          <li><strong><a href="samples.html#top-chrome-extension-questions">Top Chrome Extension Questions</a></strong>
+          &ndash; Sample demonstration of the optional permissions API.
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

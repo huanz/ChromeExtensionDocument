@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.devtools.inspectedWindow - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="devtools_inspectedWindow.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.devtools.inspectedWindow</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.devtools.inspectedWindow</code> API 与审查的窗口交互：获得审查网页的标签页标识符，在审查窗口的上下文中执行代码，重新加载网页，或者获取网页中所有资源的列表。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <p>
+      <!--@Use-->使用 <code>chrome.devtools.inspectedWindow</code>
+      <!--@to interact with the inspected window:
+      obtain the tab ID for the inspected page,
+      evaluate the code in the context of inspected window,
+      reload the page,
+      or obtain the list of resources within the page.-->
+      与审查的窗口交互：获得审查页面的标签页标识符，在审查窗口的上下文中执行代码，重新加载页面，或者获取页面中所有资源的列表。
+      </p><p>
+      <!--@See <a href="devtools">DevTools APIs summary</a> for
+      general introduction to using Developer Tools APIs.-->
+      有关使用开发者工具 API 的一般信息请参见<a
+      href="devtools.html">开发者工具 API 概述</a>。
+      </p>
+      
+      <h2 id="overview"><!--@Overview-->概述</h2>
+      <p>
+      <!--@The <code><a href=/extensions/devtools.inspectedWindow#property-tabId>tabId</a></code> property
+      provides the tab identifier that you can use with the
+      <a href="tabs"><code>chrome.tabs.*</code></a> API calls.
+      However, please note that <code>chrome.tabs.*</code> API is not
+      exposed to the Developer Tools extension pages due to security considerations
+      &mdash; you will need to pass the tab ID to the background page and invoke
+      the <code>chrome.tabs.*</code> API functions from there.-->
+      <code><a href="devtools_inspectedWindow.html#property-tabId">tabId</a></code>
+      属性提供标签页标识符，您可以在调用
+      <a href="tabs.html"><code>chrome.tabs.*</code></a> API
+      时使用。然而，值得注意的是，出于安全考虑，<code>chrome.tabs.*</code> API
+      对开发者工具扩展程序网页不可用，您需要向后台网页传递标签页标识符，并在那儿调用
+      <code>chrome.tabs.*</code> API 函数。
+      </p>
+      <p>
+      <!--@The <code>reload</code> method may be used to reload the inspected page.
+      Additionally, the caller can specify an override for the user agent string,
+      a script that will be injected early upon page load, or an option to force
+      reload of cached resources.-->
+      <code>reload</code>
+      方法可以用来重新加载审查的网页，此外，调用者还能指定替代的用户代理字符串、网页载入早期插入的脚本以及强制重新加载缓存资源的选项。
+      </p><p>
+      <!--@Use the <code>getResources</code> call and the <code>onResourceContent</code>
+      event to obtain the list of resources (documents, stylesheets, scripts, images
+      etc) within the inspected page. The <code>getContent</code> and <code
+      >setContent</code> methods of the <code>Resource</code> class along with the
+      <code>onResourceContentCommitted</code> event may be used to support
+      modification of the resource content, for example, by an external editor.-->
+      使用 <code>getResources</code> 方法和 <code>onResourceContent</code>
+      事件获取审查的网页中的资源列表（文档、样式表、脚本、图片等）。<code
+      >Resource</code> 对象的 <code>getContent</code> 和 <code>setContent</code>
+      方法以及 <code>onResourceContentCommitted</code>
+      事件可以用来支持资源内容的修改，例如使用外部编辑器修改资源。
+      </p>
+      <h2 id="executing-code"><!--@Executing Code in the Inspected Window-->在审查的窗口中执行代码</h2>
+      <p>
+      <!--@The <code>eval</code> method provides the ability for extensions to execute
+      JavaScript code in the context of the inspected page.
+      This method is powerful when used in the right context
+      and dangerous when used inappropriately.
+      Use the <code><a href=/extensions/tabs#method-executeScript>tabs.executeScript</a></code> method
+      unless you need the specific functionality
+      that the <code>eval</code> method provides.-->
+      <code>eval</code> 方法使扩展程序能够在审查页面的上下文中执行
+      JavaScript
+      代码。该方法在正确的环境下是非常有用的，但是不恰当的使用会很危险。除非您需要
+      <code>eval</code> 方法才能提供的特定功能，请使用
+      <a href="tabs.html#method-executeScript">tabs.executeScript</a> 方法。
+      </p>
+      <p><!--@Here are the main differences between the
+      <code>eval</code> and <code>tabs.executeScript</code> methods:-->
+      如下是 <code>eval</code> 与 <a href="tabs.html#method-executeScript">tabs.executeScript</a> 方法之间的主要区别：
+      </p><ul>
+      <li><!--@The <code>eval</code> method does not
+      use an isolated world for the code being evaluated, so the JavaScript state
+      of the inspected window is accessible to the code.
+      Use this method when access to the JavaScript state of the inspected page
+      is required.-->
+      <code>eval</code>
+      方法不为执行的代码使用隔离环境，所以代码可以访问审查窗口的 JavaScript
+      状态。当您确实需要访问审查页面的 JavaScript 状态时请使用这一方法。
+      </li><li>
+      <!--@The execution context of the code being evaluated includes the
+      <a href="http://code.google.com/chrome/devtools/docs/console.html">Developer
+      Tools console API</a>.
+      For example,
+      the code can use <code>inspect</code> and <code>$0</code>.-->
+      代码执行的上下文包括<a href="https://developers.google.com/chrome-developer-tools/docs/console">开发者工具的控制台 API</a>。例如，代码可以使用
+      <code>inspect</code> 和 <code>$0</code>。
+      </li><li>
+      <!--@The evaluated code may return a value that is passed to the extension callback.
+      The returned value has to be a valid JSON object (it may contain only
+      primitive JavaScript types and acyclic references to other JSON
+      objects).
+      
+      -->执行的代码可以返回一个值，传递给扩展程序的回调函数。返回值必须为一个有效的
+      JSON 对象（它只能包含原始的 JavaScript 类型以及对其他 JSON
+      对象的非循环引用）。<em><!--@Please observe extra care while processing the data received from the
+      inspected page &mdash; the execution context is essentially controlled by the
+      inspected page; a malicious page may affect the data being returned to the
+      extension.-->在处理从审查页面接收的数据时请格外小心，执行上下文本质上由审查的页面控制，恶意页面可能会影响返回给扩展程序的数据。</em>
+      </li></ul>
+      <p class="caution">
+      <strong><!--@Important:-->重要提示：</strong><!--@
+      Due to the security considerations explained above, the
+      <code><a href=/extensions/tabs#method-executeScript>tabs.executeScript</a></code> method is the preferred way for an
+      extension to access DOM data of the inspected page in cases where the access to
+      JavaScript state of the inspected page is not required.-->出于以上解释的安全性考虑，建议扩展程序在不需要访问审查页面的
+      JavaScript 状态的情况下首选
+      <a href="tabs.html#method-executeScript">tabs.executeScript</a> 方法访问审查页面的 DOM 数据。
+      </p>
+      
+      <p><!--@Note that a page can include multiple different JavaScript execution contexts. Each frame has
+      its own context, plus an additional context for each extension that has content scripts running
+      in that frame.-->
+      注意，网页可以包含几个不同的 JavaScript
+      执行上下文。每一个框架都有单独的上下文，在一个框架中运行的每一个具有内容脚本的扩展程序还有单独的上下文。
+      </p>
+      <p>
+      <!--@By default, the <code>eval</code> method executes in the context of the main frame of the 
+      inspected page. -->
+      默认情况下，<code>eval</code> 方法在审查网页主框架的上下文中执行。
+      </p>
+      
+      <p><!--@The <code>eval</code> method takes an optional second argument that you can use to specify 
+      the context in which the code is evaluated. This <em>options</em> object can contain one or more of the 
+      following keys:-->
+      <code>eval</code>
+      方法的第二个参数是可选的，您可以使用它指定代码在哪个上下文中求值。该
+      <em>options</em> 对象可以包含如下属性：
+      </p>
+      
+      <dl>
+      <dt><code>frameURL</code></dt>
+      <dd><!--@Use to specify a frame other than the inspected page's main frame.-->
+      用来指定审查网页主框架以外的其他框架。
+      </dd>
+      <dt><code>contextSecurityOrigin</code></dt>
+      <dd><!--@Use to select a context within the specified frame 
+      according to its <a href="http://www.ietf.org/rfc/rfc6454.txt">web origin</a>.-->
+      用来在指定框架中根据<a href="http://www.ietf.org/rfc/rfc6454.txt"
+      >网络来源</a>选择上下文。
+      </dd>
+      <dt><code>useContentScriptContext</code></dt>
+      <dd><!--@If true, execute the script in the same context
+      as the extensions's content scripts. (Equivalent to specifying the extensions's own web orgin
+      as the context security origin.)
+      This can be used to exchange data with the content script.-->
+      如果为 true，在当前扩展程序内容脚本的上下文中执行脚本。（等价于指定上下文安全来源为扩展程序自己的网络来源。）这种方式可以用来与内容脚本交换数据。
+      </dd>
+      </dl>
+      
+      
+      <h2 id="overview-examples"><!--@Examples-->例子</h2>
+      <p><!--@The following code checks for the version of jQuery used by the inspected
+      如下代码检查审查的页面所使用的 jQuery 版本：
+      page:-->
+      
+      <pre>
+      chrome.devtools.inspectedWindow.eval(
+          "jQuery.fn.jquery",
+           function(result, isException) {
+             if (isException)
+               console.log("该页面未使用 jQuery");
+             else
+               console.log("该页面使用 jQuery v" + result);
+           }
+      );
+      </pre>
+      
+      <p>
+      <!--@You can find more examples that use Developer Tools APIs in
+      <a href="samples#devtools">Samples</a>.-->
+      您可以在<a href="samples.html#devtools">示例</a>中找到使用开发者工具 API
+      的更多例子。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="devtools_inspectedWindow.html#type-Resource">Resource</a></td></tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="devtools_inspectedWindow.html#property-tabId">tabId</a></td>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="devtools_inspectedWindow.html#method-eval">eval</a> &minus;
+            <code class="prettyprint">
+            chrome.devtools.inspectedWindow.eval(<span>string expression</span>, <span class="optional">object options</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="devtools_inspectedWindow.html#method-reload">reload</a> &minus;
+            <code class="prettyprint">
+            chrome.devtools.inspectedWindow.reload(<span class="optional">object reloadOptions</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="devtools_inspectedWindow.html#method-getResources">getResources</a> &minus;
+            <code class="prettyprint">
+            chrome.devtools.inspectedWindow.getResources(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="devtools_inspectedWindow.html#event-onResourceAdded">onResourceAdded</a></td></tr>
+          <tr><td><a href="devtools_inspectedWindow.html#event-onResourceContentCommitted">onResourceContentCommitted</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Resource">Resource</h3>
+              <table>
+                <dd>审查的页面中的资源，例如文档、脚本或图片。</dd>
+                  <tr><th colspan="3" id="Resource-properties">属性</th></tr>
+                  <tr id="property-Resource-url">
+                    <td>string</td>
+                    <td>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      资源的 URL。
+                    </p></td>
+                  </tr>
+                  <tr><th colspan="3" id="Resource-methods">方法</th></tr>
+                  <tr><td>
+                  <div>
+                    <h4
+                        id="method-Resource-getContent"
+                        >getContent
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    Resource.getContent(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        获取资源内容。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-getContent-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              当请求完成时接收资源内容的函数。
+                            </p>    <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(string content, string encoding) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-content">
+                                    <td>string</td>
+                                    <td>
+                                        content</td>
+                                    <td>
+                                    
+                                    <p>
+                                      资源内容（可能经过编码）。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-callback-encoding">
+                                    <td>string</td>
+                                    <td>
+                                        encoding</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果内容没有经过编码则为空，否则为编码名称。当前只支持 base64 编码。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr><tr><td>
+                  <div>
+                    <h4
+                        id="method-Resource-setContent"
+                        >setContent
+                    </h4>
+                    <div class="summary">
+                    <code class="prettyprint">
+                    Resource.setContent(<span>string content</span>, <span>boolean commit</span>, <span class="optional">function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <p>
+                        设置资源内容。
+                      </p>
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-setContent-content">
+                            <td>string</td>
+                            <td>
+                                content</td>
+                            <td>
+                            
+                            <p>
+                              资源的新内容，当前只支持文本类型的资源。
+                            </p></td>
+                          </tr>
+                          <tr id="property-setContent-commit">
+                            <td>boolean</td>
+                            <td>
+                                commit</td>
+                            <td>
+                            
+                            <p>
+                              如果用户已完成资源编辑，并且资源的新内容应该保留的话则为 true。如果这只是一个次要的更改，在用户编辑资源的过程中发送则为 false。
+                            </p></td>
+                          </tr>
+                          <tr id="property-setContent-callback">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                callback</td>
+                            <td>
+                            
+                            <p>
+                              当请求完成时调用的函数。
+                            </p>    <p>
+                                    <!--@If you specify the <em>callback</em> parameter, it should
+                                    be a function that looks like this:-->
+                                    如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object error) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-callback-error">
+                                    <td>object</td>
+                                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                        error</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果资源内容成功设置则为 undefined，否则描述错误。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </table>
+            </div>
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">  integer</span></td>
+              <td><code id="property-tabId">chrome.devtools.inspectedWindow.tabId</code></td>
+              <td>
+                  正在审查的标签页的标识符，这一标识符可以在 chrome.tabs.* API 中使用。
+              </td>
+            </tr>
+          </table>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-eval"
+                  >eval
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.devtools.inspectedWindow.eval(<span>string expression</span>, <span class="optional">object options</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  在审查页面主框架的上下文中对 JavaScript 表达式求值，表达式的结果必须是一个可转换为 JSON 的对象，否则将会引发异常。eval 函数可能会报告开发者工具中的错误，也可能是求值过程中产生的 JavaScript 异常。无论是哪种情况，回调函数的 <code>result</code> 参数均为 <code>undefined</code>。如果是开发者工具中的错误，<code>isException</code> 参数就不为 null，并包含 <code>isError</code> 属性，设置为 true，还有 <code>code</code> 属性，设置为错误码。如果是 JavaScript 错误，<code>isException</code> 设置为 true，<code>value</code> 设置为抛出的异常对象的字符串值。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-eval-expression">
+                      <td>string</td>
+                      <td>
+                          expression</td>
+                      <td>
+                      
+                      <p>
+                        需要求值的表达式。
+                      </p></td>
+                    </tr>
+                    <tr id="property-eval-options">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 38<!--@.
+                         --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                        -->目前为 <strong>Dev</strong> 分支。<!--@
+                        
+                         --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                      </p>
+                      
+                      <p>
+                        options 参数可以包含一个或多个选项。
+                      </p>  <table class="innerTable">
+                          <tr id="property-options-frameURL">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                frameURL</td>
+                            <td>
+                            
+                            <p>
+                              如果指定了该参数，表达式将在匹配指定 URL 的内嵌框架中运行。默认情况下表达式在审查网页的顶层框架中运行。
+                            </p></td>
+                          </tr><tr id="property-options-useContentScriptContext">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                useContentScriptContext</td>
+                            <td>
+                            
+                            <p>
+                              在当前扩展程序内容脚本的上下文中运行表达式，要求内容脚本已经插入审查的网页。如果还没有，表达式就不会运行，调用回调函数时异常参数设置为一个对象，其中 <code>isError</code> 字段设为 true，<code>code</code> 字段设为 <code>E_NOTFOUND</code>。
+                            </p></td>
+                          </tr><tr id="property-options-contextSecurityOrigin">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                contextSecurityOrigin</td>
+                            <td>
+                            
+                            <p>
+                              在匹配指定来源的扩展程序对应的内容脚本上下文中运行表达式。如果指定了该属性，contextSecurityOrigin 覆盖设置为 true 的 userContentScriptContext 属性。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-eval-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        求值完成时调用的函数。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object result, object exceptionInfo) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>object</td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              <p>
+                                求值结果。
+                              </p></td>
+                            </tr>
+                            <tr id="property-callback-exceptionInfo">
+                              <td>object</td>
+                              <td>
+                                  exceptionInfo</td>
+                              <td>
+                              
+                              <p>
+                                如果执行表达式的过程中发生异常，该对象提供详细信息。
+                              </p>  <table class="innerTable">
+                                  <tr id="property-exceptionInfo-isError">
+                                    <td>boolean</td>
+                                    <td>
+                                        isError</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果表达式运行之前开发者工具中发生错误则设置为 true。
+                                    </p></td>
+                                  </tr><tr id="property-exceptionInfo-code">
+                                    <td>string</td>
+                                    <td>
+                                        code</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果运行表达式前开发者工具中产生错误则设置该属性。
+                                    </p></td>
+                                  </tr><tr id="property-exceptionInfo-description">
+                                    <td>string</td>
+                                    <td>
+                                        description</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果运行表达式前开发者工具中产生错误则设置该属性。
+                                    </p></td>
+                                  </tr><tr id="property-exceptionInfo-details">
+                                    <td>array of any</td>
+                                    <td>
+                                        details</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果运行表达式前开发者工具中产生错误则设置该属性，包含在描述字符串中需要替换的值数组，以便提供有关错误的更多信息。
+                                    </p></td>
+                                  </tr><tr id="property-exceptionInfo-isException">
+                                    <td>boolean</td>
+                                    <td>
+                                        isException</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果运行的代码产生未处理的异常则设置该属性。
+                                    </p></td>
+                                  </tr><tr id="property-exceptionInfo-value">
+                                    <td>string</td>
+                                    <td>
+                                        value</td>
+                                    <td>
+                                    
+                                    <p>
+                                      如果运行的代码产生未处理的异常则设置该属性。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-reload"
+                  >reload
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.devtools.inspectedWindow.reload(<span class="optional">object reloadOptions</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  重新载入审查的页面。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-reload-reloadOptions">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          reloadOptions</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-reloadOptions-ignoreCache">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                ignoreCache</td>
+                            <td>
+                            
+                            <p>
+                              当设置为 true 时，载入器将忽略所有在 <code>load</code> 事件产生前载入的审查页面资源的缓存，效果类似于在审查的窗口或开发者工具窗口中按下 Ctrl+Shift+R。
+                            </p></td>
+                          </tr><tr id="property-reloadOptions-userAgent">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                userAgent</td>
+                            <td>
+                            
+                            <p>
+                              如果指定的话，这一字符串会替代载入审查页面的资源时发送的 HTTP 头信息中的 <code>User-Agent</code> 值，这一字符串也会替代返回给审查的页面中运行的所有脚本的 <code>naviagtor.userAgent</code> 属性。
+                            </p></td>
+                          </tr><tr id="property-reloadOptions-injectedScript">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                injectedScript</td>
+                            <td>
+                            
+                            <p>
+                              如果指定的话，这一脚本将会在刚开始载入时，在任何框架的脚本之前插入至审查页面的每一个框架。这一脚本在以后的重新载入中不会插入——例如，如果用户按下 Ctrl+R。
+                            </p></td>
+                          </tr><tr id="property-reloadOptions-preprocessorScript">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                preprocessorScript</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 38<!--@.
+                               --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                              -->目前为 <strong>Dev</strong> 分支。<!--@
+                              
+                               --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                            </p>
+                            
+                            <p>
+                              如果指定了该属性，运行该脚本时会传递三个参数：要预处理的源代码、源代码 URL 以及函数名称（如果源代码为 DOM 事件处理程序）。preprocessorerScript 函数应该返回字符串，Chrome 浏览器使用它代替输入的源代码。如果源代码为 DOM 事件处理程序，返回的源代码必须编译为单个 JS 函数。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getResources"
+                  >getResources
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.devtools.inspectedWindow.getResources(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  从审查的页面中获取所有资源的列表。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getResources-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        请求完成时接收资源列表的函数。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="devtools_inspectedWindow.html#type-Resource">Resource</a> resources) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-resources">
+                              <td>array of     <a href="devtools_inspectedWindow.html#type-Resource">Resource</a></td>
+                              <td>
+                                  resources</td>
+                              <td>
+                              
+                              <p>
+                                页面中的资源。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onResourceAdded">onResourceAdded</h3>
+              <div class="description">
+            <p>
+                  当新资源添加到审查的页面中时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.devtools.inspectedWindow.onResourceAdded.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onResourceAdded-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="devtools_inspectedWindow.html#type-Resource">Resource</a> resource) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onResourceAdded-resource">
+                                    <td>    <a href="devtools_inspectedWindow.html#type-Resource">Resource</a></td>
+                                    <td>
+                                        resource</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onResourceContentCommitted">onResourceContentCommitted</h3>
+              <div class="description">
+            <p>
+                  当新版本的资源提交（例如用户在开发者工具中保存了某一资源编辑之后的版本）时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.devtools.inspectedWindow.onResourceContentCommitted.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onResourceContentCommitted-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="devtools_inspectedWindow.html#type-Resource">Resource</a> resource, string content) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onResourceContentCommitted-resource">
+                                    <td>    <a href="devtools_inspectedWindow.html#type-Resource">Resource</a></td>
+                                    <td>
+                                        resource</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onResourceContentCommitted-content">
+                                    <td>string</td>
+                                    <td>
+                                        content</td>
+                                    <td>
+                                    
+                                    <p>
+                                      资源的新内容。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#chrome-preprocessor-example">Chrome Preprocessor Example</a></strong>
+          &ndash; Simple hello-world example for chrome.devtools.inspectedWindow.reload() using preprocessor.
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

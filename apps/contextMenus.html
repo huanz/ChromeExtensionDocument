@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.contextMenus - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="contextMenus.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.contextMenus</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.contextMenus</code> API 向 Google Chrome 浏览器的右键菜单添加项目。您可以选择您在右键菜单中添加的项目应用于哪些类型的对象，例如图片、超链接和页面。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 6<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "contextMenus"
+                    </span>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="usage"><!--@Usage-->用法</h2>
+      
+      <p>
+      <!--@Context menu items can appear in any document
+      (or frame within a document),
+      even those with file:// or chrome:// URLs.
+      To control which documents your items can appear in,
+      specify the documentUrlPatterns field
+      when you call the create() or update() method.-->
+      右键菜单项可以在任何文档（或文档中的框架）中出现，即使它们使用
+      file:// 或 chrome:// 协议的 URL。要控制您的菜单项在哪些文档中出现，在您调用
+      create() 或 update() 方法时请指定 documentUrlPatterns 属性。
+      </p>
+      
+      <p>
+      <!--@You can create as many context menu items
+      as you need, but if more than one
+      from your extension is visible at once,
+      Google Chrome automatically collapses them
+      into a single parent menu.-->
+      您可以根据自己的需要创建任意数目的右键菜单项，但是如果您的扩展程序一次显示超过一个菜单项，Google Chrome 浏览器会自动将它们折叠至一个父菜单中。
+      </p>
+      
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      <p>
+      <!--@You must declare the "contextMenus" permission
+      in your app's manifest to use the API.
+      For example:-->
+      您必须在应用的清单文件中声明 "contextMenus" 权限才能使用有关
+      API。例如：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        "permissions": [
+          <b>"contextMenus"</b>
+        ],
+        ...
+      }
+      </pre>
+      
+      <h2 id="examples"><!--@Examples-->例子</h2>
+      
+      <p>
+      <!--@You can find samples of this API on the
+      <a href="samples#contextMenus">sample page</a>.-->
+      您可以在<a href="samples.html#contextMenus">示例页面</a>找到这一 API 的示例。
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Properties-->属性</th></tr>
+          <tr><td><a href="contextMenus.html#property-ACTION_MENU_TOP_LEVEL_LIMIT">ACTION_MENU_TOP_LEVEL_LIMIT</a></td>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="contextMenus.html#method-create">create</a> &minus;
+            <code class="prettyprint">
+            integer or 
+            string
+            chrome.contextMenus.create(<span>object createProperties</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="contextMenus.html#method-update">update</a> &minus;
+            <code class="prettyprint">
+            chrome.contextMenus.update(<span>integer or string id</span>, <span>object updateProperties</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="contextMenus.html#method-remove">remove</a> &minus;
+            <code class="prettyprint">
+            chrome.contextMenus.remove(<span>integer or string menuItemId</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="contextMenus.html#method-removeAll">removeAll</a> &minus;
+            <code class="prettyprint">
+            chrome.contextMenus.removeAll(<span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="contextMenus.html#event-onClicked">onClicked</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="properties"><!--@Properties-->属性</h2>
+          <table>
+            <tr>
+              <td><span class="type_name">  <code>6</code></span></td>
+              <td><code id="property-ACTION_MENU_TOP_LEVEL_LIMIT">chrome.contextMenus.ACTION_MENU_TOP_LEVEL_LIMIT</code></td>
+              <td>
+                <p class="availability">
+                  <strong><!--@Not fully implemented-->尚未完全实现</strong><!--@.
+                   You must build Chromium from source to try this API.
+                  
+                   -->，您必须通过源代码建立 Chromium 才能尝试该 API。<a href="http://www.chromium.org/developers"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                  最多允许添加多少顶层扩展程序菜单项至扩展程序按钮的右键菜单中，超过该限制的菜单项将会忽略。
+              </td>
+            </tr>
+          </table>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-create"
+                  >create
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+              integer or 
+              string
+              chrome.contextMenus.create(<span>object createProperties</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  创建一个新的右键菜单项。注意，如果创建过程中发生错误，您可能要等到回调函数调用时才能得知（详情可从 <a href="runtime.html#property-lastError">runtime.lastError</a> 获得）
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-create-createProperties">
+                      <td>object</td>
+                      <td>
+                          createProperties</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-createProperties-type">
+                            <td>enum of <code>"normal"</code>, <code>"checkbox"</code>, <code>"radio"</code>, or <code>"separator"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                type</td>
+                            <td>
+                            
+                            <p>
+                              菜单项的类型。如果没有指定则默认为 'normal'（普通）。
+                            </p></td>
+                          </tr><tr id="property-createProperties-id">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                id</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 21<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              指派给该菜单项的唯一标志符，对于事件页面来说必须存在，不能与同一扩展程序中的其他标志符相同。
+                            </p></td>
+                          </tr><tr id="property-createProperties-title">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                title</td>
+                            <td>
+                            
+                            <p>
+                              显示在菜单项中的文字，除非 <em>type</em>（类型）是 'separator'（分隔符），该参数是<em>必选</em>的。当上下文为 'selection'（选定内容）时，您可以在字符串中使用 <code>%s</code> 来显示选中的文本。例如，如果参数值是“将‘%s’翻译为儿童黑话”，当用户选择一个词语“酷”时，对于选中内容的右键菜单项为“将‘酷’翻译为儿童黑话”。
+                            </p></td>
+                          </tr><tr id="property-createProperties-checked">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                checked</td>
+                            <td>
+                            
+                            <p>
+                              单选或复选菜单项的初始状态：选定为 true，未选定为 false。在一组单选菜单项中，一次只能有一项选定。
+                            </p></td>
+                          </tr><tr id="property-createProperties-contexts">
+                            <td>array of enum of <code>"all"</code>, <code>"page"</code>, <code>"frame"</code>, <code>"selection"</code>, <code>"link"</code>, <code>"editable"</code>, <code>"image"</code>, <code>"video"</code>, <code>"audio"</code>, <code>"launcher"</code>, <code>"browser_action"</code>, or <code>"page_action"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                contexts</td>
+                            <td>
+                            
+                            <p>
+                              列出该菜单项将会出现在哪些上下文中，包括 "all"（全部）、"page"（页面）、"frame"（框架）、"selection"（选定内容）、"link"（链接）、"editable"（可编辑内容）、"image"（图片）、"video"（视频）、"audio"（音频），如果没有指定则默认为 ['page']（页面），指定 ['all'] 相当于除 'launcher' 以外的所有其他上下文的组合。'launcher' 上下文仅在应用中支持，为右键菜单添加菜单项，在单击执行器/任务栏/窗格/等等中的应用图标时显示。不同的平台对于执行器中实际支持的特性可能会有一些限制。
+                            </p></td>
+                          </tr><tr id="property-createProperties-onclick">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                onclick</td>
+                            <td>
+                            
+                            <p>
+                              当菜单项单击时的回调函数。事件页面不能使用该属性，相反，它们应该为 chrome.contextMenus.onClicked 注册事件处理函数。
+                            </p>  <table class="innerTable">
+                                <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                                <tr id="property-onclick-info">
+                                  <td>    <a href="contextMenusInternal.html#type-OnClickData">contextMenusInternal.OnClickData</a></td>
+                                  <td>
+                                      info</td>
+                                  <td>
+                                  
+                                  <p>
+                                    有关单击发生时的菜单项和上下文的信息。
+                                  </p></td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr><tr id="property-createProperties-parentId">
+                            <td>integer or string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                parentId</td>
+                            <td>
+                            
+                            <p>
+                              父菜单项标识符，指定这一参数使新添加的菜单项成为原先添加菜单项的子菜单项。
+                            </p></td>
+                          </tr><tr id="property-createProperties-documentUrlPatterns">
+                            <td>array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                documentUrlPatterns</td>
+                            <td>
+                            
+                            <p>
+                              让您将该菜单项限制在 URL 匹配给定表达式的文档中显示。（也适用于框架。）有关表达式的格式的详情，请参见<a href='match_patterns.html'>匹配表达式</a>。
+                            </p></td>
+                          </tr><tr id="property-createProperties-targetUrlPatterns">
+                            <td>array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                targetUrlPatterns</td>
+                            <td>
+                            
+                            <p>
+                              类似于 documentUrlPatterns，但是允许您基于 <img>/<audio>/<video> 标签的 src 属性以及 <a> 标签的 href 属性过滤。
+                            </p></td>
+                          </tr><tr id="property-createProperties-enabled">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                enabled</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 20<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              该右键菜单项是启用还是禁用，默认为 true。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-create-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        当菜单项已经在浏览器中创建后调用。如果创建过程中出现任何错误，详情可从 <a href="runtime.html#property-lastError">runtime.lastError</a> 获得。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-update"
+                  >update
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.contextMenus.update(<span>integer or string id</span>, <span>object updateProperties</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  更新以前创建的菜单项。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-update-id">
+                      <td>integer or string</td>
+                      <td>
+                          id</td>
+                      <td>
+                      
+                      <p>
+                        要更新的菜单项标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-update-updateProperties">
+                      <td>object</td>
+                      <td>
+                          updateProperties</td>
+                      <td>
+                      
+                      <p>
+                        要更新的属性，与 create 函数的 createProperties 参数使用的相同值。
+                      </p>  <table class="innerTable">
+                          <tr id="property-updateProperties-type">
+                            <td>enum of <code>"normal"</code>, <code>"checkbox"</code>, <code>"radio"</code>, or <code>"separator"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                type</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-updateProperties-title">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                title</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-updateProperties-checked">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                checked</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-updateProperties-contexts">
+                            <td>array of enum of <code>"all"</code>, <code>"page"</code>, <code>"frame"</code>, <code>"selection"</code>, <code>"link"</code>, <code>"editable"</code>, <code>"image"</code>, <code>"video"</code>, <code>"audio"</code>, <code>"launcher"</code>, <code>"browser_action"</code>, or <code>"page_action"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                contexts</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-updateProperties-onclick">
+                            <td>function</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                onclick</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-updateProperties-parentId">
+                            <td>integer or string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                parentId</td>
+                            <td>
+                            
+                            <p>
+                              注意：您不能更改菜单项，使它成为自己的子菜单。
+                            </p></td>
+                          </tr><tr id="property-updateProperties-documentUrlPatterns">
+                            <td>array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                documentUrlPatterns</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-updateProperties-targetUrlPatterns">
+                            <td>array of string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                targetUrlPatterns</td>
+                            <td>
+                            
+                            </td>
+                          </tr><tr id="property-updateProperties-enabled">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                enabled</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 20<!--@.--> 开始支持。
+                            </p>
+                            
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-update-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        右键菜单项更新后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-remove"
+                  >remove
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.contextMenus.remove(<span>integer or string menuItemId</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  移除右键菜单项。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-remove-menuItemId">
+                      <td>integer or string</td>
+                      <td>
+                          menuItemId</td>
+                      <td>
+                      
+                      <p>
+                        要移除的菜单项标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-remove-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        右键菜单项移除后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-removeAll"
+                  >removeAll
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.contextMenus.removeAll(<span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  移除该扩展程序添加的所有右键菜单项。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-removeAll-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        移除完成后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onClicked">onClicked</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 21<!--@.--> 开始支持。
+                </p>
+                  <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.contextMenus.onClicked.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onClicked-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

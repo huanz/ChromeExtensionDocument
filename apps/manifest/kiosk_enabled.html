@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>信息亭应用 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="kiosk_enabled.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1><!--@Kiosk Apps-->信息亭应用</h1>
+
+
+
+<p><!--@Kiosk Apps are Chrome Apps that are designed to always run fullscreen using <a
+href="https://support.google.com/chromebook/answer/3134673">Single App Kiosk Mode</a>
+on Chrome OS and do not allow the user to exit
+the app. They're great for a purpose-built Chrome device, such as a guest
+registration desk, a library catalog station, or a point-of-sale system in a store.-->
+信息亭应用是一种始终在全屏模式下运行的 Chrome 应用，它使用 Chrome OS 上的<a
+href="https://support.google.com/chromebook/answer/3134673">单一应用信息亭模式</a>，不允许用户退出应用。它适用于专门制造的 Chrome
+设备，例如来宾登记前台、图书馆目录工作站或商店中的销售系统。
+</p>
+
+<p><!--@A Kiosk App can be launched manually or set to automatically launch when the
+device boots up. You can use a Chrome device as a kiosk by turning on Single App Kiosk mode <a
+  href="https://support.google.com/chromebook/answer/3134673">manually for each device</a>,
+  or across multiple devices using the <a
+    href="https://support.google.com/chrome/a/answer/3017014">Chrome management console</a>.-->
+  信息亭应用可以手动启动或设置为设备启动时自动运行。您可以<a
+  href="https://support.google.com/chromebook/answer/3134673">手工为每台设备</a>启用单一应用信息亭模式，把
+Chrome 设备用作信息亭，也可以使用<a
+  href="https://support.google.com/chrome/a/answer/3017014">Chrome
+管理控制台</a>跨越多台设备。
+</p>
+
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/aGvFbBt-LNA?autohide=1"
+frameborder="0" allowfullscreen></iframe>-->
+<video controls="" width="560" height="315">
+	<source src="http://r2---sn-npo7en7y.googlevideo.com/videoplayback?sver=3&itag=18&mm=31&ip=45.118.135.109&nh=IgpwcjAxLnNpbjAzKgkxMjcuMC4wLjE&ratebypass=yes&ipbits=0&dur=364.065&id=o-AHQ5cCfcxn06EKiLVg_EqOHKx7Uf0VnrHu4qUIiVt0h6&pl=26&lmt=1437813284486347&ms=au&mv=u&mn=sn-npo7en7y&key=yt6&mime=video/mp4&source=youtube&expire=1448614737&upn=LTYPDI8kiCA&sparams=dur,id,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,nh,pl,ratebypass,source,upn,expire&signature=888D3990640AF302AA493328F6591F2F08A4143A.240761B20B15A7F25B4081351730CBE1C94F4F10&fexp=9405186,9408710,9414733,9416126,9417683,9418959,9419452,9420452,9420540,9421173,9421250,9421463,9422283,9422596,9422618,9423299,9423662,9423786,9424051,9424114,9424372,9424377,9424915,9424966&mt=1448592447&name=aGvFbBt-LNA" type="video/mp4">
+</video>
+
+
+
+<h2 id="Look"><!--@How they look-->信息亭应用的外观</h2>
+
+<p><!--@Once the Kiosk App starts, the user experience is dedicated to the tasks defined by the app. The
+app does not look like the traditional Chrome browser: there is no window frame, no Omnibox
+(address bar), no tab strip, and no other browser interface elements. So as a developer, every
+pixel of the screen is yours to use as you wish.-->
+信息亭应用启动后，用户体验取决于应用定义的任务。应用的外观和传统的 Chrome
+浏览器不同，没有窗口框架、多功能框（地址栏）、标签页，也没有其他浏览器的界面元素。所以开发者可以充分利用屏幕上的每一像素。</p>
+
+
+<h2 id="Behavior"><!--@How they behave-->信息亭应用的行为</h2>
+
+<p><!--@When a Kiosk App is configured to run on Chrome OS using <a href=
+"https://support.google.com/chromebook/answer/3134673">Single App Kiosk Mode</a>, the user
+has no control over the app’s lifecycle. The user cannot exit the app or switch to another task.
+However, as an app developer, you can offer a "logout" or "exit"
+button within the app to close all its windows, which terminates the session and returns
+the user to the login screen.-->
+采用<a href="https://support.google.com/chromebook/answer/3134673"
+>单一应用信息亭模式</a>在 Chrome OS
+上运行信息亭应用时，用户无法控制应用的生命周期，不能退出应用或切换至另一任务。但是，应用开发者可以在应用中提供“注销”或“退出”按钮，关闭所有窗口，以便终止会话，并返回到登录屏幕。
+</p>
+
+<p><!--@Single App Kiosk Mode optimizes bandwidth use and speed by downloading and installing the app so
+it can launch each time without installation delays. Each time a Kiosk App launches, the system
+checks for updates in the Chrome Web Store to ensure that the latest app version is installed,
+unless the app is set to be <a href=
+"https://developer.chrome.com/apps/manifest/offline_enabled">enabled offline</a>. Thereafter, the
+system checks for updates every five hours and installs the update if available. If the device is
+offline, the update is rescheduled to a later time when the app is back online.-->
+单一应用信息亭模式下载并安装应用，这样每次启动时就没有安装延迟，优化了带宽使用和速度。每次启动信息亭应用时，系统会检查
+Chrome 网上应用店中的更新，确保安装的是最新版的应用，除非应用设置为<a
+href="offline_enabled.html">可以离线运行</a>。之后，系统每隔五小时检查更新，如果可用的话安装更新。如果设备处于离线状态，更新将推迟至应用恢复在线状态的时候。
+</p>
+
+<p><!--@Any data the app stores using the <a href=
+"https://developer.chrome.com/apps/fileSystem">FileSystem</a> API persists across executions of the
+app, allowing you to download and cache any assets your app may need while offline. As a developer,
+you need to ensure that user data is stored locally while offline, then synced to your data server
+once online (see <a href="https://developer.chrome.com/apps/offline_apps.html">Offline
+First</a>).-->
+采用<a
+href="https://developer.chrome.com/apps/fileSystem">文件系统</a> API
+存储的数据在应用执行时会保留，允许您下载和缓存应用需要的资源，以便离线时使用。开发者应该确保离线状态下用户数据在本地存储，数据服务器恢复在线时同步（请参见<a href="../offline_apps.html">首先考虑离线</a>）。
+</p>
+
+<p><!--@Once the app is installed, it is available to anyone who walks up to the Chrome OS device. There
+is no need for users to log in before using Single App Kiosk Mode.-->
+应用安装后，使用 Chrome OS
+设备的任何人都可以使用它，使用单一应用信息亭模式前不需要用户登录。</p>
+
+
+
+<h2 id="Develop"><!--@How to develop a Kiosk App-->如何开发信息亭应用</h2>
+
+<p><!--@If you know how to build a <a href="https://developer.chrome.com/apps/about_apps">Chrome App</a>,
+  then you know how to build a Kiosk App because they use
+the same <a href="https://developer.chrome.com/apps/app_architecture">app architecture</a>. All you
+have to do is set <code>"kiosk_enabled"</code> to <code>true</code> in your app’s <a href=
+"https://developer.chrome.com/apps/manifest">manifest file</a>. Your app can then run in either
+a regular session or Single App Kiosk Mode. If you want your app
+to run in Single App Kiosk Mode only, then also set <code>"kiosk_only"</code> to <code>true</code>.
+This prevents the app from being launched in a regular session. For example:-->
+如果您了解如何建立
+<a href="../about_apps.html">Chrome 应用</a>，那您也知道如何建立信息亭应用，因为它们采用相同的<a
+href="../app_architecture.html">应用架构</a>。您只需要在应用的<a
+href="../manifest.html">清单文件</a>中将 <code>"kiosk_enabled"</code> 设置为
+<code>true</code> 即可。如果您希望应用只能在单一应用信息亭模式下运行，请同时将
+<code>"kiosk_only"</code> 设置为 <code>true</code>，这样应用就不能在普通会话中启动。例如：
+</p>
+
+<pre>
+{
+  "app" : {
+    "background" : {
+      "scripts" : ["background.js"]
+    }
+  },
+  "manifest_version" : 2,
+  "name" : "我的信息亭应用",
+  "version" : "1.0",
+  ...
+
+  // 设置为信息亭应用
+  "kiosk_enabled" : true,
+  "kiosk_only" : true
+}
+</pre>
+
+<p><!--@To determine whether the app is being run in a regular session or Single App Kiosk Mode, you can
+inspect the <code>isKioskSession</code> boolean that's included in the <code>launchData</code>
+object from the <a href=
+"https://developer.chrome.com/apps/app_runtime#event-onLaunched">app.runtime.onLaunched</a>
+event.-->
+如果要确定应用是在普通会话中运行还是单一应用信息亭模式，您可以检查
+<a href="../app_runtime.html#event-onLaunched">app.runtime.onLaunched</a>
+事件的 <code>launchData</code> 中包含的 <code>isKioskSession</code> 布尔值。
+</p>
+
+<p><!--@If you want to monetize your app, your app must handle all payment logic. You cannot monetize a
+Kiosk App through the <a href="https://developer.chrome.com/webstore/money">Chrome web store
+payment flow</a>.-->
+如果您希望通过您的应用获利，您的应用必须处理所有支付逻辑，您不能通过
+<a href="https://developer.chrome.com/webstore/money">Chrome 网上应用店支付流程</a>在信息亭应用中获利。
+</p>
+
+
+<h3 id="Samples"><!--@Sample apps-->示例应用</h3>
+
+<ul>
+  <li><a href=
+"https://github.com/KioskApps/InfoHub"
+><!--@LiveStream/Interactive display app-->流媒体/交互式显示应用</a></li>
+  <li><a href=
+"https://github.com/KioskApps/SalesPoint"
+><!--@Point of sale app-->销售应用</a></li>
+  <li><a href=
+"https://github.com/KioskApps/QuickTicket"
+><!--@Movie theater app-->影剧院应用</a></li>
+  <li><a href=
+"https://chrome.google.com/webstore/category/collection/kiosk-apps"
+><!--@Kiosk apps in the Chrome Web Store-->Chrome 网上应用店中的信息亭应用</a></li>
+</ul>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+      <ol class="toc">
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="kiosk_enabled.html#Look"
+          >信息亭应用的外观</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="kiosk_enabled.html#Behavior"
+          >信息亭应用的行为</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="kiosk_enabled.html#Develop"
+          >如何开发信息亭应用</a>
+          <ol class="toc">
+              <li><a data-list-item href="kiosk_enabled.html#Samples"
+                     >示例应用</a>
+              </li>
+          </ol>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../static/js/fatnav.js"></script>
+    <script src="../../static/js/article.js"></script>
+    <script src="../../static/js/prettify.js"></script>
+    <script src="../../static/js/search.js"></script>
+    <script src="../../static/js/site.js"></script>
+  </body>
+</html>

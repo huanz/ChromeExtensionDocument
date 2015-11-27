@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.cookies - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="cookies.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.cookies</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.cookies</code> API 查询和修改 Cookie，并在 Cookie 更改时得到通知。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 6<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <span class="code">
+            "cookies"
+                    </span>
+            <br>
+            <a href="declare_permissions.html#host-permissions">
+            主机权限
+                    </a>
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      
+      <p><!--@To use the cookies API,
+      you must declare the "cookies" permission in your manifest,
+      along with <a href="declare_permissions">host permissions</a>
+      for any hosts whose cookies
+      you want to access.
+      For example:-->
+      要使用 Cookie API，您必须在清单文件中声明 "cookies" 权限，以及用于访问
+      Cookie 的<a href="declare_permissions.html">主机权限</a>。例如：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "cookies",
+          "*://*.google.com"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <h2 id="examples"><!--@ Examples -->例子</h2>
+      
+      <p>
+      <!--@You can find a simple example
+      of using the cookies API in the-->
+      您可以在
+      <a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/cookies/">examples/api/cookies</a>
+      <!--@directory.
+      For other examples
+      and for help in viewing the source code,
+      see <a href="samples">Samples</a>.-->
+      目录中找到使用 Cookie API
+      的简单示例。有关其他例子以及查看源代码的帮助，请参见<a
+      href="samples.html">示例</a>。
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="cookies.html#type-Cookie">Cookie</a></td></tr>
+          <tr><td><a href="cookies.html#type-CookieStore">CookieStore</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="cookies.html#method-get">get</a> &minus;
+            <code class="prettyprint">
+            chrome.cookies.get(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="cookies.html#method-getAll">getAll</a> &minus;
+            <code class="prettyprint">
+            chrome.cookies.getAll(<span>object details</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="cookies.html#method-set">set</a> &minus;
+            <code class="prettyprint">
+            chrome.cookies.set(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="cookies.html#method-remove">remove</a> &minus;
+            <code class="prettyprint">
+            chrome.cookies.remove(<span>object details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="cookies.html#method-getAllCookieStores">getAllCookieStores</a> &minus;
+            <code class="prettyprint">
+            chrome.cookies.getAllCookieStores(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="cookies.html#event-onChanged">onChanged</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Cookie">Cookie</h3>
+              <table>
+                <dd>代表一个 HTTP Cookie 的有关信息。</dd>
+                  <tr><th colspan="3" id="Cookie-properties">属性</th></tr>
+                  <tr id="property-Cookie-name">
+                    <td>string</td>
+                    <td>
+                        name</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的名称。
+                    </p></td>
+                  </tr><tr id="property-Cookie-value">
+                    <td>string</td>
+                    <td>
+                        value</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的值。
+                    </p></td>
+                  </tr><tr id="property-Cookie-domain">
+                    <td>string</td>
+                    <td>
+                        domain</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的域名（例如 “www.google.com”、“example.com”）。
+                    </p></td>
+                  </tr><tr id="property-Cookie-hostOnly">
+                    <td>boolean</td>
+                    <td>
+                        hostOnly</td>
+                    <td>
+                    
+                    <p>
+                      如果 Cookie 仅用于指定主机则为 true（即请求的主机必须精确匹配 Cookie 的域名）。
+                    </p></td>
+                  </tr><tr id="property-Cookie-path">
+                    <td>string</td>
+                    <td>
+                        path</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的路径。
+                    </p></td>
+                  </tr><tr id="property-Cookie-secure">
+                    <td>boolean</td>
+                    <td>
+                        secure</td>
+                    <td>
+                    
+                    <p>
+                      如果 Cookie 被标记为安全的则为 true（即它的范围限定在以 HTTPS 为典型的安全通道内）。
+                    </p></td>
+                  </tr><tr id="property-Cookie-httpOnly">
+                    <td>boolean</td>
+                    <td>
+                        httpOnly</td>
+                    <td>
+                    
+                    <p>
+                      如果 Cookie 被标记为仅用于 HTTP 则为 true（即客户端脚本不能访问该 Cookie）。
+                    </p></td>
+                  </tr><tr id="property-Cookie-session">
+                    <td>boolean</td>
+                    <td>
+                        session</td>
+                    <td>
+                    
+                    <p>
+                      如果是会话 Cookie 则为 true，与之相对，如果是具有过期日期的持久 Cookie 则为 false。
+                    </p></td>
+                  </tr><tr id="property-Cookie-expirationDate">
+                    <td>double</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        expirationDate</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 的过期日期，表示为自从 UNIX 纪元（1970 年 1 月 1 日午夜）开始所经过的秒数。对于会话 Cookie 省略。
+                    </p></td>
+                  </tr><tr id="property-Cookie-storeId">
+                    <td>string</td>
+                    <td>
+                        storeId</td>
+                    <td>
+                    
+                    <p>
+                      包含此 Cookie 的 Cookie 存储区标识符，与 getAllCookieStores() 返回的一致。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-CookieStore">CookieStore</h3>
+              <table>
+                <dd>代表浏览器中的一个 Cookie 存储区。例如隐身窗口使用与非隐身窗口不同的单独的 Cookie 存储区。</dd>
+                  <tr><th colspan="3" id="CookieStore-properties">属性</th></tr>
+                  <tr id="property-CookieStore-id">
+                    <td>string</td>
+                    <td>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      Cookie 存储区的标识符。
+                    </p></td>
+                  </tr><tr id="property-CookieStore-tabIds">
+                    <td>array of integer</td>
+                    <td>
+                        tabIds</td>
+                    <td>
+                    
+                    <p>
+                      共享这一 Cookie 存储区的所有浏览器标签页的标识符。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-get"
+                  >get
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.cookies.get(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获得单个 Cookie 的有关信息。如果给定的 URL 具有多个名称相同的 Cookie，将返回路径最长的一个。如果路径长度相同，将返回创建时间最早的一个。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-get-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        需要获得的Cookie详情。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-url">
+                            <td>string</td>
+                            <td>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              与需要获取的 Cookie 相关联的 URL。该参数可以是一个完整的 URL，这种情况下 URL 路径后的任何数据（例如查询字符串）将被忽略。如果该 URL 的主机权限没有在清单文件中指定，该 API 将会失败。
+                            </p></td>
+                          </tr><tr id="property-details-name">
+                            <td>string</td>
+                            <td>
+                                name</td>
+                            <td>
+                            
+                            <p>
+                              需要获取的 Cookie 的名称。
+                            </p></td>
+                          </tr><tr id="property-details-storeId">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                storeId</td>
+                            <td>
+                            
+                            <p>
+                              需要搜索的 Cookie 存储区的标识符。默认情况下，将使用当前执行环境的 Cookie 存储区。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-get-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="cookies.html#type-Cookie">Cookie</a> cookie) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-cookie">
+                              <td>    <a href="cookies.html#type-Cookie">Cookie</a></td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  cookie</td>
+                              <td>
+                              
+                              <p>
+                                有关 Cookie 的详情。如果没有找到，则该参数为 null。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getAll"
+                  >getAll
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.cookies.getAll(<span>object details</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  返回一个 Cookie 存储区中符合给定条件的所有 Cookie。返回的 Cookie 将按照路径长度从大到小排序，如果多个 Cookie 的路径长度相等，则创建时间最早的排在最前面。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAll-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        用于筛选出要想获取的 Cookie 的信息。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-url">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              将返回结果限制为匹配给定 URL 的 Cookie。
+                            </p></td>
+                          </tr><tr id="property-details-name">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                name</td>
+                            <td>
+                            
+                            <p>
+                              通过名称筛选 Cookie。
+                            </p></td>
+                          </tr><tr id="property-details-domain">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                domain</td>
+                            <td>
+                            
+                            <p>
+                              将返回结果限制为匹配指定域名或者是指定域名的子域名的 Cookie。
+                            </p></td>
+                          </tr><tr id="property-details-path">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                path</td>
+                            <td>
+                            
+                            <p>
+                              将返回结果限制为路径完全匹配该属性的 Cookie。
+                            </p></td>
+                          </tr><tr id="property-details-secure">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                secure</td>
+                            <td>
+                            
+                            <p>
+                              根据 Secure（安全）属性筛选 Cookie。
+                            </p></td>
+                          </tr><tr id="property-details-session">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                session</td>
+                            <td>
+                            
+                            <p>
+                              筛选出会话或持久 Cookie。
+                            </p></td>
+                          </tr><tr id="property-details-storeId">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                storeId</td>
+                            <td>
+                            
+                            <p>
+                              指定从哪一个存储区获取 Cookie。如果省略该属性，则使用当前执行环境的 Cookie 存储区。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-getAll-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="cookies.html#type-Cookie">Cookie</a> cookies) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-cookies">
+                              <td>array of     <a href="cookies.html#type-Cookie">Cookie</a></td>
+                              <td>
+                                  cookies</td>
+                              <td>
+                              
+                              <p>
+                                存在、未过期并且匹配给定信息的所有 Cookie。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-set"
+                  >set
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.cookies.set(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  用给定的数据设置 Cookie，如果同样的 Cookie 已存在则会覆盖。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-set-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        有关要设置的 Cookie 的详情。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-url">
+                            <td>string</td>
+                            <td>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              与要设置的 Cookie 相关联的请求 URI，它的值会影响到创建的 Cookie 的默认域名和路径。如果这一 URL 的主机权限没有在清单文件中指定，则这一API调用会失败。
+                            </p></td>
+                          </tr><tr id="property-details-name">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                name</td>
+                            <td>
+                            
+                            <p>
+                              Cookie 的名称，如果省略的话默认为空。
+                            </p></td>
+                          </tr><tr id="property-details-value">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                value</td>
+                            <td>
+                            
+                            <p>
+                              Cookie 的值，如果省略的话默认为空。
+                            </p></td>
+                          </tr><tr id="property-details-domain">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                domain</td>
+                            <td>
+                            
+                            <p>
+                              Cookie 的域名。如果省略的话该 Cookie 仅适用于 URL 中指定的主机。
+                            </p></td>
+                          </tr><tr id="property-details-path">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                path</td>
+                            <td>
+                            
+                            <p>
+                              Cookie 的路径，默认为 url 参数的路径部分。
+                            </p></td>
+                          </tr><tr id="property-details-secure">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                secure</td>
+                            <td>
+                            
+                            <p>
+                              该 Cookie 是否应该标记为 Secure（安全的），默认为 false。
+                            </p></td>
+                          </tr><tr id="property-details-httpOnly">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                httpOnly</td>
+                            <td>
+                            
+                            <p>
+                              该 Cookie 是否应该标记为 HttpOnly（仅用于 HTTP），默认为 false。
+                            </p></td>
+                          </tr><tr id="property-details-expirationDate">
+                            <td>double</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                expirationDate</td>
+                            <td>
+                            
+                            <p>
+                              Cookie 的过期日期，以自从 UNIX 纪元（1970 年 1 月 1 日午夜）开始所经过的秒数表示。如果省略的话，该 Cookie 仅在会话中有效。
+                            </p></td>
+                          </tr><tr id="property-details-storeId">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                storeId</td>
+                            <td>
+                            
+                            <p>
+                              要设置的 Cookie 存储区的唯一标识符。默认情况下，Cookie 在当前执行环境的 Cookie 存储区中设置。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-set-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="cookies.html#type-Cookie">Cookie</a> cookie) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-cookie">
+                              <td>    <a href="cookies.html#type-Cookie">Cookie</a></td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  cookie</td>
+                              <td>
+                              
+                              <p>
+                                包含已经设置的 Cookie 详情。如果由于任何原因操作失败，则为 null，并设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-remove"
+                  >remove
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.cookies.remove(<span>object details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  根据名称删除 Cookie。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-remove-details">
+                      <td>object</td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        用于标识要删除的Cookie的信息。
+                      </p>  <table class="innerTable">
+                          <tr id="property-details-url">
+                            <td>string</td>
+                            <td>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              与 Cookie 相关联的 URL。如果该 URL 的主机权限没有在清单文件中指定，则这一 API 调用将会失败。
+                            </p></td>
+                          </tr><tr id="property-details-name">
+                            <td>string</td>
+                            <td>
+                                name</td>
+                            <td>
+                            
+                            <p>
+                              要想删除的 Cookie 名称。
+                            </p></td>
+                          </tr><tr id="property-details-storeId">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                storeId</td>
+                            <td>
+                            
+                            <p>
+                              Cookie 存储区的标识符。如果未指定，则在当前执行环境的 Cookie 存储区中寻找 Cookie。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-remove-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(object details) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-details">
+                              <td>object</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  details</td>
+                              <td>
+                              
+                              <p>
+                                包含已经删除的 Cookie 详情。如果由于任何原因删除操作失败，则该参数为 null，并设置 <a href="runtime.html#property-lastError">runtime.lastError</a>。
+                              </p>  <table class="innerTable">
+                                  <tr id="property-details-url">
+                                    <td>string</td>
+                                    <td>
+                                        url</td>
+                                    <td>
+                                    
+                                    <p>
+                                      与以删除的 Cookie 相关联的 URL。
+                                    </p></td>
+                                  </tr><tr id="property-details-name">
+                                    <td>string</td>
+                                    <td>
+                                        name</td>
+                                    <td>
+                                    
+                                    <p>
+                                      已删除的 Cookie 名称。
+                                    </p></td>
+                                  </tr><tr id="property-details-storeId">
+                                    <td>string</td>
+                                    <td>
+                                        storeId</td>
+                                    <td>
+                                    
+                                    <p>
+                                      已删除的 Cookie 来自的存储区。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getAllCookieStores"
+                  >getAllCookieStores
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.cookies.getAllCookieStores(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  列举所有存在的 Cookie 存储区。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAllCookieStores-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="cookies.html#type-CookieStore">CookieStore</a> cookieStores) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-cookieStores">
+                              <td>array of     <a href="cookies.html#type-CookieStore">CookieStore</a></td>
+                              <td>
+                                  cookieStores</td>
+                              <td>
+                              
+                              <p>
+                                所有存在的 Cookie 存储区。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onChanged">onChanged</h3>
+              <div class="description">
+            <p>
+                  当 Cookie 设置或删除时产生。注意更新 Cookie 的属性为特殊情况，实现为两步的过程：首先将要更新的 Cookie 完全删除，产生 cause 属性为 "overwrite"（覆盖）的通知；然后，新的 Cookie 用更新后的值写入，产生 cause 属性为 "explicit" 的第二个通知。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.cookies.onChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object changeInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onChanged-changeInfo">
+                                    <td>object</td>
+                                    <td>
+                                        changeInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-changeInfo-removed">
+                                          <td>boolean</td>
+                                          <td>
+                                              removed</td>
+                                          <td>
+                                          
+                                          <p>
+                                            如果是删除 Cookie 则为 true。
+                                          </p></td>
+                                        </tr><tr id="property-changeInfo-cookie">
+                                          <td>    <a href="cookies.html#type-Cookie">Cookie</a></td>
+                                          <td>
+                                              cookie</td>
+                                          <td>
+                                          
+                                          <p>
+                                            有关设置或删除的 Cookie 信息。
+                                          </p></td>
+                                        </tr><tr id="property-changeInfo-cause">
+                                          <td>enum of <code>"evicted"</code>, <code>"expired"</code>, <code>"explicit"</code>, <code>"expired_overwrite"</code>, or <code>"overwrite"</code></td>
+                                          <td>
+                                              cause</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 12<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            Cookie 更改的原因。<br>如果是添加 Cookie，或者通过显式调用 <a href="cookies.html#method-remove">cookies.remove</a> 方法删除，则为 "explicit"。<br>如果 Cookie 由于过期被自动删除，则为 "expired_overwrite"。如果 Cookie 由于垃圾收集自动删除，则为 "evicted"。<br>如果 Cookie 由于 <a href="cookies.html#method-set">cookies.set</a> 方法的调用被覆盖而自动删除，则为 "overwrite"。<br>您应该根据这一参数作出相应的回应。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#cookie-api-test-extension">Cookie API Test Extension</a></strong>
+          &ndash; Testing Cookie API
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

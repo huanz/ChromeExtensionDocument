@@ -1,0 +1,4016 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>chrome.tabs - Google Chrome 扩展程序开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="tabs.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="../apps/app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="../apps/app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="../apps/app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="../apps/app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="../apps/app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="../apps/app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="../apps/app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../apps/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../apps/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article>
+  <div itemprop="articleBody" class="api">
+    <h1>chrome.tabs</h1>
+    <table class="intro" id="intro">
+      <tr>
+        <td class="title">描述<!--@:-->：</td>
+        <td>
+            使用 <code>chrome.tabs</code> API 与浏览器标签页交互。您可以使用该 API 创建、修改或重新排列浏览器中的标签页。
+                    <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">可用版本<!--@:-->：</td>
+        <td>
+            <!--@Since-->从 Chrome 5<!--@.--> 开始支持。
+            <br>
+        </td>
+      </tr>
+      <tr>
+        <td class="title">权限<!--@:-->：</td>
+        <td>
+            <!--@The majority of the <code>chrome.tabs</code> API can be used without declaring
+             any permission.
+             However, the
+             <code>"tabs"</code> permission is required in order to populate the
+             <code><a href="#property-Tab-url">url</a></code>,
+             <code><a href="#property-Tab-title">title</a></code>, and
+             <code><a href="#property-Tab-favIconUrl">favIconUrl</a></code> properties of
+             <code><a href="#type-Tab">Tab</a></code>.-->
+            大部分 <code>chrome.tabs</code> API 不需要任何权限就能使用。然而，
+            <code><a href="tabs.html#type-Tab">Tab</a></code> 的
+             <code><a href="tabs.html#property-Tab-url">url</a></code>、<code><a
+            href="tabs.html#property-Tab-title">title</a></code> 和
+             <code><a href="tabs.html#property-Tab-favIconUrl">favIconUrl</a></code>
+             属性需要有 <code>"tabs"</code> 权限后才会给出。<a href="tabs.html#method-captureVisibleTab">tabs.captureVisibleTab</a> 需要
+             <code>"&lt;all_urls&gt;"</code> 或
+             <a href="activeTab.html"><code>"activeTab"</code></a> 权限才能使用。
+            <br>
+        </td>
+      </tr>
+    </table>
+    <section>
+      <h2 id="manifest"><!--@Manifest-->清单文件</h2>
+      
+      <p>
+      <!--@You can use most <code>chrome.tabs</code> methods and events without declaring
+      any permissions in the extension's <a href="manifest">manifest</a> file.
+      However, if you require access to the
+      <code><a href=/extensions/tabs#property-Tab-url>url</a></code>,
+      <code><a href=/extensions/tabs#property-Tab-title>title</a></code>, or
+      <code><a href=/extensions/tabs#property-Tab-favIconUrl>favIconUrl</a></code> properties of
+      <code><a href=/extensions/tabs#type-Tab>tabs.Tab</a></code>,
+      you must declare the <code>"tabs"</code> permission in the manifest,
+      as shown below:-->
+      您不需要在扩展程序的<a href="manifest.html">清单文件</a>中声明任何权限就能使用
+      <code>chrome.tabs</code>
+      的大多数方法和事件。然而，如果您需要访问
+      <code><a href="tabs.html#type-Tab">tabs.Tab</a></code> 的
+      <code><a href="tabs.html#property-Tab-url">url</a></code>、<code><a href="tabs.html#property-Tab-title">title</a></code>
+      或 <code><a href="tabs.html#property-Tab-favIconUrl">favIconUrl</a></code>
+      属性，您必须在清单文件中声明 <code>"tabs"</code> 权限，如下所示：
+      </p>
+      
+      <pre data-filename="manifest.json">
+      {
+        "name": "我的扩展程序",
+        ...
+        <b>"permissions": [
+          "tabs"
+        ]</b>,
+        ...
+      }
+      </pre>
+      
+      <h2 id="examples"> <!--@Examples-->例子 </h2>
+      
+      <p>
+      <img src="../static/images/tabs.png"
+           width="561" height="130" alt="Two tabs in a window" />
+      <br>
+      <!--@You can find simple examples of manipulating tabs with the
+      <code>chrome.tabs</code> API in the-->
+      您可以在
+      <a href="http://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/extensions/docs/examples/api/tabs/">examples/api/tabs</a>
+      <!--@directory.
+      For other examples and for help in viewing the source code, see
+      <a href="samples">Samples</a>.-->
+      目录中找到一些使用 <code>chrome.tabs</code> API
+      操纵标签页的简单例子。有关其他例子以及查看源代码的帮助，请参见<a
+      href="samples.html">示例</a>
+      </p>
+    </section>
+    <section id="toc">
+    <h2><!--@Summary-->摘要</h2>
+    <table class="api-summary">
+      <tr>
+        <tr><th colspan="2"><!--@Types-->类型</th></tr>
+          <tr><td><a href="tabs.html#type-Tab">Tab</a></td></tr>
+          <tr><td><a href="tabs.html#type-InjectDetails">InjectDetails</a></td></tr>
+          <tr><td><a href="tabs.html#type-ZoomSettings">ZoomSettings</a></td></tr>
+        <tr><th colspan="2"><!--@Methods-->方法</th></tr>
+        <tr><td><a href="tabs.html#method-get">get</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.get(<span>integer tabId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-getCurrent">getCurrent</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.getCurrent(<span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-connect">connect</a> &minus;
+            <code class="prettyprint">
+                runtime.Port
+            chrome.tabs.connect(<span>integer tabId</span>, <span class="optional">object connectInfo</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-sendRequest">sendRequest</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.sendRequest(<span>integer tabId</span>, <span>any request</span>, <span class="optional">function responseCallback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-sendMessage">sendMessage</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.sendMessage(<span>integer tabId</span>, <span>any message</span>, <span class="optional">function responseCallback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-getSelected">getSelected</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.getSelected(<span class="optional">integer windowId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-getAllInWindow">getAllInWindow</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.getAllInWindow(<span class="optional">integer windowId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-create">create</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.create(<span>object createProperties</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-duplicate">duplicate</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.duplicate(<span>integer tabId</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-query">query</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.query(<span>object queryInfo</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-highlight">highlight</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.highlight(<span>object highlightInfo</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-update">update</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.update(<span class="optional">integer tabId</span>, <span>object updateProperties</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-move">move</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.move(<span>integer or array of integer tabIds</span>, <span>object moveProperties</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-reload">reload</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.reload(<span class="optional">integer tabId</span>, <span class="optional">object reloadProperties</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-remove">remove</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.remove(<span>integer or array of integer tabIds</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-detectLanguage">detectLanguage</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.detectLanguage(<span class="optional">integer tabId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-captureVisibleTab">captureVisibleTab</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.captureVisibleTab(<span class="optional">integer windowId</span>, <span class="optional">    types.ImageDetails options</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-executeScript">executeScript</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.executeScript(<span class="optional">integer tabId</span>, <span>    tabs.InjectDetails details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-insertCSS">insertCSS</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.insertCSS(<span class="optional">integer tabId</span>, <span>    tabs.InjectDetails details</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-setZoom">setZoom</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.setZoom(<span class="optional">integer tabId</span>, <span>double zoomFactor</span>, <span class="optional">function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-getZoom">getZoom</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.getZoom(<span class="optional">integer tabId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-setZoomSettings">setZoomSettings</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.setZoomSettings(<span class="optional">integer tabId</span>, <span>    ZoomSettings zoomSettings</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><td><a href="tabs.html#method-getZoomSettings">getZoomSettings</a> &minus;
+            <code class="prettyprint">
+            chrome.tabs.getZoomSettings(<span class="optional">integer tabId</span>, <span>function callback</span>)
+            </code>
+          </td></tr>
+        <tr><th colspan="2"><!--@Events-->事件</th></tr>
+          <tr><td><a href="tabs.html#event-onCreated">onCreated</a></td></tr>
+          <tr><td><a href="tabs.html#event-onUpdated">onUpdated</a></td></tr>
+          <tr><td><a href="tabs.html#event-onMoved">onMoved</a></td></tr>
+          <tr><td><a href="tabs.html#event-onSelectionChanged">onSelectionChanged</a></td></tr>
+          <tr><td><a href="tabs.html#event-onActiveChanged">onActiveChanged</a></td></tr>
+          <tr><td><a href="tabs.html#event-onActivated">onActivated</a></td></tr>
+          <tr><td><a href="tabs.html#event-onHighlightChanged">onHighlightChanged</a></td></tr>
+          <tr><td><a href="tabs.html#event-onHighlighted">onHighlighted</a></td></tr>
+          <tr><td><a href="tabs.html#event-onDetached">onDetached</a></td></tr>
+          <tr><td><a href="tabs.html#event-onAttached">onAttached</a></td></tr>
+          <tr><td><a href="tabs.html#event-onRemoved">onRemoved</a></td></tr>
+          <tr><td><a href="tabs.html#event-onReplaced">onReplaced</a></td></tr>
+          <tr><td><a href="tabs.html#event-onZoomChange">onZoomChange</a></td></tr>
+    </table>
+    </section>
+    <section>
+      <div class="api-reference">
+          <h2 id="types"><!--@Types-->类型</h2>
+            <div>
+              <h3 id="type-Tab">Tab</h3>
+              <table>
+                  <tr><th colspan="3" id="Tab-properties">属性</th></tr>
+                  <tr id="property-Tab-id">
+                    <td>integer</td>
+                    <td>
+                        id</td>
+                    <td>
+                    
+                    <p>
+                      标签页的标识符。标签页的标识符在浏览器会话中唯一。在某些情况下，标签页可能没有标识符，例如使用 <a href="sessions.html">sessions</a> API 查询外来标签页时，此时可能存在会话标识符。
+                    </p></td>
+                  </tr><tr id="property-Tab-index">
+                    <td>integer</td>
+                    <td>
+                        index</td>
+                    <td>
+                    
+                    <p>
+                      标签页在所在窗口中的索引，从 0 开始。
+                    </p></td>
+                  </tr><tr id="property-Tab-windowId">
+                    <td>integer</td>
+                    <td>
+                        windowId</td>
+                    <td>
+                    
+                    <p>
+                      标签页所在窗口的标识符。
+                    </p></td>
+                  </tr><tr id="property-Tab-openerTabId">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        openerTabId</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      打开这一标签页的标签页标识符（如果存在的话），只有该标签页仍然存在时才会有这一属性。
+                    </p></td>
+                  </tr><tr id="property-Tab-selected">
+                    <td>boolean</td>
+                    <td>
+                        selected</td>
+                    <td>
+                    <p class="availability">
+                      <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                      --> 开始<strong>弃用</strong>。<!--@
+                        -->请使用 <a href="tabs.html#property-Tab-highlighted">tabs.Tab.highlighted</a>。
+                    </p>
+                    
+                    <p>
+                      标签页是否选中。
+                    </p></td>
+                  </tr><tr id="property-Tab-highlighted">
+                    <td>boolean</td>
+                    <td>
+                        highlighted</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      标签页是否高亮突出。
+                    </p></td>
+                  </tr><tr id="property-Tab-active">
+                    <td>boolean</td>
+                    <td>
+                        active</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      标签页是否是窗口中的活动标签页。（窗口不一定有焦点。）
+                    </p></td>
+                  </tr><tr id="property-Tab-pinned">
+                    <td>boolean</td>
+                    <td>
+                        pinned</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      标签页是否固定。
+                    </p></td>
+                  </tr><tr id="property-Tab-url">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        url</td>
+                    <td>
+                    
+                    <p>
+                      标签页中显示的 URL，只有当扩展程序拥有 "tabs" 权限时该属性才会存在。
+                    </p></td>
+                  </tr><tr id="property-Tab-title">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        title</td>
+                    <td>
+                    
+                    <p>
+                      标签页的标题，只有当扩展程序拥有 "tabs" 权限时该属性才会存在，如果标签页正在加载它也可能是空字符串。
+                    </p></td>
+                  </tr><tr id="property-Tab-favIconUrl">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        favIconUrl</td>
+                    <td>
+                    
+                    <p>
+                      标签页的收藏夹图标 URL，只有当扩展程序拥有 "tabs" 权限时该属性才会存在，如果标签页正在加载它也可能是空字符串。
+                    </p></td>
+                  </tr><tr id="property-Tab-status">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        status</td>
+                    <td>
+                    
+                    <p>
+                      <em>"loading"</em>（正在加载）或 <var>"complete"</var>（完成）。
+                    </p></td>
+                  </tr><tr id="property-Tab-incognito">
+                    <td>boolean</td>
+                    <td>
+                        incognito</td>
+                    <td>
+                    
+                    <p>
+                      标签页是否在隐身窗口中。
+                    </p></td>
+                  </tr><tr id="property-Tab-width">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        width</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      标签页宽度，以像素为单位。
+                    </p></td>
+                  </tr><tr id="property-Tab-height">
+                    <td>integer</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        height</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      标签页高度，以像素为单位。
+                    </p></td>
+                  </tr><tr id="property-Tab-sessionId">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        sessionId</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 31<!--@.--> 开始支持。
+                    </p>
+                    
+                    <p>
+                      会话标识符，用于唯一标识由 <a href="sessions.html">sessions</a> API 获取的标签页。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-InjectDetails">InjectDetails</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 22<!--@.--> 开始支持。
+              </p>
+              <table>
+                <dd>要插入的脚本或 CSS 的详情。必须设置 code 和 file 属性中的某一个，而且不能同时设置。</dd>
+                  <tr><th colspan="3" id="InjectDetails-properties">属性</th></tr>
+                  <tr id="property-InjectDetails-code">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        code</td>
+                    <td>
+                    
+                    <p>
+                      要插入的 JavaScript 或 CSS 代码。<br><br><b>警告：</b><br>使用 <code>code</code> 参数时要特别小心，不恰当的使用可能会使您的扩展程序遭到<a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC">跨站脚本</a>攻击。
+                    </p></td>
+                  </tr><tr id="property-InjectDetails-file">
+                    <td>string</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        file</td>
+                    <td>
+                    
+                    <p>
+                      要插入的 JavaScript 或 CSS 文件。
+                    </p></td>
+                  </tr><tr id="property-InjectDetails-allFrames">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        allFrames</td>
+                    <td>
+                    
+                    <p>
+                      如果 allFrames 为 <code>true</code>，则意味着当前页面中的所有框架都要插入 JavaScript 或 CSS。默认情况下为 <code>false</code>，只在顶层主框架中插入。
+                    </p></td>
+                  </tr><tr id="property-InjectDetails-matchAboutBlank">
+                    <td>boolean</td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        matchAboutBlank</td>
+                    <td>
+                    <p class="availability">
+                      <!--@Since-->从 Chrome 37<!--@.
+                       --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Beta</strong> channel.
+                      -->目前为 <strong>Beta</strong> 分支。<!--@
+                      
+                       --><a href="api_index.html#beta_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                    </p>
+                    
+                    <p>
+                      如果 matchAboutBlank 为 true，代码同时也会插入 about:blank 和 about:srcdoc 框架（如果您的扩展程序有权限访问所属文档）。不能在顶层 about: 框架中插入代码。默认情况下为 <code>false</code>。
+                    </p></td>
+                  </tr><tr id="property-InjectDetails-runAt">
+                    <td>enum of <code>"document_start"</code>, <code>"document_end"</code>, or <code>"document_idle"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        runAt</td>
+                    <td>
+                    
+                    <p>
+                      JavaScript 或 CSS 插入标签页的最早时间，默认为 "document_idle"。
+                    </p></td>
+                  </tr>
+              </table>
+            </div>
+            <div>
+              <h3 id="type-ZoomSettings">ZoomSettings</h3>
+              <p class="availability">
+                <!--@Since-->从 Chrome 38<!--@.
+                 --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                -->目前为 <strong>Dev</strong> 分支。<!--@
+                
+                 --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+              </p>
+              <table>
+                <dd>定义标签页中缩放设置更改的处理方式与范围。</dd>
+                  <tr><th colspan="3" id="ZoomSettings-properties">属性</th></tr>
+                  <tr id="property-ZoomSettings-mode">
+                    <td>enum of <code>"automatic"</code>, <code>"manual"</code>, or <code>"disabled"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        mode</td>
+                    <td>
+                    
+                    <p>
+                      定义缩放设置更改的处理方式，即哪一方负责网页的实际缩放，默认为 <code>automatic</code>。
+                    </p>    <dl>
+                          <dt>automatic</dt>
+                          <dd>
+                            缩放设置的更改由浏览器自动处理。
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>manual</dt>
+                          <dd>
+                            替换缩放更改的自动处理。<code>onZoomChange</code> 事件还是会分发，并且扩展程序需要监听该事件，手动缩放网页。该模式下不支持 <code>per-origin</code>（不同来源独立缩放），因此忽略 <code>scope</code>（范围）缩放设置，始终为 <code>per-tab</code>（仅在当前标签页中生效）
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>disabled</dt>
+                          <dd>
+                            禁用标签页中的所有缩放，标签页恢复为默认（100%）的缩放比例，所有缩放更改都会忽略。
+                          </dd>
+                        </dl>
+                    </td>
+                  </tr><tr id="property-ZoomSettings-scope">
+                    <td>enum of <code>"per-origin"</code>, or <code>"per-tab"</code></td>
+                    <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                        scope</td>
+                    <td>
+                    
+                    <p>
+                      定义缩放更改是根据网页来源保存，还是仅在当前标签页中生效。<code>automatic</code>（自动）模式下默认为 <code>per-origin</code>，其他模式下则为 <code>per-tab</code>。
+                    </p>    <dl>
+                          <dt>per-origin</dt>
+                          <dd>
+                            缩放更改保存在经过缩放的网页来源中，即导航到同一来源的其他标签页也同样会缩放。此外，<code>per-origin</code> 缩放更改与来源一起保存，也就是说导航到同一来源的其他网页时，也同样会缩放至相同的比例。<code>per-origin</code> 范围只能在 <code>automatic</code> 模式下使用。
+                          </dd>
+                        </dl>
+                        <dl>
+                          <dt>per-tab</dt>
+                          <dd>
+                            缩放更改仅在当前标签页中生效，其他标签页中的缩放更改也不会影响当前标签页。此外，<code>per-tab</code> 缩放更改导航时重置，导航标签页时始终以 <code>per-origin</code> 缩放比例加载网页。
+                          </dd>
+                        </dl>
+                    </td>
+                  </tr>
+              </table>
+            </div>
+          <h2 id="methods"><!--@Methods-->方法</h2>
+            <div>
+              <h3
+                  id="method-get"
+                  >get
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.get(<span>integer tabId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获得指定标签页的有关详情。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-get-tabId">
+                      <td>integer</td>
+                      <td>
+                          tabId</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-get-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tab">
+                              <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td>
+                                  tab</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getCurrent"
+                  >getCurrent
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.getCurrent(<span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  获得当前调用脚本所在的标签页，如果在非标签页环境下调用则可能返回 undefined（例如，后台页面或弹出视图）。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getCurrent-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tab">
+                              <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  tab</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-connect"
+                  >connect
+              </h3>
+              <div class="summary">
+              <code class="prettyprint">
+                  <a href="runtime.html#type-Port">runtime.Port</a>
+              chrome.tabs.connect(<span>integer tabId</span>, <span class="optional">object connectInfo</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  连接到指定标签页中的内容脚本，这样当前扩展程序在指定标签页中运行的每一个内容脚本都会产生 <a href="runtime.html#event-onConnect">runtime.onConnect</a> 事件。有关更多详情，请参见<a href='messaging.html'>内容脚本的消息传递</a>。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-connect-tabId">
+                      <td>integer</td>
+                      <td>
+                          tabId</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-connect-connectInfo">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          connectInfo</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-connectInfo-name">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                name</td>
+                            <td>
+                            
+                            <p>
+                              将传递给 onConnect 事件，用于监听连接事件的内容脚本。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-sendRequest"
+                  >sendRequest
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.sendRequest(<span>integer tabId</span>, <span>any request</span>, <span class="optional">function responseCallback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                  --> 开始<strong>弃用</strong>。<!--@
+                    -->请使用 <a href="runtime.html#method-sendMessage">runtime.sendMessage</a>。
+                </p>
+                <p>
+                  向指定标签页中的内容脚本发送一个消息，当发回响应时执行一个可选的回调函数。当前扩展程序在指定标签页中的每一个内容脚本都会收到 <a href="extension.html#event-onRequest">extension.onRequest</a> 事件。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-sendRequest-tabId">
+                      <td>integer</td>
+                      <td>
+                          tabId</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-sendRequest-request">
+                      <td>any</td>
+                      <td>
+                          request</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-sendRequest-responseCallback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          responseCallback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>responseCallback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>responseCallback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(any response) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-responseCallback-response">
+                              <td>any</td>
+                              <td>
+                                  response</td>
+                              <td>
+                              
+                              <p>
+                                请求处理程序发出的 JSON 响应对象。如果连接到指定标签页的过程中发生错误，将不传递参数调用回调函数，并将 <a href="runtime.html#property-lastError">runtime.lastError</a> 设置为错误消息。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-sendMessage"
+                  >sendMessage
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.sendMessage(<span>integer tabId</span>, <span>any message</span>, <span class="optional">function responseCallback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 20<!--@.--> 开始支持。
+                </p>
+                <p>
+                  向指定标签页中的内容脚本发送一个消息，当发回响应时执行一个可选的回调函数。当前扩展程序在指定标签页中的每一个内容脚本都会收到 <a href="runtime.html#event-onMessage">runtime.onMessage</a> 事件。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-sendMessage-tabId">
+                      <td>integer</td>
+                      <td>
+                          tabId</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-sendMessage-message">
+                      <td>any</td>
+                      <td>
+                          message</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-sendMessage-responseCallback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          responseCallback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>responseCallback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>responseCallback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(any response) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-responseCallback-response">
+                              <td>any</td>
+                              <td>
+                                  response</td>
+                              <td>
+                              
+                              <p>
+                                请求处理程序发出的 JSON 响应对象。如果连接到指定标签页的过程中发生错误，将不传递参数调用回调函数，并将 <a href="runtime.html#property-lastError">runtime.lastError</a> 设置为错误消息。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getSelected"
+                  >getSelected
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.getSelected(<span class="optional">integer windowId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                  --> 开始<strong>弃用</strong>。<!--@
+                    -->请使用 <a href="tabs.html#method-query">tabs.query</a> <code>{active: true}</code>。
+                </p>
+                <p>
+                  获取指定窗口中选定的标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getSelected-windowId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          windowId</td>
+                      <td>
+                      
+                      <p>
+                        默认为<a href='windows.html#current-window'>当前窗口</a>。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getSelected-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tab">
+                              <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td>
+                                  tab</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getAllInWindow"
+                  >getAllInWindow
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.getAllInWindow(<span class="optional">integer windowId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                  --> 开始<strong>弃用</strong>。<!--@
+                    -->请使用 <a href="tabs.html#method-query">tabs.query</a> <code>{windowId: windowId}</code>。
+                </p>
+                <p>
+                  获取指定窗口中所有标签页的详情。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getAllInWindow-windowId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          windowId</td>
+                      <td>
+                      
+                      <p>
+                        默认为<a href='windows.html#current-window'>当前窗口</a>。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getAllInWindow-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="tabs.html#type-Tab">Tab</a> tabs) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tabs">
+                              <td>array of     <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td>
+                                  tabs</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-create"
+                  >create
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.create(<span>object createProperties</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  创建一个新标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-create-createProperties">
+                      <td>object</td>
+                      <td>
+                          createProperties</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-createProperties-windowId">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                windowId</td>
+                            <td>
+                            
+                            <p>
+                              创建新标签页的窗口，默认为<a href='windows.html#current-window'>当前窗口</a>。
+                            </p></td>
+                          </tr><tr id="property-createProperties-index">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                index</td>
+                            <td>
+                            
+                            <p>
+                              标签页在窗口中的位置，提供的值如果超过0与窗口中标签页数目之间的范围，将会自动限定在这一范围。
+                            </p></td>
+                          </tr><tr id="property-createProperties-url">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              标签页中一开始打开的 URL。完整的 URL 必须包括协议（即 "http://www.google.com"，而不能是 "www.google.com"），相对 URL 相对于扩展程序中的当前页面。默认为“打开新的标签页”页面。
+                            </p></td>
+                          </tr><tr id="property-createProperties-active">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                active</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              标签页是否应该成为窗口中的活动标签页，不影响窗口是否有焦点（参见 <a href="windows.html#method-update">windows.update</a>），默认为 <var>true</var>。
+                            </p></td>
+                          </tr><tr id="property-createProperties-selected">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                selected</td>
+                            <td>
+                            <p class="availability">
+                              <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                              --> 开始<strong>弃用</strong>。<!--@
+                                -->请使用 <em>active</em>。
+                            </p>
+                            
+                            <p>
+                              标签页是否为窗口中的选定标签页，默认为 <var>true</var>。
+                            </p></td>
+                          </tr><tr id="property-createProperties-pinned">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                pinned</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              标签页是否应该固定，默认为 <var>false</var>。
+                            </p></td>
+                          </tr><tr id="property-createProperties-openerTabId">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                openerTabId</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              打开这一标签页的标签页标识符。如果指定的话，该标签页必须与新创建的标签页在同一个窗口中。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-create-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tab">
+                              <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td>
+                                  tab</td>
+                              <td>
+                              
+                              <p>
+                                有关新创建标签页的详情，会包含新标签页的标识符。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-duplicate"
+                  >duplicate
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.duplicate(<span>integer tabId</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 23<!--@.--> 开始支持。
+                </p>
+                <p>
+                  复制标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-duplicate-tabId">
+                      <td>integer</td>
+                      <td>
+                          tabId</td>
+                      <td>
+                      
+                      <p>
+                        要复制的标签页的标识符。
+                      </p></td>
+                    </tr>
+                    <tr id="property-duplicate-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tab">
+                              <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  tab</td>
+                              <td>
+                              
+                              <p>
+                                有关已复制标签页的详情，如果没有请求 <code>"tabs"</code> 权限的话 <a href="tabs.html#type-Tab">tabs.Tab</a> 对象不会包含 <code>url</code>、<code>title</code> 和 <code>favIconUrl</code>。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-query"
+                  >query
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.query(<span>object queryInfo</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                </p>
+                <p>
+                  获取具有指定属性的所有标签页，如果没有指定任何属性的话则获取所有标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-query-queryInfo">
+                      <td>object</td>
+                      <td>
+                          queryInfo</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-queryInfo-active">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                active</td>
+                            <td>
+                            
+                            <p>
+                              标签页在窗口中是否为活动标签页。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-pinned">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                pinned</td>
+                            <td>
+                            
+                            <p>
+                              标签页是否固定。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-highlighted">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                highlighted</td>
+                            <td>
+                            
+                            <p>
+                              标签页是否高亮突出。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-currentWindow">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                currentWindow</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 19<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              标签页是否在<a href='windows.html#current-window'>当前窗口</a>中。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-lastFocusedWindow">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                lastFocusedWindow</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 19<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              标签页是否在前一个具有焦点的窗口中。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-status">
+                            <td>enum of <code>"loading"</code>, or <code>"complete"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                status</td>
+                            <td>
+                            
+                            <p>
+                              标签页是否已经加载完成。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-title">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                title</td>
+                            <td>
+                            
+                            <p>
+                              匹配页面标题的表达式。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-url">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              匹配标签页的 <a href='match_patterns.html'>URL 表达式</a>。注意：片段标识符不会匹配。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-windowId">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                windowId</td>
+                            <td>
+                            
+                            <p>
+                              父窗口标识符，或者为 <a href="windows.html#property-WINDOW_ID_CURRENT">windows.WINDOW_ID_CURRENT</a>，表示<a href='windows.html#current-window'>当前窗口</a>。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-windowType">
+                            <td>enum of <code>"normal"</code>, <code>"popup"</code>, <code>"panel"</code>, or <code>"app"</code></td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                windowType</td>
+                            <td>
+                            
+                            <p>
+                              标签页所在窗口的类型。
+                            </p></td>
+                          </tr><tr id="property-queryInfo-index">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                index</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              标签页在窗口中的位置。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-query-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of     <a href="tabs.html#type-Tab">Tab</a> result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>array of     <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td>
+                                  result</td>
+                              <td>
+                              
+                              </td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-highlight"
+                  >highlight
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.highlight(<span>object highlightInfo</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                </p>
+                <p>
+                  高亮突出指定标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-highlight-highlightInfo">
+                      <td>object</td>
+                      <td>
+                          highlightInfo</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-highlightInfo-windowId">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                windowId</td>
+                            <td>
+                            
+                            <p>
+                              包含标签页的窗口。
+                            </p></td>
+                          </tr><tr id="property-highlightInfo-tabs">
+                            <td>array of integer or integer</td>
+                            <td>
+                                tabs</td>
+                            <td>
+                            
+                            <p>
+                              要高亮突出的一个或多个标签页的索引。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-highlight-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="windows.html#type-Window">windows.Window</a> window) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-window">
+                              <td>    <a href="windows.html#type-Window">windows.Window</a></td>
+                              <td>
+                                  window</td>
+                              <td>
+                              
+                              <p>
+                                包含高亮突出的标签页所在窗口的详情。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-update"
+                  >update
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.update(<span class="optional">integer tabId</span>, <span>object updateProperties</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  修改标签页属性，<var>updateProperties</var> 中未指定的属性保持不变。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-update-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      
+                      <p>
+                        默认为<a href='windows.html#current-window'>当前窗口</a>的选定标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-update-updateProperties">
+                      <td>object</td>
+                      <td>
+                          updateProperties</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-updateProperties-url">
+                            <td>string</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                url</td>
+                            <td>
+                            
+                            <p>
+                              标签页打开的 URL。
+                            </p></td>
+                          </tr><tr id="property-updateProperties-active">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                active</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              标签页是否为活动标签页，不影响窗口是否有焦点（参见 <a href="windows.html#method-update">windows.update</a>）。
+                            </p></td>
+                          </tr><tr id="property-updateProperties-highlighted">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                highlighted</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              从当前选定项目中添加或删除标签页。
+                            </p></td>
+                          </tr><tr id="property-updateProperties-selected">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                selected</td>
+                            <td>
+                            <p class="availability">
+                              <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                              --> 开始<strong>弃用</strong>。<!--@
+                                -->请使用 <em>highlighted</em>。
+                            </p>
+                            
+                            <p>
+                              标签页是否选中。
+                            </p></td>
+                          </tr><tr id="property-updateProperties-pinned">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                pinned</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              标签页是否固定。
+                            </p></td>
+                          </tr><tr id="property-updateProperties-openerTabId">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                openerTabId</td>
+                            <td>
+                            <p class="availability">
+                              <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+                            </p>
+                            
+                            <p>
+                              打开这一标签页的标签页标识符。如果指定的话，该标签页必须与新创建的标签页在同一个窗口中。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-update-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tab">
+                              <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  tab</td>
+                              <td>
+                              
+                              <p>
+                                有关更新后的标签页详情，如果没有请求 "tabs" 权限的话 <a href="tabs.html#type-Tab">tabs.Tab</a> 对象不包含 <code>url</code>、<code>title</code> 和 <code>favIconUrl</code>。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-move"
+                  >move
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.move(<span>integer or array of integer tabIds</span>, <span>object moveProperties</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  将一个或多个标签页移动至所在窗口中的新位置，或者移动到新窗口中。注意，标签页只能在普通窗口（window.type === "normal"）间移动。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-move-tabIds">
+                      <td>integer or array of integer</td>
+                      <td>
+                          tabIds</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        要移动的标签页或标签页列表。
+                      </p></td>
+                    </tr>
+                    <tr id="property-move-moveProperties">
+                      <td>object</td>
+                      <td>
+                          moveProperties</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-moveProperties-windowId">
+                            <td>integer</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                windowId</td>
+                            <td>
+                            
+                            <p>
+                              默认为该标签页所在窗口。
+                            </p></td>
+                          </tr><tr id="property-moveProperties-index">
+                            <td>integer</td>
+                            <td>
+                                index</td>
+                            <td>
+                            
+                            <p>
+                              标签页在窗口中的新位置，传递 -1 将会把标签页排在窗口的最后。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-move-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> or array of     <a href="tabs.html#type-Tab">Tab</a> tabs) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-tabs">
+                              <td>    <a href="tabs.html#type-Tab">Tab</a> or array of     <a href="tabs.html#type-Tab">Tab</a></td>
+                              <td>
+                                  tabs</td>
+                              <td>
+                              
+                              <p>
+                                有关移动后标签页的详情。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-reload"
+                  >reload
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.reload(<span class="optional">integer tabId</span>, <span class="optional">object reloadProperties</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                </p>
+                <p>
+                  重新加载标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-reload-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      
+                      <p>
+                        要重新加载的标签页标识符，默认为当前窗口的选定标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-reload-reloadProperties">
+                      <td>object</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          reloadProperties</td>
+                      <td>
+                      
+                        <table class="innerTable">
+                          <tr id="property-reloadProperties-bypassCache">
+                            <td>boolean</td>
+                            <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                bypassCache</td>
+                            <td>
+                            
+                            <p>
+                              是否跳过本地缓存，默认为 false，即使用本地缓存。
+                            </p></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr id="property-reload-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-remove"
+                  >remove
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.remove(<span>integer or array of integer tabIds</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  关闭一个或多个标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-remove-tabIds">
+                      <td>integer or array of integer</td>
+                      <td>
+                          tabIds</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 16<!--@.--> 开始支持。
+                      </p>
+                      
+                      <p>
+                        要关闭的标签页或标签页列表。
+                      </p></td>
+                    </tr>
+                    <tr id="property-remove-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-detectLanguage"
+                  >detectLanguage
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.detectLanguage(<span class="optional">integer tabId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  检测某个标签页中内容的主要语言。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-detectLanguage-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      
+                      <p>
+                        默认为<a href='windows.html#current-window'>当前窗口</a>的活动标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-detectLanguage-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(string language) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-language">
+                              <td>string</td>
+                              <td>
+                                  language</td>
+                              <td>
+                              
+                              <p>
+                                ISO 语言代码，例如 <code>en</code> 或 <code>fr</code>。有关该方法支持的所有语言的完整列表，请参见 <a href='https://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/languages/internal/languages.cc'>kLanguageInfoTable</a>，将检查第二列到第四列并返回第一个非 NULL 值（除了简体中文返回 zh-CN），未知语言将返回 <code>und</code>。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-captureVisibleTab"
+                  >captureVisibleTab
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.captureVisibleTab(<span class="optional">integer windowId</span>, <span class="optional">    <a href="types.html#type-ImageDetails">types.ImageDetails</a> options</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  捕捉指定窗口中当前活动标签页的可见区域，您必须拥有 "&lt;all_urls&gt;" 或当前活动标签页的 "activeTab" 权限才能使用该方法。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-captureVisibleTab-windowId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          windowId</td>
+                      <td>
+                      
+                      <p>
+                        目标窗口，默认为<a href='windows.html#current-window'>当前窗口</a>。
+                      </p></td>
+                    </tr>
+                    <tr id="property-captureVisibleTab-options">
+                      <td>    <a href="types.html#type-ImageDetails">types.ImageDetails</a></td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          options</td>
+                      <td>
+                      
+                      </td>
+                    </tr>
+                    <tr id="property-captureVisibleTab-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                          <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(string dataUrl) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-dataUrl">
+                              <td>string</td>
+                              <td>
+                                  dataUrl</td>
+                              <td>
+                              
+                              <p>
+                                包含捕捉到的标签页可视区域图像的数据URL，可以将一个 HTML 图像元素的 “src” 属性设为该参数的值来显示图像。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-executeScript"
+                  >executeScript
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.executeScript(<span class="optional">integer tabId</span>, <span>    <a href="tabs.html#type-InjectDetails">tabs.InjectDetails</a> details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  在页面中插入 JavaScript 代码。有关更多详情，请参节内容脚本文档中<a href='content_scripts.html#pi'>以编程方式插入</a>部分。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-executeScript-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      
+                      <p>
+                        运行脚本的标签页标识符，默认为当前窗口的活动标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-executeScript-details">
+                      <td>    <a href="tabs.html#type-InjectDetails">tabs.InjectDetails</a></td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        需要运行的脚本详情。
+                      </p></td>
+                    </tr>
+                    <tr id="property-executeScript-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        在所有 JavaScript 代码执行完后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(array of any result) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-result">
+                              <td>array of any</td>
+                              <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                  result</td>
+                              <td>
+                              
+                              <p>
+                                在插入的每一个框架中脚本的执行结果。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-insertCSS"
+                  >insertCSS
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.insertCSS(<span class="optional">integer tabId</span>, <span>    <a href="tabs.html#type-InjectDetails">tabs.InjectDetails</a> details</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p>
+                  向一个页面中插入CSS。有关更多详情，请参节内容脚本文档中<a href='content_scripts.html#pi'>以编程方式插入</a>部分。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-insertCSS-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      
+                      <p>
+                        要插入CSS的标签页标识符，默认为当前窗口的活动标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-insertCSS-details">
+                      <td>    <a href="tabs.html#type-InjectDetails">tabs.InjectDetails</a></td>
+                      <td>
+                          details</td>
+                      <td>
+                      
+                      <p>
+                        要插入的CSS文本详情。
+                      </p></td>
+                    </tr>
+                    <tr id="property-insertCSS-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        当所有CSS都已经被插入后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setZoom"
+                  >setZoom
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.setZoom(<span class="optional">integer tabId</span>, <span>double zoomFactor</span>, <span class="optional">function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Dev</strong> channel only.
+                  -->仅用于 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  缩放指定的标签页。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setZoom-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 38<!--@.
+                         --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                        -->目前为 <strong>Dev</strong> 分支。<!--@
+                        
+                         --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                      </p>
+                      
+                      <p>
+                        要缩放的标签页标识符，默认为当前窗口的活动标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setZoom-zoomFactor">
+                      <td>double</td>
+                      <td>
+                          zoomFactor</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 38<!--@.
+                         --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                        -->目前为 <strong>Dev</strong> 分支。<!--@
+                        
+                         --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                      </p>
+                      
+                      <p>
+                        新的缩放比例。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setZoom-callback">
+                      <td>function</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        缩放比例更改后调用。
+                      </p>    <p>
+                              <!--@If you specify the <em>callback</em> parameter, it should
+                              be a function that looks like this:-->
+                              如果您指定了 <em>callback</em> 参数，它应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getZoom"
+                  >getZoom
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.getZoom(<span class="optional">integer tabId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Dev</strong> channel only.
+                  -->仅用于 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  获取指定标签页目前的缩放比例。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getZoom-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 38<!--@.
+                         --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                        -->目前为 <strong>Dev</strong> 分支。<!--@
+                        
+                         --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                      </p>
+                      
+                      <p>
+                        要获取当前缩放比例的标签页标识符，默认为当前窗口的活动标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getZoom-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        调用时返回标签页目前的缩放比例。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(double zoomFactor) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-zoomFactor">
+                              <td>double</td>
+                              <td>
+                                  zoomFactor</td>
+                              <td>
+                              
+                              <p>
+                                标签页目前的缩放比例。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-setZoomSettings"
+                  >setZoomSettings
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.setZoomSettings(<span class="optional">integer tabId</span>, <span>    <a href="tabs.html#type-ZoomSettings">ZoomSettings</a> zoomSettings</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Dev</strong> channel only.
+                  -->仅用于 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  设置指定标签页的缩放选项，定义缩放更改的处理方式。标签页导航时重置这些设置。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-setZoomSettings-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 38<!--@.
+                         --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                        -->目前为 <strong>Dev</strong> 分支。<!--@
+                        
+                         --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                      </p>
+                      
+                      <p>
+                        要更改缩放设置的标签页标识符，默认为当前窗口的活动标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setZoomSettings-zoomSettings">
+                      <td>    <a href="tabs.html#type-ZoomSettings">ZoomSettings</a></td>
+                      <td>
+                          zoomSettings</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 38<!--@.
+                         --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                        -->目前为 <strong>Dev</strong> 分支。<!--@
+                        
+                         --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                      </p>
+                      
+                      <p>
+                        定义缩放更改的处理方式与范围。
+                      </p></td>
+                    </tr>
+                    <tr id="property-setZoomSettings-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        缩放设置更改后调用。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function() <span class="subdued">{...}</span>;</code>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3
+                  id="method-getZoomSettings"
+                  >getZoomSettings
+              </h3>
+              <div class="summary uncapitalize">
+              <code class="prettyprint">
+              chrome.tabs.getZoomSettings(<span class="optional">integer tabId</span>, <span>function callback</span>)
+              </code>
+              </div>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Dev</strong> channel only.
+                  -->仅用于 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+                <p>
+                  获取指定标签页目前的缩放设置。
+                </p>
+                <table >
+                  <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                    <tr id="property-getZoomSettings-tabId">
+                      <td>integer</td>
+                      <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                          tabId</td>
+                      <td>
+                      <p class="availability">
+                        <!--@Since-->从 Chrome 38<!--@.
+                         --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                        -->目前为 <strong>Dev</strong> 分支。<!--@
+                        
+                         --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                      </p>
+                      
+                      <p>
+                        要获取当前缩放设置的标签页标识符，默认为当前窗口的活动标签页。
+                      </p></td>
+                    </tr>
+                    <tr id="property-getZoomSettings-callback">
+                      <td>function</td>
+                      <td>
+                          callback</td>
+                      <td>
+                      
+                      <p>
+                        调用时传递标签页目前的缩放设置。
+                      </p>    <p>
+                              <!--@The <em>callback</em> parameter should be a function
+                              that looks like this:-->
+                              <em>callback</em> 参数应该是一个如下形式的函数：
+                          </p>
+                        <code class="prettyprint">function(    <a href="tabs.html#type-ZoomSettings">ZoomSettings</a> zoomSettings) <span class="subdued">{...}</span>;</code>
+                          <table class="innerTable">
+                            <tr id="property-callback-zoomSettings">
+                              <td>    <a href="tabs.html#type-ZoomSettings">ZoomSettings</a></td>
+                              <td>
+                                  zoomSettings</td>
+                              <td>
+                              
+                              <p>
+                                标签页目前的缩放设置。
+                              </p></td>
+                            </tr>
+                          </table>
+                      </td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+          <h2 id="events"><!--@Events-->事件</h2>
+            <div>
+              <h3 id="event-onCreated">onCreated</h3>
+              <div class="description">
+            <p>
+                  当标签页创建时产生。注意，当该事件发生时标签页的 URL 可能还没有设置，但是您可以处理 onUpdated 事件，在设置 URL 时收到通知。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onCreated.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onCreated-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(    <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onCreated-tab">
+                                    <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                                    <td>
+                                        tab</td>
+                                    <td>
+                                    
+                                    <p>
+                                      有关已创建标签页的详情。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onUpdated">onUpdated</h3>
+              <div class="description">
+            <p>
+                  当标签页更新时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onUpdated.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onUpdated-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer tabId, object changeInfo,     <a href="tabs.html#type-Tab">Tab</a> tab) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onUpdated-tabId">
+                                    <td>integer</td>
+                                    <td>
+                                        tabId</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onUpdated-changeInfo">
+                                    <td>object</td>
+                                    <td>
+                                        changeInfo</td>
+                                    <td>
+                                    
+                                    <p>
+                                      列出更新的标签页改变的状态。
+                                    </p>  <table class="innerTable">
+                                        <tr id="property-changeInfo-status">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              status</td>
+                                          <td>
+                                          
+                                          <p>
+                                            标签页的状态，可以为 <em>loading</em>（正在加载）或 <em>complete</em>（完成）。
+                                          </p></td>
+                                        </tr><tr id="property-changeInfo-url">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              url</td>
+                                          <td>
+                                          
+                                          <p>
+                                            标签页的 URL（如果已更改的话）。
+                                          </p></td>
+                                        </tr><tr id="property-changeInfo-pinned">
+                                          <td>boolean</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              pinned</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            标签页新的固定状态。
+                                          </p></td>
+                                        </tr><tr id="property-changeInfo-favIconUrl">
+                                          <td>string</td>
+                                          <td><span class="optional"><!--@(optional)-->（可选）</span><br>
+                                              favIconUrl</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 27<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            标签页新的收藏夹图标 URL。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onUpdated-tab">
+                                    <td>    <a href="tabs.html#type-Tab">Tab</a></td>
+                                    <td>
+                                        tab</td>
+                                    <td>
+                                    
+                                    <p>
+                                      给出更新后的标签页状态。
+                                    </p></td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onMoved">onMoved</h3>
+              <div class="description">
+            <p>
+                  当标签页在窗口中移动时产生。仅产生一次移动事件，代表用户的直接移动，其他标签页因此而随之移动并不产生此事件。当标签页在窗口间移动时不产生此事件，在这种情况下，请参见 <a href="tabs.html#event-onDetached">tabs.onDetached</a>。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onMoved.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onMoved-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer tabId, object moveInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onMoved-tabId">
+                                    <td>integer</td>
+                                    <td>
+                                        tabId</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onMoved-moveInfo">
+                                    <td>object</td>
+                                    <td>
+                                        moveInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-moveInfo-windowId">
+                                          <td>integer</td>
+                                          <td>
+                                              windowId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-moveInfo-fromIndex">
+                                          <td>integer</td>
+                                          <td>
+                                              fromIndex</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-moveInfo-toIndex">
+                                          <td>integer</td>
+                                          <td>
+                                              toIndex</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onSelectionChanged">onSelectionChanged</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                  --> 开始<strong>弃用</strong>。<!--@
+                    -->请使用 <a href="tabs.html#event-onActivated">tabs.onActivated</a>。
+                </p>
+            <p>
+                  窗口中的选定标签页更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onSelectionChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onSelectionChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer tabId, object selectInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onSelectionChanged-tabId">
+                                    <td>integer</td>
+                                    <td>
+                                        tabId</td>
+                                    <td>
+                                    
+                                    <p>
+                                      变成活动标签页的标签页标识符。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onSelectionChanged-selectInfo">
+                                    <td>object</td>
+                                    <td>
+                                        selectInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-selectInfo-windowId">
+                                          <td>integer</td>
+                                          <td>
+                                              windowId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            选定标签页更改的窗口标识符。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onActiveChanged">onActiveChanged</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                  --> 开始<strong>弃用</strong>。<!--@
+                    -->请使用 <a href="tabs.html#event-onActivated">tabs.onActivated</a>。
+                </p>
+            <p>
+                  窗口中的选定标签页更改时产生。注意，该事件产生时标签页的 URL 可能还没有设置，但是您可以监听 <a href="tabs.html#event-onUpdated">onUpdated</a> 事件，当 URL 设置时收到通知。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onActiveChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onActiveChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer tabId, object selectInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onActiveChanged-tabId">
+                                    <td>integer</td>
+                                    <td>
+                                        tabId</td>
+                                    <td>
+                                    
+                                    <p>
+                                      变成活动标签页的标签页标识符。
+                                    </p></td>
+                                  </tr>
+                                  <tr id="property-onActiveChanged-selectInfo">
+                                    <td>object</td>
+                                    <td>
+                                        selectInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-selectInfo-windowId">
+                                          <td>integer</td>
+                                          <td>
+                                              windowId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            选定标签页更改的窗口标识符。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onActivated">onActivated</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当窗口中的当前标签页更改时产生。注意，当该事件发生时标签页的 URL 可能还没有设置，但是您可以处理 onUpdated 事件，在设置 URL 时收到通知。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onActivated.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onActivated-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object activeInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onActivated-activeInfo">
+                                    <td>object</td>
+                                    <td>
+                                        activeInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-activeInfo-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            现在的活动标签页标识符。
+                                          </p></td>
+                                        </tr><tr id="property-activeInfo-windowId">
+                                          <td>integer</td>
+                                          <td>
+                                              windowId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            活动标签页更改的窗口标识符。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onHighlightChanged">onHighlightChanged</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@<strong>Deprecated</strong> since-->从 Chrome 33<!--@.
+                  --> 开始<strong>弃用</strong>。<!--@
+                    -->请使用 <a href="tabs.html#event-onHighlighted">tabs.onHighlighted</a>。
+                </p>
+            <p>
+                  窗口中高亮或选定标签页更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onHighlightChanged.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onHighlightChanged-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object selectInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onHighlightChanged-selectInfo">
+                                    <td>object</td>
+                                    <td>
+                                        selectInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-selectInfo-windowId">
+                                          <td>integer</td>
+                                          <td>
+                                              windowId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            标签页更改的窗口。
+                                          </p></td>
+                                        </tr><tr id="property-selectInfo-tabIds">
+                                          <td>array of integer</td>
+                                          <td>
+                                              tabIds</td>
+                                          <td>
+                                          
+                                          <p>
+                                            窗口中的所有高亮标签页。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onHighlighted">onHighlighted</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 18<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当窗口中的高亮或选定标签页更改时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onHighlighted.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onHighlighted-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object highlightInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onHighlighted-highlightInfo">
+                                    <td>object</td>
+                                    <td>
+                                        highlightInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-highlightInfo-windowId">
+                                          <td>integer</td>
+                                          <td>
+                                              windowId</td>
+                                          <td>
+                                          
+                                          <p>
+                                            标签页改变的窗口。
+                                          </p></td>
+                                        </tr><tr id="property-highlightInfo-tabIds">
+                                          <td>array of integer</td>
+                                          <td>
+                                              tabIds</td>
+                                          <td>
+                                          
+                                          <p>
+                                            窗口中的所有高亮标签页。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onDetached">onDetached</h3>
+              <div class="description">
+            <p>
+                  当标签页从一个窗口中脱离时产生，例如当它在窗口间移动时。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onDetached.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onDetached-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer tabId, object detachInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onDetached-tabId">
+                                    <td>integer</td>
+                                    <td>
+                                        tabId</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onDetached-detachInfo">
+                                    <td>object</td>
+                                    <td>
+                                        detachInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-detachInfo-oldWindowId">
+                                          <td>integer</td>
+                                          <td>
+                                              oldWindowId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-detachInfo-oldPosition">
+                                          <td>integer</td>
+                                          <td>
+                                              oldPosition</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onAttached">onAttached</h3>
+              <div class="description">
+            <p>
+                  当标签页附加到一个窗口时产生，例如当它在窗口间移动时。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onAttached.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onAttached-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer tabId, object attachInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onAttached-tabId">
+                                    <td>integer</td>
+                                    <td>
+                                        tabId</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onAttached-attachInfo">
+                                    <td>object</td>
+                                    <td>
+                                        attachInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-attachInfo-newWindowId">
+                                          <td>integer</td>
+                                          <td>
+                                              newWindowId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-attachInfo-newPosition">
+                                          <td>integer</td>
+                                          <td>
+                                              newPosition</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onRemoved">onRemoved</h3>
+              <div class="description">
+            <p>
+                  当标签页关闭时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onRemoved.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onRemoved-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer tabId, object removeInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onRemoved-tabId">
+                                    <td>integer</td>
+                                    <td>
+                                        tabId</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onRemoved-removeInfo">
+                                    <td>object</td>
+                                    <td>
+                                        removeInfo</td>
+                                    <td>
+                                    <p class="availability">
+                                      <!--@Since-->从 Chrome 9<!--@.--> 开始支持。
+                                    </p>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-removeInfo-windowId">
+                                          <td>integer</td>
+                                          <td>
+                                              windowId</td>
+                                          <td>
+                                          <p class="availability">
+                                            <!--@Since-->从 Chrome 25<!--@.--> 开始支持。
+                                          </p>
+                                          
+                                          <p>
+                                            包含已关闭标签页的窗口。
+                                          </p></td>
+                                        </tr><tr id="property-removeInfo-isWindowClosing">
+                                          <td>boolean</td>
+                                          <td>
+                                              isWindowClosing</td>
+                                          <td>
+                                          
+                                          <p>
+                                            当标签页因为窗口关闭而关闭时为 true。
+                                          </p></td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onReplaced">onReplaced</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 26<!--@.--> 开始支持。
+                </p>
+            <p>
+                  当标签页由于预呈现或即搜即得而被另一个标签页替换时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onReplaced.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onReplaced-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(integer addedTabId, integer removedTabId) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onReplaced-addedTabId">
+                                    <td>integer</td>
+                                    <td>
+                                        addedTabId</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                  <tr id="property-onReplaced-removedTabId">
+                                    <td>integer</td>
+                                    <td>
+                                        removedTabId</td>
+                                    <td>
+                                    
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+            <div>
+              <h3 id="event-onZoomChange">onZoomChange</h3>
+              <div class="description">
+                <p class="availability">
+                  <!--@Since-->从 Chrome 38<!--@.
+                   --> 开始支持。<em><!--@Warning:-->警告：</em><!--@ this is the current <strong>Dev</strong> channel.
+                  -->目前为 <strong>Dev</strong> 分支。<!--@
+                  
+                   --><a href="api_index.html#dev_apis"><!--@Learn more-->了解更多内容</a><!--@.-->
+                </p>
+            <p>
+                  标签页缩放时产生。
+                </p>      <tr><td>
+                  <div>
+                    <h4
+                        title="">addListener
+                    </h4>
+                    <div class="summary uncapitalize">
+                    <code class="prettyprint">
+                    chrome.tabs.onZoomChange.addListener(<span>function callback</span>)
+                    </code>
+                    </div>
+                    <div class="description">
+                      <table class="innerTable">
+                        <tr><th colspan="3"><!--@Parameters-->参数</th></tr>
+                          <tr id="property-onZoomChange-callback">
+                            <td>function</td>
+                            <td>
+                                callback</td>
+                            <td>
+                            
+                                <p>
+                                    <!--@The <em>callback</em> parameter should be a function
+                                    that looks like this:-->
+                                    <em>callback</em> 参数应该是一个如下形式的函数：
+                                </p>
+                              <code class="prettyprint">function(object ZoomChangeInfo) <span class="subdued">{...}</span>;</code>
+                                <table class="innerTable">
+                                  <tr id="property-onZoomChange-ZoomChangeInfo">
+                                    <td>object</td>
+                                    <td>
+                                        ZoomChangeInfo</td>
+                                    <td>
+                                    
+                                      <table class="innerTable">
+                                        <tr id="property-ZoomChangeInfo-tabId">
+                                          <td>integer</td>
+                                          <td>
+                                              tabId</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-ZoomChangeInfo-oldZoomFactor">
+                                          <td>double</td>
+                                          <td>
+                                              oldZoomFactor</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-ZoomChangeInfo-newZoomFactor">
+                                          <td>double</td>
+                                          <td>
+                                              newZoomFactor</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr><tr id="property-ZoomChangeInfo-zoomSettings">
+                                          <td>    <a href="tabs.html#type-ZoomSettings">ZoomSettings</a></td>
+                                          <td>
+                                              zoomSettings</td>
+                                          <td>
+                                          
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                            </td>
+                          </tr>
+                      </table>
+                    </div>
+                  </div>
+                  </td></tr>
+              </div>
+            </div>
+      </div>
+        <h2 id="samples"><!--@Sample -->示例扩展程序</h2>
+        <ul>
+          <li><strong><a href="samples.html#my-bookmarks">My Bookmarks</a></strong>
+          &ndash; A browser action with a popup dump of all bookmarks, including search, add, edit and delete.
+      </li>
+          <li><strong><a href="samples.html#page-redder">Page Redder</a></strong>
+          &ndash; Make the current page red
+      </li>
+          <li><strong><a href="samples.html#print-this-page">Print this page</a></strong>
+          &ndash; Adds a print button to the browser.
+      </li>
+          <li><strong><a href="samples.html#a-browser-action-with-a-popup-that-changes-the-page-color">A browser action with a popup that changes the page color</a></strong>
+          &ndash; Change the current page color
+      </li>
+          <li><strong><a href="samples.html#content-settings">Content settings</a></strong>
+          &ndash; Shows the content settings for the current site.
+      </li>
+          <li><strong><a href="samples.html#cookie-api-test-extension">Cookie API Test Extension</a></strong>
+          &ndash; Testing Cookie API
+      </li>
+          <li><strong><a href="samples.html#broken-links">Broken Links</a></strong>
+          &ndash; Extends the Developer Tools, adding an audit category that finds broken links on the inspected page.
+      </li>
+          <li><strong><a href="samples.html#firephp-for-chrome">FirePHP for Chrome</a></strong>
+          &ndash; Extends the Developer Tools, adding support for parsing FirePHP messages from server
+      </li>
+          <li><strong><a href="samples.html#download-selected-links">Download Selected Links</a></strong>
+          &ndash; Select links on a page and download them.
+      </li>
+          <li><strong><a href="samples.html#download-manager-button">Download Manager Button</a></strong>
+          &ndash; Browser Action Download Manager User Interface for Google Chrome
+      </li>
+          <li><strong><a href="samples.html#event-page-example">Event Page Example</a></strong>
+          &ndash; Demonstrates usage and features of the event page
+      </li>
+          <li><strong><a href="samples.html#typed-url-history">Typed URL History</a></strong>
+          &ndash; Reads your history, and shows the top ten pages you go to by typing the URL.
+      </li>
+          <li><strong><a href="samples.html#cld">CLD</a></strong>
+          &ndash; Displays the language of a tab
+      </li>
+          <li><strong><a href="samples.html#message-timer">Message Timer</a></strong>
+          &ndash; Times how long it takes to send a message to a content script and back.
+      </li>
+          <li><strong><a href="samples.html#animated-page-action">Animated Page Action</a></strong>
+          &ndash; This extension adds an animated browser action to the toolbar.
+      </li>
+          <li><strong><a href="samples.html#top-chrome-extension-questions">Top Chrome Extension Questions</a></strong>
+          &ndash; Sample demonstration of the optional permissions API.
+      </li>
+          <li><strong><a href="samples.html#show-tabs-in-process">Show Tabs in Process</a></strong>
+          &ndash; Adds a browser action showing which tabs share the current tab's process.
+      </li>
+          <li><strong><a href="samples.html#stylizr">Stylizr</a></strong>
+          &ndash; Spruce up your pages with custom CSS.
+      </li>
+          <li><strong><a href="samples.html#tab-inspector">Tab Inspector</a></strong>
+          &ndash; Utility for working with the extension tabs api
+      </li>
+          <li><strong><a href="samples.html#keyboard-pin">Keyboard Pin</a></strong>
+          &ndash; Creates a keyboard shortcut (Alt + Shift + P) to toggle the pinned state of the currently selected tab
+      </li>
+          <li><strong><a href="samples.html#test-screenshot-extension">Test Screenshot Extension</a></strong>
+          &ndash; Demonstrate screenshot functionality in the chrome.tabs api. Note: only works for code.google.com
+      </li>
+          <li><strong><a href="samples.html#top-sites">Top Sites</a></strong>
+          &ndash; Shows the top sites in a browser action
+      </li>
+          <li><strong><a href="samples.html#merge-windows">Merge Windows</a></strong>
+          &ndash; Merges all of the browser's windows into the current window
+      </li>
+          <li><strong><a href="samples.html#app-launcher">App Launcher</a></strong>
+          &ndash; Get access to your apps in a browser action
+      </li>
+          <li><strong><a href="samples.html#google-calendar-checker%EF%BC%88%E7%94%B1-google-%E6%8F%90%E4%BE%9B%EF%BC%89">Google Calendar Checker（由 Google 提供）</a></strong>
+          &ndash; 快速查看离您的任意日历中下一次会议还有多长时间。您只需点击该按钮即可进入自己的日历。
+      </li>
+          <li><strong><a href="samples.html#chromium-search">Chromium Search</a></strong>
+          &ndash; Add support to the omnibox to search the Chromium source code.
+      </li>
+          <li><strong><a href="samples.html#email-this-page-(by-google)">Email this page (by Google)</a></strong>
+          &ndash; This extension adds an email button to the toolbar which allows you to email the page link using your default mail client or Gmail.
+      </li>
+          <li><strong><a href="samples.html#chrome-sounds">Chrome Sounds</a></strong>
+          &ndash; Enjoy a more magical and immersive experience when browsing the web using the power of sound.
+      </li>
+          <li><strong><a href="samples.html#google-document-list-viewer">Google Document List Viewer</a></strong>
+          &ndash; Demonstrates how to use OAuth to connect the Google Documents List Data API.
+      </li>
+          <li><strong><a href="samples.html#google-mail-checker">Google Mail Checker</a></strong>
+          &ndash; 显示 Google Mail 收件箱中的未读邮件数。点击该按钮还可以打开您的收件箱。
+      </li>
+          <li><strong><a href="samples.html#imageinfo">Imageinfo</a></strong>
+          &ndash; Get image info for images, including EXIF data
+      </li>
+          <li><strong><a href="samples.html#mappy">Mappy</a></strong>
+          &ndash; Finds addresses in the web page you're on and pops up a map window.
+      </li>
+          <li><strong><a href="samples.html#news-reader-(by-google)">News Reader (by Google)</a></strong>
+          &ndash; Displays the latest stories from Google News in a popup.
+      </li>
+          <li><strong><a href="samples.html#news-reader">News Reader</a></strong>
+          &ndash; Displays the first 5 items from the 'Google News - top news' RSS feed in a popup.
+      </li>
+          <li><strong><a href="samples.html#sample---oauth-contacts">Sample - OAuth Contacts</a></strong>
+          &ndash; Uses OAuth to connect to Google's contacts service and display a list of your contacts.
+      </li>
+          <li><strong><a href="samples.html#speak-selection">Speak Selection</a></strong>
+          &ndash; Speaks the current selection out loud.
+      </li>
+          <li><strong><a href="samples.html#tab-shortcuts">Tab Shortcuts</a></strong>
+          &ndash; Allows pinning and duplication of tabs via keyboard shortcuts.
+      </li>
+        </ul>
+    </section>
+
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

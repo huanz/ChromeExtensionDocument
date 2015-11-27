@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>用 AngularJS 建立应用 - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="angular_framework.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<meta name="doc-family" content="apps">
+<h1><!--@Build Apps with AngularJS-->用 AngularJS 建立应用</h1>
+<!--Article written by Eric Bidelman-->
+<p>
+<!--@This guide gets you started building Chrome Apps
+with the-->
+这一指南使您初步了解如何使用
+<a href="http://angularjs.org/">AngularJS</a> MVC <!--@framework.
+To illustrate Angular in action,
+we'll be referencing an actual app built using the framework,
+the Google Drive Uploader.
+The <a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/gdrive">source code</a>
+is available on GitHub.-->
+框架建立 Chrome 应用。为了以实际例子演示
+Angular，我们将引用一个使用该框架建立的实际的应用——Google Drive
+Uploader（Google 云端硬盘上传器），<a href="https://github.com/GoogleChrome/chrome-app-samples/tree/master/gdrive">源代码</a>在
+GitHub 上可用。
+</p>
+
+<h2 id="first"><!--@About the app-->关于该应用</h2>
+
+<img src="../static/images/uploader.png"
+     width="296"
+     height="347"
+     style="float: right; padding-left: 5px"
+     alt="Google Drive Uploader">
+
+<p>
+<!--@The--> Google Drive Uploader <!--@allows users to quickly view and interact
+with files stored in their Google Drive account
+as well as upload new files using the
+<a href="http://www.html5rocks.com/en/tutorials/dnd/basics/">HTML Drag and Drop APIs</a>.
+It's a great example of building an app which talks
+to one of <a href="https://developers.google.com/apis-explorer/#p/">Google's APIs</a>;
+in this case, the Google Drive API.-->
+允许用户快速地查看他们在 Google 云端硬盘中存储的文件并与之交互，还可以使用
+<a href="http://www.html5rocks.com/en/tutorials/dnd/basics/">HTML 拖放
+API</a>
+上传新的文件。建立与某个
+<a href="https://developers.google.com/apis-explorer/#p/">Google 的
+API</a>（在此例子中即 Google Drive API）交互应用是一个很好的例子。
+</p>
+
+<p class="note">
+<strong><!--@Note: -->注意：</strong><!--@
+You can also build apps which talk to 3rd party APIs/services
+that are OAuth2-enabled.
+See <a href="app_identity#non">non-Google Account authentication</a>.-->您也可以建立应用，与启用了
+OAuth2 的第三方 API/服务交互。请参见<a
+href="app_identity.html#non">非 Google 帐户的认证</a>。
+</p>
+
+<p>
+<!--@The Uploader uses OAuth2 to access the user's data. The
+<a href="identity">chrome.identity API</a>
+handles fetching an OAuth token for the logged-in user,
+so the hard work is done for us!
+Once we have a long-lived access token,
+the apps uses the
+<a href="https://developers.google.com/drive/get-started">Google Drive API</a>
+to access the user's data.-->
+上传器使用 OAuth2 访问用户数据。<a
+href="identity.html">chrome.identity</a> API
+可以为已登录用户获取 OAuth
+令牌，所以这些麻烦的工作已经为我们做好了！一旦我们获得了长时间有效的访问令牌，应用就可以使用
+<a href="https://developers.google.com/drive/get-started">Google Drive API</a>
+访问用户数据。
+</p>
+
+<p>
+<!--@Key features this app uses:-->
+该应用使用的核心特性包括：
+</p>
+
+<ul>
+    <li>AngularJS<!--@'s autodetection for--> 对
+        <a href="contentSecurityPolicy.html">CSP</a>
+        的自动检测
+    </li>
+    <li><!--@Render a list of files fetched from the-->显示从
+        <a href="https://developers.google.com/drive/get-started">Google Drive API</a>
+        获取的文件列表
+    </li>
+    <li>使用 <a href="http://www.html5rocks.com/en/tutorials/file/filesystem/">HTML5 <!--@Filesystem-->文件系统 API</a>
+        <!--@to store file icons offline-->
+        离线保存文件图标
+    </li>
+    <li>使用 <a href="http://www.html5rocks.com/en/tutorials/dnd/basics/">HTML5 <!--@Drag and Drop-->拖放 API</a>
+        <!--@for importing/uploading new files from the desktop-->
+        导入/上传桌面上的新文件
+    </li>
+    <li>使用 XHR2 <!--@to load images, cross-domain-->跨域加载图片</li>
+    <li>使用 <a href="app_identity.html">chrome.identity API</a>
+        <!--@for OAuth authorization-->进行 OAuth 认证</li>
+    <li><!--@Chromeless frames to define the app's own navbar look and feel-->
+        使用无边框框架定义应用自己的导航栏样式与体验
+    </li>
+</ul>
+
+<h2 id="second"><!--@Creating the manifest-->创建清单文件</h2>
+
+<p>
+<!--@All Chrome Apps require a <code>manifest.json</code> file
+which contains the information Chrome needs to launch the app.
+The manifest contains relevant metadata and
+lists any special permissions the app needs to run.-->
+所有 Chrome 应用都需要一个
+<code>manifest.json</code> 文件，包含 Chrome
+浏览器启动应用所需的信息。清单文件包含相关的元数据，并列出应用运行时需要的所有特殊权限。
+</p>
+
+<p>
+<!--@A stripped down version of the Uploader's manifest looks like this:-->
+上传器清单文件的简化版本如下所示：
+</p>
+
+<pre data-filename="manifest.json">
+{
+  "name": "Google Drive Uploader",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "oauth2": {
+    "client_id": "665859454684.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive"
+    ]
+  },
+ ...
+  "permissions": [
+    "https://docs.google.com/feeds/",
+    "https://docs.googleusercontent.com/",
+    "https://spreadsheets.google.com/feeds/",
+    "https://ssl.gstatic.com/",
+    "https://www.googleapis.com/"
+  ]
+}
+</pre>
+
+<p>
+<!--@The most important parts of this manifest are the "oauth2" and "permissions" sections.-->
+该清单文件最重要的部分就是 "oauth2" 与 "permissions" 部分。
+</p>
+
+<p>
+<!--@The "oauth2" section defines the required parameters by OAuth2 to do its magic.
+To create a "client_id", follow the instructions in
+<a href="app_identity#client_id">Get your client id</a>.
+The "scopes" list the authorization scopes
+that the OAuth token will be valid for (for example, the APIs the app wants to access).-->
+"oauth2" 部分定义了 OAuth2 需要的参数以便完成它的工作。要创建一个
+"client_id"，遵循<a
+href="app_identity.html#client_id">获取您的客户端标识符</a>中的指示。"scopes"
+列出了 OAuth 令牌有效的认证域（例如应用需要访问的 API）。
+</p>
+
+<p>
+<!--@The "permissions" section includes URLs that the app will access via XHR2.
+The URL prefixes are required in order for Chrome
+to know which cross-domain requests to allow.-->
+"permissions" 部分包含应用通过 XHR2 访问的 URL。URL
+前缀是必须的，这样 Chrome 浏览器才能知道允许哪些跨域请求。
+</p>
+
+<h2 id="three"><!--@Creating the event page-->创建事件页面</h2>
+
+<p>
+<!--@All Chrome Apps require a background script/page
+to launch the app and respond to system events.-->
+所有 Chrome 应用都需要一个后台脚本/网页才能运行应用，并响应系统事件。
+</p>
+
+<p>
+<!--@In its-->
+在它的
+<a href="https://github.com/GoogleChrome/chrome-app-samples/blob/master/gdrive/js/background.js">background.js</a> 
+<!--@script,
+Drive Uploader opens a 500x600px window to the main page.
+It also specifies a minimum height and width for the window
+so the content doesn't become too crunched: -->
+脚本中，云端硬盘上传器打开一个 500×600
+像素的窗口显示主页面，同时它也指定了窗口的最小高度与宽度，以免内容显得过于紧凑。
+</p>
+
+<pre data-filename="background.js">
+chrome.app.runtime.onLaunched.addListener(function(launchData) {
+  chrome.app.window.create('../main.html', {
+    id: "GDriveExample",
+    bounds: {
+      width: 500,
+      height: 600
+    },
+    minWidth: 500,
+    minHeight: 600,
+    frame: 'none'
+  });
+});
+</pre>
+
+<p>
+<!--@The window is created as a chromeless window (frame: 'none').
+By default, windows render with the OS's default close/expand/minimize bar:-->
+窗口以无边框窗口的形式创建（frame: 'none'）。默认情况下，窗口渲染时将显示操作系统默认的关闭/最大化/最小化栏：
+</p>
+
+<img src="../static/images/noframe.png"
+     width="508"
+     height="75"
+     alt="Google Drive Uploader with no frame">
+
+<p>
+<!--@The Uploader uses <code>frame: 'none'</code> to render the window as a "blank slate"
+and creates a custom close button in <code>main.html</code>:-->
+上传器使用 <code>frame: 'none'</code> 使窗口渲染为“白板”，并在
+<code>main.html</code> 中创建一个自定义的关闭按钮：
+</p>
+
+<img src="../static/images/customframe.png"
+     width="504"
+     height="50"
+     alt="Google Drive Uploader with custom frame">
+
+<p>
+<!--@The entire navigational area is wrapped in a &lt;nav> (see next section).
+To declutter the app a bit,
+the custom close button is hidden until the user interacts with this the area:-->
+整个导航区域包括在 &lt;nav&gt;
+标签中（参见下一节）。为了使应用更简洁一些，自定义按钮一开始是隐藏的，直到用户与该区域交互：
+</p>
+
+<pre data-filename="main.css">
+&lt;style&gt;
+nav:hover #close-button {
+  opacity: 1;
+}
+
+#close-button {
+  float: right;
+  padding: 0 5px 2px 5px;
+  font-weight: bold;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+&lt;/style&gt;
+</pre>
+<pre data-filename="main.html">
+&lt;button class="btn" id="close-button" title="Close"&gt;x&lt;/button&gt;
+</pre>
+
+<p>
+<!--@In-->
+在
+<a href="https://github.com/GoogleChrome/chrome-app-samples/blob/master/gdrive/js/app.js">app.js</a><!--@,
+this button is hooked up to <code>window.close()</code>.-->
+中，该按钮将调用 <code>window.close()</code>。
+</p>
+
+<h2 id="four"><!--@Designing the app the Angular way-->以 Angular 的方式设计应用</h2>
+
+<p>
+<!--@Angular is an MVC framework, so we need to define the app in such a way that a 
+model, view, and controller logically fall out of it. Luckily, this is trivial when using Angular.-->
+Angular 是一个 MVC
+框架，所以我们需要以这样的方式定义应用，使模型、视图与控制器以逻辑的方式在应用中体现出来。幸运的是，在使用
+Angular 时这是很普通的。
+</p>
+
+<p>
+<!--@The View is the easiest, so let's start there.-->
+视图是最简单的，所以让我们从这里开始。
+</p>
+
+<h3 id="view"><!--@Creating the view-->创建视图</h3>
+
+<p>
+<a href="https://github.com/GoogleChrome/chrome-app-samples/blob/master/gdrive/main.html">main.html</a>
+<!--@is the "V" in MVC; where we define HTML templates to render data into.
+In Angular, templates are simple blocks of HTML with some special sauce.-->
+是 MVC 中的“V”（视图），我们在其中定义呈现数据的 HTML 模板。在 Angular
+中，模板是包含某些特殊内容的简单 HTML 块。
+</p>
+
+<p>
+<!--@Ultimately we want to display the user's list of files.
+For that, a simple &lt;ul&gt; list makes sense.
+The Angular bits are highlighted in bold: -->
+最终我们希望显示用户的文件列表。为了做到这一点，可以使用简单的
+&lt;ul&gt; 列表。Angular 的特有内容以粗体高亮：
+</p>
+
+<pre data-filename="main.html">
+&lt;ul&gt;
+  &lt;li <strong>data-ng-repeat="doc in docs"</strong>&gt;
+    &lt;img data-ng-src=<strong>"&#123;{doc.icon}&#125;"</strong>&gt; &lt;a href=<strong>"&#123;{doc.alternateLink}&#125;"</strong>&gt;<strong>&#123;{doc.title}&#125;</strong>&lt;/a&gt;
+<strong>&#123;{doc.size}&#125;</strong>
+    &lt;span class="date"&gt;<strong>&#123;{doc.updatedDate}&#125;</strong>&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p>
+<!--@This reads exactly as it looks:
+stamp out an &lt;li> for every doc in our data model "docs".
+Each item contains a file icon, link to open the file on the web,
+and last updatedDate.-->
+它理解起来与看上去的样子完全一致：在我们的数据模型“docs”中为每一个文档产生一个
+&lt;li&gt;，每一项包含一个文件图标、在网页中打开文件的链接以及最后更新日期。
+</p>
+
+<p class="note">
+<strong><!--@Note: -->注意：</strong><!--@
+To make the template valid HTML,
+we're using <code>data-*</code> attributes for Angular's
+<a href="http://docs.angularjs.org/api/ng.directive:ngRepeat">ngRepeat</a> iterator,
+but you don't have to.
+You could easily write the repeater as <code>&lt;li ng-repeat="doc in docs"></code>.-->为了使模板成为有效的
+HTML，我们使用 <code>data-*</code> 属性作为 Angular 的
+<a href="http://docs.angularjs.org/api/ng.directive:ngRepeat">ngRepeat</a>
+迭代器，但您不一定要这么做。您可以简单地将重复器写为
+<code>&lt;li ng-repeat="doc in docs"&gt;</code>。
+</p>
+
+<p>
+<!--@Next, we need to tell Angular which controller will oversee this template's rendering.
+For that, we use the-->
+接着，我们需要告诉 Angular
+哪个控制器将会控制该模板的渲染。为了做到这一点，我们使用
+<a href="http://docs.angularjs.org/api/ng.directive:ngController">ngController</a>
+<!--@directive to tell the <code>DocsController</code> to have reign over the template &lt;body&gt;:-->
+指示符让 <code>DocsController</code> 控制模板的 &lt;body&gt;。
+</p>
+
+<pre data-filename="main.html">
+&lt;body <strong>data-ng-controller="DocsController"</strong>&gt;
+&lt;section id="main"&gt;
+  &lt;ul&gt;
+    &lt;li data-ng-repeat="doc in docs"&gt;
+      &lt;img data-ng-src="&#123;{doc.icon}&#125;"&gt; &lt;a href="&#123;{doc.alternateLink}&#125;"&gt;&#123;{doc.title}&#125;&lt;/a&gt; &#123;{doc.size}&#125;
+      &lt;span class="date"&gt;&#123;{doc.updatedDate}&#125;&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+&lt;/body&gt;
+</pre>
+
+<p>
+<!--@Keep in mind,
+what you don't see here is us hooking up event listeners or properties for data binding.
+Angular is doing that heavy lifting for us!-->
+值得注意的是您在这里并没有看到我们设置事件监听器或用于数据绑定的属性，Angular
+为我们完成了这些繁重的任务！
+</p>
+
+<p>
+<!--@The last step is to make Angular light up our templates.
+The typical way to do that is include the-->
+最后一步是让 Angular 使我们的模板生效，做到这一点的通常方法是直接在
+&lt;html&gt; 上包含
+<a href="http://docs.angularjs.org/api/ng.directive:ngApp">ngApp</a>
+<!--@directive all the way up on &lt;html>:-->
+指示符：
+</p>
+
+<pre data-filename="main.html">
+&lt;html <strong>data-ng-app="gDriveApp"</strong>&gt;
+</pre>
+
+<p>
+<!--@You could also scope the app down
+to a smaller portion of the page if you wanted to.
+We only have one controller in this app,
+but if we were to add more later,
+putting-->
+如果您愿意的话，您也可以将应用限制在页面中某一个较小的部分。在这一应用中我们只有一个控制器，但是如果今后我们需要增加更多，将
+<a href="http://docs.angularjs.org/api/ng.directive:ngApp">ngApp</a>
+<!--@on the topmost element makes the entire page Angular-ready.-->
+放在顶层元素将使整个页面可以使用 Angular。
+</p>
+
+<p>
+<!--@The final product for <code>main.html</code> looks something like this:-->
+<code>main.html</code> 的最终产品如下所示：
+</p>
+
+<pre data-filename="main.html">
+&lt;html <strong>data-ng-app="gDriveApp"</strong>&gt;
+&lt;head&gt;
+  …
+  <!-- crbug.com/120693: so we don't need target="_blank" on every anchor. -->
+  &lt;base target="_blank"&gt;
+&lt;/head&gt;
+&lt;body <strong>data-ng-controller="DocsController"</strong>&gt;
+&lt;section id="main"&gt;
+  &lt;nav&gt;
+    &lt;h2&gt;Google Drive Uploader&lt;/h2&gt;
+    &lt;button class="btn" <strong>data-ng-click="fetchDocs()"</strong>&gt;Refresh&lt;/button&gt;
+    &lt;button class="btn" id="close-button" title="Close"&gt;&lt;/button&gt;
+  &lt;/nav&gt;
+  &lt;ul&gt;
+    &lt;li <strong>data-ng-repeat="doc in docs"</strong>&gt;
+      &lt;img data-ng-src=<strong>"&#123;{doc.icon}&#125;"</strong>&gt; &lt;a href=<strong>"&#123;{doc.alternateLink}&#125;"</strong>&gt;<strong>&#123;{doc.title}&#125;</strong>&lt;/a&gt;  <strong>&#123;{doc.size}&#125;</strong>
+      &lt;span class="date"&gt;<strong>&#123;{doc.updatedDate}&#125;</strong>&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+</pre>
+
+<h3 id="csp"><!--@A word on Content Security Policy-->有关内容安全策略的一些说明</h3>
+
+<p>
+<!--@Unlike many other JS MVC frameworks,
+Angular v1.1.0+ requires no tweaks to work within a strict
+<a href="contentSecurityPolicy">CSP</a>.
+It just works, out of the box!-->
+与许多其他 JS MVC 框架不同，Angular v1.1.0+ 不需要任何调整就能在严格的
+<a href="contentSecurityPolicy.html">CSP</a> 下工作。它真的可以直接使用！
+</p>
+
+<p>
+<!--@However, if you're using an older version
+of Angular between v1.0.1 and v1.1.0,
+you'll need tell Angular to run in a "content security mode".
+This is done by including the
+<a href="http://docs.angularjs.org/api/ng.directive:ngCsp">ngCsp</a>
+directive alongside <a href="http://docs.angularjs.org/api/ng.directive:ngApp">ngApp</a>:-->
+然而，如果您正在使用 Angular 的旧版本（v1.0.1 与 v1.1.0 之间），您需要让
+Angular 运行在“内容安全模式”下，在使用
+<a href="http://docs.angularjs.org/api/ng.directive:ngApp">ngApp</a>
+的同时包含
+<a href="http://docs.angularjs.org/api/ng.directive:ngCsp">ngCsp</a>
+指示符即可做到这一点。
+</p>
+
+<pre data-filename="main.html">
+&lt;html data-ng-app data-ng-csp&gt;
+</pre>
+
+<h3 id="authorization"><!--@Handling authorization-->进行认证</h3>
+
+<p>
+<!--@The data model isn't generated by the app itself.
+Instead, it's populated from an external API (the Google Drive API).
+Thus, there's a bit of work necessary in order to populate the app's data.-->
+数据模型并不是由应用自己生成的，而是从外部
+API（Google Drive API）获取的。因此，为了获取应用的数据有必要做一些事情。
+</p>
+
+<p>
+<!--@Before we can make an API request,
+we need to fetch an OAuth token for the user's Google Account.
+For that, we've created a method to wrap the call
+to <code>chrome.identity.getAuthToken()</code> and
+store the <code>accessToken</code>,
+which we can reuse for future calls to the Drive API.-->
+在我们调用 API 请求前，我们需要获取用户 Google 帐户的 OAuth
+令牌。为了做到这一点，我们创建了一个方法包装对
+<code>chrome.identity.getAuthToken()</code>
+的调用，并保存 <code>accessToken</code>，以便将来调用 Drive API 时再次使用。
+</p>
+
+<pre data-filename="gdocs.js">
+GDocs.prototype.auth = function(opt_callback) {
+  try {
+    <strong>chrome.identity.getAuthToken({interactive: false}, function(token) {</strong>
+      if (token) {
+        this.accessToken = token;
+        opt_callback &amp;&amp; opt_callback();
+      }
+    }.bind(this));
+  } catch(e) {
+    console.log(e);
+  }
+};
+</pre>
+
+<p class="note">
+<strong><!--@Note: -->注意：</strong><!--@
+Passing the optional callback gives us the flexibility
+of knowing when the OAuth token is ready.-->传递可选的回调函数使我们可以灵活地知道
+OAuth 令牌什么时候已经准备好。
+</p>
+
+<p class="note">
+<strong><!--@Note: -->注意：</strong><!--@
+To simplify things a bit,
+we've created a library,-->为了简单起见，我们创建了一个
+<a href="https://github.com/GoogleChrome/chrome-app-samples/blob/master/gdrive/js/gdocs.js">gdocs.js</a>
+<!--@to handle API tasks.-->
+库处理 API 任务。
+</p>
+
+<p>
+<!--@Once we have the token,
+it's time to make requests against the Drive API and populate the model.-->
+一旦我们获得了令牌，现在可以向 Drive API 发出请求了，并获取模型。
+</p>
+
+<h3 id="skeleton"><!--@Skeleton controller-->基本控制器</h3>
+
+<p>
+<!--@The "model" for the Uploader is a simple array (called docs)
+of objects that will get rendered as those &lt;li>s in the template:-->
+上传器的“模型”是一个简单的数组（称为 docs），包含将渲染为模板中的那些
+&lt;li&gt; 的对象。
+</p>
+
+<pre data-filename="app.js">
+var gDriveApp = angular.module('gDriveApp', []);
+
+gDriveApp.factory('gdocs', function() {
+  var gdocs = new GDocs();
+  return gdocs;
+});
+
+function DocsController($scope, $http, gdocs) {
+  $scope.docs = [];
+
+  $scope.fetchDocs = function() {
+     ...
+  };
+
+  // Invoke on ctor call. Fetch docs after we have the oauth token.
+  gdocs.auth(function() {
+    $scope.fetchDocs();
+  });
+
+}
+</pre>
+
+<p>
+<!--@Notice that <code>gdocs.auth()</code> is called
+as part of the DocsController constructor.
+When Angular's internals create the controller,
+we're insured to have a fresh OAuth token waiting for the user.-->
+注意，<code>gdocs.auth()</code> 作为 DocsController
+构造函数的一部分调用。当 Angular
+的内部实现创建控制器后，我们可以确定已经获取了最新的 OAuth 令牌等待用户。
+</p>
+
+<h2 id="five"><!--@Fetching data-->获取数据</h2>
+
+<p>
+<!--@Template laid out.
+Controller scaffolded.
+OAuth token in hand.
+Now what?-->
+模板编写完成，控制器指定好了，OAuth 令牌也在手中了，接下来做什么？
+</p>
+
+<p>
+<!--@It's time to define the main controller method,
+<code>fetchDocs()</code>.
+It's the workhorse of the controller,
+responsible for requesting the user's files and
+filing the docs array with data from API responses.-->
+现在应该定义控制器主方法 <code>fetchDocs()</code>
+了。它将完成控制器的工作，负责请求用户的文件并用 API 响应中的数据填充
+docs 数组。
+</p>
+
+<pre data-filename="app.js">
+$scope.fetchDocs = function() {
+  $scope.docs = []; // First, clear out any old results
+
+  // Response handler that doesn't cache file icons.
+  var successCallback = function(resp, status, headers, config) {
+    var docs = [];
+    var totalEntries = resp.feed.entry.length;
+
+    resp.feed.entry.forEach(function(entry, i) {
+      var doc = {
+        title: entry.title.$t,
+        updatedDate: Util.formatDate(entry.updated.$t),
+        updatedDateFull: entry.updated.$t,
+        icon: gdocs.getLink(entry.link,
+                            'http://schemas.google.com/docs/2007#icon').href,
+        alternateLink: gdocs.getLink(entry.link, 'alternate').href,
+        size: entry.docs$size ? '( ' + entry.docs$size.$t + ' bytes)' : null
+      };
+
+      $scope.docs.push(doc);
+
+      // Only sort when last entry is seen.
+      if (totalEntries - 1 == i) {
+        $scope.docs.sort(Util.sortByDate);
+      }
+    });
+  };
+
+  var config = {
+    params: {'alt': 'json'},
+    headers: {
+      'Authorization': 'Bearer ' + gdocs.accessToken,
+      'GData-Version': '3.0'
+    }
+  };
+
+  $http.get(gdocs.DOCLIST_FEED, config).success(successCallback);
+};
+</pre>
+
+<p>
+<!--@<code>fetchDocs()</code> uses Angular's <code>$http</code> service
+to retrieve the main feed over XHR.
+The oauth access token is included
+in the <code>Authorization</code> header
+along with other custom headers and parameters.-->
+<code>fetchDocs()</code> 使用 Angular 的 <code>$http</code> 服务通过
+XHR 获取主要供稿，OAuth 访问令牌包含在 <code>Authorization</code>
+头信息中，同时包含其他自定义头信息及参数。
+</p>
+
+<p>
+<!--@The <code>successCallback</code> processes the API response and
+creates a new doc object for each entry in the feed. -->
+<code>successCallback</code> 处理 API
+响应并为供稿中每一项创建一个新的 doc 对象。
+</p>
+
+<p>
+<!--@If you run <code>fetchDocs()</code> right now,
+everything works and the list of files shows up:-->
+如果您现在运行 <code>fetchDocs()</code>，一切都将工作起来，并出现文件列表：
+</p>
+
+<img src="../static/images/listoffiles.png"
+     width="580"
+     height="680"
+     alt="Fetched list of files in Google Drive Uploader">
+
+<p>
+<!--@Woot!-->哇！
+</p>
+
+<p>
+<!--@Wait,...we're missing those neat file icons.
+What gives?
+A quick check of the console shows a bunch of CSP-related errors:-->
+等等……我们好像少了整齐的文件图标。怎么会这样？迅速地检查一下控制台，显示了几个
+CSP 相关的错误：
+</p>
+
+<img src="../static/images/csperrors.png"
+     width="947"
+     height="84"
+     alt="CSP errors in developer console">
+
+<p>
+<!--@The reason is that we're trying
+to set the icons <code>img.src</code> to external URLs.
+This violates CSP.
+For example:
+<code>https://ssl.gstatic.com/docs/doclist/images/icon_10_document_list.png</code>.
+To fix this,
+we need to pull in these remote assets locally to the app.-->
+原因是我们尝试将图标的 <code>img.src</code> 设置为外部 URL，这违反了
+CSP。例如：<code>https://ssl.gstatic.com/docs/doclist/images/icon_10_document_list.png</code>。要修复这一问题，我们需要将这些远程资源获取到本地供应用使用。
+</p>
+
+<h3 id="import"><!--@Importing remote image assets-->导入远程图片资源</h3>
+
+<p>
+<!--@For CSP to stop yelling at us,
+we use XHR2 to "import" the file icons as Blobs,
+then set the <code>img.src</code>
+to a <code>blob: URL</code> created by the app.-->
+为了不让 CSP 对我们大叫，我们使用 XHR2 将文件图标“导入”为 Blob，然后设置
+<code>img.src</code> 为应用创建的 <code>blob: URL</code>。
+</p>
+
+<p>
+<!--@Here's the updated <code>successCallback</code>
+with the added XHR code:-->
+如下是更新后包含新增的 XHR 代码的 <code>successCallback</code>：
+</p>
+
+<pre data-filename="app.js">
+var successCallback = function(resp, status, headers, config) {
+  var docs = [];
+  var totalEntries = resp.feed.entry.length;
+
+  resp.feed.entry.forEach(function(entry, i) {
+    var doc = {
+      ...
+    };
+
+    <strong>$http.get(doc.icon, {responseType: 'blob'}).success(function(blob) {
+      console.log('Fetched icon via XHR');
+
+      blob.name = doc.iconFilename; // Add icon filename to blob.
+
+      writeFile(blob); // Write is async, but that's ok.
+
+      doc.icon = window.URL.createObjectURL(blob);
+
+      $scope.docs.push(doc);
+
+      // Only sort when last entry is seen.
+      if (totalEntries - 1 == i) {
+        $scope.docs.sort(Util.sortByDate);
+      }
+    });</strong>
+  });
+};
+</pre>
+
+<p>
+<!--@Now that CSP is happy with us again,
+we get nice file icons:-->
+现在 CSP 对我们满意了，我们将得到漂亮的文件图标：
+</p>
+
+<img src="../static/images/fileicons.png"
+     width="580"
+     height="680"
+     alt="Google Drive Uploader with file icons">
+
+<h2 id="six"><!--@Going offline: caching external resources-->支持离线：缓存外部资源</h2>
+
+<p>
+<!--@The obvious optimization that needs to be made:
+not make 100s of XHR requests for each file icon
+on every call to <code>fetchDocs()</code>.
+Verify this in the Developer Tools console
+by pressing the "Refresh" button several times.
+Every time, n images are fetched:-->
+需要进行的一个明显的优化就是：不要在每一次调用
+<code>fetchDocs()</code> 时为每个文件图标发出 100 多个 XHR
+请求。单击几次“刷新”按钮，就可以在开发者工具的控制台中验证这一点。每一次会获取
+n 个图片：
+</p>
+
+<img src="../static/images/fetchedicon.png"
+     width="180"
+     height="19"
+     alt="Console log 65: Fetched icon via XHR">
+
+<p>
+<!--@Let's modify <code>successCallback</code>
+to add a caching layer.
+The additions are highlighted in bold:-->
+让我们修改
+<code>successCallback</code>，增加一个缓存层。增加的部分以粗体高亮：
+</p>
+
+<pre data-filename="app.js">
+$scope.fetchDocs = function() {
+  ...
+
+  // Response handler that caches file icons in the filesystem API.
+  var successCallbackWithFsCaching = function(resp, status, headers, config) {
+    var docs = [];
+    var totalEntries = resp.feed.entry.length;
+
+    resp.feed.entry.forEach(function(entry, i) {
+      var doc = {
+        ...
+      };
+
+      <strong>// 'https://ssl.gstatic.com/doc_icon_128.png' -> 'doc_icon_128.png'
+      doc.iconFilename = doc.icon.substring(doc.icon.lastIndexOf('/') + 1);</strong>
+
+      // If file exists, it we'll get back a FileEntry for the filesystem URL.
+      // Otherwise, the error callback will fire and we need to XHR it in and
+      // write it to the FS.
+      <strong>var fsURL = fs.root.toURL() + FOLDERNAME + '/' + doc.iconFilename;
+      window.webkitResolveLocalFileSystemURL(fsURL, function(entry) {
+        doc.icon = entry.toURL(); // should be === to fsURL, but whatevs.</strong>
+        
+        $scope.docs.push(doc); // add doc to model.
+
+        // Only want to sort and call $apply() when we have all entries.
+        if (totalEntries - 1 == i) {
+          $scope.docs.sort(Util.sortByDate);
+          $scope.$apply(function($scope) {}); // Inform angular that we made changes.
+        }
+
+      <strong>}, function(e) {
+        // Error: file doesn't exist yet. XHR it in and write it to the FS.
+        
+        $http.get(doc.icon, {responseType: 'blob'}).success(function(blob) {
+          console.log('Fetched icon via XHR');
+
+          blob.name = doc.iconFilename; // Add icon filename to blob.
+
+          writeFile(blob); // Write is async, but that's ok.
+
+          doc.icon = window.URL.createObjectURL(blob);
+
+          $scope.docs.push(doc);
+
+          // Only sort when last entry is seen.
+          if (totalEntries - 1 == i) {
+            $scope.docs.sort(Util.sortByDate);
+          }
+        });
+
+      });</strong>
+    });
+  };
+
+  var config = {
+    ...
+  };
+
+  $http.get(gdocs.DOCLIST_FEED, config).success(successCallbackWithFsCaching);
+};
+</pre>
+
+<p>
+<!--@Notice that in the <code>webkitResolveLocalFileSystemURL()</code> callback
+we're calling <code>$scope.$apply()</code>
+when  the last entry is seen.
+Normally calling <code>$apply()</code> isn't necessary.
+Angular detects changes to data models automagically.
+However in our case,
+we have an addition layer of asynchronous callback
+that Angular isn't aware of.
+We must explicitly tell Angular when our model has been updated.-->
+注意在 <code>webkitResolveLocalFileSystemURL()</code>
+回调函数中，当循环到最后一项时我们调用了 <code>$scope.$apply()</code>。通常
+<code>$apply()</code> 的调用不是必要的，Angular
+会以某种方式自动检测数据模型的更改。然而在我们的情况中，我们已经增加了一层
+Angular 意识不到的异步回调函数，当我们的数据模型更新时我们必须显式告诉
+Angular。
+</p>
+
+<p>
+<!--@On first run,
+the icons won't be in the HTML5 Filesystem and the calls to
+<code>window.webkitResolveLocalFileSystemURL()</code> will result
+in its error callback being invoked.
+For that case,
+we can reuse the technique from before and fetch the images.
+The only difference this time is that
+each blob is written to the filesystem (see-->
+第一次运行时，图标还不在 HTML5
+文件系统中，<code>window.webkitResolveLocalFileSystemURL()</code>
+的调用将会导致错误回调函数的执行。在这种情况下，我们可以重用之前的技术获取图片。这一次唯一的区别就是每一个 Blob 将写入文件系统（参见
+<a href="https://github.com/GoogleChrome/chrome-app-samples/blob/master/gdrive/js/app.js#L27">writeFile()</a><!--@).
+The console verifies this behavior:-->）。控制台验证了这一行为：
+</p>
+
+<img src="../static/images/writecompleted.png"
+     width="804"
+     height="42"
+     alt="Console log 100: Write completed">
+
+<p>
+<!--@Upon next run (or press of the "Refresh" button),
+the URL passed to <code>webkitResolveLocalFileSystemURL()</code> exists
+because the file has been previously cached.
+The app sets the <code>doc.icon</code>
+to the file's <code>filesystem: URL</code> and
+avoids making the costly XHR for the icon.-->
+下一次运行时（或者按下“刷新”按钮），由于文件之前已经缓存了，传递给
+<code>webkitResolveLocalFileSystemURL()</code> 的 URL 存在。应用将
+<code>doc.icon</code> 设置为文件的 <code>filesystem:</code>
+URL，以免为了图标发起昂贵的 XHR。
+</p>
+
+<h2 id="seven"><!--@Drag and drop uploading-->通过拖放上传</h2>
+
+<p>
+<!--@An uploader app is false advertising
+if it can't upload files!-->
+上传器应用如果不能上传文件的话那它就在做假广告！
+</p>
+
+<p>
+<a href="https://github.com/GoogleChrome/chrome-app-samples/blob/master/gdrive/js/app.js#L52">app.js</a>
+<!--@handles this feature by implementing a small library
+around HTML5 Drag and Drop called <code>DnDFileController</code>.
+It gives the ability to drag in files from the desktop
+and have them uploaded to Google Drive.-->
+实现了一个名为 <code>DnDFileController</code> 的小型库，使用 HTML5
+拖放来处理这一特性。它提供了从桌面拖动文件并将它们上传到
+Google 云端硬盘的能力。
+</p>
+
+<p>
+<!--@Simply adding this to the gdocs service does the job:-->
+只要将此加入 gdocs 服务就完成了任务：
+</p>
+
+<pre data-filename="app.js">
+gDriveApp.factory('gdocs', function() {
+  var gdocs = new GDocs();
+  
+  var dnd = new DnDFileController('body', function(files) {
+    var $scope = angular.element(this).scope();
+    Util.toArray(files).forEach(function(file, i) {
+      gdocs.upload(file, function() {
+        $scope.fetchDocs();
+      });
+    });
+  });
+
+  return gdocs;
+});
+</pre>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                  <h3 title="">MVC 架构和框架</h3>
+      <ol class="toc">
+                        <li>
+                          <a href="app_frameworks.html">关于 MVC 架构</a>
+                        </li>
+                        <li>
+                          <a href="angular_framework.html" class="active">使用 AngularJS 建立应用</a>
+                        </li>
+                        <li>
+                          <a href="sencha_framework.html">使用 SenchaJS 建立应用</a>
+                        </li>
+                        <li>
+                          <a href="game_engines.html">游戏引擎</a>
+                        </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="angular_framework.html#first"
+          >关于该应用</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="angular_framework.html#second"
+          >创建清单文件</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="angular_framework.html#three"
+          >创建事件页面</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="angular_framework.html#four"
+          >以 Angular 的方式设计应用</a>
+          <ol class="toc">
+              <li><a data-list-item href="angular_framework.html#view"
+                     >创建视图</a>
+              </li>
+              <li><a data-list-item href="angular_framework.html#csp"
+                     >有关内容安全策略的一些说明</a>
+              </li>
+              <li><a data-list-item href="angular_framework.html#authorization"
+                     >进行认证</a>
+              </li>
+              <li><a data-list-item href="angular_framework.html#skeleton"
+                     >基本控制器</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="angular_framework.html#five"
+          >获取数据</a>
+          <ol class="toc">
+              <li><a data-list-item href="angular_framework.html#import"
+                     >导入远程图片资源</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="angular_framework.html#six"
+          >支持离线：缓存外部资源</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="angular_framework.html#seven"
+          >通过拖放上传</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>

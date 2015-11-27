@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cleartype" content="on">
+    <link type="image/ico" rel="icon" href="https://www.google.com/images/icons/product/chrome-32.png">
+
+    <link href="../static/css/out/site.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="../static/css/prettify.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+    <title>创建 MVC - Google Chrome 应用开发文档（非官方中文版）</title>
+  </head>
+
+  <body>
+    <div id="gc-container">
+    <a href="app_codelab3_mvc.html#gc-pagecontent" class="element-invisible element-focusable">Skip to main content</a>
+
+    <header id="topnav" role="banner">
+      <div id="logo">
+        <a href="../extensions/index.html" id="goto-original">
+          <img alt="Chrome 开发者" src="../static/images/chrome-logo_2x.png">
+        </a>
+        <span class="collase-icon"><!-- <img src="/static/images/burger-icon.png" class="collase-icon">--></span>
+      </div>
+      <nav id="fatnav" role="navigation">
+      <ul>
+          <li class="pillar">
+            <span class="toplevel">应用</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="about_apps.html">
+                        什么是 Chrome 应用？
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="first_app.html">
+                        创建第一个应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_architecture.html">
+                        应用的架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_lifecycle.html">
+                        应用的生命周期
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_codelab1_setup.html">
+                        通过代码实验室学习
+                        </a>
+                        <ul>
+                            <li><a href="app_codelab1_setup.html">1、设置开发环境</a>
+                            </li>
+                            <li><a href="app_codelab2_basic.html">2、创建基本应用</a>
+                            </li>
+                            <li><a href="app_codelab3_mvc.html">3、创建 MVC</a>
+                            </li>
+                            <li><a href="app_codelab5_data.html">4、保存和获取数据</a>
+                            </li>
+                            <li><a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                            </li>
+                            <li><a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                            </li>
+                            <li><a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                            </li>
+                            <li><a href="app_codelab_10_publishing.html">8、发布应用</a>
+                            </li>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">在云端开发
+                  <ul>
+                      <li class="category">
+                        <a href="offline_apps.html">
+                        首先考虑离线
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_external.html">
+                        处理外部内容
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_storage.html">
+                        保存数据
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="inform_users.html">
+                        随时通知用户
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="cloudMessaging.html">
+                        云消息服务
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="richNotifications.html">
+                        丰富的通知
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_identity.html">
+                        用户认证
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">使用低级系统服务
+                  <ul>
+                      <li class="category">
+                        <a href="app_usb.html">
+                        USB
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_serial.html">
+                        串行端口
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_network.html">
+                        网络通信
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_bluetooth.html">
+                        蓝牙
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">MVC 架构和框架
+                  <ul>
+                      <li class="category">
+                        <a href="app_frameworks.html">
+                        关于 MVC 架构
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="angular_framework.html">
+                        使用 AngularJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="sencha_framework.html">
+                        使用 SenchaJS 建立应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="game_engines.html">
+                        游戏引擎
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布应用
+                  <ul>
+                      <li class="category">
+                        <a href="publish_app.html">
+                        发布您的应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="chrome_apps_on_mobile.html">
+                        在移动设备上运行 Chrome 应用
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="google_wallet.html">
+                        通过应用获利
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="analytics.html">
+                        Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="tags/webview.html">
+                        Webview 标签
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="app_deprecated.html">
+                        禁用的网页特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/questions/tagged/google-chrome-app">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+          <li class="pillar">
+            <span class="toplevel">扩展程序</span>
+            <ul class="expandee">
+                <li class="submenu">了解基础知识
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/getstarted.html">
+                        入门教程
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/overview.html">
+                        概述
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/hosting_changes.html">
+                        托管扩展程序的更改
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/single_purpose.html">
+                        扩展程序质量准测的常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/event_pages.html">
+                        事件页面
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/content_scripts.html">
+                        内容脚本
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/activeTab.html">
+                        activeTab 权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/whats_new.html">
+                        新增特性
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">开发扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/a11y.html">
+                        辅助功能
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/contentSecurityPolicy.html">
+                        内容安全策略
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/xhr.html">
+                        跨站 XHR
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_debugging.html">
+                        调试
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/i18n.html">
+                        国际化支持
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/messaging.html">
+                        消息传递
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_migration_to_manifest_v2.html">
+                        迁移至清单文件版本 2
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_oauth.html">
+                        OAuth
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">发布扩展程序
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/hosting.html">
+                        托管
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/packaging.html">
+                        打包
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://developer.chrome.com/webstore/one_time_payments">
+                        一次性付款
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/autoupdate.html">
+                        自动更新
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/external_extensions.html">
+                        其他部署选项
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/tut_analytics.html">
+                        Google Analytics（分析）
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/themes.html">
+                        发布主题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">Chrome 平台 API
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/api_index.html">
+                        JavaScript API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/manifest.html">
+                        清单文件格式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/api_other.html">
+                        网页 API
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permission_warnings.html">
+                        权限警告
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/permissions.html">
+                        可选权限
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/match_patterns.html">
+                        匹配表达式
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+                <li class="submenu">帮助
+                  <ul>
+                      <li class="category">
+                        <a href="../extensions/samples.html">
+                        示例
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="../extensions/faq.html">
+                        常见问题
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">
+                        Google 网上论坛
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                      <li class="category">
+                        <a href="http://stackoverflow.com/tags/google-chrome-extension/info">
+                        Stack Overflow
+                        </a>
+                        <ul>
+                        </ul>
+                      </li>
+                  </ul>
+                </li>
+            </ul>
+          </li>
+        <li id="search">
+          <img src="../static/images/search.png">
+          <div class="expandee">
+      
+      <!-- override search styles set globally by site.css -->
+      <style>.gsc-above-wrapper-area, .gsc-result-info {
+        font-size: 11px;
+      }
+      .gs-webResult div, .gs-result div {
+        line-height: initial;
+      }
+      .gs-webResult a, .gs-result a {
+        text-decoration: none;
+      }
+      td.gcsc-branding-img-noclear, .gcsc-branding-img-noclear a {
+        width: 51px;
+        height: 15px;
+        vertical-align: top;
+      }
+      .gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+        padding: 0;
+      }
+      .gsc-control-cse tr, .gsc-control-cse td, .gsc-control-cse th {
+       padding: inherit;
+       border: none;
+      }
+      .gsc-control-cse {
+        white-space: normal;
+        border: none;
+        padding: 0 1em;
+      }
+      #search .gsc-control-cse img {
+        height: inherit;
+        width: inherit;
+      }
+      .gsc-control-cse table {
+        margin: initial;
+      }
+      .gsc-control-cse * {
+        box-sizing: initial;
+        -webkit-box-sizing: initial;
+        -moz-box-sizing: initial;
+      }
+      #fatnav .expandee .gsc-control-cse a {
+       padding: 0;
+       color: inherit;
+      }
+      </style>
+      
+            <form id="chrome-docs-cse-search-form" action="https://www.google.com/cse">
+              <input type="search" id="chrome-docs-cse-input" name="q" placeholder="What are you looking for?">
+              <input type="hidden" name="cx" value="016591469675702421090:ddw412-4i6q" />
+              <input type="hidden" name="ie" value="UTF-8" />
+            </form>
+            <gcse:searchresults-only gname="results"></gcse:searchresults-only>
+          </div>
+        </li>
+      </ul>
+      </nav>
+          </header>
+
+    <main id="gc-pagecontent" role="main">
+
+
+<article class="article-content">
+  <div itemprop="articleBody">
+
+<h1 id="lab_3_model_view_controller"><!--@Create-->创建 MVC</h1>
+
+<p><!--@Whenever your application grows beyond a single script with a few dozen lines,
+it gets harder and harder to manage without a good separation
+of roles among app components.
+One of the most common models for structuring a complex application,
+no matter what language, is the Model-View-Controller (MVC) and its variants,
+like Model-View-Presentation (MVP).-->
+当您的应用的规模超出一个几十行的脚本时，如果应用的组成部分之间没有良好的角色分离，管理起来就越发的困难。无论使用哪种语言，组织复杂应用的一种最常见的模型是“模型-视图-控制器”（MVC）及其变体，如“模型-视图-展示（MVP）”。
+</p>
+
+<p><!--@There are several frameworks to help apply
+<a href="app_frameworks">MVC concepts</a>
+to a Javascript application, and most of them,
+as long as they are CSP compliant, can be used in a Chrome App.
+In this lab,
+we'll add an MVC model using both pure JavaScript and
+the <a href="http://angularjs.org/">AngularJS</a> framework.
+Most of the AngularJS code from this section was copied,
+with small changes, from the AngularJS Todo tutorial.-->
+有好几种框架能够帮助您将 <a href="app_frameworks.html">MVC 概念</a>应用到
+JavaScript 应用程序上，大部分也都能在 Chrome
+应用中使用。在这一代码实验室中我们将分别使用纯 JavaScript 以及
+<a href="http://angularjs.org/">AngularJS</a>
+框架添加 MVC 模型。这一部分的大部分 AngularJS 代码都是从 AngularJS“待办事项”教程中复制过来的，只是做了一点改动。
+</p>
+
+<p class="note"><b><!--@Note:-->注意：</b><!--@
+Chrome Apps don&#39;t enforce any specific framework or programming style.-->Chrome
+应用并不强制要求使用任何特定的框架或编程风格。
+</p>
+
+<h2 id="simple"><!--@Create a simple view-->创建简单视图</h2>
+
+<h3 id="basic-mvc"><!--@Add MVC basics-->添加 MVC 的基本内容</h3>
+
+<p><!--@If using AngularJS, download the-->如果您使用 AngularJS，请下载
+<a href="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js">Angular <!--@script-->脚本</a><!--@
+and save it as-->并将它存储为
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/simpleview/angular.min.js">angular.min.js</a><!--@.-->。</p>
+
+<p><!--@If using JavaScript,
+you will need to add a very simple controller with basic MVC functionalities:
+-->
+如果使用 JavaScript，您需要添加一个非常简单并具有基本 MVC 功能的
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/javascript/simpleview/controller.js">JavaScript controller.js</a></p>
+
+<h3 id="update-view"><!--@Update view-->更新视图</h3>
+
+<p><!--@Change the-->修改 <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/simpleview/index.html">AngularJS index.html</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/javascript/simpleview/index.html">JavaScript index.html</a> <!--@to use a simple sample:-->使用简单的示例：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="index.html">
+&lt;!doctype html&gt;
+&lt;html ng-app ng-csp&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="todo.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Todo&lt;/h2&gt;
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &#123;&#123;todoText&#125;&#125;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;input type=&quot;text&quot; ng-model=&quot;todoText&quot;  size="30"
+             placeholder=&quot;type your todo here&quot;&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="index.html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;todo.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Todo&lt;/h2&gt;
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li id=&quot;todoText&quot;&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;input type=&quot;text&quot; id=&quot;newTodo&quot; size=&quot;30&quot;
+             placeholder=&quot;type your todo here&quot;&gt;
+    &lt;/div&gt;
+    &lt;script src=&quot;controller.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </content>
+</tabs>
+
+<p class="note"><b><!--@Note:-->注意：</b><!--@  The --><code>ng-csp</code> <!--@directive tells Angular to run in a &quot;content security mode&quot;. You don&#39;t need this directive when using Angular v1.1.0+. We&#39;ve included it here so that the sample works regardless of the Angular version in use.-->
+指示符告诉 Angular 以“内容安全模式”运行，如果您使用
+Angular v1.1.0+，您不需要该指示符。我们在这里包含了它，以便让示例在任何使用的
+Angular 版本下都能正常工作。
+</p>
+
+<h3 id="stylesheet"><!--@Add stylesheet-->添加样式表</h3>
+
+<p><a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/simpleview/todo.css">AngularJS todo.css</a> <!--@and-->和
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/javascript/simpleview/todo.css">JavaScript todo.css</a> <!--@are the same:-->是相同的：
+</p>
+
+<pre data-filename="todo.css">
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input[type=submit] {
+  background-color: #0074CC;
+  background-image: linear-gradient(top, #08C, #05C);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+</pre>
+
+<h3 id="check1"><!--@Check the results-->检查结果</h3>
+
+<p>
+<!--@Check the results by reloading the app: open the app, right-click and select Reload App.</li>-->
+重新加载应用，检查结果：打开应用，单击右键并选择“重新加载应用”。
+</p>
+
+<h2 id="real-todo"><!--@Create real Todo list-->创建真正的待办事项列表</h2>
+
+<p>
+<!--@The previous sample, although interesting, is not exactly useful.
+Let&#39;s transform it into a real Todo list, instead of a simple Todo item.-->
+前面的示例尽管很有意思，但是并不是很有用，让我们将它转变成一个真正的“待办事项”列表。
+</p>
+
+<h3 id="controller"><!--@Add controller-->添加控制器</h3>
+
+<p>
+<!--@Whether using pure JavaScript or AngularJS,
+the controller manages the Todo list:
+-->无论是用纯 JavaScript 还是 AngularJS，待办事项列表由控制器管理：<a
+href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/withcontroller/controller.js">AngularJS controller.js</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/javascript/withcontroller/controller.js">JavaScript controller.js</a><!--@.-->。
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="controller.js">
+function TodoCtrl($scope) {
+  $scope.todos = [
+    {text:&#39;learn angular&#39;, done:true},
+    {text:&#39;build an angular Chrome packaged app&#39;, done:false}];
+
+$scope.addTodo = function() {
+    $scope.todos.push({text:$scope.todoText, done:false});
+    $scope.todoText = &#39;&#39;;
+  };
+
+$scope.remaining = function() {
+    var count = 0;
+    angular.forEach($scope.todos, function(todo) {
+      count += todo.done ? 0 : 1;
+    });
+    return count;
+  };
+
+$scope.archive = function() {
+    var oldTodos = $scope.todos;
+    $scope.todos = [];
+    angular.forEach(oldTodos, function(todo) {
+      if (!todo.done) $scope.todos.push(todo);
+    });
+  };
+}
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="controller.js">
+(function(exports) {
+
+  var nextId = 1;
+
+  var TodoModel = function() {
+    this.todos = {};
+    this.listeners = [];
+  }
+
+  TodoModel.prototype.clearTodos = function() {
+    this.todos = {};
+    this.notifyListeners('removed');
+  }
+
+  TodoModel.prototype.archiveDone = function() {
+    var oldTodos = this.todos;
+    this.todos={};
+    for (var id in oldTodos) {
+      if ( ! oldTodos[id].isDone ) {
+        this.todos[id] = oldTodos[id];
+      }
+    }
+    this.notifyListeners('archived');
+  }
+
+  TodoModel.prototype.setTodoState = function(id, isDone) {
+    if ( this.todos[id].isDone != isDone ) {
+      this.todos[id].isDone = isDone;
+      this.notifyListeners('stateChanged', id);
+    }
+  }
+
+  TodoModel.prototype.addTodo = function(text, isDone) {
+    var id = nextId++;
+    this.todos[id]={'id': id, 'text': text, 'isDone': isDone};
+    this.notifyListeners('added', id);
+  }
+
+  TodoModel.prototype.addListener = function(listener) {
+    this.listeners.push(listener);
+  }
+
+  TodoModel.prototype.notifyListeners = function(change, param) {
+    var this_ = this;
+    this.listeners.forEach(function(listener) {
+      listener(this_, change, param);
+    });
+  }
+
+  exports.TodoModel = TodoModel;
+
+})(window);
+
+
+window.addEventListener('DOMContentLoaded', function() {
+
+  var model = new TodoModel();
+  var form = document.querySelector('form');
+  var archive = document.getElementById('archive');
+  var list = document.getElementById('list');
+  var todoTemplate = document.querySelector('#templates &gt; [data-name="list"]');
+
+  form.addEventListener('submit', function(e) {
+    var textEl = e.target.querySelector('input[type="text"]');
+    model.addTodo(textEl.value, false);
+    textEl.value=null;
+    e.preventDefault();
+  });
+
+  archive.addEventListener('click', function(e) {
+    model.archiveDone();
+    e.preventDefault();
+  });
+
+  model.addListener(function(model, changeType, param) {
+    if ( changeType === 'removed' || changeType === 'archived') {
+      redrawUI(model);
+    } else if ( changeType === 'added' ) {
+      drawTodo(model.todos[param], list);
+    } else if ( changeType === 'stateChanged') {
+      updateTodo(model.todos[param]);
+    }
+    updateCounters(model);
+  });
+
+  var redrawUI = function(model) {
+    list.innerHTML='';
+    for (var id in model.todos) {
+      drawTodo(model.todos[id], list);
+    }
+  };
+  
+  var drawTodo = function(todoObj, container) {
+    var el = todoTemplate.cloneNode(true);
+    el.setAttribute('data-id', todoObj.id);
+    container.appendChild(el);
+    updateTodo(todoObj);
+    var checkbox = el.querySelector('input[type="checkbox"]');
+    checkbox.addEventListener('change', function(e) {
+      model.setTodoState(todoObj.id, e.target.checked);
+    });
+  }
+
+  var updateTodo = function(model) {
+    var todoElement = list.querySelector('li[data-id="'+model.id+'"]');
+    if (todoElement) {
+      var checkbox = todoElement.querySelector('input[type="checkbox"]');
+      var desc = todoElement.querySelector('span');
+      checkbox.checked = model.isDone;
+      desc.innerText = model.text;
+      desc.className = "done-"+model.isDone;
+    }
+  }
+
+  var updateCounters = function(model) {
+    var count = 0;
+    var notDone = 0;
+    for (var id in model.todos) {
+      count++;
+      if ( ! model.todos[id].isDone ) {
+        notDone ++;
+      }
+    }
+    document.getElementById('remaining').innerText = notDone;
+    document.getElementById('length').innerText = count;
+  }
+
+  updateCounters(model);
+
+});
+    </pre>
+  </content>
+</tabs>
+
+<h3 id="index"><!--@Update view-->更新视图</h3>
+
+<p><!--@Change the-->修改 <a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/angularjs/withcontroller/index.html">AngularJS index.html</a> <!--@or-->或
+<a href="https://github.com/GoogleChrome/chrome-app-codelab/blob/master/lab3_mvc/javascript/withcontroller/index.html">JavaScript index.html</a><!--@:-->：
+</p>
+
+<tabs data-group="source">
+
+  <header tabindex="0" data-value="angular">Angular</header>
+  <header tabindex="0" data-value="js">JavaScript</header>
+
+  <content>
+    <pre data-filename="index.html">
+&lt;html ng-app ng-csp&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;angular.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;controller.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;todo.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Todo&lt;/h2&gt;
+    &lt;div ng-controller=&quot;TodoCtrl&quot;&gt;
+      &lt;span&gt;&#123;&#123;remaining()&#125;&#125; of &#123;&#123;todos.length&#125;&#125; remaining&lt;/span&gt;
+      [ &lt;a href=&quot;&quot; ng-click=&quot;archive()&quot;&gt;archive&lt;/a&gt; ]
+      &lt;ul&gt;
+        &lt;li ng-repeat=&quot;todo in todos&quot;&gt;
+          &lt;input type=&quot;checkbox&quot; ng-model=&quot;todo.done&quot;&gt;
+          &lt;span class=&quot;done-&#123;&#123;todo.done&#125;&#125;&quot;&gt;&#123;&#123;todo.text&#125;&#125;&lt;/span&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form ng-submit=&quot;addTodo()&quot;&gt;
+        &lt;input type=&quot;text&quot; ng-model=&quot;todoText&quot; size=&quot;30&quot;
+               placeholder=&quot;add new todo here&quot;&gt;
+        &lt;input class=&quot;btn-primary&quot; type=&quot;submit&quot; value=&quot;add&quot;&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </content>
+  <content>
+    <pre data-filename="index.html">
+&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;todo.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Todo&lt;/h2&gt;
+    &lt;div&gt;
+      &lt;span&gt;&lt;span id=&quot;remaining&quot;&gt;&lt;/span&gt; of &lt;span id=&quot;length&quot;&gt;&lt;/span&gt; remaining&lt;/span&gt;
+      [ &lt;a href=&quot;&quot; id=&quot;archive&quot;&gt;archive&lt;/a&gt; ]
+      &lt;ul class=&quot;unstyled&quot; id=&quot;list&quot;&gt;
+      &lt;/ul&gt;
+      &lt;form&gt;
+        &lt;input type=&quot;text&quot; size=&quot;30&quot;
+               placeholder=&quot;add new todo here&quot;&gt;
+        &lt;input class=&quot;btn-primary&quot; type=&quot;submit&quot; value=&quot;add&quot;&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+
+    &lt;!-- poor man's template --&gt;
+    &lt;div id=&quot;templates&quot; style=&quot;display: none;&quot;&gt;
+      &lt;li data-name=&quot;list&quot;&gt;
+        &lt;input type=&quot;checkbox&quot;&gt;
+        &lt;span&gt;&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/div&gt;
+
+    &lt;script src=&quot;controller.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </content>
+</tabs>
+
+<p><!--@Note how the data, stored in an array inside the controller, binds to the view and is automatically updated when it is changed by the controller.-->
+注意储存在控制器中一个数组内的数据是如何与视图绑定，并在控制器更改它时自动更新的。
+</p>
+
+<h3 id="check2"><!--@Check the results-->检查结果</h3>
+
+<p>
+<!--@Check the results by reloading the app: open the app, right-click and select Reload App.</li>-->
+重新加载应用，检查结果：打开应用，单击右键并选择“重新加载应用”。
+</p>
+
+<h2 id="takeaways_"><!--@Takeaways-->更多信息</h2>
+
+<ul>
+<li><p><!--@Chrome Apps are-->
+Chrome 应用<a href="offline_apps.html"><!--@offline first-->通常是离线的</a><!--@,
+so the recommended way to include third-party scripts is to download
+and package them inside your app.-->，所以包含第三方脚本的推荐方法是下载并将它打包在您的应用内。</p></li>
+<li><p><!--@You can use any framework you want,
+as long as it complies with Content Security Policies
+and other restrictions that Chrome Apps are enforced to follow.-->您可以使用您希望使用的任何框架，只要它遵循内容安全策略以及
+Chrome 应用强制遵循的其他限制。</p></li>
+<li><p><!--@MVC frameworks make your life easier.
+Use them, specially if you want to build a non-trivial application.-->MVC 框架使您可以更方便地建立应用，如果您想建立一个非凡的应用，请使用它们。</p></li>
+</ul>
+
+<h2 id="you_should_also_read"><!--@You should also read-->您还应该阅读</h2>
+
+<ul>
+<li><p><a href="angular_framework.html"><!--@Build Apps with AngularJS-->用 AngularJS 建立应用</a><!--@ tutorial-->的教程</p></li>
+<li><p><a href="http://angularjs.org/">AngularJS <!--@Todo-->待办事项</a><!--@ tutorial-->教程</p></li>
+</ul>
+
+<h2 id="what_39_s_next_"><!--@What's next?-->接下来做什么？</h2>
+
+<p><!--@In-->在 <a href="app_codelab5_data.html">4 - <!--@Save and Fetch Data-->保存和获取数据</a><!--@,
+you will modify your Todo list app so that Todo items are saved.-->
+中，您将会修改您的“待办事项”列表应用，存储待办事项。
+</p>
+    
+    <br>
+    <footer id="cc-info">
+      <!--<button id="send-feedback" class="google-button" data-feedback>Send Feedback</button>-->
+      <!--p class="last-updated">Last updated August 2, 2013.</p-->
+      <p class="cc-logo">
+      该网页翻译自
+      <a href="https://developer.chrome.com/extensions/">Google Chrome Extensions</a>
+      与
+      <a href="https://developer.chrome.com/apps/">Google Chrome Apps</a>，遵循
+      <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License <img src="../static/images/cc_by.png" alt="Licensed Creative Commons by Attribution"></a></p>
+    </footer>
+    <nav class="inline-toc no-permalink">
+      <section class="related">
+                      <h3 title="">通过代码实验室学习</h3>
+      <ol class="toc">
+                              <li>
+                                <a href="app_codelab1_setup.html">1、设置开发环境</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab2_basic.html">2、创建基本应用</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab3_mvc.html" class="active">3、创建 MVC</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab5_data.html">4、保存和获取数据</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab6_lifecycle.html">5、管理应用的生命周期</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab7_useridentification.html">6、访问用户数据</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab8_webresources.html">7、访问网络资源</a>
+                              </li>
+                              <li>
+                                <a href="app_codelab_10_publishing.html">8、发布应用</a>
+                              </li>
+      </ol>
+      </section>
+      <section id="toc">
+    <h3><!--@Contents-->目录</h3>
+    <ol class="toc">
+      <li class="toplevel"><a data-list-item href="app_codelab3_mvc.html#simple"
+          >创建简单视图</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_codelab3_mvc.html#basic-mvc"
+                     >添加 MVC 的基本内容</a>
+              </li>
+              <li><a data-list-item href="app_codelab3_mvc.html#update-view"
+                     >更新视图</a>
+              </li>
+              <li><a data-list-item href="app_codelab3_mvc.html#stylesheet"
+                     >添加样式表</a>
+              </li>
+              <li><a data-list-item href="app_codelab3_mvc.html#check1"
+                     >检查结果</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab3_mvc.html#real-todo"
+          >创建真正的待办事项列表</a>
+          <ol class="toc">
+              <li><a data-list-item href="app_codelab3_mvc.html#controller"
+                     >添加控制器</a>
+              </li>
+              <li><a data-list-item href="app_codelab3_mvc.html#index"
+                     >更新视图</a>
+              </li>
+              <li><a data-list-item href="app_codelab3_mvc.html#check2"
+                     >检查结果</a>
+              </li>
+          </ol>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab3_mvc.html#takeaways_"
+          >更多信息</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab3_mvc.html#you_should_also_read"
+          >您还应该阅读</a>
+      </li>
+      <li class="toplevel"><a data-list-item href="app_codelab3_mvc.html#what_39_s_next_"
+          >接下来做什么？</a>
+      </li>
+    </ol>
+</section>
+
+    </nav>
+  </div>
+</article>
+    </main>
+
+    <footer id="gc-footer" role="contentinfo" class="span-full">
+      <div class="g-section g-tpl-50-50">
+        <div class="g-unit g-first">
+          <nav class="links">
+            <a href="https://code.google.com/p/crxdoczh/">crxdoczh 项目主页</a>
+            <a href="https://code.google.com/p/crxdoczh/issues/entry?template=%E7%BD%91%E7%AB%99%E5%8F%8D%E9%A6%88">发送反馈</a>
+            <a href="https://plus.google.com/communities/105384952265487436177">Google+ 社群</a>
+          </nav>
+        </div>
+        <div class="g-unit g-last">
+          <div id="social-buttons">
+            <div data-size="small" data-annotation="bubble" class="g-plusone"></div>
+            <a rel="publisher" target="_blank" href="https://plus.google.com/+Crxdoc-zhAppspot?prsrc=3" data-g-label="plus" data-g-event="nav-subfooter"><!--@Add us on-->在 <span class="element-invisible">Google+</span><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" data-g-label="plus" data-g-event="nav-subfooter" alt=""> 上关注我们</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/fatnav.js"></script>
+    <script src="../static/js/article.js"></script>
+    <script src="../static/js/prettify.js"></script>
+    <script src="../static/js/search.js"></script>
+    <script src="../static/js/site.js"></script>
+  </body>
+</html>
